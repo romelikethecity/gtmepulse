@@ -10,8 +10,8 @@ Requirements for Wave 1 release. Each maps to roadmap phases.
 ### Build System
 
 - [ ] **BUILD-01**: 3-file Python build system (build.py, templates.py, nav_config.py) generates all pages to output/
-- [ ] **BUILD-02**: CSS architecture with 3 layers (tokens.css, components.css, styles.css) using design token variables
-- [ ] **BUILD-03**: write_page() function writes HTML files and registers them in ALL_PAGES for sitemap
+- [x] **BUILD-02**: CSS architecture with 3 layers (tokens.css, components.css, styles.css) using design token variables
+- [x] **BUILD-03**: write_page() function writes HTML files and registers them in ALL_PAGES for sitemap
 - [ ] **BUILD-04**: Auto-generated sitemap.xml from ALL_PAGES list
 - [ ] **BUILD-05**: Auto-generated robots.txt with sitemap reference
 - [ ] **BUILD-06**: Auto-generated CNAME file (gtmepulse.com)
@@ -20,18 +20,18 @@ Requirements for Wave 1 release. Each maps to roadmap phases.
 
 ### HTML Shell
 
-- [ ] **HTML-01**: get_html_head() generates complete head with title, meta description, canonical URL, OG tags, Twitter Card, favicons, fonts, CSS
-- [ ] **HTML-02**: get_nav_html() generates responsive nav with logo, menu items, dropdown support, mobile hamburger, newsletter CTA button
-- [ ] **HTML-03**: get_footer_html() generates multi-column footer with links, newsletter mini-signup, copyright
-- [ ] **HTML-04**: get_page_wrapper() assembles full HTML page (head + nav + main + footer)
-- [ ] **HTML-05**: Mobile-responsive layout at 375px, 768px, and 1024px breakpoints
+- [x] **HTML-01**: get_html_head() generates complete head with title, meta description, canonical URL, OG tags, Twitter Card, favicons, fonts, CSS
+- [x] **HTML-02**: get_nav_html() generates responsive nav with logo, menu items, dropdown support, mobile hamburger, newsletter CTA button
+- [x] **HTML-03**: get_footer_html() generates multi-column footer with links, newsletter mini-signup, copyright
+- [x] **HTML-04**: get_page_wrapper() assembles full HTML page (head + nav + main + footer)
+- [x] **HTML-05**: Mobile-responsive layout at 375px, 768px, and 1024px breakpoints
 
 ### Schema Markup
 
-- [ ] **SEO-01**: Organization + WebSite JSON-LD schema on homepage (@graph pattern)
-- [ ] **SEO-02**: BreadcrumbList JSON-LD schema on all inner pages
-- [ ] **SEO-03**: FAQPage JSON-LD schema on salary breakdown and comparison pages (min 3 Q&A, matches visible content)
-- [ ] **SEO-04**: All schema uses json.dumps() for safe serialization (never string concatenation)
+- [x] **SEO-01**: Organization + WebSite JSON-LD schema on homepage (@graph pattern)
+- [x] **SEO-02**: BreadcrumbList JSON-LD schema on all inner pages
+- [x] **SEO-03**: FAQPage JSON-LD schema on salary breakdown and comparison pages (min 3 Q&A, matches visible content)
+- [x] **SEO-04**: All schema uses json.dumps() for safe serialization (never string concatenation)
 
 ### Core Pages
 

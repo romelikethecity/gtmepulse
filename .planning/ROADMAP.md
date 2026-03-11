@@ -27,7 +27,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Opening any generated page in a browser shows a responsive layout with working nav, footer, breadcrumbs, and correct fonts at 375px, 768px, and 1024px widths
   3. Every generated page has a unique title (50-60 chars), unique meta description (150-158 chars), canonical URL, OG tags, and appropriate JSON-LD schema (Organization+WebSite on homepage, BreadcrumbList on inner pages)
   4. The CSS cascade works without conflicts: tokens.css variables load, components.css provides reusable classes, styles.css adds page-scoped styles via body class, and cache-busting query params are present
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 01-01-PLAN.md — Config layer (nav_config.py), HTML shell (templates.py), and CSS architecture (components.css + styles.css)
@@ -71,7 +71,7 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Build System and HTML Shell | 0/2 | Planning complete | - |
+| 1. Build System and HTML Shell | 1/2 | In Progress|  |
 | 2. Core Pages and Newsletter Infrastructure | 0/0 | Not started | - |
 | 3. Salary Data Engine | 0/0 | Not started | - |
 

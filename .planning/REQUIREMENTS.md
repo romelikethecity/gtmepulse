@@ -125,17 +125,17 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BUILD-01 through BUILD-08 | Phase 1 | Pending |
 | HTML-01 through HTML-05 | Phase 1 | Pending |
 | SEO-01 through SEO-04 | Phase 1 | Pending |
+| CONTENT-01 through CONTENT-06 | Phase 1 | Pending |
 | CORE-01 through CORE-06 | Phase 2 | Pending |
 | NEWS-01 through NEWS-06 | Phase 2 | Pending |
 | SAL-01 through SAL-07 | Phase 3 | Pending |
 | QUAL-01 through QUAL-06 | Phase 3 | Pending |
-| CONTENT-01 through CONTENT-06 | Phase 1 | Pending |
 
 **Coverage:**
-- v1 requirements: 49 total
-- Mapped to phases: 49
-- Unmapped: 0 ✓
+- v1 requirements: 48 total (BUILD:8, HTML:5, SEO:4, CONTENT:6, CORE:6, NEWS:6, SAL:7, QUAL:6)
+- Mapped to phases: 48
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-10*
-*Last updated: 2026-03-10 after initial definition*
+*Last updated: 2026-03-10 after roadmap creation*

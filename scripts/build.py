@@ -1437,6 +1437,16 @@ def build_salary_coding_premium():
     <p>Start with Python. Build a project that solves a real problem in your current workflow. Automate something you do manually today. The first script you write that saves your team 5 hours a week is your proof of concept, and your strongest card in the next salary negotiation.</p>
     <p>For operators happy at $90K with no interest in coding, that's a valid path. Low-code GTM Engineers do meaningful work. But the ceiling is lower, and the competition for those roles is increasing as more people learn the tool ecosystem.</p>
 
+    <h2>The Hiring Signal</h2>
+    <p>Job postings tell the story in real time. GTM Engineer listings that mention Python or SQL in the requirements consistently post salary ranges 25-40% above those that don't. Companies that want technical GTMEs know they have to pay for them.</p>
+    <p>The most telling signal: companies are starting to split the role. "GTM Ops Specialist" for the low-code operators at $80K-$110K. "GTM Engineer" for the technical builders at $130K-$195K. Same team, different pay bands, separated by coding ability.</p>
+    <p>If you're interviewing, the technical assessment is your negotiating tool. Companies that give you a coding challenge are the ones willing to pay the premium. Companies that don't test technical skills are hiring for the lower band, and will comp accordingly.</p>
+
+    <h2>The Path from Operator to Engineer</h2>
+    <p>The most common upskilling path looks like this: start with Python basics (variables, loops, functions), then learn to make HTTP requests with the requests library, then parse JSON responses and work with pandas DataFrames. Within 3 months of consistent practice, you can build useful scripts.</p>
+    <p>Months 3-6, apply Python to your actual GTM workflows. Write a script that enriches a CSV through an API. Build a webhook handler. Create a data quality checker. Each project reinforces the skills and builds your portfolio.</p>
+    <p>By month 6, you should be comfortable enough to discuss your technical projects in interviews. That's when the $45K premium becomes accessible. You don't need to be an expert. You need to demonstrate that you can solve problems with code when the no-code tools fall short.</p>
+
 {faq_html(faq_pairs)}
 {salary_related_links("coding-premium", "analysis")}
 </div>
@@ -1509,6 +1519,17 @@ def build_salary_company_size():
     <p>Enterprise companies pay competitive base salaries with RSUs, annual bonuses, and full benefits packages. Total compensation can match or surpass mid-size companies, especially at public tech companies where RSU grants are substantial.</p>
     <p>The role is different here. You're more likely to own a specific piece of the GTM stack rather than the whole thing. Maybe you're the enrichment pipeline specialist, or the outbound automation owner, or the CRM integration engineer. Scope is narrower but depth is greater.</p>
     <p>Career ladders are more established. There's a path from individual contributor to team lead to director that's visible and documented. The trade-off is less autonomy and more process. If you prefer structure, enterprise is a good fit. If you want to build everything yourself, you'll feel constrained.</p>
+
+    <h2>Choosing Your Company Size</h2>
+    <p>The right company size depends on what you optimize for. If you want maximum learning velocity, go small. You'll touch every system, break things, fix them, and develop breadth that takes years to accumulate at larger companies. The pay gap closes later when you carry that experience to a mid-size role.</p>
+    <p>If you want maximum base salary now, the 201-1,000 band is the target. These companies combine competitive pay with meaningful scope. You'll own significant projects without the startup chaos or enterprise bureaucracy.</p>
+    <p>For total compensation including equity, the calculation gets more complex. A $95K base at a Pre-Seed startup with 0.5% equity could be worth more than $175K at a Series B company, if the startup exits well. Most don't. The expected value math favors the guaranteed higher base in most scenarios.</p>
+    <p>One pattern worth noting: GTM Engineers who start at small companies and move to mid-size after 2-3 years often land the highest compensation. They bring the generalist skills and building-from-scratch experience that mid-size companies value, and they can negotiate from a position of demonstrated impact.</p>
+
+    <h2>How Company Growth Changes the Role</h2>
+    <p>Companies don't stay the same size. A 50-person startup that hired you as their first GTM Engineer might be 300 people when you've been there two years. Your compensation should track that growth, but it often doesn't automatically.</p>
+    <p>When the company crosses the 200-employee threshold, review your comp against market rates for mid-size companies. The data shows that's where base salaries peak. If you're still earning your startup-era salary, you're leaving money on the table. Internal raises rarely keep pace with the jump in market value that comes with company growth.</p>
+    <p>The smartest play: negotiate for automatic comp reviews tied to headcount milestones. "When we hit 200 employees, let's revisit my base" is a reasonable ask, especially at fast-growing companies where that milestone might be 12-18 months away.</p>
 
 {faq_html(faq_pairs)}
 {salary_related_links("company-size", "analysis")}
@@ -1588,6 +1609,12 @@ def build_salary_funding_stage():
         <li><strong>Exited/Public:</strong> 33.3% receive meaningful equity, mostly as RSU grants with defined vesting schedules and immediate liquidity.</li>
     </ul>
     <p>The U-shaped curve matters for career planning. If you want equity, either join very early (Pre-Seed/Seed) or go public/late-stage where RSUs have defined value. The Series A dead zone, low equity and lower-than-peak base, is the least favorable stage for total compensation, though the learning opportunities are significant.</p>
+
+    <h2>Stage-Specific Negotiation</h2>
+    <p>How you negotiate varies by funding stage. At Pre-Seed and Seed, push hard on equity percentage, vesting schedule, and exercise window. Base salary has less room to move because the company is cash-constrained, but equity terms are often flexible because they haven't established comp frameworks yet.</p>
+    <p>At Series A, negotiate base aggressively. This is the stage where equity is hardest to get but base salary is still flexible. Companies at this stage are hiring their first dedicated GTM Engineers and often don't have established salary bands. Use market data to anchor high.</p>
+    <p>At Series B and beyond, the comp structure is more formalized. Focus on bonus targets (make sure they're tied to metrics you control), RSU grant sizes, and refresher schedules. Base salary bands are often fixed, but the variable comp components have room to move.</p>
+    <p>Across all stages, one principle applies: know the company's funding situation before you negotiate. A company that just closed a $50M Series B has different budget constraints than one that's 18 months post-raise and watching its runway. Timing your negotiation to align with fresh capital gives you the most room.</p>
 
 {faq_html(faq_pairs)}
 {salary_related_links("funding-stage", "analysis")}
@@ -1671,6 +1698,11 @@ def build_salary_experience():
     </ul>
     <p>This dynamic won't last forever. As the role matures and more people accumulate 5-10 years of experience, tenure will become a stronger signal. Right now, skills and impact are the primary currency.</p>
 
+    <h2>Maximizing Your Experience Value</h2>
+    <p>Every year of GTM Engineering experience is worth more when you can quantify what you built. "3 years of GTM Engineering" on a resume tells a hiring manager very little. "Built an enrichment pipeline processing 50K contacts monthly with a 92% accuracy rate" tells them everything they need to know.</p>
+    <p>Keep a running log of projects, metrics, and outcomes. Pipeline generated, time saved through automation, data quality improvements, tools evaluated and implemented. This log becomes your negotiation toolkit at review time and your resume ammunition when exploring new roles.</p>
+    <p>The other accelerant: teach what you know. GTM Engineers who write about their work, share Clay templates, or contribute to the community build reputations that translate directly into compensation. When a hiring manager has already seen your work online, the interview is a formality and the salary negotiation starts from a higher baseline.</p>
+
 {faq_html(faq_pairs)}
 {salary_related_links("by-experience", "analysis")}
 </div>
@@ -1748,6 +1780,11 @@ def build_salary_age():
     <p>The youth of the field creates an unusual dynamic: there's no established career ladder. No one has "20 years of GTM Engineering experience" because the role didn't exist 20 years ago. The ceiling is being set right now by the current generation.</p>
     <p>For young professionals, this is an opportunity. You can define what a senior GTM Engineering career looks like. Head of GTM Engineering roles are emerging at growth-stage companies, and the first people to fill them will set the template for everyone who follows.</p>
     <p>For experienced professionals considering the switch, the window is open. Your business knowledge fills a gap that pure-technical GTM Engineers can't cover. The role rewards generalists who can bridge technology and strategy, and that's exactly what career switchers with domain expertise bring to the table.</p>
+
+    <h2>Age and Hiring</h2>
+    <p>Do companies discriminate by age when hiring GTM Engineers? The data doesn't directly answer this, but the hiring patterns suggest a preference for outcome over demographic. Companies posting GTM Engineer roles care about Clay proficiency, technical skills, and pipeline impact. Resume age signals (graduation year, career length) matter less in a function where a 23-year-old can out-produce a 35-year-old and vice versa.</p>
+    <p>If you're over 30 and entering the field, position your experience as a feature. A RevOps manager who becomes a GTM Engineer brings pipeline strategy, cross-functional relationships, and operational maturity. These are things that take years to develop and can't be taught through a bootcamp.</p>
+    <p>The companies most receptive to experienced GTM Engineers are those building their first GTM Engineering function. They need someone who can set direction, not just execute. A 28-year-old who's built Clay tables for two years is great at execution. A 35-year-old who understands the full revenue cycle and can also build Clay tables is a force multiplier.</p>
 
 {faq_html(faq_pairs)}
 {salary_related_links("by-age", "analysis")}
@@ -1847,6 +1884,17 @@ def build_salary_bonus():
     <p><strong>Tie it to metrics you control.</strong> Pipeline generated from your enrichment workflows, meetings booked from your outbound sequences, data quality improvements you can measure. Avoid bonuses tied to team-level revenue goals where your individual contribution is hard to isolate.</p>
     <p><strong>Get the targets in writing.</strong> "Performance bonus" means nothing without defined targets, measurement methods, and payout timing. Before accepting, know exactly what "on target" looks like and what the payout schedule is.</p>
     <p><strong>Do the math on guaranteed vs performance.</strong> A guaranteed $20K bonus is worth more than a $30K target you have a 60% chance of hitting. If the company can't clearly explain how you'd hit your bonus targets, negotiate for guaranteed comp or a higher base instead.</p>
+
+    <h2>Bonus Trends to Watch</h2>
+    <p>As GTM Engineering matures as a function, bonus structures are evolving. Three trends are emerging from the report data and job posting analysis:</p>
+    <p>First, more companies are adding performance bonuses for GTM Engineers. The 51% participation rate is up from what industry observers estimate was around 30-35% two years ago. As companies get better at measuring GTM Engineering impact, they're more willing to compensate for it.</p>
+    <p>Second, bonus metrics are getting more specific. Early GTM Engineering bonuses were often tied to vague "team performance" or "company revenue" goals. Now, companies are tying them to pipeline generated through automated workflows, enrichment coverage rates, and outbound meeting conversion. These are metrics the GTM Engineer directly controls.</p>
+    <p>Third, the total comp package is becoming more standardized. At growth-stage companies, the emerging standard is base salary plus 15-20% performance bonus plus equity. This mirrors the compensation structure of senior RevOps roles and reflects GTM Engineering's growing recognition as a strategic function.</p>
+
+    <h2>Bonus vs Higher Base: Which to Prioritize</h2>
+    <p>Given the choice between a $140K base with no bonus and a $125K base with a $20K target bonus, which should you take? The guaranteed base is worth more in most scenarios. Bonuses depend on target attainment, company performance, and sometimes manager discretion. Base salary is a commitment.</p>
+    <p>The exception: if the bonus targets are well-defined, measurable, and within your control. A $125K base with a $25K bonus tied to "generate 500 qualified leads per quarter through automated enrichment pipelines" is a strong deal if you're confident in your pipeline. You'll likely beat target and earn more than the $140K flat offer.</p>
+    <p>When evaluating bonus offers, ask three questions. What were the actual payout rates for this bonus plan last year? What percentage of GTM Engineers on the team hit their targets? And who decides whether the targets were met? The answers will tell you whether the bonus is real compensation or a number on paper.</p>
 
 {faq_html(faq_pairs)}
 {salary_related_links("bonus", "analysis")}

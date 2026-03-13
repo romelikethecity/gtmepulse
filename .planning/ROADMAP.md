@@ -68,17 +68,19 @@ Plans:
 ### Phase 5: Career, Agency, and Job Market
 **Goal**: Visitors can explore 28 pages of career intelligence, agency business data, and job market analysis, each backed by real survey and job posting data
 **Depends on**: Phase 4 (salary data layer must be updated; career/agency pages reference salary figures)
-**Requirements**: CAREER-01, CAREER-02, CAREER-03, CAREER-04, CAREER-05, CAREER-06, CAREER-07, CAREER-08, CAREER-09, CAREER-10, CAREER-11, CAREER-12, AGENCY-01, AGENCY-02, AGENCY-03, AGENCY-04, AGENCY-05, AGENCY-06, AGENCY-07, AGENCY-08, JOBMKT-01, JOBMKT-02, JOBMKT-03, JOBMKT-04, JOBMKT-05, JOBMKT-06, JOBMKT-07, JOBMKT-08
+**Requirements**: CAREER-01 through CAREER-12, AGENCY-01 through AGENCY-08, JOBMKT-01 through JOBMKT-08
 **Success Criteria** (what must be TRUE):
   1. A visitor searching "how to become a GTM engineer" finds a page with self-taught data (121/228), career path breakdown, and actionable steps
   2. Agency-focused pages show real pricing data ($5K-$8K/mo median, regional breakdowns) and business metrics (client retention, pricing models) that a freelancer can use to benchmark their practice
   3. Job market pages display the 5,205% growth narrative with monthly trends, country breakdowns, and salary band data from 3,342 postings
   4. Every page in this phase has 1,200-2,000 words, BreadcrumbList schema, 3+ internal links, and visible source citations
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 05-01: Career and breaking-in pages (CAREER-01 through CAREER-12)
-- [ ] 05-02: Agency, freelance, and job market pages (AGENCY-01 through AGENCY-08, JOBMKT-01 through JOBMKT-08)
+- [ ] 05-01-PLAN.md — Career index + first 6 career pages (how to become, operator vs engineer, real career, job market, how got jobs, work-life balance)
+- [ ] 05-02-PLAN.md — Remaining 6 career pages (demographics, RevOps convergence, coding needed, reporting, impact, skills gap)
+- [ ] 05-03-PLAN.md — 8 agency/freelance pages (pricing, start agency, revenue, retention, client count, pricing models, regional fees, deliverability)
+- [ ] 05-04-PLAN.md — 8 job market pages (growth, by country, posted vs actual, top skills, monthly trends, salary bands, India, Spain) + nav update
 
 ### Phase 6: Tools and Benchmarks
 **Goal**: Visitors can explore the full GTM Engineer tech stack (adoption rates, frustrations, spend) and industry benchmarks (demographics, bottlenecks, predictions) through 25 data-reference pages
@@ -122,8 +124,8 @@ Phases execute in numeric order: 4 → 5 → 6 → 7
 | 1. Build System and HTML Shell | v1.0 | 1/2 | In progress | - |
 | 2. Core Pages and Newsletter | v1.0 | 0/2 | Not started | - |
 | 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
-| 4. Salary Data Overhaul | 3/3 | Complete   | 2026-03-13 | - |
-| 5. Career, Agency, and Job Market | v2.0 | 0/2 | Not started | - |
+| 4. Salary Data Overhaul | v2.0 | 3/3 | Complete | 2026-03-13 |
+| 5. Career, Agency, and Job Market | v2.0 | 0/4 | Not started | - |
 | 6. Tools and Benchmarks | v2.0 | 0/2 | Not started | - |
 | 7. Comparisons, Blog, and Quality | v2.0 | 0/3 | Not started | - |
 

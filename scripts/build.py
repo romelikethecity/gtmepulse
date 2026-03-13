@@ -3338,6 +3338,293 @@ def build_career_work_life():
     print(f"  Built: careers/work-life-balance/index.html")
 
 
+def build_career_demographics():
+    """CAREER-07: Demographics deep-dive page."""
+    title = "GTM Engineer Demographics: Age, Location, Data"
+    description = (
+        "Who are GTM Engineers? Median age 25, 32 countries represented, 58%"
+        " US-based. Demographic data from 228 surveyed practitioners."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Demographics", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the average age of a GTM Engineer?",
+         "The median age is 25, making this one of the youngest specialized roles in B2B SaaS. The distribution skews heavily toward Gen Z and younger millennials, which tracks with the role emerging in 2023-2024. Very few respondents in our n=228 survey were over 35."),
+        ("Where do most GTM Engineers live?",
+         "58% of surveyed GTM Engineers are based in the United States. The remaining 42% span 31 other countries, with the UK, Canada, Germany, and Australia being the next largest concentrations. Remote work makes this a globally distributed role."),
+        ("What education do GTM Engineers have?",
+         "121 out of 228 surveyed GTM Engineers (53%) are self-taught. Formal education backgrounds vary widely: business, marketing, computer science, and communications all appear frequently. No single degree dominates, and employers consistently prioritize demonstrable skills over credentials."),
+        ("How diverse is the GTM Engineer workforce?",
+         "The role skews male, consistent with broader B2B SaaS tech roles. But the self-taught entry path and agency prevalence (30% work at agencies) create lower barriers to entry than traditional engineering roles. Geographic diversity is strong with 32 countries represented in the survey data."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Intelligence</div>
+        <h1>GTM Engineer Demographics: Age, Location, Data</h1>
+        <p>Who are the people building automated revenue systems? Age, location, education, and background data from 228 working GTM Engineers across 32 countries.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">25</span>
+        <span class="stat-label">Median Age</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">32</span>
+        <span class="stat-label">Countries Represented</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">58%</span>
+        <span class="stat-label">US-Based</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>A Gen Z Function</h2>
+    <p>The median GTM Engineer is 25 years old. That number should stop you in your tracks. In most B2B SaaS roles, the median age sits in the early-to-mid 30s. GTM Engineering is a generation younger.</p>
+    <p>This makes sense when you trace the timeline. Clay launched in 2023. The "GTM Engineer" title started appearing in job postings that same year. By 2024, posting volume exploded 5,205%. The people who jumped on this wave were overwhelmingly in their early-to-mid 20s, many fresh from SDR roles or straight out of college with a knack for automation.</p>
+    <p>The age distribution clusters tightly around 22-28, with a thin tail extending into the mid-30s. Respondents over 40 were rare enough to count on one hand. This isn't a role that mid-career professionals are pivoting into in large numbers. It's being built by a generation that grew up with APIs, no-code tools, and AI assistants as default infrastructure.</p>
+
+    <h2>Geographic Spread: 32 Countries</h2>
+    <p>GTM Engineers work everywhere, but the center of gravity is the United States. 58% of survey respondents (132 out of 228) are US-based. That's consistent with where the role originated: Clay is a US company, the early adopter community was concentrated in SF and NYC, and US B2B SaaS companies were the first to create dedicated GTM Engineering positions.</p>
+    <p>The remaining 42% spans 31 countries. The UK and Canada each have meaningful clusters, followed by Germany, Australia, and India. Several respondents reported working from countries in Southeast Asia and Latin America while serving US-based clients remotely.</p>
+    <p>Remote work is the default operating mode. Most job postings for GTM Engineers list remote or hybrid arrangements. The tools are cloud-based (Clay, HubSpot, Salesforce, Make, Instantly), the work is asynchronous-friendly, and time zone overlap matters less than output quality. This makes the role accessible to talent anywhere with reliable internet.</p>
+    <p>For location-specific salary data, see our <a href="/salary/us-vs-global/">US vs Global salary comparison</a>. US-based GTM Engineers earn meaningfully more, but the gap narrows when you factor in cost-of-living differences.</p>
+
+    <h2>Education: The Self-Taught Majority</h2>
+    <p>121 out of 228 respondents (53%) described themselves as self-taught. They learned Clay from YouTube tutorials, built automation projects on their own, and assembled their skills through practice rather than formal education. This is the defining characteristic of the GTM Engineering workforce: it rewards builders, not credential holders.</p>
+    <p>Among those with formal education, the backgrounds are eclectic. Business and marketing degrees are common, which makes sense given the sales and marketing operations roots of the role. Computer science and engineering degrees appear too, especially among higher earners who bring coding skills to the table.</p>
+    <p>But here's what the data shows clearly: the degree itself doesn't predict earnings. The <a href="/salary/coding-premium/">$45K coding premium</a> exists regardless of whether you learned Python in a university classroom or from a YouTube series. What matters is whether you can write scripts that connect APIs, transform data, and automate workflows.</p>
+    <p>This education profile creates an interesting dynamic. GTM Engineering has one of the lowest formal barriers to entry of any role paying $130K+ in tech. You don't need a four-year degree. You don't need a bootcamp certificate. You need to demonstrate that you can build systems that generate pipeline.</p>
+
+    <h2>Background Diversity</h2>
+    <p>The feeder roles for GTM Engineering tell the story of where these practitioners come from. SDR and BDR transitions make up the largest single group. These are people who spent months or years doing manual outbound prospecting and decided to automate themselves out of the repetitive work.</p>
+    <p>Marketing ops is the second-largest feeder. These practitioners bring CRM fluency, campaign management experience, and analytical thinking. Revenue ops contributes a smaller but high-impact group who understand the full GTM motion from strategy to execution.</p>
+    <p>Developers who transition into GTM Engineering represent a smaller percentage but command the highest salaries. They bring technical depth that no-code practitioners struggle to match, and the salary data confirms it: the bimodal distribution described in our <a href="/careers/operator-vs-engineer/">operator vs engineer analysis</a> maps directly to coding ability.</p>
+    <p>30% of respondents work at agencies or run freelance practices. This is significantly higher than most B2B SaaS roles, where agency workers typically represent 5-10% of the workforce. The agency path serves as both an entry point for newcomers and a long-term career choice for practitioners who prefer variety and autonomy over in-house stability.</p>
+
+    <h2>What the Demographics Signal</h2>
+    <p>A young, globally distributed, self-taught workforce building automated revenue systems. That's the profile. It looks more like the early days of web development in the 2000s than a traditional enterprise SaaS function.</p>
+    <p>The youth of the field means career paths are still being defined. There's no established "10-year GTM Engineer" career track because the role itself is barely three years old. The people setting compensation benchmarks and career ladders are doing it for the first time.</p>
+    <p>The global distribution means salary expectations vary widely. A GTM Engineer in Austin and one in Berlin might do identical work on identical tools, but their compensation reflects local market conditions. Our <a href="/salary/">salary data section</a> breaks this down by location, seniority, and company stage.</p>
+    <p>The self-taught majority means the field is meritocratic in a specific way: your portfolio matters more than your pedigree. For anyone considering <a href="/careers/how-to-become-gtm-engineer/">entering GTM Engineering</a>, that's the most important demographic insight. Show what you can build. The rest is background noise.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("demographics")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/demographics/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/demographics/index.html", page)
+    print(f"  Built: careers/demographics/index.html")
+
+
+def build_career_vs_revops():
+    """CAREER-08: GTM Engineer vs RevOps convergence page."""
+    title = "GTM Engineer vs RevOps: Role Convergence Data"
+    description = (
+        "GTM Engineer vs RevOps: only 9.6% predict convergence. Technical vs"
+        " operational split, salary gaps, and where the roles are heading."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("GTME vs RevOps", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the difference between a GTM Engineer and RevOps?",
+         "GTM Engineers build automated systems: enrichment pipelines, outbound sequences, data workflows using tools like Clay, Python, and APIs. RevOps professionals design and manage the strategic operational framework: CRM architecture, forecasting models, territory planning, and cross-functional alignment. The overlap is in CRM and data operations, but the daily work is fundamentally different."),
+        ("Will GTM Engineering merge with RevOps?",
+         "Only 9.6% of surveyed GTM Engineers predict full convergence with RevOps. The technical depth of GTM Engineering (coding, API integration, automation building) keeps it distinct from the strategic and process-oriented nature of RevOps. More likely: they'll be complementary functions that collaborate closely."),
+        ("Should I pursue GTM Engineering or RevOps?",
+         "If you prefer building systems, writing code, and working with tools like Clay and Python, GTM Engineering is the better fit. If you prefer strategy, process design, cross-functional alignment, and CRM architecture at a system level, RevOps suits you better. GTM Engineers skew technical; RevOps skews operational."),
+        ("How do GTM Engineer and RevOps salaries compare?",
+         "GTM Engineers report a median salary of $135K with a range of $90K-$250K+. RevOps salaries at comparable experience levels range from $100K-$180K for individual contributors. The GTM Engineering premium reflects the technical skills (coding, API work) that command higher compensation in the market."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Intelligence</div>
+        <h1>GTM Engineer vs RevOps: The Convergence Question</h1>
+        <p>Will these roles merge? Survey data from 228 GTM Engineers shows only 9.6% predict convergence. Here's why the technical and operational paths are staying separate.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">9.6%</span>
+        <span class="stat-label">Predict Convergence</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">GTME Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Use Clay (GTMEs)</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Question Everyone Asks</h2>
+    <p>"Isn't GTM Engineering just RevOps with a new name?" It's the most common question in every GTM Engineering community. And the survey data gives a clear answer: no, and the practitioners themselves don't think convergence is coming.</p>
+    <p>When asked whether GTM Engineering would merge with RevOps over the next 3-5 years, only 9.6% of respondents said yes. The overwhelming majority see these as distinct functions with different skill requirements, different daily workflows, and different career trajectories.</p>
+    <p>That 9.6% figure is striking because it comes from the people doing the work, not analysts or vendors with marketing agendas. GTM Engineers know their own role, and they don't see it collapsing into RevOps.</p>
+
+    <h2>Where the Roles Overlap</h2>
+    <p>There is genuine overlap, and it's worth mapping precisely. Both roles touch CRM systems daily. A GTM Engineer pushes enriched data into HubSpot or Salesforce; a RevOps professional designs the CRM architecture that data flows into. Both care about data quality, pipeline visibility, and operational efficiency.</p>
+    <p>Data operations is the second overlap zone. GTM Engineers build enrichment pipelines and data cleaning workflows. RevOps professionals manage data governance, deduplication rules, and reporting frameworks. They're working on the same data from different angles.</p>
+    <p>Tool administration creates a third intersection. Both roles configure and maintain parts of the sales tech stack. A GTM Engineer might own Clay, Instantly, and the enrichment layer. A RevOps professional might own the CRM, forecasting tools, and territory management. In smaller companies, one person does both.</p>
+
+    <h2>Where They Diverge</h2>
+    <p>The divergence is stark when you look at daily activities. GTM Engineers spend their time building: writing Clay tables, coding Python scripts for API integrations, configuring Make/n8n automations, and setting up outbound sequences. The work is technical, iterative, and hands-on-keyboard.</p>
+    <p>RevOps professionals spend their time designing and managing: CRM architecture decisions, sales process optimization, forecasting model calibration, territory planning, compensation structure analysis, and cross-functional alignment between sales, marketing, and customer success.</p>
+    <p>The skill profile confirms the split. 84% of GTM Engineers use Clay daily. The <a href="/salary/coding-premium/">coding premium data</a> shows a $45K gap between technical and non-technical practitioners. RevOps professionals rarely need Clay proficiency or coding skills. They need Salesforce admin expertise, analytical modeling ability, and strategic communication skills.</p>
+    <p>Think of it this way: GTM Engineers are builders. RevOps professionals are architects and operators. The builder makes the systems work. The architect designs which systems to build and how they fit together.</p>
+
+    <h2>Salary Comparison</h2>
+    <p>GTM Engineers report a median salary of $135K, with the range spanning $90K at the junior level to $250K+ for senior technical practitioners. The distribution is bimodal, clustering around $110K (operator path) and $155K (engineer path), with the gap driven by coding ability.</p>
+    <p>RevOps individual contributors at comparable experience levels typically earn $100K-$180K, with the median sitting around $120K-$140K depending on company size and location. Senior RevOps leaders (VP/Director level) can earn $200K+, but these are management-track roles, not IC roles.</p>
+    <p>The GTM Engineering salary premium at the IC level reflects market dynamics: the technical skills are scarcer, the role is newer (less established salary benchmarking), and the direct pipeline impact is easier to measure and attribute. For a deeper breakdown, see our <a href="/salary/comparisons/">salary comparison pages</a>.</p>
+
+    <h2>Future Trajectory</h2>
+    <p>The 90.4% who don't predict convergence aren't being stubborn. They're reading the trend lines correctly. As AI tools make automation building more accessible, you might expect the roles to merge. But the opposite is happening: the ceiling for what GTM Engineers can build is rising faster than the floor.</p>
+    <p>AI coding assistants (used by 71% of GTM Engineers) don't eliminate the need for technical judgment. They accelerate building speed for people who already understand what to build. The gap between a GTM Engineer using Claude to write Python scripts and a RevOps professional using ChatGPT to draft process documentation is widening, not narrowing.</p>
+    <p>The more likely future: GTM Engineering and RevOps become complementary specializations within the revenue team, similar to how frontend and backend engineering are distinct roles that collaborate closely. Companies with mature GTM operations will have both functions. Smaller companies will have generalists who lean one direction or the other.</p>
+    <p>For anyone choosing between these paths, the decision comes down to temperament. Do you want to build systems or design strategy? Do you prefer code or process? The <a href="/careers/operator-vs-engineer/">operator vs engineer analysis</a> provides more data on how this choice affects your compensation trajectory.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("gtm-engineer-vs-revops")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/gtm-engineer-vs-revops/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/gtm-engineer-vs-revops/index.html", page)
+    print(f"  Built: careers/gtm-engineer-vs-revops/index.html")
+
+
+def build_career_coding_needed():
+    """CAREER-09: Do you need to code page."""
+    title = "Do GTM Engineers Need to Code? Data Says Yes"
+    description = (
+        "Bimodal coding skill distribution among GTM Engineers. $45K premium"
+        " for coders. Which languages matter and what coding means in practice."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Coding Requirement", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the minimum coding level for a GTM Engineer?",
+         "You can get hired as a GTM Engineer with zero coding skills. About 40% of practitioners cluster at the 1-3 range on a 1-10 self-rated coding scale. But the salary data is clear: coders earn roughly $45K more. Basic Python (API calls, JSON parsing, data manipulation with pandas) is the minimum to access the higher salary band."),
+        ("What is the best programming language to learn first as a GTM Engineer?",
+         "Python. It's the most commonly used language among GTM Engineers who code, and it handles the three core technical tasks: API integration, data transformation, and automation scripting. SQL is a strong second choice for querying CRM data and building reports. JavaScript comes third for webhook handling and browser automation."),
+        ("Can you build a GTM Engineering career using only Clay?",
+         "Yes, but with a salary ceiling. Clay-only practitioners (the operator path) cluster around $110K median. You can build a solid career at that level, especially at agencies where Clay expertise is the primary deliverable. But if you want to break into the $150K+ range, adding coding skills is the clearest path to get there."),
+        ("How long does it take to learn enough coding for GTM Engineering?",
+         "Most practitioners report 2-3 months of focused Python learning to reach useful proficiency. You don't need to build web applications. You need to write scripts that call APIs, parse JSON responses, transform data in pandas, and automate repetitive tasks. Online courses covering Python for data analysis or Python for API integration are the fastest path."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Intelligence</div>
+        <h1>Do GTM Engineers Need to Code?</h1>
+        <p>The $45K question. Survey data reveals a bimodal distribution: practitioners cluster at low-code and high-code extremes, with compensation following the same split.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Coding Premium</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">Use AI Coding Tools</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">2&#8209;3mo</span>
+        <span class="stat-label">To Useful Proficiency</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Bimodal Distribution</h2>
+    <p>When we asked 228 GTM Engineers to rate their coding skills on a 1-10 scale, we expected a bell curve. We got something completely different: two distinct clusters. One group sits at 1-3 (low-code/no-code operators). The other sits at 7-10 (technical engineers). The middle range, 4-6, is a valley.</p>
+    <p>This bimodal pattern tells a story about the role itself. GTM Engineering has two distinct paths, and practitioners tend to commit to one or the other. You're either building with visual tools (Clay, Make, Zapier) and staying in the no-code world, or you're writing Python, building API integrations, and approaching the work as a software problem.</p>
+    <p>Few people occupy the middle ground. The data suggests that learning to code is a binary investment: you either cross the threshold into useful proficiency or you stay in the visual-builder lane. Dabbling doesn't pay off.</p>
+
+    <h2>The $45K Premium</h2>
+    <p>The salary data maps directly onto the coding distribution. GTM Engineers who rate themselves 7+ on coding ability earn roughly $45K more than those in the 1-3 range. That's the gap between a $110K median (operator path) and a $155K median (engineer path).</p>
+    <p>$45K is significant by any measure. It's the difference between a good salary and an excellent one. And it compounds: higher base salaries mean bigger percentage raises, better equity grants, and stronger negotiating positions for your next role.</p>
+    <p>For the complete salary breakdown by coding ability, see our <a href="/salary/coding-premium/">coding premium analysis</a>. The data includes breakdowns by seniority level, company stage, and specific languages.</p>
+
+    <h2>What "Coding" Means in Practice</h2>
+    <p>GTM Engineering coding is not software engineering. You're not building web applications, designing databases, or deploying microservices. The coding that commands a premium is specific and pragmatic.</p>
+    <p><strong>API integration:</strong> Writing Python scripts that call enrichment APIs (Clearbit, Apollo, FullEnrich), CRM APIs (HubSpot, Salesforce), and sequencing tool APIs (Instantly, Lemlist). Most of this is HTTP requests, JSON parsing, and error handling. A single well-written API integration script can replace an entire Make automation that would otherwise cost $50/month in platform fees.</p>
+    <p><strong>Data transformation:</strong> Cleaning, normalizing, and reshaping data with pandas. Deduplication logic. Fuzzy matching on company names. Parsing messy job titles into standardized categories. This is the work that separates scalable GTM operations from brittle ones.</p>
+    <p><strong>Custom automations:</strong> Scheduled scripts that run enrichment batches, monitor CRM data quality, generate reports, or trigger alerts. Python plus a cron job (or a simple scheduler) can replace expensive workflow automation platform subscriptions.</p>
+    <p><strong>Webhook handlers:</strong> Small Node.js or Python services that receive webhook events from CRM systems, process them, and route data to the right destination. This bridges gaps between tools that don't have native integrations.</p>
+
+    <h2>Which Languages Matter</h2>
+    <p><strong>Python (first priority):</strong> The dominant language among GTM Engineers who code. It handles API calls, data manipulation, and automation scripting. The ecosystem (requests, pandas, json, schedule) covers 90% of GTM Engineering coding needs. If you learn one language, make it Python.</p>
+    <p><strong>SQL (second priority):</strong> Increasingly important as companies want GTM Engineers who can query data warehouses and build custom reports. HubSpot and Salesforce both support SQL-like queries for bulk data operations. If you can write SELECT, JOIN, and GROUP BY queries, you can answer business questions that no-code tools struggle with.</p>
+    <p><strong>JavaScript (third priority):</strong> Useful for webhook handlers, browser automation, and custom Clay actions. Node.js is the runtime. If you already know Python, JavaScript is a natural second language. But if you're choosing where to invest, Python delivers more value per hour of learning.</p>
+
+    <h2>AI Coding Tools Changed the Equation</h2>
+    <p>71% of GTM Engineers report using AI coding tools (Claude, GitHub Copilot, ChatGPT). This is reshaping the coding skill question. You don't need to memorize API documentation or write boilerplate from scratch. You need to understand what to ask for and how to evaluate the output.</p>
+    <p>AI tools compress the learning curve. A GTM Engineer with basic Python knowledge and Claude or Copilot can write scripts that would have taken an experienced developer to build three years ago. The skill ceiling hasn't dropped, but the skill floor for useful output has fallen significantly.</p>
+    <p>This doesn't mean coding skills are less valuable. The opposite: AI tools make coding more accessible, which means more GTM Engineers will cross the threshold into the technical path. The premium might compress slightly as the supply of technical practitioners grows, but we're years away from that happening at meaningful scale.</p>
+
+    <h2>The Realistic Learning Path</h2>
+    <p>Most practitioners report 2-3 months of focused learning to reach useful Python proficiency. Here's what that looks like in practice.</p>
+    <p><strong>Weeks 1-2:</strong> Python fundamentals. Variables, functions, loops, dictionaries, lists. Any online course covering Python basics will work. Focus on exercises involving data structures and file handling.</p>
+    <p><strong>Weeks 3-4:</strong> HTTP requests and JSON. Learn the requests library. Call a free API (like JSONPlaceholder), parse the response, and write it to a file. Then call a real API: Clay, HubSpot, or Apollo all have well-documented APIs with free tiers.</p>
+    <p><strong>Weeks 5-6:</strong> Pandas for data manipulation. Load a CSV of lead data. Clean it: normalize company names, deduplicate on email, fill missing fields. This is the core data transformation work that GTM Engineers do daily.</p>
+    <p><strong>Weeks 7-8:</strong> Build a project. Create a script that enriches a list of companies via API, scores them based on criteria you define, and outputs a clean CSV for CRM import. This project becomes your portfolio piece and your proof of competence.</p>
+    <p>Can you skip this and succeed? Yes. The data shows 40%+ of practitioners operate successfully without coding. But you're choosing the lower salary band. That's a trade you should make consciously, not by default.</p>
+    <p>For more on how technical depth shapes your career path, see the <a href="/careers/operator-vs-engineer/">operator vs engineer analysis</a> and the <a href="/careers/skills-gap/">skills gap breakdown</a>.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("do-you-need-to-code")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/do-you-need-to-code/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/do-you-need-to-code/index.html", page)
+    print(f"  Built: careers/do-you-need-to-code/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -3445,6 +3732,9 @@ def main():
     build_career_job_market()
     build_career_how_got_jobs()
     build_career_work_life()
+    build_career_demographics()
+    build_career_vs_revops()
+    build_career_coding_needed()
 
     print("\n  Building meta files...")
     build_sitemap()

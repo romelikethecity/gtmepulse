@@ -24,12 +24,12 @@
 - [x] **SALN-04**: Salary page showing compensation by experience level ($105K median <1yr, scaling up)
 - [x] **SALN-05**: Salary page showing compensation by age bracket (36+ earns $140K median)
 - [x] **SALN-06**: Page detailing GTM Engineer bonus structures (51% receive bonus, 56% get 10-25% of base)
-- [ ] **SALN-07**: Page analyzing GTM Engineer equity compensation (68% no meaningful equity, by funding stage)
-- [ ] **SALN-08**: Salary comparison page for US vs global markets (US $135K vs non-US $75K)
-- [ ] **SALN-09**: Page comparing posted salaries vs actual reported salaries (posted $150K vs reported $135K)
-- [ ] **SALN-10**: Agency fee guide page ($1K-$33K/mo range, median $5K-$8K/mo, pricing models)
-- [ ] **SALN-11**: Agency fee comparison page by region (US premium, APAC $3K, MEA $4K)
-- [ ] **SALN-12**: Salary comparison page for seed stage vs enterprise (equity trade-offs)
+- [x] **SALN-07**: Page analyzing GTM Engineer equity compensation (68% no meaningful equity, by funding stage)
+- [x] **SALN-08**: Salary comparison page for US vs global markets (US $135K vs non-US $75K)
+- [x] **SALN-09**: Page comparing posted salaries vs actual reported salaries (posted $150K vs reported $135K)
+- [x] **SALN-10**: Agency fee guide page ($1K-$33K/mo range, median $5K-$8K/mo, pricing models)
+- [x] **SALN-11**: Agency fee comparison page by region (US premium, APAC $3K, MEA $4K)
+- [x] **SALN-12**: Salary comparison page for seed stage vs enterprise (equity trade-offs)
 
 ### Career & Breaking-In Pages
 
@@ -172,12 +172,12 @@
 | SALN-04 | Phase 4 | Complete |
 | SALN-05 | Phase 4 | Complete |
 | SALN-06 | Phase 4 | Complete |
-| SALN-07 | Phase 4 | Pending |
-| SALN-08 | Phase 4 | Pending |
-| SALN-09 | Phase 4 | Pending |
-| SALN-10 | Phase 4 | Pending |
-| SALN-11 | Phase 4 | Pending |
-| SALN-12 | Phase 4 | Pending |
+| SALN-07 | Phase 4 | Complete |
+| SALN-08 | Phase 4 | Complete |
+| SALN-09 | Phase 4 | Complete |
+| SALN-10 | Phase 4 | Complete |
+| SALN-11 | Phase 4 | Complete |
+| SALN-12 | Phase 4 | Complete |
 | CAREER-01 | Phase 5 | Pending |
 | CAREER-02 | Phase 5 | Pending |
 | CAREER-03 | Phase 5 | Pending |

@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: State of GTME Content Wave
 status: executing
-stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-03-13T17:22:00.000Z"
-last_activity: 2026-03-13 — 04-02 new salary analysis pages complete
+stopped_at: Completed 04-03-PLAN.md
+last_updated: "2026-03-13T17:33:00.000Z"
+last_activity: 2026-03-13 — 04-03 final salary pages + nav update complete
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 9
-  completed_plans: 2
-  percent: 22
+  completed_plans: 3
+  percent: 33
 ---
 
 # Project State
@@ -25,19 +25,19 @@ See: .planning/PROJECT.md (updated 2026-03-13)
 
 ## Current Position
 
-Phase: 4 of 7 (Salary Data Overhaul)
-Plan: 2 of 3 in current phase
+Phase: 4 of 7 (Salary Data Overhaul) -- COMPLETE
+Plan: 3 of 3 in current phase (done)
 Status: Executing
-Last activity: 2026-03-13 — 04-02 new salary analysis pages complete
+Last activity: 2026-03-13 — 04-03 final salary pages + nav update complete
 
-Progress: [██░░░░░░░░] 22%
+Progress: [███░░░░░░░] 33%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 10min
-- Total execution time: 19min
+- Total plans completed: 3
+- Average duration: 9min
+- Total execution time: 26min
 
 *Updated after each plan completion*
 
@@ -55,6 +55,9 @@ Progress: [██░░░░░░░░] 22%
 - [v2.0 04-01]: source_citation_html() pattern established for all data pages
 - [v2.0 04-02]: Custom stats block for bonus page (percentages, not salary ranges) using same CSS classes
 - [v2.0 04-02]: Analysis pages use 'analysis' type in salary_related_links for cross-linking
+- [v2.0 04-03]: Custom stats blocks for equity percentages, agency fees, and geographic comparisons reuse salary-stat-card CSS
+- [v2.0 04-03]: Salary index "More Salary Data" section with cards for all 12 analysis pages
+- [v2.0 04-03]: Nav dropdown limited to 3 new entries to avoid overcrowding; all pages accessible via index
 
 ### Pending Todos
 
@@ -69,5 +72,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 04-02-PLAN.md
+Stopped at: Completed 04-03-PLAN.md (Phase 04 complete)
 Resume file: None

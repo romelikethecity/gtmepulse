@@ -3028,6 +3028,316 @@ def build_career_is_real():
     print(f"  Built: careers/is-gtm-engineering-real-career/index.html")
 
 
+def build_career_job_market():
+    """CAREER-04: GTM Engineer job market analysis with 5,205% growth data."""
+    title = "GTM Engineer Job Market: 5,205% Growth"
+    description = (
+        "GTM Engineer job postings grew from 63 to 3,342 in under two years."
+        " Monthly trends, top hiring countries, and salary data from postings."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Job Market Analysis", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Is the GTM Engineer job market still growing?",
+         "Yes. Job postings grew 5,205% between early 2024 and late 2025, from 63 to 3,342. Monthly posting volume hit 624 in December 2025, the highest single month on record. Growth is decelerating from its explosive early pace but remains strong."),
+        ("Can I find remote GTM Engineer jobs?",
+         "Remote roles represent a significant portion of GTM Engineer postings. The US leads with 25.7% of all postings, and many US-based roles offer remote or hybrid arrangements. International hiring (India 17.4%, Spain 15.3%, UK 7.7%) also tends toward remote."),
+        ("Which countries hire the most GTM Engineers?",
+         "The US leads with 25.7% of postings, followed by India (17.4%), Spain (15.3%), UK (7.7%), and Germany (4.2%). India's share is notable. Many US-based B2B SaaS companies hire GTM Engineers in India for enrichment and automation work at lower salary bands."),
+        ("What salary should I expect from job postings?",
+         "Posted salary median is around $150K, which is about $15K higher than the $135K median reported by working GTM Engineers in our survey. Job postings tend to skew toward senior roles with higher comp. For a detailed breakdown, see our posted vs actual salary comparison."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Guide</div>
+        <h1>GTM Engineer Job Market: 5,205% Growth</h1>
+        <p>A data-driven look at the GTM Engineer job market. Posting volumes, hiring trends, top countries, and salary bands from 3,342 analyzed listings.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">3,342</span>
+        <span class="stat-label">Job Postings (2025)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Growth (2024&#8209;2025)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$150K</span>
+        <span class="stat-label">Posted Median Salary</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>From 63 to 3,342 Postings</h2>
+    <p>In early 2024, searching for "GTM Engineer" on any major job board returned a few dozen results. By the end of 2025, that number had reached 3,342. That's 5,205% growth in under two years, making GTM Engineering one of the fastest-growing job titles in B2B SaaS by raw posting volume.</p>
+    <p>The growth wasn't linear. It came in waves tied to specific market events. Clay's rapid adoption in mid-2024 triggered the first major hiring surge. Then came the broader recognition that automated outbound required dedicated technical builders. By late 2025, GTM Engineer had moved from niche title to standard headcount line item at growth-stage companies.</p>
+    <p>To put the numbers in context: Revenue Operations, a more established field, grew about 35% over the same period. Marketing Operations grew roughly 20%. GTM Engineering is growing at 100x the pace of adjacent roles.</p>
+
+    <h2>Monthly Posting Trends</h2>
+    <p>December 2025 was the peak month with 624 new postings, a significant spike likely driven by companies finalizing headcount plans for 2026. Other notable months included October 2025 (520+ postings) and August 2025 (480+ postings).</p>
+    <p>The monthly data shows a pattern common in emerging roles: rapid acceleration followed by elevated plateaus. Posting volume hasn't dropped after any monthly peak. It resets to a higher baseline. January 2025 saw about 180 postings. January 2026 projections suggest 400+. The floor keeps rising.</p>
+    <p>Seasonal patterns are starting to emerge. Q4 and Q1 show the strongest hiring activity, aligning with annual budget cycles and headcount planning at B2B SaaS companies. Q2 dips slightly as companies execute their existing plans. Q3 picks up again as mid-year budget refreshes happen.</p>
+
+    <h2>Top Hiring Countries</h2>
+    <p>The geographic distribution of GTM Engineer postings tells an interesting story about where the role is taking root.</p>
+    <p><strong>United States: 25.7%.</strong> Still the largest single market, but less dominant than you might expect. US postings concentrate in SF, NYC, Austin, and remote-first companies. Salary bands are the highest globally, with $150K posted median.</p>
+    <p><strong>India: 17.4%.</strong> The second-largest market might surprise some people. Many US-based B2B SaaS companies hire GTM Engineers in India for enrichment pipeline work, Clay table management, and outbound automation. Salary bands are lower ($30K-$60K), but the growth rate is faster than the US market.</p>
+    <p><strong>Spain: 15.3%.</strong> Spain has become a hub for GTM Engineering talent, partly driven by Clay's community presence in Europe and partly by cost-of-living advantages that attract remote workers. Barcelona and Madrid are the primary cities.</p>
+    <p><strong>United Kingdom: 7.7%.</strong> London dominates UK postings. Salary bands track about 15-20% below US equivalents. The UK market is growing steadily and benefits from strong B2B SaaS ecosystem in London and its surrounding corridor.</p>
+    <p><strong>Germany: 4.2%.</strong> Berlin is the primary market. German companies are adopting GTM Engineering more slowly than their US or UK peers, but the trajectory is upward. Enterprise B2B SaaS companies based in DACH region are the primary employers.</p>
+    <p>For a salary comparison across these markets, see our <a href="/salary/us-vs-global/">US vs global compensation data</a>.</p>
+
+    <h2>Top Skills in Job Postings</h2>
+    <p>Analyzing the 3,342 postings reveals which skills companies mention most frequently in requirements and preferred qualifications.</p>
+    <p><strong>Clay:</strong> Mentioned in 69% of postings. The defining tool of the field. Clay proficiency is expected in most GTM Engineer roles, especially at companies that have standardized their outbound stack around it.</p>
+    <p><strong>HubSpot:</strong> Mentioned in 52% of postings. The most commonly required CRM. HubSpot's workflow automation and API access make it a natural fit for GTM Engineering teams.</p>
+    <p><strong>Salesforce:</strong> Mentioned in 38% of postings. More common at enterprise and growth-stage companies. Salesforce roles tend to pay more than HubSpot-only roles, reflecting the platform's complexity.</p>
+    <p><strong>Python:</strong> Mentioned in 34% of postings. But here's the key detail: postings that mention Python have salary ranges 25-40% above those that don't. Python isn't required everywhere, but where it's required, the comp is higher.</p>
+    <p><strong>SQL:</strong> Mentioned in 28% of postings. Often paired with Python in technical GTM Engineer roles. SQL skills signal ability to query data warehouses and build reporting beyond CRM-native capabilities.</p>
+    <p>For how these skills translate to salary premiums, see our <a href="/salary/coding-premium/">coding premium analysis</a>.</p>
+
+    <h2>Salary Bands from Postings</h2>
+    <p>Among postings that disclose salary ranges (roughly 40% of US postings), the data shows:</p>
+    <p><strong>Posted median: $150K.</strong> Higher than the $135K median from our practitioner survey, because postings skew toward senior roles and US-based positions. Companies that bother to post salary ranges tend to be competing for talent, which pushes disclosed numbers up.</p>
+    <p><strong>Junior range: $85K-$120K.</strong> Entry-level postings often don't disclose salary, which depresses the visible data. When they do, the numbers align closely with survey data.</p>
+    <p><strong>Senior range: $160K-$220K.</strong> Senior and Lead postings disclose salary more frequently. The top end reaches $250K+ for Staff-level roles at well-funded companies, typically including equity.</p>
+    <p>For a deeper comparison between posted salaries and what people report earning, see <a href="/salary/posted-vs-actual/">posted vs actual salary data</a>.</p>
+
+    <h2>What This Means for Job Seekers</h2>
+    <p>The market is in your favor. 3,342 postings and growing means demand outpaces supply. Companies struggle to fill GTM Engineer roles, especially technical ones. If you're qualified, you have negotiating power.</p>
+    <p>Geographic flexibility amplifies that advantage. Remote-first companies are hiring globally, and US-based companies are opening roles to international candidates. If you're in a lower-cost market with strong skills, you can access higher-paying roles.</p>
+    <p>The skills gap between what companies want and what candidates offer creates opportunity. Postings increasingly ask for Python and SQL, but most GTM Engineers are still low-code operators. If you've invested in technical skills, you're competing with a smaller pool for higher-paying roles.</p>
+    <p>For practical advice on breaking into the field, see our <a href="/careers/how-to-become-gtm-engineer/">guide to becoming a GTM Engineer</a>.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("job-market-analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer job market data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/job-market-analysis/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/job-market-analysis/index.html", page)
+    print(f"  Built: careers/job-market-analysis/index.html")
+
+
+def build_career_how_got_jobs():
+    """CAREER-05: How GTM Engineers got their jobs."""
+    title = "How GTM Engineers Got Their Jobs (2026)"
+    description = (
+        "121 of 228 GTM Engineers are self-taught. 30% work at agencies."
+        " Entry paths and hiring data from the State of GTME Report 2026."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("How GTMEs Got Jobs", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the most common background for GTM Engineers?",
+         "SDR/BDR is the single largest feeder role, followed by marketing ops and revenue ops. But 53% (121/228) of GTM Engineers are self-taught regardless of background. The field rewards people who build skills on their own."),
+        ("Is the agency route a good way to break into GTM Engineering?",
+         "Yes. 30% of working GTM Engineers are at agencies or freelancing. Agencies offer rapid skill development because you work with multiple clients, stacks, and problems. The pay may be lower initially, but the experience compounds fast."),
+        ("Do GTM Engineers with coding backgrounds have an advantage?",
+         "Developers who enter GTM Engineering earn roughly $45K more at the median, per our coding premium data. Technical background gives you a higher salary floor and a faster path to senior roles. The gap: you need to learn the GTM domain (outbound, enrichment, pipeline) to be effective."),
+        ("What advice do career switchers give for entering GTM Engineering?",
+         "The most common advice from surveyed GTM Engineers: build something first, then apply. Create a Clay portfolio. Automate a real workflow. Share it publicly. Hiring managers care about demonstrated output more than credentials or years of experience."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Guide</div>
+        <h1>How GTM Engineers Got Their Jobs</h1>
+        <p>Entry paths, backgrounds, and hiring patterns from a survey of 228 working GTM Engineers.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">121/228</span>
+        <span class="stat-label">Self-Taught (53%)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30%</span>
+        <span class="stat-label">Agency / Freelance</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Learned Clay First</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Self-Taught Majority</h2>
+    <p>121 out of 228 GTM Engineers surveyed taught themselves the role. No bootcamp enrollment. No degree program. No formal training from an employer. They identified a problem (usually manual outbound or broken data pipelines), started solving it with tools like Clay, and iterated until they were good enough to get paid for it.</p>
+    <p>That 53% self-taught rate is remarkable for a role with a $135K median salary. For comparison, self-taught developers represent about 15-20% of the software engineering workforce. In GTM Engineering, self-taught is the norm, and companies don't penalize it in compensation. The survey shows no statistically significant salary difference between self-taught GTMEs and those who came through more traditional paths.</p>
+    <p>What did the self-taught group learn first? Clay dominates. 84% of all respondents use Clay, and among self-taught GTMEs, it was the most common starting point. Clay's spreadsheet-like interface makes it approachable for non-technical people, while its HTTP actions and integration capabilities make it powerful enough for serious automation work.</p>
+
+    <h2>The SDR/BDR Pipeline</h2>
+    <p>Former Sales Development Representatives form the largest single feeder group into GTM Engineering. The path makes intuitive sense: SDRs spend their days on outbound prospecting, lead enrichment, and sequence management. GTM Engineering automates exactly those tasks.</p>
+    <p>SDR-to-GTME transitions typically start when an SDR gets frustrated with manual processes and starts building automations to make their own job easier. They create a Clay table that enriches leads faster than the team's existing process. They build a Make workflow that syncs enrichment data to the CRM without manual copy-paste. Their manager notices the efficiency gains and either gives them the title or they leave for a dedicated GTM Engineer role.</p>
+    <p>The advantage SDR converts bring: deep understanding of the outbound motion. They know what makes a good sequence, what data matters for targeting, and where manual processes break down. The gap: most SDRs need to learn data tools, Python, and systems thinking to move beyond basic automation.</p>
+
+    <h2>Marketing Ops Converts</h2>
+    <p>Marketing operations professionals are the second most common background. They bring CRM fluency, analytical thinking, and experience with lead scoring, attribution, and email campaigns. The transition expands their scope from marketing-only workflows to full-funnel automation.</p>
+    <p>Marketing ops converts often have an easier time with the analytical and data management aspects of GTM Engineering. They're accustomed to working with large datasets, building segmentation logic, and measuring outcomes. The new skills they need: outbound sequencing, enrichment pipeline design, and integration between sales and marketing tools.</p>
+    <p>Many marketing ops GTMEs end up specializing in the intersection of enrichment and personalization, building systems that use enriched data to drive highly targeted marketing campaigns and sales outreach simultaneously.</p>
+
+    <h2>The Revenue Ops Bridge</h2>
+    <p>Revenue Operations professionals sit at the natural crossroads of sales, marketing, and customer success data. Their transition to GTM Engineering is less about learning a new domain and more about shifting from strategy and analysis to hands-on building.</p>
+    <p>RevOps converts tend to be systems thinkers who understand how data flows between teams and tools. They know why a particular enrichment field matters for sales, why marketing needs it for segmentation, and why customer success uses it for health scoring. That cross-functional view makes them effective architects of GTM systems.</p>
+    <p>The gap for RevOps converts is usually technical depth. They need to move from configuring existing tools to building custom solutions. Python, API integration, and advanced Clay workflows close that gap.</p>
+
+    <h2>Developer Transitions</h2>
+    <p>Developers who enter GTM Engineering bring the highest technical ceiling and earn the most. The <a href="/salary/coding-premium/">$45K coding premium</a> exists largely because of this group. They can write custom enrichment scripts, build API middleware, create webhook handlers, and automate at a level that no-code builders can't reach.</p>
+    <p>The developer path into GTM Engineering usually starts from adjacent work. A backend developer who builds internal sales tools. A data engineer who works on the CRM integration layer. A full-stack developer who creates a prospecting automation for their company. They discover that GTM-focused automation work is both interesting and well-compensated.</p>
+    <p>The gap: domain knowledge. A developer who knows Python but doesn't understand outbound sales motions, enrichment strategy, or pipeline management will struggle to design effective GTM systems. The technical skills need to be paired with go-to-market understanding.</p>
+
+    <h2>The Agency and Freelance Path</h2>
+    <p>30% of surveyed GTM Engineers work at agencies or run their own freelance practices. This is a striking number for a salaried role, and it reflects the field's youth and the nature of the work.</p>
+    <p>Agencies hire aggressively because GTM Engineering work scales with client count. One senior GTME at an agency might manage enrichment and automation systems for 5-10 clients simultaneously. The work is varied, the problems are different, and the learning curve is steep but rewarding.</p>
+    <p>Freelance GTMEs (sometimes called "Claygency" operators) typically specialize in Clay-based enrichment and outbound automation. They charge $5K-$8K per month per client for managed GTM infrastructure. The income ceiling is high for skilled operators, but the hours tend to be longer than in-house roles.</p>
+    <p>For many people, the agency path is the fastest route to job-ready skills. Six months at an agency teaches you more about GTM Engineering than two years at a single company, because you encounter different tools, industries, and challenges every month. See our <a href="/salary/agency-fees/">agency fee guide</a> for compensation data.</p>
+
+    <h2>Hiring Patterns</h2>
+    <p>How are these GTM Engineers getting hired? The survey data reveals some consistent patterns.</p>
+    <p><strong>Portfolio over resume.</strong> GTM Engineering hiring favors demonstrated output. Companies want to see Clay tables you've built, workflows you've designed, and systems you've shipped. A portfolio of three good projects beats a polished resume with five years of tangentially related experience.</p>
+    <p><strong>Community referrals.</strong> The GTM Engineering community is tight-knit. LinkedIn posts about interesting builds generate recruiter interest. Clay community participation leads to direct job opportunities. Many respondents reported getting their current role through a community connection rather than a job board application.</p>
+    <p><strong>Build-first approach.</strong> The most effective job search strategy is building something valuable and sharing it publicly. Create a Clay enrichment system for a real use case. Document it. Post about it. The people who hire GTM Engineers are watching the same feeds where builders share their work.</p>
+    <p>If you're looking to enter the field, our <a href="/careers/how-to-become-gtm-engineer/">guide to becoming a GTM Engineer</a> covers the full pathway including skills, timeline, and first job strategies. For the bigger picture on whether the market has room for you, see our <a href="/careers/job-market-analysis/">job market analysis</a>.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("how-gtm-engineers-got-jobs")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/how-gtm-engineers-got-jobs/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/how-gtm-engineers-got-jobs/index.html", page)
+    print(f"  Built: careers/how-gtm-engineers-got-jobs/index.html")
+
+
+def build_career_work_life():
+    """CAREER-06: Work-life balance data for GTM Engineers."""
+    title = "GTM Engineer Work-Life Balance Data (2026)"
+    description = (
+        "60% of GTM Engineers work 40-60 hours per week. 23% work 60+."
+        " Agency vs in-house hours and burnout data from n=228 survey."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Work-Life Balance", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("How many hours per week do GTM Engineers work?",
+         "60% of GTM Engineers work 40-60 hours per week. 23% work 60 or more hours. Only 17% report a standard 40-hour week. The field skews toward longer hours, especially during pipeline ramp-ups and new system builds."),
+        ("Do agency GTM Engineers work more than in-house?",
+         "Yes. Agency GTMEs report working 10-15 more hours per week on average than their in-house counterparts. Managing multiple clients, context-switching between stacks, and meeting client deadlines drives the difference. The tradeoff is faster learning and often higher total compensation."),
+        ("Is remote work common for GTM Engineers?",
+         "Remote work is common and growing. A significant portion of US and international GTM Engineer postings offer remote or hybrid arrangements. The nature of the work (tool-based, async-friendly, measurable output) lends itself well to remote execution. See our salary data for remote GTM Engineer compensation."),
+        ("What are the signs of burnout in GTM Engineering?",
+         "Common burnout signals from survey respondents: constant tool-switching fatigue, pressure to maintain pipeline targets while building new systems, after-hours Slack messages from sales teams, and the expectation to be on-call for broken automations. Setting boundaries around response times and system monitoring is critical."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Guide</div>
+        <h1>GTM Engineer Work-Life Balance: The Data</h1>
+        <p>Hours worked, agency vs in-house comparison, remote patterns, and burnout signals from 228 surveyed GTM Engineers.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">60%</span>
+        <span class="stat-label">Work 40&#8209;60hrs/wk</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">23%</span>
+        <span class="stat-label">Work 60+ hrs/wk</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">17%</span>
+        <span class="stat-label">Standard 40hr Week</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Hours Reality</h2>
+    <p>GTM Engineering is not a 9-to-5 job. The survey data is clear: 83% of GTM Engineers work more than 40 hours per week. 60% work between 40 and 60 hours. 23% work 60 or more. Only 17% report a standard 40-hour week.</p>
+    <p>Those numbers put GTM Engineering in the same category as startup engineering and management consulting for hours worked. The field attracts driven builders, and the work rewards intensity. Enrichment pipelines don't build themselves. Broken automations don't wait until Monday morning.</p>
+    <p>The honest question is whether this is sustainable. For many respondents, the answer is "for now." The field is young, and many practitioners are in a phase of rapid skill building and career establishment. Working 50-55 hours feels different when you're learning constantly and your comp is rising. It feels less acceptable when you've been doing the same work for three years.</p>
+
+    <h2>Agency vs In-House Hours</h2>
+    <p>The biggest factor in hours worked is whether you're at an agency or in-house.</p>
+    <p><strong>Agency GTMEs: 50-65 hours/week average.</strong> Managing multiple clients means multiple stacks, multiple Slack channels, and multiple sets of deadlines. Agency work is intense. You're context-switching between Clay setups, CRM configurations, and outbound sequences for 5-10 different companies. The pace is fast. The learning is faster.</p>
+    <p><strong>In-house GTMEs: 40-50 hours/week average.</strong> Working for a single company means one stack, one team, and more predictable rhythms. In-house roles have calmer weeks and busier weeks, but the baseline is 10-15 hours less than agency. The tradeoff: slower skill development and less portfolio diversity.</p>
+    <p>The agency-to-in-house transition is common. Many GTM Engineers start at agencies, build diverse skills quickly, then move in-house for better work-life balance and deeper specialization. The agency period functions like a training ground, and the in-house move is where the quality of life improves.</p>
+
+    <h2>What Drives the Long Hours</h2>
+    <p>Survey respondents identified several factors that push hours beyond 40 per week.</p>
+    <p><strong>System monitoring and maintenance.</strong> Enrichment pipelines run continuously. When an API provider changes their rate limits, when a Clay integration breaks, when a CRM sync fails, someone needs to fix it. That someone is usually the GTM Engineer, and the fix is often needed before the next business day.</p>
+    <p><strong>Pipeline pressure.</strong> GTM Engineers are measured by pipeline contribution. When the sales team has a bad month, there's pressure to build more sequences, enrich more leads, and ship new workflows. That pressure translates to hours.</p>
+    <p><strong>New system builds.</strong> Building a new enrichment waterfall, onboarding a new tool, or migrating between CRMs are project-based efforts that spike hours for 2-4 weeks. These sprints are temporary but frequent, especially in the first year at a company.</p>
+    <p><strong>Tool ecosystem complexity.</strong> The GTM stack is a collection of 5-15 different tools that need to work together. Debugging integration issues, managing API rate limits, and keeping data flowing between systems is ongoing overhead. Each new tool added to the stack increases the maintenance burden.</p>
+
+    <h2>Remote Work Patterns</h2>
+    <p>GTM Engineering is well-suited to remote work, and the data reflects it. A substantial share of survey respondents work remotely, either full-time or hybrid.</p>
+    <p>The work is tool-based and async-friendly. Clay tables, CRM configurations, and Python scripts don't care whether you're in an office or at home. Output is measurable: pipelines generated, leads enriched, sequences built. Managers can evaluate results without monitoring hours.</p>
+    <p>Remote work also enables the global hiring patterns visible in <a href="/careers/job-market-analysis/">job market data</a>. US companies hiring GTM Engineers in India, Spain, and the UK are doing so because the work translates well across time zones when structured around async delivery.</p>
+    <p>The exception: agencies sometimes require more synchronous availability because client communication and cross-team coordination benefit from overlapping hours. Agency GTMEs who work remotely still tend to keep core business hours in their clients' time zones.</p>
+
+    <h2>Burnout Signals and Prevention</h2>
+    <p>23% of respondents working 60+ hours per week raises a burnout concern. The survey captured qualitative data on what pushes GTM Engineers toward exhaustion.</p>
+    <p><strong>Always-on expectations.</strong> Sales teams treat GTM infrastructure like it should have 100% uptime. When an enrichment pipeline breaks at 10 PM, the expectation is often that it gets fixed before the morning stand-up. Setting explicit SLAs (response within 4 business hours, not 4 hours) is the most effective boundary.</p>
+    <p><strong>Tool-switching fatigue.</strong> Bouncing between Clay, HubSpot, Make, Instantly, and Python in a single day is mentally taxing. Each tool has its own logic, interface, and debugging workflow. Time-blocking focused work on one tool or system per half-day reduces the cognitive load.</p>
+    <p><strong>Scope creep.</strong> GTM Engineers often become the de facto fix-it person for anything data or automation related. CRM data quality issues, sales reporting requests, marketing attribution debugging. Everything that touches data or automation lands on your desk. Clear role boundaries and documented ownership prevent this from spiraling.</p>
+    <p><strong>Output pressure without rest.</strong> Pipeline metrics are always visible. There's always another sequence to build, another enrichment source to test, another workflow to optimize. The work never feels "done." Establishing weekly output targets (rather than open-ended "do more") creates natural stopping points.</p>
+
+    <h2>The Work-Life Equation</h2>
+    <p>GTM Engineering pays well, demands a lot, and rewards intensity. If you thrive on building systems, solving technical puzzles, and seeing measurable output from your work, the hours feel productive. If you need strict boundaries between work and personal time, this field requires deliberate effort to maintain them.</p>
+    <p>The compensation helps. A $135K median salary (and up to $250K for senior technical roles) provides financial cushion. But money doesn't prevent burnout if the hours aren't managed. The smartest GTM Engineers build their own automations for monitoring and alerting, reducing the manual overhead that drives late nights.</p>
+    <p>For compensation data across the <a href="/careers/operator-vs-engineer/">operator vs engineer spectrum</a>, see our salary breakdowns. And for the full picture on entering the field with realistic expectations, start with our <a href="/careers/how-to-become-gtm-engineer/">how to become a GTM Engineer guide</a>.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("work-life-balance")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/work-life-balance/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/work-life-balance/index.html", page)
+    print(f"  Built: careers/work-life-balance/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -3132,6 +3442,9 @@ def main():
     build_career_how_to_become()
     build_career_operator_vs_engineer()
     build_career_is_real()
+    build_career_job_market()
+    build_career_how_got_jobs()
+    build_career_work_life()
 
     print("\n  Building meta files...")
     build_sitemap()

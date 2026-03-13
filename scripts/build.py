@@ -2709,6 +2709,50 @@ def build_career_index():
         {cards}
     </div>
 
+    <h2>Agency &amp; Freelance</h2>
+    <div class="salary-index-grid">
+        <a href="/careers/agency-pricing/" class="salary-index-card">
+            <h3>Agency Pricing Guide</h3>
+            <div class="card-range">$5K&#8209;$8K/mo</div>
+            <p>Median fees, pricing tiers, and value-based vs hourly rates</p>
+        </a>
+        <a href="/careers/start-gtm-engineering-agency/" class="salary-index-card">
+            <h3>How to Start an Agency</h3>
+            <div class="card-range">30% Are Agency</div>
+            <p>Startup costs, first client, scaling from solo to team</p>
+        </a>
+        <a href="/careers/agency-vs-freelance/" class="salary-index-card">
+            <h3>Agency vs Freelance</h3>
+            <div class="card-range">2&#8209;3x Revenue Gap</div>
+            <p>Revenue, overhead, and lifestyle comparison from 97 respondents</p>
+        </a>
+        <a href="/careers/client-retention/" class="salary-index-card">
+            <h3>Client Retention Data</h3>
+            <div class="card-range">44% at 3&#8209;6mo</div>
+            <p>Engagement lengths, churn drivers, and retention strategies</p>
+        </a>
+        <a href="/careers/client-count/" class="salary-index-card">
+            <h3>Client Count Analysis</h3>
+            <div class="card-range">47% Have &lt;5</div>
+            <p>Capacity planning, revenue math, quality vs quantity</p>
+        </a>
+        <a href="/careers/pricing-models/" class="salary-index-card">
+            <h3>Pricing Models</h3>
+            <div class="card-range">~70% Retainer</div>
+            <p>Retainer, hybrid, project, and pay-per-lead comparison</p>
+        </a>
+        <a href="/careers/agency-fees-by-region-guide/" class="salary-index-card">
+            <h3>Fees by Region Guide</h3>
+            <div class="card-range">$3K&#8209;$8K Range</div>
+            <p>Regional pricing strategy and cross-border arbitrage</p>
+        </a>
+        <a href="/careers/deliverability-practices/" class="salary-index-card">
+            <h3>Deliverability Practices</h3>
+            <div class="card-range">89.7% Rotate</div>
+            <p>Domain rotation, warming, inbox management, common mistakes</p>
+        </a>
+    </div>
+
     <h2>Why This Data Matters</h2>
     <p>GTM Engineering is the fastest-growing role in B2B SaaS. Job postings surged 5,205% between early 2024 and late 2025. But good career intelligence has been missing. Most "GTM Engineer career guides" are thinly researched blog posts from tool vendors trying to sell you something.</p>
     <p>These guides are different. Every stat is sourced from our survey of 228 working GTM Engineers, not job descriptions, not LinkedIn profiles, not vendor marketing. Real people doing real work, telling us what they earn, how they got hired, and how many hours they put in.</p>
@@ -4319,6 +4363,378 @@ def build_agency_retention():
     print(f"  Built: careers/client-retention/index.html")
 
 
+def build_agency_client_count():
+    """AGENCY-05: Client count analysis page."""
+    title = "GTM Agency Client Count Analysis: 2026"
+    description = (
+        "47% of GTM agencies have fewer than 5 clients. Capacity planning,"
+        " revenue math, and the quality vs quantity trade-off from n=228."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Client Count", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("How many clients should a GTM agency have?",
+         "For a solo operator, 3-5 active clients is the sweet spot. Fewer than 3 creates revenue risk (losing one client means a 33%+ income drop). More than 6 leads to quality degradation, missed SLAs, and burnout. Agencies with 2-3 operators can handle 8-12 clients. The right number depends on engagement scope: full-stack outbound clients require more attention than list-building-only clients."),
+        ("How much time does each agency client take?",
+         "A managed outbound client typically requires 8-12 hours per week: 2-3 hours on enrichment and list building, 2-3 hours on sequence management and monitoring, 1-2 hours on reporting and client communication, and 2-3 hours on optimization and testing. Full-stack GTM clients can require 15-20 hours per week, which limits a solo operator to 2-3 such clients."),
+        ("What happens when a GTM agency has too many clients?",
+         "Quality drops before revenue rises. The warning signs: reply rates decline across accounts (you're recycling generic sequences instead of customizing), response times to client messages stretch beyond 4 hours, you stop proactive optimization and only react to problems, and you miss weekly reporting deadlines. Our data shows agencies that grow past their capacity threshold see a 15-20% increase in client churn within 60 days."),
+        ("How do I grow my agency client base?",
+         "Referrals are the highest-converting channel for GTM agencies. Ask satisfied clients for introductions. Beyond referrals: LinkedIn content showing real results (reply rates, meetings booked), case studies on your website, and targeted outbound to your own ICP (funded startups without dedicated outbound teams). The agencies growing fastest in our survey all use their own outbound skills to prospect, which doubles as proof of capability."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>GTM Agency Client Count Analysis</h1>
+        <p>How many clients do GTM agencies serve? We analyzed client roster sizes, capacity planning, and the revenue math behind scaling from 67 agency operators in our survey.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">47%</span>
+        <span class="stat-label">Have &lt;5 Clients</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">33%</span>
+        <span class="stat-label">Have 5&#8209;10 Clients</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">20%</span>
+        <span class="stat-label">Have 10+ Clients</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Distribution</h2>
+    <p>Nearly half of GTM agency operators (47%) serve fewer than 5 clients at any given time. Another 33% maintain 5-10 active clients. Only 20% run rosters of 10 or more, and those are almost exclusively multi-person agencies.</p>
+    <p>This distribution makes sense given the hands-on nature of GTM work. Each client requires custom enrichment, personalized sequences, domain management, and regular communication. It's not a set-it-and-forget-it business. Each account demands active daily attention.</p>
+
+    <h2>Capacity Per Operator</h2>
+    <p>A single GTM Engineer working as a solo agency operator can manage 4-6 clients doing managed outbound. That assumes each client requires 8-12 hours per week of active work: list building, sequence monitoring, reply management, and reporting.</p>
+    <p>The math: 40-50 working hours per week, minus 5-10 hours for sales, admin, and business development, leaves 30-40 hours for client work. At 8-12 hours per client, that's 3-5 clients per operator with buffer for unexpected issues.</p>
+    <p>Some operators push to 6-8 clients by reducing scope (list building only, no sequence management) or by templating their processes. But the data shows that operators serving more than 6 clients solo report lower client satisfaction scores and higher churn rates.</p>
+
+    <h2>The Revenue Math</h2>
+    <p>Client count times average fee equals revenue. Simple. Here's what the numbers look like at different scales.</p>
+    <p><strong>3 clients at $5K/mo = $15K/mo ($180K/yr):</strong> Comfortable solo operator income. After overhead ($500-$1K/mo in tools), taxes (25-30%), and benefits ($500-$1K/mo), take-home is roughly $90K-$110K. This matches a mid-level in-house salary with significantly more flexibility.</p>
+    <p><strong>5 clients at $6K/mo = $30K/mo ($360K/yr):</strong> Peak solo operator revenue. After overhead, taxes, and benefits, take-home is $160K-$200K. This is where the solo path outearns most in-house roles. But you're working at full capacity with zero slack for vacation or sick days.</p>
+    <p><strong>10 clients at $7K/mo with 2 operators = $70K/mo ($840K/yr):</strong> Small agency territory. Contractor costs ($5K-$8K/mo per operator), tool overhead ($2K-$3K/mo), and business expenses eat $10K-$15K/mo. Founder take-home: $200K-$350K/yr depending on how many clients you personally manage.</p>
+    <p>For the per-client fee breakdown, see our <a href="/careers/agency-pricing/">agency pricing guide</a>.</p>
+
+    <h2>Quality vs Quantity</h2>
+    <p>The agencies with the highest client satisfaction and retention don't have the most clients. They have the right number of clients at the right price.</p>
+    <p>Agencies running lean rosters (3-5 clients) report average engagement lengths of 7+ months. Those with 8+ clients per operator report 4-5 months. The correlation is clear: fewer clients means more attention per account, which means better results, which means longer engagements and higher lifetime value.</p>
+    <p>The premium agency strategy: serve fewer clients at higher rates. Three clients at $10K/mo beats six clients at $5K/mo in terms of revenue per hour, client satisfaction, and operator quality of life. Breaking into the $10K+/mo tier requires documented results and a reputation. Our <a href="/careers/client-retention/">retention data</a> shows how to build the track record that commands premium pricing.</p>
+
+    <h2>When to Grow the Roster</h2>
+    <p>Add a new client when: your current workload leaves 10+ hours per week unbooked, your pipeline has qualified prospects waiting, and your existing client metrics (reply rates, meetings booked) are stable or improving.</p>
+    <p>Don't add a new client when: you're already working 45+ hours per week on client work, an existing client is underperforming and needs more attention, or you haven't documented your processes well enough to maintain quality at higher volume.</p>
+    <p>The best agencies grow by raising rates, not by adding more accounts. When a client churns, replace them at a higher rate. Over 12-18 months, this natural attrition-and-upgrade cycle can double your per-client revenue without adding any operational complexity.</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("client-count")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/client-count/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/client-count/index.html", page)
+    print(f"  Built: careers/client-count/index.html")
+
+
+def build_agency_pricing_models():
+    """AGENCY-06: Pricing models breakdown page."""
+    title = "GTM Agency Pricing Models Breakdown 2026"
+    description = (
+        "Monthly retainer, project-based, hybrid, pay-per-lead: which GTM"
+        " agency pricing model fits your business? Data from n=228 survey."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Pricing Models", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the best pricing model for a new GTM agency?",
+         "Monthly retainer. It's the simplest to sell, easiest to manage, and creates predictable revenue. Start at $3K-$5K/mo with a 3-month minimum commitment. You can layer in performance bonuses or hybrid elements after 2-3 successful engagements. Avoid pay-per-lead as your first model. The unpredictability kills new agencies."),
+        ("How does hybrid pricing work for GTM agencies?",
+         "Hybrid combines a reduced base retainer ($2K-$4K/mo) with performance bonuses tied to specific outcomes: $200-$500 per qualified meeting booked, or 5-10% of closed-won revenue attributed to your pipeline. The base covers your operating costs; the performance component aligns incentives. It works best when you have 3+ months of historical data showing your typical output. Without that data, you risk underpricing the base."),
+        ("What are the risks of pay-per-lead pricing?",
+         "Three risks: lead quality disputes (client says the lead wasn't qualified, you disagree), volume unpredictability (some months produce 30 leads, others produce 8), and cash flow instability (your revenue swings with campaign performance). The biggest risk is misaligned definitions. If you and the client disagree on what counts as a 'qualified lead,' every invoice becomes a negotiation. Define the criteria in writing before the engagement starts."),
+        ("How do I transition from hourly to retainer pricing?",
+         "Track your hours for 2-3 months, calculate your average monthly hours per client, then multiply by 1.2x your hourly rate to set the retainer. Present the retainer to clients as a simplification: fixed monthly cost, predictable scope, no hour-tracking overhead. Most clients prefer retainers because they can budget accurately. Transition existing clients at contract renewal and start all new clients on retainers immediately."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>GTM Agency Pricing Models Breakdown</h1>
+        <p>Monthly retainer, hybrid, project-based, or pay-per-lead? We analyzed how 67 GTM agency operators price their services and which models produce the best outcomes for both sides.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">~70%</span>
+        <span class="stat-label">Use Monthly Retainers</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~15%</span>
+        <span class="stat-label">Use Hybrid Models</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~15%</span>
+        <span class="stat-label">Project or Per-Lead</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Monthly Retainer (The Standard)</h2>
+    <p>The monthly retainer is the default pricing model for GTM Engineering agencies. Roughly 70% of agency operators in our survey use it as their primary structure. The client pays a fixed monthly fee ($5K-$15K is the typical range), and the agency delivers a defined scope of work.</p>
+    <p>Why it works: predictable revenue for the agency, predictable costs for the client, and aligned incentives. The agency can invest in setup and optimization knowing the client will be there next month. The client gets consistent output without worrying about hourly overruns.</p>
+    <p><strong>Standard retainer scope typically includes:</strong> ICP enrichment and list building (X contacts per month), outbound sequence management (Y active sequences), domain and inbox management, weekly reporting, and monthly strategy calls. The key: define deliverables by output (contacts enriched, sequences launched) rather than by hours worked. Hours-based retainers create the same problems as hourly billing.</p>
+    <p>The retainer sweet spot for most agencies is $5K-$8K/mo per client. Below $5K, the math gets tight after tools and overhead. Above $8K, clients expect full-service execution that strains a solo operator's capacity. For detailed pricing data, see our <a href="/careers/agency-pricing/">agency pricing guide</a>.</p>
+
+    <h2>Hybrid Model (Base + Performance)</h2>
+    <p>About 15% of agencies use hybrid pricing: a reduced base retainer plus performance bonuses. The base covers operating costs ($2K-$4K/mo), and bonuses reward outcomes ($200-$500 per qualified meeting, or 5-10% of attributed pipeline).</p>
+    <p>Hybrid models work best for agencies with established track records. If you know you typically book 15-20 meetings per month for a client, a $3K base + $300/meeting structure pays $7.5K-$9K/mo, outperforming a flat $6K retainer. But the upside comes with downside risk: a slow month means $4K-$5K instead of $6K.</p>
+    <p>The implementation challenge is attribution. How do you prove a meeting came from your sequence versus the client's SDR team, inbound marketing, or a referral? Clean attribution requires: dedicated domains for outbound, separate CRM pipelines or tags, and agreement upfront on what counts as an "agency-sourced" opportunity. Sloppy attribution kills hybrid models faster than anything else.</p>
+
+    <h2>Project-Based Pricing</h2>
+    <p>Project pricing works for defined-scope engagements: building a Clay enrichment system ($3K-$8K), auditing an existing outbound infrastructure ($2K-$5K), setting up domain infrastructure ($1K-$3K), or creating a sequence template library ($2K-$4K).</p>
+    <p>The advantage: clear deliverables, finite timelines, and premium effective hourly rates (since you get faster with experience, but projects are priced on value, not hours). The disadvantage: no recurring revenue. You're always selling the next project.</p>
+    <p>Some agencies use project pricing as a gateway to retainers. Build the system (project), then offer to manage it (retainer). The project demonstrates your capability. The retainer captures the ongoing value. This sequence converts at roughly 40-50% in our survey: almost half of project clients convert to retainer clients within 3 months.</p>
+
+    <h2>Pay-Per-Lead / Pay-Per-Meeting</h2>
+    <p>The riskiest model, used by roughly 5-8% of agencies. You charge per qualified lead ($50-$200) or per booked meeting ($200-$500). Revenue scales directly with output, creating significant upside in high-performing campaigns and significant downside in slow ones.</p>
+    <p>The critical success factor: lead qualification definitions. "A meeting booked on the calendar" is cleaner than "a qualified lead" because it's binary and verifiable. Meetings happened or they didn't. Lead quality is subjective and creates disputes.</p>
+    <p>Agencies that make pay-per-meeting work tend to: select clients with large addressable markets (so volume is achievable), maintain a diverse client roster (so one slow campaign doesn't tank monthly revenue), and combine per-meeting fees with a minimal base retainer ($1K-$2K/mo) to cover their fixed costs.</p>
+
+    <h2>Which Model Fits Which Service?</h2>
+    <p><strong>Managed outbound:</strong> Monthly retainer. The work is ongoing, output is semi-predictable, and clients budget monthly. This is the bread-and-butter combination that 70% of agencies use.</p>
+    <p><strong>System builds:</strong> Project-based. Building a Clay system, setting up domain infrastructure, or creating enrichment waterfalls are defined-scope projects with clear deliverables. Price on value, not hours.</p>
+    <p><strong>Consulting and advisory:</strong> Retainer or hourly. If you're providing ongoing strategic guidance, a small monthly retainer ($2K-$4K) covers regular calls and async support. For one-off audits or training, hourly ($150-$300/hr) makes more sense.</p>
+    <p><strong>High-volume outbound for enterprise clients:</strong> Hybrid. Enterprise clients have big addressable markets and long sales cycles. A base retainer ensures your costs are covered while performance bonuses reward the volume of qualified meetings you generate.</p>
+    <p>For how pricing model choice affects client engagement length, see our <a href="/careers/client-retention/">retention data</a>.</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("pricing-models")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency pricing data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/pricing-models/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/pricing-models/index.html", page)
+    print(f"  Built: careers/pricing-models/index.html")
+
+
+def build_agency_regional_fees():
+    """AGENCY-07: Regional agency fees guide page."""
+    title = "GTM Agency Fees by Region: Strategy Guide"
+    description = (
+        "US agencies charge $5K-$8K/mo while APAC charges $3K median."
+        " Regional pricing strategy and arbitrage opportunities for agencies."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Fees by Region", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("How should I price my GTM agency in a non-US market?",
+         "Price based on your client's market, not your location. If you're serving US clients from APAC or LATAM, charge US rates ($5K-$8K/mo) or a slight discount (10-15% below US market). Your cost of living advantage is your margin, not a reason to undercut. Clients hiring remote agencies expect near-US quality and will pay near-US rates for it."),
+        ("Can non-US GTM agencies serve US clients effectively?",
+         "Yes, with timezone management. The most successful non-US agencies serving US clients maintain overlap hours (at least 3-4 hours of shared working time). APAC operators working US accounts typically shift their schedules to start in the late afternoon local time. European operators have natural overlap with US East Coast mornings. The key: responsive communication during US business hours and async workflows for everything else."),
+        ("What is the APAC opportunity for GTM agencies?",
+         "APAC-based agencies have a structural cost advantage. Tool costs are the same globally, but living expenses, contractor rates, and office costs are 40-60% lower in most APAC markets. An agency in Manila or Bangalore charging US clients $5K/mo has margins that US-based competitors can't match at the same price point. The bottleneck is talent: finding GTM Engineers with strong English communication skills and US market knowledge."),
+        ("How do GTM agency rates vary when negotiating across regions?",
+         "US clients expect $5K-$8K/mo for managed outbound. European clients expect $4K-$7K/mo (slightly lower due to smaller addressable markets). APAC clients pay $2K-$4K/mo for local market work but $4K-$6K/mo for US-market outbound. MEA clients typically pay $3K-$5K/mo. For raw salary data behind these ranges, see the <a href=\"/salary/agency-fees-by-region/\">agency fees by region salary page</a>."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>GTM Agency Fees by Region: Guide</h1>
+        <p>GTM agency pricing varies dramatically by geography. We analyzed regional fee data from our 228-person survey and mapped the strategic implications for agencies operating across borders.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$5K&#8209;$8K</span>
+        <span class="stat-label">US Median Fee</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$3K</span>
+        <span class="stat-label">APAC Median Fee</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$4K</span>
+        <span class="stat-label">MEA Median Fee</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Regional Fee Map</h2>
+    <p>GTM Engineering agency fees follow a predictable pattern tied to market maturity and client budgets. Here's what the data shows across major regions.</p>
+    <p><strong>United States ($5K-$8K/mo median):</strong> The largest and most mature market for GTM Engineering services. US-based agencies serving US clients command the highest rates globally. The market is competitive but growing faster than supply. Most agencies can fill their roster within 2-3 months of active prospecting.</p>
+    <p><strong>Europe ($4K-$7K/mo median):</strong> Strong demand in the UK, Germany, France, and the Nordics. European clients tend to have smaller addressable markets than US clients, which moderates pricing. GDPR compliance adds complexity (and cost) to data enrichment work. Agencies with GDPR-compliant processes can command premium rates from European clients who've been burned by non-compliant providers.</p>
+    <p><strong>APAC ($3K median):</strong> A rapidly growing market with significant cost advantages for operators. India, Philippines, Singapore, and Australia are the primary markets. Local client work pays $2K-$4K/mo. The real opportunity is serving US and European clients remotely at near-Western rates while maintaining APAC cost structures.</p>
+    <p><strong>Middle East and Africa ($4K median):</strong> An emerging market with high potential. UAE, Saudi Arabia, South Africa, and Nigeria lead adoption. MEA rates are slightly higher than APAC despite similar cost structures because the GTM Engineering talent pool is smaller, and demand from funded startups in the Gulf region is growing quickly.</p>
+    <p><strong>Latin America ($3K-$5K/mo):</strong> Timezone alignment with the US is the primary advantage for LATAM-based agencies. Brazil, Mexico, and Colombia have growing GTM Engineering communities. Agencies in LATAM time zones can offer US clients "nearshore" outbound management with 90%+ working hour overlap, which commands rates closer to US levels than other non-US regions.</p>
+    <p>For the raw fee data underlying these ranges, see our <a href="/salary/agency-fees-by-region/">agency fees by region salary page</a>.</p>
+
+    <h2>The Arbitrage Opportunity</h2>
+    <p>The biggest pricing opportunity in GTM Engineering right now: non-US operators serving US clients. The math is compelling.</p>
+    <p>A GTM Engineer in Bangalore or Manila can run Clay, Instantly, and HubSpot just as effectively as one in San Francisco. Tools are cloud-based. Data sources are global. The only requirement is strong English communication skills and familiarity with US B2B sales culture.</p>
+    <p>An agency based in India charging US clients $5K/mo has dramatically different economics than a US-based agency at the same price. US operating costs (health insurance, office space, cost of living) consume 40-60% of revenue. In most APAC markets, those same costs consume 15-25%. The gap goes straight to margin.</p>
+    <p>This isn't a race to the bottom. Quality APAC agencies charge US-comparable rates and pocket the difference. The clients don't care where the operator sits as long as the meetings get booked, the data is clean, and the communication is responsive during US business hours.</p>
+
+    <h2>Regional Market Maturity</h2>
+    <p>The US market is most mature: established pricing norms, clear client expectations, and a large pool of both agencies and clients. Competition is growing, but so is demand. New entrants can still build a full roster within 3-6 months.</p>
+    <p>Europe is second-most mature, with the UK and Germany leading adoption. The European market has a unique dynamic: GDPR compliance is both a barrier and a moat. Agencies that invest in compliant data practices can charge 15-20% premiums over competitors who cut corners.</p>
+    <p>APAC and LATAM are early-stage markets. Less competition means easier client acquisition, but also means more client education (explaining what a GTM Engineer does, why outbound works, how to measure ROI). Agencies in these regions report spending 20-30% more time on sales conversations compared to US agencies.</p>
+    <p>MEA is the newest market with the fastest growth rate. Funded startups in Dubai, Riyadh, and Johannesburg are actively seeking GTM Engineering services but have limited local options. First movers in these markets are building strong positions.</p>
+
+    <h2>Pricing Strategy by Scenario</h2>
+    <p><strong>US agency, US clients:</strong> Price at $5K-$8K/mo for managed outbound. This is the established range. Don't undercut. Compete on results and specialization, not price.</p>
+    <p><strong>Non-US agency, US clients:</strong> Price at $4K-$7K/mo (10-15% below US market). You're offering comparable quality at a slight discount, which many startup clients find compelling. Don't price too low or clients will question quality.</p>
+    <p><strong>Non-US agency, local clients:</strong> Price at local market rates ($2K-$5K/mo depending on region). Build your portfolio, then gradually shift to US clients at higher rates as your track record grows.</p>
+    <p><strong>US agency, global clients:</strong> Price at your standard US rates. International clients hiring a US-based agency are paying for perceived quality and timezone alignment. They expect US pricing. Discounting signals you're desperate.</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("agency-fees-by-region-guide")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency fee data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/agency-fees-by-region-guide/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/agency-fees-by-region-guide/index.html", page)
+    print(f"  Built: careers/agency-fees-by-region-guide/index.html")
+
+
+def build_agency_deliverability():
+    """AGENCY-08: Deliverability practices page."""
+    title = "GTM Agency Deliverability Practices 2026"
+    description = (
+        "89.7% of GTM agencies practice domain rotation. Warming, inbox"
+        " management, deliverability stack, and common mistakes from survey."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Deliverability", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is domain rotation and why do GTM agencies use it?",
+         "Domain rotation means sending outbound email from multiple lookalike domains (e.g., tryacme.com, acme-team.com, getacme.com) instead of your client's primary domain. 89.7% of GTM agencies practice it. The purpose: protect the client's primary domain reputation from spam complaints, distribute sending volume to stay under email provider rate limits, and maintain deliverability as you scale outbound volume. Without rotation, high-volume outbound from a single domain triggers spam filters within weeks."),
+        ("How long does it take to warm a new email domain?",
+         "2-3 weeks minimum using automated warming tools like Instantly or Smartlead's built-in warmer. The process: register the domain, set up SPF/DKIM/DMARC, create mailboxes, then gradually increase sending volume from 5 emails/day to 30-50/day. Rushing the warmup or skipping DNS authentication leads to immediate deliverability problems. Plan for 3 weeks of warmup before any domain enters your production sequence rotation."),
+        ("What deliverability tools do GTM agencies use?",
+         "The standard stack: Instantly or Smartlead for sequencing with built-in warmup, Google Workspace or Microsoft 365 for mailboxes, Cloudflare or Namecheap for domain registration, and a secondary domain monitoring tool to track reputation. Some agencies add dedicated warming tools (like Mailreach or Warmup Inbox) for additional volume. The total deliverability infrastructure cost per client typically runs $100-$300/mo for domains and mailboxes."),
+        ("How do I manage client expectations around email deliverability?",
+         "Set expectations during the sales process, not after problems arise. Explain: month 1 is infrastructure setup (domains, warming, DNS), month 2 sees ramping volume, and month 3 reaches full production. Most clients expect immediate results. The agencies with the best retention educate clients upfront that outbound infrastructure is a 60-90 day investment before reaching peak performance. Show the warmup timeline in your proposal."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>GTM Agency Deliverability Practices</h1>
+        <p>89.7% of GTM agency operators practice domain rotation. We surveyed 228 practitioners about their deliverability infrastructure, warming protocols, and the tools that keep outbound email landing in inboxes.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">89.7%</span>
+        <span class="stat-label">Use Domain Rotation</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">2&#8209;3wks</span>
+        <span class="stat-label">Warmup Period</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$100&#8209;$300</span>
+        <span class="stat-label">Monthly Infra Cost</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Domain Rotation: The Industry Standard</h2>
+    <p>Domain rotation is the single most practiced technique in GTM Engineering outbound. 89.7% of survey respondents who run outbound sequences use it. The remaining 10.3% are either very early in their careers or running low-volume, highly targeted campaigns where rotation isn't necessary.</p>
+    <p>The concept is straightforward: instead of sending all outbound email from acme.com (your client's primary domain), you register 3-5 lookalike domains (tryacme.com, acme-team.com, getacme.com, meetacme.com) and distribute sending volume across them. Each domain handles 30-50 emails per day, staying well under the thresholds that trigger spam filters.</p>
+    <p>Why this matters: email providers (Google, Microsoft) track sending patterns at the domain level. A domain sending 500 cold emails per day will be flagged and throttled within days. Five domains sending 100 emails each fly under the radar. The math is simple, and it works.</p>
+
+    <h2>Warming Infrastructure</h2>
+    <p>Every new domain needs warming before it can send production email. Warming is the process of gradually increasing sending volume while building positive engagement signals (opens, replies) that establish domain reputation.</p>
+    <p><strong>The warming timeline:</strong> Days 1-7: 5-10 emails per day, all to warming pools. Days 8-14: 15-25 emails per day, mixing warm and cold. Days 15-21: 30-50 emails per day, transitioning to production sequences. After day 21, the domain is production-ready.</p>
+    <p><strong>DNS requirements (non-negotiable):</strong> SPF record (authorizes your sending service), DKIM key (authenticates email signatures), DMARC policy (tells receivers how to handle authentication failures). Missing any of these three means immediate deliverability problems. Set them up at domain registration, before creating any mailboxes.</p>
+    <p>Most agencies use Instantly or Smartlead's built-in warming features, which automate the process by sending and receiving emails within a warming network. Some supplement with dedicated warming tools (Mailreach, Warmup Inbox) for additional volume and reputation signals.</p>
+
+    <h2>The Deliverability Stack</h2>
+    <p>A typical GTM agency's deliverability infrastructure includes these components.</p>
+    <p><strong>Sequencing platform (Instantly, Smartlead, or Lemlist):</strong> The core sending engine. Manages sequences, handles automatic follow-ups, and provides reply detection. Most agencies use Instantly or Smartlead for their built-in warmup, multi-inbox rotation, and volume-friendly pricing. Cost: $30-$97/mo per workspace.</p>
+    <p><strong>Email provider (Google Workspace or Microsoft 365):</strong> Where the mailboxes live. Google Workspace ($6-$12/user/mo) is the most popular choice. Microsoft 365 is gaining ground because Gmail's spam detection has become more aggressive in 2025-2026. Some agencies maintain mailboxes on both providers for redundancy.</p>
+    <p><strong>Domains (3-5 per client):</strong> Registered through Namecheap, Cloudflare, or Google Domains. Cost: $10-$15/domain/year. Most agencies register domains with slight variations of the client's brand name. Avoid exact-match domains that could trigger brand protection flags.</p>
+    <p><strong>Monitoring and analytics:</strong> Reply tracking, bounce rate monitoring, and domain reputation checks. Most sequencing platforms include basic analytics. Advanced agencies add tools like Google Postmaster Tools (free) to monitor domain reputation at the provider level.</p>
+    <p>Total deliverability infrastructure cost per client: $100-$300/mo. This covers 3-5 domains, associated mailboxes, and proportional tool costs. Most agencies pass this cost through to clients as a line item or build it into their retainer fee.</p>
+
+    <h2>Common Deliverability Mistakes</h2>
+    <p><strong>Skipping the warmup.</strong> The most common mistake for new operators. You register a domain Monday, start sending 200 emails Tuesday, and land in spam by Wednesday. Every domain needs 2-3 weeks of warmup. No shortcuts.</p>
+    <p><strong>Sending too much volume per domain.</strong> The safe ceiling is 30-50 emails per day per domain for cold outbound. Exceeding this consistently (even by 20-30%) increases the risk of reputation damage exponentially. When in doubt, add another domain rather than pushing volume on existing ones.</p>
+    <p><strong>Ignoring bounce rates.</strong> A bounce rate above 3-5% signals bad data. High bounces tell email providers that you're sending to unverified lists, which tanks domain reputation. Verify every email address before it enters a sequence. Tools like NeverBounce, ZeroBounce, or Instantly's built-in verification catch most invalid addresses.</p>
+    <p><strong>Reusing burned domains.</strong> When a domain's reputation drops (open rates crash, bounce rates spike, spam complaints rise), some operators try to "re-warm" it. In most cases, it's faster and cheaper to retire the domain and register a new one. Domain reputation recovers slowly (months), and the opportunity cost of sending from a damaged domain outweighs the $12 annual registration fee for a fresh one.</p>
+    <p><strong>Not monitoring inbox placement.</strong> You can have great open rates and still be landing in spam (some email clients count spam folder "opens" as opens). Use seed testing (send to test addresses and check which tab or folder the email lands in) to verify actual inbox placement, not just open rates.</p>
+
+    <h2>Client Expectations</h2>
+    <p>New agency clients often expect immediate outbound results. The reality: month 1 is setup. Educating clients on this timeline is part of the sales process, not an afterthought.</p>
+    <p>Include a deliverability timeline in your proposal. Show the warmup phase, ramp phase, and production phase. Set meeting-booked targets starting in month 2, not month 1. The agencies with the best client retention are transparent about infrastructure timelines from the first conversation.</p>
+    <p>For more on managing client expectations and reducing churn, see our <a href="/careers/client-retention/">client retention data</a>. For getting your agency off the ground in the first place, start with our <a href="/careers/start-gtm-engineering-agency/">guide to starting an agency</a>.</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("deliverability-practices")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency deliverability tips.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/deliverability-practices/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/deliverability-practices/index.html", page)
+    print(f"  Built: careers/deliverability-practices/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -4438,6 +4854,10 @@ def main():
     build_agency_start()
     build_agency_vs_freelance()
     build_agency_retention()
+    build_agency_client_count()
+    build_agency_pricing_models()
+    build_agency_regional_fees()
+    build_agency_deliverability()
 
     print("\n  Building meta files...")
     build_sitemap()

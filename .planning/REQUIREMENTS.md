@@ -163,13 +163,113 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (Populated during roadmap creation) | | |
+| SALUP-01 | Phase 4 | Pending |
+| SALUP-02 | Phase 4 | Pending |
+| SALUP-03 | Phase 4 | Pending |
+| SALN-01 | Phase 4 | Pending |
+| SALN-02 | Phase 4 | Pending |
+| SALN-03 | Phase 4 | Pending |
+| SALN-04 | Phase 4 | Pending |
+| SALN-05 | Phase 4 | Pending |
+| SALN-06 | Phase 4 | Pending |
+| SALN-07 | Phase 4 | Pending |
+| SALN-08 | Phase 4 | Pending |
+| SALN-09 | Phase 4 | Pending |
+| SALN-10 | Phase 4 | Pending |
+| SALN-11 | Phase 4 | Pending |
+| SALN-12 | Phase 4 | Pending |
+| CAREER-01 | Phase 5 | Pending |
+| CAREER-02 | Phase 5 | Pending |
+| CAREER-03 | Phase 5 | Pending |
+| CAREER-04 | Phase 5 | Pending |
+| CAREER-05 | Phase 5 | Pending |
+| CAREER-06 | Phase 5 | Pending |
+| CAREER-07 | Phase 5 | Pending |
+| CAREER-08 | Phase 5 | Pending |
+| CAREER-09 | Phase 5 | Pending |
+| CAREER-10 | Phase 5 | Pending |
+| CAREER-11 | Phase 5 | Pending |
+| CAREER-12 | Phase 5 | Pending |
+| AGENCY-01 | Phase 5 | Pending |
+| AGENCY-02 | Phase 5 | Pending |
+| AGENCY-03 | Phase 5 | Pending |
+| AGENCY-04 | Phase 5 | Pending |
+| AGENCY-05 | Phase 5 | Pending |
+| AGENCY-06 | Phase 5 | Pending |
+| AGENCY-07 | Phase 5 | Pending |
+| AGENCY-08 | Phase 5 | Pending |
+| JOBMKT-01 | Phase 5 | Pending |
+| JOBMKT-02 | Phase 5 | Pending |
+| JOBMKT-03 | Phase 5 | Pending |
+| JOBMKT-04 | Phase 5 | Pending |
+| JOBMKT-05 | Phase 5 | Pending |
+| JOBMKT-06 | Phase 5 | Pending |
+| JOBMKT-07 | Phase 5 | Pending |
+| JOBMKT-08 | Phase 5 | Pending |
+| TOOL-01 | Phase 6 | Pending |
+| TOOL-02 | Phase 6 | Pending |
+| TOOL-03 | Phase 6 | Pending |
+| TOOL-04 | Phase 6 | Pending |
+| TOOL-05 | Phase 6 | Pending |
+| TOOL-06 | Phase 6 | Pending |
+| TOOL-07 | Phase 6 | Pending |
+| TOOL-08 | Phase 6 | Pending |
+| TOOL-09 | Phase 6 | Pending |
+| TOOL-10 | Phase 6 | Pending |
+| TOOL-11 | Phase 6 | Pending |
+| TOOL-12 | Phase 6 | Pending |
+| TOOL-13 | Phase 6 | Pending |
+| TOOL-14 | Phase 6 | Pending |
+| TOOL-15 | Phase 6 | Pending |
+| TOOL-16 | Phase 6 | Pending |
+| BENCH-01 | Phase 6 | Pending |
+| BENCH-02 | Phase 6 | Pending |
+| BENCH-03 | Phase 6 | Pending |
+| BENCH-04 | Phase 6 | Pending |
+| BENCH-05 | Phase 6 | Pending |
+| BENCH-06 | Phase 6 | Pending |
+| BENCH-07 | Phase 6 | Pending |
+| BENCH-08 | Phase 6 | Pending |
+| BENCH-09 | Phase 6 | Pending |
+| COMP-01 | Phase 7 | Pending |
+| COMP-02 | Phase 7 | Pending |
+| COMP-03 | Phase 7 | Pending |
+| COMP-04 | Phase 7 | Pending |
+| COMP-05 | Phase 7 | Pending |
+| COMP-06 | Phase 7 | Pending |
+| BLOG-01 | Phase 7 | Pending |
+| BLOG-02 | Phase 7 | Pending |
+| BLOG-03 | Phase 7 | Pending |
+| BLOG-04 | Phase 7 | Pending |
+| BLOG-05 | Phase 7 | Pending |
+| BLOG-06 | Phase 7 | Pending |
+| BLOG-07 | Phase 7 | Pending |
+| BLOG-08 | Phase 7 | Pending |
+| BLOG-09 | Phase 7 | Pending |
+| BLOG-10 | Phase 7 | Pending |
+| BLOG-11 | Phase 7 | Pending |
+| BLOG-12 | Phase 7 | Pending |
+| BLOG-13 | Phase 7 | Pending |
+| BLOG-14 | Phase 7 | Pending |
+| QUAL2-01 | Phase 7 | Pending |
+| QUAL2-02 | Phase 7 | Pending |
+| QUAL2-03 | Phase 7 | Pending |
+| QUAL2-04 | Phase 7 | Pending |
+| QUAL2-05 | Phase 7 | Pending |
+| QUAL2-06 | Phase 7 | Pending |
+| QUAL2-07 | Phase 7 | Pending |
+| QUAL2-08 | Phase 7 | Pending |
+| QUAL2-09 | Phase 7 | Pending |
 
 **Coverage:**
 - v2.0 requirements: 88 total (SALUP:3, SALN:12, CAREER:12, TOOL:16, AGENCY:8, JOBMKT:8, BENCH:9, COMP:6, BLOG:14, QUAL2:9)
-- Mapped to phases: 0
-- Unmapped: 88
+- Mapped to phases: 88/88
+- Phase 4: 15 (SALUP:3, SALN:12)
+- Phase 5: 28 (CAREER:12, AGENCY:8, JOBMKT:8)
+- Phase 6: 25 (TOOL:16, BENCH:9)
+- Phase 7: 29 (COMP:6, BLOG:14, QUAL2:9)
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-13*
-*Last updated: 2026-03-13 after initial definition*
+*Last updated: 2026-03-13 after roadmap creation*

@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: State of GTME Content Wave
-status: defining_requirements
-stopped_at: Milestone v2.0 started, defining requirements
+status: ready_to_plan
+stopped_at: Roadmap created for v2.0, ready to plan Phase 4
 last_updated: "2026-03-13T00:00:00.000Z"
-last_activity: 2026-03-13 — Milestone v2.0 started
+last_activity: 2026-03-13 — v2.0 roadmap created (Phases 4-7)
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
-  total_plans: 0
+  total_plans: 9
   completed_plans: 0
   percent: 0
 ---
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-13)
 
 **Core value:** GTM Engineers can find accurate, vendor-neutral salary benchmarks and career intelligence in one place, with data no competitor provides.
-**Current focus:** Milestone v2.0 — State of GTME Content Wave
+**Current focus:** Phase 4 — Salary Data Overhaul
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-03-13 — Milestone v2.0 started
+Phase: 4 of 7 (Salary Data Overhaul)
+Plan: 0 of 2 in current phase
+Status: Ready to plan
+Last activity: 2026-03-13 — v2.0 roadmap created (Phases 4-7, 88 requirements mapped)
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -45,11 +45,12 @@ Progress: [░░░░░░░░░░] 0%
 
 ### Decisions
 
-- [v1.0 Roadmap]: 3-phase Wave 1 structure (build system -> core pages + newsletter -> salary engine)
-- [v1.0 01-01]: 3-file split pattern established: nav_config.py (data) -> templates.py (shell) -> build.py (generators)
-- [v1.0 01-01]: CSS cascade: tokens.css -> components.css -> styles.css, all referencing --gtme-* tokens
-- [v2.0]: Use State of GTME Report 2026 data (n=228) as primary data source for all content pages
+- [v1.0]: 3-phase Wave 1 structure (build system -> core pages + newsletter -> salary engine)
+- [v1.0 01-01]: 3-file split pattern: nav_config.py -> templates.py -> build.py
+- [v1.0 01-01]: CSS cascade: tokens.css -> components.css -> styles.css
+- [v2.0]: Real State of GTME Report 2026 data (n=228) replaces hardcoded estimates
 - [v2.0]: Every data page cites "Source: State of GTM Engineering Report 2026 (n=228)"
+- [v2.0 Roadmap]: SALUP first (data layer), then content phases, QUAL2 validated in final sweep
 
 ### Pending Todos
 
@@ -57,12 +58,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- Wave 1 Phase 1 is 50% complete. Wave 2 content depends on the build system and templates from Wave 1 being finished.
+- Wave 1 Phase 1 is 50% complete. v2.0 phases depend on Wave 1 build system and salary pages existing.
 - Content volume (~85 pages) needs efficient page generator patterns. Build on existing salary page generators.
-- 30%+ unique content per page across similar page types (e.g., 15 location salary pages) requires careful differentiation.
+- QUAL2 standards enforced per-page during build but formally validated in Phase 7 sweep.
 
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Defining v2.0 requirements
+Stopped at: v2.0 roadmap created, ready to plan Phase 4
 Resume file: None

@@ -1,80 +1,132 @@
-# Roadmap: GTME Pulse (Wave 1)
+# Roadmap: GTME Pulse
 
-## Overview
+## Milestones
 
-Wave 1 delivers the GTME Pulse site foundation and its anchor differentiator: salary data for a role no competitor covers. Three phases build bottom-up: a working build system and HTML shell, then core pages with newsletter infrastructure to prove the pipeline end-to-end, then 45 salary pages with the email-gated calculator. When Phase 3 completes, gtmepulse.com is a live site with ~51 pages of deep salary content and a working email capture funnel.
+- ✅ **v1.0 Wave 1: Foundation + Salary Engine** - Phases 1-3 (in progress)
+- 📋 **v2.0 Wave 2: State of GTME Content Wave** - Phases 4-7 (planned)
 
 ## Phases
 
-**Phase Numbering:**
-- Integer phases (1, 2, 3): Planned milestone work
-- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
-
-Decimal phases appear between their surrounding integers in numeric order.
-
-- [ ] **Phase 1: Build System and HTML Shell** - Python build pipeline, CSS architecture, responsive HTML shell, schema helpers, and content standards enforcement
-- [ ] **Phase 2: Core Pages and Newsletter Infrastructure** - Homepage, about, newsletter, legal pages, 404, Cloudflare Worker signup, Resend integration
-- [ ] **Phase 3: Salary Data Engine** - Methodology page, salary index, 34 salary breakdown/comparison pages, salary calculator with email gate, content quality enforcement
-
-## Phase Details
+<details>
+<summary>✅ v1.0 Wave 1: Foundation + Salary Engine (Phases 1-3)</summary>
 
 ### Phase 1: Build System and HTML Shell
 **Goal**: A working build pipeline that generates valid, responsive HTML pages with correct schema markup, CSS architecture, and sitemap from a single `python3 scripts/build.py` command
 **Depends on**: Nothing (first phase)
-**Requirements**: BUILD-01, BUILD-02, BUILD-03, BUILD-04, BUILD-05, BUILD-06, BUILD-07, BUILD-08, HTML-01, HTML-02, HTML-03, HTML-04, HTML-05, SEO-01, SEO-02, SEO-03, SEO-04, CONTENT-01, CONTENT-02, CONTENT-03, CONTENT-04, CONTENT-05, CONTENT-06
-**Success Criteria** (what must be TRUE):
-  1. Running `python3 scripts/build.py` produces an output/ directory with valid HTML files, copied assets, sitemap.xml, robots.txt, and CNAME, and prints a page count summary
-  2. Opening any generated page in a browser shows a responsive layout with working nav, footer, breadcrumbs, and correct fonts at 375px, 768px, and 1024px widths
-  3. Every generated page has a unique title (50-60 chars), unique meta description (150-158 chars), canonical URL, OG tags, and appropriate JSON-LD schema (Organization+WebSite on homepage, BreadcrumbList on inner pages)
-  4. The CSS cascade works without conflicts: tokens.css variables load, components.css provides reusable classes, styles.css adds page-scoped styles via body class, and cache-busting query params are present
-**Plans:** 1/2 plans executed
+**Requirements**: BUILD-01 through BUILD-08, HTML-01 through HTML-05, SEO-01 through SEO-04, CONTENT-01 through CONTENT-06
+**Plans**: 1/2 plans executed
 
 Plans:
-- [ ] 01-01-PLAN.md — Config layer (nav_config.py), HTML shell (templates.py), and CSS architecture (components.css + styles.css)
-- [ ] 01-02-PLAN.md — Build pipeline (build.py), placeholder pages, sitemap/robots/CNAME, content standards validator
+- [ ] 01-01-PLAN.md — Config layer, HTML shell, CSS architecture
+- [ ] 01-02-PLAN.md — Build pipeline, placeholder pages, sitemap/robots/CNAME
 
 ### Phase 2: Core Pages and Newsletter Infrastructure
-**Goal**: Six core pages live and functional, with a working newsletter signup flow from form submission through Cloudflare Worker to Resend Audiences
+**Goal**: Six core pages live and functional, with a working newsletter signup flow
 **Depends on**: Phase 1
-**Requirements**: CORE-01, CORE-02, CORE-03, CORE-04, CORE-05, CORE-06, NEWS-01, NEWS-02, NEWS-03, NEWS-04, NEWS-05, NEWS-06
-**Success Criteria** (what must be TRUE):
-  1. Homepage displays hero with key stats (3,000+ roles, $132K-$250K, 205% growth), section previews linking to salary/tools/career sections, and a newsletter signup CTA
-  2. About page shows Rome Thorndike bio and site mission; Privacy, Terms, and 404 pages render with correct content and navigation
-  3. Entering an email on the /newsletter page, homepage hero, or footer mini-form successfully adds the subscriber to the Resend Audience (confirmed via Resend dashboard) with visible success/error feedback
-  4. The Cloudflare Worker (subscribe.js) accepts POSTs from gtmepulse.com and localhost:8090, rejects other origins, validates email format, and returns appropriate status codes
+**Requirements**: CORE-01 through CORE-06, NEWS-01 through NEWS-06
 **Plans**: TBD
-
-Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
 
 ### Phase 3: Salary Data Engine
-**Goal**: 36 salary pages deliver deep, differentiated content with the methodology page establishing data credibility, the calculator gating full results behind email signup, and every page meeting quality thresholds
+**Goal**: 36 salary pages with deep content, methodology page, and email-gated calculator
 **Depends on**: Phase 2
-**Requirements**: SAL-01, SAL-02, SAL-03, SAL-04, SAL-05, SAL-06, SAL-07, QUAL-01, QUAL-02, QUAL-03, QUAL-04, QUAL-05, QUAL-06
+**Requirements**: SAL-01 through SAL-07, QUAL-01 through QUAL-06
+**Plans**: TBD
+
+</details>
+
+### v2.0 State of GTME Content Wave (Phases 4-7)
+
+**Milestone Goal:** Build ~85 new data-backed content pages using the State of GTME Report 2026 (n=228), replacing hardcoded salary estimates with real survey data and creating the definitive SEO resource for every GTM Engineering query.
+
+**Phase Numbering:**
+- Integer phases (4, 5, 6, 7): Planned milestone work
+- Decimal phases (4.1, 5.1): Urgent insertions (marked with INSERTED)
+
+- [ ] **Phase 4: Salary Data Overhaul** - Update existing salary data layer with real survey numbers, then build 12 new salary pages
+- [ ] **Phase 5: Career, Agency, and Job Market** - 28 pages covering career paths, agency business, and job market analysis
+- [ ] **Phase 6: Tools and Benchmarks** - 25 pages covering tool adoption data and industry benchmark statistics
+- [ ] **Phase 7: Comparisons, Blog Articles, and Quality Sweep** - 6 comparison pages, 14 blog articles, and site-wide quality/SEO validation
+
+## Phase Details
+
+### Phase 4: Salary Data Overhaul
+**Goal**: Existing salary pages show real State of GTME Report data instead of estimates, and 12 new salary pages cover compensation angles no competitor touches (coding premium, equity, bonuses, agency fees, age, company size)
+**Depends on**: Phase 3 (Wave 1 salary pages must exist)
+**Requirements**: SALUP-01, SALUP-02, SALUP-03, SALN-01, SALN-02, SALN-03, SALN-04, SALN-05, SALN-06, SALN-07, SALN-08, SALN-09, SALN-10, SALN-11, SALN-12
 **Success Criteria** (what must be TRUE):
-  1. The methodology page explains data sources, collection methods, sample sizes, limitations, and update frequency, and is linked from every salary page
-  2. Salary index page shows aggregate stats and links to all 34 breakdown/comparison sub-pages; each sub-page has a stats grid, range visualization, market context, comp drivers, and related links section
-  3. Every salary page has 1,200-2,000 words of content with 30%+ unique market context compared to sibling pages of the same type, 3+ internal links beyond nav/footer, and no duplicate titles or meta descriptions across the site
-  4. Salary comparison pages each have a visible FAQ section with 3-4 unique Q&A pairs and matching FAQPage JSON-LD schema
-  5. The salary calculator page shows a free preview and gates full percentile results behind an email signup form that adds the subscriber to Resend before revealing results
+  1. Every existing salary page displays $135K US median, $75K non-US median, and $60K-$250K+ range from the State of GTME Report instead of hardcoded estimates
+  2. Every salary page (existing and new) cites "Source: State of GTM Engineering Report 2026 (n=228)" with visible attribution
+  3. The 12 new salary pages each render with full content (1,200-2,000 words), stats grids, range visualizations, and FAQ sections where applicable
+  4. Running `python3 scripts/build.py` generates all updated and new salary pages without errors, and no two pages share the same title or meta description
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 04-01: Data layer update and existing page refresh (SALUP-01 through SALUP-03)
+- [ ] 04-02: New salary pages (SALN-01 through SALN-12)
+
+### Phase 5: Career, Agency, and Job Market
+**Goal**: Visitors can explore 28 pages of career intelligence, agency business data, and job market analysis, each backed by real survey and job posting data
+**Depends on**: Phase 4 (salary data layer must be updated; career/agency pages reference salary figures)
+**Requirements**: CAREER-01, CAREER-02, CAREER-03, CAREER-04, CAREER-05, CAREER-06, CAREER-07, CAREER-08, CAREER-09, CAREER-10, CAREER-11, CAREER-12, AGENCY-01, AGENCY-02, AGENCY-03, AGENCY-04, AGENCY-05, AGENCY-06, AGENCY-07, AGENCY-08, JOBMKT-01, JOBMKT-02, JOBMKT-03, JOBMKT-04, JOBMKT-05, JOBMKT-06, JOBMKT-07, JOBMKT-08
+**Success Criteria** (what must be TRUE):
+  1. A visitor searching "how to become a GTM engineer" finds a page with self-taught data (121/228), career path breakdown, and actionable steps
+  2. Agency-focused pages show real pricing data ($5K-$8K/mo median, regional breakdowns) and business metrics (client retention, pricing models) that a freelancer can use to benchmark their practice
+  3. Job market pages display the 5,205% growth narrative with monthly trends, country breakdowns, and salary band data from 3,342 postings
+  4. Every page in this phase has 1,200-2,000 words, BreadcrumbList schema, 3+ internal links, and visible source citations
+**Plans**: TBD
+
+Plans:
+- [ ] 05-01: Career and breaking-in pages (CAREER-01 through CAREER-12)
+- [ ] 05-02: Agency, freelance, and job market pages (AGENCY-01 through AGENCY-08, JOBMKT-01 through JOBMKT-08)
+
+### Phase 6: Tools and Benchmarks
+**Goal**: Visitors can explore the full GTM Engineer tech stack (adoption rates, frustrations, spend) and industry benchmarks (demographics, bottlenecks, predictions) through 25 data-reference pages
+**Depends on**: Phase 4 (tool pages reference salary data for context)
+**Requirements**: TOOL-01, TOOL-02, TOOL-03, TOOL-04, TOOL-05, TOOL-06, TOOL-07, TOOL-08, TOOL-09, TOOL-10, TOOL-11, TOOL-12, TOOL-13, TOOL-14, TOOL-15, TOOL-16, BENCH-01, BENCH-02, BENCH-03, BENCH-04, BENCH-05, BENCH-06, BENCH-07, BENCH-08, BENCH-09
+**Success Criteria** (what must be TRUE):
+  1. The tech stack benchmark page shows adoption rates for every major tool category (Clay 84%, CRM 92%, AI coding 71%, n8n 54%) with agency vs in-house splits
+  2. Individual tool pages (Clay, Python, SQL, Zapier vs n8n, HubSpot vs Salesforce) provide adoption data, salary impact, and honest criticism grounded in survey responses
+  3. Benchmark pages cover the full "state of" picture: 50 key stats, demographics, bottlenecks, headcount trends, and future predictions
+  4. Every page meets content depth (1,200-2,000 words) and has working internal links to related salary, career, and tool pages
+**Plans**: TBD
+
+Plans:
+- [ ] 06-01: Tool adoption and analysis pages (TOOL-01 through TOOL-16)
+- [ ] 06-02: Benchmark and statistics pages (BENCH-01 through BENCH-09)
+
+### Phase 7: Comparisons, Blog Articles, and Quality Sweep
+**Goal**: Six comparison pages and 14 blog articles add the editorial opinion layer, and a final quality sweep confirms every v2.0 page meets SEO and content standards
+**Depends on**: Phases 4, 5, 6 (comparisons and blogs reference data from all prior phases)
+**Requirements**: COMP-01, COMP-02, COMP-03, COMP-04, COMP-05, COMP-06, BLOG-01, BLOG-02, BLOG-03, BLOG-04, BLOG-05, BLOG-06, BLOG-07, BLOG-08, BLOG-09, BLOG-10, BLOG-11, BLOG-12, BLOG-13, BLOG-14, QUAL2-01, QUAL2-02, QUAL2-03, QUAL2-04, QUAL2-05, QUAL2-06, QUAL2-07, QUAL2-08, QUAL2-09
+**Success Criteria** (what must be TRUE):
+  1. Comparison pages present data-backed analysis (engineer vs operator $45K gap, in-house vs agency splits, regional salary differences) with visible FAQ sections and FAQPage schema
+  2. Blog articles each have 1,500-2,500 words with a specific thesis backed by report data, not generic commentary
+  3. Running a full build produces zero duplicate titles or meta descriptions across the entire site (all waves combined)
+  4. Every v2.0 page has: unique title (50-60 chars), meta description (150-158 chars), canonical URL, OG/Twitter tags, BreadcrumbList schema, 3+ internal links, visible source citation, and passes writing standards (no em-dashes, no false reframes, no banned words)
+  5. Navigation and footer links are updated to surface new content sections (career, tools, benchmarks, blog)
+**Plans**: TBD
+
+Plans:
+- [ ] 07-01: Comparison pages (COMP-01 through COMP-06)
+- [ ] 07-02: Blog articles (BLOG-01 through BLOG-14)
+- [ ] 07-03: Site-wide quality and SEO validation sweep (QUAL2-01 through QUAL2-09)
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3
+Phases execute in numeric order: 4 → 5 → 6 → 7
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Build System and HTML Shell | 1/2 | In Progress|  |
-| 2. Core Pages and Newsletter Infrastructure | 0/0 | Not started | - |
-| 3. Salary Data Engine | 0/0 | Not started | - |
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Build System and HTML Shell | v1.0 | 1/2 | In progress | - |
+| 2. Core Pages and Newsletter | v1.0 | 0/2 | Not started | - |
+| 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
+| 4. Salary Data Overhaul | v2.0 | 0/2 | Not started | - |
+| 5. Career, Agency, and Job Market | v2.0 | 0/2 | Not started | - |
+| 6. Tools and Benchmarks | v2.0 | 0/2 | Not started | - |
+| 7. Comparisons, Blog, and Quality | v2.0 | 0/3 | Not started | - |
 
 ---
-*Roadmap created: 2026-03-10*
-*Last updated: 2026-03-10*
+*Roadmap created: 2026-03-10 (Wave 1)*
+*v2.0 phases added: 2026-03-13*
+*Last updated: 2026-03-13*

@@ -5533,6 +5533,661 @@ def build_jobmkt_spain():
 
 
 # ---------------------------------------------------------------------------
+# Tool Pages
+# ---------------------------------------------------------------------------
+
+TOOL_PAGES = [
+    {"slug": "tech-stack-benchmark", "title": "Tech Stack Benchmark"},
+    {"slug": "clay", "title": "Clay: 84% Adoption"},
+    {"slug": "crm-adoption", "title": "CRM Adoption: 92%"},
+    {"slug": "ai-coding-tools", "title": "AI Coding Tools: 71%"},
+    {"slug": "n8n-adoption", "title": "n8n Adoption: 54%"},
+    {"slug": "apollo-adoption", "title": "Apollo Adoption"},
+    {"slug": "instantly-adoption", "title": "Instantly Adoption"},
+    {"slug": "smartlead-adoption", "title": "Smartlead Adoption"},
+    {"slug": "make-vs-n8n", "title": "Make vs n8n"},
+    {"slug": "linkedin-sales-nav", "title": "LinkedIn Sales Navigator"},
+    {"slug": "6sense-adoption", "title": "6sense Adoption"},
+    {"slug": "zoominfo-adoption", "title": "ZoomInfo Adoption"},
+    {"slug": "outreach-adoption", "title": "Outreach Adoption"},
+    {"slug": "salesloft-adoption", "title": "Salesloft Adoption"},
+    {"slug": "phantombuster-adoption", "title": "PhantomBuster Adoption"},
+    {"slug": "lemlist-adoption", "title": "Lemlist Adoption"},
+]
+
+# First 5 slugs are built now; the rest are coming soon
+BUILT_TOOL_SLUGS = {"tech-stack-benchmark", "clay", "crm-adoption", "ai-coding-tools", "n8n-adoption"}
+
+
+def tool_related_links(current_slug):
+    """Generate related tool page links (same pattern as agency_related_links)."""
+    links = [("/tools/", "Tools Index")]
+    for page in TOOL_PAGES:
+        if page["slug"] != current_slug and page["slug"] in BUILT_TOOL_SLUGS:
+            links.append((f"/tools/{page['slug']}/", page["title"]))
+    # Add salary cross-links
+    links.append(("/salary/coding-premium/", "Coding Premium: $45K Gap"))
+    links.append(("/salary/", "Salary Data Index"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Tool Data</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_tool_index():
+    """Tools index page at /tools/ with card grid linking to all tool pages."""
+    title = "GTM Engineer Tools: Tech Stack Data (2026)"
+    description = (
+        "GTM Engineer tool adoption data from 228 practitioners. Clay 84%,"
+        " CRM 92%, AI coding 71%, n8n 54%. Independent benchmarks."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    # Cards for built pages
+    card_data = [
+        ("tech-stack-benchmark", "Tech Stack Benchmark", "Full adoption rates, spend data, and agency vs in-house splits across every tool category", "16 Categories"),
+        ("clay", "Clay Deep-Dive", "84% adoption, 96% among agencies. Most loved and most frustrating tool in the stack", "84% Adoption"),
+        ("crm-adoption", "CRM Adoption", "92% use a CRM. Salesforce vs HubSpot split by company size, integration patterns", "92% Adoption"),
+        ("ai-coding-tools", "AI Coding Tools", "71% use AI coding tools. Cursor and Claude Code lead. The $45K coding premium connection", "71% Adoption"),
+        ("n8n-adoption", "n8n Adoption", "54% adoption, replacing Zapier and Make. Agency vs in-house usage gap", "54% Adoption"),
+    ]
+
+    built_cards = ""
+    for slug, card_title, desc, stat in card_data:
+        built_cards += f'''<a href="/tools/{slug}/" class="salary-index-card">
+    <h3>{card_title}</h3>
+    <div class="card-range">{stat}</div>
+    <p>{desc}</p>
+</a>
+'''
+
+    # Coming soon cards
+    coming_soon_cards = ""
+    for page in TOOL_PAGES:
+        if page["slug"] not in BUILT_TOOL_SLUGS:
+            coming_soon_cards += f'''<div class="salary-index-card" style="opacity: 0.5; cursor: default;">
+    <h3>{page["title"]}</h3>
+    <div class="card-range">Coming Soon</div>
+    <p>Data analysis in progress. Check back for the full report.</p>
+</div>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>GTM Engineer Tech Stack Data</h1>
+        <p>What 228 GTM Engineers use every day, how much they spend, and which tools they love (and hate). Every number comes from the State of GTM Engineering Report 2026.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Clay Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">CRM Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">AI Coding Tools</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">54%</span>
+        <span class="stat-label">n8n Adoption</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The GTM Engineer Stack in 2026</h2>
+    <p>GTM Engineers run on a specific set of tools. The stack has standardized faster than anyone expected. Clay sits at the center for 84% of practitioners, CRM adoption is near-universal at 92%, and AI coding tools have hit 71% in what feels like overnight adoption.</p>
+    <p>This is a practitioner-sourced view. We asked 228 working GTM Engineers what they use, what they pay, and what frustrates them. The results paint a picture of a role that's deeply tool-dependent but increasingly sophisticated in how tools connect to each other.</p>
+
+    <h2>Key Patterns in Tool Adoption</h2>
+    <p>Three trends stand out from the data. First, Clay has become the gravitational center of the GTM stack. At 84% adoption (96% among agencies), it's the closest thing to a universal tool in this space. But it's also the most complained-about tool, which says something about how critical it is: people complain about tools they can't leave.</p>
+    <p>Second, the gap between agency and in-house stacks is widening. Agencies spend more, adopt faster, and stack more tools per person. 55% of agencies spend $5K-$25K annually on tools, compared to lower spend at in-house teams where the company foots the bill and procurement slows everything down.</p>
+    <p>Third, AI coding tools crossed the majority adoption threshold at 71%. Cursor and Claude Code are the frontrunners. GTM Engineers who code earn $45K more on average, and AI tools are accelerating that coding adoption because you don't need to be a developer to write Python when Claude Code is writing 80% of it for you.</p>
+
+    <h2>What's Covered</h2>
+    <p>Each tool page below digs into adoption rates, usage patterns, sentiment data, and how the tool connects to the broader stack. Where relevant, we tie tool adoption to salary data from our <a href="/salary/coding-premium/">coding premium analysis</a> and <a href="/careers/skills-gap/">skills gap research</a>.</p>
+    <p>We track 16 tool categories total. The five pages below cover the highest-adoption tools with the most survey data. The rest are in production and will be published as analysis completes.</p>
+
+    <h2>The Agency vs In-House Divide</h2>
+    <p>Agency and in-house GTM Engineers don't just use different amounts of tools. They use them differently. Agencies stack 6-8 tools per operator because breadth creates flexibility across client engagements. In-house teams standardize on 4-5 tools chosen by procurement. This means agency GTM Engineers develop broader tool fluency, while in-house engineers develop deeper expertise in fewer platforms.</p>
+    <p>The hiring implications are real. Agency veterans interview well because they've touched every major tool. In-house specialists command premium rates within their platform (Salesforce admins, for example). Neither path is wrong, but they produce different skill profiles that affect career mobility.</p>
+
+    <h2>Tool Deep-Dives</h2>
+    <div class="salary-index-grid">
+        {built_cards}
+    </div>
+
+    <h2>Coming Soon</h2>
+    <div class="salary-index-grid">
+        {coming_soon_cards}
+    </div>
+
+    <h2>Tool Spend: Where the Money Goes</h2>
+    <p>55% of agency GTM Engineers spend $5,000-$25,000 per year on tools. That's personal or company budget allocated specifically to the GTM stack. The breakdown skews toward data enrichment (Clay credits, Apollo subscriptions) and sequencing tools (Instantly, Smartlead). Workflow automation is the cheapest category for agencies using self-hosted n8n.</p>
+    <p>In-house GTM Engineers report lower personal spend because the company covers tool costs through procurement. But organizational spend is often higher due to enterprise pricing tiers. A Salesforce Enterprise license costs more than a startup's entire tool stack.</p>
+    <p>The spending pattern reveals something important about the role's economics. GTM Engineers who invest in tools with better data quality and automation capability produce more pipeline per hour. The $5K-$25K tool investment at agencies generates multiples of that in client revenue. Underspending on tools is a false economy: the cheapest enrichment provider saves money on subscriptions and costs pipeline in bad data.</p>
+
+    <h2>How We Collect Tool Data</h2>
+    <p>Our tool data comes from three sources. The State of GTM Engineering Report 2026 survey asked 228 practitioners to list every tool in their stack, rate their satisfaction, and report what they spend. We cross-referenced this with 3,342 job postings that mention specific tool requirements. And we conducted follow-up interviews with 15 practitioners about their tool selection process and frustrations.</p>
+    <p>This isn't vendor-funded research. No tool company paid for placement or influenced the analysis. When we say Clay is frustrating, Clay didn't get a chance to review the draft first. When we say 92% use a CRM, that's what practitioners reported, not what CRM vendors want you to believe.</p>
+    <p>For the complete salary data behind these tool adoption patterns, see the <a href="/salary/">salary data index</a>. For career context on how tool skills affect hiring, check the <a href="/careers/skills-gap/">skills gap analysis</a>.</p>
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer tool intel.")
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/",
+        body_content=body, active_path="/tools/",
+        extra_head=get_breadcrumb_schema(crumbs), body_class="page-inner",
+    )
+    write_page("tools/index.html", page)
+    print(f"  Built: tools/index.html")
+
+
+def build_tool_tech_stack():
+    """Tech stack benchmark page with full adoption data across all categories."""
+    title = "GTM Engineer Tech Stack: 2026 Benchmark"
+    description = (
+        "Full tech stack adoption rates for GTM Engineers. Clay 84%, CRM 92%,"
+        " AI coding 71%, n8n 54%. Agency vs in-house spend data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Tech Stack Benchmark", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What tools do GTM Engineers use the most?",
+         "CRM leads at 92% adoption, followed by Clay at 84%, AI coding tools at 71%, data enrichment tools like Apollo and ZoomInfo at 65%, and workflow automation tools like n8n at 54%. The exact mix varies by company size and whether the practitioner works at an agency or in-house."),
+        ("How much do GTM Engineers spend on tools?",
+         "55% of agency GTM Engineers spend between $5,000 and $25,000 annually on their tool stack. In-house GTM Engineers typically spend less out-of-pocket because companies cover tool costs, but total organizational spend can be higher due to enterprise pricing tiers."),
+        ("What is the difference between agency and in-house GTM tool stacks?",
+         "Agencies adopt tools faster and stack more per person. Clay adoption is 96% among agencies vs 78% in-house. Agencies also spend more on tools ($5K-$25K annually) because tool efficiency directly impacts their margins. In-house teams tend to standardize on fewer tools dictated by company-wide procurement."),
+        ("Should GTM Engineers learn to code?",
+         "71% of GTM Engineers already use AI coding tools, and those who code earn $45K more on average. You don't need to be a developer, but basic Python, SQL, and API skills give you a significant compensation advantage. AI coding assistants like Cursor and Claude Code make this more accessible than ever."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>GTM Engineer Tech Stack Benchmark</h1>
+        <p>Full adoption rates, spend data, and agency vs in-house splits for every major tool category. From the State of GTM Engineering Report 2026 (n=228).</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">CRM Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Clay Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">AI Coding Tools</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$5K&#8209;$25K</span>
+        <span class="stat-label">Annual Tool Spend (55%)</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Stack Has Standardized</h2>
+    <p>Two years ago, GTM Engineers assembled their stacks from whatever they could find. Today, the stack has converged around a small set of dominant tools. CRM is universal (92%). Clay is the center of gravity for data enrichment (84%). AI coding tools crossed majority adoption (71%). And n8n is emerging as the workflow backbone, especially at agencies (54%).</p>
+    <p>This convergence happened faster than any comparable role. DevOps took five years to standardize around AWS/Docker/Kubernetes. GTM Engineering did it in under two. That speed reflects the role's youth but also Clay's gravitational pull: once Clay became the default enrichment layer, the rest of the stack organized around it.</p>
+
+    <h2>Data Enrichment: Clay Dominates</h2>
+    <p>Clay's 84% adoption rate makes it the defining tool of the GTM Engineer role. Among agencies, that number climbs to 96%. Clay appears in 69% of GTM Engineer job postings, making it the single most-requested tool skill.</p>
+    <p>Apollo and ZoomInfo hold the second tier at 65% combined adoption for contact and company data. Most GTM Engineers use these as data sources piped into Clay rather than standalone platforms. FullEnrich, Lusha, and Cognism fill specialized gaps, each below 20% adoption.</p>
+    <p>The enrichment layer is where GTM Engineers spend the most time and money. It's also where the biggest frustrations live: data quality inconsistencies, API rate limits, and the constant churn of data provider accuracy. For the full Clay analysis, see our <a href="/tools/clay/">Clay deep-dive</a>.</p>
+
+    <h2>CRM: Near-Universal, Split Loyalties</h2>
+    <p>92% of GTM Engineers use a CRM. That number isn't surprising. What's interesting is the split: HubSpot dominates at startups and mid-market, Salesforce owns enterprise. The choice often isn't made by the GTM Engineer. It's inherited from the sales team.</p>
+    <p>Pipedrive and Close have small but loyal followings among agency operators and solo consultants. Attio is gaining traction with tech-forward teams who want a CRM that feels like a database. For the full breakdown, see our <a href="/tools/crm-adoption/">CRM adoption analysis</a>.</p>
+
+    <h2>AI Coding Tools: The Fastest-Growing Category</h2>
+    <p>71% adoption in under 18 months. AI coding tools are the fastest-growing category in the GTM Engineer stack. Cursor and Claude Code lead the pack, with ChatGPT as a general-purpose coding assistant.</p>
+    <p>The connection to compensation is direct: GTM Engineers who code earn $45K more on average. AI coding tools lower the barrier to coding enough that operators can cross into engineer territory. Someone who couldn't write Python six months ago can now build API integrations with Claude Code doing the heavy lifting.</p>
+    <p>This category is reshaping the operator vs engineer divide that defines GTM Engineering salaries. More on that in our <a href="/tools/ai-coding-tools/">AI coding tools analysis</a> and the <a href="/salary/coding-premium/">coding premium data</a>.</p>
+
+    <h2>Workflow Automation: n8n vs the Field</h2>
+    <p>54% of GTM Engineers use n8n. That's up from near-zero two years ago. The shift away from Zapier and Make toward n8n reflects the role's technical maturation: n8n is self-hosted, offers unlimited executions, and handles the complex multi-step workflows that GTM Engineers build.</p>
+    <p>Zapier still holds significant share among operators and those who inherited it from marketing teams. Make sits in between, popular with agencies that want visual workflow builders without Zapier's per-task pricing.</p>
+    <p>The agency vs in-house split is stark here. Agencies favor n8n because the per-task pricing of Zapier and Make kills margins when you're running thousands of enrichment and outbound tasks daily. See the full <a href="/tools/n8n-adoption/">n8n adoption analysis</a>.</p>
+
+    <h2>Outbound Sequencing: Instantly and Smartlead Lead</h2>
+    <p>The sequencing layer has consolidated around Instantly and Smartlead for email-first outbound. These tools handle domain rotation, warmup, and sending at the scale GTM Engineers need. Outreach and Salesloft remain strong at enterprise companies but their pricing pushes smaller teams toward the newer alternatives.</p>
+    <p>Lemlist and Woodpecker fill niches: Lemlist for multi-channel sequences with LinkedIn integration, Woodpecker for simpler cold email campaigns. HeyReach dominates the LinkedIn automation subcategory.</p>
+
+    <h2>Intent and Signal Data</h2>
+    <p>Intent data adoption sits below 30% among GTM Engineers. 6sense and Bombora are the most recognized names, but most practitioners rely on first-party signals (website visits, content downloads, product usage) piped through their CRM or Clay rather than paying for third-party intent data.</p>
+    <p>G2 and TrustRadius buyer intent data have small but enthusiastic followings among enterprise GTM teams. Hightouch and Census are more commonly used for reverse ETL (moving data warehouse signals into sales tools) than traditional intent signals.</p>
+
+    <h2>Agency vs In-House: The Spend Gap</h2>
+    <p>55% of agency GTM Engineers spend $5,000-$25,000 annually on tools. That's personal or company budget allocated specifically to the GTM stack. In-house GTM Engineers report lower personal spend because the company pays, but the total cost is often higher due to enterprise pricing.</p>
+    <p>The tool count gap is equally notable. Agency practitioners average 6-8 active tools. In-house teams average 4-5, constrained by procurement processes and IT approval cycles. Agencies can sign up for a new tool in minutes. Enterprise GTM Engineers wait weeks for security reviews.</p>
+    <p>This spend gap directly correlates with capability. Agencies can offer clients faster iteration and broader data coverage because they're not waiting on procurement. It's one reason agency GTM Engineers often earn more per hour than their in-house counterparts, despite lower total compensation packages.</p>
+
+    <h2>What's Missing from Most Stacks</h2>
+    <p>Analytics and attribution remain weak spots. Only 35% of GTM Engineers use dedicated analytics tools beyond what's built into their CRM. Product analytics platforms like Mixpanel and Amplitude are underadopted, which creates blind spots in understanding which outbound signals lead to pipeline.</p>
+    <p>Data warehouse integration is another gap. Most GTM Engineers move data between SaaS tools via APIs and automation platforms. Few have access to Snowflake or BigQuery for centralized analysis. This limits their ability to build the attribution models that would prove ROI at the executive level.</p>
+    <p>For how these tool gaps affect career outcomes, see our <a href="/careers/skills-gap/">skills gap analysis</a>. For the compensation implications, check the <a href="/salary/coding-premium/">coding premium data</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("tech-stack-benchmark")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/tech-stack-benchmark/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/tech-stack-benchmark/index.html", page)
+    print(f"  Built: tools/tech-stack-benchmark/index.html")
+
+
+def build_tool_clay():
+    """Clay deep-dive page: 84% adoption, most loved and most frustrating."""
+    title = "Clay for GTM Engineers: 84% Adoption (2026)"
+    description = (
+        "Clay adoption data from 228 GTM Engineers. 84% overall, 96% agencies."
+        " Most loved and most frustrating tool. Honest analysis."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Clay", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Why do GTM Engineers use Clay?",
+         "Clay is a data enrichment and orchestration platform that lets GTM Engineers build multi-step data workflows (called tables) to find, enrich, and score leads. 84% of surveyed GTM Engineers use it because it connects to 75+ data providers, handles waterfall enrichment natively, and integrates with CRMs and sequencing tools. It's the closest thing to a universal tool in the GTM stack."),
+        ("Is Clay worth the cost for GTM Engineers?",
+         "For agencies, almost certainly yes. 96% of agency GTM Engineers use Clay, and the enrichment capabilities directly generate client revenue. For in-house teams, the value depends on outbound volume. Teams running fewer than 500 prospects per month may find lighter tools sufficient. Clay pricing scales with credits, and heavy users can spend $500-$2,000+ per month."),
+        ("What are the biggest complaints about Clay?",
+         "Integration reliability tops the list. Data providers within Clay sometimes return stale or incomplete results. The learning curve is steep for operators without technical backgrounds. The UX has improved but still feels clunky for complex multi-step tables. Rate limiting on third-party providers causes workflow failures that are hard to debug."),
+        ("Do you need Clay to be a GTM Engineer?",
+         "You don't need it, but 84% of practitioners use it and 69% of job postings mention it. Not knowing Clay limits your job options significantly. If you're entering the field, Clay proficiency is the single most impactful skill you can develop. Nathan Lippi's Clay Bootcamp and the official Clay University are the fastest paths to competence."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>Clay: 84% Adoption Among GTM Engineers</h1>
+        <p>Clay is the gravitational center of the GTM Engineer stack. 84% of practitioners use it. 96% of agency operators depend on it. It's simultaneously the most loved and most frustrating tool in the category.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Overall Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">96%</span>
+        <span class="stat-label">Agency Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">In Job Postings</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Why Clay Won</h2>
+    <p>Clay didn't become the default GTM Engineering tool by accident. It solved a specific problem that no other platform addressed: multi-source data enrichment with workflow logic built in. Before Clay, GTM Engineers stitched together Apollo, ZoomInfo, Clearbit, and custom API calls with Python scripts and Zapier flows. Clay replaced all of that with a single interface.</p>
+    <p>The platform connects to 75+ data providers and lets you build "tables" that waterfall through enrichment sources automatically. If Apollo doesn't have a phone number, Clay tries ZoomInfo. If ZoomInfo fails, it falls back to Lusha. This waterfall logic was previously custom code. Now it's drag-and-drop.</p>
+    <p>That's why adoption hit 84% so fast. Clay didn't create new demand. It captured existing workflows and made them accessible to people who couldn't write the Python to do it manually.</p>
+
+    <h2>The Agency Effect</h2>
+    <p>96% of agency GTM Engineers use Clay. That 12-point gap between agency (96%) and overall (84%) adoption tells a story. Agencies bill clients for enrichment and outbound campaigns. Clay's efficiency translates directly to margin. An agency operator who can build a Clay table in 30 minutes instead of writing a Python script in three hours makes 6x more per hour of work.</p>
+    <p>Clay has leaned into this dynamic. Their Clay Experts marketplace and agency partnership program create a flywheel: agencies build Clay expertise, Clay refers clients to agencies, agencies evangelize Clay to more companies. It's smart distribution that locks in the highest-value users.</p>
+    <p>The dependency cuts both ways. Agencies that build their entire service around Clay face platform risk. If Clay raises prices, changes their API, or deprecates a feature, agency margins take the hit. Some agencies mitigate this by maintaining parallel capabilities in Python and n8n, but most are too deep in Clay to switch.</p>
+
+    <h2>Most Loved, Most Frustrating</h2>
+    <p>Clay is the only tool in our survey that tops both the "most loved" and "most frustrating" lists. That paradox makes sense when you understand how GTM Engineers relate to it: Clay is too useful to leave but too buggy to love unconditionally.</p>
+
+    <h3>What people love</h3>
+    <p>Speed. Building an enrichment workflow that used to take a day takes 30 minutes. The data provider integration breadth means you rarely need to go outside Clay for enrichment. The AI column feature (using LLMs to parse and transform data within tables) opened up use cases that were previously impossible without code. And the community, especially around Nathan Lippi's Clay Bootcamp, creates a knowledge-sharing loop that accelerates skill development.</p>
+
+    <h3>What frustrates people</h3>
+    <p>Integration reliability is the number one complaint. Third-party data providers accessed through Clay sometimes return stale, incomplete, or inconsistent results. A waterfall enrichment table that works perfectly one day might fail the next because a provider's API changed behavior.</p>
+    <p>The learning curve is steep. Clay's interface is powerful but not intuitive. New users describe a 2-4 week ramp before they feel competent. Complex multi-step tables with conditional logic and error handling require genuine technical thinking, even in a "no-code" environment.</p>
+    <p>The UX still has rough edges. Table performance degrades with large datasets. Error messages are often vague. Debugging a failed row in a 50-step table means clicking through each step to find where it broke. For a tool at this adoption level and price point, the debugging experience should be better.</p>
+    <p>Credit burn is a hidden cost. Heavy users report spending $500-$2,000+ monthly on Clay credits alone, on top of the subscription. Each enrichment step consumes credits, and complex tables with multiple data sources can burn through credits fast. The pricing model rewards efficiency but punishes experimentation.</p>
+
+    <h2>Clay and the $45K Coding Premium</h2>
+    <p>Here's an irony: Clay was built to reduce the need for coding in GTM workflows. But GTM Engineers who can code still earn $45K more on average. Clay made the operator path viable but didn't eliminate the premium for technical skills.</p>
+    <p>Why? Because the hardest GTM Engineering problems still require code. Custom API integrations, complex data transformations, error handling at scale, and building systems that connect Clay to CRMs and sequencing tools often need Python or JavaScript. Clay handles 80% of the workflow. The last 20% is where technical depth earns its premium.</p>
+    <p>AI coding tools are narrowing this gap. 71% of GTM Engineers now use tools like Cursor and Claude Code to write the code that Clay can't handle. But even with AI assistance, the practitioners who understand what code to ask for (the ones with technical mental models) build better systems than those who treat coding tools as black boxes.</p>
+    <p>For the full analysis of how coding skills affect compensation, see our <a href="/salary/coding-premium/">coding premium data</a>. For the skills gap between what employers want and what practitioners know, check the <a href="/careers/skills-gap/">skills gap analysis</a>.</p>
+
+    <h2>Should You Learn Clay?</h2>
+    <p>If you want to work as a GTM Engineer, Clay is non-negotiable. 69% of job postings mention it by name. That's higher than any other single tool, including CRMs. Not knowing Clay doesn't disqualify you from every role, but it eliminates the majority of opportunities.</p>
+    <p>The fastest path to Clay competence: Nathan Lippi's Clay Bootcamp for structured learning, Clay University for official tutorials, and then build tables for real projects. No amount of tutorial-watching replaces the experience of debugging a broken waterfall enrichment table at 11 PM because a client campaign launches tomorrow.</p>
+    <p>For agencies, Clay expertise is table stakes. For in-house roles, it's the strongest signal of GTM Engineering competence outside of coding skills. Learn it first, then layer on Python and n8n to differentiate.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("clay")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly Clay and GTM tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/clay/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/clay/index.html", page)
+    print(f"  Built: tools/clay/index.html")
+
+
+def build_tool_crm():
+    """CRM adoption page: 92% adoption, Salesforce vs HubSpot split."""
+    title = "CRM for GTM Engineers: 92% Adoption (2026)"
+    description = (
+        "CRM adoption data from 228 GTM Engineers. 92% use a CRM. Salesforce"
+        " vs HubSpot split by company size. Integration patterns."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("CRM Adoption", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Which CRM do GTM Engineers use most?",
+         "HubSpot leads at startups and mid-market companies, while Salesforce dominates enterprise. The split is roughly 55% HubSpot, 35% Salesforce, and 10% alternatives like Pipedrive, Close, and Attio among surveyed GTM Engineers. The choice is usually inherited from the sales team rather than selected by the GTM Engineer."),
+        ("Do GTM Engineers need CRM experience?",
+         "92% of GTM Engineers use a CRM daily, making it the highest-adoption tool category. CRM experience is expected in virtually every job posting. You don't need deep admin skills, but understanding data models, custom fields, workflows, and API access is essential for connecting enrichment and sequencing tools."),
+        ("Is HubSpot or Salesforce better for GTM Engineers?",
+         "HubSpot is easier to work with for automation and has better native workflow builders. Salesforce offers more customization and handles enterprise-scale data better. GTM Engineers at startups and agencies generally prefer HubSpot. GTM Engineers at companies above 500 employees typically work in Salesforce. The best answer depends on your company's existing stack."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>CRM Adoption: 92% of GTM Engineers</h1>
+        <p>CRM is the most adopted tool category in the GTM Engineer stack. 92% of practitioners use one. The Salesforce vs HubSpot split defines how GTM workflows get built at different company stages.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">CRM Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">55%</span>
+        <span class="stat-label">Use HubSpot</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">35%</span>
+        <span class="stat-label">Use Salesforce</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The One Tool Everyone Agrees On</h2>
+    <p>At 92%, CRM has the highest adoption rate of any tool category for GTM Engineers. Higher than Clay (84%), higher than AI coding tools (71%), higher than everything else. That makes sense: CRM is where pipeline lives. Every outbound campaign, enrichment workflow, and sequencing tool eventually pushes data into a CRM.</p>
+    <p>But CRM adoption for GTM Engineers is different from CRM adoption for sales reps. Sales reps log calls and update deal stages. GTM Engineers treat the CRM as a data layer. They build custom objects, write API integrations, manage field mapping between Clay and the CRM, and create automated workflows that update records without human intervention.</p>
+    <p>That distinction matters for compensation. GTM Engineers who can architect CRM data models (custom objects, complex field relationships, automated workflow triggers) earn more than those who just push data in through standard integrations. CRM knowledge at the admin level is a skill multiplier.</p>
+
+    <h2>HubSpot vs Salesforce: The Company Size Split</h2>
+    <p>The split is predictable but the implications for GTM Engineers are underappreciated. HubSpot dominates at companies with fewer than 200 employees: startups, scale-ups, and agencies. Salesforce takes over above 500 employees.</p>
+
+    <h3>The HubSpot camp</h3>
+    <p>55% of surveyed GTM Engineers use HubSpot. The platform's appeal for GTM work is straightforward: native workflow automation is strong, the API is well-documented, and the free tier lets agencies spin up client instances without upfront cost.</p>
+    <p>HubSpot's Operations Hub added custom code actions and data sync features that directly serve GTM Engineering workflows. You can run JavaScript inside HubSpot workflows, which means lighter integrations don't need external automation tools. For agencies managing multiple client CRMs, HubSpot's multi-portal architecture and agency partner program create practical advantages.</p>
+    <p>The limitation: HubSpot's data model is simpler than Salesforce's. Complex multi-object relationships, custom reporting at scale, and enterprise-grade permission models hit walls that frustrate GTM Engineers working on sophisticated enrichment pipelines.</p>
+
+    <h3>The Salesforce camp</h3>
+    <p>35% of GTM Engineers use Salesforce, concentrated at companies above 500 employees. Salesforce offers the most flexible data model of any CRM: custom objects, formula fields, complex validation rules, and an API that can handle virtually any integration pattern.</p>
+    <p>For GTM Engineers, Salesforce's depth is both an asset and an obstacle. The platform can do anything, but doing it requires Salesforce-specific knowledge (Apex, Flow, SOQL) that takes months to develop. Many GTM Engineers at Salesforce companies describe their role as part GTM, part accidental Salesforce admin.</p>
+    <p>The data hygiene challenge is more acute in Salesforce environments. Years of accumulated custom fields, deprecated integrations, and inconsistent data entry create messy records that undermine enrichment accuracy. GTM Engineers in Salesforce shops often spend 20-30% of their time on data cleanup that HubSpot's simpler data model would have prevented.</p>
+
+    <h2>The Alternatives: Pipedrive, Close, and Attio</h2>
+    <p>10% of GTM Engineers use something other than HubSpot or Salesforce. Pipedrive and Close are popular among solo operators and small agencies who want CRM functionality without the complexity. Both offer clean APIs and straightforward data models.</p>
+    <p>Attio is the interesting newcomer. It's essentially a CRM built like a database, with custom objects and relationships as first-class features. Tech-forward GTM teams are experimenting with Attio because it feels more like a tool built for people who think in data structures. Adoption is under 5% but growing among exactly the kind of technical practitioners who define where the GTM stack is heading.</p>
+
+    <h2>CRM as the Data Layer</h2>
+    <p>The way GTM Engineers use CRM is evolving. Traditionally, CRM was the system of record for deals. For GTM Engineers, it's becoming the central data bus. Enrichment data from Clay flows in. Lead scores get calculated. Sequencing tools pull prospect lists out. Product usage signals from Segment or Mixpanel get appended to contact records.</p>
+    <p>This data layer model demands CRM skills that go beyond basic usage. Understanding custom objects, managing field types for clean data, building automated workflows that trigger on data changes, and writing API integrations that keep everything in sync. These skills show up in compensation data: GTM Engineers with CRM admin capabilities earn 10-15% above those who treat the CRM as a black box they push data into.</p>
+    <p>For how CRM skills connect to overall compensation, see our <a href="/salary/company-size/">salary by company size data</a>. For the role CRM plays alongside Clay in the enrichment workflow, check the <a href="/tools/clay/">Clay deep-dive</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("crm-adoption")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly CRM and GTM tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/crm-adoption/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/crm-adoption/index.html", page)
+    print(f"  Built: tools/crm-adoption/index.html")
+
+
+def build_tool_ai_coding():
+    """AI coding tools page: 71% adoption, Cursor and Claude Code lead."""
+    title = "AI Coding Tools for GTM Engineers: 71% (2026)"
+    description = (
+        "71% of GTM Engineers use AI coding tools. Cursor and Claude Code lead."
+        " How AI tools connect to the $45K coding premium."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("AI Coding Tools", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Which AI coding tools do GTM Engineers use?",
+         "Cursor and Claude Code are the two most popular AI coding tools among GTM Engineers. ChatGPT is used as a general-purpose coding assistant but less for structured development. GitHub Copilot has a smaller share, mostly among GTM Engineers with traditional software development backgrounds."),
+        ("Can you be a GTM Engineer without coding?",
+         "Yes, but you'll earn less. Our data shows a $45K salary gap between GTM Engineers who code and those who don't. AI coding tools are narrowing the skill gap, making it possible for non-developers to write Python scripts and API integrations. But understanding what to build still requires technical thinking."),
+        ("How do AI coding tools affect GTM Engineer salaries?",
+         "GTM Engineers who code earn $45K more on average. AI coding tools accelerate this by making coding accessible to people without computer science backgrounds. 71% of GTM Engineers now use these tools, and the percentage is climbing. The premium may compress over time as coding becomes more widespread, but technical judgment will remain valuable."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>AI Coding Tools: 71% of GTM Engineers</h1>
+        <p>The fastest-growing tool category in the GTM stack. 71% of practitioners now use AI coding assistants. Cursor and Claude Code are reshaping what it means to be "technical" in GTM Engineering.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">AI Tool Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Coding Premium</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">53%</span>
+        <span class="stat-label">Self-Taught Coders</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>71% in Under 18 Months</h2>
+    <p>No tool category in the GTM Engineer stack has grown this fast. AI coding tools went from novelty to majority adoption in under 18 months. In 2024, most GTM Engineers relied on no-code tools exclusively. By early 2026, 71% are writing code with AI assistance.</p>
+    <p>The catalyst was accessibility. Cursor launched as a VS Code fork with AI baked in. Claude Code gave people a command-line coding partner that could write entire scripts from natural language descriptions. ChatGPT's code interpreter made Python accessible through a chat interface. Each tool lowered the barrier differently, but the combined effect was a flood of GTM Engineers crossing from operator to builder territory.</p>
+
+    <h2>Cursor vs Claude Code vs ChatGPT</h2>
+    <p>Each tool serves a different workflow, and most GTM Engineers use more than one.</p>
+
+    <h3>Cursor</h3>
+    <p>Cursor is the dominant IDE-based AI coding tool among GTM Engineers who write code regularly. It's a fork of VS Code with AI autocomplete, inline editing, and codebase-aware suggestions. For GTM Engineers who maintain Python scripts, n8n custom functions, or CRM integration code, Cursor provides the tightest feedback loop between writing and testing code.</p>
+    <p>Strengths: fast autocomplete, understands project context, inline diff editing. Weaknesses: subscription cost ($20/month), learning curve for non-developers, occasionally suggests code that looks right but breaks in production.</p>
+
+    <h3>Claude Code</h3>
+    <p>Claude Code (Anthropic's CLI coding tool) has found a dedicated following among GTM Engineers who need to build scripts but don't live in an IDE all day. You describe what you want in plain English, Claude Code writes the implementation, and you review and run it. For building API integrations, data transformation scripts, and automation glue code, it's the fastest path from idea to working code.</p>
+    <p>Strengths: natural language input, handles complex multi-file projects, strong at Python and JavaScript. Weaknesses: requires reviewing output carefully (hallucinated API endpoints are a real problem), works best when you can describe what you want precisely.</p>
+
+    <h3>ChatGPT</h3>
+    <p>ChatGPT fills the gap between "I need help thinking through this" and "I need working code." GTM Engineers use it for debugging, explaining error messages, generating regex patterns, and prototyping ideas before building them properly. It's the Swiss army knife: not the best at any single coding task, but useful for everything.</p>
+    <p>Strengths: versatile, good at explaining concepts, code interpreter mode for quick data analysis. Weaknesses: code quality is inconsistent for complex tasks, no project context awareness, outputs need more editing than Cursor or Claude Code.</p>
+
+    <h2>The $45K Connection</h2>
+    <p>Our salary data shows a $45K gap between GTM Engineers who code and those who don't. AI coding tools sit right in the middle of this dynamic. They're making coding accessible to more practitioners, which should theoretically compress the premium. But that's not happening yet.</p>
+    <p>The reason: knowing how to use AI coding tools isn't the same as knowing how to code. The practitioners earning the $45K premium aren't just using AI to write Python. They understand system architecture, API design patterns, error handling, and data modeling. AI tools make them faster at implementation, not better at design.</p>
+    <p>A GTM Engineer who uses Claude Code to generate an API integration script still needs to understand authentication flows, rate limiting, error handling, and data validation. The AI writes the code. The human decides what code to write. That decision-making skill is where the premium lives.</p>
+    <p>For the full compensation analysis, see our <a href="/salary/coding-premium/">coding premium data</a>. For how the operator vs engineer divide plays out in career outcomes, check <a href="/careers/do-you-need-to-code/">do you need to code</a>.</p>
+
+    <h2>What Non-Coders Should Do</h2>
+    <p>If you're a GTM Engineer who doesn't code, AI tools are your fastest path to closing the gap. Start with ChatGPT for learning concepts and debugging. Move to Claude Code for building actual scripts. Graduate to Cursor when you're writing code regularly enough to benefit from an IDE.</p>
+    <p>The most practical first project: automate something you currently do manually. Build a Python script that cleans CRM data, an API integration that connects two tools in your stack, or a webhook handler that triggers enrichment when a new lead enters your pipeline. The specific project matters less than the experience of building, debugging, and deploying real code.</p>
+    <p>53% of GTM Engineers are self-taught coders. AI tools make self-teaching faster than ever. You don't need a bootcamp or a CS degree. You need a problem to solve and an AI tool to help you solve it.</p>
+
+    <h2>Limitations and Risks</h2>
+    <p>AI coding tools hallucinate. They generate code that references APIs that don't exist, uses deprecated function signatures, and implements logic that looks correct but fails on edge cases. GTM Engineers who ship AI-generated code without reviewing it will break production workflows.</p>
+    <p>The most common failure pattern: AI generates a Clay or Apollo API integration using an endpoint structure it learned from training data. But the API has been updated since the training cutoff. The code looks right, runs without syntax errors, and silently returns wrong data or fails on authentication. Catching these errors requires enough understanding of the underlying systems to spot when output doesn't match expectations.</p>
+    <p>Another risk: over-reliance creating fragile systems. AI-generated code often lacks proper error handling, logging, and retry logic. It works on the happy path but breaks on the first API timeout or malformed response. GTM Engineers who build production systems with AI tools need to add the robustness layer themselves, either manually or by explicitly prompting for it.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("ai-coding-tools")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly AI and GTM tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/ai-coding-tools/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/ai-coding-tools/index.html", page)
+    print(f"  Built: tools/ai-coding-tools/index.html")
+
+
+def build_tool_n8n():
+    """n8n adoption page: 54% adoption, agency vs in-house usage patterns."""
+    title = "n8n for GTM Engineers: 54% Adoption (2026)"
+    description = (
+        "n8n adoption data from 228 GTM Engineers. 54% overall, higher at"
+        " agencies. Replacing Zapier and Make for workflow automation."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("n8n Adoption", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Why are GTM Engineers switching to n8n?",
+         "Three reasons: no per-task pricing (unlike Zapier and Make), self-hosting option for full control, and the ability to run custom JavaScript and Python within workflows. For agencies running thousands of enrichment and outbound tasks daily, Zapier's per-task billing model destroys margins. n8n's flat pricing removes that constraint."),
+        ("Is n8n better than Zapier for GTM Engineers?",
+         "For technical GTM Engineers running high-volume workflows, yes. n8n offers custom code execution, self-hosting, and no per-task limits. For simpler automation needs and non-technical operators, Zapier's simpler interface and massive integration library may be the better choice. Make sits in between, offering visual workflow building without per-task pricing."),
+        ("How hard is n8n to learn?",
+         "Harder than Zapier, easier than writing Python from scratch. The visual workflow builder is intuitive for basic flows. Complex workflows with conditional logic, error handling, and custom code nodes require 2-4 weeks of hands-on practice. The community documentation and template library help, but the learning curve is steeper than Zapier by a significant margin."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>n8n: 54% Adoption Among GTM Engineers</h1>
+        <p>n8n went from niche to majority adoption in under two years. 54% of GTM Engineers now use it for workflow automation, and the number is higher at agencies. The shift away from Zapier reflects the role's technical maturation.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">54%</span>
+        <span class="stat-label">Overall Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">No</span>
+        <span class="stat-label">Per-Task Pricing</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">Self-Hosted</span>
+        <span class="stat-label">Deployment Option</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>From Niche to Standard</h2>
+    <p>Two years ago, n8n was the workflow tool that "technical people use." Today it's the workflow tool that GTM Engineers choose when they outgrow Zapier. 54% adoption across our survey, with significantly higher rates at agencies.</p>
+    <p>The growth story is simple: GTM Engineers build complex, high-volume workflows. Zapier charges per task. At 10,000+ tasks per month (standard for an active outbound operation), Zapier costs become a real line item. n8n charges a flat rate for cloud hosting or nothing at all if you self-host. The economics drive adoption.</p>
+    <p>Make (formerly Integromat) played a bridging role. Many GTM Engineers moved from Zapier to Make first, attracted by the visual workflow builder and lower pricing. Then moved again to n8n when their workflows became complex enough to need custom code execution and self-hosted reliability.</p>
+
+    <h2>Why Agencies Love n8n</h2>
+    <p>Agency adoption of n8n runs well above the 54% average. The reason is margin math. An agency running outbound campaigns for 10 clients might execute 50,000+ automation tasks per month. At Zapier's pricing, that's $300-$600/month in automation costs alone. On n8n cloud, it's a fraction of that. Self-hosted, it's just server costs.</p>
+    <p>The economics get more dramatic at scale. An agency handling 20 clients with active enrichment and sequencing workflows might run 200,000+ tasks monthly. At Zapier rates, that's $1,000-$2,000/month. On a self-hosted n8n instance running on a $20/month VPS, it's essentially free after setup.</p>
+    <p>Beyond pricing, agencies value n8n's code execution capability. You can write JavaScript or Python directly inside workflow nodes. That means complex data transformations, API calls to tools without native n8n integrations, and custom logic that would require a separate script in Zapier. For agencies building sophisticated GTM workflows, this flexibility is the difference between "we can build that" and "that's outside our scope."</p>
+
+    <h2>The Technical Maturation Signal</h2>
+    <p>n8n adoption is a proxy for how technical the GTM Engineer role has become. Zapier's strength is simplicity: connect two apps with a trigger and action. That's enough for basic automation. But GTM Engineering workflows aren't basic.</p>
+    <p>A typical GTM enrichment workflow might: receive a webhook from a form submission, query Clay for company data, call Apollo for contact info, score the lead with custom logic, route high-value leads to a sequencing tool, push all data to HubSpot, and send a Slack notification to the sales team. That's 7+ steps with conditional branching, error handling, and retry logic. n8n handles this natively. Zapier struggles with it.</p>
+    <p>The self-hosting option also appeals to security-conscious teams and agencies that handle client data. Running n8n on your own infrastructure means data doesn't flow through a third-party cloud. For GTM Engineers working with financial services or healthcare clients, that distinction matters for compliance.</p>
+
+    <h2>n8n vs Zapier vs Make</h2>
+    <p>Each tool has its place. The choice depends on workflow complexity, volume, and technical comfort.</p>
+    <p><strong>Zapier</strong> remains the right choice for non-technical operators building simple automations. Its integration library (6,000+ apps) is unmatched. If you're connecting two SaaS tools with a straightforward trigger-action pattern and running fewer than 2,000 tasks per month, Zapier's simplicity wins. The GTM Engineers still using Zapier tend to use it for simple one-off integrations while running their core workflows in n8n.</p>
+    <p><strong>Make</strong> sits in the middle. Its visual workflow builder is more powerful than Zapier's, supporting complex branching and iteration. Pricing is lower than Zapier for high-volume usage. Make is popular among agency operators who want visual workflow design without n8n's steeper learning curve. It's a solid choice for teams transitioning from Zapier that aren't ready for n8n.</p>
+    <p><strong>n8n</strong> wins on flexibility, pricing at scale, and code execution. The tradeoffs: steeper learning curve, smaller integration library (though the HTTP Request node handles any API), and self-hosted deployments require DevOps knowledge. For agencies and technical GTM Engineers, these tradeoffs are worth it. For operators who prefer visual, no-code tools, they're not.</p>
+
+    <h2>Common n8n Workflows for GTM Engineers</h2>
+    <p>The most common n8n use cases among GTM Engineers fall into three categories.</p>
+    <p><strong>Enrichment orchestration:</strong> Receiving webhook triggers when new leads enter a pipeline, running multi-step enrichment through Clay/Apollo/ZoomInfo APIs, scoring and routing leads, pushing enriched data to CRM. These workflows run continuously and handle thousands of records daily.</p>
+    <p><strong>Outbound automation:</strong> Pulling prospect lists from CRM or Clay, applying personalization logic, uploading to sequencing tools (Instantly, Smartlead), monitoring reply/bounce signals, updating CRM records. The full outbound loop, automated end to end.</p>
+    <p><strong>Reporting and alerts:</strong> Aggregating pipeline data from multiple sources, calculating metrics (enrichment success rates, email deliverability, response rates), sending daily/weekly summaries to Slack or email. Less glamorous than outbound automation but critical for proving GTM Engineering ROI.</p>
+    <p>For how workflow automation skills affect career outcomes, see our <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>. For the agency-specific context, check <a href="/careers/start-gtm-engineering-agency/">how to start a GTM Engineering agency</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("n8n-adoption")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly automation and GTM tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/n8n-adoption/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/n8n-adoption/index.html", page)
+    print(f"  Built: tools/n8n-adoption/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -5665,6 +6320,14 @@ def main():
     build_jobmkt_salary_bands()
     build_jobmkt_india()
     build_jobmkt_spain()
+
+    print("\n  Building tool pages...")
+    build_tool_index()
+    build_tool_tech_stack()
+    build_tool_clay()
+    build_tool_crm()
+    build_tool_ai_coding()
+    build_tool_n8n()
 
     print("\n  Building meta files...")
     build_sitemap()

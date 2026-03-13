@@ -433,6 +433,10 @@ def salary_related_links(current_slug, current_type):
     if current_type != "vs":
         links.append(("/salary/vs-revops/", "GTM Engineer vs RevOps"))
         links.append(("/salary/vs-sdr/", "GTM Engineer vs SDR"))
+    if current_type != "analysis":
+        links.append(("/salary/coding-premium/", "Coding Premium: $45K Gap"))
+        links.append(("/salary/bonus/", "Bonus Structure Data"))
+        links.append(("/salary/by-experience/", "Salary by Experience"))
 
     links = links[:8]
     items = ""
@@ -1602,6 +1606,265 @@ def build_salary_funding_stage():
     print(f"  Built: salary/funding-stage/index.html")
 
 
+def build_salary_experience():
+    """Salary by experience level: $105K for <1yr, scaling with years."""
+    title = "GTM Engineer Salary by Experience Level"
+    description = (
+        "GTM Engineer salary by years of experience. $105K for newcomers, scaling"
+        " with technical depth. Data from the State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Experience Level", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    stats_data = {"min": 105000, "max": 250000, "median": 135000, "sample": 228}
+
+    faq_pairs = [
+        ("What is the starting salary for a GTM Engineer?",
+         "GTM Engineers with less than one year of experience earn a median of $105K, according to the State of GTME Report 2026. Most enter from SDR, RevOps, or marketing ops roles with transferable automation skills."),
+        ("How fast does GTM Engineer salary grow with experience?",
+         "The biggest jumps happen in years 2-4, where engineers who develop technical depth see 30-40% increases. After year 5, compensation growth slows, partly because the role is so new that few people have 5+ years of dedicated GTM Engineering experience."),
+        ("Can I become a GTM Engineer without prior experience?",
+         "Yes. Many GTM Engineers entered the field with zero prior experience in the specific role. Backgrounds in SDR/BDR, sales ops, marketing ops, or even software engineering all transfer well. Clay proficiency and automation skills are the price of entry."),
+        ("Does experience matter more than skills for GTM Engineer pay?",
+         "In a role this new, demonstrated skills often outweigh years of experience. A two-year GTME with Python, Clay, and API integration skills can out-earn a four-year GTME who relies solely on no-code tools. Build a portfolio of measurable pipeline impact."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Salary Analysis</div>
+        <h1>GTM Engineer Salary by Experience Level</h1>
+        <p>How years in role affect compensation. From $105K for newcomers to $195K+ for veterans.</p>
+    </div>
+</section>
+{salary_stats_html(stats_data)}
+{salary_range_bar_html(stats_data)}
+<div class="salary-content">
+    <h2>Experience vs Compensation</h2>
+    <p>GTM Engineer salary scales with experience, but the relationship is less linear than you'd expect for a traditional engineering role. The State of GTME Report 2026 shows $105K median for engineers with less than one year of experience, rising sharply through years 2-4, then plateauing as the role's newness limits how many people have deep tenure.</p>
+    <p>The correlation between years and pay is strong, but it's mediated by technical skill development. An engineer who spends three years in low-code tools earns less than one who picks up Python in year two. Experience matters. What you do with that experience matters more.</p>
+
+    <h2>Year 1: Breaking In</h2>
+    <p>New GTM Engineers earn a median of $105K. Most arrive from adjacent roles: SDR, BDR, sales ops, marketing ops, or RevOps. They bring domain knowledge about the sales process and buyer journey, but they're learning the technical GTM stack from scratch.</p>
+    <p>The first year is a fire hose. Clay tables, enrichment waterfalls, sequencing tools, CRM automation, webhook configurations. The tool ecosystem is broad, and most new hires spend their first 6 months just getting competent across the core stack.</p>
+    <p>Compensation at this level is stable. There's less variance than at any other experience band because the market has a clear sense of what a year-one GTME is worth. The floor is around $85K (small companies, non-tech hubs), the ceiling is $130K (SF/NYC, well-funded startups).</p>
+
+    <h2>Years 2-4: The Steep Climb</h2>
+    <p>This is where the biggest salary jumps happen. Mid-level GTM Engineers who develop technical depth, Python, SQL, API integration, see 30-40% increases over their year-one compensation. The jump from "I can use these tools" to "I can build systems with these tools" is where the market rewards you most.</p>
+    <p>By year three, strong engineers own significant parts of the pipeline. They're designing enrichment workflows, building multi-step automations, and making architectural decisions about the GTM stack. Companies pay for this ownership and the institutional knowledge that comes with it.</p>
+    <p>The variance in this band is extreme. A three-year GTME who stayed in low-code ops might earn $120K. One who learned Python and built custom integrations could earn $175K. Same years of experience, $55K gap. The differentiator is skill trajectory.</p>
+
+    <h2>Years 5+: Senior and Beyond</h2>
+    <p>Few people have five or more years of dedicated GTM Engineering experience. The role didn't exist in its current form before 2022-2023. Those who do are commanding $195K+ and often carry titles like Head of GTM Engineering, Director of Revenue Operations, or Senior GTM Architect.</p>
+    <p>Compensation at this level starts to plateau against base salary, with the delta shifting to equity, bonuses, and total compensation packages. A senior GTME at a growth-stage company might earn $195K base with a $30K-$50K bonus and meaningful equity.</p>
+    <p>The scarcity premium is real. Companies that want a senior GTM Engineer with proven pipeline impact and technical depth are fishing in a very small pond. That supply-demand imbalance keeps senior compensation elevated.</p>
+
+    <h2>Experience vs Skills: What Matters More</h2>
+    <p>In a role this new, demonstrated skills carry more weight than a resume timeline. The market can't rely on "10 years of GTM Engineering experience" as a signal because nobody has that. Instead, hiring managers look for:</p>
+    <ul>
+        <li><strong>Portfolio of work:</strong> Clay tables you've built, automations you've designed, pipelines you've architected. Show the work.</li>
+        <li><strong>Technical breadth:</strong> Python, SQL, APIs. Each technical skill you add increases your market value by 10-20%.</li>
+        <li><strong>Pipeline impact:</strong> Quantified results. "Built an enrichment pipeline that generated 500 qualified leads per month" beats "5 years of experience."</li>
+        <li><strong>Tool depth:</strong> Deep expertise in 2-3 core tools (Clay + HubSpot + Python, for example) signals more than surface-level familiarity with 15 tools.</li>
+    </ul>
+    <p>This dynamic won't last forever. As the role matures and more people accumulate 5-10 years of experience, tenure will become a stronger signal. Right now, skills and impact are the primary currency.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("by-experience", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer salary data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/by-experience/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/by-experience/index.html", page)
+    print(f"  Built: salary/by-experience/index.html")
+
+
+def build_salary_age():
+    """Salary by age bracket: 36+ earns $140K, median age 25."""
+    title = "GTM Engineer Salary by Age Bracket (2026)"
+    description = (
+        "GTM Engineer salary by age. Median age is 25, a Gen Z function. 36+ earns $140K."
+        " Age distribution data from the State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Age Bracket", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    stats_data = {"min": 80000, "max": 250000, "median": 135000, "sample": 228}
+
+    faq_pairs = [
+        ("What is the average age of a GTM Engineer?",
+         "The median age of GTM Engineers is 25, making it one of the youngest functions in B2B SaaS. The State of GTME Report 2026 shows the majority are under 30, reflecting the role's emergence alongside Gen Z entering the workforce."),
+        ("Is it too late to become a GTM Engineer at 30+?",
+         "No. GTM Engineers over 30 often earn more than their younger peers because they bring domain expertise from RevOps, sales, or marketing. The 36+ bracket earns a $140K median. Career switchers who combine GTM Engineering skills with business experience are highly valued."),
+        ("Does age affect GTM Engineer salary?",
+         "Age correlates with salary primarily through experience and seniority. The 36+ bracket earns $140K median, above the overall $135K. But younger engineers with strong technical skills can out-earn older peers who rely on tool-only approaches."),
+        ("Why is GTM Engineering so young?",
+         "The role emerged in 2022-2023, coinciding with Gen Z entering the workforce. This generation grew up with automation-first thinking, making them natural fits for a role that combines sales process knowledge with technical tool-building skills."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Salary Analysis</div>
+        <h1>GTM Engineer Salary by Age Bracket (2026)</h1>
+        <p>Age distribution and compensation data. Median age: 25. A Gen Z function with room for experienced professionals.</p>
+    </div>
+</section>
+{salary_stats_html(stats_data)}
+{salary_range_bar_html(stats_data)}
+<div class="salary-content">
+    <h2>A Gen Z Function</h2>
+    <p>The median age of GTM Engineers is 25. That makes this one of the youngest professional functions in B2B SaaS, younger than sales engineering, younger than RevOps, younger than product management. It's a Gen Z role built by the first generation that thinks in automations, not spreadsheets.</p>
+    <p>This isn't an accident. GTM Engineering emerged in 2022-2023, right as Gen Z professionals were hitting their stride in the workforce. They grew up building Zapier workflows before they had job titles. Clay, Make, and API integrations feel native to them in a way that doesn't translate to older professionals who learned these tools later.</p>
+    <p>The youth of the field shapes everything: compensation curves, career ladder expectations, management structures. When most of your colleagues are under 30, the norms are still being written.</p>
+
+    <h2>Under 30: The Majority</h2>
+    <p>Most GTM Engineers are in their 20s. They entered the field from SDR/BDR roles, marketing coordinator positions, or directly from school with Clay and automation skills already in hand. A growing number have no prior professional experience at all, they built their portfolios through Clay Bootcamp, online courses, and side projects.</p>
+    <p>Salary for this cohort reflects their experience level. The median sits below the overall $135K, with most earning $90K-$130K depending on technical depth and market. The ceiling rises quickly for those who develop coding skills early.</p>
+    <p>The advantage of entering young: you're accumulating experience in a role with explosive demand. A 24-year-old with 2 years of GTM Engineering experience today will have 5+ years by the time they're 27. That kind of tenure will be rare and valuable as the function matures.</p>
+
+    <h2>30-35: The Experience Premium</h2>
+    <p>GTM Engineers in the 30-35 bracket tend to be career switchers. They spent their 20s in RevOps, sales ops, marketing ops, or sometimes software engineering, then transitioned into GTM Engineering when the role formalized. They bring something younger engineers don't have: deep domain knowledge about how sales and marketing organizations work.</p>
+    <p>This combination of GTM Engineering technical skills and business context commands a premium. A 32-year-old who spent five years in RevOps before becoming a GTM Engineer understands pipeline dynamics, attribution models, and sales team workflows at a level that takes years to develop.</p>
+    <p>Compensation in this bracket runs $130K-$175K, above the overall median. The premium reflects the domain expertise layered on top of the technical skill set.</p>
+
+    <h2>36+: The Senior Tier</h2>
+    <p>The 36+ bracket is the smallest group of GTM Engineers, but they earn the highest median: $140K. These are heads of GTM Engineering, directors, or senior individual contributors who brought decades of sales, marketing, or operations experience into the role.</p>
+    <p>Many in this group don't carry the "GTM Engineer" title. They're VP of Revenue Operations who built out a GTM Engineering function, or Directors of Marketing Technology who evolved into the role as their companies adopted the GTM Engineering framework.</p>
+    <p>The path for experienced professionals entering GTM Engineering is clear: your domain expertise is your differentiator. You won't out-code a 23-year-old developer. But you'll out-strategize them on pipeline architecture, sales process optimization, and cross-functional collaboration. The market values both, and pays accordingly.</p>
+
+    <h2>What This Means for Career Planning</h2>
+    <p>The youth of the field creates an unusual dynamic: there's no established career ladder. No one has "20 years of GTM Engineering experience" because the role didn't exist 20 years ago. The ceiling is being set right now by the current generation.</p>
+    <p>For young professionals, this is an opportunity. You can define what a senior GTM Engineering career looks like. Head of GTM Engineering roles are emerging at growth-stage companies, and the first people to fill them will set the template for everyone who follows.</p>
+    <p>For experienced professionals considering the switch, the window is open. Your business knowledge fills a gap that pure-technical GTM Engineers can't cover. The role rewards generalists who can bridge technology and strategy, and that's exactly what career switchers with domain expertise bring to the table.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("by-age", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer career and salary data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/by-age/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/by-age/index.html", page)
+    print(f"  Built: salary/by-age/index.html")
+
+
+def build_salary_bonus():
+    """Bonus structure page: 51% receive bonus, 56% get 10-25% of base."""
+    title = "GTM Engineer Bonus Data: Who Gets Paid"
+    description = (
+        "51% of GTM Engineers receive bonuses. 56% get 10-25% of base salary."
+        " Performance vs guaranteed breakdown. State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Bonus Data", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    # Custom stats block for bonus data (percentages, not salary ranges)
+    bonus_stats = '''<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">51%</span>
+        <span class="stat-label">Receive a Bonus</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">10&#8209;25%</span>
+        <span class="stat-label">Most Common Range</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">61%</span>
+        <span class="stat-label">Performance-Based</span>
+    </div>
+</div>'''
+
+    faq_pairs = [
+        ("What percentage of GTM Engineers get bonuses?",
+         "51% of GTM Engineers receive some form of bonus, according to the State of GTME Report 2026. The remaining 49% are compensated with base salary only, common among freelancers, agency GTMEs, and early-stage startup employees."),
+        ("How big is a typical GTM Engineer bonus?",
+         "56% of GTM Engineers who receive bonuses get 10-25% of their base salary. On a $135K base, that's $13,500 to $33,750 in additional annual compensation. Some receive less than 10%, and a small percentage earn 25%+."),
+        ("Are GTM Engineer bonuses performance-based or guaranteed?",
+         "61% of bonuses are performance-based, tied to pipeline metrics, meetings booked, or revenue influenced. The remaining 39% are guaranteed (annual, quarterly, or signing bonuses). Performance-based bonuses are more common at growth-stage and enterprise companies."),
+        ("How should I negotiate a bonus as a GTM Engineer?",
+         "Tie your bonus to metrics you can control and measure. Pipeline generated, qualified meetings booked, and enrichment coverage rates are strong targets. Avoid bonuses tied to team revenue goals you can't directly influence. Get the targets in writing before accepting the offer."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Compensation Analysis</div>
+        <h1>GTM Engineer Bonus Structure Data (2026)</h1>
+        <p>Who gets bonuses, how much, and what type. Bonus participation and structure data from 228 GTM Engineers.</p>
+    </div>
+</section>
+{bonus_stats}
+<div class="salary-content">
+    <h2>The Bonus Picture</h2>
+    <p>Just over half of GTM Engineers, 51%, receive some form of bonus compensation. That's lower than enterprise sales roles (where variable comp is standard) but higher than most operations and engineering functions. GTM Engineering sits in a compensation gray zone: technical enough for base-heavy packages, revenue-adjacent enough for performance bonuses.</p>
+    <p>The 49% without bonuses aren't being shortchanged by default. Freelance and agency GTMEs set their own rates and don't typically structure bonus agreements. Early-stage startup engineers may trade bonus potential for equity. And some companies simply haven't figured out how to comp a role this new.</p>
+
+    <h2>Bonus Size Distribution</h2>
+    <p>Among GTM Engineers who receive bonuses, the distribution breaks down clearly:</p>
+    <ul>
+        <li><strong>Under 10% of base:</strong> Common at companies that are experimenting with variable comp for the role. Often a quarterly or annual discretionary bonus rather than a structured plan.</li>
+        <li><strong>10-25% of base (56% of bonused GTMEs):</strong> The most common range. On a $135K base, that's $13,500-$33,750 in annual bonus potential. This is where most structured bonus plans land.</li>
+        <li><strong>25%+ of base:</strong> Rare, usually at companies that treat GTM Engineering as a revenue-generating function (not a support function). These are often tied to aggressive pipeline or revenue targets.</li>
+    </ul>
+    <p>The 10-25% range is the market standard. If you're negotiating a bonus and the company offers less than 10%, push for more or negotiate a higher base instead. Below 10%, the bonus often isn't worth the complexity of tracking and paying out.</p>
+
+    <h2>Performance vs Guaranteed</h2>
+    <p>61% of GTM Engineer bonuses are performance-based. They're tied to measurable outcomes: pipeline generated, qualified meetings booked, revenue influenced, enrichment coverage rates. The specific metrics vary by company, but the common thread is quantifiable impact on the go-to-market motion.</p>
+    <p>The remaining 39% are guaranteed: annual bonuses, quarterly payouts, or signing bonuses that pay regardless of performance. Guaranteed bonuses are more common at enterprise companies with established comp structures and at companies that haven't yet defined GTM Engineering KPIs.</p>
+    <p>Performance-based bonuses carry more risk but typically have higher ceilings. If you're confident in your ability to hit pipeline targets, performance comp is the better deal. If you're joining a company where GTM Engineering metrics aren't well-defined yet, push for guaranteed comp until the measurement framework matures.</p>
+
+    <h2>Who Gets Bonuses</h2>
+    <p>Bonus participation varies significantly by company type and employment arrangement:</p>
+    <ul>
+        <li><strong>In-house at growth-stage companies:</strong> Highest bonus participation. These companies have the budget, the pipeline complexity, and the performance data to structure meaningful variable comp.</li>
+        <li><strong>In-house at enterprise:</strong> High participation with structured plans. Bonuses are often part of company-wide comp frameworks rather than GTM Engineering-specific plans.</li>
+        <li><strong>In-house at early-stage:</strong> Lower participation. Many early-stage companies compensate with equity instead of bonuses, or haven't formalized comp structures yet.</li>
+        <li><strong>Agency/freelance:</strong> Rare. Freelance GTMEs set their own rates and build performance incentives into their contract structures (retainer + performance fees).</li>
+    </ul>
+
+    <h2>Negotiating Your Bonus</h2>
+    <p>Three principles for negotiating GTM Engineer variable comp:</p>
+    <p><strong>Tie it to metrics you control.</strong> Pipeline generated from your enrichment workflows, meetings booked from your outbound sequences, data quality improvements you can measure. Avoid bonuses tied to team-level revenue goals where your individual contribution is hard to isolate.</p>
+    <p><strong>Get the targets in writing.</strong> "Performance bonus" means nothing without defined targets, measurement methods, and payout timing. Before accepting, know exactly what "on target" looks like and what the payout schedule is.</p>
+    <p><strong>Do the math on guaranteed vs performance.</strong> A guaranteed $20K bonus is worth more than a $30K target you have a 60% chance of hitting. If the company can't clearly explain how you'd hit your bonus targets, negotiate for guaranteed comp or a higher base instead.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("bonus", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer compensation data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/bonus/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/bonus/index.html", page)
+    print(f"  Built: salary/bonus/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Meta file generators
 # ---------------------------------------------------------------------------
@@ -1720,6 +1983,9 @@ def main():
     build_salary_coding_premium()
     build_salary_company_size()
     build_salary_funding_stage()
+    build_salary_experience()
+    build_salary_age()
+    build_salary_bonus()
 
     print("\n  Building meta files...")
     build_sitemap()

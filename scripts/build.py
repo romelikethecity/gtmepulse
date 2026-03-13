@@ -1369,6 +1369,240 @@ def build_salary_methodology():
 
 
 # ---------------------------------------------------------------------------
+# New salary analysis pages (State of GTME Report 2026)
+# ---------------------------------------------------------------------------
+
+def build_salary_coding_premium():
+    """Coding premium page: $45K gap between low-code operators and technical GTMEs."""
+    title = "GTM Engineer Coding Premium: $45K Gap"
+    description = (
+        "GTM Engineers who code earn $45K more than low-code operators."
+        " Bimodal skill distribution and salary data from the State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Coding Premium", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    stats_data = {"min": 90000, "max": 195000, "median": 135000, "sample": 228}
+
+    faq_pairs = [
+        ("How much more do GTM Engineers who code earn?",
+         "GTM Engineers with Python, SQL, and API skills earn roughly $45K more than low-code operators. The median for technical GTMEs is around $135K, while low-code operators cluster near $90K."),
+        ("Which programming languages should a GTM Engineer learn?",
+         "Python is the highest-ROI language for GTM Engineers. SQL is a close second. Both are used daily for data enrichment, API integration, and pipeline automation. JavaScript helps with webhook handlers and Clay custom actions."),
+        ("How long does it take to learn coding as a GTM Engineer?",
+         "Most GTM Engineers report reaching productive proficiency in Python within 3-6 months of focused study. You don't need computer science depth. You need enough to write API calls, parse JSON, manipulate dataframes, and build simple automations."),
+        ("Is Clay experience enough without coding skills?",
+         "Clay-only operators earn well, but they hit a ceiling around $90K-$110K. Adding Python to Clay unlocks custom HTTP actions, complex data transformations, and multi-system orchestration that Clay alone can't handle. That's where the premium starts."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Salary Analysis</div>
+        <h1>The $45K Coding Premium for GTM Engineers</h1>
+        <p>Technical skills create a sharp salary divide in GTM Engineering. Here's what the data shows.</p>
+    </div>
+</section>
+{salary_stats_html(stats_data)}
+{salary_range_bar_html(stats_data)}
+<div class="salary-content">
+    <h2>The Coding Premium Explained</h2>
+    <p>There's a $45K gap between GTM Engineers who code and those who don't. Low-code operators, the ones building Clay tables and Zapier workflows without touching a terminal, cluster around $90K median compensation. Technical GTMEs, those writing Python, running SQL queries, and building custom API integrations, earn significantly more.</p>
+    <p>This isn't speculation. The State of GTM Engineering Report 2026 surveyed 228 GTM Engineers and found a clear bifurcation: compensation tracks technical depth more than years of experience or job title.</p>
+    <p>The gap widens at senior levels. A senior low-code operator might earn $120K. A senior technical GTME regularly clears $195K. Same title, same function, $75K apart.</p>
+
+    <h2>The Bimodal Skill Distribution</h2>
+    <p>When asked to rate their coding skills on a 1-10 scale, respondents didn't spread evenly across the spectrum. They clustered at two extremes: 1-3 (no-code and low-code users) and 7-10 (developers and technical builders). Very few people rated themselves in the 4-6 range.</p>
+    <p>This bimodal pattern mirrors the salary distribution perfectly. There's no middle ground in either skills or pay. You're either operating tools as-is, or you're extending them with code. The market prices these two groups differently.</p>
+    <p>Why the gap in the middle? GTM Engineering tends to attract two distinct profiles. Former SDRs and marketers who picked up Clay and automation tools, and former developers or technical ops people who moved into go-to-market work. The two groups approach problems differently, and companies pay accordingly.</p>
+
+    <h2>Which Technical Skills Pay Most</h2>
+    <p>Not all technical skills carry equal weight. The report data points to three high-value areas:</p>
+    <ul>
+        <li><strong>Python:</strong> The single highest-value skill for GTM Engineers. Used for data enrichment scripts, API integration, custom Clay actions, and pipeline automation. Python-fluent GTMEs command the largest premiums.</li>
+        <li><strong>SQL:</strong> Critical for anyone working with CRM data, warehouse queries, or building reporting pipelines. SQL skills separate "I can use HubSpot" from "I can query our data warehouse and build attribution models."</li>
+        <li><strong>API integration:</strong> Building custom integrations between tools, handling webhooks, managing authentication flows. This is the connective tissue of modern GTM stacks, and it requires code.</li>
+    </ul>
+    <p>Clay power users who also code earn more than Clay-only operators. The combination of knowing the tool ecosystem and being able to extend it with custom code is where the premium lives.</p>
+
+    <h2>Should You Learn to Code?</h2>
+    <p>If you're a GTM Engineer earning around $90K with no coding skills, the math is straightforward. Adding Python proficiency could mean a $30K-$45K salary increase within 12-18 months. That's a better ROI than almost any certification or degree program.</p>
+    <p>The learning curve is steep but bounded. You don't need to become a software engineer. You need to write API calls, parse JSON responses, manipulate data with pandas, and build simple automation scripts. That's a focused skill set you can develop in 3-6 months of deliberate practice.</p>
+    <p>Start with Python. Build a project that solves a real problem in your current workflow. Automate something you do manually today. The first script you write that saves your team 5 hours a week is your proof of concept, and your strongest card in the next salary negotiation.</p>
+    <p>For operators happy at $90K with no interest in coding, that's a valid path. Low-code GTM Engineers do meaningful work. But the ceiling is lower, and the competition for those roles is increasing as more people learn the tool ecosystem.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("coding-premium", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer salary data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/coding-premium/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/coding-premium/index.html", page)
+    print(f"  Built: salary/coding-premium/index.html")
+
+
+def build_salary_company_size():
+    """Salary by company size: 201-1,000 employees pay the most."""
+    title = "GTM Engineer Salary by Company Size (2026)"
+    description = (
+        "GTM Engineer salary data by company size. Mid-size companies (201-1,000 employees)"
+        " pay the highest base. Data from the State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Company Size", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    stats_data = {"min": 80000, "max": 250000, "median": 135000, "sample": 228}
+
+    faq_pairs = [
+        ("Which company size pays GTM Engineers the most?",
+         "Mid-size companies with 201-1,000 employees pay the highest base salaries for GTM Engineers, according to the State of GTME Report 2026. These companies have dedicated GTM Engineering budgets but still value individual contributor impact."),
+        ("Should I join a startup or enterprise as a GTM Engineer?",
+         "Startups (1-50 employees) offer lower base salary but more equity and broader scope. You'll build everything from scratch. Enterprise (1,000+) pays competitive base with RSUs, but the role is more specialized. Mid-size is the sweet spot for base pay."),
+        ("How does company size affect GTM Engineer career growth?",
+         "Smaller companies give you breadth and ownership fast. You'll touch every part of the GTM stack. Larger companies offer depth, mentorship, and established career ladders. Mid-size companies fall in between, often with the most autonomy and the best compensation."),
+        ("Do startups compensate GTM Engineers with equity?",
+         "Early-stage startups (Pre-Seed to Seed) give meaningful equity to 29% of GTM Engineers, per the report. By Series A, that drops to 9%. If equity is important to you, the earliest stages are where you'll get it, but at a lower base salary."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Salary Analysis</div>
+        <h1>GTM Engineer Salary by Company Size (2026)</h1>
+        <p>How company headcount affects GTM Engineer compensation. 228 survey respondents, all company sizes.</p>
+    </div>
+</section>
+{salary_stats_html(stats_data)}
+{salary_range_bar_html(stats_data)}
+<div class="salary-content">
+    <h2>The Company Size Sweet Spot</h2>
+    <p>Mid-size companies, those with 201 to 1,000 employees, pay the highest base salaries for GTM Engineers. They have real budget allocated to go-to-market automation, dedicated headcount for the function, and they still prize individual impact over process compliance.</p>
+    <p>This tracks with how GTM Engineering teams grow inside organizations. At 200+ employees, companies have enough pipeline complexity to justify a dedicated GTM Engineer (or a small team). They're past the "one RevOps person does everything" stage. But they haven't yet reached the enterprise level where GTM Engineering gets absorbed into a larger ops organization with rigid role boundaries.</p>
+    <p>The data from the State of GTME Report 2026 confirms this pattern across industries and geographies. If maximizing base salary is your priority, the 201-1,000 employee band is where the money is.</p>
+
+    <h2>Small Companies (1-50 Employees)</h2>
+    <p>At small companies, the GTM Engineer is often the first hire touching automation and data infrastructure. You're building everything: the Clay enrichment pipeline, the outbound sequences, the CRM architecture, the reporting. It's a generalist role with a building-from-zero mandate.</p>
+    <p>Base salary is lower, typically $80K-$120K. Equity is the draw. The State of GTME Report 2026 shows that 29% of GTM Engineers at Pre-Seed companies hold meaningful equity. That percentage drops sharply after the seed stage.</p>
+    <p>The trade-off is clear. Lower cash, higher ownership, more autonomy, steeper learning curve. If you want to build a GTM function from scratch and bet on the company's outcome, small is where to be.</p>
+
+    <h2>Mid-Size (51-1,000 Employees)</h2>
+    <p>This is where GTM Engineering becomes a strategic function, with a budget line, a team (or at least a team plan), and executive visibility. Companies in this range are scaling their go-to-market motion and need technical builders who can keep the engine running while it grows.</p>
+    <p>Base salaries peak here. Mid-level GTM Engineers at 201-1,000 employee companies regularly earn $140K-$175K. Seniors push past $195K. The companies can afford top-of-market rates, and they're competing with both startups (equity) and enterprise (stability) for the same talent.</p>
+    <p>The work is often the most interesting in this band too. You're building systems at meaningful scale, with enough complexity to stretch your skills, but without the bureaucratic overhead that slows things down at larger organizations.</p>
+
+    <h2>Enterprise (1,000+ Employees)</h2>
+    <p>Enterprise companies pay competitive base salaries with RSUs, annual bonuses, and full benefits packages. Total compensation can match or surpass mid-size companies, especially at public tech companies where RSU grants are substantial.</p>
+    <p>The role is different here. You're more likely to own a specific piece of the GTM stack rather than the whole thing. Maybe you're the enrichment pipeline specialist, or the outbound automation owner, or the CRM integration engineer. Scope is narrower but depth is greater.</p>
+    <p>Career ladders are more established. There's a path from individual contributor to team lead to director that's visible and documented. The trade-off is less autonomy and more process. If you prefer structure, enterprise is a good fit. If you want to build everything yourself, you'll feel constrained.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("company-size", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer compensation data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/company-size/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/company-size/index.html", page)
+    print(f"  Built: salary/company-size/index.html")
+
+
+def build_salary_funding_stage():
+    """Salary by funding stage: Series B & D+ lead at $145K median."""
+    title = "GTM Engineer Pay by Funding Stage (2026)"
+    description = (
+        "GTM Engineer salary by funding stage. Series B and D+ lead at $145K median."
+        " Equity trade-offs by round. Data from the State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Funding Stage", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    stats_data = {"min": 85000, "max": 250000, "median": 145000, "sample": 228}
+
+    faq_pairs = [
+        ("Which funding stage pays GTM Engineers the most?",
+         "Series B and Series D+ companies pay the highest base salaries, with a $145K median per the State of GTME Report 2026. These companies have proven product-market fit and dedicated GTM Engineering budgets."),
+        ("Do early-stage startups give GTM Engineers equity?",
+         "Yes, but it varies sharply by stage. At Pre-Seed, 29% of GTM Engineers receive meaningful equity. By Series A, that drops to just 9%. Exited or public companies see equity participation rise again to 33.3%, mostly as RSU grants."),
+        ("What is the salary range for a GTM Engineer at a Series A company?",
+         "Series A GTM Engineers earn $105K-$145K in base salary, per the report. The range is wide because these companies are still defining the role. Equity and early-employee upside can significantly boost total compensation."),
+        ("How does total compensation change as a company raises more funding?",
+         "Base salary generally increases with funding rounds, peaking at Series B and D+. Equity shifts from option grants (early stage) to RSUs (late stage and public). Bonuses become more common at growth stage and beyond, with 51% of all GTM Engineers receiving some form of bonus."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Salary Analysis</div>
+        <h1>GTM Engineer Salary by Funding Stage (2026)</h1>
+        <p>How funding round affects GTM Engineer pay, equity, and total compensation. All stages compared side by side.</p>
+    </div>
+</section>
+{salary_stats_html(stats_data)}
+{salary_range_bar_html(stats_data)}
+<div class="salary-content">
+    <h2>Funding Stage Salary Overview</h2>
+    <p>Compensation for GTM Engineers varies significantly by company funding stage. The State of GTME Report 2026 shows a clear pattern: base salary rises with funding rounds, while equity compensation follows a U-shaped curve, high at the earliest stages, lowest at Series A, and rising again at exit or public stages.</p>
+    <p>The highest base salaries cluster at Series B and Series D+, where the median hits $145K. These companies have the revenue, the headcount, and the organizational maturity to pay market rate for technical go-to-market talent. They've also proven that GTM Engineering works for them, which means dedicated budget and defined roles.</p>
+    <p>Early-stage companies offer lower base, but the equity math can make up for it, if the company succeeds. The key question is whether you're optimizing for guaranteed cash or potential upside.</p>
+
+    <h2>Pre-Seed to Series A</h2>
+    <p>GTM Engineers at Pre-Seed and Seed companies earn $85K-$130K in base salary. The role is broad. You're the entire GTM operations function, building the outbound engine, managing enrichment pipelines, setting up the CRM, and probably doing some prospecting yourself.</p>
+    <p>Equity is the draw. The report shows 29% of GTM Engineers at Pre-Seed companies hold meaningful equity stakes. That drops to 9% by Series A, one of the sharpest declines across any function. If equity matters to you, the seed stage is when to negotiate for it.</p>
+    <p>Series A companies pay $105K-$145K base. The range is wide because these companies are still defining what "GTM Engineer" means internally. Some treat it as a senior ops role. Others see it as a technical builder position. The title is the same, but the scope and compensation differ.</p>
+    <p>The risk-reward calculation at this stage is personal. Lower base, higher variance on total outcome. If the company hits, your equity could be worth multiples of the salary difference. If it doesn't, you earned below market for the duration.</p>
+
+    <h2>Series B and Beyond</h2>
+    <p>Series B is where GTM Engineering compensation matures. The median hits $145K, and the role becomes more defined. Companies at this stage have a working go-to-market motion and need technical talent to scale it, automate it, and make it more efficient.</p>
+    <p>Series C and D+ companies maintain similar or higher base compensation. The role may be more specialized, you're owning a specific part of the pipeline rather than the whole thing, but the pay reflects the technical depth required.</p>
+    <p>Growth-stage companies also offer the most consistent bonus structures. At 51% bonus participation across all stages, growth and late-stage companies are above that average. Bonuses are typically 10-25% of base, tied to pipeline metrics.</p>
+
+    <h2>The Equity Trade-Off</h2>
+    <p>Equity compensation follows a surprising pattern in GTM Engineering:</p>
+    <ul>
+        <li><strong>Pre-Seed:</strong> 29% receive meaningful equity. Options with low strike prices and significant ownership percentages.</li>
+        <li><strong>Series A:</strong> Drops to 9%. The role is less likely to be early enough to command equity, but the company is still pre-liquidity.</li>
+        <li><strong>Series B-D:</strong> Equity participation rises slightly, often as refresher grants or RSUs. Base salary increases offset the lower equity percentage.</li>
+        <li><strong>Exited/Public:</strong> 33.3% receive meaningful equity, mostly as RSU grants with defined vesting schedules and immediate liquidity.</li>
+    </ul>
+    <p>The U-shaped curve matters for career planning. If you want equity, either join very early (Pre-Seed/Seed) or go public/late-stage where RSUs have defined value. The Series A dead zone, low equity and lower-than-peak base, is the least favorable stage for total compensation, though the learning opportunities are significant.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("funding-stage", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer compensation insights.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/funding-stage/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/funding-stage/index.html", page)
+    print(f"  Built: salary/funding-stage/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Meta file generators
 # ---------------------------------------------------------------------------
 
@@ -1483,6 +1717,9 @@ def main():
     build_salary_vs_pages()
     build_salary_calculator()
     build_salary_methodology()
+    build_salary_coding_premium()
+    build_salary_company_size()
+    build_salary_funding_stage()
 
     print("\n  Building meta files...")
     build_sitemap()

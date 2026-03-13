@@ -122,7 +122,7 @@ Phases execute in numeric order: 4 → 5 → 6 → 7
 | 1. Build System and HTML Shell | v1.0 | 1/2 | In progress | - |
 | 2. Core Pages and Newsletter | v1.0 | 0/2 | Not started | - |
 | 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
-| 4. Salary Data Overhaul | v2.0 | 0/3 | Not started | - |
+| 4. Salary Data Overhaul | 2/3 | In Progress|  | - |
 | 5. Career, Agency, and Job Market | v2.0 | 0/2 | Not started | - |
 | 6. Tools and Benchmarks | v2.0 | 0/2 | Not started | - |
 | 7. Comparisons, Blog, and Quality | v2.0 | 0/3 | Not started | - |

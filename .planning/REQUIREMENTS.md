@@ -18,12 +18,12 @@
 
 ### New Salary Pages
 
-- [ ] **SALN-01**: Salary page showing coding vs no-code compensation gap ($45K premium, bimodal skill distribution)
-- [ ] **SALN-02**: Salary page breaking down compensation by company size (201-1,000 employees pay most)
-- [ ] **SALN-03**: Salary page showing compensation by funding stage (Series B & D+ lead at $145K median)
-- [ ] **SALN-04**: Salary page showing compensation by experience level ($105K median <1yr, scaling up)
-- [ ] **SALN-05**: Salary page showing compensation by age bracket (36+ earns $140K median)
-- [ ] **SALN-06**: Page detailing GTM Engineer bonus structures (51% receive bonus, 56% get 10-25% of base)
+- [x] **SALN-01**: Salary page showing coding vs no-code compensation gap ($45K premium, bimodal skill distribution)
+- [x] **SALN-02**: Salary page breaking down compensation by company size (201-1,000 employees pay most)
+- [x] **SALN-03**: Salary page showing compensation by funding stage (Series B & D+ lead at $145K median)
+- [x] **SALN-04**: Salary page showing compensation by experience level ($105K median <1yr, scaling up)
+- [x] **SALN-05**: Salary page showing compensation by age bracket (36+ earns $140K median)
+- [x] **SALN-06**: Page detailing GTM Engineer bonus structures (51% receive bonus, 56% get 10-25% of base)
 - [ ] **SALN-07**: Page analyzing GTM Engineer equity compensation (68% no meaningful equity, by funding stage)
 - [ ] **SALN-08**: Salary comparison page for US vs global markets (US $135K vs non-US $75K)
 - [ ] **SALN-09**: Page comparing posted salaries vs actual reported salaries (posted $150K vs reported $135K)
@@ -166,12 +166,12 @@
 | SALUP-01 | Phase 4 | Complete |
 | SALUP-02 | Phase 4 | Complete |
 | SALUP-03 | Phase 4 | Complete |
-| SALN-01 | Phase 4 | Pending |
-| SALN-02 | Phase 4 | Pending |
-| SALN-03 | Phase 4 | Pending |
-| SALN-04 | Phase 4 | Pending |
-| SALN-05 | Phase 4 | Pending |
-| SALN-06 | Phase 4 | Pending |
+| SALN-01 | Phase 4 | Complete |
+| SALN-02 | Phase 4 | Complete |
+| SALN-03 | Phase 4 | Complete |
+| SALN-04 | Phase 4 | Complete |
+| SALN-05 | Phase 4 | Complete |
+| SALN-06 | Phase 4 | Complete |
 | SALN-07 | Phase 4 | Pending |
 | SALN-08 | Phase 4 | Pending |
 | SALN-09 | Phase 4 | Pending |

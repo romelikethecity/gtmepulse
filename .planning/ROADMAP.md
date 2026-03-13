@@ -109,12 +109,13 @@ Plans:
   3. Running a full build produces zero duplicate titles or meta descriptions across the entire site (all waves combined)
   4. Every v2.0 page has: unique title (50-60 chars), meta description (150-158 chars), canonical URL, OG/Twitter tags, BreadcrumbList schema, 3+ internal links, visible source citation, and passes writing standards (no em-dashes, no false reframes, no banned words)
   5. Navigation and footer links are updated to surface new content sections (career, tools, benchmarks, blog)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 07-01: Comparison pages (COMP-01 through COMP-06)
-- [ ] 07-02: Blog articles (BLOG-01 through BLOG-14)
-- [ ] 07-03: Site-wide quality and SEO validation sweep (QUAL2-01 through QUAL2-09)
+- [ ] 07-01-PLAN.md — Comparison index + 6 comparison pages with FAQ sections and FAQPage schema (COMP-01 through COMP-06)
+- [ ] 07-02-PLAN.md — Blog index + blog articles 1-7 (BLOG-01 through BLOG-07)
+- [ ] 07-03-PLAN.md — Blog articles 8-14 + Blog nav entry (BLOG-08 through BLOG-14)
+- [ ] 07-04-PLAN.md — Site-wide quality and SEO validation sweep (QUAL2-01 through QUAL2-09)
 
 ## Progress
 
@@ -128,8 +129,8 @@ Phases execute in numeric order: 4 → 5 → 6 → 7
 | 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
 | 4. Salary Data Overhaul | v2.0 | 3/3 | Complete | 2026-03-13 |
 | 5. Career, Agency, and Job Market | v2.0 | 4/4 | Complete | 2026-03-13 |
-| 6. Tools and Benchmarks | 4/4 | Complete   | 2026-03-13 | - |
-| 7. Comparisons, Blog, and Quality | v2.0 | 0/3 | Not started | - |
+| 6. Tools and Benchmarks | v2.0 | 4/4 | Complete | 2026-03-13 |
+| 7. Comparisons, Blog, and Quality | v2.0 | 0/4 | Not started | - |
 
 ---
 *Roadmap created: 2026-03-10 (Wave 1)*

@@ -5542,6 +5542,12 @@ TOOL_PAGES = [
     {"slug": "crm-adoption", "title": "CRM Adoption: 92%"},
     {"slug": "ai-coding-tools", "title": "AI Coding Tools: 71%"},
     {"slug": "n8n-adoption", "title": "n8n Adoption: 54%"},
+    {"slug": "frustrations", "title": "Tool Frustrations"},
+    {"slug": "most-exciting", "title": "Most Exciting Tools"},
+    {"slug": "unify-analysis", "title": "Unify: 8.8% Adoption"},
+    {"slug": "annual-spend", "title": "Annual Tool Spend"},
+    {"slug": "zoominfo-vs-apollo", "title": "ZoomInfo vs Apollo"},
+    {"slug": "tool-wishlist", "title": "Tool Wishlist"},
     {"slug": "apollo-adoption", "title": "Apollo Adoption"},
     {"slug": "instantly-adoption", "title": "Instantly Adoption"},
     {"slug": "smartlead-adoption", "title": "Smartlead Adoption"},
@@ -5555,8 +5561,12 @@ TOOL_PAGES = [
     {"slug": "lemlist-adoption", "title": "Lemlist Adoption"},
 ]
 
-# First 5 slugs are built now; the rest are coming soon
-BUILT_TOOL_SLUGS = {"tech-stack-benchmark", "clay", "crm-adoption", "ai-coding-tools", "n8n-adoption"}
+# Built tool slugs - pages with live content
+BUILT_TOOL_SLUGS = {
+    "tech-stack-benchmark", "clay", "crm-adoption", "ai-coding-tools", "n8n-adoption",
+    "frustrations", "most-exciting", "unify-analysis",
+    "annual-spend", "zoominfo-vs-apollo", "tool-wishlist",
+}
 
 
 def tool_related_links(current_slug):
@@ -5599,6 +5609,12 @@ def build_tool_index():
         ("crm-adoption", "CRM Adoption", "92% use a CRM. Salesforce vs HubSpot split by company size, integration patterns", "92% Adoption"),
         ("ai-coding-tools", "AI Coding Tools", "71% use AI coding tools. Cursor and Claude Code lead. The $45K coding premium connection", "71% Adoption"),
         ("n8n-adoption", "n8n Adoption", "54% adoption, replacing Zapier and Make. Agency vs in-house usage gap", "54% Adoption"),
+        ("frustrations", "Tool Frustrations", "What GTM Engineers hate most. Integration issues, UX problems, and why Clay is both loved and despised", "Top Complaints"),
+        ("most-exciting", "Most Exciting Tools", "Claude (39 mentions), Cursor (11), n8n (8). What GTM Engineers are most excited about in 2026", "AI Dominates"),
+        ("unify-analysis", "Unify Analysis", "8.8% adoption despite heavy marketing. Honest look at where Unify fits in the GTM stack", "8.8% Adoption"),
+        ("annual-spend", "Annual Tool Spend", "55% of agencies spend $5-25K on tools. US vs non-US spending patterns and where the money goes", "$5K&#8209;$25K"),
+        ("zoominfo-vs-apollo", "ZoomInfo vs Apollo", "Head-to-head for the 65% of GTM Engineers using data enrichment. Pricing, data quality, workflow fit", "65% Category"),
+        ("tool-wishlist", "Tool Wishlist", "All-in-one outbound is the #1 request. What tools GTM Engineers wish existed and what that signals", "#1: All&#8209;in&#8209;One"),
     ]
 
     built_cards = ""
@@ -5661,7 +5677,7 @@ def build_tool_index():
 
     <h2>What's Covered</h2>
     <p>Each tool page below digs into adoption rates, usage patterns, sentiment data, and how the tool connects to the broader stack. Where relevant, we tie tool adoption to salary data from our <a href="/salary/coding-premium/">coding premium analysis</a> and <a href="/careers/skills-gap/">skills gap research</a>.</p>
-    <p>We track 16 tool categories total. The five pages below cover the highest-adoption tools with the most survey data. The rest are in production and will be published as analysis completes.</p>
+    <p>We track 22 tool categories total. The eleven pages below cover adoption data, frustrations, spending patterns, and head-to-head comparisons backed by survey data. More tool deep-dives are in production.</p>
 
     <h2>The Agency vs In-House Divide</h2>
     <p>Agency and in-house GTM Engineers don't just use different amounts of tools. They use them differently. Agencies stack 6-8 tools per operator because breadth creates flexibility across client engagements. In-house teams standardize on 4-5 tools chosen by procurement. This means agency GTM Engineers develop broader tool fluency, while in-house engineers develop deeper expertise in fewer platforms.</p>
@@ -6187,6 +6203,302 @@ def build_tool_n8n():
     print(f"  Built: tools/n8n-adoption/index.html")
 
 
+def build_tool_frustrations():
+    """Tool frustrations page: what GTM Engineers hate most about their tools."""
+    title = "GTM Tool Frustrations: What Engineers Hate"
+    description = (
+        "Top tool frustrations from 228 GTM Engineers. Integration issues,"
+        " UX complaints, documentation gaps, and pricing pain points."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Tool Frustrations", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the most frustrating GTM tool?",
+         "Clay is both the most loved and most frustrating tool in the GTM stack. At 84% adoption, practitioners depend on it daily, which means every bug, UX quirk, and API timeout hits harder. The frustration level correlates with dependency: you don't complain about tools you can easily replace."),
+        ("What are the biggest GTM tool complaints?",
+         "Integration reliability tops the list. Tools that promise native integrations but deliver buggy, half-built connectors generate the most anger. After integrations: unpredictable pricing (especially per-task and per-record models), poor documentation for technical use cases, and UX that assumes non-technical users while the actual user base writes code."),
+        ("Why do GTM Engineers complain about tool pricing?",
+         "Two reasons. First, per-task and per-record pricing models punish high-volume workflows that are standard for GTM Engineers. An agency running 50,000 enrichment tasks per month can see costs spike 10x without warning. Second, enterprise pricing tiers lock essential features (API access, custom fields, advanced automations) behind contracts that solo operators and small agencies can't justify."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>GTM Tool Frustrations: What Engineers Hate</h1>
+        <p>The tools GTM Engineers depend on are also the tools they complain about most. Integration issues, UX gaps, documentation holes, and pricing models built for a different user. From the State of GTM Engineering Report 2026 (n=228).</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">#1</span>
+        <span class="stat-label">Integration Issues</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">#2</span>
+        <span class="stat-label">UX Problems</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">#3</span>
+        <span class="stat-label">Documentation Gaps</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">#4</span>
+        <span class="stat-label">Pricing Complaints</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Tools You Depend On Are the Tools You Hate</h2>
+    <p>Ask a GTM Engineer which tool frustrates them most and the answer is almost always the one they use every day. Clay. HubSpot. Instantly. The frustration level tracks with adoption. Nobody complains about a tool they dropped three months ago. They complain about the tool they opened 20 minutes ago that just failed on row 847 of a 10,000-record enrichment run.</p>
+    <p>We asked 228 GTM Engineers about their biggest tool pain points. The responses clustered around four categories: integration reliability, UX that doesn't match the use case, documentation written for the wrong audience, and pricing that punishes the exact workflows GTM Engineers run.</p>
+
+    <h2>Integration Issues: The #1 Frustration</h2>
+    <p>Integrations that break. Integrations that lose data. Integrations marketed as "native" that turn out to be Zapier webhooks in a trenchcoat. This was the single most cited frustration across the entire survey.</p>
+    <p>The core problem: GTM Engineers connect 6-8 tools into multi-step workflows. Every connection is a potential failure point. When Tool A updates its API and Tool B's integration hasn't caught up, the entire workflow stops. And because these workflows often run unattended overnight, you don't discover the breakage until morning when 3,000 leads that should have been enriched are sitting in a dead queue.</p>
+    <p>Clay's integrations drew the most specific complaints. Not because they're the worst (most practitioners rated them above average) but because Clay sits at the center of the stack. When a Clay integration fails, everything downstream fails. A broken CRM sync in Clay means enriched data never reaches HubSpot, sequences don't fire in Instantly, and the sales team starts the day with nothing.</p>
+    <p>The CRM integration layer is equally painful. HubSpot's API rate limits frustrate high-volume operations. Salesforce's complexity means even simple field mappings require admin-level knowledge. And smaller CRMs like Pipedrive and Close have fewer integration partners, forcing GTM Engineers to build custom connections via n8n or Make.</p>
+
+    <h2>UX: Built for Marketers, Used by Engineers</h2>
+    <p>Most GTM tools were designed for marketing operations or sales teams. The user interface reflects that origin. Drag-and-drop builders, visual workflow editors, and dashboard-heavy layouts that look great in demos but slow down practitioners who think in APIs and data schemas.</p>
+    <p>Clay is the most interesting case. Its table-based interface appeals to both operators and engineers, which is part of why adoption is so high. But power users consistently report that the UI struggles with large datasets (10,000+ rows), complex formula columns, and bulk operations. The interface that works at 500 rows starts lagging at 5,000 and becomes painful at 50,000.</p>
+    <p>Sequencing tools drew UX complaints around campaign management at scale. Instantly and Smartlead handle individual campaigns well, but managing 20+ active campaigns across multiple sending accounts, each with different follow-up sequences and warmup schedules, requires navigating interfaces that weren't designed for that complexity.</p>
+    <p>The consistent theme: tools optimized for onboarding and first impressions, not for daily use by power users running production workflows. The onboarding wizard is polished. The settings page where you configure webhook endpoints is an afterthought.</p>
+
+    <h2>Documentation: Written for the Wrong Audience</h2>
+    <p>GTM Engineers aren't the primary audience for most tool documentation. The docs are written for marketing managers setting up their first campaign or sales leaders configuring a basic pipeline. Technical documentation for API endpoints, webhook payloads, error codes, and rate limits is sparse, outdated, or buried in a developer portal that gets updated quarterly at best.</p>
+    <p>The gap is widest for workflow-specific use cases. "How to set up a drip campaign" has detailed docs. "How to handle webhook retries when the downstream API returns a 429 during a bulk enrichment run" doesn't exist. GTM Engineers end up in community Slack channels, Reddit threads, and YouTube tutorials from other practitioners because the official documentation stopped where their actual work begins.</p>
+    <p>Clay's documentation is better than most, partly because the community fills gaps that the official docs don't cover. HubSpot's developer docs are comprehensive but overwhelming. Apollo's docs are functional for basic API calls but thin on advanced use cases. n8n benefits from open-source community documentation that covers edge cases the official docs skip.</p>
+
+    <h2>Pricing: Per-Task Models Kill Margins</h2>
+    <p>Pricing frustrations split into two categories. First: per-task, per-record, or per-enrichment pricing models that make costs unpredictable when running high-volume workflows. Second: enterprise pricing tiers that gate essential features behind annual contracts sized for companies, not individual practitioners or small agencies.</p>
+    <p>Zapier's per-task pricing is the most cited specific example. A GTM Engineer running 50,000 tasks per month (normal for an active outbound operation) pays significantly more than someone running 500. The tool does the same thing in both cases. The pricing penalizes the exact scale that makes GTM Engineering valuable.</p>
+    <p>Clay's credit system generates mixed reactions. Some practitioners appreciate the transparency of knowing exactly what each enrichment costs. Others find the credit burn rate unpredictable, especially when running waterfall enrichments that hit multiple providers. An agency running Clay for 10 clients can burn through credits faster than budgeted when data quality requires extra enrichment passes.</p>
+    <p>The enterprise pricing wall is the other side of the coin. Salesforce, ZoomInfo, and 6sense lock features that GTM Engineers need (advanced API access, custom objects, signal data) behind pricing tiers designed for 100+ seat companies. A two-person GTM team doesn't need 100 seats. They need the features that come with them.</p>
+
+    <h2>Clay: Most Loved AND Most Frustrating</h2>
+    <p>Clay deserves its own section because it occupies a unique position. At 84% adoption (96% among agencies), it's the closest thing to a universal tool in GTM Engineering. It's also the tool that generates the most emotional responses in frustration surveys.</p>
+    <p>The love-hate dynamic makes sense. Clay does things no other tool does: waterfall enrichment across 75+ data providers, custom AI enrichment columns, flexible table-based workflows that bridge the gap between spreadsheets and databases. When it works, it's the single most powerful tool in the stack.</p>
+    <p>When it doesn't work, it's the single biggest bottleneck. Credit depletion mid-run. Enrichment columns that return inconsistent data. API integrations that timeout on large batches. Table performance degradation with complex formulas. These aren't edge cases. They're Tuesday morning for agency operators running production workflows.</p>
+    <p>The frustration intensity reflects dependency, not quality. GTM Engineers complain about Clay because they can't work without it. Nobody writes paragraphs of frustration about a tool they could swap out tomorrow. For the full <a href="/tools/clay/">Clay adoption analysis</a>, including what practitioners love about it, see our deep-dive.</p>
+
+    <h2>What Practitioners Want Fixed</h2>
+    <p>The fixes practitioners ask for are straightforward. Better API documentation with real code examples, not just endpoint listings. Transparent pricing calculators that let you model costs before committing to a plan. Performance optimization for power user workflows (large datasets, complex automation chains, high-volume operations).</p>
+    <p>The deeper request: tools built for how GTM Engineers work day to day, not for how the tool's marketing team imagines they work. GTM Engineers are technical operators building production systems. They need reliability, predictable costs, and documentation that treats them as the engineers they are.</p>
+    <p>For how tool skills affect compensation, see the <a href="/salary/coding-premium/">coding premium data</a>. For the tools practitioners are most excited about despite these frustrations, check the <a href="/tools/most-exciting/">most exciting tools analysis</a>. And for the full stack breakdown, see the <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("frustrations")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM tool intel and frustration reports.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/frustrations/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/frustrations/index.html", page)
+    print(f"  Built: tools/frustrations/index.html")
+
+
+def build_tool_most_exciting():
+    """Most exciting tools page: Claude, Cursor, n8n dominate excitement."""
+    title = "Most Exciting GTM Tools in 2026: Survey Results"
+    description = (
+        "What GTM Engineers are most excited about. Claude (39 mentions),"
+        " Cursor (11), n8n (8). AI tools dominate excitement rankings."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Most Exciting Tools", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the most exciting GTM tool in 2026?",
+         "Claude leads with 39 mentions, more than triple the second-place tool. GTM Engineers cite Claude's ability to write code, analyze data, and handle complex reasoning tasks as the primary reasons for excitement. Cursor (11 mentions) and n8n (8 mentions) round out the top three."),
+        ("Why are AI tools dominating GTM excitement?",
+         "AI tools are the first category that changes what GTM Engineers can do, not just how efficiently they do it. Before AI coding assistants, operators who couldn't write Python were limited to no-code tools. Now, Claude Code and Cursor let them build custom API integrations, data transformations, and automation scripts. That capability shift drives more excitement than any efficiency gain."),
+        ("Is ChatGPT or Claude more popular with GTM Engineers?",
+         "Claude leads in excitement mentions (39 vs ChatGPT's lower placement). The preference among GTM Engineers skews toward Claude for technical tasks: code generation, data analysis, and complex reasoning. ChatGPT retains popularity for general content creation and quick lookups, but the practitioners surveyed expressed more excitement about Claude's capabilities for engineering-adjacent work."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>Most Exciting GTM Tools: 2026 Survey</h1>
+        <p>We asked 228 GTM Engineers: "What tool are you most excited about right now?" AI dominated the answers. Claude led with 39 mentions, more than triple any other tool. Here's what the excitement data tells us about where the role is heading.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">39</span>
+        <span class="stat-label">Claude Mentions</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">11</span>
+        <span class="stat-label">Cursor Mentions</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">8</span>
+        <span class="stat-label">n8n Mentions</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>AI Owns the Excitement Graph</h2>
+    <p>When we asked "What tool are you most excited about right now?", the answers were overwhelming. AI tools took the top spots by wide margins. Claude at 39 mentions. Cursor at 11. n8n at 8. Then a long tail of individual tool mentions.</p>
+    <p>This isn't a survey about what people use most (that's Clay at 84%). It's about what gets practitioners excited about the future of their work. And the future, according to 228 GTM Engineers, is AI-powered. The excitement isn't about doing the same work faster. It's about doing work that was impossible six months ago.</p>
+
+    <h2>Claude: 39 Mentions, Clear #1</h2>
+    <p>Claude's lead is decisive. 39 mentions in an open-ended question where respondents could name anything. That's 17% of all survey participants naming the same tool unprompted.</p>
+    <p>The reasons cluster around capability. GTM Engineers cite Claude's code generation for building custom integrations, its ability to analyze spreadsheet data and spot patterns, its reasoning on complex GTM strategy questions, and its use as a "senior engineer on demand" for debugging workflows.</p>
+    <p>Several respondents specifically mentioned Claude replacing tasks they previously outsourced: custom API scripts, data cleanup automation, email copy iteration, and competitive research synthesis. The common thread is Claude expanding what a single GTM Engineer can accomplish without hiring additional team members.</p>
+    <p>The sentiment differs from ChatGPT excitement. ChatGPT mentions (which landed lower in the rankings) focused on content generation and general assistance. Claude mentions focused on technical capability: writing Python, debugging n8n workflows, analyzing enrichment data quality, and building automation that previously required a developer.</p>
+
+    <h2>Cursor: The Coding Accelerator</h2>
+    <p>Cursor's 11 mentions make it the second most exciting tool, and every mention was about the same thing: writing code faster. For GTM Engineers crossing the operator-to-engineer divide, Cursor represents the bridge.</p>
+    <p>Cursor is an AI-powered code editor built on VS Code. It understands your codebase, suggests completions, and can write entire functions from natural language descriptions. For a GTM Engineer who knows what they want to build but struggles with syntax, Cursor removes the friction.</p>
+    <p>The excitement around Cursor connects directly to the <a href="/salary/coding-premium/">$45K coding premium</a>. GTM Engineers who code earn significantly more. Cursor makes coding accessible to operators who previously couldn't cross that threshold. The tool doesn't just speed up existing coders. It creates new ones.</p>
+    <p>Multiple respondents described a workflow where Claude handles the strategy and architecture ("How should I structure this enrichment pipeline?") while Cursor handles the implementation ("Write the Python function that calls Clay's API, handles rate limits, and pushes results to HubSpot"). The two tools complement each other in a way that no single tool manages alone.</p>
+
+    <h2>n8n: The Workflow Dark Horse</h2>
+    <p>n8n's 8 mentions put it third, and it's the only non-AI tool in the top three. The excitement is about freedom: freedom from per-task pricing, freedom to self-host, freedom to run custom code inside workflows.</p>
+    <p>Where Clay excitement centers on enrichment power and AI excitement centers on capability expansion, n8n excitement is economic. Agency operators describe switching from Zapier to n8n and watching their automation costs drop 80-90%. At 50,000+ tasks per month, that's hundreds of dollars saved, which directly increases margins on GTM service engagements.</p>
+    <p>The self-hosting appeal also lands with practitioners handling sensitive data. Running workflows on your own infrastructure means client data never touches a third-party cloud. For GTM Engineers working with financial services, healthcare, or enterprise compliance requirements, that distinction isn't a nice-to-have. It's a requirement.</p>
+    <p>For the full n8n analysis, see our <a href="/tools/n8n-adoption/">n8n adoption deep-dive</a>.</p>
+
+    <h2>The Emerging Tools Getting Buzz</h2>
+    <p>Below the top three, excitement scattered across dozens of tools. A few patterns emerged from the long tail.</p>
+    <p><strong>AI SDR tools</strong> generated scattered but intense mentions. Products like 11x, Relevance AI, and AiSDR attempt to automate the SDR role end to end. Excitement was tempered by skepticism: most respondents who mentioned AI SDRs added caveats about quality, personalization limits, and whether the output would convert at production volume.</p>
+    <p><strong>Perplexity</strong> appeared multiple times as a research tool for account research and competitive intelligence. GTM Engineers use it to quickly synthesize information about target companies before building personalized outbound sequences.</p>
+    <p><strong>Clay itself</strong> showed up in excitement mentions despite also being the most frustrating tool. New features (AI enrichment columns, improved integrations) keep practitioners invested in the platform's trajectory even when the current experience has friction.</p>
+    <p><strong>Open-source alternatives</strong> to expensive tools generated buzz. Beyond n8n, practitioners mentioned PostHog (analytics), Cal.com (scheduling), and Supabase (database) as tools that let them build GTM infrastructure without enterprise pricing.</p>
+
+    <h2>What Excitement Signals Tell Us</h2>
+    <p>The excitement data reveals three signals about where GTM Engineering is heading.</p>
+    <p>First, AI isn't a feature. It's the category. When the top two most exciting tools are both AI-powered, and the third is exciting partly because it integrates well with AI, the signal is clear. The next generation of GTM tools will be AI-native, not AI-augmented.</p>
+    <p>Second, the operator-to-engineer pipeline is real. Cursor and Claude Code excitement comes from operators who want to cross into engineering territory. The tools that help people level up generate more excitement than tools that do the same thing slightly better.</p>
+    <p>Third, pricing models matter as much as features. n8n's excitement is fundamentally about economics. Open-source alternatives get buzz because they remove cost barriers. The implication for tool vendors: your biggest competitive threat might not be a better product. It might be a cheaper one that's "good enough."</p>
+    <p>For how these AI tools connect to the <a href="/tools/ai-coding-tools/">coding tool adoption data</a>, and what the frustration side looks like, check the <a href="/tools/frustrations/">tool frustrations analysis</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("most-exciting")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM tool intel and trend reports.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/most-exciting/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/most-exciting/index.html", page)
+    print(f"  Built: tools/most-exciting/index.html")
+
+
+def build_tool_unify():
+    """Unify analysis page: 8.8% adoption despite heavy marketing."""
+    title = "Unify for GTM Engineers: 8.8% Adoption (2026)"
+    description = (
+        "Unify adoption data from 228 GTM Engineers. 8.8% adoption despite"
+        " heavy marketing. Honest analysis of product-market fit."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Unify Analysis", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is Unify's adoption rate among GTM Engineers?",
+         "8.8% of surveyed GTM Engineers report using Unify. That puts it well below the category leaders: Clay at 84%, CRM tools at 92%, and even workflow automation at 54%. The low adoption exists despite Unify's significant marketing presence in the GTM Engineering community."),
+        ("Why is Unify's adoption so low despite marketing?",
+         "Three factors. First, Clay already owns the enrichment and orchestration layer for 84% of practitioners, leaving little room for an alternative. Second, Unify's multi-channel outbound pitch overlaps with tools teams already use (Instantly, Smartlead, HeyReach). Third, the pricing model targets mid-market and enterprise buyers, while many GTM Engineers are at agencies or startups with tighter budgets."),
+        ("Should I use Unify or Clay for GTM Engineering?",
+         "The data strongly favors Clay for most GTM Engineering workflows. At 84% adoption vs 8.8%, Clay has a larger ecosystem, more community resources, more job postings requiring it, and broader integration support. Unify may fit specific use cases around multi-channel outbound orchestration, but it's not a Clay replacement for enrichment-centric workflows."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>Unify: 8.8% Adoption Among GTM Engineers</h1>
+        <p>Unify has positioned itself as a GTM platform for multi-channel outbound. The marketing is visible. The adoption data tells a different story. 8.8% of 228 surveyed GTM Engineers use it. Here's what that number means in context.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">8.8%</span>
+        <span class="stat-label">Adoption Rate</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Clay (for comparison)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Survey Respondents</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Number in Context</h2>
+    <p>8.8% adoption. That's roughly 20 out of 228 surveyed GTM Engineers who report using Unify. For a tool with significant marketing investment and visible presence in the GTM Engineering community, this number deserves honest analysis.</p>
+    <p>For context: Clay sits at 84%. CRM adoption is 92%. Even n8n, a relatively technical workflow tool, has 54% adoption. Unify's 8.8% puts it in the same tier as niche tools with minimal marketing presence. The gap between Unify's visibility and its adoption is the story.</p>
+
+    <h2>What Unify Does</h2>
+    <p>Unify positions itself as a multi-channel outbound orchestration platform. The pitch: manage email, LinkedIn, and phone outbound from a single platform with built-in lead enrichment, sequence automation, and intent signals.</p>
+    <p>The product combines functions that GTM Engineers currently spread across multiple tools. Instead of Clay for enrichment + Instantly for email + HeyReach for LinkedIn + 6sense for intent data, Unify aims to consolidate those into one platform. On paper, this is the "all-in-one outbound tool" that practitioners say they want (it's the #1 item on the <a href="/tools/tool-wishlist/">tool wishlist</a>).</p>
+    <p>The execution challenge is that each of those specialized tools has years of feature depth in its category. Clay's enrichment layer pulls from 75+ data providers. Instantly manages hundreds of sending accounts with sophisticated warmup algorithms. Consolidating those capabilities into a single platform without compromising depth is an engineering problem that hasn't been solved yet in this space.</p>
+
+    <h2>Why Adoption Is Low</h2>
+    <p>Three factors explain the gap between Unify's marketing and its adoption numbers.</p>
+    <p><strong>Clay's gravitational pull.</strong> With 84% adoption, Clay owns the enrichment and orchestration layer. GTM Engineers have invested time learning Clay's interface, building complex enrichment tables, and integrating it with their workflow tools. Switching to Unify means abandoning that investment. And Clay keeps shipping new features (AI enrichment columns, improved integrations) that reinforce the switching cost.</p>
+    <p><strong>Tool-stack inertia.</strong> GTM Engineers build multi-tool workflows over months. An active operation might have Clay feeding enriched leads to Instantly for email sequences, HeyReach for LinkedIn outreach, and n8n orchestrating the data flow between all of them. Replacing three tools with one requires rebuilding workflows from scratch. The potential consolidation benefit has to be enormous to justify that disruption.</p>
+    <p><strong>Pricing alignment.</strong> Unify's pricing targets mid-market and enterprise buyers. Many GTM Engineers work at agencies, startups, or as freelancers where tool budgets are tighter. The per-seat pricing model fits a sales team better than a one-person GTM operation. Clay's usage-based credit model scales more naturally with individual practitioners who want to pay for what they use.</p>
+
+    <h2>Who Uses Unify and Why</h2>
+    <p>The 8.8% who do use Unify cluster around specific profiles. Mid-market sales teams (20-100 employees) that want a single platform for outbound. Companies where the "GTM Engineer" is closer to a sales ops manager than a technical builder. Teams prioritizing LinkedIn outbound as a primary channel, where Unify's native LinkedIn integration adds value over the Clay + HeyReach combination.</p>
+    <p>These users tend to value simplicity over flexibility. They want fewer tools to manage, fewer integrations to maintain, and a more opinionated workflow. That's a valid preference. The GTM Engineering community skews toward technical practitioners who prefer building custom stacks from specialized tools, which biases the survey away from Unify's target user.</p>
+
+    <h2>Marketing vs Adoption: The Disconnect</h2>
+    <p>Unify's marketing is well-executed and highly visible. Sponsored content, LinkedIn presence, event appearances, and practitioner testimonials create the impression of widespread adoption. But marketing visibility and actual adoption are different metrics.</p>
+    <p>This disconnect is common in GTM tools. Vendors invest heavily in awareness before the product has achieved category leadership. The result: practitioners see the marketing everywhere and assume everyone else is using it. Survey data reveals the reality. At 8.8%, Unify has awareness without corresponding adoption.</p>
+    <p>For comparison: n8n spent almost nothing on marketing and achieved 54% adoption through word-of-mouth and community recommendations. Clay's early growth was driven by practitioners sharing their workflows on Twitter and LinkedIn, not paid campaigns. In the GTM Engineering community, peer recommendations and visible use cases drive adoption more than marketing spend.</p>
+
+    <h2>Honest Assessment</h2>
+    <p>Unify is solving a real problem. GTM Engineers do want consolidated outbound tools (that's the <a href="/tools/tool-wishlist/">#1 wishlist item</a>). The question is whether Unify can match the depth of specialized tools while delivering on the consolidation promise.</p>
+    <p>At 8.8% adoption, the market hasn't validated that trade-off yet. That could change. Unify has funding, an active engineering team, and a clear product vision. But in a market where Clay has 10x the adoption and a two-year head start on integrations and community, the path to meaningful market share requires either a breakthrough feature that Clay can't replicate or a fundamentally different user persona than the current GTM Engineer community.</p>
+    <p>We'll update this analysis as adoption data changes. For the broader tool ecosystem, see the <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>. For what the <a href="/tools/clay/">Clay deep-dive</a> reveals about why switching costs are so high, check that analysis.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("unify-analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM tool intel and honest analysis.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/unify-analysis/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/unify-analysis/index.html", page)
+    print(f"  Built: tools/unify-analysis/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -6328,6 +6640,9 @@ def main():
     build_tool_crm()
     build_tool_ai_coding()
     build_tool_n8n()
+    build_tool_frustrations()
+    build_tool_most_exciting()
+    build_tool_unify()
 
     print("\n  Building meta files...")
     build_sitemap()

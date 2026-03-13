@@ -89,15 +89,15 @@
 
 ### Benchmark & Statistics Pages
 
-- [ ] **BENCH-01**: "50 Key Numbers" roundup page (all top stats from report)
-- [ ] **BENCH-02**: Demographics deep-dive (228 respondents, 32 countries, distributions)
-- [ ] **BENCH-03**: Report summary and analysis page (editorial commentary)
-- [ ] **BENCH-04**: "Operator vs Engineer Divide" analysis (bimodal, salary gap, bifurcation)
-- [ ] **BENCH-05**: Bottlenecks page (25% bandwidth, 17% tool complexity, 8% buy-in)
-- [ ] **BENCH-06**: "Does Your Company Understand GTM Engineering?" (45% yes, 9% partially)
-- [ ] **BENCH-07**: Learning resources page (LinkedIn 174, YouTube, Peers)
-- [ ] **BENCH-08**: Headcount trends page (majority plan to grow in 2026)
-- [ ] **BENCH-09**: Future of GTM Engineering page (AI, RevOps convergence, agents, consolidation)
+- [x] **BENCH-01**: "50 Key Numbers" roundup page (all top stats from report)
+- [x] **BENCH-02**: Demographics deep-dive (228 respondents, 32 countries, distributions)
+- [x] **BENCH-03**: Report summary and analysis page (editorial commentary)
+- [x] **BENCH-04**: "Operator vs Engineer Divide" analysis (bimodal, salary gap, bifurcation)
+- [x] **BENCH-05**: Bottlenecks page (25% bandwidth, 17% tool complexity, 8% buy-in)
+- [x] **BENCH-06**: "Does Your Company Understand GTM Engineering?" (45% yes, 9% partially)
+- [x] **BENCH-07**: Learning resources page (LinkedIn 174, YouTube, Peers)
+- [x] **BENCH-08**: Headcount trends page (majority plan to grow in 2026)
+- [x] **BENCH-09**: Future of GTM Engineering page (AI, RevOps convergence, agents, consolidation)
 
 ### Comparison Pages
 
@@ -222,15 +222,15 @@
 | TOOL-14 | Phase 6 | Complete |
 | TOOL-15 | Phase 6 | Complete |
 | TOOL-16 | Phase 6 | Complete |
-| BENCH-01 | Phase 6 | Pending |
-| BENCH-02 | Phase 6 | Pending |
-| BENCH-03 | Phase 6 | Pending |
-| BENCH-04 | Phase 6 | Pending |
-| BENCH-05 | Phase 6 | Pending |
-| BENCH-06 | Phase 6 | Pending |
-| BENCH-07 | Phase 6 | Pending |
-| BENCH-08 | Phase 6 | Pending |
-| BENCH-09 | Phase 6 | Pending |
+| BENCH-01 | Phase 6 | Complete |
+| BENCH-02 | Phase 6 | Complete |
+| BENCH-03 | Phase 6 | Complete |
+| BENCH-04 | Phase 6 | Complete |
+| BENCH-05 | Phase 6 | Complete |
+| BENCH-06 | Phase 6 | Complete |
+| BENCH-07 | Phase 6 | Complete |
+| BENCH-08 | Phase 6 | Complete |
+| BENCH-09 | Phase 6 | Complete |
 | COMP-01 | Phase 7 | Pending |
 | COMP-02 | Phase 7 | Pending |
 | COMP-03 | Phase 7 | Pending |

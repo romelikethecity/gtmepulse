@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: State of GTME Content Wave
 status: executing
-stopped_at: Completed 06-03-PLAN.md
-last_updated: "2026-03-13T22:47:42Z"
-last_activity: "2026-03-13 — 06-03 programming language + comparison tool pages (5 pages: python, sql, javascript, zapier-vs-n8n, hubspot-vs-salesforce) + nav dropdown complete"
+stopped_at: Completed 06-04-PLAN.md
+last_updated: "2026-03-13T23:01:38Z"
+last_activity: "2026-03-13 — 06-04 benchmark pages (10 pages: index, 50-stats, demographics, report-summary, operator-vs-engineer, bottlenecks, company-understanding, learning-resources, headcount-trends, future-predictions) + nav + Phase 6 complete"
 progress:
   total_phases: 7
   completed_phases: 2
   total_plans: 13
-  completed_plans: 11
-  percent: 96
+  completed_plans: 12
+  percent: 98
 ---
 
 # Project State
@@ -21,23 +21,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-13)
 
 **Core value:** GTM Engineers can find accurate, vendor-neutral salary benchmarks and career intelligence in one place, with data no competitor provides.
-**Current focus:** Phase 6 — Tools and Benchmarks
+**Current focus:** Phase 6 complete. Phase 7 next (Quality Sweep).
 
 ## Current Position
 
-Phase: 6 of 7 (Tools and Benchmarks)
-Plan: 3 of 3 in current phase (done)
+Phase: 6 of 7 (Tools and Benchmarks) - COMPLETE
+Plan: 4 of 4 in current phase (done)
 Status: Executing
-Last activity: 2026-03-13 — 06-03 programming language + comparison tool pages (5 pages: python, sql, javascript, zapier-vs-n8n, hubspot-vs-salesforce) + nav dropdown complete
+Last activity: 2026-03-13 — 06-04 benchmark pages (10 pages) + nav + Phase 6 complete
 
-Progress: [██████████] 96%
+Progress: [██████████] 98%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
+- Total plans completed: 12
 - Average duration: 7min
-- Total execution time: 72min
+- Total execution time: 83min
 
 *Updated after each plan completion*
 
@@ -79,6 +79,10 @@ Progress: [██████████] 96%
 - [v2.0 06-03]: Tools nav converted to dropdown with 4 children (Index, Tech Stack, Clay, Frustrations)
 - [v2.0 06-03]: Footer Resources expanded with Tech Stack Benchmark and Tool Frustrations links
 - [v2.0 06-03]: CSS_VERSION bumped to 11 for nav/footer structural changes
+- [v2.0 06-04]: BENCH_PAGES array (9 entries) as single source of truth for index and cross-links
+- [v2.0 06-04]: Benchmarks nav entry as simple link (not dropdown) since 9 pages don't need subcategory navigation
+- [v2.0 06-04]: bench_related_links() cross-links all benchmark pages plus salary/tools/career indexes (limit 12)
+- [v2.0 06-04]: CSS_VERSION bumped to 12 for nav/footer structural changes
 
 ### Pending Todos
 
@@ -92,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-13T22:47:42Z
-Stopped at: Completed 06-03-PLAN.md
+Last session: 2026-03-13T23:01:38Z
+Stopped at: Completed 06-04-PLAN.md
 Resume file: None

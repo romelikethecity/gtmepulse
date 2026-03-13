@@ -5621,6 +5621,11 @@ def build_tool_index():
         ("annual-spend", "Annual Tool Spend", "55% of agencies spend $5-25K on tools. US vs non-US spending patterns and where the money goes", "$5K&#8209;$25K"),
         ("zoominfo-vs-apollo", "ZoomInfo vs Apollo", "Head-to-head for the 65% of GTM Engineers using data enrichment. Pricing, data quality, workflow fit", "65% Category"),
         ("tool-wishlist", "Tool Wishlist", "All-in-one outbound is the #1 request. What tools GTM Engineers wish existed and what that signals", "#1: All&#8209;in&#8209;One"),
+        ("zapier-vs-n8n", "Zapier vs n8n", "n8n at 54% adoption is replacing Zapier. Per-task vs self-hosted pricing and agency vs enterprise preferences", "54% n8n"),
+        ("hubspot-vs-salesforce", "HubSpot vs Salesforce", "92% CRM adoption split by company size. API quality, automation depth, and which skills to learn", "92% CRM"),
+        ("python", "Python for GTMEs", "The $45K coding premium, bimodal adoption, AI coding acceleration, and an 8-week learning path", "$45K Premium"),
+        ("sql", "SQL for GTMEs", "SQL in ~25% of job postings. Enterprise demand, SOQL, BigQuery use cases, and when spreadsheets aren't enough", "~25% Postings"),
+        ("javascript", "JavaScript vs Python", "JavaScript in ~15% of job postings. Clay code steps, n8n nodes, browser automation, and when to learn which", "~15% Postings"),
     ]
 
     built_cards = ""
@@ -5683,7 +5688,7 @@ def build_tool_index():
 
     <h2>What's Covered</h2>
     <p>Each tool page below digs into adoption rates, usage patterns, sentiment data, and how the tool connects to the broader stack. Where relevant, we tie tool adoption to salary data from our <a href="/salary/coding-premium/">coding premium analysis</a> and <a href="/careers/skills-gap/">skills gap research</a>.</p>
-    <p>We track 22 tool categories total. The eleven pages below cover adoption data, frustrations, spending patterns, and head-to-head comparisons backed by survey data. More tool deep-dives are in production.</p>
+    <p>We track 27 tool categories total. The sixteen pages below cover adoption data, frustrations, spending patterns, coding languages, and head-to-head comparisons backed by survey data.</p>
 
     <h2>The Agency vs In-House Divide</h2>
     <p>Agency and in-house GTM Engineers don't just use different amounts of tools. They use them differently. Agencies stack 6-8 tools per operator because breadth creates flexibility across client engagements. In-house teams standardize on 4-5 tools chosen by procurement. This means agency GTM Engineers develop broader tool fluency, while in-house engineers develop deeper expertise in fewer platforms.</p>
@@ -5694,10 +5699,7 @@ def build_tool_index():
         {built_cards}
     </div>
 
-    <h2>Coming Soon</h2>
-    <div class="salary-index-grid">
-        {coming_soon_cards}
-    </div>
+    {f'<h2>Coming Soon</h2><div class="salary-index-grid">{coming_soon_cards}</div>' if coming_soon_cards.strip() else ''}
 
     <h2>Tool Spend: Where the Money Goes</h2>
     <p>55% of agency GTM Engineers spend $5,000-$25,000 per year on tools. That's personal or company budget allocated specifically to the GTM stack. The breakdown skews toward data enrichment (Clay credits, Apollo subscriptions) and sequencing tools (Instantly, Smartlead). Workflow automation is the cheapest category for agencies using self-hosted n8n.</p>
@@ -6799,6 +6801,199 @@ def build_tool_wishlist():
     print(f"  Built: tools/tool-wishlist/index.html")
 
 
+def build_tool_zapier_vs_n8n():
+    """Zapier vs n8n comparison for GTM Engineers."""
+    title = "Zapier vs n8n for GTM Engineers: 2026 Data"
+    description = (
+        "Zapier vs n8n comparison from 228 GTM Engineers. n8n at 54% adoption,"
+        " pricing models, agency preferences, and migration considerations."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Zapier vs n8n", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Is n8n or Zapier better for GTM Engineers?",
+         "n8n leads among GTM Engineers at 54% adoption, particularly at agencies where self-hosting eliminates per-task pricing. Zapier still wins for enterprise teams where IT approval, SOC 2 compliance, and pre-built integrations matter more than cost optimization. Agencies prefer n8n for cost control at scale. Enterprise teams prefer Zapier for reduced setup overhead and compliance documentation."),
+        ("Why are GTM Engineers switching from Zapier to n8n?",
+         "Cost is the primary driver. Zapier charges per task, which scales linearly with workflow volume. An agency running enrichment workflows for 10 clients at 50,000 tasks/month faces $300-500/month on Zapier. The same volume on self-hosted n8n costs the server fee ($5-20/month). The secondary driver is workflow complexity: n8n handles conditional logic, loops, and error handling more flexibly than Zapier."),
+        ("What about Make as an alternative to both?",
+         "Make (formerly Integromat) sits between Zapier and n8n in both pricing and complexity. It charges per operation but at lower rates than Zapier. The visual workflow builder is more intuitive than n8n for non-technical users. About 30% of surveyed GTM Engineers use Make, often alongside n8n. Make handles the simpler workflows while n8n handles complex multi-step automations. It is a viable middle ground for teams that find Zapier too expensive but n8n too technical."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>Zapier vs n8n for GTM Engineers</h1>
+        <p>n8n has taken 54% of the GTM Engineer workflow automation market. Zapier's per-task pricing pushed agencies toward self-hosted alternatives. The shift reshaped how practitioners think about automation economics. From 228 survey responses.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">54%</span>
+        <span class="stat-label">n8n Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">Per&#8209;Task</span>
+        <span class="stat-label">Zapier Pricing</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$5&#8209;$20/mo</span>
+        <span class="stat-label">n8n Self&#8209;Hosted</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Pricing Tipping Point</h2>
+    <p>Zapier's per-task pricing model created the opening for n8n. At low volumes, Zapier is convenient: set up a workflow in minutes, pay a few dollars per month, done. But GTM Engineers don't operate at low volumes.</p>
+    <p>A typical agency enrichment workflow: trigger on new lead, call Clay API, transform data, update CRM, send notification. Five tasks per lead. Running 10,000 leads/month across 5 clients means 250,000 tasks. At Zapier's Team plan pricing, that costs $300-500/month for automation alone. Scale to 10 clients and the bill doubles.</p>
+    <p>n8n's self-hosted model flips the economics. Deploy on a $10/month VPS (Hetzner, DigitalOcean), run unlimited workflows, process unlimited tasks. The only cost that scales is server resources, and a $20/month server handles volumes that would cost $1,000+ on Zapier. The math is obvious. Agencies figured it out first because they process the highest volumes.</p>
+    <p>n8n Cloud exists for teams that don't want to self-host. Pricing starts at $20/month for the Starter plan (2,500 executions). It's still cheaper than Zapier at comparable volumes, but the self-hosted option is where n8n's economics dominate.</p>
+
+    <h2>Workflow Complexity: Where n8n Pulls Ahead</h2>
+    <p>Beyond pricing, n8n handles complex workflows that strain Zapier's architecture. The differences become clear in three areas.</p>
+    <p><strong>Error handling.</strong> n8n has built-in error workflow branches. When a step fails, you can route to retry logic, fallback behavior, or error notification workflows. Zapier's error handling is simpler: retry the step or notify. For production workflows processing thousands of records, the difference between graceful degradation and silent failure matters.</p>
+    <p><strong>Loops and iteration.</strong> n8n handles loops natively. Process each item in a list, apply conditional logic per item, aggregate results. Zapier added looping but it's clunky and each iteration counts as a task (remember the pricing issue). An n8n workflow that processes 1,000 records in a loop is one execution. On Zapier, it's 1,000 tasks.</p>
+    <p><strong>Code integration.</strong> n8n's code nodes run JavaScript or Python inline. You can write custom transformation logic, call APIs with specific authentication patterns, and process data in ways that pre-built nodes don't support. Zapier has code steps too, but they're more restricted in execution time and available libraries.</p>
+    <p>These differences compound. A complex enrichment workflow with error handling, loops, and custom code is straightforward to build in n8n. The same workflow in Zapier requires workarounds, costs more per execution, and is harder to debug when something breaks.</p>
+
+    <h2>Agency vs Enterprise: Different Winners</h2>
+    <p>The Zapier vs n8n choice maps cleanly to work environment.</p>
+    <p><strong>Agencies choose n8n.</strong> Cost control at scale is the primary reason. Agencies bill clients for results, not for Zapier invoices. Self-hosting eliminates a variable cost that scales with success (more clients = more tasks = higher Zapier bills). n8n also offers more flexibility for building custom workflows per client without per-task cost anxiety. 68% of surveyed agency GTM Engineers use n8n.</p>
+    <p><strong>Enterprise teams choose Zapier.</strong> IT and procurement departments prefer vendor-hosted solutions with SOC 2 certification, SLAs, and a sales rep to call when something breaks. Zapier checks all those boxes. Self-hosted n8n introduces infrastructure management, security responsibility, and compliance questions that enterprise IT teams don't want to answer. The cost premium is acceptable when the company is paying and the budget exists.</p>
+    <p>There's a pragmatic middle ground too. Some agency GTM Engineers use Zapier for client-facing automations (so the client can see and modify workflows) while running n8n internally for their own operations. The client gets a familiar interface; the agency keeps its costs low on the back end.</p>
+
+    <h2>Make: The Third Option</h2>
+    <p>Make (formerly Integromat) captures about 30% of surveyed GTM Engineers. It's not the leader, but it fills a real niche between Zapier's simplicity and n8n's power.</p>
+    <p>Make's visual workflow builder is its strongest feature. Complex workflows with branches and loops display clearly. Non-technical team members can understand and modify Make workflows more easily than n8n's interface. For agencies that need to hand off automations to clients, Make's UX is a selling point.</p>
+    <p>Pricing sits between the two extremes. Make charges per operation, but at lower rates than Zapier. The Pro plan at $16/month gives you 10,000 operations. Not as cheap as self-hosted n8n, but significantly cheaper than Zapier for moderate volumes.</p>
+    <p>The typical pattern: GTM Engineers learn one platform deeply and use it as their primary. Make users tend to be former Zapier users who wanted better pricing without the technical overhead of self-hosting n8n. n8n users tend to be more technical practitioners who wanted maximum control and minimum cost.</p>
+
+    <h2>Migration Considerations</h2>
+    <p>If you're moving from Zapier to n8n, expect 2-3 weeks of migration time for a typical agency with 20-40 active workflows. The main friction points:</p>
+    <p><strong>Different node names.</strong> Zapier's "action" names don't always match n8n's "node" names. Google Sheets integration works differently. CRM nodes have different field mappings. Plan for one-by-one workflow recreation rather than automated migration.</p>
+    <p><strong>Authentication setup.</strong> Every connected service needs re-authentication in n8n. OAuth flows, API keys, webhook URLs all need reconfiguration. Budget a day just for auth setup if you connect more than 10 services.</p>
+    <p><strong>Self-hosting learning curve.</strong> If you've never managed a Linux server, n8n's self-hosting adds new responsibility. Docker deployment is the standard approach: install Docker on a VPS, pull the n8n image, configure environment variables. It's documented well, but it's still server administration.</p>
+    <p><strong>Monitoring.</strong> Zapier's dashboard shows you when workflows fail. Self-hosted n8n needs monitoring setup: health checks, disk space alerts, execution failure notifications. Without monitoring, a crashed n8n instance means silent workflow failures until someone notices.</p>
+    <p>For the broader automation tool adoption data, see the <a href="/tools/n8n-adoption/">n8n adoption analysis</a>. For how automation tools fit into the full GTM stack, check the <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>. And for spending context, see the <a href="/tools/annual-spend/">annual tool spend data</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("zapier-vs-n8n")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM automation and workflow intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/zapier-vs-n8n/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/zapier-vs-n8n/index.html", page)
+    print(f"  Built: tools/zapier-vs-n8n/index.html")
+
+
+def build_tool_hubspot_vs_salesforce():
+    """HubSpot vs Salesforce comparison for GTM Engineers."""
+    title = "HubSpot vs Salesforce for GTM Engineers (2026)"
+    description = (
+        "HubSpot vs Salesforce for GTM Engineers. 92% CRM adoption data by"
+        " company size, integration quality, and which skills to learn."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("HubSpot vs Salesforce", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Do GTM Engineers prefer HubSpot or Salesforce?",
+         "It depends on company size, not personal preference. HubSpot dominates at startups and SMBs (seed through Series B). Salesforce dominates at enterprise (Series C+ and public companies). GTM Engineers at agencies need to know both because they work across client environments. The survey shows 92% CRM adoption overall, with the split roughly 55% HubSpot, 40% Salesforce, and 5% alternatives like Pipedrive or Attio."),
+        ("Which CRM has better API integrations for GTM Engineers?",
+         "HubSpot's API is more developer-friendly with better documentation, simpler authentication, and more forgiving rate limits. Salesforce's API is more powerful but more complex: SOQL for queries, Apex for custom logic, multiple API versions to manage. For GTM Engineers building Clay integrations and automation workflows, HubSpot requires less setup time. For enterprise data modeling and complex business logic, Salesforce's depth is necessary."),
+        ("Should GTM Engineers learn HubSpot or Salesforce skills?",
+         "Learn whichever your target companies use. If you want agency or startup roles, HubSpot is the priority. If you want enterprise or Fortune 500 roles, Salesforce skills (including SOQL and basic Apex) command premium rates. The highest-paid GTM Engineers know both and can migrate data between them. CRM migration projects pay well because few people understand both systems deeply enough to map data models accurately."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>HubSpot vs Salesforce for GTM Engineers</h1>
+        <p>92% of GTM Engineers work in a CRM daily. The HubSpot vs Salesforce split follows company size: startups on HubSpot, enterprise on Salesforce. The CRM you know shapes your career options. From 228 survey responses.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">CRM Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~55%</span>
+        <span class="stat-label">HubSpot Share</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~40%</span>
+        <span class="stat-label">Salesforce Share</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>CRM Choice Follows Company Size</h2>
+    <p>The HubSpot vs Salesforce decision isn't made by GTM Engineers. It's made by company stage, budget, and existing infrastructure. Understanding this matters because the CRM you work with determines half your daily workflow.</p>
+    <p><strong>Seed through Series A:</strong> HubSpot's free tier or Starter plan. The company can't justify $25K+/year for Salesforce when there are 3 sales reps and 500 contacts. HubSpot's free CRM covers lead tracking, basic automation, and email integration. GTM Engineers at these companies build on HubSpot's workflows, forms, and API.</p>
+    <p><strong>Series B:</strong> This is where the split happens. Companies with product-market fit and growing sales teams face a choice: upgrade HubSpot to Professional/Enterprise ($1,200-$3,600/month) or migrate to Salesforce ($75-300/user/month). The decision often depends on the VP of Sales's previous experience and what the data team already supports.</p>
+    <p><strong>Series C and beyond:</strong> Salesforce wins by default. Enterprise procurement, compliance requirements, and integration with existing data infrastructure (Snowflake, Marketo, CPQ tools) make Salesforce the standard. GTM Engineers at these companies spend more time on Salesforce administration and data integrity than on outbound automation.</p>
+    <p><strong>Agencies:</strong> Both. Agency GTM Engineers configure HubSpot for startup clients and Salesforce for enterprise clients. This is why agencies produce the most versatile GTM Engineers. You learn both CRMs out of necessity.</p>
+
+    <h2>API Quality: HubSpot's Developer Experience Wins</h2>
+    <p>For GTM Engineers building integrations, the API experience differs substantially.</p>
+    <p>HubSpot's API is clean and well-documented. Authentication uses a single API key or OAuth token. Rate limits are generous (100 requests/10 seconds for most endpoints). The API mirrors the UI structure: contacts, companies, deals, tickets. If you can navigate HubSpot's UI, you can understand the API endpoints. Response formats are consistent and predictable.</p>
+    <p>Salesforce's API is powerful but complex. Multiple API flavors exist: REST API, SOAP API, Bulk API, Streaming API. SOQL (Salesforce Object Query Language) has its own syntax for data queries. Authentication requires OAuth with refresh tokens and instance URLs that change per org. The data model uses custom objects, field-level security, and sharing rules that affect API access. Getting a basic integration working takes longer than HubSpot, but you can do more with it once it's running.</p>
+    <p>Clay integrates with both, but the HubSpot integration is simpler to configure. Fewer authentication steps, more straightforward field mapping, and the webhook integration works without middleware. Salesforce integration through Clay requires more setup, particularly around custom object access and field permissions.</p>
+    <p>For the 84% of GTM Engineers using Clay, HubSpot is the path of least resistance for CRM integration. For the subset working in Salesforce environments, Clay's Salesforce integration works well once configured, it just takes more upfront work.</p>
+
+    <h2>Automation Capabilities</h2>
+    <p>Both CRMs offer workflow automation, but they approach it differently.</p>
+    <p><strong>HubSpot workflows:</strong> visual, drag-and-drop, easy to build and modify. The workflow builder handles most common GTM automation: lead assignment, follow-up sequences, lifecycle stage changes, internal notifications. Limitations hit when you need complex conditional logic, external API calls within workflows, or operations on custom objects with complex relationships. HubSpot's Operations Hub (additional cost) adds programmable automation with custom code actions.</p>
+    <p><strong>Salesforce flows:</strong> more powerful, more complex. Salesforce's Flow Builder handles complex multi-object automation with conditional branching, loops, and subflows. Apex (Salesforce's programming language) extends automation beyond what Flow can do. The ceiling is much higher, but so is the learning curve. A Salesforce flow that processes leads through complex routing logic would require multiple HubSpot workflows chained together.</p>
+    <p>GTM Engineers who work in Salesforce tend to build more of their automation inside the CRM. GTM Engineers on HubSpot tend to handle complex automation externally (in n8n, Make, or Python) and use HubSpot workflows for simpler CRM-specific tasks. Neither approach is wrong. It's a function of what each CRM handles well natively.</p>
+
+    <h2>Data Model Impact on GTM Workflows</h2>
+    <p>The CRM's data model shapes how GTM Engineers think about and build workflows.</p>
+    <p>HubSpot uses a flat, property-based model. Contacts have properties (fields). Associations link contacts to companies and deals. It's intuitive and works well for standard B2B workflows. Where it struggles: complex B2B relationships (one contact at multiple companies, multiple contacts on one deal with different roles, hierarchical account structures).</p>
+    <p>Salesforce uses a relational model with standard objects (Leads, Contacts, Accounts, Opportunities) and custom objects for anything else. Junction objects handle many-to-many relationships. This flexibility is why enterprise companies choose Salesforce: real B2B sales processes are complex, and Salesforce models that complexity without workarounds.</p>
+    <p>For GTM Engineers, the data model difference affects enrichment workflows. Enriching a HubSpot contact is straightforward: update properties via API. Enriching a Salesforce record requires understanding which object to update, field-level permissions, record types, and validation rules that might reject your API call. A Clay workflow that updates HubSpot in one step might need three steps for Salesforce (check permissions, handle record type, update with retry logic).</p>
+
+    <h2>Which CRM Skills to Learn</h2>
+    <p>The pragmatic answer: learn the CRM your target employers use.</p>
+    <p><strong>For agency careers:</strong> learn both, but start with HubSpot. Startup clients are more common, HubSpot's learning curve is shorter, and you'll get productive faster. Add Salesforce knowledge when you pick up enterprise clients.</p>
+    <p><strong>For startup roles:</strong> HubSpot. Deep knowledge of workflows, custom properties, reporting, and the API. HubSpot certifications (free) signal competence to hiring managers who use HubSpot.</p>
+    <p><strong>For enterprise roles:</strong> Salesforce. Learn SOQL, understand the data model, and build basic Flows. Salesforce certifications carry more weight than HubSpot certifications in enterprise hiring, and Salesforce Admin certification is achievable in 4-6 weeks of study.</p>
+    <p><strong>For maximum career flexibility:</strong> know both at a working level, then specialize deep in one. The practitioners who command the highest rates are those who can migrate data between HubSpot and Salesforce. CRM migration projects pay premium rates because accurate data mapping between the two models requires understanding both deeply.</p>
+    <p>For the full CRM adoption data, see <a href="/tools/crm-adoption/">CRM adoption analysis</a>. For how CRM skills affect compensation, check the <a href="/salary/company-size/">salary by company size</a> data. And for the broader tool stack, see the <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("hubspot-vs-salesforce")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly CRM and GTM stack intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/hubspot-vs-salesforce/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/hubspot-vs-salesforce/index.html", page)
+    print(f"  Built: tools/hubspot-vs-salesforce/index.html")
+
+
 def build_tool_python():
     """Python for GTM Engineers: skills and salary data."""
     title = "Python for GTM Engineers: Skills, Salary Data"
@@ -7237,6 +7432,8 @@ def main():
     build_tool_annual_spend()
     build_tool_zoominfo_vs_apollo()
     build_tool_wishlist()
+    build_tool_zapier_vs_n8n()
+    build_tool_hubspot_vs_salesforce()
     build_tool_python()
     build_tool_sql()
     build_tool_javascript()

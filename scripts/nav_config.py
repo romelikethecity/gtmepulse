@@ -7,7 +7,7 @@ SITE_URL = "https://gtmepulse.com"
 SITE_TAGLINE = "Career intelligence for GTM Engineers"
 COPYRIGHT_YEAR = "2026"
 CURRENT_YEAR = 2026
-CSS_VERSION = "10"
+CSS_VERSION = "11"
 
 CTA_HREF = "/newsletter/"
 CTA_LABEL = "Get the Weekly Pulse"
@@ -28,7 +28,16 @@ NAV_ITEMS = [
             {"href": "/salary/agency-fees/", "label": "Agency Fees"},
         ],
     },
-    {"href": "/tools/", "label": "Tools"},
+    {
+        "href": "/tools/",
+        "label": "Tools",
+        "children": [
+            {"href": "/tools/", "label": "Tools Index"},
+            {"href": "/tools/tech-stack-benchmark/", "label": "Tech Stack Benchmark"},
+            {"href": "/tools/clay/", "label": "Clay: 84% Adoption"},
+            {"href": "/tools/frustrations/", "label": "Tool Frustrations"},
+        ],
+    },
     {
         "href": "/careers/",
         "label": "Careers",
@@ -54,6 +63,8 @@ FOOTER_COLUMNS = {
     ],
     "Resources": [
         {"href": "/tools/", "label": "GTM Tools"},
+        {"href": "/tools/tech-stack-benchmark/", "label": "Tech Stack Benchmark"},
+        {"href": "/tools/frustrations/", "label": "Tool Frustrations"},
         {"href": "/careers/", "label": "Career Guides"},
         {"href": "/careers/how-to-become-gtm-engineer/", "label": "How to Become a GTME"},
         {"href": "/careers/job-growth/", "label": "Job Market Growth"},

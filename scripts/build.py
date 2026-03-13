@@ -54,6 +54,15 @@ def fmt_salary(n):
     return f"${n // 1000}K"
 
 
+REPORT_CITATION = "State of GTM Engineering Report 2026 (n=228)"
+
+def source_citation_html():
+    """Visible source citation block for salary pages."""
+    return f'''<div class="source-citation">
+    <p><strong>Source:</strong> {REPORT_CITATION}. Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div>'''
+
+
 SALARY_BY_SENIORITY = {
     "junior": {
         "label": "Junior / Associate",
@@ -447,7 +456,7 @@ def build_homepage():
     title = "GTM Engineer Salary and Career Intelligence"
     description = (
         "Salary benchmarks, tool reviews, and career data for GTM Engineers."
-        " Data from the State of GTME Report 2026 (n=228). Updated weekly. Vendor-neutral."
+        " Sourced from the State of GTME Report 2026 (n=228). Updated weekly. Vendor-neutral."
     )
 
     body = '''<section class="hero">
@@ -789,8 +798,8 @@ def build_404_page():
 def build_salary_index():
     title = "GTM Engineer Salary Data: Full Breakdown Guide"
     description = (
-        "Complete GTM Engineer salary data: breakdowns by seniority, location, and company"
-        " stage. Plus 10 role comparisons. Data from the State of GTME Report 2026 (n=228)."
+        "GTM Engineer salary data: breakdowns by seniority, location, and company"
+        " stage. 10 role comparisons. From the State of GTME Report 2026 (n=228 respondents)."
     )
     crumbs = [("Home", "/"), ("Salary Data", None)]
     bc_html = breadcrumb_html(crumbs)
@@ -860,6 +869,7 @@ def build_salary_index():
     <p>Salary figures are sourced from the State of GTM Engineering Report 2026, which surveyed 228 GTM Engineers across 32 countries and analyzed 3,342 job postings. We cross-reference survey data with public job listings for validation. <a href="/salary/methodology/">Read our full methodology</a>.</p>
 </div>
 '''
+    body += source_citation_html()
     body += newsletter_cta_html("Get weekly salary data updates.")
 
     page = get_page_wrapper(
@@ -924,6 +934,7 @@ def build_salary_seniority_pages():
 {salary_related_links(slug, "seniority")}
 </div>
 '''
+        body += source_citation_html()
         body += newsletter_cta_html(f"Get weekly {label.lower()} salary updates.")
         extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
 
@@ -1000,6 +1011,7 @@ def build_salary_location_pages():
 {salary_related_links(key, "location")}
 </div>
 '''
+        body += source_citation_html()
         body += newsletter_cta_html(f"Get weekly {label} salary updates.")
         extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
 
@@ -1073,6 +1085,7 @@ def build_salary_stage_pages():
 {salary_related_links(slug, "stage")}
 </div>
 '''
+        body += source_citation_html()
         body += newsletter_cta_html(f"Get weekly salary data for {label.lower()} companies.")
         extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
 
@@ -1152,6 +1165,7 @@ def build_salary_vs_pages():
 {salary_related_links(slug, "vs")}
 </div>
 '''
+        body += source_citation_html()
         body += newsletter_cta_html("Get weekly GTM Engineer salary comparisons.")
         extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(data["faq"])
 
@@ -1257,6 +1271,7 @@ function calculateSalary(){{
 }}
 </script>
 '''
+    body += source_citation_html()
     body += newsletter_cta_html()
 
     page = get_page_wrapper(
@@ -1271,8 +1286,8 @@ function calculateSalary(){{
 def build_salary_methodology():
     title = "GTM Engineer Salary Data Methodology (2026)"
     description = (
-        "How GTME Pulse sources GTM Engineer salary data from the State of GTME Report 2026"
-        " (n=228 survey respondents, 3,342 job postings). Sources, methods, and limitations."
+        "How GTME Pulse sources GTM Engineer salary data. State of GTME Report 2026"
+        " (n=228) survey plus 3,342 job postings. Methods, normalization, limitations."
     )
     crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Methodology", None)]
     bc_html = breadcrumb_html(crumbs)
@@ -1288,10 +1303,10 @@ def build_salary_methodology():
 
 <div class="salary-content">
     <h2>Data Sources</h2>
-    <p>Our salary data comes from three primary sources:</p>
+    <p>Our salary data comes from two primary sources:</p>
     <ul>
-        <li><strong>Public job postings:</strong> We scrape job listings from major boards (LinkedIn, Indeed, Greenhouse, Lever, Ashby) twice per week. Postings with disclosed salary ranges are our primary data source.</li>
-        <li><strong>Company career pages:</strong> Direct scraping of career pages from 200+ B2B SaaS companies that employ GTM Engineers.</li>
+        <li><strong>State of GTM Engineering Report 2026:</strong> A comprehensive survey of 228 GTM Engineers across 32 countries. This is our primary data source for compensation benchmarks, equity data, and career demographics.</li>
+        <li><strong>Job posting analysis:</strong> We scrape and analyze 3,342+ job listings from major boards (LinkedIn, Indeed, Greenhouse, Lever, Ashby) twice per week. Postings with disclosed salary ranges validate and supplement the survey data.</li>
         <li><strong>Compensation databases:</strong> Cross-referenced with aggregated data from Glassdoor, Levels.fyi, and Pave where available for validation.</li>
     </ul>
 
@@ -1322,8 +1337,8 @@ def build_salary_methodology():
     </ul>
 
     <h2>Sample Sizes</h2>
-    <p>Current dataset: <strong>3,000+ unique job postings</strong> collected since January 2025. Salary data is available for approximately 60% of postings (those with disclosed compensation ranges).</p>
-    <p>Sample sizes vary by category. We require a minimum of 50 postings per category to publish salary ranges. Categories below this threshold are noted.</p>
+    <p>Primary dataset: <strong>228 survey respondents</strong> from the State of GTM Engineering Report 2026, spanning 32 countries. Supplemented by <strong>3,342+ job postings</strong> collected since January 2025.</p>
+    <p>The US represents 58% of survey respondents (132 respondents). Location-specific salary data uses this US cohort as the primary sample, validated against job postings with disclosed compensation.</p>
 
     <h2>Limitations</h2>
     <p>This data has known limitations:</p>
@@ -1341,6 +1356,7 @@ def build_salary_methodology():
     <p>If you spot an error or have data that could improve our analysis, reach out through the <a href="/about/">About page</a>. We take data accuracy seriously.</p>
 </div>
 '''
+    body += source_citation_html()
     body += newsletter_cta_html("Get weekly data updates.")
 
     page = get_page_wrapper(

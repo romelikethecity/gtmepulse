@@ -90,16 +90,16 @@ h6 { font-size: var(--gtme-text-sm); }
 }
 
 .btn--ghost:hover {
-    background: var(--gtme-bg-tinted);
-    border-color: var(--gtme-accent);
-    color: var(--gtme-accent);
+    background: var(--gtme-bg-primary);
+    border-color: var(--gtme-accent-hover);
+    color: var(--gtme-accent-hover);
 }
 
 /* ---- Cards ---- */
 .card {
     background: var(--gtme-bg-surface);
-    border: 1px solid var(--gtme-border-subtle);
-    border-radius: var(--gtme-radius-lg);
+    border: 1px solid var(--gtme-border);
+    border-radius: var(--gtme-radius-xl);
     padding: var(--gtme-space-6);
 }
 
@@ -121,13 +121,16 @@ h6 { font-size: var(--gtme-text-sm); }
 }
 
 .stat-value {
+    display: block;
     font-family: var(--gtme-font-mono);
     font-size: var(--gtme-text-2xl);
     font-weight: var(--gtme-weight-bold);
-    color: var(--gtme-accent);
+    color: var(--gtme-text-primary);
+    white-space: nowrap;
 }
 
 .stat-label {
+    display: block;
     font-size: var(--gtme-text-sm);
     color: var(--gtme-text-secondary);
     margin-top: var(--gtme-space-1);
@@ -146,7 +149,7 @@ h6 { font-size: var(--gtme-text-sm); }
 }
 
 .breadcrumb-link:hover {
-    color: var(--gtme-accent);
+    color: var(--gtme-accent-hover);
 }
 
 .breadcrumb-sep {
@@ -198,7 +201,8 @@ h6 { font-size: var(--gtme-text-sm); }
 
 /* ---- Newsletter CTA ---- */
 .newsletter-cta {
-    background: var(--gtme-bg-tinted);
+    background: var(--gtme-bg-surface);
+    border: 1px solid var(--gtme-border);
     border-radius: var(--gtme-radius-lg);
     padding: var(--gtme-space-8);
     text-align: center;
@@ -213,6 +217,17 @@ h6 { font-size: var(--gtme-text-sm); }
     font-family: var(--gtme-font-heading);
     font-weight: var(--gtme-weight-bold);
     letter-spacing: -0.5px;
+}
+
+/* ---- Source Citation ---- */
+.source-citation {
+    margin-top: var(--gtme-space-6);
+    padding: var(--gtme-space-4);
+    border-left: 3px solid var(--gtme-accent);
+    background: var(--gtme-bg-surface);
+    border-radius: 0 var(--gtme-radius-sm) var(--gtme-radius-sm) 0;
+    font-size: 0.875rem;
+    color: var(--gtme-text-secondary);
 }
 
 /* ---- Related Links ---- */

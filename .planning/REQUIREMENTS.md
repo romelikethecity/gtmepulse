@@ -12,9 +12,9 @@
 
 ### Salary Data Update
 
-- [ ] **SALUP-01**: Existing salary pages display real survey data ($135K US in-house median, $75K non-US, $60K-$250K+ range) replacing hardcoded estimates
-- [ ] **SALUP-02**: Every salary page cites "Source: State of GTM Engineering Report 2026 (n=228)" with sample size context
-- [ ] **SALUP-03**: Salary data dict in build.py is restructured to use real report numbers (by seniority, location, stage, role comparisons)
+- [x] **SALUP-01**: Existing salary pages display real survey data ($135K US in-house median, $75K non-US, $60K-$250K+ range) replacing hardcoded estimates
+- [x] **SALUP-02**: Every salary page cites "Source: State of GTM Engineering Report 2026 (n=228)" with sample size context
+- [x] **SALUP-03**: Salary data dict in build.py is restructured to use real report numbers (by seniority, location, stage, role comparisons)
 
 ### New Salary Pages
 
@@ -163,9 +163,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SALUP-01 | Phase 4 | Pending |
-| SALUP-02 | Phase 4 | Pending |
-| SALUP-03 | Phase 4 | Pending |
+| SALUP-01 | Phase 4 | Complete |
+| SALUP-02 | Phase 4 | Complete |
+| SALUP-03 | Phase 4 | Complete |
 | SALN-01 | Phase 4 | Pending |
 | SALN-02 | Phase 4 | Pending |
 | SALN-03 | Phase 4 | Pending |

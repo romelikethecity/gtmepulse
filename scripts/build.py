@@ -7286,6 +7286,587 @@ def build_tool_javascript():
 
 
 # ---------------------------------------------------------------------------
+# Benchmark / State-of-GTME Pages
+# ---------------------------------------------------------------------------
+
+BENCH_PAGES = [
+    {"slug": "50-stats", "title": "50 Key GTM Engineering Stats"},
+    {"slug": "demographics", "title": "Survey Demographics"},
+    {"slug": "report-summary", "title": "Report Summary & Analysis"},
+    {"slug": "operator-vs-engineer", "title": "Operator vs Engineer Divide"},
+    {"slug": "bottlenecks", "title": "GTM Engineering Bottlenecks"},
+    {"slug": "company-understanding", "title": "Company Understanding"},
+    {"slug": "learning-resources", "title": "Learning Resources"},
+    {"slug": "headcount-trends", "title": "Headcount Trends"},
+    {"slug": "future-predictions", "title": "Future Predictions"},
+]
+
+
+def bench_related_links(current_slug):
+    """Generate related benchmark page links (same pattern as tool_related_links)."""
+    links = [("/benchmarks/", "Benchmarks Index")]
+    for page in BENCH_PAGES:
+        if page["slug"] != current_slug:
+            links.append((f"/benchmarks/{page['slug']}/", page["title"]))
+    # Cross-links to other sections
+    links.append(("/salary/", "Salary Data Index"))
+    links.append(("/tools/", "Tools Index"))
+    links.append(("/careers/", "Career Guides"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Benchmark Data</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_bench_index():
+    """Benchmarks index page at /benchmarks/ with card grid linking to all benchmark pages."""
+    title = "GTM Engineering Benchmarks, Statistics (2026)"
+    description = (
+        "GTM Engineering industry benchmarks from 228 practitioners."
+        " Salary, tools, bottlenecks, demographics, and predictions."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    card_data = [
+        ("50-stats", "50 Key Statistics", "Every major data point from the State of GTM Engineering Report in one scannable page. Salary, tools, career, agency, and job market stats.", "50 Stats"),
+        ("demographics", "Survey Demographics", "228 respondents, 32 countries, median age 25. Who answered the survey and what their backgrounds tell us about the field.", "228 Respondents"),
+        ("report-summary", "Report Summary", "Editorial analysis of what the State of GTM Engineering Report 2026 means. Key takeaways, surprises, and implications.", "2026 Analysis"),
+        ("operator-vs-engineer", "Operator vs Engineer", "The bimodal divide in GTM Engineering. Coding distribution, the $45K salary gap, and which track to choose.", "$45K Gap"),
+        ("bottlenecks", "Top Bottlenecks", "Bandwidth (25%), tool complexity (17%), organizational buy-in (8%). What blocks GTM Engineers from doing their best work.", "25% Bandwidth"),
+        ("company-understanding", "Company Understanding", "45% of companies understand the GTM Engineer role. 9% partially. The rest are guessing. What that means for your career.", "45% Yes"),
+        ("learning-resources", "Learning Resources", "LinkedIn (174 mentions), YouTube, and peers. How GTM Engineers learn their craft and which resources matter most.", "174 LinkedIn"),
+        ("headcount-trends", "Headcount Trends", "Most companies plan to grow their GTM Engineering teams in 2026. Hiring intent by company size and what it means for salaries.", "Growth Planned"),
+        ("future-predictions", "Future Predictions", "AI agents, RevOps convergence (9.6%), tool consolidation. What GTM Engineers think happens next.", "9.6% RevOps"),
+    ]
+
+    cards_html = ""
+    for slug, card_title, desc, stat in card_data:
+        cards_html += f'''<a href="/benchmarks/{slug}/" class="salary-index-card">
+    <h3>{card_title}</h3>
+    <div class="card-range">{stat}</div>
+    <p>{desc}</p>
+</a>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>GTM Engineering Benchmarks and Statistics</h1>
+        <p>The State of GTM Engineering Report 2026 surveyed 228 practitioners across 32 countries. These pages break down every finding: from salary benchmarks to tool adoption, bottlenecks to hiring trends.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Survey Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">32</span>
+        <span class="stat-label">Countries</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Job Posting Growth</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The First Real Benchmark for GTM Engineers</h2>
+    <p>Before OneGTM's State of GTM Engineering Report 2026, there was no industry-wide benchmark for this role. Every salary estimate was anecdotal. Every claim about tool adoption was a vendor's self-reported number. This report changed that.</p>
+    <p>228 working GTM Engineers shared their salaries, tool stacks, career paths, frustrations, and predictions. Garrett Wolfe, Alex Lindahl, and Maja Voje compiled the data and published it openly. We took that data, combined it with our analysis of 3,342 job postings, and built the most comprehensive resource for GTM Engineering career intelligence available anywhere.</p>
+
+    <h2>What the Data Covers</h2>
+    <p>Nine deep-dive pages below, each focused on a specific dimension of the GTM Engineering role. The <a href="/benchmarks/50-stats/">50 Key Statistics</a> page is a quick-reference roundup. The <a href="/benchmarks/demographics/">Demographics</a> page shows exactly who responded. The analysis pages dig into operator vs engineer splits, bottlenecks, learning patterns, headcount projections, and future predictions.</p>
+    <p>Every number is cited from the original report. Where we add editorial commentary (and we do), it's clearly labeled as analysis rather than raw data. The <a href="/benchmarks/report-summary/">Report Summary</a> page is our most opinionated take.</p>
+
+    <h2>Key Headlines</h2>
+    <p>The median GTM Engineer earns $132K. That number obscures a massive range: operators without coding skills average around $110K, while engineers who write Python and build integrations average $155K. The $45K gap is the story inside the story.</p>
+    <p>Clay appears in 84% of respondents' tool stacks. CRM adoption is 92%. AI coding tools hit 71%. These aren't adoption curves; they're near-saturation numbers for a role that barely existed three years ago.</p>
+    <p>25% of GTM Engineers say bandwidth is their biggest bottleneck. Not tools, not skills, not buy-in. There's too much work and not enough people. That's a hiring signal, a salary signal, and a burnout signal all wrapped together.</p>
+    <p>45% of respondents say their company understands the GTM Engineer role. That means 55% are building critical pipeline infrastructure at organizations that don't know what to call them, where to put them on the org chart, or how to evaluate their work.</p>
+
+    <h2>How to Use These Benchmarks</h2>
+    <p>If you're a GTM Engineer: use the salary data for negotiation, the bottleneck data to advocate for headcount, and the tool data to benchmark your stack against peers. The <a href="/benchmarks/50-stats/">50 stats page</a> is your quick-pull reference for any conversation with leadership.</p>
+    <p>If you're hiring: the demographics page tells you where the talent pool is. The headcount trends page shows you how competitive hiring will get. The operator vs engineer page helps you decide which type you need.</p>
+    <p>If you're building tools: the frustrations data and wishlist data from our <a href="/tools/frustrations/">tool frustrations</a> and <a href="/tools/tool-wishlist/">wishlist</a> pages tell you what practitioners want. The adoption numbers tell you who your competitors are.</p>
+
+    <h2>Benchmark Deep-Dives</h2>
+    <div class="salary-index-grid">
+        {cards_html}
+    </div>
+
+    <h2>Methodology Notes</h2>
+    <p>The State of GTM Engineering Report 2026 was conducted by OneGTM (Garrett Wolfe, Alex Lindahl, Maja Voje). 228 self-identified GTM Engineers completed the survey. Responses came from 32 countries, with 58% (132) from the United States.</p>
+    <p>Sample limitations: 228 is a meaningful sample but not statistically representative of all GTM Engineers globally. Respondents self-selected, which introduces bias toward engaged practitioners who follow GTM Engineering communities. The median age of 25 suggests the sample skews younger than the broader population.</p>
+    <p>Our job posting analysis covers 3,342 postings collected between January 2024 and February 2026 from major job boards. We cross-referenced survey data with job posting data where possible (salary ranges, tool requirements, location distribution).</p>
+    <p>For the full methodology behind our salary calculations, see the <a href="/salary/methodology/">salary methodology page</a>. For how we collect tool data, see the <a href="/tools/">tools index</a>.</p>
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineering benchmarks and data.")
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=get_breadcrumb_schema(crumbs), body_class="page-inner",
+    )
+    write_page("benchmarks/index.html", page)
+    print(f"  Built: benchmarks/index.html")
+
+
+def build_bench_50_stats():
+    """50 key GTM Engineering statistics roundup page."""
+    title = "50 GTM Engineering Statistics You Need (2026)"
+    description = (
+        "50 key GTM Engineering stats from 228 survey respondents."
+        " Salary, tools, career, agency, and job market data in one page."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("50 Stats", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Where does this GTM Engineering data come from?",
+         "All statistics come from the State of GTM Engineering Report 2026, which surveyed 228 GTM Engineers across 32 countries. Salary data combines survey responses with analysis of 3,342 job postings from January 2024 through February 2026."),
+        ("How reliable is a 228-person survey?",
+         "228 respondents provide directionally accurate data for a role this new. The sample is large enough to identify patterns (salary ranges by seniority, tool adoption rates, geographic distributions) but too small for precise subgroup analysis (e.g., salary by city for smaller markets). We note confidence levels where relevant."),
+        ("How often is this data updated?",
+         "The State of GTM Engineering Report is published annually. Job posting data is updated weekly through our automated scraping of major job boards. We plan to expand the survey sample in future editions."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>50 GTM Engineering Statistics for 2026</h1>
+        <p>Every major data point from the State of GTM Engineering Report 2026. Organized by category with links to the full analysis. Bookmark this page.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">50</span>
+        <span class="stat-label">Key Statistics</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Survey Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3,342</span>
+        <span class="stat-label">Job Postings Analyzed</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Salary Statistics (1-10)</h2>
+    <p><strong>1. $132K median salary.</strong> The overall median for GTM Engineers across all seniority levels, locations, and company types. <a href="/salary/">Full salary data</a>.</p>
+    <p><strong>2. $45K coding premium.</strong> GTM Engineers who code earn $45K more on average than those who don't. <a href="/salary/coding-premium/">Coding premium analysis</a>.</p>
+    <p><strong>3. $90K-$130K junior range.</strong> Entry-level GTM Engineers with 0-2 years of experience. <a href="/salary/junior/">Junior salary data</a>.</p>
+    <p><strong>4. $130K-$175K mid-level range.</strong> Mid-career practitioners with 2-4 years. <a href="/salary/mid-level/">Mid-level salary data</a>.</p>
+    <p><strong>5. $175K-$250K senior range.</strong> Senior and lead GTM Engineers. <a href="/salary/senior/">Senior salary data</a>.</p>
+    <p><strong>6. $155K median for San Francisco.</strong> The highest-paying metro for GTM Engineers. <a href="/salary/san-francisco/">SF salary data</a>.</p>
+    <p><strong>7. 23% earn equity.</strong> Less than a quarter of GTM Engineers receive equity compensation. <a href="/salary/equity/">Equity data</a>.</p>
+    <p><strong>8. $8K-$15K typical bonus range.</strong> Performance bonuses tied to pipeline generation or meetings booked. <a href="/salary/bonus/">Bonus data</a>.</p>
+    <p><strong>9. 15-20% posted salary premium at enterprise.</strong> Enterprise companies post higher ranges than startups for the same title. <a href="/salary/seed-vs-enterprise/">Seed vs enterprise</a>.</p>
+    <p><strong>10. 12-18% US salary premium over global.</strong> US-based GTM Engineers earn more than global peers at every seniority level. <a href="/salary/us-vs-global/">US vs global</a>.</p>
+
+    <h2>Tool Statistics (11-20)</h2>
+    <p><strong>11. 84% Clay adoption.</strong> Clay is the center of gravity in the GTM stack, with near-universal adoption among agencies (96%). <a href="/tools/clay/">Clay deep-dive</a>.</p>
+    <p><strong>12. 92% CRM adoption.</strong> Only 8% of GTM Engineers work without a CRM. HubSpot and Salesforce dominate. <a href="/tools/crm-adoption/">CRM data</a>.</p>
+    <p><strong>13. 71% AI coding tool adoption.</strong> Cursor and Claude Code lead. AI coding tools crossed majority adoption faster than any other category. <a href="/tools/ai-coding-tools/">AI tools data</a>.</p>
+    <p><strong>14. 54% n8n adoption.</strong> n8n has overtaken Zapier and Make as the preferred workflow automation platform. <a href="/tools/n8n-adoption/">n8n data</a>.</p>
+    <p><strong>15. $5K-$25K annual tool spend.</strong> 55% of agency GTM Engineers spend this range on their tool stack. <a href="/tools/annual-spend/">Spend data</a>.</p>
+    <p><strong>16. 8.8% Unify adoption.</strong> Despite marketing spend, Unify remains a niche player in the GTM stack. <a href="/tools/unify-analysis/">Unify analysis</a>.</p>
+    <p><strong>17. All-in-one outbound is the #1 wishlist item.</strong> GTM Engineers want a single tool that handles enrichment, sequencing, and CRM updates. <a href="/tools/tool-wishlist/">Wishlist data</a>.</p>
+    <p><strong>18. Integration issues are the top frustration.</strong> Tools that don't talk to each other create the most daily pain. <a href="/tools/frustrations/">Frustrations data</a>.</p>
+    <p><strong>19. Claude cited as the most exciting tool (39 mentions).</strong> Followed by Cursor (11) and n8n (8). <a href="/tools/most-exciting/">Most exciting tools</a>.</p>
+    <p><strong>20. 16 tool categories tracked.</strong> From data enrichment and CRM to AI coding and intent data. <a href="/tools/tech-stack-benchmark/">Tech stack benchmark</a>.</p>
+
+    <h2>Career Statistics (21-30)</h2>
+    <p><strong>21. 121 out of 228 are self-taught.</strong> More than half of GTM Engineers taught themselves the role. No formal training pipeline exists. <a href="/benchmarks/learning-resources/">Learning resources</a>.</p>
+    <p><strong>22. Bimodal coding distribution.</strong> ~40% code daily, ~45% never code. Very little middle ground. <a href="/careers/do-you-need-to-code/">Do you need to code?</a></p>
+    <p><strong>23. LinkedIn is the #1 learning resource (174 mentions).</strong> Followed by YouTube and peer networks. <a href="/benchmarks/learning-resources/">Learning data</a>.</p>
+    <p><strong>24. Median age: 25.</strong> The GTM Engineer role skews young, with Gen Z and young Millennials dominating. <a href="/benchmarks/demographics/">Demographics</a>.</p>
+    <p><strong>25. 32 countries represented.</strong> GTM Engineering is global, though US respondents account for 58%. <a href="/benchmarks/demographics/">Demographics</a>.</p>
+    <p><strong>26. SDR and marketing ops are the top feeder roles.</strong> Most GTM Engineers didn't start as GTM Engineers. <a href="/careers/how-gtm-engineers-got-jobs/">How they got jobs</a>.</p>
+    <p><strong>27. Work-life balance rates above average.</strong> Most respondents report sustainable hours. <a href="/careers/work-life-balance/">Work-life balance</a>.</p>
+    <p><strong>28. 9.6% predict RevOps convergence.</strong> A small minority think GTM Engineering merges with RevOps. Most don't. <a href="/benchmarks/future-predictions/">Future predictions</a>.</p>
+    <p><strong>29. Operator vs engineer tracks are diverging.</strong> The role is splitting into two distinct career paths. <a href="/benchmarks/operator-vs-engineer/">Operator vs engineer</a>.</p>
+    <p><strong>30. Reporting structure varies widely.</strong> GTM Engineers report to Sales, Marketing, RevOps, or Engineering depending on the company. <a href="/careers/reporting-structure/">Reporting structure</a>.</p>
+
+    <h2>Agency Statistics (31-40)</h2>
+    <p><strong>31. Agency GTM Engineers earn 10-15% premiums.</strong> Agency practitioners often out-earn in-house peers at the same seniority. <a href="/careers/agency-pricing/">Agency pricing</a>.</p>
+    <p><strong>32. 96% of agencies use Clay.</strong> Near-universal adoption compared to 84% overall. <a href="/tools/clay/">Clay data</a>.</p>
+    <p><strong>33. 6-8 tools per agency operator.</strong> Compared to 4-5 for in-house teams. Agencies need breadth. <a href="/tools/tech-stack-benchmark/">Tech stack</a>.</p>
+    <p><strong>34. Freelance GTM Engineers charge $75-$200/hr.</strong> Rates vary by specialization and client size. <a href="/careers/agency-vs-freelance/">Freelance data</a>.</p>
+    <p><strong>35. Client retention is the top agency challenge.</strong> Keeping clients is harder than finding them. <a href="/careers/agency-retention/">Retention data</a>.</p>
+    <p><strong>36. 3-7 clients is the typical agency load.</strong> Per operator, managed simultaneously. <a href="/careers/agency-client-count/">Client count</a>.</p>
+    <p><strong>37. Retainer pricing dominates.</strong> Monthly retainers are more common than per-project or per-lead pricing. <a href="/careers/agency-pricing-models/">Pricing models</a>.</p>
+    <p><strong>38. Deliverability expertise is a differentiator.</strong> Agencies that solve email deliverability command premium rates. <a href="/careers/agency-deliverability/">Deliverability</a>.</p>
+    <p><strong>39. Regional fee variation is significant.</strong> US agencies charge 2-3x more than LATAM or SEA-based agencies. <a href="/salary/agency-fees-region/">Regional fees</a>.</p>
+    <p><strong>40. Starting an agency requires minimal capital.</strong> Tool subscriptions and a laptop. The barrier is skill, not money. <a href="/careers/how-to-start-agency/">Starting an agency</a>.</p>
+
+    <h2>Job Market Statistics (41-50)</h2>
+    <p><strong>41. 5,205% job posting growth (2019-2025).</strong> From near-zero to thousands of open roles. <a href="/careers/job-growth/">Job growth data</a>.</p>
+    <p><strong>42. 3,342 job postings analyzed.</strong> Our data set covers postings from January 2024 through February 2026. <a href="/careers/job-market/">Job market overview</a>.</p>
+    <p><strong>43. ~100 new listings per month.</strong> Consistent demand signal across 2025 and into 2026. <a href="/careers/monthly-trends/">Monthly trends</a>.</p>
+    <p><strong>44. Remote roles account for ~40% of postings.</strong> A higher remote rate than most comparable roles. <a href="/salary/remote/">Remote salary data</a>.</p>
+    <p><strong>45. Clay appears in 69% of job postings.</strong> The most-requested tool in GTM Engineer job descriptions. <a href="/tools/clay/">Clay data</a>.</p>
+    <p><strong>46. Python appears in ~30% of job postings.</strong> The most-requested coding language for the role. <a href="/tools/python/">Python data</a>.</p>
+    <p><strong>47. India is the fastest-growing non-US market.</strong> Significant growth in GTM Engineer postings from Indian companies. <a href="/careers/india/">India data</a>.</p>
+    <p><strong>48. Majority of companies plan to grow GTM teams.</strong> Headcount intent signals sustained demand through 2026. <a href="/benchmarks/headcount-trends/">Headcount trends</a>.</p>
+    <p><strong>49. Most hiring companies are Series B or later.</strong> Early-stage companies hire GTM Engineers, but growth-stage companies hire more of them. <a href="/salary/by-company-stage/">Company stage data</a>.</p>
+    <p><strong>50. Top skills gap: Python, API integration, data modeling.</strong> What hiring managers want and can't find. <a href="/careers/skills-gap/">Skills gap</a>.</p>
+
+    <h2>What These Numbers Mean</h2>
+    <p>Fifty data points paint a picture of a role that's growing fast, paying well, and still figuring itself out. The $45K coding premium will drive more practitioners to learn Python. The 25% bandwidth bottleneck will drive more companies to hire. The 5,205% growth rate will attract more people to the role.</p>
+    <p>But 55% of companies still don't understand what a GTM Engineer does. That's the gap. The skills are in demand, the tools are standardizing, the salaries are climbing. What's lagging is organizational awareness. Until companies build proper career paths, reporting structures, and evaluation frameworks for GTM Engineers, the role will keep being defined from the bottom up by the people doing it.</p>
+    <p>For the full analysis behind these numbers, start with the <a href="/benchmarks/report-summary/">report summary</a>. For salary negotiation, the <a href="/salary/">salary data index</a>. For career planning, the <a href="/careers/">career guides</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("50-stats")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineering stats delivered to your inbox.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/50-stats/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/50-stats/index.html", page)
+    print(f"  Built: benchmarks/50-stats/index.html")
+
+
+def build_bench_demographics():
+    """Demographics deep-dive: 228 respondents, 32 countries, age/gender/experience."""
+    title = "GTM Engineer Demographics: 228 Survey Results"
+    description = (
+        "GTM Engineer demographics from 228 survey respondents across"
+        " 32 countries. Age, gender, experience, education, and location."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Demographics", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("How many people responded to the GTM Engineering survey?",
+         "228 GTM Engineers completed the State of GTM Engineering Report 2026 survey. Respondents came from 32 countries, with 58% (132 respondents) based in the United States. The survey was distributed through GTM Engineering communities, LinkedIn, and professional networks."),
+        ("What is the typical age of a GTM Engineer?",
+         "The median age is 25, making GTM Engineering one of the youngest technical roles in B2B SaaS. Gen Z and young Millennials dominate the respondent pool. This aligns with the role emerging in 2023-2024, meaning most practitioners have fewer than 3 years in the specific title."),
+        ("Do you need a degree to become a GTM Engineer?",
+         "No. 121 of 228 respondents (53%) are self-taught. While many hold college degrees, those degrees are rarely in GTM-specific fields. Business, marketing, and computer science backgrounds are common, but the role draws from diverse educational paths. Practical tool skills and portfolio work matter more than credentials."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>GTM Engineer Demographics: Survey Results</h1>
+        <p>Who are the 228 GTM Engineers who responded to the State of GTM Engineering Report 2026? Age, location, experience, education, and background data.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">32</span>
+        <span class="stat-label">Countries</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">25</span>
+        <span class="stat-label">Median Age</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">53%</span>
+        <span class="stat-label">Self-Taught</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Who Responded</h2>
+    <p>228 people who identify as GTM Engineers completed the survey. That's a solid sample for a role that barely existed before 2023. The respondent pool reflects the community that's actively engaged in GTM Engineering discussions on LinkedIn, Slack groups, and professional networks.</p>
+    <p>Self-selection bias matters here. People who fill out industry surveys tend to be more engaged, more community-oriented, and more likely to stay current with trends. The 228 respondents probably represent the more active end of the GTM Engineering population. Practitioners who quietly manage outbound workflows and never post on LinkedIn are underrepresented.</p>
+    <p>That said, 228 is large enough to identify meaningful patterns. Salary distributions, tool adoption rates, and career path data all show clear trends that align with what we see in job posting analysis.</p>
+
+    <h2>Geographic Distribution</h2>
+    <p>32 countries are represented. The United States accounts for 58% of respondents (132 people), which matches the role's origin story: Clay launched in the US, the GTM Engineering title spread through US-based SaaS companies, and the first wave of practitioners was heavily American.</p>
+    <p>Europe is the second-largest region, with notable clusters in the UK, Germany, and the Netherlands. India shows up as a growing market, consistent with our <a href="/careers/india/">India job market data</a> showing rapid growth in GTM Engineer postings from Indian companies.</p>
+    <p>The geographic skew means US salary data (132 respondents) is more statistically reliable than non-US salary data. We use the full 228 for aggregate and role-level analysis, and the US subset for location-specific salary benchmarks. See our <a href="/salary/methodology/">methodology page</a> for the full breakdown.</p>
+    <p>Remote work complicates geographic analysis. A GTM Engineer in Austin working for a San Francisco company reports Austin as their location but earns closer to SF rates. We capture both the practitioner's location and their company's headquarters where possible.</p>
+
+    <h2>Age Distribution</h2>
+    <p>Median age of 25. That's young. For context, the median age for software engineers is around 32, and for marketing managers it's around 35. GTM Engineering skews younger because the role is younger.</p>
+    <p>The age distribution clusters heavily in the 22-30 range. Very few respondents are over 40. This isn't because experienced professionals can't do the work. It's because experienced professionals are more likely to hold titles like "Director of Revenue Operations" or "Head of Growth" while doing similar work under a different label.</p>
+    <p>Gen Z dominance in the respondent pool has implications for the data. Younger workers are earlier in their salary trajectory, which pulls the median salary down from what it might be for an equivalent role with more seniority. As the 2024-2025 cohort of GTM Engineers gains experience and moves into senior and lead roles, expect median compensation to rise even without market-level salary inflation.</p>
+    <p>The age data also explains the learning resources pattern. LinkedIn and YouTube rank highest because that's where younger professionals learn. Older professionals might prefer books, conferences, or formal training, but they're underrepresented in this survey.</p>
+
+    <h2>Experience Levels</h2>
+    <p>Most respondents have 1-3 years of experience specifically as a GTM Engineer. That's consistent with the role emerging in 2023-2024. Some have prior experience in adjacent roles (SDR, sales ops, marketing ops, RevOps) that translates directly to GTM Engineering work.</p>
+    <p>The experience distribution matters for salary interpretation. A GTM Engineer with 2 years of title-specific experience but 5 years of prior ops work commands different compensation than a 2-year veteran who entered the role straight from college. Our salary data captures current title experience, not total professional experience.</p>
+    <p>Experience correlates strongly with coding ability. Practitioners with 3+ years are more likely to write Python and build custom integrations. Those under 2 years tend toward no-code tools, though AI coding assistants are compressing this timeline.</p>
+
+    <h2>Education Backgrounds</h2>
+    <p>121 of 228 respondents (53%) describe themselves as self-taught GTM Engineers. There's no university program for this role, no bootcamp pipeline, no certification that guarantees employment. The field is building its knowledge base in real time through YouTube videos, LinkedIn posts, and trial-and-error.</p>
+    <p>Among those with degrees, the backgrounds are diverse. Business and marketing degrees are the most common, followed by computer science and information systems. A meaningful number have degrees in completely unrelated fields. GTM Engineering pulls from every direction because the role itself sits at the intersection of sales, marketing, data, and engineering.</p>
+    <p>Formal GTM-specific training is emerging. Clay University offers courses on Clay-specific workflows. Individual creators like Nathan Lippi (Clay Bootcamp) and Matteo Tittarelli (GTM Engineer School) have built training programs. But the field is still overwhelmingly learn-by-doing. See our <a href="/benchmarks/learning-resources/">learning resources analysis</a> for the full breakdown of how practitioners learn.</p>
+
+    <h2>Industry Distribution</h2>
+    <p>B2B SaaS dominates. That's expected since GTM Engineering grew out of the SaaS sales and marketing ecosystem. Agency/consultancy is the second-largest category, reflecting the significant freelance and agency economy around GTM services.</p>
+    <p>Fintech, cybersecurity, and healthcare SaaS are the strongest verticals. These industries have complex sales cycles, high average contract values, and data-intensive go-to-market motions that benefit most from GTM Engineering automation.</p>
+    <p>The industry data reveals a gap: GTM Engineering hasn't yet penetrated traditional industries (manufacturing, logistics, professional services) at scale. As the role matures and the tools become more accessible, expect the industry distribution to broaden. The principles of automated outbound and data-driven pipeline building apply everywhere there's B2B sales. The current concentration in SaaS is a function of where the early adopters work, not a limitation of the role.</p>
+
+    <h2>What the Demographics Tell Us</h2>
+    <p>The 228-person snapshot reveals a young, US-heavy, self-taught workforce building a role from the ground up. The median age of 25 means salary growth has significant upside as this cohort gains seniority. The 53% self-taught rate means formal education infrastructure is still catching up. The 32-country spread means the role is globalizing, but the US still sets compensation benchmarks.</p>
+    <p>For a deeper look at how these demographics map to salary data, see the <a href="/salary/by-age/">salary by age analysis</a>. For career path data, see <a href="/careers/how-gtm-engineers-got-jobs/">how GTM Engineers got their jobs</a>. For the full benchmark overview, start at the <a href="/benchmarks/">benchmarks index</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("demographics")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get demographic and salary trend updates weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/demographics/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/demographics/index.html", page)
+    print(f"  Built: benchmarks/demographics/index.html")
+
+
+def build_bench_report_summary():
+    """Editorial report summary and analysis page."""
+    title = "State of GTM Engineering 2026: Report Analysis"
+    description = (
+        "Editorial analysis of the State of GTM Engineering Report 2026."
+        " Key takeaways, surprises, methodology, and what the data means."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Report Summary", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the State of GTM Engineering Report?",
+         "The State of GTM Engineering Report 2026 is the first industry-wide survey of GTM Engineers, conducted by OneGTM (Garrett Wolfe, Alex Lindahl, Maja Voje). It surveyed 228 practitioners across 32 countries on salary, tools, career satisfaction, bottlenecks, and predictions for the role."),
+        ("Is this report vendor-neutral?",
+         "The original report was produced by OneGTM, not by any tool vendor. GTME Pulse analysis is independently written with no vendor funding or editorial influence. When we critique tools (Clay frustrations, Unify adoption questions), no vendor reviewed or approved our analysis."),
+        ("What were the biggest surprises in the report?",
+         "Three findings stood out: the bimodal coding distribution (practitioners either code daily or never code, with almost no middle ground), the 45% company understanding rate (more than half of employers don't understand the role they hired for), and the low RevOps convergence prediction (only 9.6% think the roles merge). Each challenges common assumptions about the field."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>State of GTM Engineering 2026: Analysis</h1>
+        <p>Our take on the first comprehensive survey of GTM Engineers. What the data says, what surprised us, and what it means for your career in 2026.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Clay Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Job Growth</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>What the Report Confirms</h2>
+    <p>Some findings confirmed what practitioners already knew. Clay at 84% adoption isn't a surprise to anyone who's worked in GTM Engineering for six months. The $132K median salary matches the range visible in job postings. AI coding tools at 71% aligns with the visible explosion of Cursor and Claude Code adoption across tech.</p>
+    <p>The confirmation matters anyway. Anecdote becomes data at n=228. When a GTM Engineer negotiates salary, "I've seen people make around $130K" is weaker than "the median across 228 practitioners is $132K." The report gives practitioners specific numbers to cite in conversations with hiring managers and leadership.</p>
+    <p>CRM adoption at 92% also confirms something we expected: GTM Engineers work within CRM ecosystems, not outside them. The small minority without CRM access are either early-stage agencies or consultants whose clients own the CRM. As a career choice, learning HubSpot or Salesforce administration is nearly mandatory.</p>
+
+    <h2>What Surprised Us</h2>
+    <p>Three findings challenged our assumptions.</p>
+    <p><strong>The bimodal coding distribution.</strong> We expected a normal distribution: some people code a lot, most code a little, some don't code at all. Instead, the data shows two distinct peaks. About 40% code daily or weekly. About 45% never code. The middle barely exists. This suggests the role is already splitting into two tracks (operators and engineers) faster than we thought.</p>
+    <p><strong>45% company understanding.</strong> We expected somewhere around 60-65% of companies to understand the GTM Engineer role, especially given how much hiring activity we've tracked. 45% is lower than that. More than half of the practitioners building pipeline infrastructure are doing it at companies that can't define the role. This has real implications for career growth, budget allocation, and reporting structure.</p>
+    <p><strong>9.6% RevOps convergence.</strong> The hot take on LinkedIn is that GTM Engineering and RevOps will merge. Only 9.6% of practitioners think this happens. The rest see the roles as fundamentally different. GTM Engineers build systems; RevOps manages processes. The overlap is in tools and data, not in the work itself. We agree with the 90.4%.</p>
+
+    <h2>Our Interpretation</h2>
+    <p>This report captures a role in transition. GTM Engineering has moved past the "is this a real job?" phase (yes, $132K median and 5,205% job growth, it's real) and into the "what kind of job is it?" phase. The answer, based on this data, is that it's becoming two jobs.</p>
+    <p>Track one: the operator. Works primarily in no-code tools, manages existing workflows, focuses on execution. Earns around $110K, stays within established playbooks, excels at speed and consistency. This track is closer to traditional sales ops or RevOps.</p>
+    <p>Track two: the engineer. Writes Python, builds custom integrations, architects new systems. Earns around $155K, creates capabilities that didn't exist before, works at the intersection of engineering and go-to-market. This track is closer to a software engineering role with domain expertise.</p>
+    <p>Both tracks are valid. Both are well-compensated. But the $45K gap between them will drive more practitioners toward coding, especially as AI tools make Python accessible to non-developers. Over the next 2-3 years, expect the bimodal distribution to shift as more operators pick up coding skills through AI-assisted development.</p>
+
+    <h2>Methodology Assessment</h2>
+    <p>228 respondents is a meaningful sample for a role this new. For comparison, many established software engineering salary surveys (Levels.fyi, Stack Overflow) started with similar or smaller samples. The data is directionally accurate for aggregate patterns (median salary, tool adoption, demographic distribution) but should be interpreted with caution for small subgroups (salary by specific city, adoption rates for niche tools).</p>
+    <p>Self-selection bias is the main limitation. Respondents came from GTM Engineering communities on LinkedIn and Slack. Practitioners who are active in these communities may earn differently, use different tools, and hold different opinions than those who aren't. The median salary, for example, might be inflated by community-engaged practitioners who tend to be higher-performing.</p>
+    <p>Geographic bias is the second limitation. 58% US-based means the salary data skews toward US compensation levels. Global salary patterns (especially for emerging markets like India and Latin America) are based on smaller subsamples.</p>
+    <p>Credit to Garrett Wolfe, Alex Lindahl, and Maja Voje at OneGTM for designing and executing this survey. Before this report, every claim about GTM Engineering compensation, tool adoption, and career paths was anecdotal. Now we have a baseline.</p>
+
+    <h2>What's Missing</h2>
+    <p>The report doesn't cover everything. A few gaps we'd like to see addressed in future editions.</p>
+    <p>Longitudinal data. We need year-over-year comparisons. Is the $132K median going up or down? Is Clay adoption peaking or still climbing? One year of data establishes a baseline. Two years shows a trend.</p>
+    <p>Company-side data. We heard from practitioners but not from hiring managers. What do companies think they're paying for? How do they evaluate GTM Engineer performance? What's the ROI calculation that justifies a $175K hire?</p>
+    <p>Tool ROI data. We know what tools people use. We don't know which tools produce the best pipeline outcomes. Adoption rates measure popularity, not effectiveness. A future survey that connects tool usage to pipeline metrics would be valuable.</p>
+    <p>Detailed agency economics. The report touches on agency vs. in-house differences, but a deeper dive into agency business models, client acquisition costs, and revenue per employee would help the growing agency segment benchmark their operations.</p>
+    <p>For the raw numbers behind this analysis, see the <a href="/benchmarks/50-stats/">50 key statistics</a> page. For the demographic breakdown, see <a href="/benchmarks/demographics/">survey demographics</a>. For predictions about where this role goes next, see <a href="/benchmarks/future-predictions/">future predictions</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("report-summary")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get our analysis of GTM Engineering trends every week.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/report-summary/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/report-summary/index.html", page)
+    print(f"  Built: benchmarks/report-summary/index.html")
+
+
+def build_bench_operator_vs_engineer():
+    """Operator vs engineer divide page with salary gap data."""
+    title = "Operator vs Engineer Divide: The Data (2026)"
+    description = (
+        "GTM Engineering bimodal divide: operators vs engineers. $45K salary"
+        " gap, coding distribution, career track data from 228 respondents."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Operator vs Engineer", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What's the difference between a GTM Operator and a GTM Engineer?",
+         "GTM Operators work primarily with no-code tools like Clay, Make, and Zapier. They execute established playbooks, manage workflows, and focus on speed and consistency. GTM Engineers write code (Python, SQL, JavaScript), build custom integrations, and architect new systems. The salary gap between the two tracks averages $45K."),
+        ("Which track should I choose?",
+         "It depends on what you enjoy. If you like building inside tools and optimizing existing processes, the operator track offers a strong career with lower learning curves. If you enjoy solving problems that don't have out-of-the-box solutions and want the higher salary ceiling, invest in coding skills. AI coding tools have made the transition from operator to engineer much faster than it was even a year ago."),
+        ("Is the operator vs engineer split permanent?",
+         "The split is deepening in 2026 as the role matures. Companies are starting to distinguish between the two in job descriptions and compensation bands. AI coding tools may partially bridge the gap by enabling operators to write code without full programming proficiency, but the fundamental difference in how each track approaches problems is likely to persist."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>Operator vs Engineer: The GTM Divide</h1>
+        <p>The GTM Engineering role is splitting in two. No-code operators earn ~$110K. Code-writing engineers earn ~$155K. The $45K gap tells a story about where this career is heading.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Salary Gap</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~40%</span>
+        <span class="stat-label">Code Daily</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~45%</span>
+        <span class="stat-label">Never Code</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~15%</span>
+        <span class="stat-label">Sometimes Code</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Bimodal Reality</h2>
+    <p>Survey data from 228 GTM Engineers reveals a distribution that defies the bell curve. Roughly 40% of respondents write code daily or weekly. About 45% never write code. The remaining 15% fall in between, modifying existing scripts or writing occasional one-offs.</p>
+    <p>This isn't a gradual spectrum. It's two peaks with a valley in the middle. GTM Engineers either build their identity around coding or they don't. The middle ground is transitional. People move through it toward one end or the other.</p>
+    <p>The bimodal pattern exists because the tools enable it. Clay, Make, n8n, and HubSpot workflows let practitioners build sophisticated automation without writing a single line of code. If no-code covers your use cases, there's no forcing function to learn Python. Conversely, practitioners who discover that code gives them capabilities no-code tools can't match tend to go deep fast.</p>
+
+    <h2>The $45K Salary Gap</h2>
+    <p>GTM Engineers who code earn approximately $45,000 more per year than those who don't. That's not a rounding error. It's the difference between a comfortable tech salary and a well-compensated engineering role.</p>
+    <p>The gap comes from three sources. First, coding-capable GTM Engineers can do things that non-coders can't: custom integrations, data pipeline development, webhook handlers, and API-first architectures. Companies pay more for capabilities that expand what's possible, not just for speed within existing capabilities.</p>
+    <p>Second, coding signals technical depth that hiring managers associate with seniority. A GTM Engineer who can review API documentation, debug a webhook, and build a data transformation pipeline demonstrates problem-solving skills that translate across tools and companies. This makes them more expensive to replace and more valuable to retain.</p>
+    <p>Third, the supply-demand dynamics differ. There are fewer GTM Engineers who can write Python than those who can build Clay tables. Scarcity commands premium pricing.</p>
+    <p>For the full salary breakdown, see our <a href="/salary/coding-premium/">coding premium analysis</a>.</p>
+
+    <h2>What Operators Do</h2>
+    <p>The operator track focuses on execution within established tool ecosystems. An operator builds Clay enrichment tables, manages outbound sequences in Instantly or Smartlead, maintains CRM hygiene in HubSpot or Salesforce, and configures workflows in Make or n8n.</p>
+    <p>Strong operators are fast. They can set up a new outbound campaign in hours, not days. They know their tools deeply and can configure complex workflows using built-in features. They're the people who make the existing stack work at maximum efficiency.</p>
+    <p>The operator career path typically leads to senior operator or team lead roles. Some operators specialize in a specific tool and become the company's Clay expert or Salesforce admin. Others broaden into RevOps, where their workflow management skills translate directly.</p>
+    <p>Operators who work at agencies develop the broadest tool fluency. Managing 5-7 client stacks simultaneously means exposure to every major tool combination. This breadth makes agency operators attractive hires for in-house roles.</p>
+
+    <h2>What Engineers Do</h2>
+    <p>The engineering track focuses on building systems that don't exist in any tool's feature set. An engineer writes Python scripts for custom enrichment, builds data pipelines that connect internal databases to outbound workflows, creates webhook handlers for complex conditional logic, and architects multi-system integrations.</p>
+    <p>Engineers solve the "last 20%" of problems. The problems that no-code tools handle 80% of. Custom data sources, complex transformation logic, high-volume processing, integrations between tools that don't have native connectors. This 20% is where the most pipeline value hides.</p>
+    <p>The engineering career path leads to lead/staff GTM Engineer roles or into adjacent engineering positions. Some engineers transition to software engineering with GTM domain expertise, which is a rare and well-compensated combination. Others build consultancies where they architect systems for multiple companies.</p>
+    <p>Engineers tend to command higher rates as freelancers and consultants. A Python-capable GTM Engineer billing $150-$200/hour can solve problems that would take a non-coding consultant days of workarounds.</p>
+
+    <h2>Companies Hire Both Types</h2>
+    <p>Early-stage startups (Seed through Series A) typically hire operators first. They need someone to stand up the outbound system fast, not someone to architect a custom data platform. The first GTM hire is usually an operator who can ship campaigns in the first week.</p>
+    <p>Growth-stage companies (Series B and later) hire engineers to scale what operators built. As outbound volume grows, the limitations of no-code tools become apparent. Rate limits, per-task pricing, and integration gaps create bottlenecks that only code can solve.</p>
+    <p>Enterprise companies often hire both and distinguish between them in titles. "GTM Operations Specialist" and "GTM Engineer" are different roles at different pay grades. The operations specialist manages workflows; the engineer builds infrastructure.</p>
+    <p>Agencies hire operators for execution and engineers for capability development. The ideal agency team has 3-4 operators managed by 1 engineer who builds the custom tools and templates the operators use across client engagements.</p>
+
+    <h2>The AI Wildcard</h2>
+    <p>AI coding tools are the most important variable in this divide. With <a href="/tools/ai-coding-tools/">71% of GTM Engineers using AI coding tools</a>, the barrier to writing Python has dropped substantially. An operator who can describe their problem clearly can now get working Python code from Claude Code or Cursor.</p>
+    <p>This doesn't eliminate the divide. It shifts it. The new boundary isn't "can you write Python?" It's "can you debug Python, architect systems, and maintain code over time?" AI tools write first drafts well. They don't maintain codebases, diagnose production issues, or design data models.</p>
+    <p>Expect the salary gap to compress slightly over the next 2-3 years as AI enables more operators to write functional code. But the gap won't close entirely because the value difference between "can write scripts with AI help" and "can architect systems" is structural.</p>
+
+    <h2>Choosing Your Track</h2>
+    <p>If you're early in your GTM Engineering career, the choice isn't permanent. The overlap between tracks is significant in the first 1-2 years. Everyone learns the same tools. The divergence happens at year 2-3 when you decide whether to double down on tool mastery or invest in coding skills.</p>
+    <p>The operator track is right if you: enjoy working inside tools, prefer breadth over depth, want faster career progression in the early years, and are comfortable with a salary ceiling around $130K-$150K (still excellent compensation).</p>
+    <p>The engineering track is right if you: enjoy solving problems that don't have obvious solutions, are willing to invest 2-3 months learning Python, want the higher salary ceiling ($155K-$250K), and find satisfaction in building systems that scale.</p>
+    <p>For the salary data behind these tracks, see the <a href="/salary/">salary index</a>. For a deeper look at whether you need coding skills, see <a href="/careers/do-you-need-to-code/">do you need to code?</a>. For practical learning paths, check <a href="/tools/python/">Python for GTM Engineers</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("operator-vs-engineer")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly insights on GTM Engineering career paths.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/operator-vs-engineer/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/operator-vs-engineer/index.html", page)
+    print(f"  Built: benchmarks/operator-vs-engineer/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -7437,6 +8018,13 @@ def main():
     build_tool_python()
     build_tool_sql()
     build_tool_javascript()
+
+    print("\n  Building benchmark pages...")
+    build_bench_index()
+    build_bench_50_stats()
+    build_bench_demographics()
+    build_bench_report_summary()
+    build_bench_operator_vs_engineer()
 
     print("\n  Building meta files...")
     build_sitemap()

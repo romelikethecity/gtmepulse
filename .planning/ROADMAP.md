@@ -91,11 +91,13 @@ Plans:
   2. Individual tool pages (Clay, Python, SQL, Zapier vs n8n, HubSpot vs Salesforce) provide adoption data, salary impact, and honest criticism grounded in survey responses
   3. Benchmark pages cover the full "state of" picture: 50 key stats, demographics, bottlenecks, headcount trends, and future predictions
   4. Every page meets content depth (1,200-2,000 words) and has working internal links to related salary, career, and tool pages
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 06-01: Tool adoption and analysis pages (TOOL-01 through TOOL-16)
-- [ ] 06-02: Benchmark and statistics pages (BENCH-01 through BENCH-09)
+- [ ] 06-01-PLAN.md — Tools index + tech stack benchmark + Clay + CRM + AI coding + n8n pages (TOOL-01 through TOOL-05)
+- [ ] 06-02-PLAN.md — Tool frustrations, most exciting, Unify, annual spend, ZoomInfo vs Apollo, wishlist pages (TOOL-06 through TOOL-11)
+- [ ] 06-03-PLAN.md — Python, SQL, JavaScript, Zapier vs n8n, HubSpot vs Salesforce pages + nav update (TOOL-12 through TOOL-16)
+- [ ] 06-04-PLAN.md — Benchmarks index + 9 benchmark pages (BENCH-01 through BENCH-09) + nav update
 
 ### Phase 7: Comparisons, Blog Articles, and Quality Sweep
 **Goal**: Six comparison pages and 14 blog articles add the editorial opinion layer, and a final quality sweep confirms every v2.0 page meets SEO and content standards
@@ -126,7 +128,7 @@ Phases execute in numeric order: 4 → 5 → 6 → 7
 | 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
 | 4. Salary Data Overhaul | v2.0 | 3/3 | Complete | 2026-03-13 |
 | 5. Career, Agency, and Job Market | v2.0 | 4/4 | Complete | 2026-03-13 |
-| 6. Tools and Benchmarks | v2.0 | 0/2 | Not started | - |
+| 6. Tools and Benchmarks | v2.0 | 0/4 | Not started | - |
 | 7. Comparisons, Blog, and Quality | v2.0 | 0/3 | Not started | - |
 
 ---

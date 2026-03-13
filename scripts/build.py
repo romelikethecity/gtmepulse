@@ -6499,6 +6499,300 @@ def build_tool_unify():
     print(f"  Built: tools/unify-analysis/index.html")
 
 
+def build_tool_annual_spend():
+    """Annual tool spend page: how much GTM Engineers spend on tools."""
+    title = "GTM Engineer Tool Spend: Annual Data (2026)"
+    description = (
+        "Annual tool spending data from 228 GTM Engineers. 55% of agencies"
+        " spend $5-25K. US vs non-US differences and budget breakdowns."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Annual Tool Spend", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("How much do GTM Engineers spend on tools per year?",
+         "55% of agency GTM Engineers spend between $5,000 and $25,000 annually on their tool stack. In-house GTM Engineers typically spend less out-of-pocket because companies cover tool costs, but total organizational spend can be higher due to enterprise licensing. The biggest budget items are Clay credits, data enrichment subscriptions (Apollo, ZoomInfo), and sequencing tools (Instantly, Smartlead)."),
+        ("Do US GTM Engineers spend more on tools than non-US?",
+         "Yes. US-based GTM Engineers report higher tool budgets on average, driven by higher compensation (which funds personal tool purchases), US-priced enterprise contracts, and the concentration of venture-funded startups that subsidize tool costs. Non-US practitioners, particularly in LATAM and parts of APAC, report more aggressive use of free tiers and open-source alternatives."),
+        ("What tools cost GTM Engineers the most?",
+         "Clay credits are the single largest line item for most GTM Engineers, especially at agencies running high-volume enrichment. Data enrichment subscriptions (Apollo, ZoomInfo) are second. Sequencing tools (Instantly, Smartlead) are third. Workflow automation is surprisingly cheap for those using n8n (self-hosted) but expensive for Zapier users at high volume."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>Annual Tool Spend for GTM Engineers</h1>
+        <p>What 228 GTM Engineers spend on their tool stacks each year, where the money goes, and why agency operators spend 3-5x more than in-house teams. Spending data from the State of GTM Engineering Report 2026.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$5K&#8209;$25K</span>
+        <span class="stat-label">Agency Spend (55%)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">55%</span>
+        <span class="stat-label">Agencies in Range</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">6&#8209;8</span>
+        <span class="stat-label">Avg Agency Tools</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">4&#8209;5</span>
+        <span class="stat-label">Avg In-House Tools</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The $5K-$25K Sweet Spot</h2>
+    <p>55% of agency GTM Engineers report annual tool spending between $5,000 and $25,000. That's the sweet spot where most practitioners land: enough budget for Clay credits, a data enrichment subscription, sequencing tools, and workflow automation.</p>
+    <p>The range is wide because tool stacks vary. An agency running Clay + Instantly + n8n (self-hosted) might spend $6,000-$8,000 annually. Add Apollo Pro, a Smartlead subscription, and HeyReach for LinkedIn, and you're at $15,000-$20,000. The ceiling climbs higher for agencies that maintain ZoomInfo contracts or use enterprise-tier CRMs.</p>
+    <p>Below $5,000, practitioners are typically using free tiers aggressively, running a minimal stack (Clay + one sequencing tool), or working in-house where the company covers costs. Above $25,000, you're looking at agency operators with 10+ clients or enterprise teams with procurement-approved tool bundles.</p>
+
+    <h2>Where the Money Goes</h2>
+    <p><strong>Clay credits: the biggest line item.</strong> For agencies running high-volume enrichment across multiple clients, Clay credit spend ranges from $200-$2,000+ per month. Waterfall enrichments burn credits fast: each lead might trigger 5-10 provider lookups, each costing credits. An agency enriching 5,000 leads per month across 8 data providers generates significant credit consumption.</p>
+    <p><strong>Data enrichment subscriptions.</strong> Apollo Pro ($79-$119/mo), ZoomInfo (enterprise pricing, often $10K+/yr for a single seat), FullEnrich, Lusha, and Cognism fill gaps that Clay doesn't cover. Most practitioners stack 2-3 enrichment sources because no single provider has complete data.</p>
+    <p><strong>Sequencing tools.</strong> Instantly ($30-$97/mo depending on sending volume and features), Smartlead ($39-$94/mo), or enterprise tools like Outreach and Salesloft ($100+/user/mo). Agencies running multi-client campaigns often maintain multiple subscriptions to handle different sending accounts and domain rotation strategies.</p>
+    <p><strong>Workflow automation.</strong> This is where the spending gap between n8n and Zapier users becomes visible. A self-hosted n8n instance runs on a $10-$20/month VPS. n8n Cloud starts at $20/month. Zapier at equivalent task volume (20,000+/month) costs $200-$600/month. Make sits in between. The choice of workflow tool is often the single decision that most affects total stack cost.</p>
+    <p><strong>CRM.</strong> Often covered by the company rather than the individual GTM Engineer. HubSpot Starter is $20/user/mo. Salesforce Professional is $80/user/mo. Enterprise tiers climb well above that. Agency operators using personal CRMs for their own pipeline typically choose Pipedrive ($14/user/mo) or Close ($49-$99/user/mo).</p>
+
+    <h2>Agency vs In-House: The Spending Gap</h2>
+    <p>Agency GTM Engineers spend more on tools because they have to. Their margins depend on tool efficiency. An agency operator charging clients $5,000-$15,000 per month for GTM services needs a stack that can handle multiple clients simultaneously. Skimping on tools means slower delivery, worse data quality, and lower client satisfaction.</p>
+    <p>In-house GTM Engineers often don't control their own tool budget. The company selects and pays for tools through procurement. This means lower personal spend but also less flexibility. An in-house GTM Engineer who wants to test a new enrichment tool needs IT approval. An agency operator signs up with a credit card and starts testing in ten minutes.</p>
+    <p>The tool count difference reinforces this pattern. Agencies average 6-8 active tools per operator because breadth creates flexibility across client engagements. In-house teams average 4-5, constrained by procurement processes and the standardization that large organizations prefer.</p>
+    <p>For more on the agency vs in-house compensation dynamics, see the <a href="/salary/agency-fees/">agency fees data</a> and <a href="/salary/agency-fees/regional/">regional agency fee analysis</a>.</p>
+
+    <h2>US vs Non-US Spending</h2>
+    <p>US-based GTM Engineers report higher annual tool budgets. Three factors drive this.</p>
+    <p>First, higher compensation means more personal budget for tools. A US GTM Engineer earning $150K has more room to spend $15K on tools than a non-US practitioner earning $60K. The tool-to-income ratio matters: 10% of income going to tools is sustainable at US salaries but painful at lower compensation levels.</p>
+    <p>Second, US-priced enterprise contracts dominate. ZoomInfo, Salesforce, Outreach, and 6sense price for the US market. Non-US teams sometimes access these tools through global company accounts, but solo operators and small agencies outside the US face pricing that wasn't built for their market.</p>
+    <p>Third, US-based venture-funded startups subsidize tool costs more aggressively. A Series B startup in San Francisco gives its GTM Engineer a tool budget as part of the offer. A bootstrapped company in Berlin expects the GTM Engineer to work with what's available.</p>
+    <p>Non-US practitioners compensate with creative alternatives. More aggressive use of free tiers. Open-source tools (n8n over Zapier, PostHog over Mixpanel). Manual processes for tasks that US teams automate with paid tools. The output quality gap between a $20K and a $5K tool stack is smaller than vendors want you to believe, but it exists in speed and volume capacity.</p>
+
+    <h2>Cost Optimization Strategies</h2>
+    <p>The most cost-efficient GTM Engineers share a few patterns.</p>
+    <p><strong>Self-host where possible.</strong> n8n on a VPS saves hundreds per month vs Zapier. PostHog self-hosted replaces Mixpanel. Cal.com replaces Calendly. The setup cost is a few hours of DevOps work. The monthly savings compound.</p>
+    <p><strong>Negotiate annual contracts.</strong> Most SaaS tools offer 20-40% discounts for annual billing. At $15K annual spend, switching everything to annual plans saves $3,000-$6,000. The tradeoff is flexibility: if you want to drop a tool mid-year, you're locked in.</p>
+    <p><strong>Stack data providers intelligently.</strong> Instead of paying for ZoomInfo's enterprise tier, use Clay's waterfall enrichment to hit Apollo first (cheaper credits), then FullEnrich for gaps, then ZoomInfo only for high-value accounts that the cheaper providers missed. This layered approach can cut enrichment costs 40-60% vs using ZoomInfo as the primary source.</p>
+    <p><strong>Share accounts at agencies.</strong> Many tools charge per-seat. Agency operators running a small team can often share accounts for tools used intermittently. One HeyReach account shared between two operators who alternate LinkedIn outbound campaigns costs half of two individual subscriptions.</p>
+    <p>For the full spending picture in context of compensation, check the <a href="/salary/">salary data index</a>. For how tool choices affect the <a href="/tools/tech-stack-benchmark/">broader tech stack</a>, see the benchmark data.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("annual-spend")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM tool spending intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/annual-spend/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/annual-spend/index.html", page)
+    print(f"  Built: tools/annual-spend/index.html")
+
+
+def build_tool_zoominfo_vs_apollo():
+    """ZoomInfo vs Apollo comparison for GTM Engineers."""
+    title = "ZoomInfo vs Apollo for GTM Engineers (2026)"
+    description = (
+        "ZoomInfo vs Apollo comparison from 228 GTM Engineers. Data quality,"
+        " pricing, Clay integration, and which fits your workflow better."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("ZoomInfo vs Apollo", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Is ZoomInfo or Apollo better for GTM Engineers?",
+         "It depends on your budget and workflow. Apollo offers strong data at accessible pricing ($49-$119/mo for Pro), with native email sequencing and a generous free tier. ZoomInfo has broader enterprise data and intent signals but costs $10K+/year for meaningful access. Most GTM Engineers at agencies and startups choose Apollo. Enterprise teams with procurement budgets lean toward ZoomInfo."),
+        ("Do GTM Engineers use ZoomInfo and Apollo together?",
+         "Yes. Many practitioners use both through Clay's waterfall enrichment. Apollo runs first (cheaper per-record cost) for initial data. ZoomInfo fills gaps on high-value accounts where Apollo's data is incomplete. This layered approach costs less than using ZoomInfo as a primary source while maintaining data coverage for important prospects."),
+        ("What percentage of GTM Engineers use data enrichment tools?",
+         "65% of surveyed GTM Engineers use data enrichment or prospecting tools. Apollo leads in adoption among individual practitioners and agencies due to its pricing. ZoomInfo leads in enterprise environments where the company covers the cost. Clay integrates with both, acting as the orchestration layer that pulls data from whichever source provides the best match for each record."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>ZoomInfo vs Apollo for GTM Engineers</h1>
+        <p>65% of GTM Engineers use data enrichment tools. ZoomInfo and Apollo are the two names that come up in every conversation. The pricing, data quality, and workflow differences between them shape how practitioners build their stacks. From 228 survey responses.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">65%</span>
+        <span class="stat-label">Data Enrichment Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$49&#8209;$119</span>
+        <span class="stat-label">Apollo Pro/mo</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$10K+</span>
+        <span class="stat-label">ZoomInfo/yr</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Two Tools, Different Worlds</h2>
+    <p>ZoomInfo and Apollo both provide B2B contact and company data. They compete for the same budget line. But they serve different buyers in different ways, and understanding the differences matters for GTM Engineers building enrichment workflows.</p>
+    <p>Apollo is the self-serve option. Sign up, pick a plan, start pulling data. The free tier gives you enough to test. Pro plans run $49-$119/month. The data is good for email addresses, direct dials, and company firmographics. Apollo also bundles email sequencing, which means smaller teams can run enrichment and outbound from one tool.</p>
+    <p>ZoomInfo is the enterprise option. Pricing starts at $10K+/year for a single seat with meaningful data access. The data set is broader, especially for enterprise contacts, intent signals, and org chart mapping. But you're negotiating contracts, dealing with sales reps, and committing to annual terms before you see data quality for your specific ICP.</p>
+
+    <h2>Data Quality: The Core Comparison</h2>
+    <p>Both tools promise accurate contact data. Both deliver inconsistently, just in different ways.</p>
+    <p><strong>Apollo's strengths:</strong> email accuracy is strong, particularly for tech companies and startups. The database refreshes frequently enough that most SMB and mid-market contacts have current information. Direct dial coverage is decent but not comprehensive. Company data (revenue, headcount, industry) is reliable for publicly-available metrics but thin on private company details.</p>
+    <p><strong>Apollo's weaknesses:</strong> enterprise contact coverage drops off. C-suite at Fortune 500 companies often has stale data. International coverage outside North America and Western Europe is spotty. The free tier data quality is lower than paid tiers (a deliberate upsell mechanism).</p>
+    <p><strong>ZoomInfo's strengths:</strong> enterprise contact coverage is its core moat. Org charts, direct dials for executive contacts, and intent data from web scraping and content consumption signals. The data set is broader for large companies. International coverage, while not perfect, is better than Apollo's for enterprise targets.</p>
+    <p><strong>ZoomInfo's weaknesses:</strong> SMB data quality is inconsistent. Smaller companies don't generate the signals ZoomInfo tracks, so the data for a 15-person startup is often no better than Apollo's. At $10K+/year, you're paying enterprise pricing for enterprise data quality on enterprise targets. If your ICP is primarily SMBs, the premium over Apollo doesn't justify itself.</p>
+
+    <h2>The Clay Factor</h2>
+    <p>For GTM Engineers using Clay (84% of them), the ZoomInfo vs Apollo question changes. Clay's waterfall enrichment lets you query multiple data providers in sequence, using the cheapest source first and falling back to more expensive sources for gaps.</p>
+    <p>The standard Clay enrichment pattern: Apollo first (lowest per-record cost), then FullEnrich or Lusha for gaps, then ZoomInfo only for high-value accounts where other sources came up empty. This layered approach gets 85-90% of ZoomInfo's coverage at 30-40% of the cost.</p>
+    <p>The implication: GTM Engineers using Clay often don't need a standalone ZoomInfo subscription. They can access ZoomInfo data through Clay's integration on a per-lookup basis, paying only for the specific records where ZoomInfo adds value. This changes the economics from a $10K+/year commitment to a variable cost that scales with usage.</p>
+    <p>Apollo, by contrast, serves double duty in Clay workflows. It's both a data source within Clay's waterfall and a standalone platform for email sequencing. GTM Engineers who want a single tool for enrichment + outbound (without Clay) typically choose Apollo over ZoomInfo because the bundled sequencing eliminates a separate Instantly or Smartlead subscription.</p>
+
+    <h2>Pricing: Enterprise vs Self-Serve</h2>
+    <p>The pricing models reflect fundamentally different go-to-market strategies.</p>
+    <p><strong>Apollo:</strong> self-serve, transparent pricing. Free tier with limited credits. Basic at $49/mo. Professional at $79/mo. Organization at $119/mo. Each tier increases data access, export limits, and feature availability. You know what you're paying before you commit. Annual billing saves 20%.</p>
+    <p><strong>ZoomInfo:</strong> sales-driven, opaque pricing. No public pricing page. You fill out a form, talk to a sales rep, negotiate a contract. Typical starting point for meaningful access: $10K-$15K/year for a single seat. Multi-seat contracts get volume discounts. The enterprise sales motion means longer procurement cycles and less flexibility for budget adjustments.</p>
+    <p>For agency GTM Engineers and solo operators, Apollo's transparent pricing wins by default. You can start for free, upgrade when needed, and cancel without negotiating a contract wind-down. For enterprise teams with procurement budgets and compliance requirements, ZoomInfo's sales-driven model is expected and the budget is pre-approved.</p>
+
+    <h2>Who Should Use Which</h2>
+    <p><strong>Choose Apollo if:</strong> you're at an agency or startup, your ICP includes SMBs and mid-market, you want bundled sequencing, you're using Clay for enrichment orchestration and want a cost-effective waterfall source, or your budget is under $5K/year for data tools.</p>
+    <p><strong>Choose ZoomInfo if:</strong> your ICP is enterprise (500+ employees), you need org chart depth and intent signals, your company has procurement budget for $10K+ annual contracts, you're selling to C-suite contacts where ZoomInfo's direct dial coverage matters, or compliance requires a vendor with SOC 2 and enterprise security certifications.</p>
+    <p><strong>Use both if:</strong> you're running Clay waterfall enrichment and want maximum coverage. Apollo first for volume, ZoomInfo for high-value account gaps. This is the most common pattern among experienced GTM Engineers who've tested both and settled on a layered approach.</p>
+
+    <h2>Integration and Workflow Fit</h2>
+    <p>Apollo integrates natively with most GTM tools. Clay, HubSpot, Salesforce, Outreach, and dozens of others have built-in Apollo connectors. The API is well-documented and rate limits are reasonable for typical enrichment volumes. Setting up an Apollo integration takes minutes, not days.</p>
+    <p>ZoomInfo integrations are broader for enterprise tools (Salesforce, Marketo, Outreach) but thinner for the tools GTM Engineers favor. The Clay integration works well but costs more per lookup. n8n and Make integrations require API configuration rather than native connectors. The setup overhead is higher, which matters for agencies that configure new client stacks frequently.</p>
+    <p>For the broader tool ecosystem that these data sources feed into, see the <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>. For how enrichment tool choices affect the <a href="/tools/clay/">Clay workflow</a>, check the Clay deep-dive. And for the spending context, see the <a href="/tools/annual-spend/">annual tool spend analysis</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("zoominfo-vs-apollo")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly data enrichment and GTM tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/zoominfo-vs-apollo/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/zoominfo-vs-apollo/index.html", page)
+    print(f"  Built: tools/zoominfo-vs-apollo/index.html")
+
+
+def build_tool_wishlist():
+    """Tool wishlist page: what tools GTM Engineers wish existed."""
+    title = "GTM Tool Wishlist: What Engineers Want (2026)"
+    description = (
+        "What tools GTM Engineers wish existed. All-in-one outbound is the"
+        " #1 request. AI SDRs, better integrations, cheaper alternatives."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Tool Wishlist", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What tool do GTM Engineers want most?",
+         "An all-in-one outbound platform that combines Clay's enrichment, Instantly's sequencing, n8n's automation, and native deliverability management in a single product. This is the #1 wishlist item by a wide margin. Practitioners want one tool instead of five, with unified data and workflow management."),
+        ("Do GTM Engineers want AI SDRs?",
+         "Demand is growing but skepticism is high. GTM Engineers want AI that can handle the repetitive parts of SDR work (initial outreach, follow-ups, meeting scheduling) but most don't trust current AI SDR tools to maintain the personalization quality that converts. The wishlist item is more 'AI-assisted SDR workflow' than 'fully autonomous AI SDR.'"),
+        ("What would reduce GTM tool frustrations?",
+         "Three things practitioners cite most: reliable native integrations between tools (not Zapier workarounds), transparent and predictable pricing models (not per-task billing that spikes without warning), and documentation written for technical users who build production workflows (not marketing managers setting up their first campaign)."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>GTM Tool Wishlist: What Engineers Want</h1>
+        <p>We asked 228 GTM Engineers: "What tool do you wish existed?" The answers reveal where the current stack falls short and what the next generation of GTM tools needs to solve. The #1 request: one tool to replace five.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">#1</span>
+        <span class="stat-label">All-in-One Outbound</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">#2</span>
+        <span class="stat-label">AI SDR Assistant</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">#3</span>
+        <span class="stat-label">Better Integrations</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The All-in-One Outbound Dream</h2>
+    <p>The #1 tool request from GTM Engineers is a single platform that handles enrichment, sequencing, deliverability, and workflow automation. Clay for data. Instantly for sending. n8n for orchestration. All in one place with unified data models and native connections between each function.</p>
+    <p>Today, running an outbound operation means configuring 4-6 tools, building integrations between them, managing separate billing for each, and troubleshooting when data gets lost between systems. A lead enriched in Clay has to be exported to Instantly for sequencing, with n8n handling the data transfer and transformation. Every handoff is a failure point. Every tool has its own billing model. Every integration has its own quirks.</p>
+    <p>The wishlist tool would eliminate those handoffs. Enrich a lead and sequence them from the same interface. Monitor deliverability and adjust sending patterns without switching tools. See the entire outbound funnel from prospect identification to meeting booked in one dashboard.</p>
+    <p>Why doesn't this tool exist? Building a platform that matches Clay's enrichment depth AND Instantly's deliverability management AND n8n's workflow flexibility is an enormous engineering challenge. Current attempts (including <a href="/tools/unify-analysis/">Unify at 8.8% adoption</a>) haven't yet matched the specialized tools in any single category, let alone all of them.</p>
+
+    <h2>AI SDR: The Second Most Requested Tool</h2>
+    <p>GTM Engineers want AI that handles the repetitive parts of outbound sales development. Initial outreach emails. Follow-up sequences. Meeting scheduling and confirmation. The low-creativity, high-volume tasks that eat hours but don't require human judgment for every instance.</p>
+    <p>The request comes with caveats. Practitioners want AI assistance, not full autonomy. They want to review AI-generated emails before sending. They want to set the strategy and targeting while AI handles execution. The fear isn't that AI SDRs won't work. It's that they'll work badly: generic outreach that damages sender reputation and burns through prospect lists that took hours to build.</p>
+    <p>Current AI SDR products (11x, Relevance AI, AiSDR, Artisan) are making early progress but haven't earned broad trust. The 228 practitioners in our survey expressed more excitement about AI coding tools (Claude, Cursor) than AI outbound tools. The implication: GTM Engineers trust AI to help them build better systems more than they trust AI to replace their outbound execution.</p>
+
+    <h2>Better Integrations Between Existing Tools</h2>
+    <p>The third wishlist item isn't a new tool at all. It's making existing tools work together without breaking. Native integrations that handle edge cases. APIs with clear documentation and consistent behavior. Webhook reliability that doesn't require building retry logic on top of every connection.</p>
+    <p>This request connects directly to the <a href="/tools/frustrations/">#1 frustration</a>: integration reliability. The same pain point shows up as both the biggest complaint and the third-biggest wish. Practitioners aren't asking for radical new capabilities. They're asking for the current stack to work as advertised.</p>
+    <p>Specific requests: Clay + CRM sync that handles custom objects and picklist fields without manual mapping. Instantly + HubSpot integration that tracks reply activity in the CRM without Zapier middleware. n8n + Clay webhooks that fire consistently without dropped events. These aren't feature requests. They're reliability requests.</p>
+
+    <h2>Cheaper Enterprise Alternatives</h2>
+    <p>GTM Engineers want tools with enterprise-grade data and features at startup-friendly pricing. The specific targets: a ZoomInfo alternative with comparable enterprise contact data at Apollo pricing. A Salesforce alternative with equivalent customization at $20/user/month. A 6sense alternative that provides intent signals without a $50K+ annual commitment.</p>
+    <p>This wishlist category reflects the pricing frustrations covered in our <a href="/tools/annual-spend/">annual spend analysis</a>. Enterprise tools gate the features GTM Engineers need (advanced API access, custom fields, intent data) behind pricing tiers built for 100-seat companies. A two-person GTM team doesn't need 100 seats. They need the features that come with those seats.</p>
+    <p>Open-source alternatives address part of this gap. n8n replaces Zapier. PostHog replaces Mixpanel. But the data provider category (ZoomInfo, 6sense, Bombora) doesn't have viable open-source alternatives because the product IS the proprietary data set.</p>
+
+    <h2>Attribution and ROI Tracking</h2>
+    <p>A tool that definitively answers "which outbound campaigns generate pipeline and revenue." That's the request from practitioners who struggle to prove the ROI of their GTM Engineering work to leadership.</p>
+    <p>Current attribution is fragmented. CRM tracks deals but not the enrichment and automation that created the opportunity. Sequencing tools track opens and replies but not downstream conversion. Analytics tools track website behavior but not outbound touchpoints. The result: GTM Engineers can show activity metrics (emails sent, leads enriched) but struggle to connect those activities to revenue.</p>
+    <p>The wishlist tool would sit across the entire GTM stack, tracking a prospect from initial enrichment through every touchpoint to closed deal. It would answer questions like: "What percentage of Clay-enriched leads from this ICP converted to meetings?" and "Which outbound sequences generate the most pipeline per dollar of tool spend?"</p>
+    <p>This attribution gap affects career outcomes. GTM Engineers who can prove ROI earn more and get promoted faster. The inability to attribute pipeline to specific GTM activities makes the role harder to justify at the executive level. Better attribution tooling wouldn't just improve workflows. It would improve career trajectories.</p>
+
+    <h2>What These Wishlists Tell Us</h2>
+    <p>Three signals from the wishlist data.</p>
+    <p>First, the GTM Engineer stack is mature enough that practitioners are frustrated by tool fragmentation rather than tool absence. They're not asking for entirely new categories. They're asking for existing categories to consolidate and interoperate.</p>
+    <p>Second, AI expectations are grounded. Despite the hype, practitioners want AI assistance more than AI autonomy. The wishlist emphasizes human-in-the-loop AI workflows, not autonomous AI agents replacing humans. The <a href="/tools/most-exciting/">most exciting tools data</a> confirms this: excitement about AI coding tools (which augment human capabilities) exceeds excitement about AI SDRs (which aim to replace human tasks).</p>
+    <p>Third, pricing models are as important as product features. Multiple wishlist items are about making existing features accessible at lower price points, not about building new features. The market opportunity may be less about innovation and more about pricing innovation.</p>
+    <p>For the frustrations driving these wishlists, see the <a href="/tools/frustrations/">tool frustrations analysis</a>. For the current spending patterns, check the <a href="/tools/annual-spend/">annual tool spend data</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("tool-wishlist")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM tool intel and market gap analysis.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/tool-wishlist/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/tool-wishlist/index.html", page)
+    print(f"  Built: tools/tool-wishlist/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -6643,6 +6937,9 @@ def main():
     build_tool_frustrations()
     build_tool_most_exciting()
     build_tool_unify()
+    build_tool_annual_spend()
+    build_tool_zoominfo_vs_apollo()
+    build_tool_wishlist()
 
     print("\n  Building meta files...")
     build_sitemap()

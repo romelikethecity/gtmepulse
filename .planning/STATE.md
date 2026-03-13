@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: State of GTME Content Wave
 status: executing
-stopped_at: Completed 04-03-PLAN.md
-last_updated: "2026-03-13T17:33:00.000Z"
-last_activity: 2026-03-13 — 04-03 final salary pages + nav update complete
+stopped_at: Completed 05-01-PLAN.md
+last_updated: "2026-03-13T18:36:28Z"
+last_activity: 2026-03-13 — 05-01 career pages (6 guides + index) complete
 progress:
-  total_phases: 4
-  completed_phases: 1
-  total_plans: 9
-  completed_plans: 3
-  percent: 33
+  total_phases: 7
+  completed_phases: 2
+  total_plans: 5
+  completed_plans: 5
+  percent: 40
 ---
 
 # Project State
@@ -21,23 +21,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-13)
 
 **Core value:** GTM Engineers can find accurate, vendor-neutral salary benchmarks and career intelligence in one place, with data no competitor provides.
-**Current focus:** Phase 4 — Salary Data Overhaul
+**Current focus:** Phase 5 — Career, Agency, and Job Market
 
 ## Current Position
 
-Phase: 4 of 7 (Salary Data Overhaul) -- COMPLETE
-Plan: 3 of 3 in current phase (done)
+Phase: 5 of 7 (Career, Agency, and Job Market)
+Plan: 1 of 1 in current phase (done)
 Status: Executing
-Last activity: 2026-03-13 — 04-03 final salary pages + nav update complete
+Last activity: 2026-03-13 — 05-01 career pages (6 guides + index) complete
 
-Progress: [███░░░░░░░] 33%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 9min
-- Total execution time: 26min
+- Total plans completed: 5
+- Average duration: 8min
+- Total execution time: 34min
 
 *Updated after each plan completion*
 
@@ -58,6 +58,9 @@ Progress: [███░░░░░░░] 33%
 - [v2.0 04-03]: Custom stats blocks for equity percentages, agency fees, and geographic comparisons reuse salary-stat-card CSS
 - [v2.0 04-03]: Salary index "More Salary Data" section with cards for all 12 analysis pages
 - [v2.0 04-03]: Nav dropdown limited to 3 new entries to avoid overcrowding; all pages accessible via index
+- [v2.0 05-01]: Career pages reuse salary-header, salary-stats, salary-content CSS classes for visual consistency
+- [v2.0 05-01]: career_related_links() cross-links all career pages plus salary index and coding premium
+- [v2.0 05-01]: Career index uses salary-index-card grid pattern for consistency with salary index
 
 ### Pending Todos
 
@@ -72,5 +75,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 04-03-PLAN.md (Phase 04 complete)
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None

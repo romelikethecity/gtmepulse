@@ -33,12 +33,12 @@
 
 ### Career & Breaking-In Pages
 
-- [ ] **CAREER-01**: "How to Become a GTM Engineer in 2026" guide (self-taught 121/228, top paths)
-- [ ] **CAREER-02**: Career path page on operator vs engineer bifurcation (bimodal coding, $45K gap)
-- [ ] **CAREER-03**: "Is GTM Engineering a Real Career?" page (5,205% surge, $135K median)
-- [ ] **CAREER-04**: Job market analysis page (63 to 3,342 postings, monthly breakdown)
-- [ ] **CAREER-05**: How GTMEs got their jobs page (self-taught, agency, freelance breakdown)
-- [ ] **CAREER-06**: Work-life balance page (60% work 40-60 hrs, 23% work 60+)
+- [x] **CAREER-01**: "How to Become a GTM Engineer in 2026" guide (self-taught 121/228, top paths)
+- [x] **CAREER-02**: Career path page on operator vs engineer bifurcation (bimodal coding, $45K gap)
+- [x] **CAREER-03**: "Is GTM Engineering a Real Career?" page (5,205% surge, $135K median)
+- [x] **CAREER-04**: Job market analysis page (63 to 3,342 postings, monthly breakdown)
+- [x] **CAREER-05**: How GTMEs got their jobs page (self-taught, agency, freelance breakdown)
+- [x] **CAREER-06**: Work-life balance page (60% work 40-60 hrs, 23% work 60+)
 - [ ] **CAREER-07**: Demographics page (median age 25, Gen Z, 32 countries)
 - [ ] **CAREER-08**: "GTM Engineer vs RevOps: The Convergence" page (9.6% predict convergence)
 - [ ] **CAREER-09**: "Do You Need to Code?" page (bimodal distribution, $45K premium)
@@ -178,12 +178,12 @@
 | SALN-10 | Phase 4 | Complete |
 | SALN-11 | Phase 4 | Complete |
 | SALN-12 | Phase 4 | Complete |
-| CAREER-01 | Phase 5 | Pending |
-| CAREER-02 | Phase 5 | Pending |
-| CAREER-03 | Phase 5 | Pending |
-| CAREER-04 | Phase 5 | Pending |
-| CAREER-05 | Phase 5 | Pending |
-| CAREER-06 | Phase 5 | Pending |
+| CAREER-01 | Phase 5 | Complete |
+| CAREER-02 | Phase 5 | Complete |
+| CAREER-03 | Phase 5 | Complete |
+| CAREER-04 | Phase 5 | Complete |
+| CAREER-05 | Phase 5 | Complete |
+| CAREER-06 | Phase 5 | Complete |
 | CAREER-07 | Phase 5 | Pending |
 | CAREER-08 | Phase 5 | Pending |
 | CAREER-09 | Phase 5 | Pending |

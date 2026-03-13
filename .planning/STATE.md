@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: State of GTME Content Wave
 status: executing
-stopped_at: Completed 05-03-PLAN.md
-last_updated: "2026-03-13T18:57:00Z"
-last_activity: 2026-03-13 — 05-03 agency pages (8 pages, pricing/retention/deliverability) complete
+stopped_at: Completed 05-04-PLAN.md
+last_updated: "2026-03-13T19:09:00Z"
+last_activity: 2026-03-13 — 05-04 job market pages (8 pages, growth/country/trends/salary-bands/India/Spain) complete
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 9
-  completed_plans: 7
-  percent: 78
+  total_plans: 10
+  completed_plans: 8
+  percent: 82
 ---
 
 # Project State
@@ -26,18 +26,18 @@ See: .planning/PROJECT.md (updated 2026-03-13)
 ## Current Position
 
 Phase: 5 of 7 (Career, Agency, and Job Market)
-Plan: 3 of 3 in current phase (done)
+Plan: 4 of 4 in current phase (done)
 Status: Executing
-Last activity: 2026-03-13 — 05-03 agency pages (8 pages, pricing/retention/deliverability) complete
+Last activity: 2026-03-13 — 05-04 job market pages (8 pages, growth/country/trends/salary-bands/India/Spain) complete
 
-Progress: [████████░░] 78%
+Progress: [████████░░] 82%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: 7min
-- Total execution time: 50min
+- Total execution time: 59min
 
 *Updated after each plan completion*
 
@@ -66,6 +66,10 @@ Progress: [████████░░] 78%
 - [v2.0 05-03]: AGENCY_PAGES array pattern mirrors CAREER_PAGES for consistency
 - [v2.0 05-03]: Agency pages live under /careers/ path (not a separate section)
 - [v2.0 05-03]: agency_related_links() cross-links all 8 agency pages plus salary agency fee pages
+- [v2.0 05-04]: JOBMKT_PAGES array and jobmkt_related_links() follow same pattern as CAREER_PAGES and AGENCY_PAGES
+- [v2.0 05-04]: Careers nav converted to dropdown with 4 children entries
+- [v2.0 05-04]: Career index three-section layout: Career Guides (12) + Agency (8) + Job Market (8)
+- [v2.0 05-04]: CSS_VERSION bumped to 10 for nav/footer structural changes
 
 ### Pending Todos
 
@@ -80,5 +84,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 05-03-PLAN.md
+Stopped at: Completed 05-04-PLAN.md
 Resume file: None

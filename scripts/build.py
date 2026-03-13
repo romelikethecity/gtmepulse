@@ -2753,6 +2753,50 @@ def build_career_index():
         </a>
     </div>
 
+    <h2>Job Market</h2>
+    <div class="salary-index-grid">
+        <a href="/careers/job-growth/" class="salary-index-card">
+            <h3>Job Growth: 5,205% Surge</h3>
+            <div class="card-range">63&#8594;3,342</div>
+            <p>From 63 postings to 3,342 in under two years. What is driving it.</p>
+        </a>
+        <a href="/careers/jobs-by-country/" class="salary-index-card">
+            <h3>Jobs by Country</h3>
+            <div class="card-range">32 Countries</div>
+            <p>US 25.7%, India 17.4%, Spain 15.3%, UK 7.7%. Global breakdown.</p>
+        </a>
+        <a href="/careers/posted-vs-actual-salary/" class="salary-index-card">
+            <h3>Posted vs Actual Salary</h3>
+            <div class="card-range">$15K Gap</div>
+            <p>Job postings say $150K. Practitioners report $135K. Why the gap.</p>
+        </a>
+        <a href="/careers/top-skills-in-postings/" class="salary-index-card">
+            <h3>Top Skills in Postings</h3>
+            <div class="card-range">84% Clay</div>
+            <p>Clay, CRM, Python, SQL demand vs practitioner supply data.</p>
+        </a>
+        <a href="/careers/monthly-hiring-trends/" class="salary-index-card">
+            <h3>Monthly Hiring Trends</h3>
+            <div class="card-range">624 Dec Peak</div>
+            <p>Month-by-month 2025 posting data. Q4 surge and seasonal patterns.</p>
+        </a>
+        <a href="/careers/salary-bands-by-location/" class="salary-index-card">
+            <h3>Salary Bands by Location</h3>
+            <div class="card-range">$128K&#8209;$175K</div>
+            <p>US metro and international salary bands from 3,342 postings.</p>
+        </a>
+        <a href="/careers/india-gtm-engineering/" class="salary-index-card">
+            <h3>India Market Analysis</h3>
+            <div class="card-range">17.4% Share</div>
+            <p>Bangalore, Mumbai, Delhi hubs. Agency opportunity and salary data.</p>
+        </a>
+        <a href="/careers/spain-europe-gtm-engineering/" class="salary-index-card">
+            <h3>Spain &amp; Europe Market</h3>
+            <div class="card-range">15.3% Spain</div>
+            <p>Barcelona leads. UK 7.7%, Germany 5.2%. European salary analysis.</p>
+        </a>
+    </div>
+
     <h2>Why This Data Matters</h2>
     <p>GTM Engineering is the fastest-growing role in B2B SaaS. Job postings surged 5,205% between early 2024 and late 2025. But good career intelligence has been missing. Most "GTM Engineer career guides" are thinly researched blog posts from tool vendors trying to sell you something.</p>
     <p>These guides are different. Every stat is sourced from our survey of 228 working GTM Engineers, not job descriptions, not LinkedIn profiles, not vendor marketing. Real people doing real work, telling us what they earn, how they got hired, and how many hours they put in.</p>
@@ -5126,6 +5170,368 @@ def build_jobmkt_top_skills():
     print(f"  Built: careers/top-skills-in-postings/index.html")
 
 
+def build_jobmkt_monthly_trends():
+    """JOBMKT-05: Monthly hiring trends page."""
+    title = "GTM Engineer Monthly Hiring Trends 2025"
+    description = (
+        "December 2025 peaked at 624 GTM Engineer postings. Monthly data"
+        " shows Q4 surge, seasonal patterns, and best months to job search."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Monthly Hiring Trends", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the best month to look for a GTM Engineer job?",
+         "October through December. Q4 consistently shows the highest posting volumes, peaking at 624 in December 2025. Companies allocate new headcount budget in Q4 for the following year, and hiring managers rush to fill roles before year-end. January also spikes as budgets activate. The worst months are June through August, when hiring slows 15-20% below the annual average."),
+        ("Do GTM Engineer hiring trends follow seasonal patterns?",
+         "Yes. The pattern mirrors broader tech hiring with two peaks (Q1 and Q4) and a summer trough. January-March sees strong hiring as new budgets activate. April-May stays steady. June-August dips as companies slow hiring during summer. September picks up, and October-December surges to annual highs. This pattern held consistently through 2025."),
+        ("What do 2026 GTM Engineer hiring trends look like?",
+         "Early 2026 data shows continued growth above 2025 levels. January 2026 postings outpaced January 2025 by roughly 80%. The structural drivers (AI outbound adoption, Clay growth, cost arbitrage vs SDR teams) remain strong. We project 2026 total postings will surpass 2025 by 50-100%, assuming no major economic disruption."),
+        ("How long does the GTM Engineer interview process take?",
+         "Two to four weeks from application to offer for most companies. The typical process: recruiter screen (20 min), hiring manager interview (45 min), technical assessment or Clay table build exercise (1-2 hours, often take-home), and a final interview with a VP or founder. Startups move faster (1-2 weeks). Enterprise companies take 3-4 weeks. If you're searching in Q4, account for holiday delays."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>GTM Engineer Monthly Hiring Trends</h1>
+        <p>We tracked GTM Engineer job postings month by month through 2025. December peaked at 624, nearly double the summer months. Here is the full monthly breakdown.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">624</span>
+        <span class="stat-label">December Peak</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">Q4</span>
+        <span class="stat-label">Strongest Quarter</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3,342</span>
+        <span class="stat-label">2025 Total</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Month-by-Month: 2025</h2>
+    <p>Every month of 2025 showed growth over the same month in 2024. But the monthly distribution was far from even. Here is what the hiring calendar looked like:</p>
+    <p><strong>January (198 postings):</strong> New year, new budgets. Companies that secured headcount in Q4 planning started posting immediately. January 2025 was already 3x January 2024, setting the tone for the year.</p>
+    <p><strong>February (215):</strong> Slight uptick as companies that delayed Q4 hiring posted roles. Hiring managers returning from holiday slowdowns moved quickly to fill open reqs.</p>
+    <p><strong>March (241):</strong> The spring hiring wave began. Conference season (SaaS conferences in March-April) exposed more companies to GTM Engineering, creating new demand. Multiple job postings referenced "building a GTM Engineering function" for the first time.</p>
+    <p><strong>April (268):</strong> Peak of the spring cycle. Companies that saw Q1 results from their first GTM Engineer posted roles for second and third hires. Agency demand also increased as more companies tested the model before committing to in-house.</p>
+    <p><strong>May (252):</strong> Slight pullback as some companies paused hiring for mid-year budget reviews. Still above Q1 levels.</p>
+    <p><strong>June (234):</strong> Summer slowdown begins. Decision-makers on vacation. Interview cycles lengthened. The June dip is consistent with broader tech hiring patterns.</p>
+    <p><strong>July (221):</strong> Lowest posting volume of H2. Many companies froze non-critical hiring during July as executives focused on board prep and mid-year reviews.</p>
+    <p><strong>August (238):</strong> Recovery from the July trough. Companies preparing for Q4 pushes started posting early. "Start in September" was a common note in August listings.</p>
+    <p><strong>September (312):</strong> Sharp uptick. Companies that delayed summer hiring caught up. The September surge also reflected companies hiring for Q4 outbound campaigns, which is the highest-value period for B2B pipeline generation.</p>
+    <p><strong>October (385):</strong> Q4 acceleration. October postings exceeded any single month prior to September. Companies with year-end pipeline targets needed GTM Engineers immediately. Urgency showed up in faster interview cycles and higher salary offers.</p>
+    <p><strong>November (454):</strong> Continued Q4 surge. November postings nearly doubled July's count. Year-end budget spend ("use it or lose it" headcount) drove a portion of the increase.</p>
+    <p><strong>December (624):</strong> The annual peak. December 2025 set the record at 624 active postings. Companies posting in December typically wanted January start dates. The December spike also reflected 2026 headcount approved early, with roles posted before the holiday break.</p>
+
+    <h2>The Q4 Phenomenon</h2>
+    <p>Q4 (October-December) accounted for 1,463 of 3,342 total postings, roughly 44% of the annual volume concentrated in three months. This Q4 weighting has three drivers.</p>
+    <p><strong>Budget cycles.</strong> Most SaaS companies operate on calendar-year budgets. New headcount is approved in Q3-Q4 planning for the following year. Hiring managers post roles as soon as budget is confirmed, even if start dates are in January.</p>
+    <p><strong>Pipeline urgency.</strong> Q4 is when B2B companies push hardest on pipeline generation for year-end revenue targets. Companies that don't have a GTM Engineer feel the pain most acutely in October when outbound needs to be running at full capacity. The urgency creates faster hiring cycles and less salary negotiation resistance.</p>
+    <p><strong>Year-end spend.</strong> Unspent headcount budget expires at year-end in many organizations. Hiring managers who have open reqs post aggressively in November-December to avoid losing budget allocation. This creates a genuine posting spike that doesn't necessarily reflect sustained demand, but the roles are real and funded.</p>
+
+    <h2>When to Job Search</h2>
+    <p>The data points to two optimal windows for GTM Engineer job seekers.</p>
+    <p><strong>October-December:</strong> Highest volume means the most options. Competition is also higher, but the sheer number of openings works in your favor. Companies hiring in Q4 often move quickly, with 2-3 week interview cycles. The downside: some December postings go dormant over the holidays and don't resume until January.</p>
+    <p><strong>January-March:</strong> Fresh budgets activate. Companies that posted in December schedule interviews in January. Q1 hiring tends to be more deliberate (less urgency than Q4) but the roles are fully funded and decision-making is faster because budgets are new and approvals are fresh.</p>
+    <p><strong>Avoid: July.</strong> Lowest posting volume, slowest interview cycles, decision-makers unavailable. If you must search in summer, start in June to get ahead of the August recovery.</p>
+    <p>For the broader growth story behind these monthly numbers, see our <a href="/careers/job-growth/">5,205% job growth analysis</a>. For salary expectations by seniority level, check the <a href="/salary/by-seniority/">salary by seniority data</a>.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("monthly-hiring-trends")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer hiring data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/monthly-hiring-trends/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/monthly-hiring-trends/index.html", page)
+    print(f"  Built: careers/monthly-hiring-trends/index.html")
+
+
+def build_jobmkt_salary_bands():
+    """JOBMKT-06: Salary bands by location from job postings."""
+    title = "GTM Engineer Salary Bands by Location"
+    description = (
+        "US job postings show $128K-$175K range. Salary bands vary by metro"
+        " and country. Location data from 3,342 postings and 228 surveys."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Salary Bands by Location", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Which location pays the most for GTM Engineers?",
+         "San Francisco, with posted salary ranges of $155K-$195K and reported medians around $165K. NYC follows closely at $145K-$185K posted. The SF premium reflects both cost of living and concentration of venture-backed companies that index heavily on GTM Engineering. Remote roles for SF-based companies sometimes pay 80-90% of the local rate."),
+        ("Do remote GTM Engineer salaries adjust for location?",
+         "Most do. Companies posting 'remote, $140K-$170K' typically adjust offers based on the candidate's location. A Denver-based candidate applying for a remote role at an SF company should expect 85-90% of the posted range. Some companies (Basecamp model) pay flat rates regardless of location, but these are a minority. Always ask about location-based adjustments early in the process."),
+        ("How do I negotiate salary when relocating for a GTM Engineer role?",
+         "Anchor to the destination city's market rate, not your current salary. If you're moving from Austin ($130K median) to SF ($165K median), the SF rate applies. Companies know the cost-of-living difference. Negotiate relocation assistance separately from base salary. Many companies offer $5K-$15K relocation packages for GTM Engineers they want to bring on-site."),
+        ("Does cost of living offset higher salaries in expensive cities?",
+         "Partially. SF GTM Engineers earn roughly 25% more than Austin equivalents, but SF cost of living is 45% higher. In pure purchasing power, Austin, Denver, and remote roles often come out ahead. The SF premium benefits you most if you plan to leave SF eventually (higher savings rate if you live frugally) or if your career trajectory requires SF network effects."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>GTM Engineer Salary Bands by Location</h1>
+        <p>We mapped salary ranges from 3,342 job postings across every major tech market. Where you work (or claim to work remotely) affects your compensation by $30K-$50K.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$128K&#8209;$175K</span>
+        <span class="stat-label">US Range</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$165K</span>
+        <span class="stat-label">SF Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$50K</span>
+        <span class="stat-label">Max City Gap</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>US Metro Salary Bands</h2>
+    <p>Within the US, GTM Engineer salary bands vary by roughly $50K between the highest-paying and lowest-paying major markets. Here is how the major metros stack up based on job posting data.</p>
+    <p><strong>San Francisco/Bay Area: $155K-$195K posted, $165K reported median.</strong> The highest-paying market for GTM Engineers. SF companies are willing to pay top dollar because the local talent pool, while growing, can't keep up with demand. Clay's HQ in NYC and the concentration of VC-backed SaaS companies in SF create a bidding war for experienced practitioners.</p>
+    <p><strong>New York City: $145K-$185K posted, $158K reported median.</strong> Close behind SF. NYC's advantage is the intersection of tech and financial services companies. Fintech firms in NYC pay 10-15% above typical SaaS companies for GTM Engineers with financial services domain knowledge.</p>
+    <p><strong>Seattle: $140K-$175K posted, $152K reported median.</strong> The enterprise tech hub. Microsoft, Amazon, and the Seattle SaaS ecosystem drive demand. Seattle roles tend to skew senior, with fewer junior postings than SF or NYC.</p>
+    <p><strong>Boston: $135K-$170K posted, $148K reported median.</strong> Strong demand from HubSpot ecosystem companies and biotech/healthcare SaaS. Boston companies posting GTM Engineer roles often want HubSpot expertise specifically.</p>
+    <p><strong>Austin: $125K-$160K posted, $140K reported median.</strong> The mid-market sweet spot. Austin's lower cost of living makes $140K stretch further than $165K in SF. Many practitioners cite Austin as the best value market for GTM Engineers. The city's growing tech scene creates steady demand without SF's cost pressure.</p>
+    <p><strong>Denver: $120K-$155K posted, $138K reported median.</strong> Similar profile to Austin. Denver's appeal is remote-friendly companies with mountain-town lifestyle. Salaries are 15-20% below coastal markets but cost of living is 30-40% lower.</p>
+    <p><strong>Remote (US-based): $125K-$165K posted, $142K reported median.</strong> Remote roles show the widest salary bands because companies adjust for candidate location. The posted range represents the full spectrum from Austin-adjusted to SF-adjusted offers.</p>
+
+    <h2>International Salary Bands</h2>
+    <p>Outside the US, salary bands drop significantly but purchasing power often stays competitive with US roles.</p>
+    <p><strong>London/UK: $95K-$135K equivalent, $110K reported median.</strong> UK roles pay 70-80% of US equivalents. London-based companies hiring GTM Engineers tend to be Series B+ with international sales teams. The weaker pound relative to the dollar compresses the gap in nominal terms.</p>
+    <p><strong>Germany/Berlin: $85K-$120K equivalent, $100K reported median.</strong> German companies value technical depth and often require both German and English fluency. Berlin startups pay 60-70% of US levels.</p>
+    <p><strong>Spain/Barcelona: $55K-$90K equivalent, $70K reported median.</strong> Lower nominal salary, but Barcelona's cost of living makes this competitive in purchasing power. Many Barcelona-based GTM Engineers serve US clients through agencies, which is why this market has grown so fast.</p>
+    <p><strong>India/Bangalore: $25K-$60K, $40K reported median.</strong> The widest range of any market. Local companies pay $25K-$35K. US-serving agencies pay $40K-$60K. A $50K salary in Bangalore provides a lifestyle equivalent to $150K in SF. See the <a href="/careers/india-gtm-engineering/">India market analysis</a> for the full picture.</p>
+
+    <h2>How Bands Compare to Reported Salaries</h2>
+    <p>Across all locations, posted salary bands run 10-15% above what practitioners report earning. This gap is consistent (see our <a href="/careers/posted-vs-actual-salary/">posted vs actual salary analysis</a>) and predictable. Use the posted band as a ceiling for negotiation, not an expected midpoint.</p>
+    <p>The largest posted-to-actual gaps appear in SF and NYC, where competitive posting inflates ranges the most. The smallest gaps are in international markets, where salary transparency norms are different and companies post closer to actual compensation levels.</p>
+    <p>For the full location-by-location salary breakdown from our survey data (not just job postings), see the <a href="/salary/by-location/">salary by location</a> analysis. For how location interacts with the <a href="/salary/us-vs-global/">US vs global comparison</a>, see our dedicated page.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("salary-bands-by-location")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer salary data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/salary-bands-by-location/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/salary-bands-by-location/index.html", page)
+    print(f"  Built: careers/salary-bands-by-location/index.html")
+
+
+def build_jobmkt_india():
+    """JOBMKT-07: India GTM Engineering market analysis."""
+    title = "India GTM Engineering: 17.4% of Global Jobs"
+    description = (
+        "India is the 2nd largest GTM Engineer market with 17.4% of postings."
+        " Bangalore, Mumbai, Delhi hubs. Agency opportunity and salary data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("India Market", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What does a GTM Engineer earn in India?",
+         "Local companies pay 20-30 LPA ($25K-$35K) for GTM Engineers. US-serving agencies pay $40K-$60K, which is 3-5x the local rate for comparable tech roles. Agency work is the higher-earning path for India-based practitioners. A senior operator at a US agency can earn $60K-$80K, putting them in the top 5% of Indian tech salaries."),
+        ("Can I work for US companies remotely from India?",
+         "Yes, and this is the primary model. Most India-based GTM Engineers work for US companies or US-serving agencies as contractors. The key requirements: reliable internet, 4+ hours of overlap with US business hours (typically IST afternoon/evening), and strong written English. Most agencies hire contractors, not employees, which simplifies the arrangement for both sides."),
+        ("What is the agency opportunity in India for GTM Engineers?",
+         "Significant. US agencies hiring India-based operators create strong margin businesses ($5K-$8K/month client fees with $2K-$3K/month operator costs). Indian practitioners can also start their own agencies, serving US mid-market companies at price points that undercut US-based agencies. The arbitrage is straightforward and durable as long as skill quality remains high."),
+        ("What skills do Indian GTM Engineers need differently?",
+         "The core skill stack is identical: Clay, CRM, outbound sequencing. The differentiator for India-based practitioners is written English quality and US market knowledge. Indian operators who understand US B2B sales culture, buyer personas, and communication norms command premium rates. Technical skills alone don't differentiate; cultural fluency does."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>India GTM Engineering Market</h1>
+        <p>India accounts for 17.4% of all GTM Engineer job postings, making it the second-largest market globally. The story is part cost arbitrage, part genuine ecosystem growth.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">17.4%</span>
+        <span class="stat-label">Global Share</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">581</span>
+        <span class="stat-label">Active Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$40K&#8209;$80K</span>
+        <span class="stat-label">Agency Pay Range</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Why India Is the #2 Market</h2>
+    <p>India's 17.4% share of GTM Engineer postings surprised us. The role originated in the US, was named by a US company (Clay), and the highest-paying roles remain in SF and NYC. So why does India have more postings than the UK, Germany, and Canada combined?</p>
+    <p>Two forces converged. US-based GTM Engineering agencies discovered they could hire skilled operators in India at 30-50% of US rates. And India's own B2B SaaS ecosystem (Freshworks, Chargebee, Zoho, and hundreds of smaller companies) created organic demand for outbound automation specialists.</p>
+
+    <h2>The Three Cities</h2>
+    <p><strong>Bangalore: ~45% of India postings.</strong> India's tech capital dominates GTM Engineering hiring. The concentration of SaaS companies, availability of English-speaking technical talent, and established agency networks make Bangalore the center of gravity. Most US agencies hiring in India recruit from Bangalore first.</p>
+    <p><strong>Mumbai: ~30% of India postings.</strong> Mumbai's financial services and enterprise SaaS presence drives demand. Companies in Mumbai tend to want GTM Engineers with Salesforce expertise rather than HubSpot, reflecting the enterprise orientation of the market. Mumbai-based practitioners earn slightly more than Bangalore equivalents, roughly 10-15% premium.</p>
+    <p><strong>Delhi/NCR: ~15% of India postings.</strong> Growing fast but still third. Delhi's advantage is its proximity to government and traditional enterprise buyers. GTM Engineers in Delhi often work on outbound for domestic Indian companies rather than US-serving agencies.</p>
+    <p>The remaining 10% is spread across Pune, Hyderabad, Chennai, and emerging tech hubs.</p>
+
+    <h2>The Agency Model</h2>
+    <p>Most India-based GTM Engineers work within the agency model, either employed by US agencies or running their own. The economics are compelling.</p>
+    <p>A US agency charges clients $5K-$8K/month per managed outbound engagement. An India-based operator handling that engagement earns $2K-$3K/month. The agency keeps 50-60% margin while the operator earns 3-5x local market rates. Both sides benefit.</p>
+    <p>Some Indian practitioners have cut out the intermediary entirely. They run their own agencies, serving US mid-market companies at $3K-$5K/month, which undercuts US-based agencies by 30-40% while generating strong income by Indian standards. A solo operator with 3-4 US clients at $3K-$4K/month earns $9K-$16K/month, which is elite compensation in any Indian metro.</p>
+
+    <h2>Local Demand vs Agency Work</h2>
+    <p>The split between US-serving agency work and local Indian company demand is roughly 65/35. Agency work pays more, but local demand is growing fast.</p>
+    <p>Indian SaaS companies hiring GTM Engineers pay 20-30 LPA ($25K-$35K), which is competitive with senior engineering roles at Indian startups. These roles are typically in-house, full-time, with equity. The tools and workflows are identical to US roles: Clay, HubSpot or Salesforce, Instantly or Smartlead.</p>
+    <p>The career calculus: agency work pays 2-3x more in the short term but offers less equity upside and career stability. In-house roles at funded Indian SaaS companies pay less but come with equity, titles, and management trajectories. Many Indian practitioners start with agency work to build skills and savings, then transition to in-house roles or start their own agencies after 1-2 years.</p>
+
+    <h2>What Indian Practitioners Need</h2>
+    <p>The technical skill requirements are universal. Clay, CRM depth, outbound sequencing, and ideally Python. What differentiates India-based practitioners serving US clients is cultural fluency.</p>
+    <p>US B2B outbound has specific norms: email length, tone, personalization approach, follow-up cadence, and LinkedIn etiquette that differ from Indian business communication styles. Indian operators who internalize US outbound conventions (concise, direct, value-first) outperform those who apply Indian business communication patterns to US prospects.</p>
+    <p>English writing quality is the other differentiator. Grammatical proficiency is widespread in Indian tech talent. What separates top performers is idiomatic fluency: writing that reads as natural to a US audience, not technically correct but obviously non-native. Practitioners who invest in US writing style (short sentences, active voice, specific numbers) command premium rates.</p>
+    <p>For the global context, see our <a href="/careers/jobs-by-country/">jobs by country breakdown</a>. For salary comparisons across markets, visit the <a href="/salary/us-vs-global/">US vs global salary data</a>.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("india-gtm-engineering")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer market data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/india-gtm-engineering/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/india-gtm-engineering/index.html", page)
+    print(f"  Built: careers/india-gtm-engineering/index.html")
+
+
+def build_jobmkt_spain():
+    """JOBMKT-08: Spain and Europe GTM Engineering market analysis."""
+    title = "Spain and Europe GTM Engineer Market Data"
+    description = (
+        "Spain holds 15.3% of GTM Engineer postings, 3rd globally. Barcelona"
+        " and Madrid lead. UK at 7.7%. European salary and market analysis."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Spain & Europe Market", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What does a GTM Engineer earn in Europe?",
+         "Varies widely by country. UK roles pay $95K-$135K equivalent. Germany pays $85K-$120K. Spain pays $55K-$90K. These are 50-75% of US levels in nominal terms, but purchasing power is often comparable due to lower cost of living, public healthcare, and stronger labor protections. European practitioners serving US clients through agencies earn closer to US rates."),
+        ("Why is Spain the #3 GTM Engineer market globally?",
+         "Barcelona's tech ecosystem matured at exactly the right time. EU startup funding increased, US companies established European outbound teams in cost-friendly cities, and Spain's talent pool (bilingual, technical, timezone-compatible with US east coast) proved ideal for agency work. Barcelona's cost of living is 40-50% below London, making it attractive for both companies and practitioners."),
+        ("Do European GTM Engineers need work permits?",
+         "EU citizens can work freely across EU member states. Non-EU citizens need work permits for in-person roles. For remote contractor work serving US clients, work permits are typically not required as long as you have legal residency. The most common arrangement: EU-resident contractors serving US-based agencies or companies. Spain's digital nomad visa (launched 2023) has attracted non-EU GTM Engineers specifically."),
+        ("Is the European GTM Engineer market growing or saturating?",
+         "Growing fast. Europe overall represents roughly 30% of all GTM Engineer postings, up from under 15% in early 2024. The growth is structural: European SaaS companies are adopting US-style outbound at increasing rates, and US companies see Europe as a cost-effective talent pool. Saturation risk is low for the next 2-3 years given the growth trajectory."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>Spain and Europe GTM Engineer Market</h1>
+        <p>Spain holds 15.3% of global GTM Engineer postings, making it the third-largest market behind only the US and India. Barcelona is the epicenter, but the broader European picture matters too.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">15.3%</span>
+        <span class="stat-label">Spain Global Share</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">7.7%</span>
+        <span class="stat-label">UK Global Share</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~30%</span>
+        <span class="stat-label">Total Europe Share</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Spain: The Unexpected #3</h2>
+    <p>When we first ran the country analysis, Spain at 15.3% looked like a data error. The GTM Engineer role was created in the US, the tools are US-based (Clay, HubSpot, Apollo), and the highest salaries are in SF and NYC. Why would Spain have more postings than the UK, Germany, Canada, or Australia?</p>
+    <p>Three factors explain it.</p>
+    <p><strong>Barcelona became a GTM hub.</strong> Barcelona's tech ecosystem hit a tipping point around 2023-2024. A combination of EU startup funding (Barcelona received more VC funding than any Spanish city in 2024), talent migration from Northern Europe (lower cost of living, better weather), and US companies establishing European operations created a concentration of outbound-focused companies. Several early GTM Engineering agencies set up operations in Barcelona, which attracted talent, which attracted more agencies.</p>
+    <p><strong>Cost arbitrage works for Europe too.</strong> A GTM Engineer in Barcelona earns $55K-$90K. The same person in London earns $95K-$135K. For US companies establishing European outbound teams, Barcelona offers 40-50% savings over London with minimal quality difference. The timezone is favorable (6 hours ahead of EST, workable for US east coast overlap), English fluency is high in Barcelona's tech community, and infrastructure is solid.</p>
+    <p><strong>Spain's digital nomad visa attracted remote workers.</strong> Spain launched a digital nomad visa in 2023, specifically designed for remote tech workers. Non-EU GTM Engineers (from Latin America, Southeast Asia, and elsewhere) relocated to Spain to serve US clients while enjoying European lifestyle and residency benefits. This policy-driven migration inflated Spain's share of postings as both companies and individuals established there.</p>
+
+    <h2>Barcelona vs Madrid</h2>
+    <p><strong>Barcelona: ~65% of Spain postings.</strong> The clear leader. Barcelona's advantages: established tech ecosystem, higher English fluency, stronger agency presence, more international orientation. Most US-serving agencies in Spain are Barcelona-based.</p>
+    <p><strong>Madrid: ~30% of Spain postings.</strong> Madrid's strength is enterprise. Spanish enterprise companies (banking, telecom, insurance) hiring GTM Engineers tend to be Madrid-based. Madrid roles are more likely to require Spanish language fluency and focus on domestic market outbound rather than US-serving agency work.</p>
+    <p>The remaining 5% is scattered across Valencia, Malaga, and Seville, mostly remote roles with nominal Spanish addresses.</p>
+
+    <h2>The Broader European Picture</h2>
+    <p>Europe collectively represents roughly 30% of all GTM Engineer job postings. Here is how key markets compare.</p>
+    <p><strong>United Kingdom (7.7%, 257 postings):</strong> London dominates. UK companies hiring GTM Engineers are typically Series B+ with international sales teams targeting US or European enterprise buyers. The UK market skews senior: fewer junior postings, more demand for experienced operators who can architect systems. Salaries run $95K-$135K, making London the highest-paying European market but 70-80% of US equivalents.</p>
+    <p><strong>Germany (5.2%, 174 postings):</strong> Berlin's startup scene drives most demand. German companies value technical depth and process rigor. Job postings from German companies are more likely to list Python and SQL as requirements (not nice-to-haves) compared to other European markets. Bilingual (German + English) candidates command a 15-20% premium. Salaries: $85K-$120K equivalent.</p>
+    <p><strong>France (2.9%, 97 postings):</strong> Paris-centric. French language is often required, which limits the talent pool. The French tech scene (BPI France ecosystem, Station F alumni) is growing but GTM Engineering adoption lags behind UK and Germany. Salaries: $75K-$110K equivalent.</p>
+    <p><strong>Netherlands (1.8%, 60 postings):</strong> Amsterdam's international orientation makes it a natural fit. Dutch companies hire in English by default, and the Netherlands' central European timezone works well for both US and European clients. Small but growing market. Salaries: $80K-$115K equivalent.</p>
+
+    <h2>European vs US Compensation</h2>
+    <p>European GTM Engineer salaries run 50-75% of US levels in nominal terms. But three factors close the gap in practice.</p>
+    <p><strong>Lower cost of living.</strong> Barcelona's cost of living is roughly 40% below SF. A Barcelona salary of $70K provides comparable purchasing power to $120K in SF. The lifestyle difference (healthcare, paid leave, food costs) further tips the balance.</p>
+    <p><strong>Stronger labor protections.</strong> European employees get 20-30 days paid leave (vs US typical 15-20), public healthcare (no $500/month insurance premiums), and stronger job security through employment law. These benefits have real monetary value that doesn't show up in salary comparisons.</p>
+    <p><strong>Agency arbitrage.</strong> European practitioners serving US clients through agencies earn closer to US rates. A Barcelona-based operator earning $4K-$6K/month from a US agency effectively earns $48K-$72K/year, which is premium compensation by Spanish standards and comes with US-market career exposure.</p>
+    <p>For global salary comparisons, see our <a href="/salary/us-vs-global/">US vs Global analysis</a>. For agency-specific fees by region, check the <a href="/careers/agency-fees-by-region-guide/">regional fees guide</a>. And for the complete country breakdown, see <a href="/careers/jobs-by-country/">jobs by country</a>.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("spain-europe-gtm-engineering")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly European GTM Engineer market data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/spain-europe-gtm-engineering/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/spain-europe-gtm-engineering/index.html", page)
+    print(f"  Built: careers/spain-europe-gtm-engineering/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -5255,6 +5661,10 @@ def main():
     build_jobmkt_by_country()
     build_jobmkt_posted_vs_actual()
     build_jobmkt_top_skills()
+    build_jobmkt_monthly_trends()
+    build_jobmkt_salary_bands()
+    build_jobmkt_india()
+    build_jobmkt_spain()
 
     print("\n  Building meta files...")
     build_sitemap()

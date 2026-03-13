@@ -2604,6 +2604,431 @@ def build_robots():
 
 
 # ---------------------------------------------------------------------------
+# Career page helpers + generators
+# ---------------------------------------------------------------------------
+
+CAREER_PAGES = [
+    {"slug": "how-to-become-gtm-engineer", "title": "How to Become a GTM Engineer"},
+    {"slug": "operator-vs-engineer", "title": "Operator vs Engineer: The $45K Gap"},
+    {"slug": "is-gtm-engineering-real-career", "title": "Is GTM Engineering a Real Career?"},
+    {"slug": "job-market-analysis", "title": "Job Market: 5,205% Growth"},
+    {"slug": "how-gtm-engineers-got-jobs", "title": "How GTM Engineers Got Their Jobs"},
+    {"slug": "work-life-balance", "title": "Work-Life Balance Data"},
+]
+
+
+def career_related_links(current_slug):
+    """Generate related career page links (same pattern as salary_related_links)."""
+    links = [("/careers/", "Career Guides Index")]
+    for page in CAREER_PAGES:
+        if page["slug"] != current_slug:
+            links.append((f"/careers/{page['slug']}/", page["title"]))
+    # Add salary cross-links
+    links.append(("/salary/", "Salary Data Index"))
+    links.append(("/salary/coding-premium/", "Coding Premium: $45K Gap"))
+    links = links[:8]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Career Guides</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_career_index():
+    """Career landing page at /careers/ with card grid linking to all 6 career guides."""
+    title = "GTM Engineer Career Guide 2026 - GTME Pulse"
+    description = (
+        "Career paths, job market data, and work-life balance for GTM Engineers."
+        " Backed by survey data from 228 practitioners across 32 countries."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    cards = ""
+    card_data = [
+        ("how-to-become-gtm-engineer", "How to Become a GTM Engineer", "Self-taught paths, skills needed, and realistic timelines", "53% Self-Taught"),
+        ("operator-vs-engineer", "Operator vs Engineer", "The $45K salary gap between low-code and technical paths", "$45K Gap"),
+        ("is-gtm-engineering-real-career", "Is This a Real Career?", "Job posting data, salary benchmarks, and longevity analysis", "5,205% Growth"),
+        ("job-market-analysis", "Job Market Analysis", "63 to 3,342 postings, top hiring countries, salary bands", "3,342 Postings"),
+        ("how-gtm-engineers-got-jobs", "How GTMEs Got Their Jobs", "Entry paths: SDR, marketing ops, developer transitions, agencies", "121/228 Self-Taught"),
+        ("work-life-balance", "Work-Life Balance", "Hours worked, agency vs in-house, remote patterns, burnout data", "60% Work 40&#8209;60hrs"),
+    ]
+    for slug, card_title, desc, stat in card_data:
+        cards += f'''<a href="/careers/{slug}/" class="salary-index-card">
+    <h3>{card_title}</h3>
+    <div class="card-range">{stat}</div>
+    <p>{desc}</p>
+</a>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Intelligence</div>
+        <h1>GTM Engineer Career Guides</h1>
+        <p>Career paths, job market data, and compensation intelligence for GTM Engineers. Every number comes from the State of GTM Engineering Report 2026, a survey of 228 practitioners across 32 countries combined with analysis of 3,342 job postings.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Practitioners Surveyed</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Job Posting Growth</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Career Guides</h2>
+    <div class="salary-index-grid">
+        {cards}
+    </div>
+
+    <h2>Why This Data Matters</h2>
+    <p>GTM Engineering is the fastest-growing role in B2B SaaS. Job postings surged 5,205% between early 2024 and late 2025. But good career intelligence has been missing. Most "GTM Engineer career guides" are thinly researched blog posts from tool vendors trying to sell you something.</p>
+    <p>These guides are different. Every stat is sourced from our survey of 228 working GTM Engineers, not job descriptions, not LinkedIn profiles, not vendor marketing. Real people doing real work, telling us what they earn, how they got hired, and how many hours they put in.</p>
+    <p>Use these guides to make better career decisions, whether you're breaking into the field, choosing between the operator and engineer path, or negotiating your next raise.</p>
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/",
+        body_content=body, active_path="/careers/",
+        extra_head=get_breadcrumb_schema(crumbs), body_class="page-inner",
+    )
+    write_page("careers/index.html", page)
+    print(f"  Built: careers/index.html")
+
+
+def build_career_how_to_become():
+    """CAREER-01: How to become a GTM Engineer guide."""
+    title = "How to Become a GTM Engineer: 2026 Guide"
+    description = (
+        "Step-by-step guide to becoming a GTM Engineer. 53% are self-taught."
+        " Entry paths, skills needed, and realistic timelines from n=228 survey."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("How to Become", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Do I need a degree to become a GTM Engineer?",
+         "No. 53% of working GTM Engineers (121 out of 228 surveyed) are self-taught. The field values demonstrable skills over credentials. A strong Clay portfolio or automation project will get you further than a computer science degree in most interviews."),
+        ("How long does it take to become a GTM Engineer?",
+         "Most career switchers report reaching job-ready status in 3-6 months of focused learning. That means proficiency in Clay, at least one CRM (HubSpot or Salesforce), and ideally basic Python skills. Prior experience in SDR, marketing ops, or revenue ops shortens the timeline."),
+        ("Are there GTM Engineer certifications worth getting?",
+         "Clay University certification is the closest thing to a standard credential, and 84% of GTM Engineers use Clay. HubSpot and Salesforce certifications help too, especially for roles at companies using those CRMs. But portfolio projects matter more than certificates."),
+        ("What's the best first job in GTM Engineering?",
+         "Agency and freelance work is the most common entry point. 30% of GTM Engineers work at agencies or run their own consultancies. Agencies give you exposure to multiple stacks, rapid iteration, and portfolio-building opportunities that in-house roles at a single company can't match."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Guide</div>
+        <h1>How to Become a GTM Engineer: 2026 Guide</h1>
+        <p>The paths people take into GTM Engineering, the skills that matter, and how long it takes. Based on survey data from 228 working GTM Engineers.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">53%</span>
+        <span class="stat-label">Self-Taught</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Use Clay</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">Use a CRM Daily</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Self-Taught Majority</h2>
+    <p>Here's the number that should give you confidence: 121 out of 228 GTM Engineers surveyed taught themselves the role. No bootcamp. No degree program. No formal training. They picked up Clay, learned to wire automations together, and figured out the rest on the job.</p>
+    <p>That 53% figure is strikingly high compared to adjacent roles. In software engineering, self-taught developers represent maybe 15-20% of the workforce. In GTM Engineering, they're the majority. The field is young enough that there's no established pipeline from university to job. Everyone's making their own path.</p>
+    <p>What did they learn first? The data points to three things: Clay (84% adoption rate), a CRM (92% use one daily, usually HubSpot or Salesforce), and some form of automation tool (Make, Zapier, or n8n). Master those three pillars and you're functional. Add Python and you're competitive.</p>
+
+    <h2>Top Entry Paths</h2>
+    <p>Five backgrounds feed most of the talent into GTM Engineering. Each one brings different strengths and different gaps to fill.</p>
+    <h3>SDR / BDR Transition</h3>
+    <p>Former SDRs and BDRs make up the largest single feeder group. They understand outbound prospecting, sequences, and pipeline generation because they've done it manually. The transition to GTM Engineering means automating what they used to do by hand. If you've spent months sending cold emails and manually enriching leads, you already understand the problem space. You just need the technical skills to build systems around it.</p>
+    <p>The gap for SDR converts: most need to learn data tools beyond their CRM. Clay is the bridge. It looks familiar enough (spreadsheet-like) to be approachable, but powerful enough to replace entire manual workflows.</p>
+
+    <h3>Marketing Ops Transition</h3>
+    <p>Marketing ops people bring systematic thinking and CRM fluency. They've managed lead scoring, attribution models, and email campaigns. The shift to GTM Engineering means expanding from marketing-only workflows to full-funnel automation that spans enrichment, outbound, and pipeline management.</p>
+    <p>Marketing ops converts typically have an easier time with the analytical side. They're used to measuring things. The growth edge is learning outbound sequencing tools and building enrichment pipelines.</p>
+
+    <h3>Revenue Ops Transition</h3>
+    <p>RevOps professionals already sit at the intersection of sales, marketing, and customer success data. They understand the full GTM motion. The transition is less about learning a new domain and more about shifting from strategic/analytical work to hands-on technical building.</p>
+    <p>RevOps converts often have the broadest business context, which makes them effective at designing systems that serve the whole revenue team, not just one function.</p>
+
+    <h3>Developer Transition</h3>
+    <p>Developers who move into GTM Engineering bring the highest technical ceiling. They can write custom integrations, build API middleware, and automate at a level that no-code builders can't match. The <a href="/salary/coding-premium/">$45K coding premium</a> exists largely because of this group.</p>
+    <p>The gap for developers: they often need to learn the GTM domain itself. Knowing Python is worthless if you don't understand why a multi-step enrichment waterfall matters, or how outbound sequences convert differently based on persona targeting.</p>
+
+    <h3>Agency / Freelance Path</h3>
+    <p>30% of GTM Engineers surveyed work at agencies or run freelance practices. This is the fastest path to building a portfolio. You work with multiple clients, build diverse systems, and accumulate references quickly. The tradeoff is longer hours and less stability than in-house roles.</p>
+
+    <h2>The Skills That Matter</h2>
+    <p>The survey data paints a clear picture of which skills working GTM Engineers use daily and which ones command a salary premium.</p>
+    <p><strong>Clay (84% adoption):</strong> The center of gravity for the entire field. If you learn one tool, make it Clay. It's where enrichment, scoring, and prospecting workflows live. Clay proficiency is table stakes for most GTM Engineer roles.</p>
+    <p><strong>CRM fluency (92%):</strong> HubSpot and Salesforce dominate. You need to understand objects, properties, workflows, and API access for at least one CRM. This is non-negotiable for in-house roles.</p>
+    <p><strong>Python:</strong> The single highest-value technical skill. GTM Engineers who code earn roughly <a href="/salary/coding-premium/">$45K more</a> than those who don't. You don't need to be a software engineer. You need to write API calls, parse JSON, manipulate data with pandas, and build simple automations.</p>
+    <p><strong>Automation platforms:</strong> Make (formerly Integromat) and n8n for visual workflow building. Zapier for simpler integrations. These tools connect everything in the stack when custom code isn't warranted.</p>
+    <p><strong>SQL:</strong> Increasingly important as companies want GTM Engineers who can query data warehouses, build reporting, and do ad-hoc analysis beyond what the CRM provides natively.</p>
+
+    <h2>Realistic Timeline: 3-6 Months to Job-Ready</h2>
+    <p>Based on survey responses and job market data, here's what a focused learning path looks like.</p>
+    <p><strong>Month 1:</strong> Learn Clay fundamentals. Build 3-5 enrichment tables. Understand waterfall enrichment, scoring, and Clay's HTTP action for API calls. Complete Clay University if available. This is your foundation.</p>
+    <p><strong>Month 2:</strong> Add CRM depth. Set up a HubSpot sandbox or Salesforce developer org. Build workflows that sync data from Clay to CRM. Learn to create custom properties, deal pipelines, and automated task assignment. Connect an outbound tool (Instantly or Lemlist) to practice sequence building.</p>
+    <p><strong>Month 3:</strong> Build a portfolio project. Create an end-to-end system: data enrichment in Clay, scoring logic, CRM sync, automated outbound sequence. Document it. This project becomes your interview talking point and your proof of competence.</p>
+    <p><strong>Months 4-6:</strong> Learn Python basics (variables, loops, HTTP requests, JSON parsing). Build one script that automates something in your workflow. Start applying to roles or taking freelance clients. At this point you have enough skills to be productive from day one.</p>
+    <p>Can you speed this up? Yes, if you're coming from a technical background. Developers can compress this to 4-6 weeks. Can it take longer? Yes, if you're learning part-time. But 6 months of focused effort gets most people to a hirable level.</p>
+
+    <h2>First Job Strategies</h2>
+    <p>The GTM Engineering job market favors demonstrable output over resumes. Three approaches work well for breaking in.</p>
+    <p><strong>Build in public.</strong> Share Clay tables, automation screenshots, and workflow diagrams on LinkedIn. The GTM Engineering community is active there, and hiring managers notice people who show their work. One viral post about an interesting enrichment workflow can generate inbound recruiter interest.</p>
+    <p><strong>Start at an agency.</strong> Agencies are always hiring because the work scales with client count. The pay might be lower initially, but you'll learn faster than anywhere else. Exposure to different stacks, industries, and problems in your first 6 months is worth more than a slightly higher salary at a single company.</p>
+    <p><strong>Offer to build for free.</strong> Find a startup that's doing outbound manually and offer to build their first automated enrichment and sequencing system. One successful project with a real company is worth more than any certification. And if you deliver, they'll either hire you or refer you to someone who will.</p>
+    <p>The <a href="/careers/how-gtm-engineers-got-jobs/">data on how GTM Engineers got hired</a> confirms these patterns. The role rewards builders. Show what you can build, and the opportunities follow.</p>
+    <p>For compensation expectations as you enter the field, see our <a href="/salary/">salary data breakdown</a>. Junior GTM Engineers start in the $90K-$130K range, with the path to <a href="/careers/operator-vs-engineer/">$135K+ tied to technical depth</a>.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("how-to-become-gtm-engineer")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/how-to-become-gtm-engineer/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/how-to-become-gtm-engineer/index.html", page)
+    print(f"  Built: careers/how-to-become-gtm-engineer/index.html")
+
+
+def build_career_operator_vs_engineer():
+    """CAREER-02: Operator vs Engineer bifurcation and $45K gap."""
+    title = "GTM Operator vs Engineer: The $45K Gap"
+    description = (
+        "GTM Operators earn ~$90K. GTM Engineers earn ~$135K. The difference is coding."
+        " Bimodal skill data from the State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Operator vs Engineer", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the difference between a GTM Operator and a GTM Engineer?",
+         "GTM Operators build workflows using no-code and low-code tools like Clay, Zapier, and HubSpot workflows. GTM Engineers do all of that plus write custom code (Python, SQL, API integrations) to extend and connect systems. The distinction shows up in both daily work and compensation."),
+        ("Can a GTM Operator become a GTM Engineer?",
+         "Yes. The most common transition path is learning Python over 3-6 months while continuing to work in your current operator role. Start by automating one manual task with code, then build from there. The coding premium data suggests this is the highest-ROI career investment in the field."),
+        ("Which path pays more: operator or engineer?",
+         "Engineers earn roughly $45K more at the median. Low-code operators cluster around $90K, while technical GTM Engineers earn $135K or more. At senior levels, the gap widens further, with senior operators around $120K and senior engineers clearing $195K."),
+        ("What technical skills separate engineers from operators?",
+         "Python is the primary differentiator. SQL is second. API integration skills (building custom webhooks, handling authentication flows, connecting disparate systems with code) round out the top three. Operators can use tools as they exist. Engineers can extend, customize, and connect tools in ways the tools weren't designed for."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Guide</div>
+        <h1>GTM Operator vs GTM Engineer: The $45K Gap</h1>
+        <p>Two paths diverged in GTM Engineering. The data shows where they lead, and what separates them.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">~$90K</span>
+        <span class="stat-label">Operator Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~$135K</span>
+        <span class="stat-label">Engineer Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Median Gap</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Two Modes of GTM Engineering</h2>
+    <p>When 228 GTM Engineers rated their coding skills on a 1-10 scale, they didn't spread across the spectrum. They clustered at two extremes. A large group rated themselves 1-3 (no-code and low-code users). Another large group rated themselves 7-10 (developers and technical builders). The middle was nearly empty.</p>
+    <p>This bimodal pattern defines the field. There are GTM Operators who build systems with Clay, Zapier, Make, and CRM-native automation. And there are GTM Engineers who do all of that plus write Python, SQL, and custom API integrations. Both groups do valuable work. The market prices them very differently.</p>
+    <p>The State of GTME Report 2026 data is unambiguous: technical depth drives compensation more than job title, years of experience, or company size. Two people with the same "GTM Engineer" title, same company stage, same location, can be $45K apart in total comp based solely on whether they write code.</p>
+
+    <h2>The Operator Path: Ceiling Around $90K</h2>
+    <p>GTM Operators are the builders who work within existing tool interfaces. They're skilled at Clay table design, enrichment waterfalls, CRM workflow automation, and connecting tools through native integrations. This is real, productive work. A good operator can 10x an SDR team's output by building the right automation.</p>
+    <p>The ceiling exists because operators depend on what tools offer out of the box. When Clay doesn't have a native integration, an operator gets stuck. When a CRM workflow needs custom logic beyond what the builder supports, an operator works around it. These workarounds are clever, but they limit scope.</p>
+    <p>Operator comp data from the survey: median around $90K, with a range of $65K-$120K depending on seniority and location. The top of the operator range ($120K) is achievable with 3+ years of experience, strong Clay skills, and a specialization in a high-value vertical like fintech or cybersecurity.</p>
+    <p>The demand for operators is strong and growing. Companies that are just adopting GTM Engineering need someone to build the foundational workflows. Not every team needs custom code. Many need someone who can make Clay, HubSpot, and Instantly work together reliably. That's the operator sweet spot.</p>
+
+    <h2>The Engineer Path: Floor Around $135K</h2>
+    <p>GTM Engineers write code. Python scripts for custom enrichment. SQL queries against data warehouses. API middleware that connects systems in ways no Zapier workflow can. They extend tools beyond their native capabilities, and that extension is where the premium lives.</p>
+    <p>The floor is higher because technical GTMEs can solve problems that operators cannot. When a company needs a custom webhook handler, a multi-source enrichment pipeline that falls back across APIs, or a data quality system that runs nightly against the CRM, they need someone who codes. That scarcity commands a premium.</p>
+    <p>Engineer comp data: median around $135K, with a range of $110K-$250K+ for senior and lead levels. The top end is reserved for people who combine deep technical skills with GTM domain knowledge. A developer who just knows Python won't earn $250K in this field. A developer who knows Python AND understands outbound sales motions, enrichment strategy, and pipeline architecture will.</p>
+    <p>At senior levels the gap widens further. A senior operator might top out around $120K. A senior engineer clears $195K. The <a href="/salary/coding-premium/">coding premium analysis</a> breaks this down in detail.</p>
+
+    <h2>Deciding Which Path Fits</h2>
+    <p>The decision comes down to two questions: do you want to learn to code, and how much do you want to earn?</p>
+    <p>If you're technically curious and motivated by compensation growth, the engineering path offers a clear ROI. Learning Python over 3-6 months could translate to a $30K-$45K salary increase within a year. That's better than almost any professional development investment.</p>
+    <p>If you prefer working within tools, enjoy the visual building process, and are comfortable earning in the $90K-$120K range, the operator path is valid and in demand. Not everyone needs or wants to code. The work is meaningful, the jobs are plentiful, and the ceiling, while lower, still represents solid compensation for the skills involved.</p>
+    <p>There's also a hybrid approach. Some GTM Engineers start as operators, learn Python incrementally, and gradually add technical projects to their portfolio. This slow transition lets you earn while you learn and reduces the risk of committing fully to a path that might not suit you.</p>
+
+    <h2>The Market Signal</h2>
+    <p>Job postings increasingly split the role. Companies post "GTM Operations Specialist" at $80K-$110K and "GTM Engineer" at $130K-$195K. Same team, same function, different comp bands. The split tracks directly to technical requirements in the job description.</p>
+    <p>Listings that mention Python, SQL, or API integration in the requirements consistently post salary ranges 25-40% above listings that don't. Companies know they're paying for a different skill set, and they price accordingly.</p>
+    <p>If you're evaluating offers, look at the technical requirements. A company that asks about your Clay experience but never mentions code is hiring for the operator band. A company that gives you a technical assessment or asks about your Python projects is hiring for the engineer band, and the comp will reflect it.</p>
+
+    <h2>The Skills Bridge</h2>
+    <p>Crossing from operator to engineer requires learning three things, roughly in this order:</p>
+    <p><strong>Python fundamentals.</strong> Variables, loops, functions, HTTP requests, JSON parsing. Not computer science theory. Practical Python for data manipulation and API integration. Spend one month on this. Build scripts that solve problems in your current workflow.</p>
+    <p><strong>API fluency.</strong> Understanding REST APIs, authentication (API keys, OAuth), request/response patterns, and error handling. This is the connective tissue of modern GTM stacks. Spend a month building integrations between tools that don't have native connectors.</p>
+    <p><strong>SQL basics.</strong> SELECT, JOIN, WHERE, GROUP BY, and subqueries. Enough to query a data warehouse, pull CRM data, and build ad-hoc reports. Two weeks of focused practice gets you functional. You don't need to be a database administrator.</p>
+    <p>Three to six months of consistent effort, applied to real projects in your daily work, gets you across the bridge. The <a href="/careers/how-to-become-gtm-engineer/">how to become a GTM Engineer guide</a> covers the full timeline in detail.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("operator-vs-engineer")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/operator-vs-engineer/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/operator-vs-engineer/index.html", page)
+    print(f"  Built: careers/operator-vs-engineer/index.html")
+
+
+def build_career_is_real():
+    """CAREER-03: Is GTM Engineering a real career?"""
+    title = "Is GTM Engineering a Real Career? (2026)"
+    description = (
+        "5,205% job posting growth. $135K median salary. 228 practitioners surveyed."
+        " The data on whether GTM Engineering is a lasting career path."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Is It a Real Career?", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Is GTM Engineering a stable long-term career?",
+         "The data suggests yes. Job postings grew 5,205% between early 2024 and late 2025 (63 to 3,342). Companies aren't experimenting with GTM Engineers anymore. They're building permanent teams around the function. Median tenure in the survey was 1.5 years, which is short but reflects a field that barely existed before 2023."),
+        ("Will AI replace GTM Engineers?",
+         "AI is making GTM Engineers more productive, not replacing them. 228 surveyed practitioners report spending more time on strategy and system design as AI handles routine enrichment and copywriting tasks. The role is evolving toward AI-orchestration, which increases the value of people who can build and manage AI-powered workflows."),
+        ("What's the career ceiling for a GTM Engineer?",
+         "Lead and Staff GTM Engineers earn $180K-$250K+. Head of GTM Engineering and VP-level roles are emerging at growth-stage and enterprise companies. The career path extends from individual contributor through team lead to executive, though the executive layer is still forming."),
+        ("Which companies are hiring GTM Engineers?",
+         "Clay, Apollo, and other GTM tool vendors hire them. But most demand comes from B2B SaaS companies in fintech, cybersecurity, healthtech, and enterprise software that want to automate their outbound motion. Growth-stage companies (Series B to D) have the highest concentration of GTM Engineer roles."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Guide</div>
+        <h1>Is GTM Engineering a Real Career?</h1>
+        <p>Job market data, salary benchmarks, and practitioner survey results on whether GTM Engineering has staying power.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Job Posting Growth</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Practitioners Surveyed</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Numbers Say Yes</h2>
+    <p>In early 2024, there were 63 job postings with "GTM Engineer" or equivalent titles. By the end of 2025, there were 3,342. That's 5,205% growth in under two years. No other role in B2B SaaS comes close to that trajectory.</p>
+    <p>But job posting growth alone doesn't make a career. Plenty of buzzy titles have spiked and disappeared. "Growth Hacker" peaked around 2015 and mostly vanished. "Revenue Hacker" never caught on at all. What makes GTM Engineering different?</p>
+    <p>Three things: compensation, company investment, and structural necessity.</p>
+
+    <h2>Compensation Is Real</h2>
+    <p>The median salary for a GTM Engineer is $135K, according to our survey of 228 practitioners. That places it above Sales Development ($65K-$85K), on par with Marketing Operations ($110K-$140K), and competitive with Revenue Operations ($120K-$160K). Companies are paying real money for this role.</p>
+    <p>Compensation data from <a href="/salary/">our full salary breakdown</a> shows clear seniority progressions. Junior GTM Engineers start at $90K-$130K. Mid-level hits $130K-$175K. Senior and Lead roles reach $180K-$250K+. This isn't a flat gig economy job. It has a compensation ladder that rewards growth.</p>
+    <p>The <a href="/careers/operator-vs-engineer/">operator vs engineer split</a> adds another dimension. Technical GTMEs who code earn $45K more at the median than low-code operators. The field rewards skill depth, which is another signal of a maturing career, not a passing fad.</p>
+
+    <h2>Company Investment Is Growing</h2>
+    <p>The question used to be "should we hire a GTM Engineer?" Now it's "how many do we need?" Companies that experimented with one GTM Engineer in 2023 are building teams of 3-5 in 2025. That's a shift from novelty hire to core function.</p>
+    <p>Clay's growth accelerated adoption, but the role has spread beyond the Clay ecosystem. Companies use GTM Engineers to manage enrichment pipelines across multiple tools, build custom outbound infrastructure, and connect sales and marketing data systems. The work exists independently of any single vendor.</p>
+    <p>Funding matters too. When companies raise Series B and beyond, GTM Engineering is increasingly a line item in the hiring plan alongside product engineering and sales. VC-backed companies aren't staffing temporary experiments with $135K-salaried professionals. They're building around the function.</p>
+
+    <h2>Structural Necessity</h2>
+    <p>The reason GTM Engineering persists where "Growth Hacker" didn't: it fills a structural gap that other roles don't address.</p>
+    <p>Sales ops manages CRM and reporting. Marketing ops manages campaigns and attribution. Revenue ops coordinates across both. But none of these roles build the technical outbound infrastructure that modern B2B sales requires: enrichment waterfalls, AI-powered prospecting, multi-source data pipelines, automated sequencing with personalization.</p>
+    <p>Someone has to build those systems. Before 2023, companies hacked it together with part-time attention from various ops roles. The results were fragile and slow. GTM Engineers exist because the work is complex enough, technical enough, and valuable enough to justify a dedicated role.</p>
+    <p>As long as B2B companies need automated, data-driven outbound pipelines (and that need is only growing), GTM Engineers have job security. The tools will change. Clay might not be the center of gravity in 2028. But the function, building automated GTM systems, isn't going away.</p>
+
+    <h2>The AI Question</h2>
+    <p>Will AI replace GTM Engineers? This comes up in every conversation about the role's future. The short answer from the data: AI is making GTM Engineers more productive, not redundant.</p>
+    <p>Survey respondents report using AI (Claude, ChatGPT, Perplexity) for enrichment research, email copywriting, data cleaning, and workflow debugging. These are tasks that used to consume 30-40% of their week. AI handles them faster. But the strategic work, designing systems, choosing tools, architecting data flows, optimizing conversion, still requires human judgment.</p>
+    <p>The role is shifting toward AI orchestration. GTM Engineers increasingly build systems where AI does the repetitive work and humans make the decisions. That's a more valuable role, not a less valuable one. Companies that have adopted AI tools are hiring more GTM Engineers, not fewer.</p>
+
+    <h2>The Risk Factors</h2>
+    <p>No career analysis is honest without discussing what could go wrong.</p>
+    <p><strong>Tool consolidation.</strong> If one platform does everything (enrichment, sequencing, CRM, automation), the need for engineers who connect disparate tools decreases. This is unlikely in the near term. The GTM tool ecosystem is fragmenting, not consolidating.</p>
+    <p><strong>Economic downturn.</strong> GTM Engineering roles are concentrated in VC-backed B2B SaaS companies. A funding winter would reduce hiring. The 2023 tech layoffs affected newer roles disproportionately. But GTM Engineers who generate measurable pipeline are among the last to be cut because their ROI is directly visible.</p>
+    <p><strong>Title inflation.</strong> If every marketing coordinator starts calling themselves a GTM Engineer, the title loses meaning and market premium. This is already happening at the margins. The defense is skills, not titles. People who can build complex systems will command premiums regardless of what the role is called next year.</p>
+    <p>Weighed against the growth data, the compensation trajectory, and the structural demand, these risks are manageable. GTM Engineering looks like a career, and the <a href="/careers/job-market-analysis/">job market data</a> supports that conclusion with hard numbers.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("is-gtm-engineering-real-career")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/is-gtm-engineering-real-career/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/is-gtm-engineering-real-career/index.html", page)
+    print(f"  Built: careers/is-gtm-engineering-real-career/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -2701,6 +3126,12 @@ def main():
     build_salary_agency_fees()
     build_salary_agency_fees_region()
     build_salary_seed_vs_enterprise()
+
+    print("\n  Building career pages...")
+    build_career_index()
+    build_career_how_to_become()
+    build_career_operator_vs_engineer()
+    build_career_is_real()
 
     print("\n  Building meta files...")
     build_sitemap()

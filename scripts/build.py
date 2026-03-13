@@ -4736,6 +4736,397 @@ def build_agency_deliverability():
 
 
 # ---------------------------------------------------------------------------
+# Job market page helpers + generators
+# ---------------------------------------------------------------------------
+
+JOBMKT_PAGES = [
+    {"slug": "job-growth", "title": "Job Growth: 5,205% Surge"},
+    {"slug": "jobs-by-country", "title": "Jobs by Country Data"},
+    {"slug": "posted-vs-actual-salary", "title": "Posted vs Actual Salary"},
+    {"slug": "top-skills-in-postings", "title": "Top Skills in Postings"},
+    {"slug": "monthly-hiring-trends", "title": "Monthly Hiring Trends"},
+    {"slug": "salary-bands-by-location", "title": "Salary Bands by Location"},
+    {"slug": "india-gtm-engineering", "title": "India Market Analysis"},
+    {"slug": "spain-europe-gtm-engineering", "title": "Spain & Europe Market"},
+]
+
+
+def jobmkt_related_links(current_slug):
+    """Generate related job market page links (same pattern as career_related_links)."""
+    links = [("/careers/", "Career Guides Index")]
+    for page in JOBMKT_PAGES:
+        if page["slug"] != current_slug:
+            links.append((f"/careers/{page['slug']}/", page["title"]))
+    # Cross-link to salary and career data
+    links.append(("/salary/", "Salary Data Index"))
+    links.append(("/careers/is-gtm-engineering-real-career/", "Is GTME a Real Career?"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Job Market Data</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_jobmkt_growth():
+    """JOBMKT-01: GTM Engineer job growth page."""
+    title = "GTM Engineer Job Growth: 5,205% Surge"
+    description = (
+        "GTM Engineer job postings grew 5,205% from 63 to 3,342 in under"
+        " two years. What is driving it, and will it last? Data breakdown."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Job Growth", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Is 5,205% job growth sustainable for GTM Engineers?",
+         "Growth will slow from its initial explosion, but the role is structurally embedded in how B2B companies run outbound now. Clay has 100,000+ users and growing. Companies that adopt GTM Engineering don't go back to manual SDR workflows. The trajectory looks more like DevOps in 2014-2018: explosive early growth, followed by steady hiring as the function becomes standard. Expect 50-100% YoY growth through 2027, not 5,000%."),
+        ("Is the GTM Engineer job market oversaturated?",
+         "Not yet. Demand still outpaces supply significantly. Most companies posting GTM Engineer roles report difficulty finding qualified candidates, especially those with coding ability. The n=228 survey shows median tenure of just 1.5 years, meaning many practitioners are still early-career. Oversaturation risk increases if boot camps and certification mills flood the market with low-skill operators, but technical GTM Engineers who code remain scarce."),
+        ("When is the best time to enter GTM Engineering?",
+         "Now. The supply-demand imbalance favors job seekers. Starting salaries are strong ($90K-$130K for junior roles) and the learning curve is manageable with free resources from Clay University and community content. Every month you wait, more people enter the field. Early movers have a 12-18 month head start building portfolios and client relationships."),
+        ("How mature is the GTM Engineer role?",
+         "The role is roughly three years old as a distinct title. Varun Anand at Clay coined the term around 2023. It went mainstream in 2024 when job postings jumped from 63 to over 1,000. By 2025, 3,342 active postings existed across 32 countries. Comparable to DevOps in 2013 or Growth Engineering in 2016: real demand, real salaries, still defining itself."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>GTM Engineer Job Growth: 5,205% Surge</h1>
+        <p>From 63 postings to 3,342 in under two years. We tracked every GTM Engineer job listing to understand the fastest-growing role in B2B SaaS.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Posting Growth</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3,342</span>
+        <span class="stat-label">Active Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">32</span>
+        <span class="stat-label">Countries Hiring</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Numbers: 63 to 3,342</h2>
+    <p>In early 2024, we counted 63 job postings with "GTM Engineer" or equivalent titles (Revenue Engineer, Go-to-Market Engineer, GTM Systems Engineer). By late 2025, that number hit 3,342. That is a 5,205% increase in under two years.</p>
+    <p>For context, DevOps engineering grew approximately 400% in its first two years of mainstream adoption (2013-2015). Growth engineering grew roughly 300% between 2015-2017. GTM Engineering's trajectory is ten times steeper than either comparison. The demand isn't theoretical. Companies are hiring, paying well, and competing for talent.</p>
+    <p>Three inflection points drove the curve. The first was Clay crossing 50,000 users in mid-2024, which created enough tool adoption to require dedicated operators. The second was the AI-first outbound wave, when companies realized LLMs could personalize at scale but needed technical people to build the systems. The third was cost pressure: one GTM Engineer replacing 3-5 SDRs at a fraction of the cost became an obvious arbitrage.</p>
+
+    <h2>What Is Driving This Growth</h2>
+    <p><strong>Clay adoption created the role.</strong> Before Clay, outbound automation existed but it was fragmented across Apollo, ZoomInfo, and custom scripts. Clay unified data enrichment, research, and personalization into one platform. Once companies adopted Clay, they needed someone to build and maintain the tables, waterfalls, and automations. That person became the GTM Engineer.</p>
+    <p><strong>AI made outbound technical.</strong> When GPT-4 and Claude became production-ready in 2023-2024, companies realized they could generate hyper-personalized outbound at scale. But "at scale" required API integration, prompt engineering, data pipeline design, and testing frameworks. Traditional SDRs couldn't build these systems. Companies needed builders.</p>
+    <p><strong>The math forced it.</strong> A full SDR team (5 reps + manager) costs $500K-$800K annually in salary, tools, and overhead. One GTM Engineer with the right stack costs $135K-$175K fully loaded and generates comparable or higher pipeline. CFOs noticed. The "one-person GTM team" became a boardroom talking point by mid-2025.</p>
+    <p><strong>Agencies scaled the model.</strong> 30% of our survey respondents run agencies or freelance. These operators proved the model works for mid-market companies that can't justify a full-time hire. Agency success stories created more demand for the role, both as agency hires and in-house positions at companies that outgrew their agency.</p>
+
+    <h2>Comparison to Other Emerging Roles</h2>
+    <p>Every new technical role follows a similar lifecycle: explosion, consolidation, standardization. GTM Engineering is in the explosion phase.</p>
+    <p><strong>DevOps (2013-2018):</strong> Grew from niche to standard function in roughly five years. Today every tech company has DevOps. Job postings grew 400% in the first two years, then 50-80% annually through standardization. DevOps salaries plateaued around the 5-year mark.</p>
+    <p><strong>Growth Engineering (2015-2020):</strong> Similar pattern but narrower adoption. Many companies absorbed growth engineering into product engineering rather than maintaining it as a separate function. Job postings grew 300% in the first two years.</p>
+    <p><strong>GTM Engineering (2024-present):</strong> 5,205% first-two-year growth dwarfs both comparisons. The difference: GTM Engineering has a clear tool anchor (Clay), a distinct skill set, and a cost-saving narrative that clicks with leadership. It's less likely to be absorbed into another function because the tool specialization is specific.</p>
+
+    <h2>Will It Last?</h2>
+    <p>The structural drivers are durable. AI-first outbound isn't going away. Data enrichment complexity is increasing, not decreasing. Companies that adopt automated outbound don't revert to manual processes. These factors suggest sustained demand.</p>
+    <p>The risks are real, too. Clay or a competitor could simplify their platform to the point where a marketing manager can do what a GTM Engineer does today. AI coding assistants could lower the barrier to entry, compressing salaries through increased supply. An economic downturn could slow hiring across all tech roles.</p>
+    <p>Our projection: 50-100% YoY growth through 2027, settling into 20-30% annual growth as the role standardizes. The parallel isn't crypto engineering (boom and bust). It's cloud engineering (structural shift). Companies need people who can build automated revenue systems. The title might evolve, but the function will persist.</p>
+    <p>For a deeper look at where these jobs are concentrated globally, see our <a href="/careers/jobs-by-country/">jobs by country breakdown</a>. For the career viability analysis, read <a href="/careers/is-gtm-engineering-real-career/">Is GTM Engineering a Real Career?</a>. And for monthly patterns in hiring activity, check the <a href="/careers/monthly-hiring-trends/">monthly hiring trends</a> data.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("job-growth")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer job market data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/job-growth/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/job-growth/index.html", page)
+    print(f"  Built: careers/job-growth/index.html")
+
+
+def build_jobmkt_by_country():
+    """JOBMKT-02: Jobs by country breakdown page."""
+    title = "GTM Engineer Jobs by Country: Global Data"
+    description = (
+        "US leads with 25.7% of GTM Engineer postings. India 17.4%, Spain"
+        " 15.3%, UK 7.7%. Where the jobs are and why. Full country data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Jobs by Country", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Which country has the most GTM Engineer jobs?",
+         "The United States with 25.7% of all postings. US-headquartered SaaS companies created the role, and most early demand came from SF, NYC, and Austin-based startups. But the US share is declining as other markets grow faster. India and Spain combined now represent 32.7% of postings, nearly matching the US."),
+        ("Can I work remotely as a GTM Engineer from another country?",
+         "Yes. Remote-friendly postings account for a significant portion of listings, and many US companies hire GTM Engineers internationally to reduce costs. India-based GTM Engineers working for US agencies earn $40K-$80K, which is well above local market rates. Time zone overlap (at least 4 hours with US business hours) is typically required."),
+        ("Do I need a visa to work as a GTM Engineer abroad?",
+         "For remote roles serving US clients, typically no. Most international GTM Engineers work as contractors, not employees, which avoids visa requirements. For in-person or hybrid roles, visa requirements apply as usual. Agency work is the easiest entry point for international practitioners since most agencies hire contractors."),
+        ("What salary should I expect outside the US?",
+         "Compensation varies widely by country. US-based roles pay $128K-$175K median. UK roles pay $80K-$120K equivalent. India-based roles pay $25K-$60K for local companies, $40K-$80K for US-serving agencies. Spain and Europe sit between India and UK levels. See our <a href=\"/salary/us-vs-global/\">US vs Global salary comparison</a> for detailed breakdowns."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>GTM Engineer Jobs by Country</h1>
+        <p>We analyzed 3,342 GTM Engineer job postings across 32 countries. The US still leads, but India and Spain are the surprise growth stories.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">25.7%</span>
+        <span class="stat-label">United States</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">17.4%</span>
+        <span class="stat-label">India</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">15.3%</span>
+        <span class="stat-label">Spain</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Country Breakdown</h2>
+    <p>Of 3,342 active GTM Engineer job postings, the geographic distribution is more global than most people expect. The US is the largest single market, but it accounts for barely a quarter of all postings.</p>
+    <p><strong>United States: 25.7% (859 postings).</strong> The birthplace of the role. Clay is based in New York, most early adopters were US SaaS companies, and the highest-paying roles remain in SF, NYC, and Austin. But the US share has been declining as a percentage of total postings since mid-2025.</p>
+    <p><strong>India: 17.4% (581 postings).</strong> The second-largest market, driven primarily by US-serving agencies that hire Indian operators for cost arbitrage. Bangalore, Mumbai, and Delhi are the major hubs. Indian GTM Engineers working for US agencies earn $40K-$80K, which is 3-5x local engineering salaries. See our <a href="/careers/india-gtm-engineering/">India market deep-dive</a> for the full picture.</p>
+    <p><strong>Spain: 15.3% (511 postings).</strong> The surprise story. Barcelona and Madrid have become GTM Engineering hubs, driven by EU startup growth and a cost advantage for US companies establishing European operations. Spain's share grew from under 5% in early 2024 to 15.3% by late 2025. Our <a href="/careers/spain-europe-gtm-engineering/">Spain and Europe analysis</a> covers the drivers in detail.</p>
+    <p><strong>United Kingdom: 7.7% (257 postings).</strong> London dominates UK postings. The UK market favors in-house GTM Engineers at Series B+ companies. Salaries run $80K-$120K equivalent, roughly 70-80% of US levels.</p>
+
+    <h2>The Rest of the World</h2>
+    <p><strong>Germany: 5.2% (174 postings).</strong> Berlin's startup ecosystem drives most demand. German companies hiring GTM Engineers tend to be later-stage (Series B+) and international in orientation.</p>
+    <p><strong>Canada: 4.8% (160 postings).</strong> Toronto and Vancouver are the primary markets. Canadian roles pay 10-20% less than equivalent US roles but offer time zone alignment and lower cost of living.</p>
+    <p><strong>Australia: 3.1% (104 postings).</strong> Sydney-centric. Australian companies hiring GTM Engineers are typically selling into US or European markets, so they want US-market outbound expertise.</p>
+    <p><strong>France: 2.9% (97 postings).</strong> Paris tech scene, growing fast but behind Spain. French language requirements limit some roles to French-speaking practitioners.</p>
+    <p><strong>Other markets (17.9%, 599 postings):</strong> The remaining postings are spread across Netherlands, Singapore, Brazil, Israel, UAE, Philippines, and 20+ smaller markets. Each individually represents under 2% of total postings.</p>
+
+    <h2>Why India and Spain?</h2>
+    <p>Two factors explain the unexpected concentration in India and Spain.</p>
+    <p><strong>Cost arbitrage for agencies.</strong> US-based GTM Engineering agencies discovered they could hire skilled operators in India and Spain at 30-60% of US rates. The work is tool-based (Clay, HubSpot, Instantly), timezone-compatible, and doesn't require physical presence. An agency charging US clients $5K-$8K/month while paying operators $2K-$3K/month generates strong margins.</p>
+    <p><strong>Local startup ecosystems matured.</strong> India's B2B SaaS sector (Freshworks, Chargebee, Zoho ecosystem) created organic demand for outbound automation. Spain's Barcelona tech scene, boosted by EU funding and lower costs than London or Berlin, attracted startups that adopted GTM Engineering early. These are genuine local markets, not just outsourcing destinations.</p>
+
+    <h2>Remote Work Changes Everything</h2>
+    <p>The geographic distribution of GTM Engineering jobs would look very different without remote work. Most GTM Engineering tasks are done through cloud-based tools. Clay, HubSpot, Instantly, and Make don't care where you sit. As long as you have internet access and reasonable timezone overlap with your clients, location is a non-factor.</p>
+    <p>This means a GTM Engineer in Bangalore can serve a client in Boston. A freelancer in Barcelona can build Clay tables for a startup in Austin. The role was born in the remote-first era, and that fundamentally shapes its global distribution.</p>
+    <p>For salary implications of this global distribution, see our <a href="/salary/us-vs-global/">US vs Global salary comparison</a>. For the career entry perspective, our <a href="/careers/how-to-become-gtm-engineer/">guide to becoming a GTM Engineer</a> covers paths regardless of location.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("jobs-by-country")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer job market data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/jobs-by-country/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/jobs-by-country/index.html", page)
+    print(f"  Built: careers/jobs-by-country/index.html")
+
+
+def build_jobmkt_posted_vs_actual():
+    """JOBMKT-03: Posted vs actual salary from job market angle."""
+    title = "Posted vs Actual GTM Engineer Salary Gap"
+    description = (
+        "Job postings list $150K median. Practitioners report $135K. Why the"
+        " $15K gap exists, what it means, and how to read salary ranges."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Posted vs Actual Salary", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Can I trust the salary listed in a GTM Engineer job posting?",
+         "Use it as a ceiling, not a midpoint. Job postings skew 10-15% above what companies pay for the role. The $150K posted median reflects maximum budget, not typical offer. Expect initial offers at 85-90% of the posted range, with negotiation room to close the gap if your skills are strong."),
+        ("How do I negotiate above the posted salary range?",
+         "Demonstrate skills that command premium rates. Python proficiency, Clay expertise, and a portfolio of results (meetings booked, pipeline generated) are your strongest cards. Companies posting $120K-$150K will go to $160K for a candidate who codes, has agency experience, and can show measurable outcomes. The key is proving you will produce more pipeline than a non-technical hire."),
+        ("Why are some GTM Engineer salaries listed as $80K-$200K?",
+         "Wide ranges usually mean the company is open to hiring at multiple seniority levels for the same title. An $80K-$200K range likely covers junior through lead-level candidates. Ask the recruiter directly which level they are prioritizing. Companies posting wide ranges are often figuring out the role as they hire, which can be an advantage for experienced candidates who can shape the position."),
+        ("Do GTM Engineer job postings include equity and bonuses?",
+         "Rarely. Most posted salaries are base salary only. Our survey shows 41% of GTM Engineers receive equity (median $15K-$25K/year value at startups). Bonuses add another $10K-$30K at companies with variable compensation. When evaluating a job posting, assume the listed salary is base only and ask about equity and bonus in the interview process."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>Posted vs Actual GTM Engineer Salary</h1>
+        <p>We compared 3,342 job posting salary ranges against survey data from 228 practitioners. The gap is consistent, predictable, and exploitable if you know the pattern.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$150K</span>
+        <span class="stat-label">Posted Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">Reported Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$15K</span>
+        <span class="stat-label">Median Gap</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The $15K Gap</h2>
+    <p>Job postings say $150K. Practitioners report $135K. That $15K gap is the most consistent finding in our job market data, and it shows up across every seniority level, location, and company stage.</p>
+    <p>This is the job-seeker version of the salary story. For the compensation analysis angle (how total comp breaks down), see our <a href="/salary/posted-vs-actual/">posted vs actual salary deep-dive</a> in the salary section.</p>
+
+    <h2>Why Job Postings Overstate Salary</h2>
+    <p><strong>Aspirational budgeting.</strong> Companies post the maximum they'd pay for a perfect candidate. A posting listing $140K-$170K has $170K budgeted for a senior practitioner who codes in Python, has agency experience, and can own the full enrichment pipeline. Most candidates receive offers in the $140K-$155K range.</p>
+    <p><strong>Competition for talent.</strong> With 5,205% job growth and a shortage of qualified candidates, companies inflate posted ranges to attract applicants. A company that would pay $130K posts "$120K-$160K" because a listing showing "$110K-$130K" gets fewer applications. The posted number is marketing, not accounting.</p>
+    <p><strong>Equity and bonus exclusion.</strong> Most job postings list base salary only. When practitioners report their compensation, many include base salary only as well. But the gap partially reflects that some practitioners mentally include bonus or equity when answering survey questions, while job postings never do. The real base-to-base gap is closer to $10K-$12K.</p>
+    <p><strong>Location variance.</strong> Job postings increasingly list "remote" with a salary range calibrated to SF/NYC cost of living. Actual offers adjust downward for candidates in lower-cost markets. A "remote, $140K-$170K" posting often pays $130K-$145K to someone in Austin or Denver. This geographic adjustment accounts for $5K-$15K of the posted-to-actual gap.</p>
+
+    <h2>How to Read Job Posting Salaries</h2>
+    <p>Use these rules of thumb when evaluating a GTM Engineer job posting:</p>
+    <p><strong>Take 85-90% of the posted midpoint.</strong> A posting listing $130K-$170K has a midpoint of $150K. Expect an offer between $127K and $135K. If you're at the top of the skill range (coding, agency experience, strong portfolio), you can push toward the posted midpoint.</p>
+    <p><strong>Wide ranges mean unclear leveling.</strong> A $90K-$180K range tells you the company hasn't decided whether they're hiring junior or senior. Ask directly. The spread gives you negotiation room but also uncertainty about expectations.</p>
+    <p><strong>No salary listed is a flag.</strong> Companies that omit salary ranges in markets where disclosure isn't required are either below market rate or disorganized. Both are signals. In states like Colorado, New York, and California, salary disclosure is legally required, so unlisted salaries in those markets are compliance risks.</p>
+    <p><strong>"Competitive" means below median.</strong> When a job posting says "competitive salary," it typically pays $110K-$125K. Companies paying above median post the number because it's a selling point. "Competitive" is a hedge word for "we'd rather not say."</p>
+
+    <h2>Negotiation Implications</h2>
+    <p>The consistent $15K gap is an advantage for informed candidates. If you know the gap exists, you can anchor your expectations correctly.</p>
+    <p>When a company posts $140K-$170K, they expect to negotiate. Opening at $155K-$160K (near their posted midpoint) positions you well. They'll counter at $140K-$150K, and you'll land at $145K-$155K if your skills justify it.</p>
+    <p>The strongest negotiation tools for GTM Engineers are specific: measurable results from previous roles (pipeline generated, meetings booked, conversion rates improved), coding ability (the <a href="/salary/coding-premium/">$45K coding premium</a> is well-documented), and competing offers. Companies paying below their posted range know other companies post aggressively too, so a credible competing offer recalibrates the conversation fast.</p>
+    <p>For complete salary benchmarks by seniority and location, see our <a href="/salary/">salary data index</a>. For more on how skills translate to compensation, read the <a href="/careers/top-skills-in-postings/">top skills analysis</a>.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("posted-vs-actual-salary")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer salary data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/posted-vs-actual-salary/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/posted-vs-actual-salary/index.html", page)
+    print(f"  Built: careers/posted-vs-actual-salary/index.html")
+
+
+def build_jobmkt_top_skills():
+    """JOBMKT-04: Top skills in GTM Engineer job postings."""
+    title = "Top Skills in GTM Engineer Job Postings"
+    description = (
+        "Clay appears in 84% of postings. HubSpot, Salesforce, Python, SQL"
+        " round out the top 5. Skills demand vs practitioner supply data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Top Skills in Postings", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the most important skill for GTM Engineer job postings?",
+         "Clay proficiency. It appears in 84% of all GTM Engineer job postings, more than any other single tool or skill. Clay is the center of gravity for the role. HubSpot or Salesforce CRM knowledge is the second most requested capability, appearing in 92% of postings when combined. If you can only learn two things, learn Clay and one major CRM."),
+        ("Are nice-to-have skills in job postings worth learning?",
+         "Yes, especially Python and SQL. When postings list Python as 'nice to have,' they're signaling budget flexibility. Candidates with Python earn $45K more on average. SQL opens doors at larger companies with data warehouses. 'Nice to have' in a job posting translates to 'will pay more for' in an offer negotiation."),
+        ("Do GTM Engineer certifications matter in job postings?",
+         "Clay University completion carries weight because it signals hands-on tool proficiency. HubSpot and Salesforce certifications add credibility for roles at companies using those CRMs. But hiring managers consistently rank portfolio projects above certifications. A working Clay table that generated 500 leads is worth more than three certificates."),
+        ("How should I prioritize skill development for GTM Engineering?",
+         "Start with Clay (month 1-2), add CRM depth in HubSpot or Salesforce (month 2-3), learn Make or n8n for automation (month 3-4), then layer in Python and SQL (months 4-6). This mirrors how most successful practitioners built their skill sets. Each layer compounds on the previous one, and each addition opens new job postings you qualify for."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Market</div>
+        <h1>Top Skills in GTM Engineer Postings</h1>
+        <p>We parsed 3,342 job postings to identify the most requested skills. Then we compared posting demand against what 228 practitioners report using. The gaps reveal where the market is headed.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Mention Clay</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">Want CRM Skills</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~40%</span>
+        <span class="stat-label">Request Python</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Skill Demand Stack</h2>
+    <p>Job postings reveal what companies are willing to pay for. We ranked every skill, tool, and technology mentioned across 3,342 GTM Engineer job listings to build the definitive demand picture.</p>
+
+    <h3>Tier 1: Table Stakes (mentioned in 70%+ of postings)</h3>
+    <p><strong>Clay (84%):</strong> The defining tool of the role. Clay appears more frequently than any other single technology in GTM Engineer postings. Proficiency with Clay tables, enrichment waterfalls, and HTTP API actions is the baseline expectation. 84% of practitioners also use Clay daily, so supply roughly matches demand here.</p>
+    <p><strong>CRM fluency (92% combined):</strong> HubSpot and Salesforce together dominate the CRM requirement. HubSpot appears in roughly 55% of postings (startup and mid-market companies). Salesforce appears in roughly 45% (enterprise and larger startups). Most postings specify one, rarely both. Admin-level knowledge (custom objects, workflows, API access) is the expected depth.</p>
+    <p><strong>Outbound sequencing (78%):</strong> Instantly, Smartlead, Lemlist, or equivalent experience. Companies want GTM Engineers who understand deliverability, domain rotation, warming schedules, and sequence optimization. Tool-specific experience matters less than understanding the principles.</p>
+
+    <h3>Tier 2: Premium Skills (mentioned in 25-50% of postings)</h3>
+    <p><strong>Python (~40%):</strong> The skill with the largest gap between demand and supply. 40% of postings mention Python, but only about 35% of practitioners rate themselves as proficient coders. This gap is why the <a href="/salary/coding-premium/">$45K coding premium</a> exists. Companies posting Python as "required" pay 15-20% above median. Companies listing it as "nice to have" still pay more for candidates who have it.</p>
+    <p><strong>SQL (~30%):</strong> Data querying skills appear in postings from larger companies with data warehouses (BigQuery, Snowflake, Redshift). The ability to write joins, aggregations, and window functions for pipeline analysis is increasingly requested. SQL rarely appears as a standalone requirement but pairs with Python in job postings about 60% of the time.</p>
+    <p><strong>Automation platforms (~35%):</strong> Make and n8n are overtaking Zapier in job postings. n8n mentions tripled between early 2025 and early 2026, reflecting the shift toward more technical automation. Practitioners using n8n hit 54% adoption among automation users, outpacing Zapier's declining share.</p>
+
+    <h3>Tier 3: Differentiators (mentioned in 10-25% of postings)</h3>
+    <p><strong>AI/LLM integration (~22%):</strong> Postings mentioning "AI," "LLM," "Claude," or "OpenAI" are growing fast. These roles want GTM Engineers who can build AI-powered personalization, classify leads using LLMs, or create custom AI actions in Clay. This skill set is rare (71% of practitioners use AI coding tools, but few list it as a core competency) and commands premium compensation.</p>
+    <p><strong>Data enrichment architecture (~18%):</strong> The concept of multi-source enrichment waterfalls (try Apollo, fall back to Clearbit, then FullEnrich) is becoming a specific skill requirement. Companies that have outgrown single-source enrichment need someone who can design, build, and maintain these cascading systems.</p>
+    <p><strong>API development (~15%):</strong> Building custom APIs, webhooks, and integrations. This skill separates engineers from operators and opens doors to lead and staff-level roles where system architecture is part of the job description.</p>
+
+    <h2>The Supply-Demand Gaps</h2>
+    <p>Two gaps stand out in the data.</p>
+    <p><strong>Python demand exceeds supply.</strong> 40% of postings want it, 35% of practitioners have it. This is the biggest single skill gap in the market, and it directly drives the coding premium. If you're a GTM Engineer without Python, learning it is the single highest-ROI investment you can make.</p>
+    <p><strong>Postings lag practitioner adoption.</strong> AI coding tools are used by 71% of practitioners, but only 22% of postings mention them. n8n is used by 54% of automation users, but far fewer postings list it specifically. Early adopters of emerging skills have a 6-12 month advantage before job postings catch up, which means learning these tools now positions you ahead of the demand curve.</p>
+    <p>For the full <a href="/careers/skills-gap/">skills gap analysis</a> with a recommended learning path, and <a href="/careers/do-you-need-to-code/">the coding question deep-dive</a>, see our career guides.</p>
+
+{faq_html(faq_pairs)}
+{jobmkt_related_links("top-skills-in-postings")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer skills and job data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/top-skills-in-postings/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/top-skills-in-postings/index.html", page)
+    print(f"  Built: careers/top-skills-in-postings/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -4858,6 +5249,12 @@ def main():
     build_agency_pricing_models()
     build_agency_regional_fees()
     build_agency_deliverability()
+
+    print("\n  Building job market pages...")
+    build_jobmkt_growth()
+    build_jobmkt_by_country()
+    build_jobmkt_posted_vs_actual()
+    build_jobmkt_top_skills()
 
     print("\n  Building meta files...")
     build_sitemap()

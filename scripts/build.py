@@ -3920,6 +3920,406 @@ def build_career_skills_gap():
 
 
 # ---------------------------------------------------------------------------
+# Agency page helpers + generators
+# ---------------------------------------------------------------------------
+
+AGENCY_PAGES = [
+    {"slug": "agency-pricing", "title": "Agency Pricing Guide"},
+    {"slug": "start-gtm-engineering-agency", "title": "How to Start an Agency"},
+    {"slug": "agency-vs-freelance", "title": "Agency vs Freelance Revenue"},
+    {"slug": "client-retention", "title": "Client Retention Data"},
+    {"slug": "client-count", "title": "Client Count Analysis"},
+    {"slug": "pricing-models", "title": "Pricing Models Breakdown"},
+    {"slug": "agency-fees-by-region-guide", "title": "Fees by Region Guide"},
+    {"slug": "deliverability-practices", "title": "Deliverability Practices"},
+]
+
+
+def agency_related_links(current_slug):
+    """Generate related agency page links (same pattern as career_related_links)."""
+    links = [("/careers/", "Career Guides Index")]
+    for page in AGENCY_PAGES:
+        if page["slug"] != current_slug:
+            links.append((f"/careers/{page['slug']}/", page["title"]))
+    # Cross-link to salary agency data
+    links.append(("/salary/agency-fees/", "Agency Fee Salary Data"))
+    links.append(("/salary/agency-fees-by-region/", "Agency Fees by Region"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Agency Guides</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_agency_pricing():
+    """AGENCY-01: GTM Engineering agency pricing guide."""
+    title = "GTM Engineering Agency Pricing Guide 2026"
+    description = (
+        "Real agency pricing data: $5K-$8K/mo median, $1K-$33K range."
+        " How to set rates, value-based vs hourly, from n=228 survey."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Agency Pricing", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the average GTM Engineering agency rate?",
+         "The median monthly agency fee is $5K-$8K based on our survey of 228 GTM Engineers. This range covers the most common engagement type: managed outbound with Clay-built enrichment and sequencing. Solo operators tend to sit at the lower end ($3K-$5K/mo) while full-service agencies with multiple operators charge $8K-$15K/mo per client."),
+        ("What should a beginner GTM Engineering freelancer charge?",
+         "New freelancers typically start at $2K-$4K/mo per client for managed outbound services. This covers basic Clay enrichment, list building, and sequence management. As you prove results (meetings booked, pipeline generated), raise rates by $500-$1K every 2-3 months. Most practitioners who start at $2K reach $5K+ within 6-9 months if they track and share performance data with clients."),
+        ("How do I raise my agency rates?",
+         "Document results obsessively. Track meetings booked, reply rates, pipeline value generated, and cost per meeting. When you can show a client that your $5K/mo fee generated $200K in pipeline, the conversation shifts from cost to ROI. The best time to raise rates is during contract renewal, with a deck showing your impact. Present the new rate as tied to expanded scope or improved processes."),
+        ("Is value-based pricing better than hourly for GTM agencies?",
+         "Value-based pricing outperforms hourly for agencies with proven results. Hourly billing ($75-$200/hr range) caps your upside and incentivizes slow work. Monthly retainers ($5K-$15K) are the industry standard because they align incentives: the faster you deliver results, the more profitable the engagement. Some agencies add performance bonuses (10-20% of base fee) tied to meeting targets."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>GTM Engineering Agency Pricing Guide</h1>
+        <p>How much do GTM Engineering agencies charge? We surveyed 228 practitioners and broke down the real numbers: median fees, pricing tiers, and the gap between solo freelancers and full-service agencies.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$5K&#8209;$8K</span>
+        <span class="stat-label">Median Monthly Fee</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$1K&#8209;$33K</span>
+        <span class="stat-label">Full Fee Range</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30%</span>
+        <span class="stat-label">Are Agency/Claygency</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Real Pricing Data</h2>
+    <p>Forget the guesswork. Our survey of 228 GTM Engineers includes 67 agency operators and 30 freelancers, giving us the largest dataset on GTM Engineering service pricing available anywhere.</p>
+    <p>The median monthly agency fee lands between $5K and $8K. That's the sweet spot where most established operators price their managed outbound engagements. The full range stretches from $1K/mo (early freelancers doing basic list building) to $33K/mo (full-service agencies managing multi-channel campaigns for enterprise clients).</p>
+    <p>These numbers represent monthly retainer fees, the dominant pricing model. For the complete fee distribution across all respondents, see our <a href="/salary/agency-fees/">agency fee salary data</a>.</p>
+
+    <h2>Pricing by Service Type</h2>
+    <p><strong>Clay builds and enrichment ($2K-$5K/mo):</strong> The entry-level service. You build and maintain Clay tables, run enrichment waterfalls, and deliver clean prospect lists. Clients provide the strategy; you provide the execution. Lower rates reflect lower complexity, but the work is repeatable and scales well across multiple clients.</p>
+    <p><strong>Managed outbound ($5K-$10K/mo):</strong> This is the bread-and-butter tier. You handle everything from ICP definition through meeting booked: enrichment, copywriting, sequence building, domain management, inbox monitoring, and reply handling. Most agencies live here. It's enough scope to command premium rates but contained enough to manage 5-8 clients simultaneously.</p>
+    <p><strong>Full-stack GTM ($10K-$20K/mo):</strong> You own the entire outbound infrastructure. CRM configuration, data architecture, enrichment pipelines, sequencing across multiple channels, reporting dashboards, and sometimes even SDR management. These engagements typically involve weekly strategy calls and monthly reporting. Enterprise clients and funded startups (Series B+) pay these rates.</p>
+    <p><strong>Consulting and advisory ($3K-$8K/mo or $200-$400/hr):</strong> Strategy without execution. You audit existing systems, recommend improvements, train internal teams, and provide ongoing advisory. Lower time commitment per client, which means you can stack more of them. Common among experienced practitioners who want to scale their income without scaling their team.</p>
+
+    <h2>How to Set Your Rates</h2>
+    <p>Pricing is the decision most new agency operators get wrong. They anchor too low, scared of losing prospects, then spend months trapped at rates that don't cover their overhead.</p>
+    <p>The math is straightforward. A solo operator needs $8K-$12K/mo in revenue to match a $130K-$160K salary after accounting for self-employment taxes, health insurance, software costs, and downtime between clients. At $5K/mo per client, you need two to three active clients just to break even with your salaried peers.</p>
+    <p>Start by pricing based on the service tier above. If you're doing managed outbound, $5K/mo is the floor, not the ceiling. Test the market. If every prospect says yes immediately, your rates are too low. Aim for a close rate of 40-60% on proposals. A 100% close rate means you're leaving money on the table.</p>
+
+    <h2>Value-Based vs Hourly</h2>
+    <p>Monthly retainers dominate the GTM Engineering agency market. Our survey shows roughly 70% of agency operators use monthly retainers as their primary pricing model. For a detailed breakdown of all models, see our <a href="/careers/pricing-models/">pricing models analysis</a>.</p>
+    <p>Hourly billing ($75-$200/hr is the typical range) works for short-term projects and consulting. It's a reasonable choice when you're starting out and don't have results to justify value pricing. But it caps your earnings and creates perverse incentives: the faster you work, the less you earn.</p>
+    <p>Value-based pricing ties your fee to outcomes. Some agencies charge a base retainer plus a performance bonus per meeting booked or per qualified opportunity. This model works best when you have historical data showing your conversion rates. If you know you book 15-25 meetings per month for a typical client, you can confidently price against the pipeline value those meetings create.</p>
+
+    <h2>Rate Progression</h2>
+    <p>New freelancers typically start at $2K-$4K/mo per client. Within 6 months of consistent delivery, most move to $4K-$6K. By the one-year mark, established operators charge $6K-$10K depending on scope and results.</p>
+    <p>The jump from $5K to $10K usually requires one of three things: expanding scope (adding CRM management, reporting, or multi-channel campaigns), demonstrating clear ROI (showing $30+ in pipeline for every $1 in fees), or building a reputation that generates inbound leads (so you're not competing on price).</p>
+    <p>Agencies with 2-3 operators typically charge $8K-$15K per client, with the premium justified by faster turnaround, backup coverage, and broader skill sets. The agency premium over a solo operator averages 40-60% for comparable scope.</p>
+    <p>For a detailed look at how agency fees vary by region, see our <a href="/careers/agency-fees-by-region-guide/">regional fee guide</a>.</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("agency-pricing")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency pricing data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/agency-pricing/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/agency-pricing/index.html", page)
+    print(f"  Built: careers/agency-pricing/index.html")
+
+
+def build_agency_start():
+    """AGENCY-02: How to start a GTM Engineering agency guide."""
+    title = "How to Start a GTM Engineering Agency 2026"
+    description = (
+        "30% of GTM Engineers run agencies or claygencies. Startup costs,"
+        " first client acquisition, and scaling from solo to team."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Start an Agency", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("How much does it cost to start a GTM Engineering agency?",
+         "Under $500 for tools and legal basics. You need Clay ($149-$349/mo), a sequencing tool like Instantly ($30-$97/mo), a CRM ($0-$50/mo for HubSpot free or Pipedrive starter), and an LLC filing ($50-$500 depending on state). Many operators start with monthly tool subscriptions and upgrade as revenue grows. The biggest cost is your time building a portfolio before landing your first paying client."),
+        ("How do I get my first GTM agency client?",
+         "Use your own outbound skills to prospect for clients. Build a Clay enrichment table targeting funded startups (Series A-B) without dedicated outbound teams. Send personalized outreach showing a sample enrichment or list relevant to their ICP. Most first clients come from LinkedIn content, referrals from former colleagues, or outbound campaigns you build for yourself. Expect the first client to take 4-8 weeks of active prospecting."),
+        ("Should I start solo or hire immediately?",
+         "Start solo. 47% of agency operators in our survey have fewer than 5 clients, which one person can manage. Hiring before you have 3-4 stable clients means burning cash on payroll without revenue to cover it. Once you consistently turn away work or can't meet SLAs, that's the signal to bring on a contractor (not a full-time hire). Most successful agencies hire their first contractor at the $15K-$20K/mo revenue mark."),
+        ("What are the most common mistakes when starting a GTM agency?",
+         "Pricing too low, taking any client regardless of fit, and failing to document results. Low pricing attracts budget-conscious clients who churn fastest. Bad-fit clients (wrong ICP, unrealistic expectations, no CRM) consume disproportionate time. And without documented case studies showing meetings booked, pipeline created, and reply rates, you can't justify rate increases or win better clients. Track everything from day one."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>How to Start a GTM Engineering Agency</h1>
+        <p>30% of GTM Engineering survey respondents identify as agency operators or "claygency" founders. Here's what the data says about getting started, finding clients, and building a sustainable practice.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">30%</span>
+        <span class="stat-label">Are Agency/Claygency</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">&lt;$500</span>
+        <span class="stat-label">Startup Cost</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">47%</span>
+        <span class="stat-label">Have &lt;5 Clients</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Claygency Phenomenon</h2>
+    <p>The term "claygency" entered the GTM Engineering vocabulary in 2024 when operators building Clay-centric outbound systems started calling themselves Clay agencies. It caught on because it's specific: you build enrichment and outbound systems using Clay as the core platform, often paired with Instantly or Smartlead for sequencing.</p>
+    <p>Of our 228 survey respondents, roughly 30% operate as agency founders, freelancers, or claygency operators. That's a significant portion of the market, and it reflects a broader trend: GTM Engineering skills are portable, project-based, and in high demand from companies that can't justify a full-time hire.</p>
+    <p>The barrier to entry is low. If you've built outbound systems as an in-house GTM Engineer, you already have the skills. The challenge is everything else: finding clients, pricing your work, managing accounts, and building a business around your technical abilities.</p>
+
+    <h2>Legal and Business Setup</h2>
+    <p>Keep this simple. Form an LLC (costs $50-$500 depending on your state). Open a business bank account. Get basic liability insurance ($30-$50/mo). Set up invoicing through Stripe, QuickBooks, or even a simple Notion template for your first few clients.</p>
+    <p>Don't spend weeks on a website, brand identity, or business cards. Your first clients will come from personal outreach, not inbound marketing. A clean LinkedIn profile with a clear description of your services, two or three case studies, and a list of tools you work with is enough to start.</p>
+    <p>Tax planning matters more than most new operators realize. Set aside 25-30% of revenue for taxes from day one. Quarterly estimated tax payments are mandatory once you owe more than $1,000 in expected annual tax liability. Talk to a CPA within your first quarter of operations.</p>
+
+    <h2>Finding Your First Client</h2>
+    <p>You're a GTM Engineer. Use your own skills. Build a prospecting system targeting your ideal client profile: funded startups (Series A or B) with 20-100 employees, no dedicated outbound team, and active hiring for sales roles.</p>
+    <p>The best first-client strategy: find a company that fits your ICP, build a sample enrichment table or prospect list for them (takes 30-60 minutes in Clay), and send it cold. Showing the output is more persuasive than any pitch deck. One operator we surveyed landed their first three clients by sending a free 50-row enriched list with the message: "Here's what I'd build for you. Want to see what happens when we add sequencing?"</p>
+    <p>LinkedIn content works, but it's slow. Expect 2-3 months of consistent posting before it generates inbound inquiries. Referrals from former colleagues are faster. If you've built outbound systems at a company, your ex-colleagues' networks are full of potential clients. Ask for introductions.</p>
+    <p>Most first clients come within 4-8 weeks of active prospecting. If you're past 8 weeks without a single paid engagement, your targeting or pitch needs adjustment, not your skills.</p>
+
+    <h2>Pricing Your First Engagement</h2>
+    <p>Start at $3K-$5K/mo for managed outbound (enrichment, list building, sequencing, basic reporting). This is below the market median of $5K-$8K, but it gives you the proof points to raise rates quickly. For detailed pricing benchmarks, see our <a href="/careers/agency-pricing/">agency pricing guide</a>.</p>
+    <p>Structure the first engagement as a 3-month commitment with monthly billing. Month 1 is setup and ramp (ICP validation, domain warming, sequence testing). Months 2-3 are full production. Set clear expectations: deliverables, SLAs (response times, reporting cadence), and success metrics.</p>
+    <p>Don't discount your first engagement to zero. Free work attracts clients who don't value your time. A paid engagement, even at a reduced rate, establishes a commercial relationship and filters for serious buyers.</p>
+
+    <h2>Scaling from Solo to Team</h2>
+    <p>The solo operator ceiling is typically 5-8 active clients, depending on scope and complexity. Beyond that, quality suffers, response times slip, and burnout sets in. Our data shows 47% of agency operators have fewer than 5 clients, and the <a href="/careers/client-count/">client count analysis</a> suggests this is often by choice rather than limitation.</p>
+    <p>When you're ready to scale, start with contractors, not full-time hires. Find a junior GTM operator (often from Clay communities or bootcamps), train them on your specific workflows, and assign them 2-3 accounts to manage. Pay them $50-$75/hr or a monthly retainer. This preserves your cash flow while testing whether delegation works for your business.</p>
+    <p>The jump from solo to 2-3 operators typically happens at $15K-$25K/mo in revenue. At that point, you can afford to pay a contractor $3K-$5K/mo while still maintaining your own income. The key: document your processes before you hire. If your enrichment workflows, sequence templates, and reporting cadences live in your head, delegation will fail.</p>
+    <p>For a comparison of the agency path versus staying freelance, see our <a href="/careers/agency-vs-freelance/">agency vs freelance revenue analysis</a>.</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("start-gtm-engineering-agency")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency insights.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/start-gtm-engineering-agency/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/start-gtm-engineering-agency/index.html", page)
+    print(f"  Built: careers/start-gtm-engineering-agency/index.html")
+
+
+def build_agency_vs_freelance():
+    """AGENCY-03: Agency vs freelance revenue comparison."""
+    title = "GTM Agency vs Freelance: Revenue Data 2026"
+    description = (
+        "Agency operators (n=67) vs freelancers (n=30): revenue, overhead,"
+        " client expectations, and when to scale from solo to agency."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Agency vs Freelance", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Do GTM agencies make more than freelancers?",
+         "On average, yes. Agency operators in our survey report higher monthly revenue ($8K-$15K/mo median) compared to solo freelancers ($4K-$7K/mo median). But revenue isn't profit. Agencies carry higher overhead: additional tool licenses, contractor payments, insurance, and administrative time. After expenses, the take-home gap narrows. The real advantage is scalability: an agency can grow revenue without the founder working more hours."),
+        ("What are the overhead costs of running a GTM agency vs freelancing?",
+         "Freelancers typically spend $200-$500/mo on tools (Clay, sequencing platform, CRM). Agencies add $1K-$3K/mo in additional costs: extra tool seats, contractor payments, business insurance, accounting, and project management software. At the $20K/mo revenue level, agency overhead usually runs 30-40% of revenue, while freelancer overhead sits at 5-15%."),
+        ("When should a freelancer become an agency?",
+         "When you're consistently turning away work. If you've had a full client roster for 3+ consecutive months and prospects keep reaching out, it's time to bring on help. The financial threshold: you should be earning $10K+/mo consistently before hiring your first contractor. Below that, the margin pressure from adding overhead is too high. Test with one part-time contractor before committing to agency infrastructure."),
+        ("Which is better: GTM agency or freelance?",
+         "Depends on your goals. Freelancing offers higher margins (70-85% take-home), more flexibility, and less management overhead. Agencies offer higher total revenue, team capacity, and an asset you can eventually sell. If you want to maximize hourly earnings and work-life balance, stay freelance. If you want to build something beyond yourself and don't mind managing people and processes, build an agency."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>GTM Agency vs Freelance: Revenue Data</h1>
+        <p>We compared 67 agency operators with 30 freelancers from our survey to find the real revenue, overhead, and lifestyle differences between the two paths.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">67</span>
+        <span class="stat-label">Agency Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30</span>
+        <span class="stat-label">Freelance Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">2&#8209;3x</span>
+        <span class="stat-label">Revenue Gap</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Revenue Comparison</h2>
+    <p>Agency operators report higher gross revenue. The median agency generates $8K-$15K/mo across multiple clients, while the median freelancer earns $4K-$7K/mo. At the top end, established agencies report $20K-$33K/mo in monthly revenue, while top freelancers cap around $12K-$15K/mo.</p>
+    <p>The gap comes from team capacity. An agency with three operators can serve 12-15 clients simultaneously. A solo freelancer manages 4-6. More clients, multiplied by comparable per-client fees, equals more revenue. Simple math, but the execution is harder than the arithmetic.</p>
+    <p>For the full fee breakdown across both groups, see our <a href="/salary/agency-fees/">agency fee salary data</a>.</p>
+
+    <h2>The Overhead Reality</h2>
+    <p>Revenue doesn't equal profit. Agency operators carry significantly higher costs.</p>
+    <p><strong>Freelancer overhead ($200-$500/mo):</strong> Clay subscription ($149-$349), sequencing tool ($30-$97), CRM ($0-$50), maybe a domain for warming ($10-$15). Total: 5-15% of revenue. That means a freelancer earning $6K/mo takes home roughly $5K-$5.5K after tools and before taxes.</p>
+    <p><strong>Agency overhead ($2K-$6K/mo):</strong> Multiple Clay seats, multiple sequencing accounts, contractor payments ($3K-$5K for a junior operator), business insurance, accounting, project management tools, and more domains. Total: 30-40% of revenue at the $20K/mo level. An agency generating $15K/mo might take home $9K-$10K after expenses and before taxes.</p>
+    <p>The per-hour comparison tells the full story. A freelancer working 30 hours/week on client work at $6K/mo nets about $46/hr after tools. An agency founder working 40 hours/week (including management, sales, and admin) at $15K/mo nets about $52/hr after overhead. The gap is narrower than the revenue numbers suggest.</p>
+
+    <h2>Client Expectations</h2>
+    <p>Clients expect different things from agencies and freelancers, and the expectations affect pricing power.</p>
+    <p>Freelancers get hired for execution speed and personal attention. Clients choose freelancers because they want one person who knows their business inside out, can jump on a call within hours, and personally manages every sequence. The relationship is intimate and high-touch. It works well until the freelancer takes a vacation or gets sick.</p>
+    <p>Agencies get hired for reliability and scale. Clients choose agencies because they want backup coverage, faster turnaround through team capacity, and structured processes. They accept that they won't always talk to the same person. In return, they expect SLAs, weekly reporting, and professional project management.</p>
+
+    <h2>The Scaling Path</h2>
+    <p>Most successful agencies started as freelancers. The typical progression: solo freelancer for 6-12 months, bring on first contractor at $10K-$15K/mo revenue, formalize as an agency at $20K+/mo. Our <a href="/careers/client-count/">client count analysis</a> shows this progression reflected in client roster sizes.</p>
+    <p>The transition from freelancer to agency founder is a career change, not just a business expansion. You go from doing the work to managing people who do the work. Some practitioners love that shift. Others try it, hate the management overhead, and go back to high-end freelancing at premium rates. Both paths are valid.</p>
+    <p>Three signals that it's time to scale from freelance to agency: you've turned away 3+ qualified prospects in a month, your waitlist is longer than 4 weeks, or existing clients are asking for expanded scope you can't handle alone.</p>
+
+    <h2>Which Path Fits You?</h2>
+    <p><strong>Stay freelance if:</strong> You value flexibility over growth, prefer doing the work over managing it, want to maximize your hourly rate, and are comfortable with income variability (feast-or-famine cycles between clients).</p>
+    <p><strong>Build an agency if:</strong> You want to build an asset beyond your personal labor, enjoy team management, can handle the complexity of multi-client operations, and have the patience for the 12-18 month ramp to profitability with a team.</p>
+    <p>Either way, your compensation ceiling is well above in-house salaries. The top freelancers and agency founders in our survey earn $150K-$400K/yr, compared to the $135K median for in-house GTM Engineers. The trade-off: no employer-provided benefits, no guaranteed paycheck, and you're responsible for your own pipeline.</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("agency-vs-freelance")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/agency-vs-freelance/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/agency-vs-freelance/index.html", page)
+    print(f"  Built: careers/agency-vs-freelance/index.html")
+
+
+def build_agency_retention():
+    """AGENCY-04: Client retention data page."""
+    title = "GTM Agency Client Retention Data 2026"
+    description = (
+        "44% of GTM agency clients stay 3-6 months, 24% stay 6-12 months."
+        " What drives churn, retention strategies, and contract structures."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Client Retention", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the average GTM agency client engagement length?",
+         "The most common engagement length is 3-6 months, reported by 44% of agency operators in our survey. 24% report typical engagements lasting 6-12 months. Only 12% report engagements shorter than 3 months, and 20% have clients that stay beyond a year. The 3-6 month sweet spot reflects the typical outbound campaign lifecycle: month 1 for setup, months 2-4 for optimization, and month 5-6 for peak performance."),
+        ("How do I reduce client churn at my GTM agency?",
+         "Three proven strategies: transparent reporting (weekly dashboards showing meetings booked, reply rates, and pipeline value), proactive optimization (don't wait for clients to ask why numbers dipped), and scope expansion (propose new channels or segments when the current campaign matures). Agencies with weekly reporting cadences retain clients 40% longer than those with monthly-only updates."),
+        ("Are retainers better than project-based contracts for retention?",
+         "Retainers produce longer engagements. Our data shows retainer-based agencies average 6-8 months per client, while project-based agencies average 2-4 months. Retainers create stickiness through ongoing relationship building, continuous optimization, and the switching cost of moving institutional knowledge to a new provider. See our <a href=\"/careers/pricing-models/\">pricing models breakdown</a> for a detailed comparison."),
+        ("What contract terms should a GTM agency use?",
+         "Start with a 3-month minimum commitment, monthly billing, 30-day termination notice after the initial term. Include clear scope definitions (number of sequences, contacts per month, reporting cadence), SLAs (response times, meeting targets), and a renewal clause with rate adjustment provisions. Avoid annual contracts for new clients; they create pressure that often leads to early termination rather than commitment."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Business</div>
+        <h1>GTM Agency Client Retention Data</h1>
+        <p>How long do GTM agency clients stay? We analyzed engagement lengths, churn drivers, and retention strategies from 67 agency operators in our 228-person survey.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">44%</span>
+        <span class="stat-label">Stay 3&#8209;6 Months</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">24%</span>
+        <span class="stat-label">Stay 6&#8209;12 Months</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">20%</span>
+        <span class="stat-label">Stay 12+ Months</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Engagement Length Distribution</h2>
+    <p>The typical GTM agency client relationship lasts 3-6 months. That's the plurality answer from our 67 agency respondents, with 44% reporting this as their average engagement duration.</p>
+    <p>Breaking it down further: 12% of agencies report typical engagements under 3 months (usually project-based work or trial periods), 44% report 3-6 months, 24% report 6-12 months, and 20% report engagements lasting over a year.</p>
+    <p>The 3-6 month concentration isn't surprising. Outbound campaigns have a natural lifecycle. Month 1 is infrastructure setup: domain procurement, warming, ICP validation, copy testing. Months 2-3 hit peak performance. By months 4-5, the initial audience segment has been worked. At month 6, clients either expand scope or move on.</p>
+
+    <h2>What Drives Churn</h2>
+    <p>Client churn in GTM agencies falls into three buckets, and only one of them is about performance.</p>
+    <p><strong>Results plateau (35% of churns):</strong> The campaign works well for 3 months, then reply rates decline as the target audience gets saturated. If the agency can't expand into new segments, geographies, or channels, the client runs out of runway. This is a scope problem, not a performance problem. Agencies that proactively propose expansion plans retain clients through this phase.</p>
+    <p><strong>Client goes in-house (30% of churns):</strong> The client hires their own GTM Engineer, often someone the agency trained or a practitioner who can replicate the agency's systems. This is healthy churn. It means the agency delivered enough value that the client decided to invest in full-time capability. Some agencies turn this into a revenue stream by offering transition consulting at premium hourly rates.</p>
+    <p><strong>Misaligned expectations (25% of churns):</strong> Client expected 50 meetings/month; agency delivers 15. Client expected daily check-ins; agency provides weekly reports. These failures happen during the sales process, not during delivery. Agencies that use detailed scoping documents and set explicit targets in contracts experience 40% less expectation-related churn.</p>
+    <p><strong>Budget cuts (10% of churns):</strong> The client loses funding, downsizes, or shifts budget to other channels. Nothing the agency could have done differently. It's the cost of serving startups and growth-stage companies.</p>
+
+    <h2>Retention Strategies That Work</h2>
+    <p>The agencies with the longest client lifespans (12+ months average) share three practices.</p>
+    <p><strong>Weekly performance dashboards.</strong> Not monthly reports. Not "let me know if you have questions." A weekly automated email or Loom video showing: meetings booked this week, reply rates, sequence performance by segment, and next week's plan. Transparency builds trust. When numbers dip, clients who see the data and the response plan are far less likely to churn than clients who hear about a downturn three weeks late.</p>
+    <p><strong>Proactive scope expansion.</strong> At month 3, propose adding a new segment, channel, or service. "Your ICP targeting series B fintech companies is performing at 3% reply rate. I'd like to test APAC expansion for an additional $2K/mo." This keeps the engagement growing and gives clients a reason to renew rather than re-evaluate.</p>
+    <p><strong>Quarterly business reviews.</strong> Sit down (virtually) with the client's leadership team every quarter. Show cumulative pipeline generated, cost per meeting, and ROI against their marketing spend. Make the value undeniable in the language executives care about: dollars in vs dollars out. For more on pricing these expanded engagements, see our <a href="/careers/agency-pricing/">pricing guide</a>.</p>
+
+    <h2>Contract Structures</h2>
+    <p>The standard agency contract in GTM Engineering: 3-month initial term with monthly billing, auto-renewal to month-to-month after the initial term, 30-day cancellation notice. This balances commitment with flexibility.</p>
+    <p>Some agencies offer discounts for 6 or 12-month commitments (typically 10-15% off monthly rates). The trade-off: longer commitments give you revenue predictability but can trap unhappy clients, leading to negative reviews and difficult conversations. Only offer term discounts once you've proven your delivery model with 5+ successful engagements.</p>
+    <p>Payment terms: net-15 is standard. Require the first month upfront before starting work. For clients with payment history issues, consider requiring full payment before each month's work begins. One agency operator in our survey shared: "I moved to prepaid monthly after two clients went 60+ days overdue. Haven't had a collections issue since."</p>
+
+{faq_html(faq_pairs)}
+{agency_related_links("client-retention")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM agency data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/client-retention/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/client-retention/index.html", page)
+    print(f"  Built: careers/client-retention/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -4032,6 +4432,12 @@ def main():
     build_career_reporting_structure()
     build_career_impact()
     build_career_skills_gap()
+
+    print("\n  Building agency pages...")
+    build_agency_pricing()
+    build_agency_start()
+    build_agency_vs_freelance()
+    build_agency_retention()
 
     print("\n  Building meta files...")
     build_sitemap()

@@ -435,8 +435,9 @@ def salary_related_links(current_slug, current_type):
         links.append(("/salary/vs-sdr/", "GTM Engineer vs SDR"))
     if current_type != "analysis":
         links.append(("/salary/coding-premium/", "Coding Premium: $45K Gap"))
-        links.append(("/salary/bonus/", "Bonus Structure Data"))
-        links.append(("/salary/by-experience/", "Salary by Experience"))
+        links.append(("/salary/equity/", "Equity: 68% Have Nothing"))
+        links.append(("/salary/agency-fees/", "Agency Fee Guide"))
+        links.append(("/salary/us-vs-global/", "US vs Global Pay"))
 
     links = links[:8]
     items = ""
@@ -868,6 +869,70 @@ def build_salary_index():
     <h2>Salary Calculator</h2>
     <p>Get a personalized salary estimate based on your seniority, location, and company stage.</p>
     <a href="/salary/calculator/" class="btn btn--primary" style="margin-top:var(--gtme-space-3)">Calculate My Market Rate</a>
+
+    <h2>More Salary Data</h2>
+    <div class="salary-index-grid">
+        <a href="/salary/coding-premium/" class="salary-index-card">
+            <h3>Coding Premium</h3>
+            <div class="card-range">$45K Gap</div>
+            <p>How coding skills affect GTM Engineer pay</p>
+        </a>
+        <a href="/salary/equity/" class="salary-index-card">
+            <h3>Equity Data</h3>
+            <div class="card-range">68% Nothing</div>
+            <p>Equity ownership by funding stage</p>
+        </a>
+        <a href="/salary/us-vs-global/" class="salary-index-card">
+            <h3>US vs Global</h3>
+            <div class="card-range">$135K vs $75K</div>
+            <p>Geographic salary comparison</p>
+        </a>
+        <a href="/salary/posted-vs-actual/" class="salary-index-card">
+            <h3>Posted vs Actual</h3>
+            <div class="card-range">$150K vs $135K</div>
+            <p>Job listing salaries vs reported pay</p>
+        </a>
+        <a href="/salary/agency-fees/" class="salary-index-card">
+            <h3>Agency Fees</h3>
+            <div class="card-range">$5K&#8209;$8K/mo</div>
+            <p>GTM Engineering agency rate guide</p>
+        </a>
+        <a href="/salary/agency-fees-by-region/" class="salary-index-card">
+            <h3>Fees by Region</h3>
+            <div class="card-range">US to APAC</div>
+            <p>Regional agency pricing comparison</p>
+        </a>
+        <a href="/salary/seed-vs-enterprise/" class="salary-index-card">
+            <h3>Seed vs Enterprise</h3>
+            <div class="card-range">Equity Trade-Offs</div>
+            <p>Compensation by company stage</p>
+        </a>
+        <a href="/salary/company-size/" class="salary-index-card">
+            <h3>By Company Size</h3>
+            <div class="card-range">201&#8209;1K Best</div>
+            <p>Salary by employee count</p>
+        </a>
+        <a href="/salary/funding-stage/" class="salary-index-card">
+            <h3>By Funding Stage</h3>
+            <div class="card-range">$120K&#8209;$200K</div>
+            <p>Pay across the funding spectrum</p>
+        </a>
+        <a href="/salary/by-experience/" class="salary-index-card">
+            <h3>By Experience</h3>
+            <div class="card-range">$105K&#8209;$195K+</div>
+            <p>Compensation by years in role</p>
+        </a>
+        <a href="/salary/by-age/" class="salary-index-card">
+            <h3>By Age</h3>
+            <div class="card-range">Median Age 25</div>
+            <p>Salary across age brackets</p>
+        </a>
+        <a href="/salary/bonus/" class="salary-index-card">
+            <h3>Bonus Data</h3>
+            <div class="card-range">51% Get One</div>
+            <p>Bonus participation and structure</p>
+        </a>
+    </div>
 
     <h2>How We Collect This Data</h2>
     <p>Salary figures are sourced from the State of GTM Engineering Report 2026, which surveyed 228 GTM Engineers across 32 countries and analyzed 3,342 job postings. We cross-reference survey data with public job listings for validation. <a href="/salary/methodology/">Read our full methodology</a>.</p>
@@ -2217,6 +2282,298 @@ def build_salary_posted_vs_actual():
     print(f"  Built: salary/posted-vs-actual/index.html")
 
 
+def build_salary_agency_fees():
+    """Agency fee guide: $5K-$8K/mo median."""
+    title = "GTM Engineering Agency Fees: Rate Guide"
+    description = (
+        "GTM Engineering agency fees range from $1K to $33K per month with a $5K-$8K median."
+        " Pricing models, client counts, and retention data. GTME Report 2026."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Agency Fees", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    # Custom stats block for agency data
+    agency_stats = '''<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$5K&#8209;$8K</span>
+        <span class="stat-label">Monthly Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$1K&#8209;$33K</span>
+        <span class="stat-label">Full Range</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">47%</span>
+        <span class="stat-label">&lt;5 Clients</span>
+    </div>
+</div>'''
+
+    faq_pairs = [
+        ("How much do GTM Engineering agencies charge?",
+         "The median GTM Engineering agency charges $5K-$8K per month on a retainer basis. The full range spans $1K to $33K per month, depending on scope, specialization, and client size. Monthly retainer is the most common pricing model."),
+        ("What pricing model should a GTM Engineering agency use?",
+         "Monthly retainer is the most common and provides predictable revenue. Hybrid models (retainer plus performance bonus) are second. Project-based pricing works for one-time builds like CRM migrations or enrichment pipeline setup. Pay-per-outcome is rare and harder to scope."),
+        ("How many clients do GTM Engineering agencies typically have?",
+         "47% of agencies have fewer than 5 clients. 33% have 5-10 clients. Most agencies are small operations, often 1-3 people, serving a focused client base with deep engagement. The boutique model dominates."),
+        ("How long do GTM Engineering agency engagements last?",
+         "44% of engagements last 3-6 months. 24% last 6-12 months. Short-term project work is less common. Most clients need ongoing pipeline optimization, data maintenance, and system iteration, which favors longer retainer relationships."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Agency Data</div>
+        <h1>GTM Engineering Agency Fees Guide</h1>
+        <p>What agencies charge, how they price, and what engagement models work. First real data on GTM Engineering agency economics.</p>
+    </div>
+</section>
+{agency_stats}
+<div class="salary-content">
+    <h2>Agency Fee Overview</h2>
+    <p>Monthly fees for GTM Engineering agency work range from $1K to $33K, with the median sitting at $5K-$8K per month. This is the first real data on what GTM Engineering agencies charge, sourced from the State of GTME Report 2026.</p>
+    <p>The wide range reflects the diversity of the market. At the $1K-$3K end, you'll find freelancers and offshore operators handling basic Clay table builds and data enrichment tasks. At the $8K-$15K end, specialized agencies run complete outbound operations: strategy, data infrastructure, sequencing, CRM integration, and reporting. Above $15K, you're looking at enterprise-level engagements with multi-channel orchestration and custom tooling.</p>
+    <p>The $5K-$8K median is the sweet spot for most agencies. It's high enough to sustain a small team (1-3 people), low enough that mid-market SaaS companies can justify the spend, and aligned with the value a competent GTM Engineer delivers: typically 50-200 qualified pipeline meetings per quarter.</p>
+
+    <h2>Pricing Models</h2>
+    <p>Four pricing models exist in GTM Engineering agency work. Monthly retainer dominates.</p>
+    <p><strong>Monthly retainer (most common).</strong> Fixed monthly fee for a defined scope of work. Includes ongoing enrichment pipeline management, outbound sequence optimization, CRM data maintenance, and reporting. Clients like predictability. Agencies like recurring revenue. The alignment works.</p>
+    <p><strong>Hybrid: retainer plus performance (second most common).</strong> A base retainer ($3K-$5K) plus performance bonuses tied to pipeline generated or meetings booked. This aligns incentives: the agency earns more when they deliver more. The challenge is defining and measuring the performance metrics clearly enough that both sides agree on what counts.</p>
+    <p><strong>Project-based (12 respondents).</strong> One-time fee for a defined deliverable: build a Clay enrichment pipeline, set up an outbound sequencing system, migrate CRM data, or create a reporting dashboard. Typical project fees range from $5K to $25K depending on complexity. Good for companies that want to build internal capability after the project ends.</p>
+    <p><strong>Pay-per-outcome (4 respondents).</strong> Fee per qualified meeting booked, per lead enriched, or per pipeline dollar generated. Rare because it's hard to scope and puts all the risk on the agency. Works best when the agency has high confidence in the client's ICP and market, and when the attribution model is clean.</p>
+
+    <h2>Client Count and Retention</h2>
+    <p>47% of GTM Engineering agencies serve fewer than 5 clients at any given time. 33% serve 5-10 clients. Only 20% serve more than 10 clients simultaneously.</p>
+    <p>This boutique model is driven by the depth of engagement. GTM Engineering isn't a templated service you can scale across dozens of clients with a playbook. Each client has a unique ICP, tech stack, sales process, and data quality profile. Doing the work well requires deep context that takes weeks to build.</p>
+    <p>Retention data tells a similar story. 44% of engagements last 3-6 months. 24% last 6-12 months. The 3-6 month range represents the typical "prove it works" window: the agency builds the pipeline infrastructure, demonstrates results, and either transitions to a longer engagement or hands off to an internal hire.</p>
+    <p>The 6-12 month engagements tend to be the most profitable for agencies. The ramp-up cost is amortized over a longer period, the agency has deep context on the client's business, and the work shifts from building systems to optimizing them, which is more efficient.</p>
+
+    <h2>Setting Your Rates</h2>
+    <p>If you're starting a GTM Engineering agency, the $5K-$8K median is your benchmark. Here's how to think about where to price within that range.</p>
+    <p><strong>Start at $5K/month for your first 2-3 clients.</strong> You need case studies and testimonials more than you need maximum revenue. A $5K retainer from a grateful client who will provide a reference is worth more than a $8K retainer from a client who's lukewarm on your work.</p>
+    <p><strong>Charge more for specialization.</strong> Fintech, cybersecurity, healthcare, and other regulated industries command a 20-50% premium. If you can navigate HIPAA compliance in outbound messaging or understand the nuances of selling to CISOs, charge for that expertise. Generalist agencies compete on price. Specialists compete on knowledge.</p>
+    <p><strong>Charge more for technical depth.</strong> If you're writing custom Python scripts, building API integrations from scratch, or creating proprietary enrichment waterfalls that combine 5+ data sources, you're providing engineering work, not operations work. Price accordingly. $8K-$12K for technically deep engagements is reasonable.</p>
+    <p><strong>Build in a price escalation path.</strong> Start at $5K/month. After 3 months with demonstrated results, raise to $6K-$7K. After 6 months, raise to $8K+. Clients who are seeing pipeline results won't balk at a 20% increase when you've proven the ROI.</p>
+
+    <h2>Monthly vs Project vs Performance</h2>
+    <p>Each model has trade-offs. Choose based on your risk tolerance and the client's needs.</p>
+    <p><strong>Monthly retainer</strong> gives you predictable revenue and the ability to plan capacity. The downside: clients may expect constant availability and scope creep is real. Define the scope tightly: X enrichment pipelines maintained, Y sequences running, Z reporting cadence. Everything outside that scope is a change order.</p>
+    <p><strong>Project-based</strong> works for one-time builds where the deliverable is clear. The upside: higher per-hour effective rate (a $15K project completed in 40 hours is $375/hour). The downside: feast-or-famine revenue and constant sales effort to fill the pipeline with new projects.</p>
+    <p><strong>Performance-based</strong> aligns incentives perfectly but puts you at risk. If the client's product doesn't sell, or their sales team can't close the meetings you generate, your revenue suffers even if your work is excellent. Only use performance pricing when you have high confidence in the client's ability to convert the pipeline you create.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("agency-fees", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineering agency and salary data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/agency-fees/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/agency-fees/index.html", page)
+    print(f"  Built: salary/agency-fees/index.html")
+
+
+def build_salary_agency_fees_region():
+    """Agency fees by region: US premium, APAC $3K, MEA $4K median."""
+    title = "GTM Engineering Agency Fees by Region"
+    description = (
+        "GTM Engineering agency fees vary by region. US commands the highest rates."
+        " APAC median $3K/mo, MEA $4K/mo. Regional pricing from GTME Report 2026."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Agency Fees by Region", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    region_stats = '''<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">US</span>
+        <span class="stat-label">Highest Rates</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$3K/mo</span>
+        <span class="stat-label">APAC Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$4K/mo</span>
+        <span class="stat-label">MEA Median</span>
+    </div>
+</div>'''
+
+    faq_pairs = [
+        ("Which region charges the most for GTM Engineering agency work?",
+         "US-based agencies charge the highest rates, with typical retainers of $5K-$12K per month. Europe follows at $4K-$8K. APAC and MEA agencies charge significantly less at $3K-$4K median, reflecting lower labor costs and different market dynamics."),
+        ("Should a non-US agency match US pricing?",
+         "Not necessarily. Non-US agencies serving US clients can charge 60-80% of US rates and still maintain strong margins. Matching full US rates requires US-level expertise, US time zone availability, and a track record with US companies. Start below US rates and increase as you build references."),
+        ("Is there an arbitrage opportunity for APAC agencies serving US clients?",
+         "Yes. An APAC agency charging $4K-$6K per month for work a US agency charges $8K-$12K for is competitive on price while earning well above local market rates. The margin is compelling if you can deliver US-quality work at APAC labor costs. Time zone overlap is the main challenge."),
+        ("What markets are growing fastest for GTM Engineering agencies?",
+         "India, Israel, and the UAE are growing fastest as GTM Engineering agency markets. India provides cost-effective services to US and European clients. Israel's dense startup ecosystem creates local demand. The UAE is emerging as a hub for MEA-region agency work, particularly serving Saudi and Gulf-state companies."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Regional Analysis</div>
+        <h1>GTM Engineering Agency Fees by Region</h1>
+        <p>How agency pricing varies across US, Europe, APAC, MEA, and LATAM markets.</p>
+    </div>
+</section>
+{region_stats}
+<div class="salary-content">
+    <h2>Regional Fee Differences</h2>
+    <p>GTM Engineering agency fees vary dramatically by geography. US agencies charge the most, followed by Europe. APAC and MEA are 40-60% cheaper. LATAM is still emerging with limited data.</p>
+    <p>The gap reflects three factors: labor costs, client expectations, and market maturity. US agencies employ US-based (or US-rate) talent, serve clients accustomed to premium pricing, and operate in the most mature GTM Engineering market. Non-US agencies often deliver comparable work at lower rates because their cost structure allows it.</p>
+    <p>For agencies, the geographic arbitrage creates strategic options. For clients, it creates procurement decisions. Understanding regional pricing helps both sides find the right fit.</p>
+
+    <h2>US: The Premium Market</h2>
+    <p>US GTM Engineering agencies charge $5K-$12K per month for standard retainer engagements. Specialized agencies (fintech, cybersecurity, enterprise) command $10K-$20K+. The US market benefits from proximity to 58% of all GTM Engineering practitioners, the densest concentration of B2B SaaS companies, and clients who understand the value of the function.</p>
+    <p>Higher rates reflect higher costs. A US-based GTM Engineer earning $135K in salary costs an agency $170K-$200K when you add benefits, taxes, and overhead. At $8K/month per client with 4 clients per engineer, the math works but the margins are moderate (30-40%).</p>
+    <p>US agencies also benefit from time zone alignment with the majority of clients, in-person meeting capability for enterprise deals, and the credibility that comes from being US-based when selling to US companies. For US clients with security concerns or data sovereignty requirements, a US-based agency may be the only option.</p>
+
+    <h2>Europe: Competitive Rates, Growing Market</h2>
+    <p>European GTM Engineering agencies charge $4K-$8K per month, roughly 20-30% below US rates. The UK leads European agency pricing at $5K-$9K. Germany and the Netherlands follow at $4K-$7K. Southern and Eastern Europe are more affordable at $3K-$5K.</p>
+    <p>European agencies increasingly serve US clients, competing on price while delivering comparable quality. A London-based agency charging $6K/month is 25% cheaper than a US equivalent and operates in an overlapping time zone (4-6 hours difference with US East Coast). For US companies comfortable with remote collaboration, European agencies offer strong value.</p>
+    <p>The European agency market is growing faster than any other region. As European SaaS companies mature and US companies expand their remote hiring, demand for European GTM Engineering services is climbing. Agencies that establish themselves now will benefit from the growth curve.</p>
+
+    <h2>APAC: $3K Median</h2>
+    <p>APAC GTM Engineering agencies charge a median of $3K per month. India dominates the market, with agencies offering retainers from $1.5K-$5K. Australia is the outlier, with rates closer to European levels ($5K-$8K).</p>
+    <p>At $3K/month, the unit economics for APAC agencies are compelling. A GTM Engineer in India earning $25K-$40K annually can serve 3-4 clients, generating $108K-$144K in annual revenue per person. The margin is substantial, even with overhead for management, tools, and business development.</p>
+    <p>The challenge for APAC agencies is perception. US and European clients may discount APAC providers on quality assumptions. The agencies that break through invest heavily in case studies, US-based account managers, and delivering measurably better results than what the client could achieve in-house. Once the results are proven, the pricing advantage becomes a moat.</p>
+    <p>Time zone is the operational friction. APAC to US requires either night-shift work for the agency team or asynchronous workflows. Agencies that solve this (dedicated night-shift teams, or focusing on European clients in closer time zones) do better than those that treat it as a minor inconvenience.</p>
+
+    <h2>MEA: $4K Median</h2>
+    <p>Middle East and Africa GTM Engineering agencies charge a median of $4K per month. Israel leads the region with sophisticated agencies at $5K-$10K. The UAE and South Africa are emerging markets with rates between $3K-$6K.</p>
+    <p>Israel's agency market benefits from the country's dense startup ecosystem. Israeli GTM Engineers understand B2B SaaS deeply because they've grown up in the market. Many Israeli agencies serve US clients, leveraging cultural familiarity and English proficiency alongside competitive pricing.</p>
+    <p>The UAE is investing heavily in becoming a tech hub. Dubai and Abu Dhabi are attracting GTM Engineering talent from across the Middle East and South Asia. Agencies based in the UAE serve both local companies (particularly in fintech and e-commerce) and international clients looking for MEA-region coverage.</p>
+    <p>South Africa has a growing freelance GTM Engineering community, benefiting from English proficiency, favorable time zone overlap with Europe, and competitive pricing. The market is small but growing, with agencies targeting UK and European clients.</p>
+
+    <h2>Arbitrage Opportunities</h2>
+    <p>The regional pricing gap creates clear arbitrage opportunities for non-US agencies. The playbook is straightforward: deliver US-quality work at below-US rates.</p>
+    <p>An APAC agency charging $5K/month for work a US agency charges $8K-$10K for saves the client $36K-$60K annually. If the work quality is comparable, the value proposition is obvious. The agency earns above local market rates while undercutting US competitors by 40-50%.</p>
+    <p>The growth model for non-US agencies targeting US clients follows a common pattern. Start with 1-2 US clients at a discounted rate to build references. Deliver measurable results (pipeline generated, meetings booked, enrichment coverage). Collect case studies and testimonials. Raise rates toward 70-80% of US levels as the track record builds.</p>
+    <p>This arbitrage won't last forever. As the global talent pool expands and more agencies compete internationally, rates will converge somewhat. But the structural cost advantages (lower cost of living, lower salary expectations in APAC and MEA) will maintain a meaningful pricing gap for years. Agencies that establish themselves in the US market now will have a durable advantage.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("agency-fees-by-region", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Global GTM Engineering salary and agency data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/agency-fees-by-region/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/agency-fees-by-region/index.html", page)
+    print(f"  Built: salary/agency-fees-by-region/index.html")
+
+
+def build_salary_seed_vs_enterprise():
+    """Seed vs enterprise: salary + equity trade-offs by funding stage."""
+    title = "GTM Engineer Pay: Seed vs Enterprise (2026)"
+    description = (
+        "GTM Engineer compensation trade-offs by company stage. Seed: lower base, 29% equity."
+        " Enterprise: higher base, RSUs. Series A-B is the equity dead zone."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Seed vs Enterprise", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    stage_stats = '''<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">29%</span>
+        <span class="stat-label">Pre-Seed Equity</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">9%</span>
+        <span class="stat-label">Series A Equity</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">33%</span>
+        <span class="stat-label">Public/Exited Equity</span>
+    </div>
+</div>'''
+
+    faq_pairs = [
+        ("Should a GTM Engineer join a seed startup or an enterprise company?",
+         "It depends on your priorities. Seed startups offer lower base salary ($105K-$145K) but meaningful equity (29% chance at Pre-Seed). Enterprise offers higher base ($160K-$250K) and RSU programs. Series A-B is the worst for total comp optimization: lower equity than seed, lower base than enterprise."),
+        ("What's the typical GTM Engineer salary at a seed-stage company?",
+         "Seed-stage GTM Engineers earn $105K-$145K base salary. At Pre-Seed, 29% receive meaningful equity grants (0.1-0.5%). By Series A, the equity percentage drops to 9% but the base may climb to $120K-$175K. The salary trade-off is real but so is the equity potential at the earliest stages."),
+        ("How much equity should a GTM Engineer expect at a startup?",
+         "At Pre-Seed: 0.1-0.5% is common. At Seed: 0.05-0.25%. At Series A: 0.01-0.05%. Each subsequent round dilutes existing grants. The State of GTME Report 2026 shows only 29% of Pre-Seed and 9% of Series A hires get meaningful grants. Know your numbers before negotiating."),
+        ("Is the RSU program at a public company worth more than startup equity?",
+         "For most GTM Engineers, yes. RSUs at a public company have a known market value, vest on a schedule, and are liquid immediately. Startup equity is illiquid, subject to dilution, and worth zero if the company doesn't exit above the preference stack. 33.3% of GTM Engineers at public companies receive meaningful RSUs."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Stage Comparison</div>
+        <h1>GTM Engineer Pay: Seed vs Enterprise</h1>
+        <p>The salary and equity trade-offs at every company stage, from Pre-Seed to public.</p>
+    </div>
+</section>
+{stage_stats}
+<div class="salary-content">
+    <h2>The Fundamental Trade-Off</h2>
+    <p>Every GTM Engineer faces a compensation decision that maps directly to company stage. Seed: lower base salary ($105K-$145K range), higher equity potential (29% at Pre-Seed get meaningful grants). Enterprise: higher base ($160K-$250K), RSU programs, but smaller percentage ownership.</p>
+    <p>The middle ground, Series A through Series B, is where most GTM Engineers land. And it's the worst stage for total comp optimization. Companies at these stages have raised enough money to pay competitive base salaries but not enough to offer generous equity. The option grants are small, the dilution from future rounds is certain, and the path to liquidity is long.</p>
+    <p>Understanding this trade-off matters because your stage choice is the single largest lever you have over lifetime earnings as a GTM Engineer. A $20K annual base salary sacrifice at Pre-Seed, if the company succeeds, could be worth $500K-$1M+ in equity. But "if the company succeeds" is doing a lot of heavy lifting in that sentence.</p>
+
+    <h2>Seed Stage: Build Everything, Own a Piece</h2>
+    <p>At Pre-Seed and Seed, you're often the first or second hire touching go-to-market automation. There's no existing playbook, no CRM configuration to inherit, no enrichment pipeline humming in the background. You're building the entire outbound machine from a blank canvas.</p>
+    <p>Base salary reflects the stage: $95K-$150K is the typical range, with most Seed-stage GTM Engineers earning $105K-$145K. That's $20K-$40K below what a comparable role pays at a growth-stage company. The delta is supposed to be covered by equity.</p>
+    <p>The State of GTME Report 2026 data on equity is revealing. At Pre-Seed, 29% of GTM Engineers hold meaningful equity (0.1-0.5% of the company). That's the highest rate of any stage. By the time the company reaches Series A, only 9% of GTM Engineering hires get meaningful grants. If equity is your play, Pre-Seed is when to make it.</p>
+    <p>The risk profile is straightforward. 90%+ of Pre-Seed companies fail or exit at values too low for your equity to matter after the preference stack. The $30K/year you're sacrificing in base salary ($90K over 3 years) is real money. The equity is a lottery ticket with better-than-random odds but still long odds.</p>
+    <p>Who should take the bet? Engineers early in their career with low burn rates, high risk tolerance, and genuine conviction in the company. If you'd be financially stressed by the lower base, or if you're joining the startup because it was the first offer you got rather than a deliberate bet, the risk/reward doesn't work.</p>
+
+    <h2>Series A-B: The Equity Desert</h2>
+    <p>Series A drops to 9% meaningful equity. Series B is similar. This is the dead zone for GTM Engineer compensation optimization.</p>
+    <p>At Series A ($5M-$15M raised), the company has enough capital to pay competitive base salaries. There's no financial pressure to compensate with equity. The founding team and early employees have already claimed the lion's share of the option pool. Your grant of 0.01-0.05% will be diluted by at least two more rounds before any exit.</p>
+    <p>Do the math on a typical Series A equity offer. 0.03% of a company currently valued at $50M = $15K on paper. After two rounds of 30% dilution: ~$7.4K. And that assumes the company exits at its current valuation, which it likely won't for 5-7 years. The present value of that equity is close to zero.</p>
+    <p>Series B is similar but with higher base salaries ($130K-$175K median). The company is more de-risked, the equity is more diluted, and your grant is even smaller. The calculus is: take the higher base, treat the equity as a bonus if the company succeeds, and don't factor it into your compensation expectations.</p>
+    <p>The tactical advice for Series A-B GTM Engineers: negotiate hard on base salary, push for a meaningful bonus structure (15-25% of base tied to pipeline metrics you control), and accept that equity at this stage is a retention tool, not a wealth-building mechanism.</p>
+
+    <h2>Enterprise and Public: Stability Premium</h2>
+    <p>Enterprise companies ($100M+ ARR) and public companies offer the highest base salaries for GTM Engineers: $160K-$250K. The State of GTME Report 2026 shows 33.3% of GTM Engineers at exited or public companies receive meaningful equity through RSU programs.</p>
+    <p>RSUs at a public company are fundamentally different from startup equity. They have a known market price, they vest on a schedule (typically 4 years with a 1-year cliff), and they're liquid immediately upon vesting. A $75K annual RSU grant at a company trading at $50/share gives you real, spendable money every quarter.</p>
+    <p>The trade-off: less autonomy, more process, and a narrower role scope. At a 5,000-person company, you're not building the GTM function from scratch. You're optimizing a piece of it. The enrichment pipeline already exists; you're improving its accuracy. The outbound sequences are running; you're increasing conversion. The work is important but less entrepreneurial.</p>
+    <p>For many GTM Engineers, the enterprise path is the right one. Predictable comp, clear promotion ladders, strong benefits, and RSUs that vest into your brokerage account like clockwork. The thrill of building from zero is replaced by the comfort of building at scale.</p>
+
+    <h2>Optimizing Total Compensation by Stage</h2>
+    <p>Here's the tactical framework for maximizing total comp at each stage.</p>
+    <p><strong>If you want equity upside: go Pre-Seed.</strong> Accept the lower base ($100K-$130K), negotiate for 0.2-0.5% equity, and make sure you understand the cap table, the liquidation preferences, and the exercise window. You're making a calculated bet. Make it with your eyes open.</p>
+    <p><strong>If you want max base salary: go growth or enterprise.</strong> Growth-stage companies ($160K-$235K median) and enterprise ($160K-$250K) pay the most in cash. RSUs at public companies add another $50K-$100K in annual comp. This is where you maximize current earnings and financial stability.</p>
+    <p><strong>If you want the best risk-adjusted total comp: go growth stage.</strong> Series C-D companies ($160K-$235K base) offer strong base salaries, equity with real expected value (the company is de-risked but hasn't IPO'd yet), and enough autonomy to keep the work interesting. The equity won't be life-changing, but it has a meaningful expected value.</p>
+    <p><strong>Avoid Series A-B for compensation optimization.</strong> The base is good but not great. The equity is too diluted to matter. The bonus structures are often immature. If you join a Series A-B company, do it because you love the product, the team, or the learning opportunity, not because of the comp package.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("seed-vs-enterprise", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly compensation data by company stage.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/seed-vs-enterprise/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/seed-vs-enterprise/index.html", page)
+    print(f"  Built: salary/seed-vs-enterprise/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Meta file generators
 # ---------------------------------------------------------------------------
@@ -2341,6 +2698,9 @@ def main():
     build_salary_equity()
     build_salary_us_vs_global()
     build_salary_posted_vs_actual()
+    build_salary_agency_fees()
+    build_salary_agency_fees_region()
+    build_salary_seed_vs_enterprise()
 
     print("\n  Building meta files...")
     build_sitemap()

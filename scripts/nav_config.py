@@ -23,6 +23,9 @@ NAV_ITEMS = [
             {"href": "/salary/by-company-stage/", "label": "By Company Stage"},
             {"href": "/salary/comparisons/", "label": "Comparisons"},
             {"href": "/salary/calculator/", "label": "Salary Calculator"},
+            {"href": "/salary/coding-premium/", "label": "Coding Premium"},
+            {"href": "/salary/equity/", "label": "Equity Data"},
+            {"href": "/salary/agency-fees/", "label": "Agency Fees"},
         ],
     },
     {"href": "/tools/", "label": "Tools"},
@@ -37,6 +40,8 @@ FOOTER_COLUMNS = {
         {"href": "/salary/by-location/", "label": "By Location"},
         {"href": "/salary/by-company-stage/", "label": "By Stage"},
         {"href": "/salary/comparisons/", "label": "Comparisons"},
+        {"href": "/salary/coding-premium/", "label": "Coding Premium"},
+        {"href": "/salary/equity/", "label": "Equity Data"},
     ],
     "Resources": [
         {"href": "/tools/", "label": "GTM Tools"},

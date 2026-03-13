@@ -53,12 +53,12 @@
 - [x] **TOOL-03**: CRM adoption page (Salesforce/HubSpot 92%)
 - [x] **TOOL-04**: AI coding tools page (Cursor & Claude Code 71% adoption)
 - [x] **TOOL-05**: n8n adoption page (54% adoption, agency vs in-house usage)
-- [ ] **TOOL-06**: Tool frustrations page (integration, UX, docs as top complaints)
-- [ ] **TOOL-07**: "Most Exciting GTM Tools in 2026" page (Claude 39, Cursor 11, n8n 8)
-- [ ] **TOOL-08**: Unify analysis page (8.8% adoption despite positioning)
-- [ ] **TOOL-09**: Annual tool spend page (US vs non-US, 55% agencies $5-25K)
-- [ ] **TOOL-10**: ZoomInfo vs Apollo for GTM Engineers (65% adoption)
-- [ ] **TOOL-11**: Tool wishlist page (all-in-one outbound #1, AI SDR requested)
+- [x] **TOOL-06**: Tool frustrations page (integration, UX, docs as top complaints)
+- [x] **TOOL-07**: "Most Exciting GTM Tools in 2026" page (Claude 39, Cursor 11, n8n 8)
+- [x] **TOOL-08**: Unify analysis page (8.8% adoption despite positioning)
+- [x] **TOOL-09**: Annual tool spend page (US vs non-US, 55% agencies $5-25K)
+- [x] **TOOL-10**: ZoomInfo vs Apollo for GTM Engineers (65% adoption)
+- [x] **TOOL-11**: Tool wishlist page (all-in-one outbound #1, AI SDR requested)
 - [ ] **TOOL-12**: Python for GTM Engineers page (coding skill data, salary impact)
 - [ ] **TOOL-13**: SQL for GTM Engineers page (job posting frequency, use cases)
 - [ ] **TOOL-14**: Zapier vs n8n for GTM Engineers (adoption, cost, agency preferences)
@@ -211,12 +211,12 @@
 | TOOL-03 | Phase 6 | Complete |
 | TOOL-04 | Phase 6 | Complete |
 | TOOL-05 | Phase 6 | Complete |
-| TOOL-06 | Phase 6 | Pending |
-| TOOL-07 | Phase 6 | Pending |
-| TOOL-08 | Phase 6 | Pending |
-| TOOL-09 | Phase 6 | Pending |
-| TOOL-10 | Phase 6 | Pending |
-| TOOL-11 | Phase 6 | Pending |
+| TOOL-06 | Phase 6 | Complete |
+| TOOL-07 | Phase 6 | Complete |
+| TOOL-08 | Phase 6 | Complete |
+| TOOL-09 | Phase 6 | Complete |
+| TOOL-10 | Phase 6 | Complete |
+| TOOL-11 | Phase 6 | Complete |
 | TOOL-12 | Phase 6 | Pending |
 | TOOL-13 | Phase 6 | Pending |
 | TOOL-14 | Phase 6 | Pending |

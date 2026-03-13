@@ -39,12 +39,12 @@
 - [x] **CAREER-04**: Job market analysis page (63 to 3,342 postings, monthly breakdown)
 - [x] **CAREER-05**: How GTMEs got their jobs page (self-taught, agency, freelance breakdown)
 - [x] **CAREER-06**: Work-life balance page (60% work 40-60 hrs, 23% work 60+)
-- [ ] **CAREER-07**: Demographics page (median age 25, Gen Z, 32 countries)
-- [ ] **CAREER-08**: "GTM Engineer vs RevOps: The Convergence" page (9.6% predict convergence)
-- [ ] **CAREER-09**: "Do You Need to Code?" page (bimodal distribution, $45K premium)
-- [ ] **CAREER-10**: Reporting structure page (Sales and Marketing most common)
-- [ ] **CAREER-11**: Impact measurement page (most tie to measurable pipeline)
-- [ ] **CAREER-12**: Skills gap page (Clay, HubSpot, Salesforce, Python, SQL from postings)
+- [x] **CAREER-07**: Demographics page (median age 25, Gen Z, 32 countries)
+- [x] **CAREER-08**: "GTM Engineer vs RevOps: The Convergence" page (9.6% predict convergence)
+- [x] **CAREER-09**: "Do You Need to Code?" page (bimodal distribution, $45K premium)
+- [x] **CAREER-10**: Reporting structure page (Sales and Marketing most common)
+- [x] **CAREER-11**: Impact measurement page (most tie to measurable pipeline)
+- [x] **CAREER-12**: Skills gap page (Clay, HubSpot, Salesforce, Python, SQL from postings)
 
 ### Tool Pages
 
@@ -184,12 +184,12 @@
 | CAREER-04 | Phase 5 | Complete |
 | CAREER-05 | Phase 5 | Complete |
 | CAREER-06 | Phase 5 | Complete |
-| CAREER-07 | Phase 5 | Pending |
-| CAREER-08 | Phase 5 | Pending |
-| CAREER-09 | Phase 5 | Pending |
-| CAREER-10 | Phase 5 | Pending |
-| CAREER-11 | Phase 5 | Pending |
-| CAREER-12 | Phase 5 | Pending |
+| CAREER-07 | Phase 5 | Complete |
+| CAREER-08 | Phase 5 | Complete |
+| CAREER-09 | Phase 5 | Complete |
+| CAREER-10 | Phase 5 | Complete |
+| CAREER-11 | Phase 5 | Complete |
+| CAREER-12 | Phase 5 | Complete |
 | AGENCY-01 | Phase 5 | Pending |
 | AGENCY-02 | Phase 5 | Pending |
 | AGENCY-03 | Phase 5 | Pending |

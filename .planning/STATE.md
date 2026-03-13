@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: State of GTME Content Wave
 status: executing
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-03-13T18:36:28Z"
-last_activity: 2026-03-13 — 05-01 career pages (6 guides + index) complete
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-03-13T18:47:00Z"
+last_activity: 2026-03-13 — 05-02 career pages wave 2 (6 more guides, 12 total) complete
 progress:
   total_phases: 7
   completed_phases: 2
-  total_plans: 5
-  completed_plans: 5
-  percent: 40
+  total_plans: 9
+  completed_plans: 6
+  percent: 67
 ---
 
 # Project State
@@ -26,18 +26,18 @@ See: .planning/PROJECT.md (updated 2026-03-13)
 ## Current Position
 
 Phase: 5 of 7 (Career, Agency, and Job Market)
-Plan: 1 of 1 in current phase (done)
+Plan: 2 of 2 in current phase (done)
 Status: Executing
-Last activity: 2026-03-13 — 05-01 career pages (6 guides + index) complete
+Last activity: 2026-03-13 — 05-02 career pages wave 2 (6 more guides, 12 total) complete
 
-Progress: [████░░░░░░] 40%
+Progress: [███████░░░] 67%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: 8min
-- Total execution time: 34min
+- Total execution time: 41min
 
 *Updated after each plan completion*
 
@@ -61,6 +61,8 @@ Progress: [████░░░░░░] 40%
 - [v2.0 05-01]: Career pages reuse salary-header, salary-stats, salary-content CSS classes for visual consistency
 - [v2.0 05-01]: career_related_links() cross-links all career pages plus salary index and coding premium
 - [v2.0 05-01]: Career index uses salary-index-card grid pattern for consistency with salary index
+- [v2.0 05-02]: career_related_links() limit increased from 8 to 12 for all career pages
+- [v2.0 05-02]: CAREER_PAGES array expanded to 12 entries as single source of truth for index and cross-links
 
 ### Pending Todos
 
@@ -75,5 +77,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 05-01-PLAN.md
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None

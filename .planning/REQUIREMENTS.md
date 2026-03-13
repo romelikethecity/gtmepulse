@@ -1,141 +1,175 @@
-# Requirements: GTME Pulse
+# Requirements: GTME Pulse v2.0 — State of GTME Content Wave
 
-**Defined:** 2026-03-10
+**Defined:** 2026-03-13
 **Core Value:** GTM Engineers can find accurate, vendor-neutral salary benchmarks and career intelligence in one place, with data no competitor provides.
+**Data Source:** State of GTME Report 2026 (n=228, 32 countries) + Clay Job Data (3,342 postings via Sentrion)
 
-## v1 Requirements
+## v1.0 Requirements (Wave 1 — Prior Milestone)
 
-Requirements for Wave 1 release. Each maps to roadmap phases.
+*48 requirements across Build System, HTML Shell, Schema, Core Pages, Salary Pages, Newsletter, Content Standards. See git history for full v1.0 REQUIREMENTS.md.*
 
-### Build System
+## v2.0 Requirements
 
-- [ ] **BUILD-01**: 3-file Python build system (build.py, templates.py, nav_config.py) generates all pages to output/
-- [x] **BUILD-02**: CSS architecture with 3 layers (tokens.css, components.css, styles.css) using design token variables
-- [x] **BUILD-03**: write_page() function writes HTML files and registers them in ALL_PAGES for sitemap
-- [ ] **BUILD-04**: Auto-generated sitemap.xml from ALL_PAGES list
-- [ ] **BUILD-05**: Auto-generated robots.txt with sitemap reference
-- [ ] **BUILD-06**: Auto-generated CNAME file (gtmepulse.com)
-- [ ] **BUILD-07**: Build script copies assets/ directory to output/ with cache-busted CSS links (?v=CSS_VERSION)
-- [ ] **BUILD-08**: Build prints summary with page count on completion
+### Salary Data Update
 
-### HTML Shell
+- [ ] **SALUP-01**: Existing salary pages display real survey data ($135K US in-house median, $75K non-US, $60K-$250K+ range) replacing hardcoded estimates
+- [ ] **SALUP-02**: Every salary page cites "Source: State of GTM Engineering Report 2026 (n=228)" with sample size context
+- [ ] **SALUP-03**: Salary data dict in build.py is restructured to use real report numbers (by seniority, location, stage, role comparisons)
 
-- [x] **HTML-01**: get_html_head() generates complete head with title, meta description, canonical URL, OG tags, Twitter Card, favicons, fonts, CSS
-- [x] **HTML-02**: get_nav_html() generates responsive nav with logo, menu items, dropdown support, mobile hamburger, newsletter CTA button
-- [x] **HTML-03**: get_footer_html() generates multi-column footer with links, newsletter mini-signup, copyright
-- [x] **HTML-04**: get_page_wrapper() assembles full HTML page (head + nav + main + footer)
-- [x] **HTML-05**: Mobile-responsive layout at 375px, 768px, and 1024px breakpoints
+### New Salary Pages
 
-### Schema Markup
+- [ ] **SALN-01**: Salary page showing coding vs no-code compensation gap ($45K premium, bimodal skill distribution)
+- [ ] **SALN-02**: Salary page breaking down compensation by company size (201-1,000 employees pay most)
+- [ ] **SALN-03**: Salary page showing compensation by funding stage (Series B & D+ lead at $145K median)
+- [ ] **SALN-04**: Salary page showing compensation by experience level ($105K median <1yr, scaling up)
+- [ ] **SALN-05**: Salary page showing compensation by age bracket (36+ earns $140K median)
+- [ ] **SALN-06**: Page detailing GTM Engineer bonus structures (51% receive bonus, 56% get 10-25% of base)
+- [ ] **SALN-07**: Page analyzing GTM Engineer equity compensation (68% no meaningful equity, by funding stage)
+- [ ] **SALN-08**: Salary comparison page for US vs global markets (US $135K vs non-US $75K)
+- [ ] **SALN-09**: Page comparing posted salaries vs actual reported salaries (posted $150K vs reported $135K)
+- [ ] **SALN-10**: Agency fee guide page ($1K-$33K/mo range, median $5K-$8K/mo, pricing models)
+- [ ] **SALN-11**: Agency fee comparison page by region (US premium, APAC $3K, MEA $4K)
+- [ ] **SALN-12**: Salary comparison page for seed stage vs enterprise (equity trade-offs)
 
-- [x] **SEO-01**: Organization + WebSite JSON-LD schema on homepage (@graph pattern)
-- [x] **SEO-02**: BreadcrumbList JSON-LD schema on all inner pages
-- [x] **SEO-03**: FAQPage JSON-LD schema on salary breakdown and comparison pages (min 3 Q&A, matches visible content)
-- [x] **SEO-04**: All schema uses json.dumps() for safe serialization (never string concatenation)
+### Career & Breaking-In Pages
 
-### Core Pages
+- [ ] **CAREER-01**: "How to Become a GTM Engineer in 2026" guide (self-taught 121/228, top paths)
+- [ ] **CAREER-02**: Career path page on operator vs engineer bifurcation (bimodal coding, $45K gap)
+- [ ] **CAREER-03**: "Is GTM Engineering a Real Career?" page (5,205% surge, $135K median)
+- [ ] **CAREER-04**: Job market analysis page (63 to 3,342 postings, monthly breakdown)
+- [ ] **CAREER-05**: How GTMEs got their jobs page (self-taught, agency, freelance breakdown)
+- [ ] **CAREER-06**: Work-life balance page (60% work 40-60 hrs, 23% work 60+)
+- [ ] **CAREER-07**: Demographics page (median age 25, Gen Z, 32 countries)
+- [ ] **CAREER-08**: "GTM Engineer vs RevOps: The Convergence" page (9.6% predict convergence)
+- [ ] **CAREER-09**: "Do You Need to Code?" page (bimodal distribution, $45K premium)
+- [ ] **CAREER-10**: Reporting structure page (Sales and Marketing most common)
+- [ ] **CAREER-11**: Impact measurement page (most tie to measurable pipeline)
+- [ ] **CAREER-12**: Skills gap page (Clay, HubSpot, Salesforce, Python, SQL from postings)
 
-- [ ] **CORE-01**: Homepage with hero section, key stats grid (3,000+ roles, $132K-$250K range, 205% growth), section previews linking to salary/tools/career, newsletter CTA
-- [ ] **CORE-02**: About page with Rome Thorndike bio, site mission, methodology overview
-- [ ] **CORE-03**: Newsletter page with dedicated Resend signup form, value proposition, sample content preview
-- [ ] **CORE-04**: Privacy policy page
-- [ ] **CORE-05**: Terms of service page
-- [ ] **CORE-06**: Custom 404 error page with navigation back to main sections
+### Tool Pages
 
-### Salary Pages
+- [ ] **TOOL-01**: "GTM Engineer Tech Stack: 2026 Benchmark" page (full tooling adoption data)
+- [ ] **TOOL-02**: Clay deep-dive page (84% adoption, 96% agencies, most loved AND most frustrating)
+- [ ] **TOOL-03**: CRM adoption page (Salesforce/HubSpot 92%)
+- [ ] **TOOL-04**: AI coding tools page (Cursor & Claude Code 71% adoption)
+- [ ] **TOOL-05**: n8n adoption page (54% adoption, agency vs in-house usage)
+- [ ] **TOOL-06**: Tool frustrations page (integration, UX, docs as top complaints)
+- [ ] **TOOL-07**: "Most Exciting GTM Tools in 2026" page (Claude 39, Cursor 11, n8n 8)
+- [ ] **TOOL-08**: Unify analysis page (8.8% adoption despite positioning)
+- [ ] **TOOL-09**: Annual tool spend page (US vs non-US, 55% agencies $5-25K)
+- [ ] **TOOL-10**: ZoomInfo vs Apollo for GTM Engineers (65% adoption)
+- [ ] **TOOL-11**: Tool wishlist page (all-in-one outbound #1, AI SDR requested)
+- [ ] **TOOL-12**: Python for GTM Engineers page (coding skill data, salary impact)
+- [ ] **TOOL-13**: SQL for GTM Engineers page (job posting frequency, use cases)
+- [ ] **TOOL-14**: Zapier vs n8n for GTM Engineers (adoption, cost, agency preferences)
+- [ ] **TOOL-15**: HubSpot vs Salesforce for GTM Engineers (92% CRM, by company size)
+- [ ] **TOOL-16**: JavaScript for GTM Engineers page (posting frequency, vs Python)
 
-- [ ] **SAL-01**: Salary index page with aggregate stats, visual breakdowns, and links to all salary sub-pages
-- [ ] **SAL-02**: 4 salary-by-seniority pages (Junior/Associate, Mid-Level, Senior, Lead/Staff) with stats grid, range bar, market context, comp drivers, FAQ, related links
-- [ ] **SAL-03**: 15 salary-by-location pages (SF, NYC, Austin, Seattle, Boston, Denver, Chicago, LA, Miami, Atlanta, Portland, DC, Dallas, San Diego, Remote) with location-specific market context
-- [ ] **SAL-04**: 5 salary-by-company-stage pages (Seed, Series A, Series B, Growth, Enterprise) with equity context and stage-specific comp dynamics
-- [ ] **SAL-05**: 10 salary-vs-comparison pages (GTM Engineer vs RevOps, Sales Ops, Growth Engineer, SDR, Solutions Engineer, Marketing Ops, Sales Engineer, Data Engineer, Product Manager, AE) with side-by-side data, overlap analysis, career path notes
-- [ ] **SAL-06**: Salary calculator page with email-gated full percentile results via Resend signup
-- [ ] **SAL-07**: Methodology page explaining data sources, collection methods, limitations, and update frequency (must ship before salary content per research findings)
+### Agency & Freelance Pages
 
-### Salary Page Quality
+- [ ] **AGENCY-01**: Agency Pricing Guide ($5K-$8K/mo median, $1K-$33K range)
+- [ ] **AGENCY-02**: "How to Start a GTM Engineering Agency" guide (30% are agency/claygency)
+- [ ] **AGENCY-03**: Agency vs freelance revenue comparison (67 vs 30 respondents)
+- [ ] **AGENCY-04**: Client retention page (44% 3-6 month, 24% 6-12 month engagements)
+- [ ] **AGENCY-05**: Client count analysis (47% <5 clients, 33% 5-10)
+- [ ] **AGENCY-06**: Pricing models page (monthly most common, hybrid, project, pay-per-outcome)
+- [ ] **AGENCY-07**: Agency fees by region (US, APAC $3K, MEA $4K, Europe, LATAM)
+- [ ] **AGENCY-08**: Deliverability practices page (89.7% domain rotation)
 
-- [ ] **QUAL-01**: Every salary page has 1,200-2,000 words of content
-- [ ] **QUAL-02**: Every salary page has unique market context paragraphs (30%+ differentiated from other same-type pages)
-- [ ] **QUAL-03**: Every salary page has 3+ internal links beyond nav/footer
-- [ ] **QUAL-04**: Every salary comparison page has FAQ section with 3-4 unique Q&A pairs
-- [ ] **QUAL-05**: Stats display uses Source Code Pro font, no spaces in numbers ($132K not $132 K), non-breaking hyphens (&#8209;)
-- [ ] **QUAL-06**: Salary tables convert to card-stack layout on mobile (below 768px)
+### Job Market Pages
 
-### Newsletter Infrastructure
+- [ ] **JOBMKT-01**: Job growth page (5,205% surge, 63 to 3,342 postings)
+- [ ] **JOBMKT-02**: Jobs by country page (US 25.7%, India 17.4%, Spain 15.3%, UK 7.7%)
+- [ ] **JOBMKT-03**: Posted vs actual salary gap page ($150K vs $135K)
+- [ ] **JOBMKT-04**: Top skills in postings page (Clay, HubSpot, Salesforce, Python, SQL)
+- [ ] **JOBMKT-05**: Monthly hiring trends page (Jan-Dec 2025, Dec peaked 624)
+- [ ] **JOBMKT-06**: Salary bands by location from postings (US widest: $128K-$175K)
+- [ ] **JOBMKT-07**: India GTM Engineering market page (17.4%, 2nd largest)
+- [ ] **JOBMKT-08**: Spain/Europe GTM Engineer market page (15.3%, 3rd globally)
 
-- [ ] **NEWS-01**: Cloudflare Worker (subscribe.js) validates email and POSTs to Resend Audiences API
-- [ ] **NEWS-02**: Worker config (wrangler.toml) with name gtme-newsletter-signup
-- [ ] **NEWS-03**: CORS configured for gtmepulse.com and localhost:8090
-- [ ] **NEWS-04**: handleSignup() JS function in templates.py POSTs to Worker endpoint
-- [ ] **NEWS-05**: Signup form placements: homepage hero CTA, inline after salary data, /newsletter page, footer mini-form
-- [ ] **NEWS-06**: Success/error feedback shown to user after form submission
+### Benchmark & Statistics Pages
 
-### Content Standards
+- [ ] **BENCH-01**: "50 Key Numbers" roundup page (all top stats from report)
+- [ ] **BENCH-02**: Demographics deep-dive (228 respondents, 32 countries, distributions)
+- [ ] **BENCH-03**: Report summary and analysis page (editorial commentary)
+- [ ] **BENCH-04**: "Operator vs Engineer Divide" analysis (bimodal, salary gap, bifurcation)
+- [ ] **BENCH-05**: Bottlenecks page (25% bandwidth, 17% tool complexity, 8% buy-in)
+- [ ] **BENCH-06**: "Does Your Company Understand GTM Engineering?" (45% yes, 9% partially)
+- [ ] **BENCH-07**: Learning resources page (LinkedIn 174, YouTube, Peers)
+- [ ] **BENCH-08**: Headcount trends page (majority plan to grow in 2026)
+- [ ] **BENCH-09**: Future of GTM Engineering page (AI, RevOps convergence, agents, consolidation)
 
-- [ ] **CONTENT-01**: Title tags 50-60 chars, keyword-first, hyphens not pipes
-- [ ] **CONTENT-02**: Meta descriptions 150-158 chars, action-oriented, unique per page
-- [ ] **CONTENT-03**: One H1 per page, 46-60 chars
-- [ ] **CONTENT-04**: No banned words (robust, leverage, seamless, etc. per CLAUDE.md)
-- [ ] **CONTENT-05**: No em-dashes anywhere
-- [ ] **CONTENT-06**: No false reframes ("not X, it's Y" pattern)
+### Comparison Pages
 
-## v2 Requirements
+- [ ] **COMP-01**: "GTM Engineer vs GTM Operator: The $45K Difference" page
+- [ ] **COMP-02**: In-house vs agency comparison (56% in-house vs 30% agency)
+- [ ] **COMP-03**: GTM Engineer vs AI SDR page (replacement predictions)
+- [ ] **COMP-04**: US vs Europe vs APAC salary comparison (regional data)
+- [ ] **COMP-05**: Seed stage vs Series B compensation comparison
+- [ ] **COMP-06**: Technical vs low-code operator comparison (skills, salary, trajectory)
 
-Deferred to future waves. Tracked but not in current roadmap.
+### Long-Tail Blog Articles
 
-### Tools (Wave 2)
+- [ ] **BLOG-01**: "Why 68% of GTM Engineers Have No Meaningful Equity" article
+- [ ] **BLOG-02**: "The $45K Coding Premium" article
+- [ ] **BLOG-03**: "60% of In-House GTMEs Work 40-60 Hours a Week" article
+- [ ] **BLOG-04**: "GTM Engineering Is a Gen Z Function" article (median age 25)
+- [ ] **BLOG-05**: "Why Clay Is Both the Most Loved and Most Hated GTM Tool" article
+- [ ] **BLOG-06**: "LATAM and APAC Are Agency-Driven GTM Markets" article
+- [ ] **BLOG-07**: "The GTM Engineer Title Is Getting Watered Down" article
+- [ ] **BLOG-08**: "Pre-Seed GTM Engineers Get the Best Equity Deals" article
+- [ ] **BLOG-09**: "Most GTM Engineers Are Self-Taught" article (121/228)
+- [ ] **BLOG-10**: "91% of GTM Engineers Do Lead Gen (But That's Not All)" article
+- [ ] **BLOG-11**: "The All-in-One Outbound Tool Doesn't Exist Yet" article
+- [ ] **BLOG-12**: "GTM Engineer Bonus Data: 51% Get One" article
+- [ ] **BLOG-13**: "December 2025: The Month GTM Engineering Exploded" article
+- [ ] **BLOG-14**: "Why Mid-Size Companies Pay GTMEs the Most" article
 
-- **TOOL-01**: 30 individual tool review pages across 8 categories
-- **TOOL-02**: Tools index + 8 category pages
-- **TOOL-03**: 20 X vs Y comparison pages
-- **TOOL-04**: 10 alternatives pages
-- **TOOL-05**: 10 "Best for" roundup pages
-- **TOOL-06**: SoftwareApplication schema on tool review pages
+### Content Quality & SEO
 
-### Career (Wave 3)
+- [ ] **QUAL2-01**: Every new page has unique title (50-60 chars), meta description (150-158 chars), canonical URL, OG/Twitter Card
+- [ ] **QUAL2-02**: Every new page has BreadcrumbList JSON-LD schema
+- [ ] **QUAL2-03**: Every new page has 3+ internal links beyond nav/footer
+- [ ] **QUAL2-04**: Salary, career, tool, and benchmark pages have 1,200-2,000 words
+- [ ] **QUAL2-05**: Blog articles have 1,500-2,500 words each
+- [ ] **QUAL2-06**: Comparison and analysis pages include FAQ section (3-4 Q&A) with FAQPage JSON-LD
+- [ ] **QUAL2-07**: No duplicate titles or meta descriptions across entire site
+- [ ] **QUAL2-08**: All stat references cite State of GTME Report 2026 as source
+- [ ] **QUAL2-09**: All pages follow writing standards (no em-dashes, no false reframes, no banned words)
 
-- **CAREER-01**: Career guide index + 15 career guide pages
-- **CAREER-02**: Glossary index + 50 individual term pages
+## Future Requirements
 
-### Jobs & Insights (Wave 4)
+### v2.1+ (Deferred)
 
-- **JOBS-01**: Job board page wired to unified scraper exports
-- **JOBS-02**: Weekly email generation and automated Monday sends
-- **JOBS-03**: Insight articles (job market analysis, tool trends)
+- **FUTURE-01**: 30 individual tool review pages with deep reviews
+- **FUTURE-02**: 8 tool category index pages
+- **FUTURE-03**: 10 "Best for" roundup pages
+- **FUTURE-04**: 10 alternatives pages
+- **FUTURE-05**: 50 glossary term pages
+- **FUTURE-06**: Job board page wired to scraper data
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Occupation/estimatedSalary schema | Google deprecated salary structured data in Sep 2025 |
-| Dark mode toggle UI | tokens.css has dark mode vars but no toggle needed for v1 |
-| OG image auto-generation | Playwright rendering is nice-to-have, not required for launch |
-| Paywall/subscription model | All content free for SEO; only calculator gated behind email |
-| User accounts/login | Static site, no backend |
-| Comments/community features | Content-first, no UGC |
-| Analytics integration | Defer to post-launch (recommend Cloudflare Web Analytics) |
-| A/B testing | Premature for a new site |
+| Interactive data visualizations (charts) | Static site, no JS frameworks. Use HTML/CSS range bars. |
+| User-generated comments | No backend. Static site only. |
+| PDF download of report | Copyright belongs to OneGTM. Cite and link, don't redistribute. |
+| Real-time job posting counts | Requires scraper integration (Wave 4). Use report point-in-time data. |
+| Video content or podcasts | Text-first strategy. |
+| Gated content beyond calculator | Keep most content free for SEO. |
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BUILD-01 through BUILD-08 | Phase 1 | Pending |
-| HTML-01 through HTML-05 | Phase 1 | Pending |
-| SEO-01 through SEO-04 | Phase 1 | Pending |
-| CONTENT-01 through CONTENT-06 | Phase 1 | Pending |
-| CORE-01 through CORE-06 | Phase 2 | Pending |
-| NEWS-01 through NEWS-06 | Phase 2 | Pending |
-| SAL-01 through SAL-07 | Phase 3 | Pending |
-| QUAL-01 through QUAL-06 | Phase 3 | Pending |
+| (Populated during roadmap creation) | | |
 
 **Coverage:**
-- v1 requirements: 48 total (BUILD:8, HTML:5, SEO:4, CONTENT:6, CORE:6, NEWS:6, SAL:7, QUAL:6)
-- Mapped to phases: 48
-- Unmapped: 0
+- v2.0 requirements: 88 total (SALUP:3, SALN:12, CAREER:12, TOOL:16, AGENCY:8, JOBMKT:8, BENCH:9, COMP:6, BLOG:14, QUAL2:9)
+- Mapped to phases: 0
+- Unmapped: 88
 
 ---
-*Requirements defined: 2026-03-10*
-*Last updated: 2026-03-10 after roadmap creation*
+*Requirements defined: 2026-03-13*
+*Last updated: 2026-03-13 after initial definition*

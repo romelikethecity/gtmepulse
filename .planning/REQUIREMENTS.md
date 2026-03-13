@@ -59,11 +59,11 @@
 - [x] **TOOL-09**: Annual tool spend page (US vs non-US, 55% agencies $5-25K)
 - [x] **TOOL-10**: ZoomInfo vs Apollo for GTM Engineers (65% adoption)
 - [x] **TOOL-11**: Tool wishlist page (all-in-one outbound #1, AI SDR requested)
-- [ ] **TOOL-12**: Python for GTM Engineers page (coding skill data, salary impact)
-- [ ] **TOOL-13**: SQL for GTM Engineers page (job posting frequency, use cases)
-- [ ] **TOOL-14**: Zapier vs n8n for GTM Engineers (adoption, cost, agency preferences)
-- [ ] **TOOL-15**: HubSpot vs Salesforce for GTM Engineers (92% CRM, by company size)
-- [ ] **TOOL-16**: JavaScript for GTM Engineers page (posting frequency, vs Python)
+- [x] **TOOL-12**: Python for GTM Engineers page (coding skill data, salary impact)
+- [x] **TOOL-13**: SQL for GTM Engineers page (job posting frequency, use cases)
+- [x] **TOOL-14**: Zapier vs n8n for GTM Engineers (adoption, cost, agency preferences)
+- [x] **TOOL-15**: HubSpot vs Salesforce for GTM Engineers (92% CRM, by company size)
+- [x] **TOOL-16**: JavaScript for GTM Engineers page (posting frequency, vs Python)
 
 ### Agency & Freelance Pages
 
@@ -217,11 +217,11 @@
 | TOOL-09 | Phase 6 | Complete |
 | TOOL-10 | Phase 6 | Complete |
 | TOOL-11 | Phase 6 | Complete |
-| TOOL-12 | Phase 6 | Pending |
-| TOOL-13 | Phase 6 | Pending |
-| TOOL-14 | Phase 6 | Pending |
-| TOOL-15 | Phase 6 | Pending |
-| TOOL-16 | Phase 6 | Pending |
+| TOOL-12 | Phase 6 | Complete |
+| TOOL-13 | Phase 6 | Complete |
+| TOOL-14 | Phase 6 | Complete |
+| TOOL-15 | Phase 6 | Complete |
+| TOOL-16 | Phase 6 | Complete |
 | BENCH-01 | Phase 6 | Pending |
 | BENCH-02 | Phase 6 | Pending |
 | BENCH-03 | Phase 6 | Pending |

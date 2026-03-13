@@ -5559,6 +5559,11 @@ TOOL_PAGES = [
     {"slug": "salesloft-adoption", "title": "Salesloft Adoption"},
     {"slug": "phantombuster-adoption", "title": "PhantomBuster Adoption"},
     {"slug": "lemlist-adoption", "title": "Lemlist Adoption"},
+    {"slug": "python", "title": "Python for GTM Engineers"},
+    {"slug": "sql", "title": "SQL for GTM Engineers"},
+    {"slug": "javascript", "title": "JavaScript vs Python"},
+    {"slug": "zapier-vs-n8n", "title": "Zapier vs n8n"},
+    {"slug": "hubspot-vs-salesforce", "title": "HubSpot vs Salesforce"},
 ]
 
 # Built tool slugs - pages with live content
@@ -5566,6 +5571,7 @@ BUILT_TOOL_SLUGS = {
     "tech-stack-benchmark", "clay", "crm-adoption", "ai-coding-tools", "n8n-adoption",
     "frustrations", "most-exciting", "unify-analysis",
     "annual-spend", "zoominfo-vs-apollo", "tool-wishlist",
+    "python", "sql", "javascript", "zapier-vs-n8n", "hubspot-vs-salesforce",
 }
 
 
@@ -6793,6 +6799,297 @@ def build_tool_wishlist():
     print(f"  Built: tools/tool-wishlist/index.html")
 
 
+def build_tool_python():
+    """Python for GTM Engineers: skills and salary data."""
+    title = "Python for GTM Engineers: Skills, Salary Data"
+    description = (
+        "Python skills data from 228 GTM Engineers. Coding premium of $45K,"
+        " adoption rates, common use cases, and learning path for 2026."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("Python", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Do GTM Engineers need to know Python?",
+         "Not all of them, but those who do earn $45K more on average. Python appears in roughly 30% of GTM Engineer job postings. The distribution is bimodal: power users write full API integrations and data pipelines, while non-coders rely on no-code tools like Clay and Make. AI coding tools like Claude Code and Cursor have lowered the barrier, so practitioners who previously avoided code are starting to write Python with AI assistance."),
+        ("What do GTM Engineers use Python for?",
+         "The most common Python use cases are API integrations (connecting tools that lack native connectors), data transformation (cleaning enrichment data, deduplicating records, formatting CSVs), Clay webhook handlers (custom enrichment logic that runs server-side), and custom enrichment scripts (scraping, NLP classification, lead scoring). Python replaces manual spreadsheet work at scale."),
+        ("Should I learn Python or stick with no-code tools?",
+         "If you handle fewer than 500 records per week and your tools integrate natively, no-code is fine. If you hit limits on Clay credits, need custom data transformations, or find yourself doing repetitive spreadsheet work, Python pays for itself fast. Start with API calls and CSV manipulation. Skip web frameworks and machine learning. GTM Python is narrow and practical."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>Python for GTM Engineers: Skills and Salary</h1>
+        <p>Python skills correlate with a $45K salary premium for GTM Engineers. But adoption is bimodal: power users who write daily scripts and non-coders who avoid it entirely. From 228 survey responses.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Coding Premium</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~30%</span>
+        <span class="stat-label">Job Posting Frequency</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">AI Coding Tool Adoption</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The $45K Question</h2>
+    <p>GTM Engineers who code earn $45K more than those who don't. Python is the primary language driving that gap. It shows up in about 30% of job postings that mention coding requirements, and the practitioners who use it daily report higher compensation, more job options, and faster career progression.</p>
+    <p>But the Python story in GTM Engineering is more nuanced than "learn Python, make more money." The skill distribution is bimodal. One group writes Python daily for API integrations, data pipelines, and custom enrichment scripts. The other group has never opened a terminal and does everything through Clay, Make, and Zapier. There's very little middle ground.</p>
+    <p>The practitioners earning that $45K premium aren't casual Python users. They're building webhook handlers, writing custom Clay integrations, automating data transformations that would take hours in spreadsheets, and connecting tools that don't have native integrations. The premium rewards capability, not just familiarity.</p>
+
+    <h2>How GTM Engineers Use Python</h2>
+    <p>GTM Python looks nothing like software engineering Python. There are no web frameworks, no machine learning models, no distributed systems. The use cases are narrow and practical.</p>
+    <p><strong>API integrations.</strong> Connecting tools that don't talk to each other natively. Pulling data from one API, transforming it, pushing to another. A typical script: fetch leads from Apollo, enrich with a custom data source, push to HubSpot with proper field mapping. Twenty lines of Python replace an hour of manual work per day.</p>
+    <p><strong>Data transformation.</strong> Cleaning enrichment data is the most common Python task. Deduplicating records across sources, normalizing company names (is it "Salesforce" or "Salesforce, Inc." or "SFDC"?), standardizing phone number formats, parsing messy CSVs from client uploads. Pandas is the workhorse library here.</p>
+    <p><strong>Clay webhook handlers.</strong> Clay's webhook steps let you call external code during a workflow. Python scripts hosted on Railway, Render, or a simple Flask server handle custom logic: NLP classification of prospect descriptions, lead scoring based on proprietary models, lookups against internal databases. This is where Python gives you capabilities no-code tools can't match.</p>
+    <p><strong>Custom enrichment.</strong> When Clay's built-in enrichment providers don't cover your niche, Python fills the gap. Scraping company tech stacks from job postings. Extracting decision-maker names from press releases. Building custom intent signals from public data. These scripts run on schedules and feed fresh data into your enrichment workflows.</p>
+    <p><strong>Reporting automation.</strong> Weekly client reports that pull data from multiple sources, calculate metrics, and generate formatted outputs. Instead of spending Friday afternoon copying numbers between tabs, a Python script produces the report in seconds. Some agencies have automated their entire reporting pipeline, freeing up hours per client per week.</p>
+
+    <h2>The Bimodal Distribution</h2>
+    <p>Survey data shows a clear split. Approximately 40% of respondents write code regularly (daily or weekly). About 45% never write code. The remaining 15% fall somewhere in between, writing occasional scripts or modifying existing code.</p>
+    <p>This bimodal pattern exists because the role itself is bimodal. Agency GTM Engineers who manage multiple client stacks need the flexibility that coding provides. In-house GTM Engineers at companies with established tool ecosystems often don't, because someone else configured the integrations.</p>
+    <p>The split also maps to career trajectory. Practitioners who code tend to move toward senior and lead roles faster. Those who don't tend to specialize in specific tool expertise (becoming the Clay expert or the Salesforce admin). Both paths are viable, but they lead to different compensation ranges and job descriptions.</p>
+
+    <h2>Python vs No-Code for Common Workflows</h2>
+    <p>The honest answer: no-code tools handle 80% of GTM workflows just fine. Clay, Make, n8n, and Zapier cover standard enrichment, sequencing, and CRM updates. You don't need Python to build a functioning outbound system.</p>
+    <p>Python becomes necessary for the other 20%. Custom data sources. Complex transformation logic. High-volume processing where per-task pricing on Zapier or Make adds up. Anything requiring conditional logic more complex than a few if/else branches.</p>
+    <p>The economics: a Clay workflow that processes 10,000 records per month at $0.01 per step across 8 steps costs $800/month. A Python script doing the same thing on a $7/month server costs $7/month. At scale, the cost difference justifies learning Python even if the upfront investment is steep.</p>
+    <p>For small volumes (under 500 records/week), no-code wins on speed-to-deploy. For large volumes or complex logic, Python wins on cost and flexibility. Most practitioners who learn Python still use Clay and Make for the workflows those tools handle well. It's additive, not a replacement.</p>
+
+    <h2>The AI Coding Accelerator</h2>
+    <p>71% of GTM Engineers now use AI coding tools. This is the single biggest change in the Python adoption story. Cursor, Claude Code, and ChatGPT have made Python accessible to practitioners who would never have learned it otherwise.</p>
+    <p>The pattern: describe what you want in English, get working Python code, run it, iterate. A GTM Engineer who can clearly describe "I need a script that takes this CSV, calls the Apollo API for each row, and writes the enriched data to a new CSV" can now get that script written in minutes. The AI handles the syntax. The human handles the logic and domain knowledge.</p>
+    <p>This hasn't eliminated the coding premium. Practitioners who understand Python can review AI-generated code, debug it when it breaks, and architect multi-step systems. Those who use AI as a black box hit a ceiling when the generated code doesn't work and they can't diagnose why. But AI has widened the pool of practitioners who can write functional Python, and that's compressing the experience gap between coders and non-coders.</p>
+
+    <h2>Learning Path for GTM Engineers</h2>
+    <p>If you're a non-coder considering Python, here's the order that produces the fastest ROI for GTM work:</p>
+    <p><strong>Week 1-2:</strong> Python basics. Variables, loops, functions, dictionaries. Skip classes and object-oriented programming. You won't need them for GTM scripts. Use <a href="/tools/ai-coding-tools/">AI coding tools</a> from day one.</p>
+    <p><strong>Week 3-4:</strong> The requests library. Making API calls, handling JSON responses, authentication patterns (API keys, OAuth). This is the foundation for everything else. Build a script that pulls data from an API you already use (Apollo, HubSpot, Clay).</p>
+    <p><strong>Week 5-6:</strong> CSV and data manipulation with pandas. Reading, filtering, transforming, and writing CSVs. This replaces hours of spreadsheet work. Build a script that cleans a messy client data file.</p>
+    <p><strong>Week 7-8:</strong> Simple web server with Flask. This lets you build Clay webhook handlers and receive data from other tools. Deploy it to Railway or Render. Build a webhook that accepts Clay data, processes it, and returns enriched results.</p>
+    <p>That's it. Eight weeks gets you to functional. You don't need Django, machine learning, or data science libraries. GTM Python is requests, pandas, Flask, and the specific API libraries for your tools.</p>
+    <p>For the salary impact of adding coding skills, see the <a href="/salary/coding-premium/">coding premium analysis</a>. For whether you need to code at all, check <a href="/careers/do-you-need-to-code/">do you need to code</a>. And for the AI tools that make this easier, see <a href="/tools/ai-coding-tools/">AI coding tools</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("python")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly Python tips and GTM automation patterns.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/python/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/python/index.html", page)
+    print(f"  Built: tools/python/index.html")
+
+
+def build_tool_sql():
+    """SQL for GTM Engineers: job posting data and practical use cases."""
+    title = "SQL for GTM Engineers: Job Posting Data (2026)"
+    description = (
+        "SQL demand data from GTM Engineer job postings. Which companies require"
+        " it, practical use cases, and how SQL compares to spreadsheet skills."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("SQL", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Do GTM Engineers need SQL?",
+         "It depends on the company. Enterprise teams with Salesforce and data warehouses list SQL in about 25% of job postings. Startup and agency roles rarely require it. SQL is most valuable when you need to query CRM data directly, build custom reports from data warehouses like BigQuery or Snowflake, or validate enrichment data at scale. For most GTM Engineers, knowing basic SELECT statements and JOINs is enough."),
+        ("What SQL do GTM Engineers use?",
+         "The most common SQL for GTM Engineers is reading data, not writing it. SELECT queries with WHERE filters, JOINs across tables, GROUP BY for aggregation, and basic subqueries. Salesforce uses SOQL (a SQL variant) for custom reports and automation. HubSpot custom reports use a SQL-like query builder. BigQuery and Snowflake use standard SQL for data warehouse access. You rarely need stored procedures, triggers, or database administration skills."),
+        ("Is SQL or Python more valuable for GTM Engineers?",
+         "Python has a larger salary impact ($45K coding premium) and broader application. SQL is more commonly listed in enterprise job postings but produces a smaller direct salary bump. The ideal combination: Python for automation and API integrations, SQL for querying data warehouses and CRM databases. If you pick one, Python offers more versatility. If you already work with enterprise data, SQL fills an immediate gap."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>SQL for GTM Engineers: Job Posting Data</h1>
+        <p>SQL appears in about 25% of GTM Engineer job postings, concentrated in enterprise roles with data warehouse access. It's a secondary skill behind Python, but the right companies pay well for it. From job posting analysis and 228 survey responses.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">~25%</span>
+        <span class="stat-label">Job Posting Frequency</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">Enterprise</span>
+        <span class="stat-label">Primary Demand Source</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">SOQL</span>
+        <span class="stat-label">Salesforce Variant</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Where SQL Shows Up in GTM Engineering</h2>
+    <p>SQL demand in GTM Engineer roles follows a clear pattern: the bigger the company, the more likely they want SQL. Enterprise teams running Salesforce, with data flowing into Snowflake or BigQuery, need someone who can pull data without waiting for a BI analyst. That someone is often the GTM Engineer.</p>
+    <p>At startups and agencies, SQL is rarely mentioned. The data lives in Clay, Apollo, and spreadsheets. You don't need SQL to query a CSV. The tools handle data access through their own interfaces, and workflow automation handles the connections between them.</p>
+    <p>The split creates a career consideration. If you're targeting enterprise GTM Engineering roles at companies with 500+ employees, SQL is worth learning. If you're focused on agency work or startup roles, your time is better spent on Python and tool-specific skills.</p>
+
+    <h2>Practical SQL Use Cases for GTM Engineers</h2>
+    <p><strong>Salesforce SOQL queries.</strong> Salesforce uses SOQL (Salesforce Object Query Language), a SQL variant for querying its database. GTM Engineers use SOQL to pull custom lead lists, audit data quality, and build reports that Salesforce's standard reporting can't handle. Example: finding all leads created in the last 90 days with no activity, grouped by source. That's a simple SOQL query that would take 30 minutes of manual filtering in the Salesforce UI.</p>
+    <p><strong>Data warehouse access.</strong> Companies using BigQuery, Snowflake, or Redshift store marketing and sales data in a centralized warehouse. GTM Engineers query these warehouses to analyze campaign performance, identify intent signals from product usage data, and build custom attribution models. The queries are standard SQL with JOINs across event tables, user tables, and CRM sync tables.</p>
+    <p><strong>HubSpot custom reports.</strong> HubSpot's custom report builder uses a SQL-like interface for complex queries. While most reports use the drag-and-drop builder, advanced analytics (cohort analysis, multi-touch attribution) require understanding joins, filters, and aggregations. Practitioners who know SQL build better HubSpot reports because they understand what the query builder is doing under the hood.</p>
+    <p><strong>Enrichment data validation.</strong> After running enrichment workflows, GTM Engineers need to verify data quality at scale. SQL queries against a staging database or data warehouse answer questions like: what percentage of records have valid email addresses? Which enrichment source produced the most duplicates? How many records changed industry classification after re-enrichment? These validation queries catch data quality issues before bad data reaches the CRM.</p>
+    <p><strong>Pipeline and revenue reporting.</strong> GTM Engineers at enterprise companies build pipeline reports that combine CRM data with marketing data. SQL joins between Salesforce opportunity data and marketing attribution data produce the multi-touch reports that revenue leaders want. Building these in SQL is faster and more flexible than using pre-built BI dashboards.</p>
+
+    <h2>Which Companies Require SQL</h2>
+    <p>The pattern is straightforward. Series B and later companies with dedicated data infrastructure list SQL as a requirement. These organizations have data warehouses, BI tools, and data engineering teams that have built the foundation. They want GTM Engineers who can work with that infrastructure.</p>
+    <p>Seed and Series A companies almost never require SQL. Their data lives in SaaS tools, not warehouses. The GTM Engineer's job is connecting those tools and building outbound systems, not querying databases.</p>
+    <p>Agencies fall somewhere in between. Large agencies with enterprise clients sometimes need SQL to work with client data warehouses. Smaller agencies focused on startups don't. If an agency job posting mentions SQL, it's a signal that they handle enterprise accounts.</p>
+    <p>Geographic patterns exist too. SQL demand is higher in job postings from traditional tech hubs (San Francisco, New York, Seattle) where enterprise companies cluster. Remote-friendly postings from newer companies are less likely to require it.</p>
+
+    <h2>SQL vs Spreadsheet Formulas</h2>
+    <p>Many GTM Engineers who don't know SQL accomplish similar tasks with spreadsheets. VLOOKUP, INDEX/MATCH, QUERY functions in Google Sheets, and pivot tables handle smaller data sets. The question is where spreadsheets hit their limits.</p>
+    <p>Under 10,000 rows: spreadsheets are fine. The formulas work, the data loads quickly, and collaboration is easy. Most agency GTM Engineers never work with data sets larger than this for a single client engagement.</p>
+    <p>Between 10,000 and 100,000 rows: spreadsheets slow down. Formulas take seconds to recalculate. Pivot tables lag. This is where SQL starts to pay off. A query that takes 30 seconds in BigQuery would crash a Google Sheet.</p>
+    <p>Above 100,000 rows: spreadsheets aren't an option. Enterprise GTM Engineers working with product usage data, intent signals, or historical CRM records routinely handle millions of rows. SQL is the only practical tool at this scale.</p>
+    <p>The transition point for most GTM Engineers: when you find yourself waiting for spreadsheets to load, or when you're splitting large exports into multiple files to avoid Excel's row limit. That's when SQL becomes a time-saver rather than a nice-to-have.</p>
+
+    <h2>SQL vs Python for GTM Data Work</h2>
+    <p>SQL and Python serve different purposes. SQL reads data from databases. Python transforms data and connects systems. They complement each other rather than compete.</p>
+    <p>The common pattern: use SQL to pull a data set from a warehouse, then use Python to transform it and push it somewhere else. Pull leads from BigQuery with a SQL query, clean them with a Python script using pandas, and load them into HubSpot via the API. Each tool handles the part it's best at.</p>
+    <p>If you're choosing between learning SQL or Python first, the answer depends on your current role. Enterprise GTM Engineer with data warehouse access? SQL gives you immediate value. Agency GTM Engineer or startup role? Python's versatility makes it the better first investment.</p>
+    <p>For the full analysis of coding's impact on GTM Engineer compensation, see the <a href="/salary/coding-premium/">coding premium data</a>. For Python-specific skills and learning path, check the <a href="/tools/python/">Python for GTM Engineers</a> guide. And for the broader skills demand picture, see the <a href="/careers/skills-gap/">skills gap analysis</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("sql")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM data skills and career intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/sql/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/sql/index.html", page)
+    print(f"  Built: tools/sql/index.html")
+
+
+def build_tool_javascript():
+    """JavaScript for GTM Engineers vs Python comparison."""
+    title = "JavaScript for GTM Engineers vs Python (2026)"
+    description = (
+        "JavaScript vs Python for GTM Engineers. Where JS shows up in Clay,"
+        " n8n, and webhook work. Adoption data and when to learn which."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), ("JavaScript", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Do GTM Engineers use JavaScript?",
+         "Some do, but less frequently than Python. JavaScript appears in about 15% of GTM Engineer job postings, compared to 30% for Python. JS shows up in specific contexts: Clay code steps (which run JavaScript), n8n code nodes, webhook handlers built with Node.js, and browser automation scripts. Most GTM Engineers who write JavaScript do so within tool-specific code blocks rather than building standalone applications."),
+        ("Should GTM Engineers learn JavaScript or Python first?",
+         "Python first in almost every case. Python has broader application in GTM work (API integrations, data transformation, custom enrichment), a larger salary impact, and more learning resources aimed at non-developers. JavaScript becomes useful when you work heavily with Clay code steps or browser automation. The exception: if you come from a web development background and already know JavaScript, you can apply it to GTM work immediately."),
+        ("What is TypeScript and do GTM Engineers need it?",
+         "TypeScript is JavaScript with type annotations that catch errors before code runs. A small number of GTM Engineers use TypeScript in more complex webhook handlers and API integrations where type safety prevents bugs in production. Most GTM Engineers writing JavaScript for Clay steps or n8n nodes don't need TypeScript. It adds overhead without much benefit for short scripts. If you find yourself writing JavaScript files longer than 200 lines, TypeScript starts to help."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>JavaScript for GTM Engineers vs Python</h1>
+        <p>JavaScript plays a supporting role in the GTM Engineer stack. It appears in about 15% of job postings, mostly for Clay code steps, webhook handlers, and browser automation. Python dominates for heavier automation work. Here's where each fits. From 228 survey responses and job posting analysis.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">~15%</span>
+        <span class="stat-label">JS in Job Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~30%</span>
+        <span class="stat-label">Python in Job Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Clay Adoption (JS&#8209;Native)</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>JavaScript in the GTM Stack: A Supporting Role</h2>
+    <p>JavaScript isn't the primary coding language for GTM Engineers, but it shows up in specific, important places. Clay's code steps run JavaScript. n8n's code nodes default to JavaScript. Browser automation libraries (Puppeteer, Playwright) are JavaScript-native. And many webhook handlers run on Node.js because it handles concurrent requests well.</p>
+    <p>The distinction matters: GTM Engineers rarely build JavaScript applications. They write JavaScript snippets within other tools. A Clay code step might be 15 lines of JS that transforms data between workflow steps. An n8n code node might parse a webhook payload. These are focused, short pieces of code embedded in larger no-code workflows.</p>
+    <p>Python, by contrast, is used for standalone scripts and full automation pipelines. The difference in scope explains the difference in demand: Python appears in twice as many job postings because employers want people who can build independent systems, not just write code blocks within Clay.</p>
+
+    <h2>Where JavaScript Appears in GTM Work</h2>
+    <p><strong>Clay code steps.</strong> Clay's built-in code execution environment runs JavaScript. When a workflow needs custom logic between steps (data parsing, conditional routing, text formatting), practitioners write JS directly in Clay. This is the most common JavaScript touchpoint for GTM Engineers. If you use Clay daily (84% of surveyed practitioners do), you'll eventually write a code step.</p>
+    <p><strong>n8n code nodes.</strong> n8n's code node supports both JavaScript and Python, but JavaScript is the default and has better documentation within n8n. For the 54% of GTM Engineers using n8n, JavaScript code nodes handle data transformations that n8n's built-in nodes can't. Common patterns: reformatting dates, extracting substrings from messy data, building dynamic API request bodies.</p>
+    <p><strong>Webhook handlers.</strong> Node.js (server-side JavaScript) is popular for lightweight webhook endpoints. A GTM Engineer might deploy a small Express.js server on Railway that receives webhook events from multiple tools, processes them, and routes data to the right destination. Node.js handles concurrent webhook requests efficiently, which matters when multiple Clay workflows fire simultaneously.</p>
+    <p><strong>Browser automation.</strong> Puppeteer and Playwright are JavaScript libraries for controlling web browsers programmatically. GTM Engineers use them for scraping data from websites that block traditional API access, automating LinkedIn actions (within platform limits), and taking screenshots for client reporting. While Python has Selenium and Playwright bindings too, the JavaScript ecosystem for browser automation is more mature.</p>
+    <p><strong>Bookmarklets and browser extensions.</strong> Quick browser-based tools that GTM Engineers build for personal productivity: a bookmarklet that extracts structured data from a LinkedIn profile, a Chrome extension that formats lead data for quick CRM entry. These are small JavaScript projects that save minutes per day and accumulate into significant time savings.</p>
+
+    <h2>JavaScript vs Python: When to Use Which</h2>
+    <p><strong>Use JavaScript when:</strong> you're writing code inside Clay or n8n, building a webhook handler that needs high concurrency, doing browser automation with Puppeteer/Playwright, or writing quick browser-based tools. JavaScript excels in the browser and in event-driven server applications.</p>
+    <p><strong>Use Python when:</strong> you're building standalone automation scripts, working with data transformation at scale (pandas), making API integrations between tools, doing any data analysis or reporting, or building custom enrichment pipelines. Python's library ecosystem for data work is broader and better documented.</p>
+    <p><strong>Use both when:</strong> your workflow involves Clay code steps (JS) that trigger external Python scripts for heavy processing, or when you need browser automation (JS) feeding data into a transformation pipeline (Python). Experienced GTM Engineers often use both languages, picking whichever fits the specific task.</p>
+    <p>The salary data supports Python as the higher-value investment. The $45K coding premium correlates more strongly with Python proficiency than JavaScript proficiency, likely because Python enables broader automation capabilities. But GTM Engineers who know both languages command the highest premiums because they can work within any tool's code environment.</p>
+
+    <h2>TypeScript in the GTM Stack</h2>
+    <p>TypeScript adds type annotations to JavaScript. It catches certain categories of bugs before code runs, which matters for longer scripts and production systems. A growing minority of GTM Engineers use TypeScript for webhook handlers and more complex integrations.</p>
+    <p>For Clay code steps and n8n nodes, TypeScript is overkill. A 15-line data transformation doesn't benefit from type safety. The overhead of setting up TypeScript compilation isn't worth it for disposable scripts.</p>
+    <p>For webhook handlers that run in production and process thousands of events per day, TypeScript helps. A type error in a webhook handler can silently corrupt data for hours before someone notices. TypeScript catches those errors at compile time instead of runtime.</p>
+    <p>The practical advice: ignore TypeScript until you're writing JavaScript files longer than 200 lines that run in production. When you reach that threshold, TypeScript's bug prevention justifies the setup cost.</p>
+
+    <h2>Learning JavaScript as a GTM Engineer</h2>
+    <p>If you already know Python, JavaScript takes 2-3 weeks to become productive. The syntax is similar enough that the learning curve is mostly about JavaScript-specific patterns (promises, async/await, callback functions). Focus on:</p>
+    <p><strong>Day 1-3:</strong> Syntax basics. Variables (let, const), arrow functions, template literals, object destructuring. Run exercises in your browser's developer console.</p>
+    <p><strong>Day 4-7:</strong> Array methods. map(), filter(), reduce(), forEach(). These are the workhorses of data transformation in Clay code steps and n8n nodes. Write 10 data transformation exercises using these methods.</p>
+    <p><strong>Week 2:</strong> Async patterns. Promises, async/await, fetch(). These matter for API calls and webhook handlers. Build a script that calls an API, processes the response, and writes results to a file.</p>
+    <p><strong>Week 3:</strong> Tool-specific JavaScript. Write Clay code steps. Build an n8n code node. Deploy a simple Express.js webhook handler. Apply what you've learned within the tools you already use.</p>
+    <p>If you don't know Python either, start with Python. The <a href="/tools/python/">Python guide</a> covers the learning path. JavaScript becomes worth learning after you've built a foundation in Python and find yourself working within JS-native tools regularly.</p>
+    <p>For the broader coding skills picture, see the <a href="/salary/coding-premium/">coding premium analysis</a>. For AI tools that generate both Python and JavaScript, check <a href="/tools/ai-coding-tools/">AI coding tools</a>.</p>
+
+{faq_html(faq_pairs)}
+{tool_related_links("javascript")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM coding tips and automation patterns.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/tools/javascript/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("tools/javascript/index.html", page)
+    print(f"  Built: tools/javascript/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -6940,6 +7237,9 @@ def main():
     build_tool_annual_spend()
     build_tool_zoominfo_vs_apollo()
     build_tool_wishlist()
+    build_tool_python()
+    build_tool_sql()
+    build_tool_javascript()
 
     print("\n  Building meta files...")
     build_sitemap()

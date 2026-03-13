@@ -1913,6 +1913,310 @@ def build_salary_bonus():
     print(f"  Built: salary/bonus/index.html")
 
 
+def build_salary_equity():
+    """Equity compensation page: 68% have no meaningful equity."""
+    title = "GTM Engineer Equity: 68% Have No Stake"
+    description = (
+        "68% of GTM Engineers hold no meaningful equity. Pre-Seed (29%) and Exited/Public"
+        " (33%) are the only stages where equity matters. State of GTME Report 2026."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Equity Data", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    # Custom stats block for equity data (percentages, not salary ranges)
+    equity_stats = '''<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">68%</span>
+        <span class="stat-label">No Meaningful Equity</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">29%</span>
+        <span class="stat-label">Pre-Seed w/ Equity</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">33%</span>
+        <span class="stat-label">Exited/Public w/ Equity</span>
+    </div>
+</div>'''
+
+    faq_pairs = [
+        ("What equity do most GTM Engineers get?",
+         "68% of GTM Engineers report holding 0-0.10% equity, which is functionally zero after dilution. Only at Pre-Seed (29% get meaningful grants) and Exited/Public companies (33.3% via RSU programs) does equity become a real part of compensation."),
+        ("Should I prioritize equity or base salary as a GTM Engineer?",
+         "For most GTM Engineers, base salary should be the priority. Equity is only meaningful at Pre-Seed (high risk, 29% chance of a real grant) or public companies (RSUs with predictable value). At Series A through Series B, equity grants are typically too small to matter after dilution."),
+        ("How do I evaluate a GTM Engineer equity offer?",
+         "Ask three questions: what percentage of fully diluted shares, what is the current 409A valuation, and what is the most recent preferred share price. Multiply your shares by the 409A price for a floor value. Then discount heavily for illiquidity, dilution from future rounds, and the probability the company reaches an exit."),
+        ("When is equity worth taking a lower base salary?",
+         "Only at Pre-Seed or very early Seed, where you might get 0.1-0.5% of the company. The expected value of that equity has to cover the salary gap over your expected tenure. For a $20K/year salary cut over 3 years, your equity needs to be worth at least $60K at exit to break even. Most startups don't exit."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Compensation Analysis</div>
+        <h1>GTM Engineer Equity: 68% Have Nothing</h1>
+        <p>Equity ownership data across funding stages. Most GTM Engineers hold zero meaningful equity.</p>
+    </div>
+</section>
+{equity_stats}
+<div class="salary-content">
+    <h2>The Equity Reality</h2>
+    <p>68% of GTM Engineers report holding 0-0.10% equity in their company. That's functionally zero. After dilution from future funding rounds, a 0.05% stake in a Series A company is worth pennies unless the company reaches a multi-billion-dollar exit.</p>
+    <p>This matches the operational nature of the role at most companies. GTM Engineers are hired to build outbound infrastructure, not to be founding team members. Companies treat the position as a skilled technical hire, compensated primarily through base salary and bonuses, not ownership.</p>
+    <p>The State of GTME Report 2026 surveyed 228 GTM Engineers across all funding stages. The equity picture is clear: for most practitioners, equity is a line item on an offer letter, not a wealth-building mechanism. Understanding when equity does matter, and when it doesn't, is critical for making smart compensation decisions.</p>
+
+    <h2>By Funding Stage</h2>
+    <p>Equity distribution follows a U-shaped curve across funding stages. The earliest and latest stages offer meaningful equity. Everything in between is a dead zone.</p>
+    <p><strong>Pre-Seed: 29% get meaningful equity.</strong> At this stage, you're employee 1-5 and building the GTM function from nothing. Companies haven't raised much capital, so they compensate with ownership. A 0.1-0.5% grant is common. The risk is enormous, the base salary is lower ($90K-$120K typical), and the company might not exist in 18 months. But the equity could be worth something real if the company works.</p>
+    <p><strong>Series A: 9% get meaningful equity.</strong> The drop from 29% to 9% is sharp. By Series A, the company has raised $5M-$15M, the founding team has allocated most of the option pool, and GTM Engineers are viewed as operational hires. You'll get a grant, but it will be small, often 0.01-0.05%. At this stage, negotiate for base salary.</p>
+    <p><strong>Exited/Public: 33.3% get meaningful equity.</strong> The rebound at public and post-exit companies comes from RSU programs. These aren't startup lottery tickets. They're liquid stock grants with predictable value. A $50K-$100K annual RSU grant at a public company is real compensation you can model and plan around.</p>
+
+    <h2>Seed and Series B: The Dead Zone</h2>
+    <p>Over 70% of GTM Engineers at Seed and Series B companies carry negligible or zero equity. These stages represent the worst of both worlds for equity compensation.</p>
+    <p>At Seed, the company has raised enough to pay competitive base salaries ($120K-$150K), which means they don't need to compensate with large equity grants. But they haven't yet built RSU programs or formalized equity refreshers. You get a token option grant and a verbal promise that "we'll revisit equity at the next round."</p>
+    <p>Series B is similar. The company has $20M-$50M in the bank. The option pool has been carved up across multiple rounds of hiring. Your 0.02-0.05% grant will be diluted by at least one more funding round before any exit. The math rarely works in your favor.</p>
+    <p>If you're at a Seed or Series B company and equity matters to you, the honest advice is to optimize for base salary and bonus instead. Your equity grant at these stages is more of a retention tool (vesting schedule keeps you around) than a wealth-building instrument.</p>
+
+    <h2>When Equity Matters</h2>
+    <p>Equity is worth pursuing in two scenarios, and they look very different.</p>
+    <p><strong>Scenario 1: Pre-Seed bet.</strong> You join a 3-person company, take a $100K salary when you could earn $135K elsewhere, and get 0.25% of the company. If the company reaches a $500M exit in 5-7 years, your stake is worth $1.25M before dilution (probably $500K-$800K after). That's a life-changing outcome. But 90%+ of startups at this stage fail or exit below the preference stack. You're betting $35K/year in foregone salary (over 3 years, that's $105K) on a lottery ticket with better-than-average but still long odds.</p>
+    <p><strong>Scenario 2: Public company RSUs.</strong> You join a public SaaS company, get a $70K annual RSU grant that vests over 4 years, and the stock trades at a known price. This is straightforward. RSUs at a profitable public company are cash-equivalent compensation. Factor them into your total comp calculation at face value, discounted slightly for vesting risk (you might leave before full vesting).</p>
+    <p>The middle ground, Series A through late-stage private companies, is where equity gets murky. The grants are too small to be life-changing, the companies are too far from exit for the value to be predictable, and the base salary foregone to join "for the equity" is rarely recovered.</p>
+
+    <h2>Negotiating Equity</h2>
+    <p>If you're in a position to negotiate equity as a GTM Engineer, here's what matters.</p>
+    <p><strong>Know the stage.</strong> Your negotiating power on equity is highest at Pre-Seed and lowest at Series B+. If the company won't move on equity, push on base salary instead. At Post-Series A companies, a $10K base increase is almost always worth more than an extra 0.01%.</p>
+    <p><strong>Ask for the cap table.</strong> Specifically, ask: what is my percentage of fully diluted shares, what is the current 409A valuation, and how many shares are in the option pool. Without this information, your equity offer is meaningless numbers on paper.</p>
+    <p><strong>Understand dilution.</strong> Your 0.1% today will be 0.06-0.07% after the next funding round. Model two rounds of dilution into any equity calculation. If the number still looks compelling after 30-40% dilution, the grant is worth considering.</p>
+    <p><strong>Check the exercise window.</strong> Standard ISOs have a 90-day exercise window after you leave. Early exercise provisions or extended exercise windows (7-10 years) are valuable. If you have to come up with $50K in cash to exercise options within 90 days of leaving, that changes the math on whether the equity is worth anything to you.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("equity", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer compensation data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/equity/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/equity/index.html", page)
+    print(f"  Built: salary/equity/index.html")
+
+
+def build_salary_us_vs_global():
+    """US vs global salary comparison: $135K vs $75K median."""
+    title = "GTM Engineer Salary: US vs Global Pay Gap"
+    description = (
+        "US GTM Engineers earn $135K median vs $75K outside the US. Geographic distribution"
+        " across 32 countries. Data from the State of GTME Report 2026 (n=228)."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("US vs Global", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    # Side-by-side comparison stats
+    geo_stats = '''<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">US Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$75K</span>
+        <span class="stat-label">Non-US Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">32</span>
+        <span class="stat-label">Countries Represented</span>
+    </div>
+</div>'''
+
+    faq_pairs = [
+        ("How much more do US GTM Engineers earn than global peers?",
+         "US GTM Engineers earn a $135K median vs $75K for non-US peers, an 80% premium. This reflects the concentration of GTM Engineering roles in US tech companies, higher cost of living, and stronger demand in the US market."),
+        ("Which countries outside the US pay GTM Engineers the most?",
+         "UK, Germany, and Australia pay the highest non-US salaries for GTM Engineers. European salaries are growing as US companies hire remote workers in the region. UK-based GTM Engineers working for US companies often earn close to US rates."),
+        ("Do US companies pay global remote GTM Engineers US rates?",
+         "Some do, most don't. US companies hiring globally typically pay 60-80% of US rates for equivalent roles. Companies using geo-adjusted pay reduce offers by 20-40% based on local cost of living. A few companies (GitLab model) pay the same regardless of location."),
+        ("What's the best market for GTM Engineers outside the US?",
+         "Europe, specifically the UK and Germany. 17% of GTM Engineers in the report are in Europe, and the market is growing. Many European GTMEs work for US companies remotely, earning above local market rates. APAC is growing but skews heavily toward agency work."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Geographic Analysis</div>
+        <h1>GTM Engineer Salary: US vs Global Pay</h1>
+        <p>The $60K gap between US and non-US GTM Engineer compensation, with geographic distribution data.</p>
+    </div>
+</section>
+{geo_stats}
+<div class="salary-content">
+    <h2>The $60K Gap</h2>
+    <p>US GTM Engineers earn $135K median. Everyone else earns $75K. That's an 80% premium for working in the United States, and it's the largest geographic pay gap in the State of GTME Report 2026.</p>
+    <p>The gap reflects three factors. First, the concentration of GTM Engineering demand: 58% of all survey respondents work in the US, and an even larger share of job postings originate from US companies. Second, US cost of living, particularly in tech hubs like San Francisco ($195K median), New York ($185K), and Seattle ($190K). Third, the maturity of the US GTM Engineering market, where the role is better understood, better compensated, and more established in hiring frameworks.</p>
+    <p>For non-US GTM Engineers, the gap creates both a challenge and an opportunity. The challenge: your local market may not value the role as highly as the US does. The opportunity: US companies hiring remotely will pay you significantly above local market rates, even if they apply a geographic discount.</p>
+
+    <h2>Geographic Distribution</h2>
+    <p>The State of GTME Report 2026 drew respondents from 32 countries. Here's how they're distributed:</p>
+    <ul>
+        <li><strong>United States: 58% (132 respondents).</strong> The center of gravity for GTM Engineering. More than half of all practitioners work here, and the overwhelming majority of job postings target US-based candidates.</li>
+        <li><strong>Europe: 17% (38 respondents).</strong> The second-largest market. UK, Germany, and France lead. European GTM Engineering is growing as SaaS adoption increases and US companies build remote teams in the region.</li>
+        <li><strong>APAC: 9% (21 respondents).</strong> India, Australia, and Singapore are the main markets. APAC skews toward agency and freelance work rather than in-house roles. Companies in India and Southeast Asia provide GTM Engineering services to US and European clients.</li>
+        <li><strong>MEA (Middle East & Africa): 5% (12 respondents).</strong> An emerging market. Israel has the strongest GTM Engineering presence in the region, driven by its dense startup ecosystem. South Africa and the UAE are growing.</li>
+        <li><strong>Canada: 5% (11 respondents).</strong> Canadian GTM Engineers benefit from proximity to the US market. Many work for US companies, earning above Canadian market rates. Toronto and Vancouver are the primary hubs.</li>
+        <li><strong>LATAM: 2% (5 respondents).</strong> The smallest market by far. Brazil and Mexico have emerging GTM Engineering communities, often serving US clients at competitive rates. The region is early in adoption.</li>
+    </ul>
+
+    <h2>Europe: The Growing Market</h2>
+    <p>Europe represents 17% of GTM Engineering practitioners, making it the largest market outside the US. Three trends are shaping European GTM Engineering compensation.</p>
+    <p>First, US companies are hiring European GTM Engineers as remote workers. A UK-based GTME working for a US SaaS company might earn GBP 70K-90K ($88K-$113K), which is below US rates but well above UK market rates for similar operational roles. This arbitrage is drawing talent into the field.</p>
+    <p>Second, European SaaS companies are building their own GTM Engineering teams. Companies like Personio, Dealfront, and Paddle are hiring for the role at European salaries. The pay is lower than US equivalents ($60K-$90K for mid-level roles in most European markets), but the function is growing.</p>
+    <p>Third, the UK leads European adoption. London's fintech and SaaS concentration makes it the strongest European hub for GTM Engineering. Berlin and Amsterdam follow, benefiting from thriving startup ecosystems and large English-speaking professional communities.</p>
+
+    <h2>APAC and MEA: Agency-Heavy Markets</h2>
+    <p>APAC and MEA account for 14% of GTM Engineers combined, but the employment model is different from the US and Europe. In these regions, GTM Engineering skews heavily toward agency and freelance work rather than in-house positions.</p>
+    <p>In India, companies offer GTM Engineering as a service to US clients at rates of $2K-$5K per month. The individual GTME might earn $25K-$40K annually, which is competitive locally. The business model works because the labor cost arbitrage is substantial: a US company paying $4K/month for an Indian GTM Engineering agency is spending a fraction of what a US-based hire would cost.</p>
+    <p>Australia is an outlier in APAC. Salaries are closer to European levels ($70K-$100K), and the market is primarily in-house roles at Australian SaaS companies. The small market size (Australia's tech sector is much smaller than the US or Europe) limits the number of pure GTM Engineering positions.</p>
+    <p>MEA is the most nascent market. Israel has a sophisticated GTM Engineering community, driven by the country's dense concentration of B2B SaaS startups. Outside Israel, the role is still rare in the Middle East and Africa, with most practitioners working as freelancers for international clients.</p>
+
+    <h2>Remote Work and Global Arbitrage</h2>
+    <p>The remote work revolution has created a global arbitrage opportunity for GTM Engineers. The pattern is simple: earn closer to US rates while living in a lower-cost market.</p>
+    <p>US companies hiring globally typically apply one of three models:</p>
+    <ul>
+        <li><strong>Location-agnostic pay:</strong> Same salary regardless of location. Rare, but companies like GitLab and some early-stage startups use this approach. A European GTME at these companies earns US rates.</li>
+        <li><strong>Geo-adjusted pay:</strong> US rates discounted by 20-40% based on local cost of living. This is the most common model. A GTM Engineer in Lisbon might earn $85K-$95K working for a US company, vs $50K-$65K at a Portuguese company.</li>
+        <li><strong>Local market rates:</strong> Pay based entirely on the local market. Usually at companies using Employer of Record (EOR) services to hire internationally. Salaries match local benchmarks, which means $40K-$70K in most markets outside the US and UK.</li>
+    </ul>
+    <p>For non-US GTM Engineers, the strategy is clear: develop skills that US companies need, build a portfolio of automation work, and target remote roles at US-headquartered companies. Even with a 30% geographic discount, you'll earn substantially more than local market rates in most countries.</p>
+    <p>The risk in this arbitrage: US companies may eventually push more aggressively on local market pricing as the global talent pool expands. For now, demand for GTM Engineers outpaces supply everywhere, which keeps the arbitrage window open.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("us-vs-global", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer salary data from 32 countries.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/us-vs-global/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/us-vs-global/index.html", page)
+    print(f"  Built: salary/us-vs-global/index.html")
+
+
+def build_salary_posted_vs_actual():
+    """Posted vs actual salary comparison: $150K posted vs $135K reported."""
+    title = "Posted vs Actual GTM Engineer Salary Data"
+    description = (
+        "Job postings list $150K median for GTM Engineers but actual pay is $135K."
+        " How to interpret salary ranges in job listings. GTME Report 2026 data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Salary Data", "/salary/"), ("Posted vs Actual", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    # Comparison stats
+    posted_stats = '''<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$150K</span>
+        <span class="stat-label">Job Listing Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">Survey Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">224</span>
+        <span class="stat-label">Listings Analyzed</span>
+    </div>
+</div>'''
+
+    faq_pairs = [
+        ("Why are posted GTM Engineer salaries higher than actual salaries?",
+         "Posted salaries include aspirational ranges, are skewed toward larger companies that are required to disclose pay, and often reflect the high end of the band. Smaller companies that don't disclose pay (and often pay less) are invisible in posting data, pulling the posted median above the survey median."),
+        ("How much should I discount a job posting salary range?",
+         "Expect to receive an offer 10-15% below the posted midpoint. If a posting says $130K-$175K, the actual offer will likely land between $130K and $150K. The top of the posted range is rarely offered to external candidates without competing offers."),
+        ("Is Glassdoor salary data accurate for GTM Engineers?",
+         "Glassdoor data is limited for GTM Engineers because the role is too new for large sample sizes. Most Glassdoor estimates for 'GTM Engineer' are modeled from adjacent roles, not reported by actual GTM Engineers. The State of GTME Report 2026 (n=228) provides the most reliable salary data available."),
+        ("How should I use posted salary data when negotiating?",
+         "Use the posted range as a ceiling, not a starting point. If the posting says $130K-$175K, anchor your ask at $150K-$160K and be prepared to explain why you're worth the upper half. Bring data from the GTME Report or this page to support your number."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Salary Analysis</div>
+        <h1>Posted vs Actual GTM Engineer Salaries</h1>
+        <p>Job postings show higher numbers than people report earning. Here's why, and how to use both data sets.</p>
+    </div>
+</section>
+{posted_stats}
+<div class="salary-content">
+    <h2>The Posting Premium</h2>
+    <p>Job postings list higher salaries than GTM Engineers report earning. The posted median is $150K (from 224 GTM Engineer listings with disclosed compensation). The self-reported median is $135K (from 228 survey respondents). That's a $15K gap, about 11%.</p>
+    <p>This isn't unique to GTM Engineering. Posted salaries run above reported salaries across most tech roles. But the gap matters for GTM Engineers specifically because the role is new enough that candidates don't have strong salary benchmarks. Without context, a job seeker might expect $150K based on postings and be disappointed by a $135K offer, not realizing the offer is at market rate.</p>
+    <p>Understanding the gap is a negotiation advantage. Walk into an interview knowing that $135K is the true median, that postings inflate by 10-15%, and that the posted range ceiling is rarely the actual offer ceiling. You'll negotiate from a position of data, not hope.</p>
+
+    <h2>Why Postings Run Higher</h2>
+    <p>Three factors push posted salaries above actual compensation.</p>
+    <p><strong>Selection bias in who posts.</strong> Pay transparency laws in California, Colorado, New York, and Washington require salary range disclosure. Companies in these states tend to be larger, better-funded, and based in high-cost markets. They pay more. Smaller companies outside these states, which often pay less, aren't required to disclose and frequently don't. The posted data over-represents well-paying companies.</p>
+    <p><strong>Range inflation.</strong> Job postings show ranges, not single numbers. A $130K-$175K range has a midpoint of $152.5K, but the actual offer distribution within that range skews toward the lower end. Companies post wide ranges to attract candidates, then offer near the bottom unless the candidate has competing offers or exceptional experience.</p>
+    <p><strong>Aspirational upper bounds.</strong> The top of a posted range often represents what the company would pay an internal promotion or a candidate with 2-3 more years of experience than the posting targets. External hires rarely land at the top of the range. It's the price tag, not the purchase price.</p>
+
+    <h2>US Posted Salary Bands</h2>
+    <p>For US-based GTM Engineer postings with disclosed compensation, here's the detailed breakdown:</p>
+    <ul>
+        <li><strong>Median posted salary:</strong> $130K</li>
+        <li><strong>25th percentile (P25):</strong> $107K</li>
+        <li><strong>75th percentile (P75):</strong> $150K</li>
+        <li><strong>90th percentile (P90):</strong> $180K</li>
+        <li><strong>Average minimum of posted ranges:</strong> $128K</li>
+        <li><strong>Average of posted ranges:</strong> $152K</li>
+        <li><strong>Average maximum of posted ranges:</strong> $175K</li>
+    </ul>
+    <p>The P25-P75 spread ($107K-$150K) represents where 50% of posted salaries fall. If a posting is within this range, it's market rate. Below $107K signals a junior role, an agency position, or a company underpricing the function. Above $150K typically means senior level, high-cost-of-living market, or a company that treats GTM Engineering as a strategic priority.</p>
+
+    <h2>What This Means for Negotiation</h2>
+    <p>Armed with both posted and actual salary data, here's how to negotiate effectively.</p>
+    <p><strong>Calibrate your expectations.</strong> If a posting says $130K-$175K, expect an offer in the $130K-$150K range. The midpoint of the posted range is your realistic target, not the top. Only candidates with competing offers, rare skills, or perfect role fit land above the midpoint.</p>
+    <p><strong>Use the survey data as your anchor.</strong> When the recruiter asks "what are you looking for?", cite the GTME Report median ($135K) as a starting point and explain why your specific skills, experience, and location justify above-median comp. Data-backed anchors are stronger than "I was thinking around $145K."</p>
+    <p><strong>Push on the gap.</strong> If a company offers $125K for a role posted at $130K-$175K, point out that even the median posted salary is above their offer. Companies that post salary ranges are making a public commitment. Hold them to it.</p>
+    <p><strong>Watch for total comp tricks.</strong> Some postings inflate the salary range by including estimated bonus, equity, or benefits value. If the posted range is $150K-$200K but includes "$30K estimated equity," the actual cash compensation is lower. Always clarify whether the posted range is base salary or total comp.</p>
+
+    <h2>Global vs US Gap</h2>
+    <p>The posted-vs-actual gap is sharper outside the US. Non-US postings may overstate salaries by 20-30% because US-headquartered companies post US salary ranges for roles that will be filled globally.</p>
+    <p>A posting from a San Francisco company listing "$130K-$175K" for a "remote" GTM Engineer role might result in a $90K offer for a candidate in Portugal or a $70K offer for someone in India. The company posted US ranges for compliance or attraction purposes, but the actual offer reflects geographic adjustment.</p>
+    <p>If you're outside the US applying to US-posted roles, ask about location-based pay adjustments early in the process. Don't wait until the offer stage to discover that the posted range doesn't apply to your geography. Specifically ask: "Is this salary range location-adjusted, and if so, what range applies to my location?"</p>
+    <p>For US-based candidates, the posted salary data is more reliable. The 10-15% posted-to-actual gap still applies, but at least the geography matches. Use posted ranges as a ceiling and the survey median as your baseline.</p>
+
+{faq_html(faq_pairs)}
+{salary_related_links("posted-vs-actual", "analysis")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly salary data and job market updates.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/salary/posted-vs-actual/",
+        body_content=body, active_path="/salary/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("salary/posted-vs-actual/index.html", page)
+    print(f"  Built: salary/posted-vs-actual/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Meta file generators
 # ---------------------------------------------------------------------------
@@ -2034,6 +2338,9 @@ def main():
     build_salary_experience()
     build_salary_age()
     build_salary_bonus()
+    build_salary_equity()
+    build_salary_us_vs_global()
+    build_salary_posted_vs_actual()
 
     print("\n  Building meta files...")
     build_sitemap()

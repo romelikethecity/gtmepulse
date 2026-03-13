@@ -7866,6 +7866,510 @@ def build_bench_operator_vs_engineer():
     print(f"  Built: benchmarks/operator-vs-engineer/index.html")
 
 
+def build_bench_bottlenecks():
+    """GTM Engineering bottlenecks: bandwidth, tool complexity, buy-in."""
+    title = "GTM Engineering Bottlenecks: Survey Data (2026)"
+    description = (
+        "Top GTM Engineering bottlenecks: bandwidth (25%), tool complexity"
+        " (17%), organizational buy-in (8%). Data from 228 respondents."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Bottlenecks", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the biggest bottleneck for GTM Engineers?",
+         "Bandwidth. 25% of GTM Engineers cite bandwidth as their top bottleneck. There's too much work and not enough people. Tool complexity (17%) and organizational buy-in (8%) are the next biggest blockers. These three account for half of all reported bottlenecks."),
+        ("How do bottlenecks differ by company size?",
+         "Startups report bandwidth and tool budget constraints as primary bottlenecks. They have one GTM Engineer doing everything. Growth-stage companies report tool complexity and integration issues as systems become more interconnected. Enterprise companies report organizational buy-in and politics as the main blockers, since the tools and budget exist but getting approval to use them is slow."),
+        ("How can companies reduce GTM Engineering bottlenecks?",
+         "The most effective interventions are: hiring additional GTM Engineers to address bandwidth (the data supports this as #1), consolidating and integrating the tool stack to reduce complexity, and educating leadership on the GTM Engineer role to improve organizational buy-in. Our company understanding data shows 55% of companies still don't understand the role."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>GTM Engineering Bottlenecks: What Blocks</h1>
+        <p>Bandwidth (25%), tool complexity (17%), organizational buy-in (8%). What prevents GTM Engineers from doing their best work, from 228 survey responses.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">25%</span>
+        <span class="stat-label">Bandwidth</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">17%</span>
+        <span class="stat-label">Tool Complexity</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">8%</span>
+        <span class="stat-label">Buy-in Issues</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Bandwidth Problem</h2>
+    <p>One in four GTM Engineers says bandwidth is their biggest bottleneck. Not tools, not skills, not data quality. Just too much work for too few people.</p>
+    <p>This makes sense given the role's trajectory. Companies that hired their first GTM Engineer saw results (automated outbound, cleaner data, faster pipeline). Then they gave that person more work instead of hiring a second GTM Engineer. The reward for competence is more scope, and the scope expanded faster than headcount.</p>
+    <p>The bandwidth bottleneck manifests as reactive work crowding out strategic work. GTM Engineers spend their days fighting fires (broken sequences, data quality issues, urgent campaign requests) instead of building the systems that would prevent those fires. It's a cycle: bandwidth constraints prevent building automation, and the lack of automation perpetuates bandwidth constraints.</p>
+    <p>At agencies, the bandwidth problem is client-driven. Each new client engagement adds a full stack to manage. An agency operator handling 5-7 clients is context-switching between tool stacks constantly. Growth means more clients, not more capacity per client.</p>
+    <p>The bandwidth data is also a salary signal. When 25% of practitioners report that there's more work than they can handle, hiring managers have less negotiating power. If your GTM Engineer leaves, their queue of undone work doesn't leave with them. The replacement cost includes both the new hire and the backlog.</p>
+
+    <h2>Tool Complexity</h2>
+    <p>17% of respondents cite tool complexity as their primary bottleneck. The GTM stack has gotten sophisticated fast. A typical in-house setup involves 4-5 tools; an agency stack runs 6-8. Each tool has its own logic, its own API patterns, its own failure modes.</p>
+    <p>The complexity isn't in any single tool. It's in the connections between tools. Clay to HubSpot. HubSpot to Instantly. Instantly to your data warehouse. Each integration point is a potential failure point. When Clay changes their API, your n8n workflow breaks. When HubSpot updates their field types, your enrichment pipeline stops mapping correctly.</p>
+    <p>Tool complexity compounds with scale. A 500-record outbound campaign is easy to debug. A 50,000-record monthly pipeline is a different animal. Error rates that are invisible at small scale become production blockers at volume. A 1% failure rate on 50K records means 500 records need manual review every month.</p>
+    <p>The <a href="/tools/frustrations/">tool frustrations data</a> unpacks this in detail. The most common complaint isn't that tools are bad. It's that tools don't work well together. Integration issues, inconsistent data formats, and competing automation logic create a maintenance burden that grows with every tool added to the stack.</p>
+
+    <h2>Organizational Buy-in</h2>
+    <p>8% of respondents name organizational buy-in as their top bottleneck. This number sounds small, but it represents practitioners who have the skills, tools, and bandwidth to do their job and still can't because their company doesn't support them.</p>
+    <p>Buy-in failures look different depending on the company. At some companies, leadership doesn't understand what a GTM Engineer does, so budget requests get denied and project proposals get deprioritized. At others, the GTM Engineer's work overlaps with sales ops or marketing ops, creating territorial conflicts. At a few, the GTM Engineer was hired without a clear mandate, and nobody knows who they report to or how to evaluate their impact.</p>
+    <p>The <a href="/benchmarks/company-understanding/">company understanding data</a> provides context: only 45% of companies understand the GTM Engineer role well. When more than half of employers can't define the role, buy-in is structurally difficult. You can't advocate for budget for a function that leadership can't describe.</p>
+    <p>Buy-in problems are hardest to solve because they're organizational, not technical. A GTM Engineer can learn a new tool in a week. They can't change their company's understanding of their role in a week. This is why buy-in bottlenecks, while less common, are often the most career-limiting.</p>
+
+    <h2>Other Reported Bottlenecks</h2>
+    <p><strong>Data quality (12%).</strong> Bad input data ruins automated workflows. When enrichment providers return outdated information, when CRM records have duplicate entries, when client data uploads contain formatting inconsistencies, every downstream process suffers. Data quality is the hidden multiplier on every other bottleneck.</p>
+    <p><strong>Budget constraints (10%).</strong> Wanting to use better tools but being stuck with free tiers or cheaper alternatives. This is particularly acute at startups where the GTM Engineer is asked to build enterprise-grade outbound on a seed-stage budget.</p>
+    <p><strong>Knowledge gaps (7%).</strong> Wanting to solve a problem but not knowing how. This ties into the <a href="/benchmarks/learning-resources/">learning resources data</a>: when 53% of practitioners are self-taught, knowledge gaps are inevitable. The gap is especially visible when operators need to learn coding skills or engineers need to understand go-to-market strategy.</p>
+    <p><strong>Cross-functional alignment (5%).</strong> Sales, marketing, and GTM Engineering working toward different metrics. When sales wants volume and marketing wants brand awareness and GTM Engineering wants data quality, the systems they build optimize for conflicting goals.</p>
+
+    <h2>Bottlenecks by Company Stage</h2>
+    <p>Startups (Seed/Series A) report bandwidth and budget as their primary constraints. They have one GTM Engineer doing everything on a limited tool budget. The fix is straightforward (hire more people, increase tool spend) but often conflicts with burn rate management.</p>
+    <p>Growth-stage (Series B/C) companies report tool complexity and data quality as the main issues. They've hired 2-3 GTM Engineers, adopted 6+ tools, and now the integration complexity is slowing everyone down. This is the stage where custom engineering (Python scripts, webhook handlers) starts paying off.</p>
+    <p>Enterprise companies report buy-in and cross-functional alignment. The tools exist, the budget exists, and the talent exists. But the organization moves slowly, decisions require multiple approvals, and every team has opinions about how outbound should work.</p>
+    <p>Agency bottlenecks map to client count. Under 3 clients: bandwidth is manageable. 4-7 clients: tool complexity becomes the primary pain (managing multiple stacks). 8+ clients: everything breaks, and the agency either hires aggressively or burns out their operators.</p>
+
+    <h2>What You Can Do About It</h2>
+    <p>If bandwidth is your bottleneck: document your workload in hours per week per task. Present this to leadership as a headcount case, not a complaint. "I spend 15 hours/week on manual data cleanup. A $200/month tool or a second hire would free that for pipeline building." Numbers persuade; frustration doesn't.</p>
+    <p>If tool complexity is your bottleneck: audit your integration points. Map every tool-to-tool connection and identify the fragile ones. Consider consolidating where tools overlap. The <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a> shows what peers use. Sometimes fewer tools run more reliably than more tools.</p>
+    <p>If buy-in is your bottleneck: the <a href="/benchmarks/company-understanding/">company understanding</a> page has specific strategies. Start with impact metrics that leadership cares about (pipeline generated, meetings booked, response rates) rather than process metrics (records enriched, workflows built).</p>
+    <p>For headcount data that supports the bandwidth argument, see <a href="/benchmarks/headcount-trends/">headcount trends</a>. For tool frustration data that supports the complexity argument, see <a href="/tools/frustrations/">tool frustrations</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("bottlenecks")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineering operations intelligence.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/bottlenecks/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/bottlenecks/index.html", page)
+    print(f"  Built: benchmarks/bottlenecks/index.html")
+
+
+def build_bench_company_understanding():
+    """Company understanding of the GTM Engineer role: 45% yes, 9% partially."""
+    title = "Does Your Company Get GTM Engineering? (2026)"
+    description = (
+        "45% of companies understand the GTM Engineer role, 9% partially."
+        " Data on what understanding means and how to improve buy-in."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Company Understanding", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What percentage of companies understand the GTM Engineer role?",
+         "45% of GTM Engineers say their company understands the role well. 9% say partially. The remaining 46% report that their company doesn't understand what they do, how to evaluate their work, or where they fit in the organization. This is consistent across company sizes, though larger companies show slightly better understanding."),
+        ("What does 'company understanding' mean in practice?",
+         "Understanding means the company can: define the GTM Engineer role accurately, provide an appropriate career ladder, budget for the tools the role requires, evaluate performance with relevant metrics (not just generic sales metrics), and place the role correctly in the org chart. Companies that understand the role retain their GTM Engineers longer and pay them more."),
+        ("How can I improve my company's understanding of GTM Engineering?",
+         "Three approaches work: (1) present impact in business metrics (pipeline generated, meetings booked, cost-per-lead reduction) rather than technical metrics, (2) share industry benchmarks (this report, salary data, job growth numbers) to show that GTM Engineering is an established career with market rates, and (3) propose a clear reporting structure and career ladder based on what peer companies use."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>Does Your Company Get GTM Engineering?</h1>
+        <p>45% of companies understand the GTM Engineer role. 9% sort of get it. 46% are guessing. The data behind the biggest organizational gap in B2B SaaS.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">45%</span>
+        <span class="stat-label">Yes, Understood</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">9%</span>
+        <span class="stat-label">Partially</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">46%</span>
+        <span class="stat-label">No / Unclear</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Understanding Gap</h2>
+    <p>More than half of GTM Engineers work at companies that don't understand their role. That's the single most important finding in the entire report for career planning. Skills, tools, and market demand don't matter if your employer can't describe what you do.</p>
+    <p>The 45% who report good understanding tend to work at companies that hired GTM Engineers intentionally: they researched the role, wrote accurate job descriptions, set up appropriate reporting structures, and budgeted for tools. These companies are disproportionately Series B and later with existing RevOps or sales ops functions that understood the gap a GTM Engineer fills.</p>
+    <p>The 46% who report poor understanding ended up in the role through various paths: a title change on an existing ops role, a startup founder who heard "GTM Engineer" on a podcast and hired one without knowing what they'd do, or an agency engagement where the client doesn't know what the contractor builds. In these situations, the GTM Engineer defines their own role, which is empowering but also politically dangerous.</p>
+
+    <h2>What Understanding Looks Like</h2>
+    <p>Companies that understand the role share specific characteristics.</p>
+    <p><strong>Clear job descriptions.</strong> They can articulate the difference between a GTM Engineer and a sales ops manager. The job description mentions specific tools (Clay, Python, API integrations), specific outcomes (pipeline automation, data enrichment), and specific metrics (response rates, enrichment accuracy, records processed).</p>
+    <p><strong>Appropriate compensation.</strong> They pay market rates ($132K median) rather than trying to hire at $80K because they think it's an "ops role." Companies that understand the role understand the market. See our <a href="/salary/">salary data</a> for negotiation ammunition.</p>
+    <p><strong>Career ladder.</strong> They have defined progression: Junior GTM Engineer to Mid to Senior to Lead/Staff. Each level has clear expectations around scope, autonomy, and technical depth. Without a ladder, GTM Engineers plateau quickly and leave.</p>
+    <p><strong>Dedicated budget.</strong> They allocate specific tool budget for GTM Engineering ($5K-$25K/year is the agency standard). Companies that make GTM Engineers share generic marketing ops tool licenses misunderstand the role's tool-dependence.</p>
+    <p><strong>Right reporting structure.</strong> They've thought about where GTM Engineering sits: under Sales, Marketing, RevOps, or as an independent function. There's no universal right answer, but having a deliberate answer matters. See <a href="/careers/reporting-structure/">reporting structure data</a>.</p>
+
+    <h2>The Cost of Misunderstanding</h2>
+    <p>Companies that don't understand the role pay for it in three ways.</p>
+    <p><strong>Turnover.</strong> GTM Engineers at companies with poor understanding leave faster. They leave for companies that get it, agencies where the model is understood, or freelance work where they set their own terms. Replacing a GTM Engineer costs 3-6 months of lost productivity plus recruiting costs.</p>
+    <p><strong>Underutilization.</strong> A GTM Engineer who could be building automated enrichment pipelines instead spends their day doing manual data entry because nobody explained what the role should do. The company hired a $150K professional and uses them as a $50K data clerk.</p>
+    <p><strong>Wrong metrics.</strong> Companies that don't understand the role evaluate GTM Engineers on the wrong things: emails sent (vanity metric), CRM updates (busywork metric), or hours logged (irrelevant metric). The right metrics are pipeline generated, cost per qualified lead, data quality scores, and automation coverage. Wrong metrics lead to wrong incentives.</p>
+
+    <h2>The Partially Understanding 9%</h2>
+    <p>The 9% "partially" category is interesting. These are companies that know GTM Engineering exists and roughly what it involves, but haven't operationalized that knowledge. They hired a GTM Engineer but didn't build a career ladder. They allocated tool budget but gave control to IT procurement. They wrote a job description but copied it from a LinkedIn post without understanding the specifics.</p>
+    <p>Partial understanding is often worse than no understanding. Companies with no understanding at least don't have wrong expectations. Companies with partial understanding have just enough knowledge to create incorrect expectations: "we hired a GTM Engineer, why isn't our outbound automated yet?" without providing the tools, data, or authority needed to build automation.</p>
+    <p>The path from partial to full understanding usually requires the GTM Engineer to educate their own organization. This takes 3-6 months of consistent communication: sharing metrics, proposing improvements, and demonstrating ROI on specific projects. It's career development work that doesn't appear in any job description but determines whether the role succeeds.</p>
+
+    <h2>Understanding by Company Stage</h2>
+    <p>Understanding improves with company maturity, but not linearly.</p>
+    <p>Seed-stage companies often have accidental understanding. The founder either was a GTM practitioner or closely follows the space. They hire a GTM Engineer knowing exactly what they want. Or they have no idea and hire based on a podcast recommendation. There's very little middle ground at seed stage.</p>
+    <p>Series A companies show the widest variance. Some have a VP of Sales who understands GTM Engineering and advocated for the hire. Others have a sales leader who thinks "GTM Engineer" means "SDR who uses Clay." The quality of the hiring manager determines the quality of understanding.</p>
+    <p>Series B and later companies generally have better understanding because they've had time to develop RevOps or sales ops functions. These adjacent roles understand the gap that GTM Engineering fills. They can articulate the difference and set appropriate expectations.</p>
+    <p>Enterprise companies understand the role conceptually but struggle with organizational placement. Where does GTM Engineering live? Marketing? Sales? Engineering? RevOps? Different companies answer differently, and the placement decision shapes the GTM Engineer's scope, budget, and career path.</p>
+
+    <h2>Improving Your Company's Understanding</h2>
+    <p>If you're at a company that doesn't get it, you're also the person best positioned to fix it. Here are approaches that practitioners report working.</p>
+    <p><strong>Lead with business impact.</strong> Don't explain what Clay does. Explain that automated enrichment reduced cost-per-qualified-lead by 40% last quarter. Leaders understand revenue metrics. They don't understand tool configurations.</p>
+    <p><strong>Benchmark against the market.</strong> Share this data. Show that GTM Engineers at peer companies earn $132K median, that 5,205% job growth proves this is a real career, and that 84% of practitioners use the specific tools you're requesting budget for. External data has more credibility than internal advocacy.</p>
+    <p><strong>Propose structure.</strong> Don't wait for your company to build a career ladder. Draft one based on <a href="/salary/by-seniority/">seniority salary data</a> and propose it. Draft a reporting structure recommendation. Companies with no GTM Engineering framework will often adopt whatever the GTM Engineer proposes, because nobody else knows better.</p>
+    <p><strong>Connect to peers.</strong> Introduce your leadership to other companies' GTM Engineering leaders. Peer validation accelerates understanding faster than internal advocacy alone.</p>
+    <p>For the bottleneck data that connects to buy-in challenges, see <a href="/benchmarks/bottlenecks/">GTM Engineering bottlenecks</a>. For career implications, see the <a href="/careers/">career guides index</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("company-understanding")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineering career intelligence.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/company-understanding/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/company-understanding/index.html", page)
+    print(f"  Built: benchmarks/company-understanding/index.html")
+
+
+def build_bench_learning_resources():
+    """Learning resources: LinkedIn (174 mentions), YouTube, peers."""
+    title = "How GTM Engineers Learn: Top Resources (2026)"
+    description = (
+        "How GTM Engineers learn: LinkedIn (174 mentions), YouTube, peers,"
+        " self-teaching. Learning resource data from 228 respondents."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Learning Resources", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Where do GTM Engineers learn their skills?",
+         "LinkedIn is the dominant learning resource with 174 mentions from 228 respondents. YouTube is second, followed by peer networks and communities. Formal courses and vendor training (like Clay University) are growing but still secondary to self-directed learning from social platforms."),
+        ("Are there formal training programs for GTM Engineers?",
+         "Few formal programs exist. Clay University offers Clay-specific training. Individual creators like Nathan Lippi (Clay Bootcamp) and Matteo Tittarelli (GTM Engineer School) have built courses. But 121/228 respondents (53%) are self-taught, and the majority of learning happens through LinkedIn content, YouTube tutorials, and peer-to-peer knowledge sharing."),
+        ("Is a computer science degree needed for GTM Engineering?",
+         "No. While some GTM Engineers have CS degrees, the majority (53%) are self-taught. Business, marketing, and communications degrees are common backgrounds. The critical skills (tool configuration, workflow design, data manipulation) are better learned through practice than coursework. Coding skills help but can be learned on the job, especially with AI coding assistants."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>How GTM Engineers Learn Their Craft</h1>
+        <p>LinkedIn (174 mentions), YouTube, peers, self-teaching. Where 228 GTM Engineers learn the skills that no university teaches.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">174</span>
+        <span class="stat-label">LinkedIn Mentions</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">121</span>
+        <span class="stat-label">Self-Taught</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">53%</span>
+        <span class="stat-label">No Formal Training</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>LinkedIn Runs the Classroom</h2>
+    <p>174 out of 228 respondents named LinkedIn as a primary learning resource. That's 76%. No other platform comes close.</p>
+    <p>LinkedIn works for GTM Engineers because the content is produced by practitioners who are actively doing the work. When a GTM Engineer posts about a Clay workflow that generated 200 qualified leads, it's a case study written by someone who built it. When a sales leader shares data on email deliverability, it's sourced from their own sending infrastructure. The content is practitioner-first, not vendor-first.</p>
+    <p>The format matters too. LinkedIn posts are short, specific, and immediately applicable. A 300-word post about how to structure a Clay enrichment table is more useful for a working GTM Engineer than a 3,000-word blog post about "the future of outbound." The platform rewards practical content, and practitioners consume it during their workday.</p>
+    <p>The risk of LinkedIn-only learning is vendor capture. Tool vendors produce enormous amounts of LinkedIn content designed to look like education but function as marketing. "How to use [our tool] for outbound" is content marketing, not education. Practitioners who learn exclusively from vendor content develop expertise in specific tools rather than transferable principles.</p>
+
+    <h2>YouTube: The Visual Learner's Stack</h2>
+    <p>YouTube is the second most-cited learning resource. Video tutorials excel at showing multi-step tool configurations, workflow designs, and integration setups that are difficult to convey in text.</p>
+    <p>The GTM Engineering YouTube ecosystem is still young. Most content comes from individual creators rather than established educational brands. Nathan Lippi's Clay content, various agency operators sharing their workflows, and tool-specific tutorial channels form the core. Production quality varies. Content is sometimes outdated within months as tools update their interfaces.</p>
+    <p>The best YouTube learning happens when practitioners record their actual work processes. Screen recordings of real Clay table builds, real n8n workflow configurations, and real data cleanup sessions. These unpolished, practical videos teach more than slick produced content because they show the messy reality of tool work: the errors, the debugging, the iterative problem-solving.</p>
+
+    <h2>Peer Learning and Communities</h2>
+    <p>After LinkedIn and YouTube, peer networks rank as the third most important learning resource. This includes Slack communities, Discord servers, X threads, and direct conversations with other GTM Engineers.</p>
+    <p>Peer learning works because GTM Engineering problems are often context-specific. "How do I connect Clay to HubSpot when the company name field format doesn't match?" is too specific for any course to cover. But a peer who solved the same problem last week can answer in five minutes.</p>
+    <p>The peer network also functions as a real-time tool evaluation system. When a new tool launches or an existing tool has a major update, the peer network circulates reviews faster than any publication. Practitioners trust other practitioners more than they trust vendor marketing or independent reviewers.</p>
+    <p>The limitation of peer learning is that it's only as good as your network. GTM Engineers who actively participate in communities, attend virtual meetups, and engage on social platforms develop broader peer networks. Those who work in isolation miss out on shared solutions and collective troubleshooting.</p>
+
+    <h2>Self-Taught Dominance: 121 of 228</h2>
+    <p>53% of respondents describe themselves as self-taught. There's no university program that produces GTM Engineers. No bootcamp pipeline. No standardized curriculum. The role is too new and too tool-specific for traditional education to have caught up.</p>
+    <p>Self-teaching in GTM Engineering follows a predictable pattern. Step one: get hired into an adjacent role (SDR, sales ops, marketing ops). Step two: encounter tools like Clay or Make in the course of that job. Step three: develop proficiency through trial and error on real business problems. Step four: realize you've been doing GTM Engineering without the title. Step five: get the title (or the next job with the title).</p>
+    <p>The self-taught path has advantages. Practitioners learn on real problems with real stakes. They develop practical skills rather than theoretical knowledge. They build portfolios of actual work rather than academic projects. Employers care about what you can build, not how you learned to build it.</p>
+    <p>The disadvantage is inconsistency. Self-taught practitioners have gaps. Someone who learned GTM Engineering through Clay might have no SQL knowledge. Someone who came from sales ops might not understand API architecture. The <a href="/careers/skills-gap/">skills gap analysis</a> maps these gaps in detail.</p>
+
+    <h2>Formal Training: Growing but Still Niche</h2>
+    <p><strong>Clay University</strong> is the most prominent tool-specific training program. It covers Clay table construction, enrichment workflows, and advanced features. It's well-produced and practical. The limitation is scope: Clay is one tool, and the course teaches Clay specifically rather than GTM Engineering broadly.</p>
+    <p><strong>Creator-led courses.</strong> Nathan Lippi's Clay Bootcamp and Matteo Tittarelli's GTM Engineer School represent the emerging creator education market. These programs are built by practitioners, which gives them credibility and practical relevance. They're also small operations, which limits production value and breadth of content.</p>
+    <p><strong>Vendor training programs.</strong> HubSpot Academy, Salesforce Trailhead, and similar vendor programs teach their specific platforms. These are well-resourced, free, and certification-bearing. The trade-off is vendor lock-in: you learn HubSpot's way of thinking about CRM, not CRM principles that transfer across platforms.</p>
+    <p>Formal training will grow as the role matures. Expect university extension programs, coding bootcamps adding GTM tracks, and professional certification bodies within the next 2-3 years. The demand is there (people want structured learning), and the content creators are demonstrating that there's a market willing to pay.</p>
+
+    <h2>Books and Newsletters</h2>
+    <p>Books rank lower than social and video content for GTM Engineers, which reflects the role's rapid evolution. A book about outbound automation published in January might reference tools that changed their APIs by June. The pace of change makes books better for principles than for practices.</p>
+    <p>Newsletters are growing as a learning format. Weekly or biweekly emails that curate the best LinkedIn posts, share tool updates, and analyze market trends. The newsletter format works because it's digestible, arrives on schedule, and filters signal from noise.</p>
+    <p>For practitioners looking to build systematic knowledge, the combination of newsletters for weekly updates, LinkedIn for daily content, and YouTube for deep dives on specific tools covers the learning stack effectively.</p>
+
+    <h2>What This Means for Career Development</h2>
+    <p>The learning resource data reveals a field that's building its knowledge infrastructure in real time. There's no established curriculum, no standard certification, no university pipeline. This creates both opportunity and risk.</p>
+    <p>The opportunity: practitioners who invest in learning have a real advantage. When there's no standard training, the people who actively seek knowledge outperform those who coast. The learning resources are free (LinkedIn, YouTube) or low-cost (creator courses). The ROI on dedicated learning time is high.</p>
+    <p>The risk: without standardized training, quality varies. Some LinkedIn advice is wrong. Some YouTube tutorials teach bad practices. Some peer recommendations are based on limited experience. Critical thinking about learning sources matters as much as the learning itself.</p>
+    <p>For how learning resources connect to career entry, see <a href="/careers/how-gtm-engineers-got-jobs/">how GTM Engineers got their jobs</a>. For the demographic context on who's learning, see <a href="/benchmarks/demographics/">survey demographics</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("learning-resources")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get curated GTM Engineering learning resources weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/learning-resources/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/learning-resources/index.html", page)
+    print(f"  Built: benchmarks/learning-resources/index.html")
+
+
+def build_bench_headcount_trends():
+    """Headcount growth trends for GTM Engineering teams in 2026."""
+    title = "GTM Engineer Headcount Trends: 2026 Outlook"
+    description = (
+        "GTM Engineer headcount trends: majority plan to grow teams in"
+        " 2026. Hiring intent by company size, salary implications."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Headcount Trends", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Are companies hiring more GTM Engineers in 2026?",
+         "Yes. The majority of survey respondents report that their companies plan to grow GTM Engineering teams in 2026. This is consistent with the 5,205% job posting growth trend and the bandwidth bottleneck reported by 25% of practitioners. Companies are adding headcount because the existing workload exceeds capacity."),
+        ("How does headcount growth affect GTM Engineer salaries?",
+         "Growing headcount demand pushes salaries up. When companies compete for a limited pool of experienced GTM Engineers, compensation rises. The current $132K median reflects a market where demand already exceeds supply. As more companies formalize GTM Engineering roles, expect upward salary pressure, especially for senior and lead-level practitioners."),
+        ("Will AI reduce the need for GTM Engineers?",
+         "Current data suggests AI augments rather than replaces GTM Engineers. AI coding tools (71% adoption) make individual GTM Engineers more productive, but they also enable more ambitious automation projects that require GTM Engineering oversight. The pattern so far is that AI increases what each GTM Engineer can do, which leads companies to expand scope rather than reduce headcount."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>GTM Engineer Headcount Trends: 2026</h1>
+        <p>Most companies plan to grow their GTM Engineering teams in 2026. What that means for hiring, competition, and salary trajectories.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Job Growth (2019&#8209;2025)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~100</span>
+        <span class="stat-label">New Listings/Month</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">25%</span>
+        <span class="stat-label">Cite Bandwidth Gap</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Growth Signal</h2>
+    <p>The majority of companies with existing GTM Engineers plan to hire more of them. This comes directly from survey responses where practitioners reported their company's hiring plans for the next 12 months.</p>
+    <p>The growth intent aligns with every other data point in the report. If 25% of GTM Engineers cite bandwidth as their primary bottleneck, the solution is more GTM Engineers. If the role has proven ROI (automated pipeline, reduced cost-per-lead, faster outbound), the rational response is to scale it. If the market is growing at 5,205%, companies that don't hire fall behind those that do.</p>
+    <p>The hiring intent is strongest at growth-stage companies (Series B through pre-IPO). These companies have validated GTM Engineering with their first 1-2 hires and are now scaling the function. They're also the companies with the budget to compete on compensation.</p>
+
+    <h2>Hiring Intent by Company Size</h2>
+    <p>Small companies (under 50 employees) show the most cautious hiring plans. Many plan to hire their first GTM Engineer rather than expand an existing team. The budget constraints of seed-stage companies limit hiring velocity even when the intent exists.</p>
+    <p>Mid-size companies (50-500 employees) show the strongest growth intent. These are the Series A through Series C companies that proved GTM Engineering works and want more of it. The typical plan: go from 1-2 GTM Engineers to 3-5 within the next year.</p>
+    <p>Large companies (500+ employees) plan to grow more slowly in headcount but invest more per role. Enterprise GTM Engineering often means hiring fewer, more senior practitioners who can architect systems rather than execute playbooks. The budget per head is higher, but the headcount growth is moderate.</p>
+    <p>Agencies show the most aggressive growth plans. Demand for GTM services is growing faster than agencies can hire. The typical agency wants to double their operator count within 12 months. The constraint isn't budget (clients are willing to pay); it's finding qualified operators who can manage multiple client stacks simultaneously.</p>
+
+    <h2>Competition for Talent</h2>
+    <p>Growing headcount intent means growing competition for experienced practitioners. The talent pool for GTM Engineering is small relative to demand. The role emerged in 2023-2024, which means the most experienced GTM Engineers have 2-3 years of title-specific experience. There's no deep bench of senior talent to draw from.</p>
+    <p>Companies compete on four dimensions: compensation, tool budget, scope of work, and remote flexibility. Salary data shows the ranges are already wide ($90K-$250K), and the upper end pulls further as competition intensifies. Tool budget matters because GTM Engineers choose employers partly based on which tools they'll get to use (an engineer who wants to work with Clay won't accept a role limited to Salesforce automation).</p>
+    <p>The competition is particularly intense for engineers (the coding track). Operators are more abundant because the path from SDR or sales ops to GTM operator is shorter. Engineers who write Python and build custom integrations are scarcer and command premium compensation. See the <a href="/benchmarks/operator-vs-engineer/">operator vs engineer divide</a> for the salary gap data.</p>
+    <p>Geographic competition is evolving. Remote work opened the talent pool globally, but it also means a GTM Engineer in Austin competes for the same roles as one in San Francisco. Companies offering SF salaries for remote roles attract the best talent. Those insisting on location-adjusted pay lose candidates to competitors who don't.</p>
+
+    <h2>The AI Question</h2>
+    <p>Will AI reduce the need for GTM Engineers? The data says no. At least not yet.</p>
+    <p>AI coding tools at 71% adoption are making individual GTM Engineers more productive. But increased productivity leads to expanded scope, not reduced headcount. When a GTM Engineer can build in one day what used to take a week, companies give them more projects rather than firing three of their four GTM Engineers.</p>
+    <p>The pattern mirrors what happened with spreadsheets. Spreadsheets automated manual calculations but created more analyst jobs, not fewer. Each productivity gain enabled new analyses that weren't previously feasible. GTM Engineering AI tools follow the same pattern: each efficiency gain enables new automation projects that still require human oversight and architecture.</p>
+    <p>AI-native GTM tools (autonomous SDR agents, AI-powered outbound platforms) could change this equation in 2-3 years. If an AI can autonomously identify prospects, enrich data, write personalized emails, and manage follow-ups, the GTM Engineer's role shifts from building these systems to overseeing AI-built systems. That's a meaningful change, but it's augmentation (fewer GTM Engineers doing more), not elimination.</p>
+    <p>For what practitioners predict about AI's impact, see <a href="/benchmarks/future-predictions/">future predictions</a>.</p>
+
+    <h2>What Headcount Growth Means for Salaries</h2>
+    <p>More demand for a limited supply of experienced practitioners pushes salaries up. The $132K median will likely increase in the next survey cycle. The premium for senior and lead-level GTM Engineers (currently $175K-$250K) will widen as companies compete for the small pool of practitioners with 3+ years of experience.</p>
+    <p>Agency rates will increase proportionally. As agencies hire more operators, they pass labor costs through to clients. Expect agency pricing for GTM services to rise 10-15% in 2026 as talent costs increase. See <a href="/careers/agency-pricing/">agency pricing data</a> for current rates.</p>
+    <p>The coding premium ($45K) may also widen. As more companies hire GTM Engineers, some will try to hire operators at the lower end of the range. The engineers who can write code and build custom systems will be the scarcer, more expensive hire. The gap between "can use Clay" and "can build custom integrations" will grow in dollar terms.</p>
+    <p>For practitioners, this is a signal to invest in skill development now. The job market rewards preparation. When competition for talent intensifies, the practitioners with the strongest skills and portfolios get the best offers. See <a href="/careers/skills-gap/">skills gap data</a> for what skills are most in demand.</p>
+
+    <h2>Connecting the Dots</h2>
+    <p>Headcount trends connect to every other benchmark in this report. Bandwidth bottlenecks (25%) drive hiring intent. Hiring competition drives salary increases. Salary increases attract more people to the role. More practitioners create more learning content on LinkedIn (174 mentions). Better learning content produces more qualified candidates. The cycle feeds itself.</p>
+    <p>The question isn't whether GTM Engineering teams will grow. The data is clear: they will. The question is whether companies can hire fast enough to keep up with their own ambitions, and whether the talent pipeline can produce practitioners at the rate the market demands.</p>
+    <p>For the full job market analysis, see <a href="/careers/job-growth/">job growth data</a>. For salary projections, start at the <a href="/salary/">salary index</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("headcount-trends")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineering hiring and salary data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/headcount-trends/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/headcount-trends/index.html", page)
+    print(f"  Built: benchmarks/headcount-trends/index.html")
+
+
+def build_bench_future_predictions():
+    """Future of GTM Engineering: AI, RevOps convergence, tool consolidation."""
+    title = "Future of GTM Engineering: 2026 Predictions"
+    description = (
+        "GTM Engineering predictions: AI agents, RevOps convergence (9.6%),"
+        " tool consolidation, specialization. From 228 practitioners."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Benchmarks", "/benchmarks/"), ("Future Predictions", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Will GTM Engineering merge with RevOps?",
+         "Only 9.6% of survey respondents think GTM Engineering and RevOps will converge into a single role. The majority view them as distinct: GTM Engineers build automated systems and write code, while RevOps manages processes, reporting, and cross-functional alignment. The overlap is in tools and data, not in the core work. We agree with the 90.4%."),
+        ("How will AI change GTM Engineering?",
+         "AI is already changing the role. 71% use AI coding tools (Cursor, Claude Code). AI SDR agents are emerging. The prediction from practitioners is that AI handles more execution (writing emails, enriching data, managing sequences) while GTM Engineers shift toward architecture, strategy, and AI system oversight. The role doesn't disappear; it evolves."),
+        ("What tools will dominate GTM Engineering in 2027?",
+         "Practitioners predict consolidation. The current 6-8 tool stack per operator will compress as platforms add features that overlap. Clay is likely to expand its capabilities. AI-native outbound platforms may replace dedicated sequencing tools. The tool wishlist data shows strong demand for all-in-one platforms, which suggests the market is ready for consolidation."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>Future of GTM Engineering: Predictions</h1>
+        <p>What 228 GTM Engineers think happens next. AI agents, the RevOps convergence debate (9.6% say yes), tool consolidation, and where salaries go from here.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">9.6%</span>
+        <span class="stat-label">Predict RevOps Merge</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">Use AI Coding Tools</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Job Growth So Far</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The RevOps Convergence Debate: 9.6% Say Yes</h2>
+    <p>The most commonly asked question about GTM Engineering's future is whether it merges with RevOps. The data is clear: 90.4% of practitioners don't think it happens.</p>
+    <p>The 9.6% who predict convergence see the overlap in tools and data. Both roles work with CRM data, both build workflows, both care about pipeline metrics. From a distance, the roles look similar. If you squint at job descriptions, you might confuse them.</p>
+    <p>The 90.4% who predict continued separation see the difference in how the work gets done. RevOps manages existing systems: reporting cadences, process documentation, cross-functional alignment, forecasting. GTM Engineering builds new systems: custom enrichment pipelines, automated outbound sequences, data integrations that didn't exist before. One operates. The other engineers.</p>
+    <p>Our analysis sides with the majority. The overlap is in the periphery, not the core. A RevOps professional can learn to configure a Clay table. A GTM Engineer can learn to build a Salesforce report. But the instincts, problem-solving patterns, and career trajectories point in different directions. See our <a href="/careers/gtm-engineer-vs-revops/">GTM Engineer vs RevOps comparison</a> for the full breakdown.</p>
+
+    <h2>AI Agents: The Biggest Wildcard</h2>
+    <p>AI SDR agents are the technology most likely to reshape GTM Engineering in the next 2-3 years. Products that can autonomously identify prospects, enrich data, write personalized outreach, and manage follow-ups are already in market. If they work at scale, they change what GTM Engineers spend their time on.</p>
+    <p>The optimistic prediction: AI agents handle the execution layer (writing emails, running enrichment, managing sequences), and GTM Engineers move up the stack to architecture and strategy. They design the systems that AI agents run. They quality-check the output. They handle the edge cases that AI can't. This is the "AI augments" scenario, and it's how most practitioners describe the future.</p>
+    <p>The cautious prediction: AI agents get good enough to replace junior GTM Engineers for common workflows. Companies hire fewer entry-level operators and expect senior GTM Engineers to oversee AI systems instead. The headcount grows more slowly, concentrated at mid and senior levels. This compresses the career pipeline: fewer entry points, higher bar for the roles that exist.</p>
+    <p>Neither scenario eliminates the role. Both scenarios change it. The practitioners best positioned for either future are those who can architect systems, evaluate AI output quality, and solve problems that AI hasn't been trained on. Tool-specific skills (knowing Clay's interface) become less valuable. System-level thinking (designing data flows across tools) becomes more valuable.</p>
+
+    <h2>Tool Consolidation</h2>
+    <p>GTM Engineers currently use 4-8 tools. That's a lot of integrations, a lot of subscriptions, and a lot of context-switching. The <a href="/tools/tool-wishlist/">tool wishlist</a> data shows the #1 request is an all-in-one outbound platform. Practitioners want fewer tools that do more.</p>
+    <p>Tool consolidation is already happening. Clay is expanding beyond enrichment into workflow automation. HubSpot and Salesforce add more native integrations every quarter. AI-native platforms are building end-to-end outbound from prospect identification to email delivery.</p>
+    <p>The prediction: the GTM stack compresses from 6-8 tools to 3-4 by 2028. A data layer (Clay or equivalent), a CRM (HubSpot/Salesforce), a delivery layer (evolved sequencing tool), and an AI assistant. Workflow automation tools like Make and n8n survive in the enterprise where custom integration requirements prevent consolidation, but the average stack simplifies.</p>
+    <p>Consolidation is good for practitioners (less tool complexity, see <a href="/benchmarks/bottlenecks/">bottlenecks data</a>) and challenging for tool vendors (more competition per deal). For GTM Engineers who built their careers on tool breadth (knowing 8+ tools), consolidation reduces the value of that breadth. For engineers who built on coding and system design, consolidation increases their value because custom integration work remains necessary even with fewer tools.</p>
+
+    <h2>Specialization vs Generalization</h2>
+    <p>The future of the role splits along the <a href="/benchmarks/operator-vs-engineer/">operator vs engineer divide</a>. Both tracks are specializing.</p>
+    <p>Operators are specializing by vertical. A GTM operator who knows fintech outbound (regulatory compliance, institutional buyer personas, complex approval processes) commands a premium over a generalist. Industry-specific knowledge, combined with tool skills, creates a defensible specialization that AI can't easily replicate.</p>
+    <p>Engineers are specializing by system layer. Data pipeline engineers, integration architects, and AI orchestration engineers are emerging as distinct sub-specialties. A GTM Engineer who specializes in data quality infrastructure solves different problems than one who specializes in AI agent deployment.</p>
+    <p>The generalist GTM Engineer (good at everything, expert at nothing) becomes harder to sustain as the role matures. Generalists thrive in early-stage companies where one person does everything. As companies scale and the role fragments, specialization pays better and creates clearer career paths.</p>
+
+    <h2>Salary Trajectory Predictions</h2>
+    <p>The current $132K median is unlikely to decline. Demand exceeds supply, <a href="/benchmarks/headcount-trends/">headcount intent is positive</a>, and the skill bar is rising. Short-term (2026-2027), expect 5-10% median salary growth driven by competition for experienced practitioners.</p>
+    <p>The coding premium ($45K) will likely hold or widen. AI coding tools make Python more accessible, but they also raise the bar for what "coding skills" means. Knowing Python basics with AI assistance is table stakes. Architecting multi-system integrations and maintaining production codebases is the new premium skill. The premium shifts from "can you write Python" to "can you build and maintain systems."</p>
+    <p>Senior and lead salaries ($175K-$250K) will stretch higher as the first generation of GTM Engineers reaches 5+ years of experience. Currently, almost nobody has 5 years as a GTM Engineer because the role didn't exist 5 years ago. When that cohort emerges (starting in 2026-2027), expect new salary benchmarks at the top of the range.</p>
+    <p>Agency rates will increase 10-15% annually. Client demand for GTM services is growing faster than the agency workforce. Agencies that can hire and train fast will grow revenue. Those that can't will turn away clients.</p>
+
+    <h2>Our Predictions</h2>
+    <p>We'll put our own stakes in the ground.</p>
+    <p><strong>GTM Engineering will not merge with RevOps.</strong> The roles will remain distinct, though the tools they use will overlap more. Companies will hire both, and the clear-eyed ones will have different job descriptions, different compensation bands, and different career ladders for each.</p>
+    <p><strong>AI agents will augment, not replace, for at least 3 more years.</strong> The technology isn't ready for full autonomy on complex B2B outbound. When it is, the GTM Engineer role becomes an AI orchestration role. That's an evolution, not an extinction.</p>
+    <p><strong>The median salary will hit $150K by the next survey.</strong> Competition for talent, expanding headcount, and the maturation of the role all push compensation up. The coding premium will hold near $45K but shift from raw Python to system architecture skills.</p>
+    <p><strong>Tool consolidation will eliminate 2-3 categories.</strong> Dedicated sequencing tools and standalone intent data platforms are the most vulnerable. Platforms that combine enrichment, sequencing, and CRM integration will absorb these functions.</p>
+    <p>We'll revisit these predictions when the next State of GTM Engineering Report drops. For the data behind our thinking, start at the <a href="/benchmarks/">benchmarks index</a>. For career strategy based on these trends, see <a href="/careers/">career guides</a>. For the tool adoption data that shapes consolidation predictions, see <a href="/tools/most-exciting/">most exciting tools</a>.</p>
+
+{faq_html(faq_pairs)}
+{bench_related_links("future-predictions")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly predictions and trend analysis for GTM Engineers.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/benchmarks/future-predictions/",
+        body_content=body, active_path="/benchmarks/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("benchmarks/future-predictions/index.html", page)
+    print(f"  Built: benchmarks/future-predictions/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -8025,6 +8529,11 @@ def main():
     build_bench_demographics()
     build_bench_report_summary()
     build_bench_operator_vs_engineer()
+    build_bench_bottlenecks()
+    build_bench_company_understanding()
+    build_bench_learning_resources()
+    build_bench_headcount_trends()
+    build_bench_future_predictions()
 
     print("\n  Building meta files...")
     build_sitemap()

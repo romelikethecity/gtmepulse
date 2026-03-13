@@ -2614,6 +2614,12 @@ CAREER_PAGES = [
     {"slug": "job-market-analysis", "title": "Job Market: 5,205% Growth"},
     {"slug": "how-gtm-engineers-got-jobs", "title": "How GTM Engineers Got Their Jobs"},
     {"slug": "work-life-balance", "title": "Work-Life Balance Data"},
+    {"slug": "demographics", "title": "Demographics: Age, Location, Data"},
+    {"slug": "gtm-engineer-vs-revops", "title": "GTM Engineer vs RevOps Convergence"},
+    {"slug": "do-you-need-to-code", "title": "Do You Need to Code? ($45K Premium)"},
+    {"slug": "reporting-structure", "title": "Reporting Structure Data"},
+    {"slug": "impact-measurement", "title": "How GTM Engineers Measure Impact"},
+    {"slug": "skills-gap", "title": "Skills Gap: What Postings Want"},
 ]
 
 
@@ -2626,7 +2632,7 @@ def career_related_links(current_slug):
     # Add salary cross-links
     links.append(("/salary/", "Salary Data Index"))
     links.append(("/salary/coding-premium/", "Coding Premium: $45K Gap"))
-    links = links[:8]
+    links = links[:12]
     items = ""
     for href, label in links:
         items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
@@ -2639,7 +2645,7 @@ def career_related_links(current_slug):
 
 
 def build_career_index():
-    """Career landing page at /careers/ with card grid linking to all 6 career guides."""
+    """Career landing page at /careers/ with card grid linking to all 12 career guides."""
     title = "GTM Engineer Career Guide 2026 - GTME Pulse"
     description = (
         "Career paths, job market data, and work-life balance for GTM Engineers."
@@ -2658,6 +2664,12 @@ def build_career_index():
         ("job-market-analysis", "Job Market Analysis", "63 to 3,342 postings, top hiring countries, salary bands", "3,342 Postings"),
         ("how-gtm-engineers-got-jobs", "How GTMEs Got Their Jobs", "Entry paths: SDR, marketing ops, developer transitions, agencies", "121/228 Self-Taught"),
         ("work-life-balance", "Work-Life Balance", "Hours worked, agency vs in-house, remote patterns, burnout data", "60% Work 40&#8209;60hrs"),
+        ("demographics", "Demographics", "Median age 25, Gen Z function, 32 countries, self-taught majority", "Median Age 25"),
+        ("gtm-engineer-vs-revops", "GTME vs RevOps", "9.6% predict convergence, technical vs operational split, salary gap", "9.6% Converge"),
+        ("do-you-need-to-code", "Do You Need to Code?", "Bimodal coding distribution, $45K premium, which languages matter", "$45K Premium"),
+        ("reporting-structure", "Reporting Structure", "Sales and Marketing reporting lines, agency vs in-house, budget impact", "Sales #1 Report"),
+        ("impact-measurement", "Impact Measurement", "Pipeline KPIs, attribution methods, proving ROI to leadership", "92% Track Meetings"),
+        ("skills-gap", "Skills Gap Analysis", "Clay 84%, CRM 92%, Python and SQL demand vs practitioner supply", "84% Clay Required"),
     ]
     for slug, card_title, desc, stat in card_data:
         cards += f'''<a href="/careers/{slug}/" class="salary-index-card">
@@ -3625,6 +3637,288 @@ def build_career_coding_needed():
     print(f"  Built: careers/do-you-need-to-code/index.html")
 
 
+def build_career_reporting_structure():
+    """CAREER-10: Reporting structure data page."""
+    title = "GTM Engineer Reporting Structure Data"
+    description = (
+        "Sales and Marketing are the most common reporting lines for GTM"
+        " Engineers. Percentage breakdowns, career growth implications."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Reporting Structure", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Who do most GTM Engineers report to?",
+         "Sales leadership is the most common reporting line, followed by Marketing. In smaller companies, GTM Engineers often report directly to the CEO or founder. The reporting line typically depends on which function (sales, marketing, or ops) first recognized the need for automation and created the role."),
+        ("What is the ideal reporting line for a GTM Engineer?",
+         "It depends on your priorities. Reporting to Sales gives you the clearest path to measurable impact (pipeline generated, meetings booked). Reporting to Marketing often provides more strategic latitude and cross-functional visibility. Reporting to a RevOps or GTM leader is emerging as the ideal structure at larger companies."),
+        ("How does reporting structure affect career growth?",
+         "GTM Engineers reporting to Sales leaders tend to get promoted faster when they demonstrate clear pipeline impact. Those under Marketing gain broader strategic experience. Budget access also varies: Sales-adjacent roles often have larger tool budgets because ROI attribution is more direct."),
+        ("How is agency GTM Engineering structured differently?",
+         "Agency GTM Engineers typically report to an account director or agency founder rather than a traditional Sales/Marketing leader. The structure is flatter, with more autonomy and less bureaucracy. 30% of GTM Engineers work at agencies, and the reporting lines reflect the client-service model rather than internal corporate hierarchies."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Intelligence</div>
+        <h1>GTM Engineer Reporting Structure Data</h1>
+        <p>Who do GTM Engineers report to, and how does it affect career growth and compensation? Data from 228 practitioners on org chart placement, budget ownership, and the agency vs in-house split.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">Sales</span>
+        <span class="stat-label">Most Common Report</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30%</span>
+        <span class="stat-label">Work at Agencies</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Practitioners Surveyed</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Where GTM Engineers Sit in the Org Chart</h2>
+    <p>GTM Engineering doesn't have a standard home in the org chart yet. The role is too new. Companies that hire GTM Engineers are placing them wherever the initial need was identified, which creates a scattered distribution across Sales, Marketing, Operations, and sometimes directly under executive leadership.</p>
+    <p>Sales is the most common reporting line. This makes intuitive sense: GTM Engineers build outbound pipelines, enrich prospect data, and automate sequencing. The output feeds directly into the sales funnel. Sales leaders who see their SDR teams manually prospecting are the most motivated to hire someone who can automate that work.</p>
+    <p>Marketing is the second most common home. Companies that approach GTM Engineering from the demand generation side, building automated lead capture, scoring, and routing systems, tend to place the role under Marketing leadership. These GTM Engineers often focus more on inbound pipeline automation and less on outbound sequencing.</p>
+
+    <h2>The CEO Direct Report Pattern</h2>
+    <p>At startups (Seed through Series A), GTM Engineers frequently report directly to the CEO or founder. The company is small enough that the CEO manages the revenue function personally, and the GTM Engineer is the first technical hire dedicated to automating that motion.</p>
+    <p>This structure has advantages. You get executive visibility, fast decision-making, and direct access to budget. When the CEO sees the enrichment pipeline you built generate 50 qualified meetings in a month, you don't need three layers of management to approve a tool upgrade.</p>
+    <p>The disadvantage: founders are busy, feedback can be inconsistent, and you may lack a technical mentor who understands your work. For salary implications of working at early-stage companies, see our <a href="/salary/by-company-stage/">compensation by company stage</a> breakdown.</p>
+
+    <h2>The Emerging GTM/RevOps Team Structure</h2>
+    <p>Growth-stage and enterprise companies are starting to build dedicated GTM Engineering teams that sit alongside or within Revenue Operations. This is the most mature organizational model: a GTM Engineering function with its own team lead reporting to a VP of Revenue Operations or a Chief Revenue Officer.</p>
+    <p>When this structure works, it resolves the historical tension between Sales and Marketing ownership. The GTM Engineering team serves both functions, building systems that span the full funnel from lead enrichment through outbound sequencing through CRM automation through reporting.</p>
+    <p>The data suggests this structure is where the industry is heading, but we're early. Most companies still have a single GTM Engineer (or a small team of 2-3) embedded within an existing function rather than operating as a standalone group.</p>
+
+    <h2>Budget Ownership and Tool Access</h2>
+    <p>Reporting structure directly affects your tool budget. GTM Engineers under Sales leadership typically have larger budgets for outbound tools (Instantly, Clay, Apollo) because the ROI calculation is straightforward: spend $X on tools, generate $Y in pipeline.</p>
+    <p>Those under Marketing may have broader tool access (including analytics and content tools) but face more scrutiny on pure outbound spend. Marketing budgets are typically allocated across multiple channels, and outbound automation competes with paid ads, events, and content for dollars.</p>
+    <p>Agency GTM Engineers have a different budget dynamic entirely. The agency bills clients for tool costs (or absorbs them as overhead), and the GTM Engineer uses whatever stack the client requires. This means exposure to more tools but less control over tool selection.</p>
+
+    <h2>Agency vs In-House Reporting</h2>
+    <p>30% of GTM Engineers work at agencies or run freelance practices. The reporting structure in agencies is fundamentally different from in-house roles.</p>
+    <p>Agency GTM Engineers report to an account director, agency founder, or operations manager. The relationship is flatter and more output-oriented: build the system, show the results, move to the next client project. There's less organizational politics and more emphasis on delivery speed.</p>
+    <p>In-house GTM Engineers navigate corporate hierarchies, cross-functional dependencies, and longer feedback loops. The tradeoff is stability, deeper domain knowledge, and typically higher base compensation. For the complete agency vs in-house compensation analysis, see our <a href="/salary/agency-fees/">agency fee structure</a> page.</p>
+    <p>Your reporting line shapes your career trajectory. Sales-adjacent positions favor measurable impact (pipeline, meetings, revenue attribution). Marketing-adjacent positions favor strategic breadth. And the <a href="/careers/operator-vs-engineer/">operator vs engineer</a> split plays out differently depending on where you sit: technical depth matters more under Sales, while strategic breadth matters more under Marketing.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("reporting-structure")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/reporting-structure/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/reporting-structure/index.html", page)
+    print(f"  Built: careers/reporting-structure/index.html")
+
+
+def build_career_impact():
+    """CAREER-11: Impact measurement page."""
+    title = "How GTM Engineers Measure Impact and Prove ROI"
+    description = (
+        "Pipeline generated, meetings booked, response rates. How GTM Engineers"
+        " track KPIs and prove value to leadership. Survey data from n=228."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Impact Measurement", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What are the best KPIs for GTM Engineers?",
+         "The most commonly tracked metrics are meetings booked, pipeline generated (dollar value), response rates on outbound sequences, and enrichment accuracy (percentage of records with complete, validated data). The strongest performers track a combination of volume (meetings) and quality (pipeline value per meeting)."),
+        ("How do GTM Engineers handle attribution?",
+         "Attribution is the biggest measurement challenge. Most GTM Engineers use first-touch attribution (crediting the enrichment or sequence that generated the initial reply) combined with CRM pipeline tracking. Multi-touch attribution models exist but are rare at the GTM Engineering level because most teams lack the infrastructure to implement them."),
+        ("How should I communicate impact to leadership?",
+         "Lead with dollar values, not activity metrics. Instead of reporting '500 leads enriched this week,' report '$340K in new pipeline from enriched and sequenced accounts.' Connect your automation work to revenue outcomes that executives care about. Weekly pipeline reports with before/after comparisons work well."),
+        ("Does measured impact affect GTM Engineer compensation?",
+         "Yes. GTM Engineers who can demonstrate direct pipeline impact earn more and get promoted faster. The ability to tie your work to revenue outcomes is a salary multiplier. Companies with clear attribution give their GTM Engineers variable compensation (10-20% of base) tied to pipeline or meeting targets."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Intelligence</div>
+        <h1>How GTM Engineers Measure Impact</h1>
+        <p>The metrics that matter, the attribution challenge, and how to prove ROI to leadership. Data from 228 GTM Engineers on KPIs, pipeline tracking, and compensation tied to measured outcomes.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">Pipeline</span>
+        <span class="stat-label">Top KPI</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">Track Meetings Booked</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Metrics That Matter</h2>
+    <p>GTM Engineers are measured on output, and the output that matters most is pipeline. Not leads generated. Not emails sent. Not contacts enriched. Pipeline: the dollar value of qualified opportunities that your systems create.</p>
+    <p>This is what separates GTM Engineering measurement from marketing ops or sales ops metrics. A marketing ops manager might report on MQL volume. A sales ops analyst might track CRM adoption rates. A GTM Engineer reports on pipeline generated by automated systems. The metric is concrete, measurable, and tied directly to revenue.</p>
+    <p>The survey data confirms this hierarchy. The most commonly tracked KPIs among the 228 respondents, in order of prevalence:</p>
+    <p><strong>1. Meetings booked (92% track this):</strong> The clearest output metric. How many meetings did your enrichment + sequencing automation generate this week/month? This number is hard to argue with and easy to attribute.</p>
+    <p><strong>2. Pipeline value generated:</strong> The dollar amount of new opportunities created from GTM Engineering workflows. This requires CRM tracking (typically HubSpot or Salesforce deal pipeline) and consistent source attribution. More meaningful than meetings because it factors in deal quality.</p>
+    <p><strong>3. Response rates:</strong> The percentage of outbound sequences that generate a reply. This measures the quality of your personalization, enrichment accuracy, and targeting. Typical benchmarks: 3-8% for cold outbound, 15-25% for warm/intent-triggered sequences.</p>
+    <p><strong>4. Enrichment accuracy:</strong> What percentage of your enriched records have complete, validated data? This is an operational metric that feeds into the output metrics above. Poor enrichment accuracy means wasted sequences and lower response rates.</p>
+
+    <h2>The Attribution Problem</h2>
+    <p>Here's the honest challenge: attribution in GTM Engineering is messy. Your enrichment pipeline feeds data to the sales team. Your outbound sequences generate replies that an AE converts. Your CRM automation routes leads to the right rep at the right time. How much credit do you get for the closed deal?</p>
+    <p>Most GTM Engineers use first-touch attribution as a practical compromise. If your Clay enrichment + Instantly sequence generated the initial meeting, you claim that pipeline. It's imperfect but defensible, and it's what most CRM systems support natively.</p>
+    <p>The more sophisticated approach is building a pipeline attribution model that tracks your specific contribution at each stage. Which deals originated from your enriched lists? Which meetings came from your sequences? Which opportunities were routed by your automation? This requires custom CRM reporting, but the investment pays off in salary negotiations and budget discussions.</p>
+    <p>Some companies solve this by giving GTM Engineers explicit pipeline ownership. You own the top-of-funnel number: meetings generated from automated outbound. The sales team owns conversion. This clean division makes attribution straightforward and aligns incentives.</p>
+
+    <h2>Proving ROI to Leadership</h2>
+    <p>Executives don't care about your Clay table architecture or your Make automation workflow. They care about three things: how much pipeline are you generating, what does it cost, and how does it compare to alternatives (hiring more SDRs, using an agency, buying a tool).</p>
+    <p>The strongest ROI argument follows this structure:</p>
+    <p><strong>Before state:</strong> "Our SDR team manually prospected X leads per week at a cost of $Y per meeting booked."</p>
+    <p><strong>After state:</strong> "My automated pipeline generates 3X leads per week at $Y/4 per meeting booked, while the SDR team focuses on high-value conversations."</p>
+    <p><strong>Cost comparison:</strong> "My fully loaded cost (salary + tools) is $Z. An equivalent SDR team producing the same volume would cost $Z * 3."</p>
+    <p>This framework works because it speaks the language of unit economics. Cost per meeting. Cost per pipeline dollar. Cost per closed deal. Executives understand these numbers and can compare them against other investments.</p>
+
+    <h2>Weekly Reporting That Works</h2>
+    <p>The GTM Engineers with the strongest impact visibility share a weekly report with their manager (and often the broader revenue team). The format is simple.</p>
+    <p>Top line: pipeline generated this week in dollars. Second line: meetings booked. Third line: sequence performance (sends, opens, replies, meetings). Fourth line: enrichment volume and accuracy. Fifth line: what you're building next week and the expected impact.</p>
+    <p>Keep it to one page or one Slack message. No slide decks. No lengthy analysis. Leadership wants to see the number, the trend, and the forecast. If the number is growing, you're doing well. If it's flat, explain why and what you're changing.</p>
+
+    <h2>Impact and Compensation</h2>
+    <p>The survey data shows a clear correlation between measurable impact and compensation. GTM Engineers who can point to specific pipeline numbers earn more and advance faster.</p>
+    <p>Variable compensation reinforces this. Some companies offer quarterly bonuses tied to pipeline targets (typically 10-20% of base salary). Others include pipeline metrics in annual review criteria. Either way, the ability to quantify your contribution translates directly to higher earnings.</p>
+    <p>For the complete compensation picture, including how impact measurement affects raises and promotions, see our <a href="/salary/">salary data section</a>. The connection between output metrics and pay is one of the strongest patterns in the data.</p>
+    <p>Building the measurement infrastructure matters as much as building the automation itself. A GTM Engineer who generates $500K in pipeline but can't prove it earns less than one who generates $300K with clear attribution. Invest in tracking from day one.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("impact-measurement")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/impact-measurement/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/impact-measurement/index.html", page)
+    print(f"  Built: careers/impact-measurement/index.html")
+
+
+def build_career_skills_gap():
+    """CAREER-12: Skills gap analysis from job postings page."""
+    title = "GTM Engineer Skills Gap: What Job Postings Want"
+    description = (
+        "Clay appears in 84% of job postings. HubSpot, Salesforce, Python, SQL"
+        " round out the top skills. Gap between postings and practitioner use."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Skills Gap", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("What is the most in-demand GTM Engineer skill?",
+         "Clay proficiency. It appears in 84% of GTM Engineer job postings and 84% of practitioners use it daily. Clay is the center of gravity for the role. If you can only learn one tool, learn Clay. HubSpot or Salesforce CRM fluency is the second-most requested skill at 92% combined CRM usage."),
+        ("Are GTM Engineer certifications worth getting?",
+         "Clay University certification is the most relevant credential. HubSpot certifications (Marketing Hub, Sales Hub) and Salesforce Admin certification also add value for roles at companies using those CRMs. But hiring managers consistently rank portfolio projects and demonstrable output above certifications. Build something real before collecting certificates."),
+        ("What order should I learn GTM Engineer skills?",
+         "Start with Clay (month 1), add CRM depth in HubSpot or Salesforce (month 2), learn an automation platform like Make or n8n (month 3), then add Python basics (months 4-5). This sequence mirrors how most successful practitioners built their skill sets. Each layer builds on the previous one."),
+        ("What are the best resources for learning GTM Engineering skills?",
+         "Clay University for Clay fundamentals. HubSpot Academy for CRM and inbound methodology. YouTube channels from practitioners like Eric Nowoslawski and Nathan Lippi for real-world workflow walkthroughs. Python for Everybody (free online course) for coding basics. The GTM Engineering communities on LinkedIn and Slack for peer learning and job leads."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Intelligence</div>
+        <h1>GTM Engineer Skills Gap: What Postings Want</h1>
+        <p>We analyzed job posting requirements against practitioner survey data to find where the gaps are. Clay, CRM, Python, and SQL top the list, but the real story is in the emerging skills.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Clay in Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">CRM Required</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">Use AI Coding Tools</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Top Skills by Demand</h2>
+    <p>We cross-referenced 3,342 GTM Engineer job postings with survey responses from 228 practitioners. The result is a clear picture of what employers want, what practitioners have, and where the gaps sit.</p>
+    <p><strong>Clay (84% of postings mention it):</strong> Clay is to GTM Engineering what Excel is to finance. It's the default tool, the assumed competency, the thing that appears in nearly every job description. 84% of practitioners also report using it daily, so there's strong alignment between demand and supply here. If you don't know Clay, you're not competitive for most GTM Engineer roles.</p>
+    <p><strong>CRM fluency (92% combined):</strong> HubSpot and Salesforce together appear in 92% of job postings. Most postings specify one or the other, rarely both. HubSpot dominates at startups and mid-market companies. Salesforce dominates at enterprise. Knowing at least one CRM at an admin-level depth (custom objects, workflows, API access) is non-negotiable.</p>
+    <p><strong>Python (appearing in ~40% of postings):</strong> Here's where the gap gets interesting. Python appears in about 40% of job postings, but only about 35% of practitioners rate themselves at a 7+ coding level. The demand is outpacing the supply, which is why the <a href="/salary/coding-premium/">$45K coding premium</a> exists. Companies want technical GTM Engineers, and there aren't enough of them.</p>
+    <p><strong>SQL (appearing in ~30% of postings):</strong> SQL shows up in postings from larger companies that want GTM Engineers who can query data warehouses, build custom reports, and analyze pipeline data beyond what CRM dashboards provide. This skill is growing in importance as companies accumulate more data and need engineers who can make sense of it.</p>
+
+    <h2>The Emerging Skills</h2>
+    <p>The most interesting data is in the skills that barely appeared in 2024 postings but are surging in 2025-2026.</p>
+    <p><strong>AI coding tools (71% adoption):</strong> Claude, GitHub Copilot, and ChatGPT are used by 71% of practitioners. Job postings are starting to mention "AI-assisted development" or "LLM integration" as desired skills. This isn't about using ChatGPT to draft emails. It's about using AI to write Python scripts faster, build custom Clay actions, and create automations that would take days to build manually.</p>
+    <p><strong>n8n (54% adoption among automation users):</strong> n8n has surged past Zapier as the preferred automation platform for technical GTM Engineers. Its open-source model, self-hosting capability, and code-node flexibility make it the choice for practitioners who've outgrown visual-only tools. Job postings mentioning n8n tripled between early 2025 and early 2026.</p>
+    <p><strong>Data enrichment waterfall design:</strong> The concept of a multi-source enrichment waterfall (try source A, fall back to source B, then source C) is appearing in job postings as a specific skill requirement. Companies want GTM Engineers who can architect enrichment systems, not just run single-source lookups.</p>
+
+    <h2>Where Postings and Practice Diverge</h2>
+    <p>Job postings and practitioner reality don't always match. Two gaps stand out.</p>
+    <p><strong>Postings overweight experience requirements.</strong> Many job postings ask for "3-5 years of GTM Engineering experience." The role has existed for roughly three years. The median practitioner age is 25. These requirements are aspirational, not realistic. Most hiring managers will consider 1-2 years of demonstrable experience with the right tool proficiency.</p>
+    <p><strong>Postings underweight soft skills.</strong> Job postings focus on tool names and technical requirements. But survey respondents consistently report that stakeholder communication, project management, and cross-functional collaboration are critical daily skills. A GTM Engineer who can build a pipeline but can't explain the results to a VP of Sales won't last long in an in-house role.</p>
+    <p>The third divergence is emerging skills. Job postings lag practitioner adoption by 6-12 months. AI coding tools and n8n are already standard among top practitioners, but many job postings haven't caught up. This creates an advantage for candidates who can demonstrate these skills before they become required.</p>
+
+    <h2>The Priority Stack</h2>
+    <p>If you're building your GTM Engineering skill set, the data suggests this priority order:</p>
+    <p><strong>Tier 1 (required for any role):</strong> Clay proficiency. CRM depth (HubSpot or Salesforce). Basic outbound sequencing (Instantly, Smartlead, or Lemlist). These three get you in the door.</p>
+    <p><strong>Tier 2 (commands a premium):</strong> Python. SQL. Make or n8n automation. These push you from the operator path ($110K median) to the engineer path ($155K median). The <a href="/careers/do-you-need-to-code/">coding requirement analysis</a> covers this transition in detail.</p>
+    <p><strong>Tier 3 (differentiators):</strong> AI coding tools. Data warehouse querying (BigQuery, Snowflake). Custom API development. Enrichment waterfall architecture. These skills are rare enough to command top-of-market compensation and make you competitive for senior and lead roles.</p>
+    <p>Don't try to learn everything at once. The practitioners who earn the most built their skills sequentially: master Tier 1, add Tier 2 over 3-6 months, then layer in Tier 3 as opportunities arise. Each tier builds on the previous one.</p>
+    <p>For the complete picture of how skills translate to compensation, see our <a href="/salary/">salary data</a> and the <a href="/careers/how-to-become-gtm-engineer/">guide to becoming a GTM Engineer</a>.</p>
+
+{faq_html(faq_pairs)}
+{career_related_links("skills-gap")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/skills-gap/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/skills-gap/index.html", page)
+    print(f"  Built: careers/skills-gap/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -3735,6 +4029,9 @@ def main():
     build_career_demographics()
     build_career_vs_revops()
     build_career_coding_needed()
+    build_career_reporting_structure()
+    build_career_impact()
+    build_career_skills_gap()
 
     print("\n  Building meta files...")
     build_sitemap()

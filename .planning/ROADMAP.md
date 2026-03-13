@@ -58,11 +58,12 @@ Plans:
   2. Every salary page (existing and new) cites "Source: State of GTM Engineering Report 2026 (n=228)" with visible attribution
   3. The 12 new salary pages each render with full content (1,200-2,000 words), stats grids, range visualizations, and FAQ sections where applicable
   4. Running `python3 scripts/build.py` generates all updated and new salary pages without errors, and no two pages share the same title or meta description
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Data layer update and existing page refresh (SALUP-01 through SALUP-03)
-- [ ] 04-02: New salary pages (SALN-01 through SALN-12)
+- [ ] 04-01-PLAN.md — Data layer update with real report numbers + source citations on existing pages
+- [ ] 04-02-PLAN.md — New salary pages: coding premium, company size, funding stage, experience, age, bonus
+- [ ] 04-03-PLAN.md — New salary pages: equity, US vs global, posted vs actual, agency fees, agency fees by region, seed vs enterprise + nav update
 
 ### Phase 5: Career, Agency, and Job Market
 **Goal**: Visitors can explore 28 pages of career intelligence, agency business data, and job market analysis, each backed by real survey and job posting data
@@ -121,7 +122,7 @@ Phases execute in numeric order: 4 → 5 → 6 → 7
 | 1. Build System and HTML Shell | v1.0 | 1/2 | In progress | - |
 | 2. Core Pages and Newsletter | v1.0 | 0/2 | Not started | - |
 | 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
-| 4. Salary Data Overhaul | v2.0 | 0/2 | Not started | - |
+| 4. Salary Data Overhaul | v2.0 | 0/3 | Not started | - |
 | 5. Career, Agency, and Job Market | v2.0 | 0/2 | Not started | - |
 | 6. Tools and Benchmarks | v2.0 | 0/2 | Not started | - |
 | 7. Comparisons, Blog, and Quality | v2.0 | 0/3 | Not started | - |

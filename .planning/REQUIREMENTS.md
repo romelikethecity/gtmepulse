@@ -67,14 +67,14 @@
 
 ### Agency & Freelance Pages
 
-- [ ] **AGENCY-01**: Agency Pricing Guide ($5K-$8K/mo median, $1K-$33K range)
-- [ ] **AGENCY-02**: "How to Start a GTM Engineering Agency" guide (30% are agency/claygency)
-- [ ] **AGENCY-03**: Agency vs freelance revenue comparison (67 vs 30 respondents)
-- [ ] **AGENCY-04**: Client retention page (44% 3-6 month, 24% 6-12 month engagements)
-- [ ] **AGENCY-05**: Client count analysis (47% <5 clients, 33% 5-10)
-- [ ] **AGENCY-06**: Pricing models page (monthly most common, hybrid, project, pay-per-outcome)
-- [ ] **AGENCY-07**: Agency fees by region (US, APAC $3K, MEA $4K, Europe, LATAM)
-- [ ] **AGENCY-08**: Deliverability practices page (89.7% domain rotation)
+- [x] **AGENCY-01**: Agency Pricing Guide ($5K-$8K/mo median, $1K-$33K range)
+- [x] **AGENCY-02**: "How to Start a GTM Engineering Agency" guide (30% are agency/claygency)
+- [x] **AGENCY-03**: Agency vs freelance revenue comparison (67 vs 30 respondents)
+- [x] **AGENCY-04**: Client retention page (44% 3-6 month, 24% 6-12 month engagements)
+- [x] **AGENCY-05**: Client count analysis (47% <5 clients, 33% 5-10)
+- [x] **AGENCY-06**: Pricing models page (monthly most common, hybrid, project, pay-per-outcome)
+- [x] **AGENCY-07**: Agency fees by region (US, APAC $3K, MEA $4K, Europe, LATAM)
+- [x] **AGENCY-08**: Deliverability practices page (89.7% domain rotation)
 
 ### Job Market Pages
 
@@ -190,14 +190,14 @@
 | CAREER-10 | Phase 5 | Complete |
 | CAREER-11 | Phase 5 | Complete |
 | CAREER-12 | Phase 5 | Complete |
-| AGENCY-01 | Phase 5 | Pending |
-| AGENCY-02 | Phase 5 | Pending |
-| AGENCY-03 | Phase 5 | Pending |
-| AGENCY-04 | Phase 5 | Pending |
-| AGENCY-05 | Phase 5 | Pending |
-| AGENCY-06 | Phase 5 | Pending |
-| AGENCY-07 | Phase 5 | Pending |
-| AGENCY-08 | Phase 5 | Pending |
+| AGENCY-01 | Phase 5 | Complete |
+| AGENCY-02 | Phase 5 | Complete |
+| AGENCY-03 | Phase 5 | Complete |
+| AGENCY-04 | Phase 5 | Complete |
+| AGENCY-05 | Phase 5 | Complete |
+| AGENCY-06 | Phase 5 | Complete |
+| AGENCY-07 | Phase 5 | Complete |
+| AGENCY-08 | Phase 5 | Complete |
 | JOBMKT-01 | Phase 5 | Pending |
 | JOBMKT-02 | Phase 5 | Pending |
 | JOBMKT-03 | Phase 5 | Pending |

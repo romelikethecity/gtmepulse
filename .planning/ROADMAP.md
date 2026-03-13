@@ -125,7 +125,7 @@ Phases execute in numeric order: 4 → 5 → 6 → 7
 | 2. Core Pages and Newsletter | v1.0 | 0/2 | Not started | - |
 | 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
 | 4. Salary Data Overhaul | v2.0 | 3/3 | Complete | 2026-03-13 |
-| 5. Career, Agency, and Job Market | 2/4 | In Progress|  | - |
+| 5. Career, Agency, and Job Market | 3/4 | In Progress|  | - |
 | 6. Tools and Benchmarks | v2.0 | 0/2 | Not started | - |
 | 7. Comparisons, Blog, and Quality | v2.0 | 0/3 | Not started | - |
 

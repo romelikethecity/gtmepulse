@@ -166,32 +166,78 @@ def get_page_wrapper(title, description, canonical_path, body_content,
     nav = get_nav_html(active_path)
     footer = get_footer_html()
 
-    inline_js = '''<script>
-(function(){
+    inline_js = f'''<script>
+(function(){{
     // Mobile nav toggle
     var toggle = document.querySelector('.nav-mobile-toggle');
     var links = document.querySelector('.nav-links');
-    if (toggle && links) {
-        toggle.addEventListener('click', function() {
+    if (toggle && links) {{
+        toggle.addEventListener('click', function() {{
             links.classList.toggle('open');
             toggle.classList.toggle('open');
-        });
-    }
+        }});
+    }}
     // Dropdown toggles
     var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
-    dropdowns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
+    dropdowns.forEach(function(btn) {{
+        btn.addEventListener('click', function(e) {{
             e.preventDefault();
             e.stopPropagation();
             var parent = btn.closest('.nav-item--dropdown');
-            if (parent) {
+            if (parent) {{
                 parent.classList.toggle('open');
                 btn.setAttribute('aria-expanded',
                     parent.classList.contains('open') ? 'true' : 'false');
-            }
-        });
-    });
-})();
+            }}
+        }});
+    }});
+    // Newsletter signup
+    var SIGNUP_URL = '{SIGNUP_WORKER_URL}';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {{
+        form.onsubmit = function(e) {{
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {{
+                method: 'POST',
+                headers: {{'Content-Type': 'application/json'}},
+                body: JSON.stringify({{email: email}})
+            }})
+            .then(function(r) {{ return r.json(); }})
+            .then(function(data) {{
+                if (data.success) {{
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\\\'re in! Check your inbox.</p>';
+                }} else {{
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }}
+            }})
+            .catch(function() {{
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            }});
+        }};
+    }});
+}})();
 </script>'''
 
     return f'''{head}
@@ -349,7 +395,7 @@ def faq_html(qa_pairs):
 
 
 def newsletter_cta_html(context=""):
-    """Email capture block. Non-functional in Phase 1 (no JS handler)."""
+    """Email capture block. JS handler wired via get_page_wrapper inline script."""
     ctx_text = f" {context}" if context else ""
     return f'''<section class="newsletter-cta">
     <h2>Get the Weekly Pulse</h2>

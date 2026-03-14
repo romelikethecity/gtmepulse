@@ -12,6 +12,8 @@ CSS_VERSION = "14"
 CTA_HREF = "/newsletter/"
 CTA_LABEL = "Get the Weekly Pulse"
 
+SIGNUP_WORKER_URL = "https://gtme-newsletter-signup.rome-workers.workers.dev"
+
 NAV_ITEMS = [
     {
         "href": "/salary/",

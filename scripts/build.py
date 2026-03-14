@@ -5774,7 +5774,7 @@ TOOL_REVIEWS = [
     {"slug": "salesloft-review", "name": "Salesloft", "category": "Outbound Sequencing",
      "url": "https://salesloft.com", "price_range": "Custom ($75-$125/seat/mo)",
      "title": "Salesloft Review 2026: Outreach's Main Competitor",
-     "meta_desc": "Salesloft review for GTM Engineers. Cadence builder, Rhythm AI features, pricing vs Outreach, and the enterprise sales engagement landscape.",
+     "meta_desc": "Salesloft review for GTM Engineers. Cadence builder, Rhythm AI features, pricing vs Outreach, and the enterprise sales engagement market.",
      "content_module": "tools_outbound", "content_key": "salesloft"},
     {"slug": "lemlist-review", "name": "Lemlist", "category": "Outbound Sequencing",
      "url": "https://lemlist.com", "price_range": "$39-$159/mo",
@@ -5830,10 +5830,15 @@ for _rev in TOOL_REVIEWS:
 def _load_review_content(module_name, content_key):
     """Load review content from content/ module. Returns dict with review sections."""
     import importlib
+    import importlib.util
+    content_dir = os.path.join(PROJECT_DIR, "content")
+    module_path = os.path.join(content_dir, f"{module_name}.py")
     try:
-        mod = importlib.import_module(f"content.{module_name}")
+        spec = importlib.util.spec_from_file_location(module_name, module_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
         return mod.TOOL_REVIEWS.get(content_key, {})
-    except (ImportError, AttributeError) as e:
+    except (ImportError, AttributeError, FileNotFoundError) as e:
         print(f"  WARNING: Could not load content/{module_name}.py key={content_key}: {e}")
         return {}
 

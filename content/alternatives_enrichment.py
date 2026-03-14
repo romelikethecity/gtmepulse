@@ -318,7 +318,7 @@ ALTERNATIVES = {
                 ],
                 "cons": [
                     "Learning curve is significant for new users",
-                    "Credit costs can exceed ZoomInfo for very high-volume use",
+                    "Credit costs can surpass ZoomInfo for very high-volume use",
                     "No built-in contact database to browse",
                 ],
                 "pricing": "$149-$800/mo depending on usage",

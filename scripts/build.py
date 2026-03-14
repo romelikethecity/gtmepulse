@@ -6313,6 +6313,230 @@ def build_tool_comparisons():
             generate_tool_comparison(comp)
 
 
+# ---------------------------------------------------------------------------
+# Tool Alternatives
+# ---------------------------------------------------------------------------
+
+TOOL_ALTERNATIVES = [
+    {"slug": "clay-alternatives", "tool_name": "Clay",
+     "title": "Best Clay Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Clay alternatives compared with pros, cons, and pricing. Find the right data enrichment tool for your GTM stack without Clay's complexity or cost.",
+     "content_module": "alternatives_enrichment", "content_key": "clay",
+     "category": "Data Enrichment & Orchestration"},
+    {"slug": "apollo-alternatives", "tool_name": "Apollo.io",
+     "title": "Best Apollo Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Apollo.io alternatives compared with honest pros, cons, and pricing. Better data, better outbound, or both at the right price.",
+     "content_module": "alternatives_enrichment", "content_key": "apollo",
+     "category": "Data Enrichment & Orchestration"},
+    {"slug": "zoominfo-alternatives", "tool_name": "ZoomInfo",
+     "title": "Best ZoomInfo Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top ZoomInfo alternatives with transparent pricing. Get comparable B2B data without the enterprise contracts and opaque sales process.",
+     "content_module": "alternatives_enrichment", "content_key": "zoominfo",
+     "category": "Data Enrichment & Orchestration"},
+    {"slug": "instantly-alternatives", "tool_name": "Instantly",
+     "title": "Best Instantly Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Instantly alternatives for cold email and outbound. Multichannel options, agency features, and tools with better lead databases.",
+     "content_module": "alternatives_outbound", "content_key": "instantly",
+     "category": "Outbound Sequencing"},
+    {"slug": "outreach-alternatives", "tool_name": "Outreach",
+     "title": "Best Outreach Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Outreach alternatives compared. Enterprise sales engagement at a fraction of the cost, or lightweight tools that just work.",
+     "content_module": "alternatives_outbound", "content_key": "outreach",
+     "category": "Outbound Sequencing"},
+    {"slug": "hubspot-alternatives", "tool_name": "HubSpot",
+     "title": "Best HubSpot Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top HubSpot CRM alternatives compared with pricing, pros, and cons. From enterprise Salesforce to lightweight CRMs that cost 90% less.",
+     "content_module": "alternatives_crm", "content_key": "hubspot",
+     "category": "CRM"},
+    {"slug": "salesforce-alternatives", "tool_name": "Salesforce",
+     "title": "Best Salesforce Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Salesforce alternatives with lower total cost of ownership. Modern CRMs, faster setup, and no dedicated admin required.",
+     "content_module": "alternatives_crm", "content_key": "salesforce",
+     "category": "CRM"},
+    {"slug": "zapier-alternatives", "tool_name": "Zapier",
+     "title": "Best Zapier Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Zapier alternatives for workflow automation. Self-hosted, visual builders, and tools with real branching logic at lower per-execution cost.",
+     "content_module": "alternatives_automation", "content_key": "zapier",
+     "category": "Workflow Automation"},
+    {"slug": "6sense-alternatives", "tool_name": "6sense",
+     "title": "Best 6sense Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top 6sense alternatives for intent data and ABM. Enterprise platforms, data feeds, and first-party signal tools at a fraction of the cost.",
+     "content_module": "alternatives_intent", "content_key": "6sense",
+     "category": "Intent Data"},
+    {"slug": "linkedin-sales-navigator-alternatives", "tool_name": "LinkedIn Sales Navigator",
+     "title": "Best Sales Navigator Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top LinkedIn Sales Navigator alternatives compared. Get prospecting data, contact capture, and outreach without the $100+/month per-seat fee.",
+     "content_module": "alternatives_linkedin", "content_key": "linkedin-sales-navigator",
+     "category": "LinkedIn & Social"},
+]
+
+BUILT_ALTERNATIVE_SLUGS = {a["slug"] for a in TOOL_ALTERNATIVES}
+
+
+def _load_alternative_content(module_name, content_key):
+    """Load alternative content from content/ module. Returns dict with alternative sections."""
+    import importlib
+    import importlib.util
+    content_dir = os.path.join(PROJECT_DIR, "content")
+    module_path = os.path.join(content_dir, f"{module_name}.py")
+    try:
+        spec = importlib.util.spec_from_file_location(module_name, module_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod.ALTERNATIVES.get(content_key, {})
+    except (ImportError, AttributeError, FileNotFoundError) as e:
+        print(f"  WARNING: Could not load content/{module_name}.py key={content_key}: {e}")
+        return {}
+
+
+def alternative_related_links(current_slug, tool_name):
+    """Generate related links for alternatives pages."""
+    links = [("/tools/", "Tools Index")]
+    # Link to main tool's review page
+    for rev in TOOL_REVIEWS:
+        if rev["name"] == tool_name or rev["name"].replace(" CRM", "") == tool_name:
+            links.append((f"/tools/{rev['slug']}/", f"{rev['name']} Review"))
+            break
+    # Comparisons involving this tool
+    tool_lower = tool_name.lower().replace(" ", "-").replace(".", "")
+    for c in TOOL_COMPARISONS:
+        if tool_lower in c["slug"] or tool_name.lower() in c["tool_a"].lower() or tool_name.lower() in c["tool_b"].lower():
+            links.append((f"/tools/{c['slug']}/", f"{c['tool_a']} vs {c['tool_b']}"))
+    # Other alternatives pages
+    for a in TOOL_ALTERNATIVES:
+        if a["slug"] != current_slug:
+            links.append((f"/tools/{a['slug']}/", f"{a['tool_name']} Alternatives"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Alternatives & Reviews</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def generate_tool_alternative(alt):
+    """Generate a single tool alternatives page."""
+    slug = alt["slug"]
+    tool_name = alt["tool_name"]
+    title = alt["title"]
+    meta_desc = pad_description(alt["meta_desc"])
+    category = alt["category"]
+
+    # Load content from content module
+    content = _load_alternative_content(alt["content_module"], alt["content_key"])
+    if not content:
+        print(f"  SKIP (no content): {slug}")
+        return
+
+    intro = content.get("intro", "")
+    alternatives = content.get("alternatives", [])
+    faq_pairs = content.get("faq", [])
+
+    # Breadcrumbs
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), (f"{tool_name} Alternatives", None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # FAQ schema + visible HTML
+    faq_section = ""
+    faq_schema = ""
+    if faq_pairs:
+        faq_section = faq_html(faq_pairs)
+        faq_schema = get_faq_schema(faq_pairs)
+
+    # Affiliate disclosure
+    affiliate_tools = {"clay", "apollo", "instantly", "smartlead", "lemlist"}
+    has_affiliate = any(t in slug for t in affiliate_tools)
+    affiliate_note = ""
+    if has_affiliate:
+        affiliate_note = '<p class="affiliate-disclosure" style="font-size: 0.85rem; color: var(--gtme-text-tertiary); margin-top: 0.5rem;"><em>This page contains affiliate links. We may earn a commission if you sign up through our links. This does not affect our editorial independence or recommendations.</em></p>'
+
+    # Build alternatives list HTML
+    alt_sections = ""
+    for i, tool in enumerate(alternatives):
+        tool_heading = tool["name"]
+        tool_link = ""
+        if tool.get("slug"):
+            tool_link = f' <a href="/tools/{tool["slug"]}/" style="font-size: 0.85rem; color: var(--gtme-accent); text-decoration: none;">[Read Full Review]</a>'
+
+        pros_html = ""
+        for pro in tool.get("pros", []):
+            pros_html += f"<li>{pro}</li>\n"
+
+        cons_html = ""
+        for con in tool.get("cons", []):
+            cons_html += f"<li>{con}</li>\n"
+
+        alt_sections += f'''
+    <div class="alternative-card" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gtme-bg-surface);">
+        <h2>{i + 1}. {tool_heading}{tool_link}</h2>
+        <p style="color: var(--gtme-text-secondary); font-style: italic; margin-bottom: 0.5rem;">{tool.get("tagline", "")}</p>
+        <p><strong>Best for:</strong> {tool.get("best_for", "")}</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
+            <div>
+                <h3 style="color: #4ade80; font-size: 1rem; margin-bottom: 0.5rem;">Pros</h3>
+                <ul style="margin: 0; padding-left: 1.25rem;">{pros_html}</ul>
+            </div>
+            <div>
+                <h3 style="color: #f87171; font-size: 1rem; margin-bottom: 0.5rem;">Cons</h3>
+                <ul style="margin: 0; padding-left: 1.25rem;">{cons_html}</ul>
+            </div>
+        </div>
+
+        <p><strong>Pricing:</strong> {tool.get("pricing", "")}</p>
+        <p>{tool.get("verdict", "")}</p>
+    </div>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">{category}</div>
+        <h1>{tool_name} Alternatives</h1>
+        <p>Honest alternatives with pros, cons, pricing, and clear recommendations.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    {intro}
+    {affiliate_note}
+
+    {alt_sections}
+
+    {faq_section}
+</div>
+
+{alternative_related_links(slug, tool_name)}
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html(f"Get weekly {tool_name} alternatives updates and GTM tool intel.")
+
+    extra_head = bc_schema
+    if faq_schema:
+        extra_head += faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=meta_desc, canonical_path=f"/tools/{slug}/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page(f"tools/{slug}/index.html", page)
+    print(f"  Built: tools/{slug}/index.html")
+
+
+def build_tool_alternatives():
+    """Build all tool alternatives pages."""
+    print("\n  Building tool alternatives pages...")
+    for alt in TOOL_ALTERNATIVES:
+        if alt["slug"] in BUILT_ALTERNATIVE_SLUGS:
+            generate_tool_alternative(alt)
+
+
 def _load_review_content(module_name, content_key):
     """Load review content from content/ module. Returns dict with review sections."""
     import importlib
@@ -11785,6 +12009,7 @@ def main():
     build_tool_reviews()
     build_tool_categories()
     build_tool_comparisons()
+    build_tool_alternatives()
 
     print("\n  Building benchmark pages...")
     build_bench_index()

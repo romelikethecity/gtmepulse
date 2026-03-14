@@ -81,7 +81,7 @@ ALTERNATIVES = {
                     "No data extraction or enrichment (outreach only)",
                 ],
                 "pricing": "$79-$499/mo",
-                "verdict": "HeyReach replaces Sales Navigator's InMail with automated connection requests at scale. Instead of paying $179/month for 50 InMail credits, HeyReach sends hundreds of connection requests across multiple profiles. The engagement rates on connection requests typically exceed InMail. The trade-off is LinkedIn account risk. If InMail is your primary Sales Navigator use case, HeyReach is more effective.",
+                "verdict": "HeyReach replaces Sales Navigator's InMail with automated connection requests at scale. Instead of paying $179/month for 50 InMail credits, HeyReach sends hundreds of connection requests across multiple profiles. Connection request acceptance rates typically outperform InMail response rates. The trade-off is LinkedIn account risk. If InMail is your primary Sales Navigator use case, HeyReach is more effective.",
             },
             {
                 "name": "Lusha",

@@ -100,7 +100,7 @@ ALTERNATIVES = {
                     "Newer platform with less mature feature set",
                 ],
                 "pricing": "$79-$499/mo",
-                "verdict": "HeyReach isn't a direct Instantly replacement. It's for teams that want to supplement or replace email with LinkedIn outbound. If your prospects don't respond to cold email but are active on LinkedIn, HeyReach automates the connection request and follow-up workflow. Best used alongside Instantly, not instead of it.",
+                "verdict": "HeyReach is a LinkedIn outbound tool, not a direct Instantly replacement. Teams that want to supplement email with LinkedIn outbound get the most value here. If your prospects are active on LinkedIn but ignore cold email, HeyReach automates connection requests and follow-up workflows. Best used alongside Instantly for multichannel coverage.",
             },
             {
                 "name": "Apollo.io",

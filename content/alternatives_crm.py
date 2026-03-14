@@ -2,7 +2,7 @@
 
 ALTERNATIVES = {
     "hubspot": {
-        "intro": """<p>HubSpot is the default CRM for startup and mid-market GTM teams. The free tier is genuinely powerful, the UI is clean, and the workflow automation handles most use cases without writing code. But HubSpot's pricing structure hides a trap: the free tier gets you hooked, and then the jump to paid plans is steep. Marketing Hub Professional starts at $800/month. Sales Hub Professional is $90/seat/month. Add custom reporting, and you're looking at $1,200+/month fast.</p>
+        "intro": """<p>HubSpot is the default CRM for startup and mid-market GTM teams. The free tier is surprisingly powerful, the UI is clean, and the workflow automation handles most use cases without writing code. But HubSpot's pricing structure hides a trap: the free tier gets you hooked, and then the jump to paid plans is steep. Marketing Hub Professional starts at $800/month. Sales Hub Professional is $90/seat/month. Add custom reporting, and you're looking at $1,200+/month fast.</p>
 <p>Beyond pricing, HubSpot frustrations include: workflow limits on lower plans, API rate limits that throttle automation-heavy GTM setups, a contact-based pricing model that punishes large databases, and feature fragmentation across Hubs that forces bundle purchases. GTM Engineers hit these walls when they scale past the free tier.</p>
 <p>These alternatives range from lightweight CRMs that cost $20/user/month to enterprise platforms with more flexibility. The right choice depends on whether you're leaving HubSpot because of price, limitations, or both.</p>""",
 
@@ -114,7 +114,7 @@ ALTERNATIVES = {
 
     "salesforce": {
         "intro": """<p>Salesforce is the CRM that runs 150,000+ companies and generates $31 billion in annual revenue. It's also the CRM that drives Salesforce admins to the brink. The platform can do anything, which means it takes months to set up, requires dedicated admin resources, and costs significantly more than the sticker price once you add consultants, AppExchange apps, and internal headcount.</p>
-<p>GTM Engineers explore Salesforce alternatives for concrete reasons: the total cost of ownership (license fees + admin salary + consultant hours) can exceed $100K/year for a 20-person sales team, the implementation timeline is measured in months, the API is powerful but verbose compared to modern REST APIs, and every customization creates technical debt that makes migrations harder later.</p>
+<p>GTM Engineers explore Salesforce alternatives for concrete reasons: the total cost of ownership (license fees + admin salary + consultant hours) can top $100K/year for a 20-person sales team, the implementation timeline is measured in months, the API is powerful but verbose compared to modern REST APIs, and every customization creates technical debt that makes migrations harder later.</p>
 <p>The alternatives below fall into three categories: enterprise-capable platforms that match Salesforce's depth, mid-market CRMs that deliver 80% of the functionality at 20% of the cost, and modern CRMs designed from scratch with better developer experience.</p>""",
 
         "alternatives": [

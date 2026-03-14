@@ -79,7 +79,7 @@ Plans:
   2. User can read 20 comparison pages (3,000-5,000 words each) with feature tables, pricing comparisons, and a clear winner recommendation
   3. Every comparison page has FAQPage schema with 3+ Q&A pairs matching visible FAQ content
   4. Category and comparison pages cross-link to relevant reviews, alternatives, and existing site content
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
 - [ ] 09-01-PLAN.md — 8 category index pages + first 10 comparisons

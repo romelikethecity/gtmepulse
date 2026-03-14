@@ -48,7 +48,7 @@ Plans:
 
 - [x] **Phase 8: Tool Reviews** - 30 individual tool review pages with SoftwareApplication schema and honest criticism (completed 2026-03-14)
 - [x] **Phase 9: Tool Categories and Comparisons** - 8 category index pages and 20 head-to-head comparison pages (completed 2026-03-14)
-- [ ] **Phase 10: Alternatives and Roundups** - 10 alternatives pages and 10 best-for roundup pages
+- [x] **Phase 10: Alternatives and Roundups** - 10 alternatives pages and 10 best-for roundup pages (completed 2026-03-14)
 - [ ] **Phase 11: Glossary, Job Board, and Newsletter** - 50 glossary terms, job board with scraper pipeline, newsletter automation
 - [ ] **Phase 12: Quality Sweep** - Site-wide validation, schema audit, zero-warning build
 
@@ -143,7 +143,7 @@ Phases execute in numeric order: 8 → 9 → 10 → 11 → 12
 | 4-7. State of GTME Content Wave | v2.0 | 15/15 | Archived | 2026-03-14 |
 | 8. Tool Reviews | 2/2 | Complete   | 2026-03-14 | - |
 | 9. Tool Categories and Comparisons | 2/2 | Complete   | 2026-03-14 | - |
-| 10. Alternatives and Roundups | 1/2 | In Progress|  | - |
+| 10. Alternatives and Roundups | 2/2 | Complete   | 2026-03-14 | - |
 | 11. Glossary, Job Board, and Newsletter | v3.0 | 0/3 | Not started | - |
 | 12. Quality Sweep | v3.0 | 0/1 | Not started | - |
 

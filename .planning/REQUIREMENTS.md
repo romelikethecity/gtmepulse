@@ -87,16 +87,16 @@
 
 ### Best-For Roundups
 
-- [ ] **TBST-01**: Best GTM tools for startups
-- [ ] **TBST-02**: Best GTM tools for enterprise
-- [ ] **TBST-03**: Best free GTM tools
-- [ ] **TBST-04**: Best data enrichment tools
-- [ ] **TBST-05**: Best outbound sequencing tools
-- [ ] **TBST-06**: Best CRM for GTM Engineers
-- [ ] **TBST-07**: Best workflow automation tools
-- [ ] **TBST-08**: Best AI tools for GTM
-- [ ] **TBST-09**: Best LinkedIn prospecting tools
-- [ ] **TBST-10**: Best intent data platforms
+- [x] **TBST-01**: Best GTM tools for startups
+- [x] **TBST-02**: Best GTM tools for enterprise
+- [x] **TBST-03**: Best free GTM tools
+- [x] **TBST-04**: Best data enrichment tools
+- [x] **TBST-05**: Best outbound sequencing tools
+- [x] **TBST-06**: Best CRM for GTM Engineers
+- [x] **TBST-07**: Best workflow automation tools
+- [x] **TBST-08**: Best AI tools for GTM
+- [x] **TBST-09**: Best LinkedIn prospecting tools
+- [x] **TBST-10**: Best intent data platforms
 
 ### Glossary
 
@@ -215,16 +215,16 @@
 | TALT-08 | Phase 10 | Complete |
 | TALT-09 | Phase 10 | Complete |
 | TALT-10 | Phase 10 | Complete |
-| TBST-01 | Phase 10 | Pending |
-| TBST-02 | Phase 10 | Pending |
-| TBST-03 | Phase 10 | Pending |
-| TBST-04 | Phase 10 | Pending |
-| TBST-05 | Phase 10 | Pending |
-| TBST-06 | Phase 10 | Pending |
-| TBST-07 | Phase 10 | Pending |
-| TBST-08 | Phase 10 | Pending |
-| TBST-09 | Phase 10 | Pending |
-| TBST-10 | Phase 10 | Pending |
+| TBST-01 | Phase 10 | Complete |
+| TBST-02 | Phase 10 | Complete |
+| TBST-03 | Phase 10 | Complete |
+| TBST-04 | Phase 10 | Complete |
+| TBST-05 | Phase 10 | Complete |
+| TBST-06 | Phase 10 | Complete |
+| TBST-07 | Phase 10 | Complete |
+| TBST-08 | Phase 10 | Complete |
+| TBST-09 | Phase 10 | Complete |
+| TBST-10 | Phase 10 | Complete |
 | GLOS-01 | Phase 11 | Pending |
 | GLOS-02 | Phase 11 | Pending |
 | JOBS-01 | Phase 11 | Pending |

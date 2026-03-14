@@ -20,13 +20,20 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 - 6 comparison pages + 14 blog articles
 - Site-wide quality validation (9 QUAL2 categories, zero warnings)
 
-**Next Milestone Goals:**
-- Tool reviews (30 individual deep reviews)
-- Tool category indexes (8 categories)
-- Alternatives + roundup pages (20 total)
-- Glossary (50 terms)
-- Job board wired to scraper data
-- Newsletter automation (weekly send via Resend)
+## Current Milestone: v3.0 Tool Reviews, Glossary, and Infrastructure
+
+**Goal:** Add the full tool review vertical (30 reviews, 8 category indexes, 20 comparisons, 10 alternatives, 10 roundups), 50 glossary terms, a job board wired to scraper data, and newsletter automation. Target ~130+ new pages plus infrastructure.
+
+**Target features:**
+- 30 individual tool reviews with deep, honest criticism and SoftwareApplication schema
+- 8 tool category index pages (Data Enrichment, Outbound, CRM, Workflow Automation, AI/LLM, Intent Data, Analytics, LinkedIn)
+- 20 X vs Y tool comparisons (Clay vs Apollo, Instantly vs Smartlead, etc.)
+- 10 alternatives pages (Clay alternatives, Apollo alternatives, etc.)
+- 10 "Best for" roundup pages (Best for Startups, Best for Enterprise, Best Free, etc.)
+- 50 glossary term pages with definitions, examples, and related links
+- Job board page wired to unified scraper exports (gtme audience, id=8)
+- Newsletter signup worker (Cloudflare Worker + Resend Audiences)
+- Weekly email generation + automated Monday send
 
 ## Requirements
 

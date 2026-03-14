@@ -3,7 +3,7 @@
 ROUNDUPS = {
     "best-free-gtm-tools": {
         "intro": """<p>You don't need money to start building a GTM pipeline. Between generous free tiers, open-source tools, and freemium CRMs, a resourceful GTM Engineer can assemble a fully functional outbound stack without spending a dollar. The trade-offs are real (rate limits, missing features, manual workarounds), but so is the pipeline you'll generate.</p>
-<p>We tested every free GTM tool on three criteria: is the free tier usable for real work (not a 7-day trial), does it integrate with other free tools, and can you upgrade selectively when one tool's limits actually bottleneck your workflow? Every pick below has a free tier that supports ongoing production use, not just evaluation.</p>
+<p>We tested every free GTM tool on three criteria: is the free tier usable for real work (not a 7-day trial), does it integrate with other free tools, and can you upgrade selectively when one tool's limits bottleneck your workflow? Every pick below has a free tier that supports ongoing production use, not just evaluation.</p>
 <p>This list is for bootstrapped founders, solo GTM Engineers at pre-revenue startups, and anyone who wants to prove the concept before requesting budget. Build your pipeline first. Get budget from results, not promises.</p>""",
 
         "tools": [
@@ -105,7 +105,7 @@ ROUNDUPS = {
                 "slug": "clay-review",
                 "category_tag": "AI Enrichment",
                 "best_for": "GTM Engineers who need AI-powered enrichment, research, and lead scoring across 75+ data sources",
-                "why_picked": "Clay's AI agent (Claygent) writes custom prompts that research companies, summarize 10-K filings, score ICP fit, and generate personalized opening lines. The AI isn't a sidebar feature. It's the workflow engine. You build tables that chain data providers with AI steps, and the output is enriched records ready for outbound. No other tool combines AI with this breadth of data source access.",
+                "why_picked": "Clay's AI agent (Claygent) writes custom prompts that research companies, summarize 10-K filings, score ICP fit, and generate personalized opening lines. AI powers the entire workflow engine. You build tables that chain data providers with AI steps, and the output is enriched records ready for outbound. No other tool combines AI with this breadth of data source access.",
                 "pricing": "$0-$800/mo (includes AI credits)",
                 "link_to_review": True,
             },

@@ -6537,6 +6537,220 @@ def build_tool_alternatives():
             generate_tool_alternative(alt)
 
 
+# ---------------------------------------------------------------------------
+# Tool Roundups (Best-For Pages)
+# ---------------------------------------------------------------------------
+
+TOOL_ROUNDUPS = [
+    {"slug": "best-gtm-tools-startups",
+     "title": "Best GTM Tools for Startups 2026",
+     "meta_desc": "The 6 best GTM tools for startups ranked by cost, speed to value, and scalability. Build a full outbound stack for under $500/month.",
+     "content_module": "roundups_startup", "content_key": "best-gtm-tools-startups",
+     "category_tag": "Startup Stack"},
+    {"slug": "best-gtm-tools-enterprise",
+     "title": "Best GTM Tools for Enterprise 2026",
+     "meta_desc": "Top enterprise GTM tools ranked for scale, compliance, and integration depth. ZoomInfo, Outreach, Salesforce, 6sense, and Segment compared.",
+     "content_module": "roundups_startup", "content_key": "best-gtm-tools-enterprise",
+     "category_tag": "Enterprise Stack"},
+    {"slug": "best-free-gtm-tools",
+     "title": "Best Free GTM Tools 2026",
+     "meta_desc": "Build a complete GTM pipeline at zero cost. Apollo, HubSpot, n8n, PostHog, and LinkedIn free tiers ranked for real production use.",
+     "content_module": "roundups_free", "content_key": "best-free-gtm-tools",
+     "category_tag": "Free Tools"},
+    {"slug": "best-data-enrichment-tools",
+     "title": "Best Data Enrichment Tools 2026",
+     "meta_desc": "Top 8 data enrichment tools ranked by accuracy, coverage, and pricing. Clay, Apollo, ZoomInfo, Clearbit, FullEnrich, and more compared.",
+     "content_module": "roundups_category", "content_key": "best-data-enrichment-tools",
+     "category_tag": "Data Enrichment"},
+    {"slug": "best-outbound-sequencing-tools",
+     "title": "Best Outbound Sequencing Tools 2026",
+     "meta_desc": "Top 6 outbound sequencing tools ranked by deliverability, volume, and pricing. Instantly, Smartlead, Outreach, and more compared head-to-head.",
+     "content_module": "roundups_category", "content_key": "best-outbound-sequencing-tools",
+     "category_tag": "Outbound Sequencing"},
+    {"slug": "best-crm-gtm-engineers",
+     "title": "Best CRM for GTM Engineers 2026",
+     "meta_desc": "Top 5 CRMs ranked by API quality, automation depth, and integration ecosystem. HubSpot, Salesforce, Attio, Close, and Pipedrive compared.",
+     "content_module": "roundups_category", "content_key": "best-crm-gtm-engineers",
+     "category_tag": "CRM"},
+    {"slug": "best-workflow-automation-tools",
+     "title": "Best Workflow Automation Tools 2026",
+     "meta_desc": "Make vs n8n vs Zapier for GTM automation. Pricing, complexity handling, and self-hosting options compared with a clear recommendation.",
+     "content_module": "roundups_category", "content_key": "best-workflow-automation-tools",
+     "category_tag": "Workflow Automation"},
+    {"slug": "best-ai-tools-gtm",
+     "title": "Best AI Tools for GTM 2026",
+     "meta_desc": "Top AI-powered GTM tools ranked. Clay AI enrichment, Persana signal prospecting, Apollo AI sequences, and LLM workflows compared.",
+     "content_module": "roundups_free", "content_key": "best-ai-tools-gtm",
+     "category_tag": "AI & GTM"},
+    {"slug": "best-linkedin-prospecting-tools",
+     "title": "Best LinkedIn Prospecting Tools 2026",
+     "meta_desc": "Top LinkedIn prospecting tools ranked by data access and account safety. Sales Navigator, HeyReach, and PhantomBuster compared.",
+     "content_module": "roundups_category", "content_key": "best-linkedin-prospecting-tools",
+     "category_tag": "LinkedIn & Social"},
+    {"slug": "best-intent-data-platforms",
+     "title": "Best Intent Data Platforms 2026",
+     "meta_desc": "Top intent data platforms ranked for signal quality and ROI. 6sense, Bombora, and G2 Buyer Intent compared with honest pricing.",
+     "content_module": "roundups_category", "content_key": "best-intent-data-platforms",
+     "category_tag": "Intent Data"},
+]
+
+BUILT_ROUNDUP_SLUGS = {r["slug"] for r in TOOL_ROUNDUPS}
+
+
+def _load_roundup_content(module_name, content_key):
+    """Load roundup content from content/ module. Returns dict with roundup sections."""
+    import importlib
+    import importlib.util
+    content_dir = os.path.join(PROJECT_DIR, "content")
+    module_path = os.path.join(content_dir, f"{module_name}.py")
+    try:
+        spec = importlib.util.spec_from_file_location(module_name, module_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod.ROUNDUPS.get(content_key, {})
+    except (ImportError, AttributeError, FileNotFoundError) as e:
+        print(f"  WARNING: Could not load content/{module_name}.py key={content_key}: {e}")
+        return {}
+
+
+def roundup_related_links(current_slug):
+    """Generate related links grid for roundup pages."""
+    links = [("/tools/", "Tools Index")]
+    # Other roundup pages
+    for r in TOOL_ROUNDUPS:
+        if r["slug"] != current_slug:
+            links.append((f"/tools/{r['slug']}/", r["title"].replace(" 2026", "")))
+    # Relevant alternatives pages
+    for a in TOOL_ALTERNATIVES:
+        links.append((f"/tools/{a['slug']}/", f"{a['tool_name']} Alternatives"))
+    # Category indexes
+    for cat in TOOL_CATEGORIES:
+        links.append((f"/tools/category/{cat['slug']}/", cat["name"]))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Roundups & Reviews</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def generate_tool_roundup(roundup):
+    """Generate a single tool roundup (best-for) page."""
+    slug = roundup["slug"]
+    title = roundup["title"]
+    meta_desc = pad_description(roundup["meta_desc"])
+    category_tag = roundup["category_tag"]
+
+    # Load content from content module
+    content = _load_roundup_content(roundup["content_module"], roundup["content_key"])
+    if not content:
+        print(f"  SKIP (no content): {slug}")
+        return
+
+    intro = content.get("intro", "")
+    tools = content.get("tools", [])
+    verdict = content.get("verdict", "")
+    faq_pairs = content.get("faq", [])
+
+    # Breadcrumbs
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), (title.replace(" 2026", ""), None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # FAQ schema + visible HTML
+    faq_section = ""
+    faq_schema = ""
+    if faq_pairs:
+        faq_section = faq_html(faq_pairs)
+        faq_schema = get_faq_schema(faq_pairs)
+
+    # Affiliate disclosure
+    affiliate_tools = {"clay", "apollo", "instantly", "smartlead", "lemlist"}
+    has_affiliate = any(t in slug or any(t in (tool.get("name", "").lower()) for tool in tools) for t in affiliate_tools)
+    affiliate_note = ""
+    if has_affiliate:
+        affiliate_note = '<p class="affiliate-disclosure" style="font-size: 0.85rem; color: var(--gtme-text-tertiary); margin-top: 0.5rem;"><em>This page contains affiliate links. We may earn a commission if you sign up through our links. This does not affect our editorial independence or rankings.</em></p>'
+
+    # Build ranked tool list HTML
+    tool_sections = ""
+    for tool in tools:
+        rank = tool["rank"]
+        tool_name = tool["name"]
+        tool_tag = tool.get("category_tag", "")
+        best_for = tool.get("best_for", "")
+        why_picked = tool.get("why_picked", "")
+        pricing = tool.get("pricing", "")
+        tool_slug = tool.get("slug")
+        has_review = tool.get("link_to_review", False) and tool_slug
+
+        name_html = tool_name
+        if has_review:
+            name_html = f'<a href="/tools/{tool_slug}/" style="color: var(--gtme-accent); text-decoration: none;">{tool_name}</a>'
+
+        review_link = ""
+        if has_review:
+            review_link = f' <a href="/tools/{tool_slug}/" style="font-size: 0.85rem; color: var(--gtme-accent); text-decoration: none;">[Full Review]</a>'
+
+        tool_sections += f'''
+    <div class="roundup-tool" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gtme-bg-surface);">
+        <h2>#{rank}: {name_html}{review_link}</h2>
+        <span style="display: inline-block; background: var(--gtme-bg-tinted); color: var(--gtme-accent); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem;">{tool_tag}</span>
+        <p><strong>Best for:</strong> {best_for}</p>
+        <p>{why_picked}</p>
+        <p><strong>Pricing:</strong> {pricing}</p>
+    </div>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">{category_tag}</div>
+        <h1>{title}</h1>
+        <p>Ranked and reviewed with opinionated picks, pricing, and use-case guidance.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    {intro}
+    {affiliate_note}
+
+    {tool_sections}
+
+    {verdict}
+
+    {faq_section}
+</div>
+
+{roundup_related_links(slug)}
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html(f"Get weekly GTM tool rankings and intel delivered to your inbox.")
+
+    extra_head = bc_schema
+    if faq_schema:
+        extra_head += faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=meta_desc, canonical_path=f"/tools/{slug}/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page(f"tools/{slug}/index.html", page)
+    print(f"  Built: tools/{slug}/index.html")
+
+
+def build_tool_roundups():
+    """Build all tool roundup (best-for) pages."""
+    print("\n  Building tool roundup pages...")
+    for roundup in TOOL_ROUNDUPS:
+        if roundup["slug"] in BUILT_ROUNDUP_SLUGS:
+            generate_tool_roundup(roundup)
+
+
 def _load_review_content(module_name, content_key):
     """Load review content from content/ module. Returns dict with review sections."""
     import importlib
@@ -12010,6 +12224,7 @@ def main():
     build_tool_categories()
     build_tool_comparisons()
     build_tool_alternatives()
+    build_tool_roundups()
 
     print("\n  Building benchmark pages...")
     build_bench_index()

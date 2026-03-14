@@ -25,13 +25,13 @@ Plans:
 **Goal**: Six core pages live and functional, with a working newsletter signup flow
 **Depends on**: Phase 1
 **Requirements**: CORE-01 through CORE-06, NEWS-01 through NEWS-06
-**Plans**: TBD
+**Plans**: 3 plans
 
 ### Phase 3: Salary Data Engine
 **Goal**: 36 salary pages with deep content, methodology page, and email-gated calculator
 **Depends on**: Phase 2
 **Requirements**: SAL-01 through SAL-07, QUAL-01 through QUAL-06
-**Plans**: TBD
+**Plans**: 3 plans
 
 </details>
 
@@ -110,7 +110,7 @@ Plans:
   3. Job board reads from scraper JSON exports in data/ directory and displays aggregate stats banner
   4. Newsletter signup Cloudflare Worker accepts email submissions and adds contacts to Resend Audiences
   5. Weekly email is auto-generated from scraper data and sent every Monday via cron
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
 - [ ] 11-01-PLAN.md — Glossary index + 50 term pages
@@ -125,7 +125,7 @@ Plans:
   1. Every tool review page has valid SoftwareApplication JSON-LD schema verified by build validation
   2. Every comparison page has FAQPage schema with 3+ Q&A pairs matching visible content
   3. `python3 scripts/build.py` completes with zero validation warnings across all ~260+ pages
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
 - [ ] 12-01-PLAN.md — Schema audit + validation fixes + full build verification

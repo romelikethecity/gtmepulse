@@ -105,8 +105,8 @@
 
 ### Job Board
 
-- [ ] **JOBS-01**: Job board page with cards, filters (seniority, location, remote), aggregate stats banner
-- [ ] **JOBS-02**: Build pipeline to read scraper JSON exports from data/ directory
+- [x] **JOBS-01**: Job board page with cards, filters (seniority, location, remote), aggregate stats banner
+- [x] **JOBS-02**: Build pipeline to read scraper JSON exports from data/ directory
 
 ### Newsletter Infrastructure
 
@@ -227,8 +227,8 @@
 | TBST-10 | Phase 10 | Complete |
 | GLOS-01 | Phase 11 | Complete |
 | GLOS-02 | Phase 11 | Complete |
-| JOBS-01 | Phase 11 | Pending |
-| JOBS-02 | Phase 11 | Pending |
+| JOBS-01 | Phase 11 | Complete |
+| JOBS-02 | Phase 11 | Complete |
 | NEWS-01 | Phase 11 | Pending |
 | NEWS-02 | Phase 11 | Pending |
 | NEWS-03 | Phase 11 | Pending |

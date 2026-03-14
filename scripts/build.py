@@ -6062,6 +6062,207 @@ def build_tool_categories():
         generate_category_index(cat)
 
 
+# ---------------------------------------------------------------------------
+# Tool Comparisons
+# ---------------------------------------------------------------------------
+
+TOOL_COMPARISONS = [
+    {"slug": "clay-vs-apollo", "tool_a": "Clay", "tool_b": "Apollo.io",
+     "title": "Clay vs Apollo 2026: Data Platform Showdown",
+     "meta_desc": "Clay vs Apollo head-to-head comparison. Feature tables, pricing breakdown, and a clear verdict for GTM Engineers choosing their enrichment stack.",
+     "content_module": "comparisons_enrichment", "content_key": "clay-vs-apollo",
+     "category": "Data Enrichment & Orchestration"},
+    {"slug": "clay-vs-zoominfo", "tool_a": "Clay", "tool_b": "ZoomInfo",
+     "title": "Clay vs ZoomInfo 2026: Modern vs Legacy Data",
+     "meta_desc": "Clay vs ZoomInfo comparison for GTM Engineers. Orchestration vs enterprise database, pricing models, and which approach wins for your team.",
+     "content_module": "comparisons_enrichment", "content_key": "clay-vs-zoominfo",
+     "category": "Data Enrichment & Orchestration"},
+    {"slug": "instantly-vs-smartlead", "tool_a": "Instantly", "tool_b": "Smartlead",
+     "title": "Instantly vs Smartlead 2026: Cold Email Compared",
+     "meta_desc": "Instantly vs Smartlead comparison for GTM Engineers. Deliverability, warmup, pricing, and agency features compared head-to-head.",
+     "content_module": "comparisons_outbound", "content_key": "instantly-vs-smartlead",
+     "category": "Outbound Sequencing"},
+    {"slug": "outreach-vs-salesloft", "tool_a": "Outreach", "tool_b": "Salesloft",
+     "title": "Outreach vs Salesloft 2026: Enterprise Compared",
+     "meta_desc": "Outreach vs Salesloft comparison for GTM Engineers. Enterprise features, AI capabilities, pricing, and whether you need either one.",
+     "content_module": "comparisons_outbound", "content_key": "outreach-vs-salesloft",
+     "category": "Outbound Sequencing"},
+    {"slug": "hubspot-vs-salesforce", "tool_a": "HubSpot", "tool_b": "Salesforce",
+     "title": "HubSpot vs Salesforce 2026: CRM for GTM Teams",
+     "meta_desc": "HubSpot vs Salesforce comparison for GTM Engineers. API quality, automation depth, pricing, and which CRM fits your pipeline architecture.",
+     "content_module": "comparisons_crm", "content_key": "hubspot-vs-salesforce",
+     "category": "CRM"},
+    {"slug": "make-vs-n8n", "tool_a": "Make", "tool_b": "n8n",
+     "title": "Make vs n8n 2026: Automation Tool Showdown",
+     "meta_desc": "Make vs n8n comparison for GTM Engineers. Cloud vs self-hosted, per-operation vs unlimited, and which automation tool wins at scale.",
+     "content_module": "comparisons_automation", "content_key": "make-vs-n8n",
+     "category": "Workflow Automation"},
+    {"slug": "make-vs-zapier", "tool_a": "Make", "tool_b": "Zapier",
+     "title": "Make vs Zapier 2026: Power vs Simplicity",
+     "meta_desc": "Make vs Zapier comparison for GTM Engineers. Workflow complexity, pricing at scale, and why technical users are leaving Zapier behind.",
+     "content_module": "comparisons_automation", "content_key": "make-vs-zapier",
+     "category": "Workflow Automation"},
+    {"slug": "apollo-vs-zoominfo", "tool_a": "Apollo.io", "tool_b": "ZoomInfo",
+     "title": "Apollo vs ZoomInfo 2026: Data Provider Compared",
+     "meta_desc": "Apollo vs ZoomInfo comparison for GTM Engineers. Database size, pricing transparency, intent data, and which platform fits your budget.",
+     "content_module": "comparisons_enrichment", "content_key": "apollo-vs-zoominfo",
+     "category": "Data Enrichment & Orchestration"},
+    {"slug": "lemlist-vs-instantly", "tool_a": "Lemlist", "tool_b": "Instantly",
+     "title": "Lemlist vs Instantly 2026: Outbound Compared",
+     "meta_desc": "Lemlist vs Instantly comparison for GTM Engineers. Multichannel vs high-volume, LinkedIn steps vs deliverability, and which fits your outbound strategy.",
+     "content_module": "comparisons_enrichment", "content_key": "lemlist-vs-instantly",
+     "category": "Outbound Sequencing"},
+    {"slug": "clay-vs-clearbit", "tool_a": "Clay", "tool_b": "Clearbit",
+     "title": "Clay vs Clearbit 2026: Orchestration vs Free CRM Data",
+     "meta_desc": "Clay vs Clearbit comparison for GTM Engineers. Multi-source waterfall vs free HubSpot enrichment, and when you need both.",
+     "content_module": "comparisons_enrichment", "content_key": "clay-vs-clearbit",
+     "category": "Data Enrichment & Orchestration"},
+]
+
+BUILT_COMPARISON_SLUGS = {c["slug"] for c in TOOL_COMPARISONS}
+
+
+def _load_comparison_content(module_name, content_key):
+    """Load comparison content from content/ module. Returns dict with comparison sections."""
+    import importlib
+    import importlib.util
+    content_dir = os.path.join(PROJECT_DIR, "content")
+    module_path = os.path.join(content_dir, f"{module_name}.py")
+    try:
+        spec = importlib.util.spec_from_file_location(module_name, module_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod.COMPARISONS.get(content_key, {})
+    except (ImportError, AttributeError, FileNotFoundError) as e:
+        print(f"  WARNING: Could not load content/{module_name}.py key={content_key}: {e}")
+        return {}
+
+
+def tool_comparison_related_links(current_slug, category):
+    """Generate related links for tool-vs-tool comparison pages."""
+    links = [("/tools/", "Tools Index")]
+    # Link to both tools' review pages
+    comp = next((c for c in TOOL_COMPARISONS if c["slug"] == current_slug), None)
+    if comp:
+        for rev in TOOL_REVIEWS:
+            if rev["name"] == comp["tool_a"] or rev["name"] == comp["tool_b"]:
+                links.append((f"/tools/{rev['slug']}/", f"{rev['name']} Review"))
+    # Other comparisons in same category
+    for c in TOOL_COMPARISONS:
+        if c["slug"] != current_slug and c["category"] == category:
+            links.append((f"/tools/{c['slug']}/", f"{c['tool_a']} vs {c['tool_b']}"))
+    # Category index
+    for cat in TOOL_CATEGORIES:
+        if cat["category_key"] == category or cat["name"] == category:
+            links.append((f"/tools/category/{cat['slug']}/", cat["name"]))
+            break
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Comparisons & Reviews</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def generate_tool_comparison(comp):
+    """Generate a single tool comparison page."""
+    slug = comp["slug"]
+    tool_a = comp["tool_a"]
+    tool_b = comp["tool_b"]
+    title = comp["title"]
+    meta_desc = pad_description(comp["meta_desc"])
+    category = comp["category"]
+
+    # Load content from content module
+    content = _load_comparison_content(comp["content_module"], comp["content_key"])
+    if not content:
+        print(f"  SKIP (no content): {slug}")
+        return
+
+    intro = content.get("intro", "")
+    feature_table = content.get("feature_table", "")
+    tool_a_strengths = content.get("tool_a_strengths", "")
+    tool_b_strengths = content.get("tool_b_strengths", "")
+    pricing_comparison = content.get("pricing_comparison", "")
+    verdict = content.get("verdict", "")
+    faq_pairs = content.get("faq", [])
+
+    # Breadcrumbs
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), (f"{tool_a} vs {tool_b}", None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # FAQ schema + visible HTML
+    faq_section = ""
+    faq_schema = ""
+    if faq_pairs:
+        faq_section = faq_html(faq_pairs)
+        faq_schema = get_faq_schema(faq_pairs)
+
+    # Affiliate disclosure
+    affiliate_tools = {"clay", "apollo", "instantly", "smartlead", "lemlist"}
+    has_affiliate = any(t in slug for t in affiliate_tools)
+    affiliate_note = ""
+    if has_affiliate:
+        affiliate_note = '<p class="affiliate-disclosure" style="font-size: 0.85rem; color: var(--gtme-text-tertiary); margin-top: 0.5rem;"><em>This comparison contains affiliate links. We may earn a commission if you sign up through our links. This does not affect our editorial independence or recommendations.</em></p>'
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">{category}</div>
+        <h1>{tool_a} vs {tool_b}</h1>
+        <p>Head-to-head comparison with feature tables, pricing, and a clear recommendation.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    {intro}
+
+    <h2>Feature Comparison</h2>
+    {feature_table}
+
+    {tool_a_strengths}
+
+    {tool_b_strengths}
+
+    {pricing_comparison}
+    {affiliate_note}
+
+    {verdict}
+
+    {faq_section}
+</div>
+
+{tool_comparison_related_links(slug, category)}
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html(f"Get weekly {tool_a} vs {tool_b} updates and GTM tool intel.")
+
+    extra_head = bc_schema
+    if faq_schema:
+        extra_head += faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=meta_desc, canonical_path=f"/tools/{slug}/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page(f"tools/{slug}/index.html", page)
+    print(f"  Built: tools/{slug}/index.html")
+
+
+def build_tool_comparisons():
+    """Build all tool comparison pages."""
+    print("\n  Building tool comparison pages...")
+    for comp in TOOL_COMPARISONS:
+        if comp["slug"] in BUILT_COMPARISON_SLUGS:
+            generate_tool_comparison(comp)
+
+
 def _load_review_content(module_name, content_key):
     """Load review content from content/ module. Returns dict with review sections."""
     import importlib
@@ -11533,6 +11734,7 @@ def main():
     build_tool_javascript()
     build_tool_reviews()
     build_tool_categories()
+    build_tool_comparisons()
 
     print("\n  Building benchmark pages...")
     build_bench_index()

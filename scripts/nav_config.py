@@ -44,6 +44,7 @@ NAV_ITEMS = [
     },
     {"href": "/benchmarks/", "label": "Benchmarks"},
     {"href": "/comparisons/", "label": "Comparisons"},
+    {"href": "/glossary/", "label": "Glossary"},
     {"href": "/blog/", "label": "Blog"},
     {
         "href": "/careers/",
@@ -80,6 +81,7 @@ FOOTER_COLUMNS = {
         {"href": "/careers/how-to-become-gtm-engineer/", "label": "How to Become a GTME"},
         {"href": "/careers/job-growth/", "label": "Job Market Growth"},
         {"href": "/careers/agency-pricing/", "label": "Agency Pricing"},
+        {"href": "/glossary/", "label": "Glossary"},
         {"href": "/blog/", "label": "Blog"},
         {"href": "/newsletter/", "label": "Newsletter"},
         {"href": "/about/", "label": "About"},

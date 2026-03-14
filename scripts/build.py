@@ -12124,6 +12124,287 @@ def validate_pages():
 
 
 # ---------------------------------------------------------------------------
+# Glossary
+# ---------------------------------------------------------------------------
+
+GLOSSARY_TERMS = [
+    # Data & Enrichment (10)
+    {"slug": "data-enrichment", "term": "Data Enrichment", "category": "Data & Enrichment"},
+    {"slug": "waterfall-enrichment", "term": "Waterfall Enrichment", "category": "Data & Enrichment"},
+    {"slug": "contact-data-provider", "term": "Contact Data Provider", "category": "Data & Enrichment"},
+    {"slug": "reverse-etl", "term": "Reverse ETL", "category": "Data & Enrichment"},
+    {"slug": "data-orchestration", "term": "Data Orchestration", "category": "Data & Enrichment"},
+    {"slug": "enrichment-api", "term": "Enrichment API", "category": "Data & Enrichment"},
+    {"slug": "email-verification", "term": "Email Verification", "category": "Data & Enrichment"},
+    {"slug": "bounce-rate", "term": "Bounce Rate (Email)", "category": "Data & Enrichment"},
+    {"slug": "catch-all-domain", "term": "Catch-All Domain", "category": "Data & Enrichment"},
+    {"slug": "firmographic-data", "term": "Firmographic Data", "category": "Data & Enrichment"},
+
+    # Outbound & Sequencing (8)
+    {"slug": "outbound-sequencing", "term": "Outbound Sequencing", "category": "Outbound & Sequencing"},
+    {"slug": "cold-email", "term": "Cold Email", "category": "Outbound & Sequencing"},
+    {"slug": "email-warm-up", "term": "Email Warm-Up", "category": "Outbound & Sequencing"},
+    {"slug": "sending-domain", "term": "Sending Domain", "category": "Outbound & Sequencing"},
+    {"slug": "spintax", "term": "Spintax", "category": "Outbound & Sequencing"},
+    {"slug": "a-b-testing-outbound", "term": "A/B Testing (Outbound)", "category": "Outbound & Sequencing"},
+    {"slug": "deliverability", "term": "Deliverability", "category": "Outbound & Sequencing"},
+    {"slug": "reply-rate", "term": "Reply Rate", "category": "Outbound & Sequencing"},
+
+    # Automation & Workflows (7)
+    {"slug": "workflow-automation", "term": "Workflow Automation", "category": "Automation & Workflows"},
+    {"slug": "webhook", "term": "Webhook", "category": "Automation & Workflows"},
+    {"slug": "api-integration", "term": "API Integration", "category": "Automation & Workflows"},
+    {"slug": "no-code-automation", "term": "No-Code Automation", "category": "Automation & Workflows"},
+    {"slug": "trigger", "term": "Trigger", "category": "Automation & Workflows"},
+    {"slug": "zap", "term": "Zap", "category": "Automation & Workflows"},
+    {"slug": "scenario", "term": "Scenario", "category": "Automation & Workflows"},
+
+    # Analytics & Signals (7)
+    {"slug": "intent-data", "term": "Intent Data", "category": "Analytics & Signals"},
+    {"slug": "buyer-signal", "term": "Buyer Signal", "category": "Analytics & Signals"},
+    {"slug": "product-qualified-lead", "term": "Product-Qualified Lead (PQL)", "category": "Analytics & Signals"},
+    {"slug": "reverse-ip-lookup", "term": "Reverse IP Lookup", "category": "Analytics & Signals"},
+    {"slug": "website-visitor-identification", "term": "Website Visitor Identification", "category": "Analytics & Signals"},
+    {"slug": "event-tracking", "term": "Event Tracking", "category": "Analytics & Signals"},
+    {"slug": "attribution-model", "term": "Attribution Model", "category": "Analytics & Signals"},
+
+    # Career & Industry (8)
+    {"slug": "gtm-engineer", "term": "GTM Engineer", "category": "Career & Industry"},
+    {"slug": "gtm-engineering", "term": "GTM Engineering", "category": "Career & Industry"},
+    {"slug": "revenue-operations", "term": "Revenue Operations (RevOps)", "category": "Career & Industry"},
+    {"slug": "sales-development-representative", "term": "Sales Development Representative (SDR)", "category": "Career & Industry"},
+    {"slug": "account-executive", "term": "Account Executive (AE)", "category": "Career & Industry"},
+    {"slug": "fractional-gtm", "term": "Fractional GTM", "category": "Career & Industry"},
+    {"slug": "gtm-stack", "term": "GTM Stack", "category": "Career & Industry"},
+    {"slug": "total-addressable-market", "term": "Total Addressable Market (TAM)", "category": "Career & Industry"},
+
+    # CRM & Pipeline (5)
+    {"slug": "crm", "term": "CRM (Customer Relationship Management)", "category": "CRM & Pipeline"},
+    {"slug": "pipeline-velocity", "term": "Pipeline Velocity", "category": "CRM & Pipeline"},
+    {"slug": "lead-scoring", "term": "Lead Scoring", "category": "CRM & Pipeline"},
+    {"slug": "deal-stage", "term": "Deal Stage", "category": "CRM & Pipeline"},
+    {"slug": "sales-engagement-platform", "term": "Sales Engagement Platform", "category": "CRM & Pipeline"},
+
+    # AI & LLM (5)
+    {"slug": "ai-personalization", "term": "AI Personalization", "category": "AI & LLM"},
+    {"slug": "llm-api", "term": "LLM API", "category": "AI & LLM"},
+    {"slug": "prompt-engineering", "term": "Prompt Engineering", "category": "AI & LLM"},
+    {"slug": "ai-sdr", "term": "AI SDR", "category": "AI & LLM"},
+    {"slug": "clay-formula", "term": "Clay Formula", "category": "AI & LLM"},
+]
+
+
+def _load_glossary_content(slug):
+    """Load glossary content from content/glossary.py by slug key."""
+    import importlib
+    import importlib.util
+    content_dir = os.path.join(PROJECT_DIR, "content")
+    module_path = os.path.join(content_dir, "glossary.py")
+    try:
+        spec = importlib.util.spec_from_file_location("glossary", module_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod.GLOSSARY_TERMS.get(slug, {})
+    except (ImportError, AttributeError, FileNotFoundError) as e:
+        print(f"  WARNING: Could not load content/glossary.py key={slug}: {e}")
+        return {}
+
+
+def glossary_related_links(current_slug):
+    """Generate related links for a glossary term page."""
+    links = [("/glossary/", "Glossary Index")]
+    # Other glossary terms from same category
+    current_cat = None
+    for t in GLOSSARY_TERMS:
+        if t["slug"] == current_slug:
+            current_cat = t["category"]
+            break
+    for t in GLOSSARY_TERMS:
+        if t["slug"] != current_slug and t["category"] == current_cat:
+            links.append((f"/glossary/{t['slug']}/", t["term"]))
+    # Add some cross-vertical links
+    links.append(("/tools/", "GTM Engineering Tools"))
+    links.append(("/salary/", "Salary Data"))
+    links.append(("/careers/", "Career Guides"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Glossary Terms</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_glossary_index():
+    """Generate /glossary/index.html with all 50 terms grouped by category."""
+    print("\n  Building glossary index...")
+    crumbs = [("Home", "/"), ("Glossary", None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # Group terms by category
+    categories_order = [
+        "Data & Enrichment",
+        "Outbound & Sequencing",
+        "Automation & Workflows",
+        "Analytics & Signals",
+        "Career & Industry",
+        "CRM & Pipeline",
+        "AI & LLM",
+    ]
+    terms_by_cat = {}
+    for t in GLOSSARY_TERMS:
+        cat = t["category"]
+        if cat not in terms_by_cat:
+            terms_by_cat[cat] = []
+        terms_by_cat[cat].append(t)
+
+    # Sort terms alphabetically within each category
+    for cat in terms_by_cat:
+        terms_by_cat[cat].sort(key=lambda x: x["term"].lower())
+
+    # Build category sections
+    category_sections = ""
+    for cat in categories_order:
+        terms = terms_by_cat.get(cat, [])
+        if not terms:
+            continue
+        cards = ""
+        for t in terms:
+            content = _load_glossary_content(t["slug"])
+            definition = content.get("definition", "")
+            cards += f'''<a href="/glossary/{t["slug"]}/" class="salary-index-card">
+    <h3>{t["term"]}</h3>
+    <p>{definition}</p>
+</a>
+'''
+        category_sections += f'''
+    <h2>{cat}</h2>
+    <div class="salary-index-grid">
+        {cards}
+    </div>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Reference</div>
+        <h1>GTM Engineering Glossary</h1>
+        <p>50 terms every GTM Engineer should know. Definitions, real examples, and links to deeper resources across tools, salary data, and career guides.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    {category_sections}
+</div>
+'''
+    body += newsletter_cta_html("Get weekly GTM Engineering terms, tool intel, and career insights.")
+
+    page = get_page_wrapper(
+        title="GTM Engineering Glossary: 50 Key Terms",
+        description=pad_description("Master the GTM Engineering vocabulary. 50 key terms with definitions, examples, and cross-links to tool reviews, salary data, and career guides."),
+        canonical_path="/glossary/",
+        body_content=body,
+        active_path="/glossary/",
+        extra_head=bc_schema,
+        body_class="page-inner",
+    )
+    write_page("glossary/index.html", page)
+    print("  Built: glossary/index.html")
+
+
+def generate_glossary_term(term_data):
+    """Generate a single glossary term page at /glossary/[slug]/."""
+    slug = term_data["slug"]
+    term = term_data["term"]
+    category = term_data["category"]
+
+    content = _load_glossary_content(slug)
+    if not content:
+        print(f"  SKIP (no content): glossary/{slug}")
+        return
+
+    definition = content.get("definition", "")
+    body_text = content.get("body", "")
+    related_links = content.get("related_links", [])
+
+    # Breadcrumbs
+    crumbs = [("Home", "/"), ("Glossary", "/glossary/"), (term, None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # Related links from content module
+    content_related = ""
+    if related_links:
+        link_items = ""
+        for href, label in related_links:
+            link_items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+        content_related = f'''<section class="related-links" style="margin-top: 2rem;">
+    <h2>Learn More</h2>
+    <div class="related-links-grid">
+        {link_items}
+    </div>
+</section>'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">{category} &middot; Glossary</div>
+        <h1>What is {term}?</h1>
+    </div>
+</section>
+
+<div class="salary-content">
+    <div style="background: var(--gtme-bg-tinted); border-left: 4px solid var(--gtme-accent); padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem;">
+        <p style="font-size: 1.1rem; line-height: 1.65; margin: 0; color: var(--gtme-text-primary);"><strong>Definition:</strong> {definition}</p>
+    </div>
+
+    {body_text}
+
+    {content_related}
+</div>
+
+{glossary_related_links(slug)}
+'''
+    body += newsletter_cta_html("Get weekly GTM Engineering terms and tool intel delivered to your inbox.")
+
+    # Target 50-60 chars for full title (including " - GTME Pulse" suffix)
+    suffix = " - GTME Pulse"
+    base_long = f"What is {term}? GTM Engineering Glossary"
+    base_mid = f"What is {term}? GTM Glossary"
+    base_short = f"{term} Defined"
+    if len(base_long + suffix) <= 60:
+        title = base_long
+    elif len(base_mid + suffix) <= 60:
+        title = base_mid
+    else:
+        title = base_short
+    meta_desc = pad_description(f"What is {term}? Clear definition with real examples and use cases for GTM Engineers. Part of the GTME Pulse glossary.")
+
+    page = get_page_wrapper(
+        title=title,
+        description=meta_desc,
+        canonical_path=f"/glossary/{slug}/",
+        body_content=body,
+        active_path="/glossary/",
+        extra_head=bc_schema,
+        body_class="page-inner",
+    )
+    write_page(f"glossary/{slug}/index.html", page)
+
+
+def build_glossary_terms():
+    """Build all individual glossary term pages."""
+    print("  Building glossary term pages...")
+    for term_data in GLOSSARY_TERMS:
+        generate_glossary_term(term_data)
+    print(f"  Built: {len(GLOSSARY_TERMS)} glossary term pages")
+
+
+# ---------------------------------------------------------------------------
 # Main pipeline
 # ---------------------------------------------------------------------------
 
@@ -12225,6 +12506,9 @@ def main():
     build_tool_comparisons()
     build_tool_alternatives()
     build_tool_roundups()
+
+    build_glossary_index()
+    build_glossary_terms()
 
     print("\n  Building benchmark pages...")
     build_bench_index()

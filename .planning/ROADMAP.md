@@ -64,11 +64,11 @@ Plans:
   3. Every review page has SoftwareApplication JSON-LD schema in the page source
   4. Reviews cross-link to related tool reviews and existing tool/benchmark pages via related links section
   5. Tools nav and index page link to all 30 review pages
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Tool review generator + first 15 reviews (Data Enrichment + Outbound + CRM)
-- [ ] 08-02-PLAN.md — Remaining 15 reviews (Workflow Automation + Intent + Analytics + LinkedIn)
+- [ ] 08-01-PLAN.md — Review generator infrastructure + 21 reviews (Data Enrichment, Outbound, CRM)
+- [ ] 08-02-PLAN.md — Remaining 9 reviews (Workflow Automation, Intent, Analytics, LinkedIn)
 
 ### Phase 9: Tool Categories and Comparisons
 **Goal**: Users can browse tools by category and read detailed head-to-head comparisons between competing tools

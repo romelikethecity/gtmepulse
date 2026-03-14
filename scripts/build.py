@@ -8784,6 +8784,296 @@ def build_comp_engineer_vs_ai_sdr():
     print(f"  Built: comparisons/engineer-vs-ai-sdr/index.html")
 
 
+def build_comp_us_vs_europe_vs_apac():
+    """COMP-04: US vs Europe vs APAC salary comparison page."""
+    title = "US vs Europe vs APAC GTM Engineer Salaries"
+    description = (
+        "US GTM Engineers earn 1.8x more than non-US peers."
+        " Regional salary data, agency fees, and fastest growth markets compared."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Comparisons", "/comparisons/"), ("US vs Europe vs APAC", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Why is the US salary so much higher?",
+         "Three factors compound. First, the GTM Engineer role originated in the US (Clay is a US company, most early adopters were US-based). Second, US cost of living in tech hubs like SF and NYC is significantly higher. Third, US venture-backed companies set compensation bands based on US talent market rates. When adjusted for purchasing power parity, the gap narrows but doesn't close."),
+        ("Which region is growing fastest?",
+         "India leads non-US growth with 17.4% of job postings, up from near-zero in 2023. Spain (15.3%) and the UK (7.7%) are the strongest European markets. APAC growth is concentrated in India and Australia. The fastest absolute growth is still the US, but percentage growth is higher in emerging GTM markets."),
+        ("Can you work remotely from a lower-cost region?",
+         "Yes, and many do. About 40% of GTM Engineer job postings are remote-friendly. Some US companies pay US-market rates regardless of location. Others adjust for cost of living, typically paying 70-85% of US rates for remote workers in lower-cost regions. Agency work is fully location-independent, though client acquisition is easier with US timezone overlap."),
+        ("How do agency fees vary by region?",
+         "US agencies charge $5K-$8K per client per month. European agencies charge $3K-$6K. APAC agencies charge $2K-$4K. MEA agencies average around $4K. LATAM is the lowest at $1.5K-$3K. These are monthly retainer ranges for a single client engagement. The gap reflects local market rates and client willingness to pay, not necessarily quality differences."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Comparison</div>
+        <h1>US vs Europe vs APAC Salaries</h1>
+        <p>US GTM Engineers earn $135K median. Non-US peers earn $75K. The 1.8x premium shapes everything from career decisions to remote work strategy.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">US Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$75K</span>
+        <span class="stat-label">Non-US Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">1.8x</span>
+        <span class="stat-label">US Premium</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">32</span>
+        <span class="stat-label">Countries</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Geographic Salary Map</h2>
+    <p>The State of GTM Engineering Report 2026 surveyed practitioners across 32 countries. US respondents (58% of the sample, 132 people) report a $135K median salary. Non-US respondents report $75K. That's a 1.8x multiplier that holds across seniority levels.</p>
+    <p>This gap isn't unique to GTM Engineering. US tech salaries outpace global peers in most roles. But the size of the gap matters for career planning. A mid-level GTM Engineer in London earns roughly what a junior earns in San Francisco. A senior engineer in Mumbai earns what a mid-level earns in Austin.</p>
+
+    <h2>Regional Job Market Breakdown</h2>
+    <p>Job posting data from 3,342 listings tells a clearer story than survey data about where the work is. US postings account for 25.7% of all GTM Engineer roles tracked. India follows at 17.4%, a massive jump from near-zero in 2023. Spain sits at 15.3%, driven by Clay's European expansion and a growing SaaS ecosystem in Barcelona and Madrid.</p>
+    <p>The UK accounts for 7.7% of postings, concentrated in London's fintech and SaaS sectors. Germany, France, and the Netherlands each contribute 2-4%. Australia is the strongest APAC market outside India, with growing demand from Sydney and Melbourne-based SaaS companies.</p>
+    <p>The pattern is clear: GTM Engineering is a US-born role that's going global fast. India and Spain are the breakout markets. Europe is steady. APAC (excluding India) is early.</p>
+
+    <h2>Agency Fee Differentials</h2>
+    <p>Agency pricing follows regional salary patterns but with compressed gaps. US agencies charge $5K-$8K per client per month. That's 2-3x what LATAM agencies charge ($1.5K-$3K). Europe sits in the middle at $3K-$6K. APAC ranges from $2K-$4K. MEA agencies cluster around $4K.</p>
+    <p>These differentials create arbitrage opportunities. A US-based company can hire a European GTM agency at 60% of US rates and get comparable quality. Some agencies exploit this explicitly, building teams in lower-cost regions while selling to US clients at near-US rates. The margin difference is significant.</p>
+    <p>For detailed fee breakdowns, see the <a href="/salary/agency-fees/">agency fee guide</a> and <a href="/salary/agency-fees-region/">regional fee comparison</a>.</p>
+
+    <h2>Cost of Living Context</h2>
+    <p>Raw salary numbers are misleading without purchasing power context. A $135K salary in San Francisco (where median rent is $3,500/month for a one-bedroom) has different purchasing power than a $75K salary in Bangalore (median rent $400/month) or $90K in Barcelona ($1,200/month).</p>
+    <p>When adjusted for purchasing power parity, the US premium shrinks from 1.8x to roughly 1.2-1.4x for most comparisons. That's still a premium, but it changes the career calculus. A GTM Engineer earning $75K in a city with $800/month rent may have more disposable income than one earning $135K in a city with $3,000/month rent.</p>
+    <p>Remote work further complicates this. GTM Engineers who secure US-market remote compensation while living in lower-cost regions capture the best of both worlds. About 40% of job postings are remote-friendly, and some companies explicitly pay location-independent rates.</p>
+
+    <h2>Where Growth Is Happening</h2>
+    <p>India's 17.4% share of GTM Engineer postings is the biggest story in the data. Two years ago, the role barely existed outside the US. Indian SaaS companies (many serving US customers) are hiring GTM Engineers at scale. Bangalore, Hyderabad, and Delhi are the primary markets.</p>
+    <p>Spain's 15.3% is driven by a combination of Clay's European community, Barcelona's SaaS ecosystem, and cost advantages over Northern European tech hubs. GTM agencies based in Spain serve clients across Europe and the US.</p>
+    <p>The UK remains the largest European market by depth of expertise, though Spain is catching up in volume. Germany's growth is steady but slower, partly because the local SaaS scene has been slower to adopt the GTM Engineer title.</p>
+
+    <h2>Career Strategy by Region</h2>
+    <p>If you're in the US, the salary ceiling is highest and the job market is deepest. Focus on specialization and seniority to maximize earnings. Senior GTM Engineers in SF and NYC approach $200K+.</p>
+    <p>If you're in Europe, agency work offers the best earning potential relative to in-house roles. European companies often underpay for the role compared to US peers, but European agencies serving US clients can charge near-US rates.</p>
+    <p>If you're in India or APAC, the growth curve is steepest. Early movers who build expertise now will benefit from rising local demand. Building a portfolio of US client work (through agencies or freelancing) gives you US-market credibility at APAC-market costs.</p>
+    <p>For US salary data, see <a href="/salary/us-vs-global/">US vs global pay</a>. For location-specific breakdowns, see the <a href="/salary/">salary data index</a>.</p>
+
+{faq_html(faq_pairs)}
+{comparison_related_links("us-vs-europe-vs-apac")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Regional salary shifts and global GTM market data. Weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/comparisons/us-vs-europe-vs-apac/",
+        body_content=body, active_path="/comparisons/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("comparisons/us-vs-europe-vs-apac/index.html", page)
+    print(f"  Built: comparisons/us-vs-europe-vs-apac/index.html")
+
+
+def build_comp_seed_vs_series_b():
+    """COMP-05: Seed vs Series B compensation comparison page."""
+    title = "Seed vs Series B GTM Engineer Pay (2026)"
+    description = (
+        "Series B leads at $145K median salary. Seed offers equity upside."
+        " Risk vs reward at every company stage for GTM Engineers."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Comparisons", "/comparisons/"), ("Seed vs Series B", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Is seed stage equity worth the lower salary?",
+         "Sometimes. Pre-seed and seed-stage companies offer the most equity to GTM Engineers, but 68% of all GTM Engineers report having no meaningful equity. At seed stage, a typical grant might be 0.1-0.5% of the company. If the company reaches a $500M exit, that's $500K-$2.5M. If it fails (and most do), it's worth zero. The expected value calculation depends heavily on the specific company, not the stage."),
+        ("When do GTM Engineers get the best comp packages?",
+         "Series B and D+ stages tie at $145K median salary. Series B combines growth-stage salaries with meaningful equity grants. The sweet spot is Series B with strong revenue traction: these companies pay well, still have upside in their equity, and have enough product-market fit to make the job interesting. Late-stage and public companies pay the highest cash comp but offer minimal equity upside."),
+        ("How does Series B comp compare to enterprise?",
+         "Series B median ($145K) matches D+ ($145K) on salary, but the equity component is different. Series B equity still has 5-10x upside potential. Enterprise equity (RSUs at public companies) grows at market rate. The total compensation ceiling is higher at Series B, but the floor is lower. Enterprise comp is predictable. Series B comp is a calculated bet."),
+        ("Should you optimize for salary or equity?",
+         "For most GTM Engineers, optimize for salary first. 68% receive no meaningful equity regardless of stage. The $45K coding premium and seniority-based raises are more reliable paths to wealth than equity grants. If you're going to optimize for equity, choose pre-seed or seed at a company where you believe in the founders and the market. Don't take a $30K salary cut for 0.05% at a Series B."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Comparison</div>
+        <h1>Seed vs Series B GTM Compensation</h1>
+        <p>Series B and D+ companies tie at $145K median. Seed pays less in cash but offers the best equity deals. Here's the risk-reward math at every stage.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$145K</span>
+        <span class="stat-label">Series B Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$105K</span>
+        <span class="stat-label">Seed Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">68%</span>
+        <span class="stat-label">No Equity</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$40K</span>
+        <span class="stat-label">Stage Gap</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Compensation by Company Stage</h2>
+    <p>The salary curve across company stages isn't linear. It rises steeply from seed to Series A, plateaus at Series B, dips slightly at Series C (smaller sample), then recovers at D+ and enterprise. The shape tells you that Series B is the inflection point where companies start paying market rate for GTM Engineers.</p>
+    <p>Seed-stage companies pay a $105K median. Pre-seed pays less, sometimes significantly less. The pitch is equity: you're early enough that a meaningful grant (0.1-0.5%) could be worth something if the company succeeds. The counter-argument is that 68% of GTM Engineers across all stages report having no meaningful equity. Even at seed, equity isn't guaranteed.</p>
+    <p>Series A jumps to roughly $125K median. The company has product-market fit and can afford closer-to-market salaries. Equity grants shrink as a percentage but the company's valuation makes each share worth more. Series B hits $145K, matching late-stage compensation in salary terms.</p>
+
+    <h2>The Equity Question</h2>
+    <p>68% of GTM Engineers have no meaningful equity. That number alone changes the compensation conversation. For most practitioners, equity isn't part of the package regardless of company stage.</p>
+    <p>For the 32% who do receive equity, stage matters enormously. Pre-seed grants are the largest by percentage (0.5-2% in some cases) but the company valuation is lowest and the risk is highest. Seed grants range from 0.1-0.5%. Series A grants drop to 0.05-0.25%. By Series B, equity grants for individual contributor GTM Engineers are typically 0.01-0.1%.</p>
+    <p>The math: 0.1% of a $50M seed-stage company (valued at exit) is $50K. 0.01% of a $2B Series B exit is $200K. The percentage is smaller but the outcome can be larger because Series B companies have higher base valuations and better odds of reaching exit. Of course, most startups at any stage don't exit at those multiples.</p>
+
+    <h2>Risk vs Reward by Stage</h2>
+    <p><strong>Pre-seed/Seed:</strong> Highest risk, highest percentage equity, lowest cash comp ($85K-$115K). You're building from scratch with minimal infrastructure. The GTM Engineer is often the entire go-to-market function. If you thrive on ambiguity and want ownership over the entire outbound system, this is the stage. If you need stability, it isn't.</p>
+    <p><strong>Series A:</strong> Moderate risk, moderate equity, improving cash ($115K-$135K). Product-market fit exists. You're building the first repeatable outbound motion. There's enough data to make informed decisions but not enough that the system runs itself. Hiring is starting, so you might manage junior operators within a year.</p>
+    <p><strong>Series B:</strong> Lower risk, smaller equity grants, competitive cash ($135K-$155K). The outbound system exists and needs scaling. You're optimizing conversion rates, adding channels, integrating new tools, and building reporting. The work is more structured. The upside is that the company is more likely to succeed.</p>
+    <p><strong>Growth/Enterprise (D+):</strong> Lowest risk, minimal equity upside (RSUs at public companies), highest guaranteed cash ($140K-$175K+). You're part of a larger team. The systems are mature. The work focuses on optimization, not creation. Career paths are clearer. Bureaucracy is real.</p>
+
+    <h2>What "Meaningful Equity" Means</h2>
+    <p>Survey respondents who said they have "meaningful equity" were asked what that means. The responses vary wildly. For some, it's options worth $50K-$100K at current valuation. For others, it's RSUs at a public company worth $10K-$20K per year. The definition of "meaningful" depends entirely on the stage.</p>
+    <p>At seed stage, meaningful equity means a grant large enough that a successful exit (top decile outcome) would generate $500K+. At enterprise, meaningful equity means annual RSU vesting that adds $20K-$50K to total comp. The expected value differs. The former is a lottery ticket with favorable odds (if you pick well). The latter is a predictable income supplement.</p>
+    <p>For most GTM Engineers, the better wealth-building strategy is maximizing cash compensation through the <a href="/salary/coding-premium/">$45K coding premium</a>, seniority advancement, and geographic arbitrage. Equity is a bonus when it happens, not a compensation strategy to depend on.</p>
+
+    <h2>Stage Selection Strategy</h2>
+    <p>Early career: Series A or B. You want competitive cash, structured learning, and a team to work with. Equity upside is a secondary consideration when you're building skills.</p>
+    <p>Mid career: Seed or Series B. If you're confident in your skills and want maximum equity upside, seed stage with a strong founding team. If you want to maximize cash while still having some equity potential, Series B.</p>
+    <p>Senior/Staff level: Depends on your financial goals. Enterprise pays the most predictable comp. Seed pays the least but offers the most ownership. Many senior GTM Engineers alternate between stages throughout their careers.</p>
+    <p>For stage-specific salary data, see <a href="/salary/by-company-stage/">salary by company stage</a> and <a href="/salary/seed-vs-enterprise/">seed vs enterprise comparison</a>.</p>
+
+{faq_html(faq_pairs)}
+{comparison_related_links("seed-vs-series-b")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Compensation data and career strategy for GTM Engineers. Weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/comparisons/seed-vs-series-b/",
+        body_content=body, active_path="/comparisons/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("comparisons/seed-vs-series-b/index.html", page)
+    print(f"  Built: comparisons/seed-vs-series-b/index.html")
+
+
+def build_comp_technical_vs_low_code():
+    """COMP-06: Technical vs Low-Code GTM Operators comparison page."""
+    title = "Technical vs Low-Code GTM Operators (2026)"
+    description = (
+        "Python and SQL vs Clay and Zapier. The bimodal coding distribution"
+        " creates a $45K salary premium. Skills, tools, and careers compared."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Comparisons", "/comparisons/"), ("Technical vs Low-Code", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Is low-code enough for a GTM Engineer career?",
+         "For now, yes. Clay, Zapier, and Make can build sophisticated outbound systems without writing code. Many successful GTM operators earn $90K-$120K with purely low-code skills. But the ceiling is lower. Technical GTM Engineers earn $45K more at the median, get promoted faster, and have more exit options. Low-code is enough to start. It may not be enough to grow."),
+        ("What coding skills matter most?",
+         "Python first, SQL second, JavaScript third. Python handles data transformation, API integration, and automation scripting. SQL lets you query data warehouses directly instead of waiting for someone else to pull reports. JavaScript is useful for webhook handlers, browser automation, and building internal tools. Start with Python. You can get productive in 3-4 months of focused learning."),
+        ("Can low-code operators compete on salary?",
+         "Up to a point. Expert Clay operators who build complex enrichment workflows can command $110K-$130K. Agency-side low-code operators with strong client portfolios can earn even more through volume. But salary growth plateaus without coding skills. The $135K-$155K range that technical GTM Engineers occupy is difficult to reach with low-code skills alone."),
+        ("What should a low-code operator learn first?",
+         "Python, specifically for API calls and data transformation. Start by replacing one Zapier workflow with a Python script. Then learn to call enrichment APIs directly instead of through Clay integrations. The goal isn't to abandon low-code tools. Use Python to extend what Clay and Zapier can't do natively. That combination (Clay expertise + Python scripting) is the most valuable skill profile in GTM Engineering."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Comparison</div>
+        <h1>Technical vs Low-Code GTM Operators</h1>
+        <p>The bimodal coding distribution in GTM Engineering creates a $45K salary premium. 40% code daily. 45% never code. Very little middle ground. Here's what that means.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Coding Premium</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~40%</span>
+        <span class="stat-label">Code Daily</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~45%</span>
+        <span class="stat-label">Never Code</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30%</span>
+        <span class="stat-label">Python in Job Posts</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Bimodal Distribution in Detail</h2>
+    <p>Survey data from 228 GTM practitioners shows a striking pattern: coding frequency is bimodal. Roughly 40% write code every day or almost every day. Roughly 45% never write code or write it less than monthly. The middle (weekly coders who don't do it daily) is thin.</p>
+    <p>This bimodal split maps directly to salary. Daily coders cluster around $135K-$155K median compensation. Non-coders cluster around $90K-$110K. The $45K gap is consistent across company sizes, stages, and regions. It's the single biggest salary differentiator in GTM Engineering, larger than seniority, location, or company stage for practitioners at the same experience level.</p>
+
+    <h2>Technical GTM Engineers: The Coding Track</h2>
+    <p><strong>Core skills:</strong> Python for data transformation, API integration, and automation scripting. SQL for querying data warehouses, building analytics, and debugging data flows. JavaScript for webhook handlers, browser automation (Puppeteer/Playwright), and building lightweight internal tools. Version control with Git. Comfortable in a terminal.</p>
+    <p><strong>Tool stack:</strong> Clay (yes, coders use Clay too), Python scripts for custom enrichment, n8n for orchestration (54% adoption, preferred over Zapier for its code node support), AI coding tools like Cursor and Claude Code (71% adoption), direct API access to enrichment providers, custom CRM integrations via API rather than native connectors.</p>
+    <p><strong>Day-in-the-life:</strong> Morning debugging a failed data pipeline. Midday writing a Python script that deduplicates 50,000 leads against three data sources. Afternoon building a webhook endpoint that routes inbound form submissions through a custom scoring model before creating CRM records. Evening reviewing monitoring alerts for overnight automation runs.</p>
+    <p><strong>Career ceiling:</strong> $175K-$250K+ at senior/staff levels. Lateral moves into solutions engineering, data engineering, DevOps, or technical product management. Agency founders who code can build proprietary tools that differentiate their offering.</p>
+
+    <h2>Low-Code GTM Operators: The Visual Builder Track</h2>
+    <p><strong>Core skills:</strong> Clay table architecture (complex waterfall enrichment, AI research agents, multi-step workflows). Zapier/Make scenario design. CRM customization through the UI (custom fields, automations, workflows). Spreadsheet mastery. Sequencing tool configuration (Instantly, Smartlead, Outreach).</p>
+    <p><strong>Tool stack:</strong> Clay as the primary workspace, Make or Zapier for cross-tool automation, CRM native automations, Instantly or Smartlead for sequencing, spreadsheets for data manipulation, Chrome extensions for LinkedIn data extraction (PhantomBuster, etc.).</p>
+    <p><strong>Day-in-the-life:</strong> Morning checking Clay table completion rates and enrichment success percentages. Midday building a new ICP list using Clay's AI research agent with custom prompts. Afternoon setting up a Make scenario that syncs Clay output to HubSpot with field mapping. Evening pulling campaign performance metrics from Instantly into a client report.</p>
+    <p><strong>Career ceiling:</strong> $110K-$130K for expert operators. Head of GTM Ops roles at $130K-$150K. Agency operators can earn more through client volume, but individual salary growth plateaus without coding skills.</p>
+
+    <h2>Where They Overlap</h2>
+    <p>Both tracks use Clay (84% overall). Both build outbound campaigns. Both work with CRM data. Both configure sequencing tools. Both analyze campaign performance. The overlap in daily activities can be 60-70%. The divergence happens at the edges: when the standard integration breaks, when the data needs custom transformation, when the workflow exceeds what visual builders can express.</p>
+    <p>AI tools are blurring the line further. Claude Code and Cursor let low-code operators generate Python scripts without writing them from scratch. 71% of all GTM Engineers use AI coding tools. Some operators use AI to bridge the gap: they describe what they need in natural language, AI generates the code, they run it. This works for simple scripts but falls apart for complex systems that need debugging, maintenance, and iteration.</p>
+
+    <h2>The Transition Path</h2>
+    <p>The most common path from low-code to technical runs through Python. Specifically: learn to make HTTP requests (the requests library), parse JSON responses, and write loops that process data in bulk. These three skills cover 80% of what separates a coder from a non-coder in GTM Engineering.</p>
+    <p>The timeline is 3-6 months of focused practice. Start by replacing one Make/Zapier workflow with a Python script. Then build a Clay HTTP request step that calls a custom API endpoint you wrote. Then write a script that does something Clay can't do natively (complex deduplication, multi-source waterfall enrichment with custom logic, data warehouse queries).</p>
+    <p>121 out of 228 survey respondents are self-taught. The path is proven. The $45K premium is the incentive. The question isn't whether low-code operators can learn to code. Most can. The question is whether they will.</p>
+    <p>For the full coding premium analysis, see <a href="/salary/coding-premium/">the $45K coding premium</a>. For specific tool adoption data, see the <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>. For coding skill guidance, see <a href="/careers/do-you-need-to-code/">do you need to code?</a></p>
+
+{faq_html(faq_pairs)}
+{comparison_related_links("technical-vs-low-code")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Coding skills, tool intel, and salary data for GTM Engineers. Weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/comparisons/technical-vs-low-code/",
+        body_content=body, active_path="/comparisons/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("comparisons/technical-vs-low-code/index.html", page)
+    print(f"  Built: comparisons/technical-vs-low-code/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -8954,6 +9244,9 @@ def main():
     build_comp_engineer_vs_operator()
     build_comp_in_house_vs_agency()
     build_comp_engineer_vs_ai_sdr()
+    build_comp_us_vs_europe_vs_apac()
+    build_comp_seed_vs_series_b()
+    build_comp_technical_vs_low_code()
 
     print("\n  Building meta files...")
     build_sitemap()

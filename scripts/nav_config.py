@@ -7,7 +7,7 @@ SITE_URL = "https://gtmepulse.com"
 SITE_TAGLINE = "Career intelligence for GTM Engineers"
 COPYRIGHT_YEAR = "2026"
 CURRENT_YEAR = 2026
-CSS_VERSION = "12"
+CSS_VERSION = "13"
 
 CTA_HREF = "/newsletter/"
 CTA_LABEL = "Get the Weekly Pulse"
@@ -39,6 +39,7 @@ NAV_ITEMS = [
         ],
     },
     {"href": "/benchmarks/", "label": "Benchmarks"},
+    {"href": "/comparisons/", "label": "Comparisons"},
     {
         "href": "/careers/",
         "label": "Careers",
@@ -67,6 +68,7 @@ FOOTER_COLUMNS = {
         {"href": "/tools/tech-stack-benchmark/", "label": "Tech Stack Benchmark"},
         {"href": "/tools/frustrations/", "label": "Tool Frustrations"},
         {"href": "/benchmarks/", "label": "Industry Benchmarks"},
+        {"href": "/comparisons/", "label": "Comparisons"},
         {"href": "/benchmarks/50-stats/", "label": "50 Key Statistics"},
         {"href": "/careers/", "label": "Career Guides"},
         {"href": "/careers/how-to-become-gtm-engineer/", "label": "How to Become a GTME"},

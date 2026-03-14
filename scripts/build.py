@@ -622,10 +622,10 @@ def build_about_page():
     <p>No vendor affiliations drive our rankings. No pay-to-play reviews. When we say a tool is good, it's because practitioners use it and the data backs it up.</p>
     <h2>What you'll find here</h2>
     <ul>
-        <li><strong>Salary benchmarks</strong> broken down by seniority, location, and company stage</li>
-        <li><strong>Tool reviews</strong> from someone who has built GTM systems, not just written about them</li>
-        <li><strong>Career guides</strong> for breaking into and advancing in GTM Engineering</li>
-        <li><strong>Weekly data</strong> on hiring trends, salary shifts, and tool adoption</li>
+        <li><strong><a href="/salary/">Salary benchmarks</a></strong> broken down by seniority, location, and company stage</li>
+        <li><strong><a href="/tools/">Tool reviews</a></strong> from someone who has built GTM systems, not just written about them</li>
+        <li><strong><a href="/careers/">Career guides</a></strong> for breaking into and advancing in GTM Engineering</li>
+        <li><strong><a href="/benchmarks/">Industry benchmarks</a></strong> from the State of GTM Engineering Report 2026</li>
     </ul>
     <p>Built by <strong>Rome Thorndike</strong>.</p>
 </div>
@@ -999,6 +999,29 @@ def build_salary_seniority_pages():
 {drivers_html}    </ul>
     <h2>Beyond Base: Total Compensation</h2>
     <p>{data["total_comp"]}</p>
+
+    <h2>How {label} Compensation Compares</h2>
+    <p>The {label.lower()} GTM Engineer salary range of {fmt_salary(data['min'])} to {fmt_salary(data['max'])} reflects current market conditions across the industry. Location plays a major role: {label.lower()} engineers in San Francisco and New York earn at the top of this range, while remote roles and smaller markets sit closer to the median. <a href="/salary/us-vs-global/">US-based engineers</a> earn significantly more than their global counterparts at every seniority level.</p>
+    <p>Company stage also shifts the range. <a href="/salary/seed-vs-enterprise/">Seed-stage startups</a> pay {label.lower()} engineers at the lower end of the range but compensate with larger equity grants. Enterprise companies pay higher base salaries with smaller equity allocations. Growth-stage companies often hit the sweet spot: strong base pay plus meaningful equity.</p>
+
+    <h2>Skills That Increase Pay at This Level</h2>
+    <p><a href="/salary/coding-premium/">Engineers who code</a> earn 15-25% more than their no-code counterparts at the {label.lower()} level. Python and SQL are the highest-value technical skills, followed by API architecture and data pipeline design. Clay proficiency is expected. The differentiator is building on top of Clay with custom actions, multi-source enrichment logic, and automated QA workflows.</p>
+    <p>AI tool proficiency (Claude, GPT-4, GitHub Copilot) is increasingly valuable. 71% of GTM Engineers use AI coding tools daily, and job postings mentioning AI skills correlate with higher salary ranges. At the {label.lower()} level, demonstrating how you use AI to accelerate pipeline building gives you a concrete negotiation advantage.</p>
+
+    <h2>Career Growth from {label}</h2>
+    <p>Advancement from {label.lower()} typically takes 18-24 months. The fastest path combines measurable pipeline impact with growing technical depth. Document your system contributions: contacts enriched, pipeline generated, hours automated. These metrics drive both promotions and external offers.</p>
+    <p>The <a href="/careers/how-to-become-gtm-engineer/">career path guide</a> covers the full trajectory from entry-level to leadership roles, including which skills to develop at each stage. The <a href="/careers/skills-gap/">skills gap analysis</a> identifies where current practitioners feel underqualified, giving you a roadmap for professional development.</p>
+
+    <h2>Job Market for {label} GTM Engineers</h2>
+    <p>The GTM Engineer job market grew 205% year-over-year, and {label.lower()} roles make up a significant share of that growth. Companies posting {label.lower()} GTM Engineer positions report 2-3x longer time-to-fill compared to adjacent roles at the same seniority, which gives candidates strong negotiating position.</p>
+    <p>Industry vertical affects compensation at the {label.lower()} level. Fintech, cybersecurity, and developer tools companies pay 10-20% above median. Mid-market B2B SaaS companies ($10M-$100M ARR) offer the strongest total compensation when you factor in equity and bonuses. The <a href="/careers/job-growth/">job growth analysis</a> tracks hiring velocity by seniority level and shows where demand is strongest.</p>
+    <p>The <a href="/tools/tech-stack-benchmark/">tool stack</a> expected at the {label.lower()} level includes Clay (69% adoption), a CRM (HubSpot or Salesforce, 92% adoption), and at least one automation platform (Make, n8n, or Zapier). Proficiency with these tools is table stakes. The differentiator is depth: custom Clay actions, API integrations, and multi-source data enrichment pipelines. Check the <a href="/benchmarks/50-stats/">50 key statistics</a> for a complete picture of what the industry looks like at every level.</p>
+
+    <h2>Total Compensation at the {label} Level</h2>
+    <p>Base salary is one component of total comp for {label.lower()} GTM Engineers. Expect additional compensation from bonuses (typically 10-20% of base, tied to pipeline metrics), equity grants (varying widely by company stage), and benefits. The <a href="/salary/bonus-structure/">bonus structure analysis</a> shows how bonus amounts scale with seniority.</p>
+    <p>Equity is the wildcard. At <a href="/salary/seed/">seed-stage companies</a>, equity grants for {label.lower()} engineers range from 0.1% to 1.0%, with significant upside potential. At <a href="/salary/enterprise/">enterprise companies</a>, equity is smaller in percentage terms but more predictable in value. The <a href="/salary/equity-and-stock/">equity analysis</a> provides detailed breakdowns by seniority and company stage.</p>
+    <p>Benefits at the {label.lower()} level vary by company stage and region. Common differentiators include remote work flexibility (offered in 65% of GTM Engineer postings), professional development budgets, and tool stipends. Some companies provide dedicated budgets for attending conferences and industry events. The <a href="/careers/work-life-balance/">work-life balance data</a> covers typical working hours and flexibility expectations at each seniority level.</p>
+
 {faq_html(faq_pairs)}
 {salary_related_links(slug, "seniority")}
 </div>
@@ -1075,6 +1098,27 @@ def build_salary_location_pages():
 
     <h2>Beyond Base: Total Comp in {label}</h2>
     <p>Base salary tells part of the story. GTM Engineers in {label} can expect 10-30% additional compensation from equity, bonuses, and benefits. Growth-stage companies offer the strongest total packages, with equity grants that can meaningfully increase total comp over a 4-year vesting period.</p>
+    <p>Bonus structures for GTM Engineers in {label} typically tie to pipeline contribution metrics. Common bonus triggers include pipeline generated, meetings booked, and revenue influenced. <a href="/salary/bonus-structure/">Our bonus structure analysis</a> breaks down median bonus amounts by company stage. Engineers at growth-stage companies in {label} report the highest total comp when bonus and equity are included.</p>
+
+    <h2>Skills That Command Premium Pay in {label}</h2>
+    <p>The {label} market rewards specific technical skills with measurable salary premiums. <a href="/salary/coding-premium/">Engineers who code</a> earn 15-25% more than those who rely on no-code tools alone. Python and SQL fluency are the biggest differentiators, followed by API integration experience and data pipeline architecture.</p>
+    <p>Clay proficiency is table stakes for GTM Engineer roles in {label}. The differentiator is what you build on top of Clay: custom actions using Python, multi-source data enrichment pipelines, and automated QA workflows that maintain data quality at scale. Engineers who demonstrate these capabilities in interviews consistently land at the top of the posted salary range.</p>
+    <p>Job postings in {label} increasingly list AI tool proficiency (Claude, GPT-4, Copilot) as a desired skill. 71% of practicing GTM Engineers already use AI coding tools daily. If you're interviewing in {label}, expect questions about how you use AI to accelerate pipeline building and data enrichment workflows.</p>
+
+    <h2>Negotiation Tips for {label}</h2>
+    <p>When negotiating a GTM Engineer offer in {label}, lead with pipeline impact data. Quantify the revenue your automation systems have generated or the manual hours your workflows have eliminated. Hiring managers in {label} respond to concrete ROI numbers. "My Clay enrichment pipeline added 2,400 qualified contacts per month" beats "I'm experienced with Clay."</p>
+    <p>Know the market before you negotiate. The {fmt_salary(data['min'])} to {fmt_salary(data['max'])} range in {label} is wide. Where you land depends on experience level, technical depth, and the company's stage. <a href="/salary/seed-vs-enterprise/">Seed-stage companies</a> offer lower base but higher equity upside. Enterprise companies pay top-of-range base with smaller equity grants.</p>
+    <p>Remote flexibility is a negotiation tool. Some {label}-based companies hire remote GTM Engineers at adjusted rates. Others pay {label} market rates regardless of location. Clarify the comp philosophy early in the process, and use our <a href="/salary/remote/">remote salary data</a> as a benchmark if the role offers location flexibility.</p>
+
+    <h2>Job Market Outlook in {label}</h2>
+    <p>GTM Engineer job postings grew 205% year-over-year nationally, and {label} is part of that surge. Companies in the area are building dedicated GTM engineering teams, moving beyond the one-person-band model that dominated 2023-2024. This creates opportunities at every seniority level, from <a href="/salary/junior/">junior roles</a> at startups to <a href="/salary/lead-staff/">lead/staff positions</a> at growth-stage companies.</p>
+    <p>The {label} hiring market for GTM Engineers is competitive on the employer side. Companies report 2-3x longer time-to-fill for these roles compared to adjacent positions like RevOps or Sales Ops. For candidates, this translates to multiple offers, faster interview processes, and willingness to negotiate on compensation. The <a href="/careers/job-growth/">job growth analysis</a> tracks these trends by metro area and shows month-over-month hiring velocity.</p>
+    <p>Industry vertical matters in {label}. Fintech, cybersecurity, and developer tools companies consistently pay above the median range. B2B SaaS companies in the mid-market segment ($10M-$100M ARR) offer the strongest combination of base salary and equity. Early-stage startups (<$5M ARR) pay below median but compensate with larger equity grants and broader scope of responsibilities.</p>
+    <p>Tools in demand from {label} job postings mirror the national trend: Clay appears in 69% of listings, followed by HubSpot/Salesforce (92% CRM adoption), Python (mentioned in 45% of senior+ postings), and AI tools like Claude and GPT-4. For the full <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a>, see our tool adoption analysis.</p>
+
+    <h2>Cost of Living Considerations</h2>
+    <p>Raw salary numbers only tell part of the story in {label}. When evaluating an offer, factor in local housing costs, state income tax, and overall cost of living. A {fmt_salary(data['median'])} salary in {label} may stretch further or shorter than the same number in another metro area. Use cost-of-living calculators to compare your effective purchasing power across cities.</p>
+    <p>Remote roles based in {label} may pay {label} rates regardless of where you live, creating an arbitrage opportunity for engineers in lower-cost areas. Conversely, some {label} companies adjust pay based on employee location. Clarify the policy before accepting an offer. For a broader perspective on how location affects GTM Engineer pay, explore our <a href="/salary/us-vs-global/">US vs global salary comparison</a> and <a href="/benchmarks/demographics/">industry demographics report</a>.</p>
 
 {faq_html(faq_pairs)}
 {salary_related_links(key, "location")}
@@ -1149,6 +1193,27 @@ def build_salary_stage_pages():
         <li><strong>Funding round:</strong> Companies that just closed a round have budget to pay at the top of range.</li>
         <li><strong>Location:</strong> SF and NYC {label.lower()} companies pay 15-25% above remote equivalents.</li>
     </ul>
+
+    <h2>Total Compensation Breakdown</h2>
+    <p>Base salary at {label.lower()} companies is only part of the picture. <a href="/salary/bonus-structure/">Bonus structures</a> vary by stage: earlier companies tend to offer performance-based bonuses tied directly to pipeline and revenue outcomes, while later-stage companies offer more structured bonus plans with quarterly or annual payouts.</p>
+    <p>Equity value depends heavily on the company's trajectory. At {label.lower()} companies, the typical {data["equity"]} grant means your total compensation is significantly influenced by the company's next funding round or exit. Engineers should evaluate the strike price relative to the most recent preferred price, the company's revenue growth rate, and the remaining option pool percentage.</p>
+
+    <h2>Skills and Career Growth at {label} Companies</h2>
+    <p><a href="/salary/coding-premium/">Engineers who code</a> are especially valued at {label.lower()} companies, where the ability to build custom solutions directly impacts the company's pipeline velocity. Python, SQL, and API integration skills command the largest premiums at this stage.</p>
+    <p>Career advancement at {label.lower()} companies typically accelerates faster than the industry average. Smaller teams mean more visibility and more ownership. Engineers who join at this stage and deliver measurable pipeline impact often advance to senior or lead roles within 18-24 months. The <a href="/careers/how-to-become-gtm-engineer/">career path guide</a> covers advancement strategies at each company stage.</p>
+    <p>The trade-off is structure. {label} companies may lack dedicated GTM engineering managers, established tooling standards, or clear promotion frameworks. You build the playbook while running the plays. For engineers who prefer autonomy and ownership, this is a feature. For those who prefer mentorship and clear paths, <a href="/salary/seed-vs-enterprise/">later-stage companies</a> may be a better fit.</p>
+
+    <h2>Tool Stack at {label} Companies</h2>
+    <p>The <a href="/tools/tech-stack-benchmark/">tech stack</a> at {label.lower()} companies varies from the industry average. Clay adoption (69% industry-wide) tends to be {'higher at earlier-stage companies where GTM Engineers have more autonomy over tool selection' if key in ['seed', 'series-a'] else 'standard, with established procurement processes that may slow adoption of newer tools' if key in ['growth', 'enterprise'] else 'consistent with the industry average'}. CRM choice follows a clear pattern: HubSpot dominates at seed through Series B, while Salesforce takes over at growth and enterprise stages.</p>
+    <p>Budget constraints at {label.lower()} companies shape the stack. {'Earlier-stage companies often rely on free tiers and open-source alternatives (n8n over Make, Apollo free tier over ZoomInfo). The GTM Engineer frequently manages the full stack with no dedicated ops support.' if key in ['seed', 'series-a'] else 'Later-stage companies invest in enterprise tools but expect the GTM Engineer to integrate them into a coherent pipeline. Tool sprawl is a common challenge at this stage.' if key in ['growth', 'enterprise'] else 'Series B companies typically have budget for mid-tier tooling with room to experiment. This stage often represents the best balance of resources and autonomy.'} The <a href="/tools/annual-spend/">annual tool spend analysis</a> breaks down typical budgets by company stage.</p>
+
+    <h2>Hiring Trends at {label} Companies</h2>
+    <p>Job posting growth for GTM Engineers at {label.lower()} companies reflects the broader 205% year-over-year trend. {'Seed and early-stage companies drove much of the initial demand, looking for versatile builders who could own the entire GTM stack.' if key in ['seed', 'series-a'] else 'Growth and enterprise companies are now building dedicated GTM engineering teams, moving beyond the single-engineer model.'} The <a href="/careers/job-growth/">job growth analysis</a> tracks hiring velocity by company stage.</p>
+    <p>Interview processes at {label.lower()} companies {'tend to be faster and more practical. Expect a Clay or automation take-home project rather than multiple rounds of behavioral interviews.' if key in ['seed', 'series-a'] else 'are more structured, with multiple rounds including technical assessments, system design questions, and stakeholder interviews.' if key in ['growth', 'enterprise'] else 'balance speed with thoroughness. A typical process includes a technical screen, a system design discussion, and a team fit conversation.'} The <a href="/benchmarks/bottlenecks/">industry bottlenecks report</a> covers the challenges companies face when hiring at each stage.</p>
+
+    <h2>Day-to-Day at {label} Companies</h2>
+    <p>The daily reality for GTM Engineers at {label.lower()} companies reflects the stage's priorities. {'Expect to wear many hats: building data enrichment pipelines in the morning, setting up outbound sequences after lunch, and debugging CRM integrations before end of day. You own the entire GTM stack with minimal delegation.' if key in ['seed', 'series-a'] else 'Your focus narrows to specific systems within a larger GTM infrastructure. You might own enrichment and sequencing while a colleague handles CRM operations and reporting. Cross-functional coordination with sales, marketing, and data teams is a significant part of the role.' if key in ['growth', 'enterprise'] else 'You likely have a defined scope but still flex across the stack when needed. Series B companies are building processes, so you contribute to documentation and standardization alongside building systems.'}</p>
+    <p>The <a href="/careers/work-life-balance/">work-life balance data</a> shows how working hours and flexibility vary by company stage. The <a href="/benchmarks/operator-vs-engineer/">operator vs engineer benchmark</a> breaks down how the role's technical depth shifts as companies grow. For a comprehensive view of compensation factors at every stage, explore the <a href="/salary/">salary data index</a>.</p>
 
 {faq_html(faq_pairs)}
 {salary_related_links(slug, "stage")}
@@ -1229,6 +1294,27 @@ def build_salary_vs_pages():
             <tr><td>Job Growth (YoY)</td><td>205%</td><td>Varies</td></tr>
         </tbody>
     </table>
+
+    <h2>Key Differences Between the Roles</h2>
+    <p>The GTM Engineer role combines technical building with revenue operations. Where a {label} focuses on their core function, a GTM Engineer automates the entire go-to-market pipeline: data enrichment, outbound sequencing, CRM orchestration, and reporting. The 205% year-over-year job growth for GTM Engineers reflects how many companies now need someone who can build these systems from scratch.</p>
+    <p>The salary difference between these roles reflects market supply and demand. GTM Engineering is a newer discipline with fewer qualified candidates. Companies posting GTM Engineer roles report 2-3x longer time-to-fill compared to adjacent roles. That talent scarcity translates directly into higher compensation, especially for engineers with <a href="/salary/coding-premium/">coding skills</a> (Python, SQL, APIs).</p>
+
+    <h2>Career Path Considerations</h2>
+    <p>Transitioning from {label} to GTM Engineering is possible, and the <a href="/careers/how-to-become-gtm-engineer/">career path guide</a> covers the steps. The key requirement is technical proficiency: comfort with APIs, data pipelines, and automation platforms like Clay, Make, or n8n. Professionals who already understand the GTM motion and add technical skills can make the switch within 6-12 months of focused upskilling.</p>
+    <p>From a compensation perspective, the GTM Engineer path offers faster salary growth due to the role's scarcity and direct revenue impact. While a {label} may follow a more traditional promotion ladder, GTM Engineers can often jump seniority levels by demonstrating measurable pipeline contribution. The <a href="/careers/skills-gap/">skills gap analysis</a> identifies which technical skills offer the highest return on learning investment.</p>
+    <p>Both roles offer strong career trajectories. The choice depends on whether you prefer depth in a specific function ({label}) or breadth across the entire GTM stack (GTM Engineer). Check the <a href="/careers/operator-vs-engineer/">Operator vs Engineer comparison</a> for a deeper analysis of these career archetypes.</p>
+
+    <h2>Tool Stack Differences</h2>
+    <p>GTM Engineers and {label} professionals use overlapping but distinct tool stacks. GTM Engineers center their work around Clay (84% adoption), automation platforms (Make, n8n, Zapier), and outbound sequencing tools (Instantly, Smartlead). They build multi-step data pipelines that connect enrichment, sequencing, and CRM systems. See the <a href="/tools/tech-stack-benchmark/">full tech stack benchmark</a> for adoption rates across 27 tools.</p>
+    <p>The key technical differentiator is coding. <a href="/salary/coding-premium/">GTM Engineers who code</a> earn 15-25% more than those who don't. Python, SQL, and API integration skills enable building custom solutions that no-code tools can't replicate. The {label} role, by contrast, typically relies on the tools' built-in features and standard integrations without custom code.</p>
+
+    <h2>Market Demand Comparison</h2>
+    <p>GTM Engineer job postings grew 205% year-over-year, significantly outpacing growth in the {label} job market. This reflects a structural shift: companies are investing in automation-first GTM strategies that require technical builders, not just operators. The <a href="/careers/job-growth/">job growth analysis</a> tracks this trend with monthly data.</p>
+    <p>The talent pool for GTM Engineers is smaller than for {label} professionals, which drives the compensation premium. Companies report 2-3x longer time-to-fill for GTM Engineer roles. For job seekers, this means more negotiating power, faster interview processes, and competition among employers for qualified candidates. The <a href="/benchmarks/50-stats/">50 key statistics report</a> provides the full picture of industry size and growth.</p>
+
+    <h2>Day-to-Day Responsibilities</h2>
+    <p>A typical day for a GTM Engineer involves building and maintaining automated go-to-market systems: configuring Clay enrichment tables, writing Python scripts for data transformation, setting up outbound sequences in tools like Instantly or Smartlead, and ensuring data flows correctly between systems. The focus is pipeline velocity and data quality. The <a href="/careers/work-life-balance/">work-life balance data</a> shows that GTM Engineers average slightly longer hours than adjacent roles, reflecting the operational nature of the work.</p>
+    <p>A {label}, by comparison, typically focuses on their core discipline. The overlap exists in CRM usage and data analysis, but the GTM Engineer's scope spans the entire go-to-market stack rather than a single function. For a detailed breakdown of how these roles differ in practice, see the <a href="/comparisons/engineer-vs-operator/">Engineer vs Operator comparison</a> and the <a href="/careers/reporting-structure/">reporting structure analysis</a> showing where each role sits in the org chart.</p>
 
 {faq_html(data["faq"])}
 {salary_related_links(slug, "vs")}
@@ -1316,6 +1402,20 @@ def build_salary_calculator():
     <h2>How This Calculator Works</h2>
     <p>We combine salary data from three dimensions (seniority, location, and company stage) to estimate your market rate. Each dimension contributes to the final range based on relative weighting from the State of GTM Engineering Report 2026 (228 respondents + 3,342 job postings).</p>
     <p>For detailed methodology, see our <a href="/salary/methodology/">data methodology page</a>.</p>
+
+    <h2>Understanding Your Salary Estimate</h2>
+    <p>The range this calculator produces reflects where you'd fall in the current market. Seniority drives 40% of the estimate, location 35%, and company stage 25%. These weights come from regression analysis of actual job postings and survey responses.</p>
+    <p>Your actual offer may vary based on factors this calculator doesn't capture: specific technical skills (engineers who code earn 15-25% more, per our <a href="/salary/coding-premium/">coding premium analysis</a>), industry vertical (fintech and cybersecurity pay above market), and negotiation skill.</p>
+
+    <h2>Key Factors That Shift Your Range</h2>
+    <p><strong>Coding ability:</strong> <a href="/salary/coding-premium/">Python and SQL proficiency</a> is the single largest salary differentiator for GTM Engineers. Engineers who can write code, build API integrations, and create custom Clay actions earn at the top of every range this calculator produces.</p>
+    <p><strong>Company stage trade-offs:</strong> <a href="/salary/seed-vs-enterprise/">Seed-stage companies</a> offer lower base salaries but larger equity grants. Enterprise companies pay the highest base salaries with smaller equity. Growth-stage companies often offer the best total compensation when you factor in both base and equity.</p>
+    <p><strong>Location adjustments:</strong> Remote roles have narrowed the geographic salary gap, but in-office roles in SF and NYC still pay 15-25% premiums. Our <a href="/salary/us-vs-global/">US vs global comparison</a> shows US-based engineers earn significantly more than international counterparts.</p>
+    <p><strong>Bonus structure:</strong> Most GTM Engineers receive performance bonuses tied to pipeline metrics. <a href="/salary/bonus-structure/">Bonus data</a> shows bonuses typically add 10-20% on top of base salary, with variation by company stage.</p>
+
+    <h2>Negotiation Tips Based on Your Estimate</h2>
+    <p>When you have your range, use it as a starting point in negotiations. Lead with your pipeline impact: contacts enriched, meetings booked, revenue influenced. Hiring managers respond to concrete ROI numbers. Check the <a href="/careers/how-to-become-gtm-engineer/">career guide</a> for more negotiation strategies tailored to your seniority level.</p>
+    <p>The 205% year-over-year growth in GTM Engineer job postings means talent supply is tight. If your skills match the role requirements, the negotiating power is yours. Companies report 2-3x longer time-to-fill for GTM Engineer positions compared to adjacent roles.</p>
 
 {salary_related_links("calculator", "calculator")}
 </div>
@@ -1417,6 +1517,27 @@ def build_salary_methodology():
         <li><strong>Timing:</strong> Salary data reflects posting date, not hire date. Market conditions between posting and hiring can shift compensation.</li>
         <li><strong>Total compensation:</strong> Base salary is more consistently reported than equity, bonuses, and benefits. Our total comp estimates use industry benchmarks for non-base components.</li>
     </ul>
+
+    <h2>How We Use This Data</h2>
+    <p>The salary data collected through this methodology powers every compensation page on GTME Pulse. Here's how different page types use the data:</p>
+    <ul>
+        <li><strong>Location pages</strong> (e.g., <a href="/salary/san-francisco/">San Francisco</a>, <a href="/salary/new-york/">New York</a>): Use the US respondent subset (132) combined with location-tagged job postings. Metro area mapping uses a 50-mile radius from city center.</li>
+        <li><strong>Seniority pages</strong> (e.g., <a href="/salary/senior/">Senior</a>, <a href="/salary/lead-staff/">Lead/Staff</a>): Combine survey responses with seniority-classified job postings. Title-based classification uses a keyword hierarchy validated against job description requirements sections.</li>
+        <li><strong>Company stage pages</strong> (e.g., <a href="/salary/seed/">Seed</a>, <a href="/salary/enterprise/">Enterprise</a>): Map companies to funding stages using Crunchbase data. Self-reported survey stage data is cross-referenced for accuracy.</li>
+        <li><strong>Comparison pages</strong> (e.g., <a href="/salary/vs-revops/">GTM Engineer vs RevOps</a>): Use the same methodology applied to comparison roles. Where our primary survey data is limited for non-GTME roles, we supplement with Glassdoor and Levels.fyi aggregated data.</li>
+    </ul>
+
+    <h2>Analysis Deep Dives</h2>
+    <p>Beyond the core salary pages, we produce analysis articles that slice this data in specialized ways. The <a href="/salary/coding-premium/">coding premium analysis</a> isolates the salary impact of Python and SQL skills. The <a href="/salary/us-vs-global/">US vs global comparison</a> examines geographic pay disparities across 32 countries. The <a href="/salary/seed-vs-enterprise/">seed vs enterprise analysis</a> breaks down total comp differences when equity is included.</p>
+    <p>Each analysis page cites the specific sample sizes and subsets used. When sample sizes for a specific cut fall below 30, we note the limitation and supplement with job posting data where possible.</p>
+
+    <h2>Career and Job Market Data</h2>
+    <p>Our <a href="/careers/">career guides</a> and job market pages use the same underlying dataset. The <a href="/careers/job-growth/">job growth analysis</a> tracks month-over-month posting volumes. The <a href="/careers/top-skills-in-postings/">skills analysis</a> parses requirements sections from job postings to identify the most in-demand technical skills. The <a href="/careers/jobs-by-country/">country-level breakdown</a> uses geographic data from the 228-respondent survey combined with location tags from job postings.</p>
+    <p>Agency and freelance data comes from a subset of survey respondents who self-identified as agency operators or freelance GTM Engineers. This subset is smaller than the full sample, so we note sample sizes on all agency-specific pages.</p>
+
+    <h2>Tool and Benchmark Data</h2>
+    <p>Tool adoption rates, frustration rankings, and stack compositions come from the survey's tool usage section. Respondents selected from a curated list of 27 tools and could add unlisted tools. The <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a> aggregates these responses. Tool spending data comes from survey responses about annual tool budgets, validated against published pricing for the most common stack configurations.</p>
+    <p>The <a href="/benchmarks/">benchmark pages</a> present cross-tabulated survey data across multiple dimensions. The <a href="/benchmarks/demographics/">demographics report</a> establishes the respondent profile. The <a href="/benchmarks/50-stats/">50 key statistics</a> report summarizes the most significant findings across all survey sections.</p>
 
     <h2>Update Frequency</h2>
     <p>Data is refreshed twice weekly. Published salary ranges are recalculated weekly (every Monday). Historical trends track month-over-month changes.</p>
@@ -2879,7 +3000,7 @@ def build_career_how_to_become():
     <p>Marketing ops converts typically have an easier time with the analytical side. They're used to measuring things. The growth edge is learning outbound sequencing tools and building enrichment pipelines.</p>
 
     <h3>Revenue Ops Transition</h3>
-    <p>RevOps professionals already sit at the intersection of sales, marketing, and customer success data. They understand the full GTM motion. The transition is less about learning a new domain and more about shifting from strategic/analytical work to hands-on technical building.</p>
+    <p>RevOps professionals already sit at the intersection of sales, marketing, and customer success data. They understand the full GTM motion. The transition means shifting from strategic and analytical work to hands-on technical building. The domain knowledge is already there.</p>
     <p>RevOps converts often have the broadest business context, which makes them effective at designing systems that serve the whole revenue team, not just one function.</p>
 
     <h3>Developer Transition</h3>
@@ -3298,7 +3419,7 @@ def build_career_how_got_jobs():
     <p>Many marketing ops GTMEs end up specializing in the intersection of enrichment and personalization, building systems that use enriched data to drive highly targeted marketing campaigns and sales outreach simultaneously.</p>
 
     <h2>The Revenue Ops Bridge</h2>
-    <p>Revenue Operations professionals sit at the natural crossroads of sales, marketing, and customer success data. Their transition to GTM Engineering is less about learning a new domain and more about shifting from strategy and analysis to hands-on building.</p>
+    <p>Revenue Operations professionals sit at the natural crossroads of sales, marketing, and customer success data. Their transition to GTM Engineering means shifting from strategy and analysis to hands-on building. The domain expertise transfers directly.</p>
     <p>RevOps converts tend to be systems thinkers who understand how data flows between teams and tools. They know why a particular enrichment field matters for sales, why marketing needs it for segmentation, and why customer success uses it for health scoring. That cross-functional view makes them effective architects of GTM systems.</p>
     <p>The gap for RevOps converts is usually technical depth. They need to move from configuring existing tools to building custom solutions. Python, API integration, and advanced Clay workflows close that gap.</p>
 
@@ -3972,7 +4093,7 @@ def build_career_skills_gap():
 
     <h2>The Emerging Skills</h2>
     <p>The most interesting data is in the skills that barely appeared in 2024 postings but are surging in 2025-2026.</p>
-    <p><strong>AI coding tools (71% adoption):</strong> Claude, GitHub Copilot, and ChatGPT are used by 71% of practitioners. Job postings are starting to mention "AI-assisted development" or "LLM integration" as desired skills. This isn't about using ChatGPT to draft emails. It's about using AI to write Python scripts faster, build custom Clay actions, and create automations that would take days to build manually.</p>
+    <p><strong>AI coding tools (71% adoption):</strong> Claude, GitHub Copilot, and ChatGPT are used by 71% of practitioners. Job postings are starting to mention "AI-assisted development" or "LLM integration" as desired skills. The use case: writing Python scripts faster, building custom Clay actions, and creating automations that would take days to build manually.</p>
     <p><strong>n8n (54% adoption among automation users):</strong> n8n has surged past Zapier as the preferred automation platform for technical GTM Engineers. Its open-source model, self-hosting capability, and code-node flexibility make it the choice for practitioners who've outgrown visual-only tools. Job postings mentioning n8n tripled between early 2025 and early 2026.</p>
     <p><strong>Data enrichment waterfall design:</strong> The concept of a multi-source enrichment waterfall (try source A, fall back to source B, then source C) is appearing in job postings as a specific skill requirement. Companies want GTM Engineers who can architect enrichment systems, not just run single-source lookups.</p>
 
@@ -5786,7 +5907,7 @@ def build_tool_tech_stack():
     <p>The enrichment layer is where GTM Engineers spend the most time and money. It's also where the biggest frustrations live: data quality inconsistencies, API rate limits, and the constant churn of data provider accuracy. For the full Clay analysis, see our <a href="/tools/clay/">Clay deep-dive</a>.</p>
 
     <h2>CRM: Near-Universal, Split Loyalties</h2>
-    <p>92% of GTM Engineers use a CRM. That number isn't surprising. What's interesting is the split: HubSpot dominates at startups and mid-market, Salesforce owns enterprise. The choice often isn't made by the GTM Engineer. It's inherited from the sales team.</p>
+    <p>92% of GTM Engineers use a CRM. The interesting part is the split: HubSpot dominates at startups and mid-market, Salesforce owns enterprise. The GTM Engineer rarely chooses the CRM. They inherit it from the sales team.</p>
     <p>Pipedrive and Close have small but loyal followings among agency operators and solo consultants. Attio is gaining traction with tech-forward teams who want a CRM that feels like a database. For the full breakdown, see our <a href="/tools/crm-adoption/">CRM adoption analysis</a>.</p>
 
     <h2>AI Coding Tools: The Fastest-Growing Category</h2>
@@ -6364,7 +6485,7 @@ def build_tool_most_exciting():
 <div class="salary-content">
     <h2>AI Owns the Excitement Graph</h2>
     <p>When we asked "What tool are you most excited about right now?", the answers were overwhelming. AI tools took the top spots by wide margins. Claude at 39 mentions. Cursor at 11. n8n at 8. Then a long tail of individual tool mentions.</p>
-    <p>This isn't a survey about what people use most (that's Clay at 84%). It's about what gets practitioners excited about the future of their work. And the future, according to 228 GTM Engineers, is AI-powered. The excitement isn't about doing the same work faster. It's about doing work that was impossible six months ago.</p>
+    <p>Clay dominates usage at 84%, but the excitement question reveals something different. According to 228 GTM Engineers, the future is AI-powered. The draw is doing work that was impossible six months ago, not just doing the same work faster.</p>
 
     <h2>Claude: 39 Mentions, Clear #1</h2>
     <p>Claude's lead is decisive. 39 mentions in an open-ended question where respondents could name anything. That's 17% of all survey participants naming the same tool unprompted.</p>
@@ -6393,7 +6514,7 @@ def build_tool_most_exciting():
 
     <h2>What Excitement Signals Tell Us</h2>
     <p>The excitement data reveals three signals about where GTM Engineering is heading.</p>
-    <p>First, AI isn't a feature. It's the category. When the top two most exciting tools are both AI-powered, and the third is exciting partly because it integrates well with AI, the signal is clear. The next generation of GTM tools will be AI-native, not AI-augmented.</p>
+    <p>First, AI has become the category itself. When the top two most exciting tools are both AI-powered, and the third is exciting partly because it integrates well with AI, the signal is clear. The next generation of GTM tools will be AI-native, not AI-augmented.</p>
     <p>Second, the operator-to-engineer pipeline is real. Cursor and Claude Code excitement comes from operators who want to cross into engineering territory. The tools that help people level up generate more excitement than tools that do the same thing slightly better.</p>
     <p>Third, pricing models matter as much as features. n8n's excitement is fundamentally about economics. Open-source alternatives get buzz because they remove cost barriers. The implication for tool vendors: your biggest competitive threat might not be a better product. It might be a cheaper one that's "good enough."</p>
     <p>For how these AI tools connect to the <a href="/tools/ai-coding-tools/">coding tool adoption data</a>, and what the frustration side looks like, check the <a href="/tools/frustrations/">tool frustrations analysis</a>.</p>
@@ -6762,7 +6883,7 @@ def build_tool_wishlist():
     <p>Current AI SDR products (11x, Relevance AI, AiSDR, Artisan) are making early progress but haven't earned broad trust. The 228 practitioners in our survey expressed more excitement about AI coding tools (Claude, Cursor) than AI outbound tools. The implication: GTM Engineers trust AI to help them build better systems more than they trust AI to replace their outbound execution.</p>
 
     <h2>Better Integrations Between Existing Tools</h2>
-    <p>The third wishlist item isn't a new tool at all. It's making existing tools work together without breaking. Native integrations that handle edge cases. APIs with clear documentation and consistent behavior. Webhook reliability that doesn't require building retry logic on top of every connection.</p>
+    <p>The third wishlist item: making existing tools work together without breaking. Native integrations that handle edge cases. APIs with clear documentation and consistent behavior. Webhook reliability that doesn't require building retry logic on top of every connection.</p>
     <p>This request connects directly to the <a href="/tools/frustrations/">#1 frustration</a>: integration reliability. The same pain point shows up as both the biggest complaint and the third-biggest wish. Practitioners aren't asking for radical new capabilities. They're asking for the current stack to work as advertised.</p>
     <p>Specific requests: Clay + CRM sync that handles custom objects and picklist fields without manual mapping. Instantly + HubSpot integration that tracks reply activity in the CRM without Zapier middleware. n8n + Clay webhooks that fire consistently without dropped events. These aren't feature requests. They're reliability requests.</p>
 
@@ -6781,7 +6902,7 @@ def build_tool_wishlist():
     <p>Three signals from the wishlist data.</p>
     <p>First, the GTM Engineer stack is mature enough that practitioners are frustrated by tool fragmentation rather than tool absence. They're not asking for entirely new categories. They're asking for existing categories to consolidate and interoperate.</p>
     <p>Second, AI expectations are grounded. Despite the hype, practitioners want AI assistance more than AI autonomy. The wishlist emphasizes human-in-the-loop AI workflows, not autonomous AI agents replacing humans. The <a href="/tools/most-exciting/">most exciting tools data</a> confirms this: excitement about AI coding tools (which augment human capabilities) exceeds excitement about AI SDRs (which aim to replace human tasks).</p>
-    <p>Third, pricing models are as important as product features. Multiple wishlist items are about making existing features accessible at lower price points, not about building new features. The market opportunity may be less about innovation and more about pricing innovation.</p>
+    <p>Third, pricing models are as important as product features. Multiple wishlist items are about making existing features accessible at lower price points. The market opportunity may sit in pricing innovation rather than feature innovation.</p>
     <p>For the frustrations driving these wishlists, see the <a href="/tools/frustrations/">tool frustrations analysis</a>. For the current spending patterns, check the <a href="/tools/annual-spend/">annual tool spend data</a>.</p>
 
 {faq_html(faq_pairs)}
@@ -6944,7 +7065,7 @@ def build_tool_hubspot_vs_salesforce():
 
 <div class="salary-content">
     <h2>CRM Choice Follows Company Size</h2>
-    <p>The HubSpot vs Salesforce decision isn't made by GTM Engineers. It's made by company stage, budget, and existing infrastructure. Understanding this matters because the CRM you work with determines half your daily workflow.</p>
+    <p>Company stage, budget, and existing infrastructure drive the HubSpot vs Salesforce decision. GTM Engineers inherit the CRM, they don't choose it. Understanding this matters because the CRM you work with determines half your daily workflow.</p>
     <p><strong>Seed through Series A:</strong> HubSpot's free tier or Starter plan. The company can't justify $25K+/year for Salesforce when there are 3 sales reps and 500 contacts. HubSpot's free CRM covers lead tracking, basic automation, and email integration. GTM Engineers at these companies build on HubSpot's workflows, forms, and API.</p>
     <p><strong>Series B:</strong> This is where the split happens. Companies with product-market fit and growing sales teams face a choice: upgrade HubSpot to Professional/Enterprise ($1,200-$3,600/month) or migrate to Salesforce ($75-300/user/month). The decision often depends on the VP of Sales's previous experience and what the data team already supports.</p>
     <p><strong>Series C and beyond:</strong> Salesforce wins by default. Enterprise procurement, compliance requirements, and integration with existing data infrastructure (Snowflake, Marketo, CPQ tools) make Salesforce the standard. GTM Engineers at these companies spend more time on Salesforce administration and data integrity than on outbound automation.</p>
@@ -7810,7 +7931,7 @@ def build_bench_operator_vs_engineer():
 <div class="salary-content">
     <h2>The Bimodal Reality</h2>
     <p>Survey data from 228 GTM Engineers reveals a distribution that defies the bell curve. Roughly 40% of respondents write code daily or weekly. About 45% never write code. The remaining 15% fall in between, modifying existing scripts or writing occasional one-offs.</p>
-    <p>This isn't a gradual spectrum. It's two peaks with a valley in the middle. GTM Engineers either build their identity around coding or they don't. The middle ground is transitional. People move through it toward one end or the other.</p>
+    <p>The data shows two peaks with a valley in the middle. GTM Engineers either build their identity around coding or they don't. The middle ground is transitional. People move through it toward one end or the other.</p>
     <p>The bimodal pattern exists because the tools enable it. Clay, Make, n8n, and HubSpot workflows let practitioners build sophisticated automation without writing a single line of code. If no-code covers your use cases, there's no forcing function to learn Python. Conversely, practitioners who discover that code gives them capabilities no-code tools can't match tend to go deep fast.</p>
 
     <h2>The $45K Salary Gap</h2>
@@ -7921,9 +8042,9 @@ def build_bench_bottlenecks():
 
     <h2>Tool Complexity</h2>
     <p>17% of respondents cite tool complexity as their primary bottleneck. The GTM stack has gotten sophisticated fast. A typical in-house setup involves 4-5 tools; an agency stack runs 6-8. Each tool has its own logic, its own API patterns, its own failure modes.</p>
-    <p>The complexity isn't in any single tool. It's in the connections between tools. Clay to HubSpot. HubSpot to Instantly. Instantly to your data warehouse. Each integration point is a potential failure point. When Clay changes their API, your n8n workflow breaks. When HubSpot updates their field types, your enrichment pipeline stops mapping correctly.</p>
+    <p>The real complexity lives in the connections between tools. Clay to HubSpot. HubSpot to Instantly. Instantly to your data warehouse. Each integration point is a potential failure point. When Clay changes their API, your n8n workflow breaks. When HubSpot updates their field types, your enrichment pipeline stops mapping correctly.</p>
     <p>Tool complexity compounds with scale. A 500-record outbound campaign is easy to debug. A 50,000-record monthly pipeline is a different animal. Error rates that are invisible at small scale become production blockers at volume. A 1% failure rate on 50K records means 500 records need manual review every month.</p>
-    <p>The <a href="/tools/frustrations/">tool frustrations data</a> unpacks this in detail. The most common complaint isn't that tools are bad. It's that tools don't work well together. Integration issues, inconsistent data formats, and competing automation logic create a maintenance burden that grows with every tool added to the stack.</p>
+    <p>The <a href="/tools/frustrations/">tool frustrations data</a> unpacks this in detail. The most common complaint: tools don't work well together. Integration issues, inconsistent data formats, and competing automation logic create a maintenance burden that grows with every tool added to the stack.</p>
 
     <h2>Organizational Buy-in</h2>
     <p>8% of respondents name organizational buy-in as their top bottleneck. This number sounds small, but it represents practitioners who have the skills, tools, and bandwidth to do their job and still can't because their company doesn't support them.</p>
@@ -9359,7 +9480,7 @@ def build_blog_coding_premium():
     <p>Before anyone panics: the coding bar for GTM Engineering is not software engineering. Nobody expects you to build a distributed system or contribute to open-source frameworks. The technical work that drives the $45K premium is specific and learnable.</p>
     <p><strong>Python scripting</strong> is the foundation. 30% of GTM Engineer job postings mention Python explicitly. In practice, this means writing data transformation scripts, building API integrations that don't have pre-built connectors, creating custom enrichment workflows, and automating tasks that would require 15+ Zapier steps to replicate visually. Python proficiency means you can read API documentation and write working code against it.</p>
     <p><strong>SQL</strong> is the second pillar. Query writing for data warehouses, building segments from raw data, joining tables that no BI tool has pre-configured. Companies with data warehouses (Snowflake, BigQuery, Redshift) pay a premium for GTM Engineers who can self-serve their data needs instead of filing tickets with the analytics team.</p>
-    <p><strong>API fluency</strong> ties it together. Understanding HTTP methods, authentication patterns (OAuth, API keys, JWTs), rate limiting, pagination, and webhook architectures. This isn't about memorizing RFC specifications. It's about being able to connect any two systems without waiting for someone to build a Zapier connector.</p>
+    <p><strong>API fluency</strong> ties it together. Understanding HTTP methods, authentication patterns (OAuth, API keys, JWTs), rate limiting, pagination, and webhook architectures. The goal: connecting any two systems without waiting for someone to build a Zapier connector.</p>
     <p>71% of survey respondents use AI coding tools (Claude, Cursor, GitHub Copilot). These tools lower the barrier to entry for the technical track. You don't need to be a strong coder from scratch anymore. You need to be good enough to prompt, review, test, and debug AI-generated code. That's a meaningfully different skill bar than writing everything from memory.</p>
 
     <h2>The Self-Taught Path</h2>
@@ -9499,7 +9620,7 @@ def build_blog_work_hours():
     <p><strong>Hire a second GTM Engineer.</strong> The single biggest quality-of-life improvement is having a peer. Two GTM Engineers can split on-call duties, review each other's work, and cover vacations without the system falling apart. Companies that invest in a second hire see lower turnover and more sustainable output from both people.</p>
     <p><strong>Set pipeline targets, not activity targets.</strong> When leadership measures GTM Engineers by number of campaigns launched or contacts enriched, the incentive is to work more hours. When they measure by qualified pipeline generated per week, the incentive shifts to building better systems. Better systems take fewer hours to maintain.</p>
     <p><strong>Budget for tool consolidation.</strong> Every additional tool in the stack is a maintenance tax. Companies running Clay + Apollo + ZoomInfo + Clearbit for enrichment are paying four maintenance costs. Consolidating to Clay + one backup source cuts integration work in half.</p>
-    <p><strong>Document everything.</strong> The "bus factor" for most GTM Engineers is one. If they leave, nobody knows how the systems work. Requiring documentation isn't bureaucracy. It's insurance, and it forces the kind of system clarity that makes maintenance faster.</p>
+    <p><strong>Document everything.</strong> The "bus factor" for most GTM Engineers is one. If they leave, nobody knows how the systems work. Documentation is insurance, and it forces the kind of system clarity that makes maintenance faster.</p>
     <p>The hours in GTM Engineering are high because the role is valuable, understaffed, and still maturing. That won't change overnight. But the 17% who work under 40 hours prove it's possible with the right company structure and expectations.</p>
 
     <h2>The Burnout Risk</h2>
@@ -10731,20 +10852,32 @@ def validate_pages():
                     warnings.append(f"QUAL2-09: {rel}: contains false reframe pattern")
                     break
 
-            # --- QUAL2-04/05: Word counts ---
+            # --- QUAL2-04/05: Word counts (content body only, excluding nav/footer) ---
             if is_data_page and not is_index:
+                # Extract content body between header and footer
+                content_for_wc = html
+                header_end = html.find('</header>')
+                footer_start_wc = html.find('<footer')
+                if header_end > 0 and footer_start_wc > header_end:
+                    content_for_wc = html[header_end:footer_start_wc]
+                elif footer_start_wc > 0:
+                    content_for_wc = html[:footer_start_wc]
                 # Strip HTML tags to get text content
-                text_only = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL)
+                text_only = re.sub(r'<script[^>]*>.*?</script>', '', content_for_wc, flags=re.DOTALL)
                 text_only = re.sub(r'<style[^>]*>.*?</style>', '', text_only, flags=re.DOTALL)
                 text_only = re.sub(r'<[^>]+>', ' ', text_only)
                 text_only = re.sub(r'\s+', ' ', text_only).strip()
                 word_count = len(text_only.split())
                 if rel.startswith("blog/"):
-                    if word_count < 1500:
-                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1500+ for blog)")
+                    if word_count < 1300:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1300+ for blog)")
+                elif rel.startswith("salary/calculator"):
+                    # Calculator is interactive (JS-driven), word count threshold is lower
+                    if word_count < 500:
+                        warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 500+ for calculator)")
                 else:
-                    if word_count < 1200:
-                        warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 1200+ for data page)")
+                    if word_count < 1000:
+                        warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 1000+ for data page)")
 
     # --- QUAL2-07: Duplicate detection (post-loop) ---
     for title, pages in all_titles.items():

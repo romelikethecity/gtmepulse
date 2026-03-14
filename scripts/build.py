@@ -5879,6 +5879,188 @@ BUILT_REVIEW_SLUGS = {r["slug"] for r in TOOL_REVIEWS}
 for _rev in TOOL_REVIEWS:
     TOOL_PAGES.append({"slug": _rev["slug"], "title": _rev["title"]})
 
+# ---------------------------------------------------------------------------
+# Tool Categories
+# ---------------------------------------------------------------------------
+
+TOOL_CATEGORIES = [
+    {
+        "slug": "data-enrichment",
+        "name": "Data Enrichment & Orchestration",
+        "category_key": "Data Enrichment & Orchestration",
+        "title": "Best Data Enrichment Tools for GTM Engineers (2026)",
+        "meta_desc": "Compare 9 data enrichment and orchestration tools for GTM Engineers. Clay, Apollo, ZoomInfo, and more with honest reviews and pricing.",
+        "intro": """<p>Data enrichment is the foundation of every GTM stack. You can write the best cold email on the planet, but if you're sending it to the wrong person at the wrong company with a dead email address, none of it matters. Enrichment tools take a name or domain and turn it into a complete contact profile: verified emails, phone numbers, job titles, company revenue, tech stack, funding data.</p>
+<p>For GTM Engineers, the enrichment layer is where most of your pipeline logic lives. Clay sits at 84% adoption in our 2026 survey because it orchestrates dozens of data sources in one workflow. Apollo bundles enrichment with outbound sequencing for teams that want fewer tools. ZoomInfo still dominates enterprise budgets despite pricing that makes founders wince.</p>
+<p>When evaluating enrichment tools, focus on three things: data freshness (how often records update), coverage breadth (can it find contacts outside the US?), and workflow fit (API quality, Clay/Make integrations, webhook support). Price per enriched record varies from $0.01 on Apollo's free tier to $0.50+ on ZoomInfo. The right choice depends on your volume, your target market, and whether you need phone numbers or just emails.</p>""",
+        "tools_in_category": ["clay-review", "apollo-review", "zoominfo-review", "clearbit-review", "fullenrich-review", "lusha-review", "cognism-review", "leadiq-review", "persana-review"],
+    },
+    {
+        "slug": "outbound-sequencing",
+        "name": "Outbound Sequencing",
+        "category_key": "Outbound Sequencing",
+        "title": "Best Outbound Sequencing Tools for GTM Engineers (2026)",
+        "meta_desc": "Compare 7 outbound sequencing tools for GTM Engineers. Instantly, Smartlead, Outreach, Salesloft, and more with pricing and deliverability data.",
+        "intro": """<p>Outbound sequencing tools send your cold emails, warm-up your inboxes, and track replies across multi-step campaigns. They're the execution layer. Your enrichment data and copywriting mean nothing if emails bounce or land in spam. Deliverability is the single most important feature in this category.</p>
+<p>The outbound market split hard in 2024-2025. On one side: Instantly and Smartlead, built for high-volume cold outreach with rotating inboxes and aggressive warm-up. On the other: Outreach and Salesloft, enterprise platforms with CRM sync, call logging, and manager dashboards. GTM Engineers tend to favor the first camp because the API access is better and the pricing scales with volume instead of seats.</p>
+<p>When picking a sequencing tool, look at warm-up capacity (how many inboxes can you rotate?), deliverability monitoring (spam score tracking, blacklist alerts), personalization depth (can you inject enrichment data into every field?), and API flexibility. If you're running sequences through Clay or Make, you need solid webhook support and a well-documented API. Multi-channel support (email + LinkedIn + SMS) matters more every quarter as inbox competition increases.</p>""",
+        "tools_in_category": ["instantly-review", "smartlead-review", "outreach-review", "salesloft-review", "lemlist-review", "heyreach-review", "woodpecker-review"],
+    },
+    {
+        "slug": "crm",
+        "name": "CRM",
+        "category_key": "CRM",
+        "title": "Best CRMs for GTM Engineers (2026)",
+        "meta_desc": "Compare 5 CRMs for GTM Engineers. HubSpot, Salesforce, Pipedrive, Close, and Attio with honest reviews, API quality, and automation depth.",
+        "intro": """<p>92% of GTM Engineers use a CRM. That's near-universal adoption, but the CRM choice defines your entire automation surface area. A CRM with a bad API turns every integration into a hack. A CRM with deep workflow automation lets you build pipeline logic that runs without human intervention.</p>
+<p>For GTM Engineers, the CRM evaluation criteria are different from what a VP of Sales cares about. You need strong API documentation, flexible custom objects, webhook support, and automation triggers that fire reliably. Salesforce wins on customization depth but requires admin overhead. HubSpot wins on time-to-value and free-tier generosity. The newer players (Attio, Close) win on developer experience and speed.</p>
+<p>The real question is whether your CRM can serve as a system of record that your enrichment and sequencing tools write to cleanly. If you're spending more time fixing sync issues than building pipeline, you picked the wrong CRM. Every tool in this category gets judged on API quality first, UI second.</p>""",
+        "tools_in_category": ["hubspot-review", "salesforce-review", "pipedrive-review", "close-review", "attio-review"],
+    },
+    {
+        "slug": "workflow-automation",
+        "name": "Workflow Automation",
+        "category_key": "Workflow Automation",
+        "title": "Best Workflow Automation Tools for GTM Engineers (2026)",
+        "meta_desc": "Compare Make, n8n, and Zapier for GTM Engineers. Self-hosted vs cloud, pricing models, execution limits, and which fits your automation stack.",
+        "intro": """<p>Workflow automation tools are the glue connecting everything else. They move data between your enrichment tools, CRM, sequencing platform, and Slack channels. Without them, you're copying and pasting between tabs or writing custom scripts for every integration.</p>
+<p>n8n hit 54% adoption in our 2026 survey, overtaking Zapier for the first time among GTM Engineers. The reason is simple: n8n is self-hosted, has no per-execution pricing, and gives you full control over data flow. Make (formerly Integromat) offers a strong middle ground with visual workflows and reasonable pricing. Zapier remains the easiest to start with but becomes expensive fast at scale.</p>
+<p>GTM Engineers should evaluate automation tools on three axes: execution limits (how many operations per month before you pay more), error handling (does it retry? does it alert you?), and node/integration count (can it connect to your specific tools?). If you're running enrichment waterfalls or multi-step outbound campaigns, you need a tool that handles branching logic, loops, and API rate limiting without breaking.</p>""",
+        "tools_in_category": ["make-review", "n8n-review", "zapier-review"],
+    },
+    {
+        "slug": "ai-llm-tools",
+        "name": "AI & LLM Tools",
+        "category_key": "AI & LLM Tools",
+        "title": "Best AI and LLM Tools for GTM Engineers (2026)",
+        "meta_desc": "AI and LLM tools GTM Engineers use daily. Claude, ChatGPT, Perplexity, and more. Reviews coming soon with honest assessments and use cases.",
+        "intro": """<p>AI and LLM tools changed GTM Engineering overnight. Claude leads excitement in our 2026 survey with 39 mentions. GPT-4 powers most production workflows. Perplexity handles research that used to take hours. These tools write personalized email copy, classify leads, extract data from unstructured sources, and generate code for automation workflows.</p>
+<p>The AI layer sits on top of everything else in the GTM stack. You use it inside Clay for prompt-based enrichment, inside n8n for data transformation, and directly via API for custom scripts. The $45K coding premium we found in salary data connects directly to LLM fluency: GTM Engineers who can write prompts, chain API calls, and build AI-powered workflows earn significantly more.</p>
+<p>We're building detailed reviews of every major AI tool for GTM Engineers. Each review will cover API pricing, token economics, prompt engineering patterns specific to outbound and enrichment workflows, and honest assessments of where each model excels and falls short.</p>""",
+        "tools_in_category": [],
+    },
+    {
+        "slug": "intent-data",
+        "name": "Intent & Signal Data",
+        "category_key": "Intent Data",
+        "title": "Best Intent Data Platforms for GTM Engineers (2026)",
+        "meta_desc": "Compare intent data platforms for GTM Engineers. 6sense, Bombora, and signal-based targeting with pricing reality and integration patterns.",
+        "intro": """<p>Intent data tells you who's actively researching solutions like yours before they ever fill out a form. These platforms track content consumption across publisher networks, review sites, and search patterns to surface accounts showing buying signals. For GTM Engineers, intent data is the difference between cold outreach and warm outreach.</p>
+<p>The intent data market is dominated by two players: 6sense (full ABM platform with intent baked in) and Bombora (pure intent data provider that feeds into other tools). 6sense costs $30K-$100K+ annually and wants to own your entire ABM workflow. Bombora sells data that you pipe into Clay, your CRM, or your sequencing tool for $25K-$50K/year.</p>
+<p>For most GTM Engineers at startups and mid-market companies, intent data is aspirational. The price points are enterprise. But if your company has the budget, intent signals dramatically improve targeting precision and conversion rates. The question is whether you need a full ABM platform or just the data feed.</p>""",
+        "tools_in_category": ["6sense-review", "bombora-review"],
+    },
+    {
+        "slug": "analytics",
+        "name": "Analytics & Product Signals",
+        "category_key": "Analytics",
+        "title": "Best Analytics Tools for GTM Engineers (2026)",
+        "meta_desc": "Compare analytics and product signal tools for GTM Engineers. Segment, PostHog, and how product-led growth data feeds your outbound engine.",
+        "intro": """<p>Analytics tools track what users do inside your product. For GTM Engineers, this data feeds directly into outbound targeting. A user who visited the pricing page three times this week is a hotter lead than someone who signed up six months ago and never came back. Product signals turn usage data into pipeline.</p>
+<p>Segment is the customer data platform (CDP) that routes events to every downstream tool. PostHog is the open-source product analytics platform that gives you session replay, feature flags, and event tracking without per-seat pricing. Both serve different roles in the GTM stack, and many teams use them together.</p>
+<p>GTM Engineers care about analytics tools primarily as data sources, not dashboards. The key evaluation criteria: can you trigger workflows from product events? Can you build user segments based on behavior and push them to your CRM or sequencing tool? Does the API let you pull usage data into Clay or n8n? If the answer to all three is yes, the tool earns its place in your stack.</p>""",
+        "tools_in_category": ["segment-review", "posthog-review"],
+    },
+    {
+        "slug": "linkedin-social",
+        "name": "LinkedIn & Social",
+        "category_key": "LinkedIn & Social",
+        "title": "Best LinkedIn Tools for GTM Engineers (2026)",
+        "meta_desc": "Compare LinkedIn and social selling tools for GTM Engineers. Sales Navigator, PhantomBuster, automation risks, and multi-channel outreach patterns.",
+        "intro": """<p>LinkedIn is the primary social channel for B2B outreach. Sales Navigator gives you advanced search and lead lists. Automation tools like PhantomBuster let you scrape profiles, send connection requests, and extract data at scale. The risk? LinkedIn actively bans accounts that automate too aggressively.</p>
+<p>For GTM Engineers, LinkedIn tools serve two purposes: data extraction (pulling profile data, company info, and connection graphs) and multi-channel outreach (adding LinkedIn touches to email sequences). The automation layer is powerful but carries real account risk. One bad scraping run can get your profile restricted for weeks.</p>
+<p>When evaluating LinkedIn tools, focus on rate limiting (does the tool respect LinkedIn's thresholds?), data quality (how accurate is the extracted information?), and integration depth (can you pipe LinkedIn data into Clay or your CRM automatically?). The best approach combines Sales Navigator for manual research and prospecting with careful, rate-limited automation for data extraction only.</p>""",
+        "tools_in_category": ["linkedin-sales-nav-review", "phantombuster-review"],
+    },
+]
+
+
+def generate_category_index(cat):
+    """Generate a category index page listing tools with summary cards."""
+    slug = cat["slug"]
+    name = cat["name"]
+    title = cat["title"]
+    meta_desc = pad_description(cat["meta_desc"])
+    intro = cat["intro"]
+    tool_slugs = cat["tools_in_category"]
+
+    # Breadcrumbs
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), (name, None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # Tool cards
+    cards_html = ""
+    if tool_slugs:
+        cards_html = '<div class="salary-index-grid">\n'
+        for tool_slug in tool_slugs:
+            rev = next((r for r in TOOL_REVIEWS if r["slug"] == tool_slug), None)
+            if rev:
+                first_line = rev["meta_desc"].split(".")[0] + "."
+                cards_html += f'''<a href="/tools/{rev["slug"]}/" class="salary-index-card">
+    <h3>{rev["name"]} Review</h3>
+    <div class="card-range">{rev["price_range"]}</div>
+    <p>{first_line}</p>
+</a>
+'''
+        cards_html += '</div>\n'
+    else:
+        cards_html = '''<div class="salary-content" style="text-align: center; padding: var(--space-xl) 0;">
+    <p style="font-size: 1.2rem; color: var(--gtme-text-secondary);">Reviews coming soon.</p>
+    <p>We're building detailed reviews of every major AI and LLM tool for GTM Engineers. Subscribe to get notified when they publish.</p>
+</div>
+'''
+
+    # Related links to other categories + tools index
+    related_items = '<a href="/tools/" class="related-link-card">Tools Index</a>\n'
+    for other_cat in TOOL_CATEGORIES:
+        if other_cat["slug"] != slug:
+            related_items += f'<a href="/tools/category/{other_cat["slug"]}/" class="related-link-card">{other_cat["name"]}</a>\n'
+
+    related_section = f'''<section class="related-links">
+    <h2>Browse Other Categories</h2>
+    <div class="related-links-grid">
+        {related_items}
+    </div>
+</section>'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Category</div>
+        <h1>{name}</h1>
+        <p>{len(tool_slugs)} tools reviewed with honest assessments, pricing breakdowns, and GTM Engineer use cases.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    {intro}
+</div>
+
+<div class="salary-content">
+    <h2>Tools in This Category</h2>
+    {cards_html}
+</div>
+
+{related_section}
+'''
+    body += newsletter_cta_html(f"Get weekly {name.lower()} tool updates.")
+
+    page = get_page_wrapper(
+        title=title, description=meta_desc, canonical_path=f"/tools/category/{slug}/",
+        body_content=body, active_path="/tools/",
+        extra_head=bc_schema, body_class="page-inner",
+    )
+    write_page(f"tools/category/{slug}/index.html", page)
+    print(f"  Built: tools/category/{slug}/index.html")
+
+
+def build_tool_categories():
+    """Build all tool category index pages."""
+    print("\n  Building tool category pages...")
+    for cat in TOOL_CATEGORIES:
+        generate_category_index(cat)
+
 
 def _load_review_content(module_name, content_key):
     """Load review content from content/ module. Returns dict with review sections."""
@@ -11350,6 +11532,7 @@ def main():
     build_tool_sql()
     build_tool_javascript()
     build_tool_reviews()
+    build_tool_categories()
 
     print("\n  Building benchmark pages...")
     build_bench_index()

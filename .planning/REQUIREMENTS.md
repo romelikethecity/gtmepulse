@@ -101,12 +101,12 @@
 
 ### Comparison Pages
 
-- [ ] **COMP-01**: "GTM Engineer vs GTM Operator: The $45K Difference" page
-- [ ] **COMP-02**: In-house vs agency comparison (56% in-house vs 30% agency)
-- [ ] **COMP-03**: GTM Engineer vs AI SDR page (replacement predictions)
-- [ ] **COMP-04**: US vs Europe vs APAC salary comparison (regional data)
-- [ ] **COMP-05**: Seed stage vs Series B compensation comparison
-- [ ] **COMP-06**: Technical vs low-code operator comparison (skills, salary, trajectory)
+- [x] **COMP-01**: "GTM Engineer vs GTM Operator: The $45K Difference" page
+- [x] **COMP-02**: In-house vs agency comparison (56% in-house vs 30% agency)
+- [x] **COMP-03**: GTM Engineer vs AI SDR page (replacement predictions)
+- [x] **COMP-04**: US vs Europe vs APAC salary comparison (regional data)
+- [x] **COMP-05**: Seed stage vs Series B compensation comparison
+- [x] **COMP-06**: Technical vs low-code operator comparison (skills, salary, trajectory)
 
 ### Long-Tail Blog Articles
 
@@ -231,12 +231,12 @@
 | BENCH-07 | Phase 6 | Complete |
 | BENCH-08 | Phase 6 | Complete |
 | BENCH-09 | Phase 6 | Complete |
-| COMP-01 | Phase 7 | Pending |
-| COMP-02 | Phase 7 | Pending |
-| COMP-03 | Phase 7 | Pending |
-| COMP-04 | Phase 7 | Pending |
-| COMP-05 | Phase 7 | Pending |
-| COMP-06 | Phase 7 | Pending |
+| COMP-01 | Phase 7 | Complete |
+| COMP-02 | Phase 7 | Complete |
+| COMP-03 | Phase 7 | Complete |
+| COMP-04 | Phase 7 | Complete |
+| COMP-05 | Phase 7 | Complete |
+| COMP-06 | Phase 7 | Complete |
 | BLOG-01 | Phase 7 | Pending |
 | BLOG-02 | Phase 7 | Pending |
 | BLOG-03 | Phase 7 | Pending |

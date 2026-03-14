@@ -74,16 +74,16 @@
 
 ### Alternatives Pages
 
-- [ ] **TALT-01**: Clay alternatives
-- [ ] **TALT-02**: Apollo alternatives
-- [ ] **TALT-03**: ZoomInfo alternatives
-- [ ] **TALT-04**: Instantly alternatives
-- [ ] **TALT-05**: Outreach alternatives
-- [ ] **TALT-06**: HubSpot alternatives
-- [ ] **TALT-07**: Salesforce alternatives
-- [ ] **TALT-08**: Zapier alternatives
-- [ ] **TALT-09**: 6sense alternatives
-- [ ] **TALT-10**: LinkedIn Sales Navigator alternatives
+- [x] **TALT-01**: Clay alternatives
+- [x] **TALT-02**: Apollo alternatives
+- [x] **TALT-03**: ZoomInfo alternatives
+- [x] **TALT-04**: Instantly alternatives
+- [x] **TALT-05**: Outreach alternatives
+- [x] **TALT-06**: HubSpot alternatives
+- [x] **TALT-07**: Salesforce alternatives
+- [x] **TALT-08**: Zapier alternatives
+- [x] **TALT-09**: 6sense alternatives
+- [x] **TALT-10**: LinkedIn Sales Navigator alternatives
 
 ### Best-For Roundups
 
@@ -205,16 +205,16 @@
 | TCMP-18 | Phase 9 | Complete |
 | TCMP-19 | Phase 9 | Complete |
 | TCMP-20 | Phase 9 | Complete |
-| TALT-01 | Phase 10 | Pending |
-| TALT-02 | Phase 10 | Pending |
-| TALT-03 | Phase 10 | Pending |
-| TALT-04 | Phase 10 | Pending |
-| TALT-05 | Phase 10 | Pending |
-| TALT-06 | Phase 10 | Pending |
-| TALT-07 | Phase 10 | Pending |
-| TALT-08 | Phase 10 | Pending |
-| TALT-09 | Phase 10 | Pending |
-| TALT-10 | Phase 10 | Pending |
+| TALT-01 | Phase 10 | Complete |
+| TALT-02 | Phase 10 | Complete |
+| TALT-03 | Phase 10 | Complete |
+| TALT-04 | Phase 10 | Complete |
+| TALT-05 | Phase 10 | Complete |
+| TALT-06 | Phase 10 | Complete |
+| TALT-07 | Phase 10 | Complete |
+| TALT-08 | Phase 10 | Complete |
+| TALT-09 | Phase 10 | Complete |
+| TALT-10 | Phase 10 | Complete |
 | TBST-01 | Phase 10 | Pending |
 | TBST-02 | Phase 10 | Pending |
 | TBST-03 | Phase 10 | Pending |

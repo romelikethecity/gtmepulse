@@ -143,7 +143,7 @@ Phases execute in numeric order: 8 → 9 → 10 → 11 → 12
 | 4-7. State of GTME Content Wave | v2.0 | 15/15 | Archived | 2026-03-14 |
 | 8. Tool Reviews | 2/2 | Complete   | 2026-03-14 | - |
 | 9. Tool Categories and Comparisons | 2/2 | Complete   | 2026-03-14 | - |
-| 10. Alternatives and Roundups | v3.0 | 0/2 | Not started | - |
+| 10. Alternatives and Roundups | 1/2 | In Progress|  | - |
 | 11. Glossary, Job Board, and Newsletter | v3.0 | 0/3 | Not started | - |
 | 12. Quality Sweep | v3.0 | 0/1 | Not started | - |
 

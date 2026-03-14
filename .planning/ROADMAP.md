@@ -144,7 +144,7 @@ Phases execute in numeric order: 8 → 9 → 10 → 11 → 12
 | 8. Tool Reviews | 2/2 | Complete   | 2026-03-14 | - |
 | 9. Tool Categories and Comparisons | 2/2 | Complete   | 2026-03-14 | - |
 | 10. Alternatives and Roundups | 2/2 | Complete    | 2026-03-14 | - |
-| 11. Glossary, Job Board, and Newsletter | v3.0 | 0/3 | Not started | - |
+| 11. Glossary, Job Board, and Newsletter | v3.0 | 1/3 | In progress | - |
 | 12. Quality Sweep | v3.0 | 0/1 | Not started | - |
 
 ---

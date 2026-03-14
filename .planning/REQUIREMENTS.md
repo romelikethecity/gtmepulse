@@ -100,8 +100,8 @@
 
 ### Glossary
 
-- [ ] **GLOS-01**: Glossary index page with alphabetical listing and category grouping
-- [ ] **GLOS-02**: 50 individual glossary term pages (300-600 words each, definition, examples, related links)
+- [x] **GLOS-01**: Glossary index page with alphabetical listing and category grouping
+- [x] **GLOS-02**: 50 individual glossary term pages (300-600 words each, definition, examples, related links)
 
 ### Job Board
 
@@ -225,8 +225,8 @@
 | TBST-08 | Phase 10 | Complete |
 | TBST-09 | Phase 10 | Complete |
 | TBST-10 | Phase 10 | Complete |
-| GLOS-01 | Phase 11 | Pending |
-| GLOS-02 | Phase 11 | Pending |
+| GLOS-01 | Phase 11 | Complete |
+| GLOS-02 | Phase 11 | Complete |
 | JOBS-01 | Phase 11 | Pending |
 | JOBS-02 | Phase 11 | Pending |
 | NEWS-01 | Phase 11 | Pending |

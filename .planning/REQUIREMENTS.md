@@ -110,13 +110,13 @@
 
 ### Long-Tail Blog Articles
 
-- [ ] **BLOG-01**: "Why 68% of GTM Engineers Have No Meaningful Equity" article
-- [ ] **BLOG-02**: "The $45K Coding Premium" article
-- [ ] **BLOG-03**: "60% of In-House GTMEs Work 40-60 Hours a Week" article
-- [ ] **BLOG-04**: "GTM Engineering Is a Gen Z Function" article (median age 25)
-- [ ] **BLOG-05**: "Why Clay Is Both the Most Loved and Most Hated GTM Tool" article
-- [ ] **BLOG-06**: "LATAM and APAC Are Agency-Driven GTM Markets" article
-- [ ] **BLOG-07**: "The GTM Engineer Title Is Getting Watered Down" article
+- [x] **BLOG-01**: "Why 68% of GTM Engineers Have No Meaningful Equity" article
+- [x] **BLOG-02**: "The $45K Coding Premium" article
+- [x] **BLOG-03**: "60% of In-House GTMEs Work 40-60 Hours a Week" article
+- [x] **BLOG-04**: "GTM Engineering Is a Gen Z Function" article (median age 25)
+- [x] **BLOG-05**: "Why Clay Is Both the Most Loved and Most Hated GTM Tool" article
+- [x] **BLOG-06**: "LATAM and APAC Are Agency-Driven GTM Markets" article
+- [x] **BLOG-07**: "The GTM Engineer Title Is Getting Watered Down" article
 - [ ] **BLOG-08**: "Pre-Seed GTM Engineers Get the Best Equity Deals" article
 - [ ] **BLOG-09**: "Most GTM Engineers Are Self-Taught" article (121/228)
 - [ ] **BLOG-10**: "91% of GTM Engineers Do Lead Gen (But That's Not All)" article
@@ -237,13 +237,13 @@
 | COMP-04 | Phase 7 | Complete |
 | COMP-05 | Phase 7 | Complete |
 | COMP-06 | Phase 7 | Complete |
-| BLOG-01 | Phase 7 | Pending |
-| BLOG-02 | Phase 7 | Pending |
-| BLOG-03 | Phase 7 | Pending |
-| BLOG-04 | Phase 7 | Pending |
-| BLOG-05 | Phase 7 | Pending |
-| BLOG-06 | Phase 7 | Pending |
-| BLOG-07 | Phase 7 | Pending |
+| BLOG-01 | Phase 7 | Complete |
+| BLOG-02 | Phase 7 | Complete |
+| BLOG-03 | Phase 7 | Complete |
+| BLOG-04 | Phase 7 | Complete |
+| BLOG-05 | Phase 7 | Complete |
+| BLOG-06 | Phase 7 | Complete |
+| BLOG-07 | Phase 7 | Complete |
 | BLOG-08 | Phase 7 | Pending |
 | BLOG-09 | Phase 7 | Pending |
 | BLOG-10 | Phase 7 | Pending |

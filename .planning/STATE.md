@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: State of GTME Content Wave
 status: executing
-stopped_at: Completed 07-01-PLAN.md
-last_updated: "2026-03-14T04:33:30Z"
-last_activity: 2026-03-14 — 07-01 comparison pages (7 pages) + nav/footer
+stopped_at: Completed 07-02-PLAN.md
+last_updated: "2026-03-14T04:52:22Z"
+last_activity: 2026-03-14 — 07-02 blog articles (7 articles + blog index)
 progress:
   total_phases: 7
   completed_phases: 3
   total_plans: 13
-  completed_plans: 13
-  percent: 98
+  completed_plans: 14
+  percent: 99
 ---
 
 # Project State
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-13)
 ## Current Position
 
 Phase: 7 of 7 (Comparisons, Blog Articles, and Quality Sweep)
-Plan: 1 of 4 in current phase (done)
+Plan: 2 of 4 in current phase (done)
 Status: Executing
-Last activity: 2026-03-14 — 07-01 comparison pages (7 pages) + nav/footer
+Last activity: 2026-03-14 — 07-02 blog articles (7 articles + blog index)
 
 Progress: [██████████] 98%
 
@@ -87,6 +87,9 @@ Progress: [██████████] 98%
 - [v2.0 07-01]: Comparisons nav entry as simple link (not dropdown) since 6 pages don't need subcategory navigation
 - [v2.0 07-01]: comparison_related_links() cross-links all comparison pages plus salary/tools/careers/benchmarks indexes (limit 12)
 - [v2.0 07-01]: CSS_VERSION bumped to 13 for nav/footer structural changes
+- [v2.0 07-02]: BLOG_PAGES array (14 entries) with BUILT_BLOG_SLUGS gating, same incremental publishing pattern as tools
+- [v2.0 07-02]: Blog articles use salary-header/salary-content CSS classes for visual consistency (no new CSS)
+- [v2.0 07-02]: Each blog article includes author byline (By Rome Thorndike) for editorial credibility
 
 ### Pending Todos
 
@@ -100,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T04:33:30Z
-Stopped at: Completed 07-01-PLAN.md
+Last session: 2026-03-14T04:52:22Z
+Stopped at: Completed 07-02-PLAN.md
 Resume file: None

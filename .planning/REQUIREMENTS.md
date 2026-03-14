@@ -61,16 +61,16 @@
 - [x] **TCMP-08**: Apollo vs ZoomInfo
 - [x] **TCMP-09**: Lemlist vs Instantly
 - [x] **TCMP-10**: Clay vs Clearbit
-- [ ] **TCMP-11**: 6sense vs Bombora
-- [ ] **TCMP-12**: Mixpanel vs Amplitude
-- [ ] **TCMP-13**: Close vs Pipedrive
-- [ ] **TCMP-14**: HeyReach vs Expandi
-- [ ] **TCMP-15**: Segment vs PostHog
-- [ ] **TCMP-16**: Hightouch vs Census
-- [ ] **TCMP-17**: LinkedIn Sales Nav vs Apollo
-- [ ] **TCMP-18**: Cognism vs ZoomInfo
-- [ ] **TCMP-19**: LeadIQ vs Lusha
-- [ ] **TCMP-20**: Smartlead vs Lemlist
+- [x] **TCMP-11**: 6sense vs Bombora
+- [x] **TCMP-12**: Mixpanel vs Amplitude
+- [x] **TCMP-13**: Close vs Pipedrive
+- [x] **TCMP-14**: HeyReach vs Expandi
+- [x] **TCMP-15**: Segment vs PostHog
+- [x] **TCMP-16**: Hightouch vs Census
+- [x] **TCMP-17**: LinkedIn Sales Nav vs Apollo
+- [x] **TCMP-18**: Cognism vs ZoomInfo
+- [x] **TCMP-19**: LeadIQ vs Lusha
+- [x] **TCMP-20**: Smartlead vs Lemlist
 
 ### Alternatives Pages
 
@@ -195,16 +195,16 @@
 | TCMP-08 | Phase 9 | Complete |
 | TCMP-09 | Phase 9 | Complete |
 | TCMP-10 | Phase 9 | Complete |
-| TCMP-11 | Phase 9 | Pending |
-| TCMP-12 | Phase 9 | Pending |
-| TCMP-13 | Phase 9 | Pending |
-| TCMP-14 | Phase 9 | Pending |
-| TCMP-15 | Phase 9 | Pending |
-| TCMP-16 | Phase 9 | Pending |
-| TCMP-17 | Phase 9 | Pending |
-| TCMP-18 | Phase 9 | Pending |
-| TCMP-19 | Phase 9 | Pending |
-| TCMP-20 | Phase 9 | Pending |
+| TCMP-11 | Phase 9 | Complete |
+| TCMP-12 | Phase 9 | Complete |
+| TCMP-13 | Phase 9 | Complete |
+| TCMP-14 | Phase 9 | Complete |
+| TCMP-15 | Phase 9 | Complete |
+| TCMP-16 | Phase 9 | Complete |
+| TCMP-17 | Phase 9 | Complete |
+| TCMP-18 | Phase 9 | Complete |
+| TCMP-19 | Phase 9 | Complete |
+| TCMP-20 | Phase 9 | Complete |
 | TALT-01 | Phase 10 | Pending |
 | TALT-02 | Phase 10 | Pending |
 | TALT-03 | Phase 10 | Pending |

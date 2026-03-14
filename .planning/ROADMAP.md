@@ -47,7 +47,7 @@ Plans:
 **Milestone Goal:** Add the full tool review vertical (30 reviews, 8 category indexes, 20 comparisons, 10 alternatives, 10 roundups), 50 glossary terms, a job board wired to scraper data, and newsletter automation. Target ~130+ new pages plus infrastructure.
 
 - [x] **Phase 8: Tool Reviews** - 30 individual tool review pages with SoftwareApplication schema and honest criticism (completed 2026-03-14)
-- [ ] **Phase 9: Tool Categories and Comparisons** - 8 category index pages and 20 head-to-head comparison pages
+- [x] **Phase 9: Tool Categories and Comparisons** - 8 category index pages and 20 head-to-head comparison pages (completed 2026-03-14)
 - [ ] **Phase 10: Alternatives and Roundups** - 10 alternatives pages and 10 best-for roundup pages
 - [ ] **Phase 11: Glossary, Job Board, and Newsletter** - 50 glossary terms, job board with scraper pipeline, newsletter automation
 - [ ] **Phase 12: Quality Sweep** - Site-wide validation, schema audit, zero-warning build
@@ -141,7 +141,7 @@ Phases execute in numeric order: 8 → 9 → 10 → 11 → 12
 | 3. Salary Data Engine | v1.0 | 0/2 | Not started | - |
 | 4-7. State of GTME Content Wave | v2.0 | 15/15 | Archived | 2026-03-14 |
 | 8. Tool Reviews | 2/2 | Complete   | 2026-03-14 | - |
-| 9. Tool Categories and Comparisons | v3.0 | 0/2 | Not started | - |
+| 9. Tool Categories and Comparisons | 2/2 | Complete   | 2026-03-14 | - |
 | 10. Alternatives and Roundups | v3.0 | 0/1 | Not started | - |
 | 11. Glossary, Job Board, and Newsletter | v3.0 | 0/3 | Not started | - |
 | 12. Quality Sweep | v3.0 | 0/1 | Not started | - |

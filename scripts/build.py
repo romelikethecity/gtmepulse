@@ -10618,6 +10618,22 @@ def build_blog_mid_size_pay():
 
 def validate_pages():
     warnings = []
+    all_titles = {}       # title -> [rel_paths]
+    all_descs = {}        # description -> [rel_paths]
+
+    # Pages exempt from certain checks
+    SKIP_BREADCRUMB = {"index.html", "privacy/index.html", "terms/index.html", "404.html", "newsletter/index.html"}
+    SKIP_INTERNAL_LINKS = {"index.html", "privacy/index.html", "terms/index.html", "404.html", "newsletter/index.html"}
+    # Data page directories (must have source citations, word count checks)
+    DATA_DIRS = ("salary/", "careers/", "tools/", "benchmarks/", "comparisons/", "blog/")
+
+    # False reframe patterns
+    FALSE_REFRAME_PATTERNS = [
+        r"not\s+\w+[\w\s]*,\s+it'?s\s+",
+        r"isn'?t\s+\w+[\w\s]*\.\s+it'?s\s+",
+        r"less\s+about\s+.*\s+more\s+about\s+",
+    ]
+
     for root, dirs, files in os.walk(OUTPUT_DIR):
         for fname in files:
             if not fname.endswith(".html"):
@@ -10627,36 +10643,116 @@ def validate_pages():
             with open(filepath, "r", encoding="utf-8") as f:
                 html = f.read()
 
+            html_lower = html.lower()
+
+            # --- Existing checks ---
+
+            # Title
             title_match = re.search(r"<title>(.*?)</title>", html)
             if title_match:
                 title_text = title_match.group(1)
                 tlen = len(title_text)
                 if tlen < 50 or tlen > 60:
-                    warnings.append(f"{rel}: title length {tlen} (want 50-60): \"{title_text}\"")
+                    warnings.append(f"QUAL2-01: {rel}: title length {tlen} (want 50-60): \"{title_text}\"")
+                all_titles.setdefault(title_text, []).append(rel)
             else:
-                warnings.append(f"{rel}: missing <title> tag")
+                warnings.append(f"QUAL2-01: {rel}: missing <title> tag")
 
+            # Description
             desc_match = re.search(r'<meta name="description" content="(.*?)"', html)
             if desc_match:
                 desc_text = desc_match.group(1)
                 dlen = len(desc_text)
                 if dlen < 150 or dlen > 158:
-                    warnings.append(f"{rel}: description length {dlen} (want 150-158): \"{desc_text}\"")
+                    warnings.append(f"QUAL2-01: {rel}: description length {dlen} (want 150-158): \"{desc_text}\"")
+                all_descs.setdefault(desc_text, []).append(rel)
             else:
-                warnings.append(f"{rel}: missing meta description")
+                warnings.append(f"QUAL2-01: {rel}: missing meta description")
 
+            # H1 count
             h1_count = len(re.findall(r"<h1[^>]*>", html))
             if h1_count != 1:
-                warnings.append(f"{rel}: found {h1_count} H1 tags (want exactly 1)")
+                warnings.append(f"QUAL2-01: {rel}: found {h1_count} H1 tags (want exactly 1)")
 
+            # --- QUAL2-01: SEO metadata (canonical, OG, Twitter) ---
+            if '<link rel="canonical"' not in html_lower:
+                warnings.append(f"QUAL2-01: {rel}: missing canonical URL")
+            for og_tag in ["og:title", "og:description", "og:url"]:
+                if f'property="{og_tag}"' not in html_lower:
+                    warnings.append(f"QUAL2-01: {rel}: missing {og_tag}")
+            for tw_tag in ["twitter:card", "twitter:title", "twitter:description"]:
+                if f'name="{tw_tag}"' not in html_lower:
+                    warnings.append(f"QUAL2-01: {rel}: missing {tw_tag}")
+
+            # --- QUAL2-02: BreadcrumbList schema ---
+            if rel not in SKIP_BREADCRUMB:
+                if "breadcrumblist" not in html_lower:
+                    warnings.append(f"QUAL2-02: {rel}: missing BreadcrumbList schema")
+
+            # --- QUAL2-03: Internal links (3+ in content body) ---
+            if rel not in SKIP_INTERNAL_LINKS:
+                # Extract content between breadcrumb and footer
+                content_html = html
+                breadcrumb_end = html.find('</nav>', html.find('class="breadcrumb"')) if 'class="breadcrumb"' in html else -1
+                footer_start = html.find('<footer')
+                if breadcrumb_end > 0 and footer_start > breadcrumb_end:
+                    content_html = html[breadcrumb_end:footer_start]
+                elif footer_start > 0:
+                    content_html = html[:footer_start]
+                # Count internal links (href starting with /)
+                internal_links = re.findall(r'<a\s[^>]*href="(/[^"]*)"', content_html)
+                if len(internal_links) < 3:
+                    warnings.append(f"QUAL2-03: {rel}: only {len(internal_links)} internal links in content (want 3+)")
+
+            # --- QUAL2-06: FAQPage schema on comparison pages ---
+            if rel.startswith("comparisons/") and rel != "comparisons/index.html":
+                if "faqpage" not in html_lower:
+                    warnings.append(f"QUAL2-06: {rel}: comparison page missing FAQPage schema")
+
+            # --- QUAL2-08: Source citations on data pages ---
+            is_data_page = any(rel.startswith(d) for d in DATA_DIRS)
+            is_index = rel.endswith("/index.html") and rel.count("/") == 1
+            if is_data_page and not is_index:
+                if "source-citation" not in html_lower and "state of gtm" not in html_lower:
+                    warnings.append(f"QUAL2-08: {rel}: data page missing source citation")
+
+            # --- QUAL2-09: Writing standards ---
             if "\u2014" in html:
-                warnings.append(f"{rel}: contains em-dash character (U+2014)")
+                warnings.append(f"QUAL2-09: {rel}: contains em-dash character (U+2014)")
 
-            html_lower = html.lower()
             for word in BANNED_WORDS:
                 pattern = r'\b' + re.escape(word) + r'\b'
                 if re.search(pattern, html_lower):
-                    warnings.append(f"{rel}: contains banned word \"{word}\"")
+                    warnings.append(f"QUAL2-09: {rel}: contains banned word \"{word}\"")
+
+            # False reframe patterns
+            for frp in FALSE_REFRAME_PATTERNS:
+                if re.search(frp, html_lower):
+                    warnings.append(f"QUAL2-09: {rel}: contains false reframe pattern")
+                    break
+
+            # --- QUAL2-04/05: Word counts ---
+            if is_data_page and not is_index:
+                # Strip HTML tags to get text content
+                text_only = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL)
+                text_only = re.sub(r'<style[^>]*>.*?</style>', '', text_only, flags=re.DOTALL)
+                text_only = re.sub(r'<[^>]+>', ' ', text_only)
+                text_only = re.sub(r'\s+', ' ', text_only).strip()
+                word_count = len(text_only.split())
+                if rel.startswith("blog/"):
+                    if word_count < 1500:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1500+ for blog)")
+                else:
+                    if word_count < 1200:
+                        warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 1200+ for data page)")
+
+    # --- QUAL2-07: Duplicate detection (post-loop) ---
+    for title, pages in all_titles.items():
+        if len(pages) > 1:
+            warnings.append(f"QUAL2-07: DUPLICATE TITLE: \"{title}\" used by {', '.join(pages)}")
+    for desc, pages in all_descs.items():
+        if len(pages) > 1:
+            warnings.append(f"QUAL2-07: DUPLICATE DESCRIPTION: \"{desc}\" used by {', '.join(pages)}")
 
     if warnings:
         print(f"\n  Content validation: {len(warnings)} warning(s)")

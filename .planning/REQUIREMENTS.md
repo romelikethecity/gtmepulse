@@ -147,13 +147,101 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated during roadmap creation) | | |
+| TREV-01 | Phase 8 | Pending |
+| TREV-02 | Phase 8 | Pending |
+| TREV-03 | Phase 8 | Pending |
+| TREV-04 | Phase 8 | Pending |
+| TREV-05 | Phase 8 | Pending |
+| TREV-06 | Phase 8 | Pending |
+| TREV-07 | Phase 8 | Pending |
+| TREV-08 | Phase 8 | Pending |
+| TREV-09 | Phase 8 | Pending |
+| TREV-10 | Phase 8 | Pending |
+| TREV-11 | Phase 8 | Pending |
+| TREV-12 | Phase 8 | Pending |
+| TREV-13 | Phase 8 | Pending |
+| TREV-14 | Phase 8 | Pending |
+| TREV-15 | Phase 8 | Pending |
+| TREV-16 | Phase 8 | Pending |
+| TREV-17 | Phase 8 | Pending |
+| TREV-18 | Phase 8 | Pending |
+| TREV-19 | Phase 8 | Pending |
+| TREV-20 | Phase 8 | Pending |
+| TREV-21 | Phase 8 | Pending |
+| TREV-22 | Phase 8 | Pending |
+| TREV-23 | Phase 8 | Pending |
+| TREV-24 | Phase 8 | Pending |
+| TREV-25 | Phase 8 | Pending |
+| TREV-26 | Phase 8 | Pending |
+| TREV-27 | Phase 8 | Pending |
+| TREV-28 | Phase 8 | Pending |
+| TREV-29 | Phase 8 | Pending |
+| TREV-30 | Phase 8 | Pending |
+| TCAT-01 | Phase 9 | Pending |
+| TCAT-02 | Phase 9 | Pending |
+| TCAT-03 | Phase 9 | Pending |
+| TCAT-04 | Phase 9 | Pending |
+| TCAT-05 | Phase 9 | Pending |
+| TCAT-06 | Phase 9 | Pending |
+| TCAT-07 | Phase 9 | Pending |
+| TCAT-08 | Phase 9 | Pending |
+| TCMP-01 | Phase 9 | Pending |
+| TCMP-02 | Phase 9 | Pending |
+| TCMP-03 | Phase 9 | Pending |
+| TCMP-04 | Phase 9 | Pending |
+| TCMP-05 | Phase 9 | Pending |
+| TCMP-06 | Phase 9 | Pending |
+| TCMP-07 | Phase 9 | Pending |
+| TCMP-08 | Phase 9 | Pending |
+| TCMP-09 | Phase 9 | Pending |
+| TCMP-10 | Phase 9 | Pending |
+| TCMP-11 | Phase 9 | Pending |
+| TCMP-12 | Phase 9 | Pending |
+| TCMP-13 | Phase 9 | Pending |
+| TCMP-14 | Phase 9 | Pending |
+| TCMP-15 | Phase 9 | Pending |
+| TCMP-16 | Phase 9 | Pending |
+| TCMP-17 | Phase 9 | Pending |
+| TCMP-18 | Phase 9 | Pending |
+| TCMP-19 | Phase 9 | Pending |
+| TCMP-20 | Phase 9 | Pending |
+| TALT-01 | Phase 10 | Pending |
+| TALT-02 | Phase 10 | Pending |
+| TALT-03 | Phase 10 | Pending |
+| TALT-04 | Phase 10 | Pending |
+| TALT-05 | Phase 10 | Pending |
+| TALT-06 | Phase 10 | Pending |
+| TALT-07 | Phase 10 | Pending |
+| TALT-08 | Phase 10 | Pending |
+| TALT-09 | Phase 10 | Pending |
+| TALT-10 | Phase 10 | Pending |
+| TBST-01 | Phase 10 | Pending |
+| TBST-02 | Phase 10 | Pending |
+| TBST-03 | Phase 10 | Pending |
+| TBST-04 | Phase 10 | Pending |
+| TBST-05 | Phase 10 | Pending |
+| TBST-06 | Phase 10 | Pending |
+| TBST-07 | Phase 10 | Pending |
+| TBST-08 | Phase 10 | Pending |
+| TBST-09 | Phase 10 | Pending |
+| TBST-10 | Phase 10 | Pending |
+| GLOS-01 | Phase 11 | Pending |
+| GLOS-02 | Phase 11 | Pending |
+| JOBS-01 | Phase 11 | Pending |
+| JOBS-02 | Phase 11 | Pending |
+| NEWS-01 | Phase 11 | Pending |
+| NEWS-02 | Phase 11 | Pending |
+| NEWS-03 | Phase 11 | Pending |
+| NEWS-04 | Phase 11 | Pending |
+| QUAL3-01 | Phase 12 | Pending |
+| QUAL3-02 | Phase 12 | Pending |
+| QUAL3-03 | Phase 12 | Pending |
 
 **Coverage:**
 - v3.0 requirements: 109 total (TREV:30, TCAT:8, TCMP:20, TALT:10, TBST:10, GLOS:2, JOBS:2, NEWS:4, QUAL3:3)
-- Mapped to phases: 0
-- Unmapped: 109
+- Mapped to phases: 109
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after initial definition*
+*Last updated: 2026-03-14 after roadmap creation*

@@ -8,37 +8,25 @@ An independent resource hub for GTM Engineers at gtmepulse.com. Vendor-neutral s
 
 GTM Engineers can find accurate, vendor-neutral salary benchmarks and career intelligence in one place, with data no competitor provides.
 
-## Current Milestone: v2.0 State of GTME Content Wave
+## Current State
 
-**Goal:** Build ~85 new data-backed content pages using the State of GTME Report 2026 (228 respondents, 3,342 job postings from OneGTM/Sentrion), replacing hardcoded benchmarks with real survey data and creating the definitive SEO-optimized resource for every GTM Engineering query.
+**v2.0 shipped 2026-03-14.** 133 pages live. Site is the definitive SEO resource for GTM Engineering salary, career, tools, and benchmark data.
 
-**Data source:** "The State of GTME Report - 2026" by OneGTM (Garrett Wolfe, Alex Lindahl, Maja Voje) + Clay Job Data (224 postings via Sentrion). 228 respondents across 32 countries.
+**What shipped in v2.0:**
+- Salary data overhaul: all pages use real State of GTME Report 2026 data (n=228)
+- 12 new salary pages (coding premium, equity, bonus, agency fees, etc.)
+- 28 career/agency/job market pages
+- 25 tools and benchmarks pages
+- 6 comparison pages + 14 blog articles
+- Site-wide quality validation (9 QUAL2 categories, zero warnings)
 
-**Target content:**
-- 12 new salary pages (coding premium, company size, funding stage, experience, age, bonus, equity, US vs global, posted vs actual, agency fees, agency fees by region, seed vs enterprise)
-- Update existing 45 salary pages with real survey data ($135K median, not estimates)
-- 12 career & breaking-in pages (how to become, career path, job market growth, demographics, work-life balance, coding requirements, reporting structure, skills gap)
-- 16 tool pages (tech stack benchmark, Clay 84%, CRM 92%, AI coding 71%, n8n 54%, tool frustrations, most exciting tools, Unify 8.8%, tool spend, tool wishlist)
-- 8 agency/freelance pages (pricing guide, how to start, revenue comparison, client retention, client count, pricing models, fees by region, domain rotation)
-- 8 job market pages (5,205% growth, jobs by country, posted vs actual salary, top skills, monthly trends, salary bands by location, India boom, Spain market)
-- 9 benchmark/state-of pages (50 key stats, demographics, report summary, operator vs engineer, bottlenecks, company understanding, learning resources, headcount trends, future predictions)
-- 6 comparison pages (engineer vs operator, in-house vs agency, vs AI SDR, US vs Europe vs APAC, seed vs series B, technical vs low-code)
-- 14 long-tail blog articles (equity problems, coding premium, work hours, Gen Z function, Clay love/hate, LATAM/APAC markets, title inflation, pre-seed equity, self-taught, responsibilities, all-in-one tool, bonus data, December 2025 explosion, mid-size company salary)
-
-**Key data points to weave across all pages:**
-- US in-house median: $135K (range $60K-$250K+)
-- Non-US median: $75K
-- Job posting median: $150K (224 listings)
-- Coding premium: $45K (low-code ~$90K vs technical)
-- 5,205% job posting surge (63 to 3,342 in 2025)
-- Clay: 84% adoption (96% agencies)
-- CRM: 92% adoption
-- AI coding tools: 71% adoption
-- 68% have no meaningful equity
-- Median age: 25, Gen Z function
-- 60% work 40-60 hrs/week
-- Self-taught dominates (121/228)
-- Agency fees: $5K-$8K/mo median
+**Next Milestone Goals:**
+- Tool reviews (30 individual deep reviews)
+- Tool category indexes (8 categories)
+- Alternatives + roundup pages (20 total)
+- Glossary (50 terms)
+- Job board wired to scraper data
+- Newsletter automation (weekly send via Resend)
 
 ## Requirements
 

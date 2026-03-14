@@ -280,4 +280,115 @@ COMPARISONS = {
             ("Do I still need Clay or Apollo if I use these tools' built-in databases?", "Yes. Both Lemlist and Instantly have contact databases, but they're prospecting shortcuts, not replacements for dedicated enrichment. Clay's waterfall approach and Apollo's deep database produce higher-quality, more complete contact data than either sequencing tool's built-in database."),
         ],
     },
+
+    "cognism-vs-zoominfo": {
+        "intro": """<p>Cognism and ZoomInfo are both enterprise B2B data platforms, but they serve different geographies and compliance environments. ZoomInfo has the deepest North American database with 260M+ profiles and strong intent data. Cognism built its reputation on GDPR-compliant European data, mobile phone numbers, and Diamond Data verification. For GTM teams selling internationally, this comparison determines whether you invest in one platform or both.</p>
+<p>The market has shifted. ZoomInfo's dominance in North America is well-established, but European data quality from US-centric providers has been a persistent pain point. Cognism filled that gap with phone-verified contacts and compliance infrastructure built for GDPR from day one.</p>
+<p>This comparison breaks down data coverage by region, phone number quality, compliance approaches, pricing models, and which platform fits different GTM architectures. If you sell to both US and European markets, pay attention to the coverage gaps.</p>""",
+
+        "feature_table": """<div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>Cognism</th><th>ZoomInfo</th></tr>
+</thead>
+<tbody>
+<tr><td>Database Focus</td><td>EMEA + North America</td><td>North America (strongest), global secondary</td></tr>
+<tr><td>Contact Database</td><td>400M+ business profiles</td><td>260M+ professional profiles</td></tr>
+<tr><td>Phone Numbers</td><td>Diamond Data (phone-verified mobiles)</td><td>Direct dials + HQ numbers</td></tr>
+<tr><td>Phone Verification</td><td>Human-verified (98% connect rate claimed)</td><td>Algorithmic verification</td></tr>
+<tr><td>GDPR Compliance</td><td>Built-in (Do Not Call lists, consent tracking)</td><td>Available (compliance add-ons)</td></tr>
+<tr><td>Intent Data</td><td>Bombora intent (integrated)</td><td>Proprietary intent network</td></tr>
+<tr><td>Technographic Data</td><td>Available</td><td>Deep technographic tracking</td></tr>
+<tr><td>CRM Integration</td><td>Salesforce, HubSpot (native)</td><td>Salesforce, HubSpot (deep native sync)</td></tr>
+<tr><td>Chrome Extension</td><td>Yes (LinkedIn + web)</td><td>Yes (LinkedIn + web)</td></tr>
+<tr><td>API Access</td><td>REST API</td><td>REST + Bulk + Streaming APIs</td></tr>
+<tr><td>Pricing</td><td>$15,000-$35,000+/year</td><td>$15,000-$40,000+/year</td></tr>
+<tr><td>GTM Engineer Fit</td><td>International prospecting + phone-first outbound</td><td>North American data depth + intent signals</td></tr>
+</tbody>
+</table></div>""",
+
+        "tool_a_strengths": """<h2>Where Cognism Wins</h2>
+<p>Mobile phone data is Cognism's standout differentiator. Their Diamond Data process uses human researchers to phone-verify mobile numbers before adding them to the database. The result: phone connect rates of 3-4x industry averages. If your outbound strategy includes cold calling (and for enterprise targets, it should), Cognism's verified mobiles are the highest-quality phone data available.</p>
+<p>European data coverage is where Cognism leads the market. UK, Germany, France, Nordics, and Benelux contacts are Cognism's core strength. ZoomInfo's European data is thinner, less current, and frequently missing mobile numbers entirely. For GTM teams targeting EMEA markets, Cognism is the default data provider.</p>
+<p>GDPR compliance is baked into Cognism's architecture, not bolted on. Do Not Call list checking, consent tracking, and data processing documentation are built into every workflow. For companies selling into the EU, this compliance infrastructure eliminates legal risk. ZoomInfo offers compliance tools, but they're add-ons to a platform designed for the US market where privacy regulations are less strict.</p>
+<p>Cognism integrates Bombora's intent data natively, giving you both contact data and account-level buying signals in one platform. The combination means you can filter by intent topic, find decision-makers at surging accounts, and get their phone-verified mobile number in a single workflow. ZoomInfo has its own intent network (which is stronger), but Cognism's Bombora integration is well-executed for the price point.</p>""",
+
+        "tool_b_strengths": """<h2>Where ZoomInfo Wins</h2>
+<p>North American data depth is ZoomInfo's moat. For US and Canadian contacts, ZoomInfo's database is the most comprehensive available: org charts, direct dials, technographic data, funding information, and hiring signals. The depth goes beyond contact records into company intelligence that shapes account strategy. If your primary market is North America, ZoomInfo's data is still the gold standard.</p>
+<p>ZoomInfo's proprietary intent data network is the strongest in the market. Their tracking infrastructure covers thousands of publisher sites, capturing content consumption patterns, search behavior, and website visits. Cognism uses Bombora for intent (which is good), but ZoomInfo's first-party network provides signals that third-party intent providers can't match. For account-based strategies that prioritize by buying signal, ZoomInfo's intent data justifies the premium.</p>
+<p>The API surface area is broader. ZoomInfo's REST API, Bulk API, and Streaming API handle high-volume data operations that Cognism's simpler REST API can't match. GTM Engineers building automated enrichment pipelines at enterprise scale (100K+ lookups/month) will find ZoomInfo's API infrastructure more capable.</p>
+<p>Technographic depth sets ZoomInfo apart. Beyond basic "they use Salesforce," ZoomInfo tracks technology adoption timelines, estimated spending, and contract renewal windows. This data powers tech-stack-based targeting motions: "Show me companies using Competitor X whose contract renews in the next 90 days." Cognism has technographic data, but ZoomInfo's is deeper and more actionable.</p>""",
+
+        "pricing_comparison": """<h2>Pricing Breakdown</h2>
+<p>Cognism pricing starts around $15,000-$18,000/year for a single-seat license with standard data access. Diamond Data (phone-verified mobiles) costs more: expect $20,000-$35,000/year depending on volume and the number of Diamond credits. Multi-seat and enterprise deals are custom-priced. Annual contracts are standard. Cognism is generally more transparent about pricing than ZoomInfo during the sales process.</p>
+<p>ZoomInfo pricing starts at $15,000/year for Professional, climbing to $25,000-$40,000+ for Advanced and Elite tiers. Intent data, API access, and premium features add to the base cost. Enterprise contracts regularly exceed $100,000/year for large teams. Annual contracts with auto-renewal are standard, and negotiating termination mid-contract is notoriously difficult.</p>
+<p>For a GTM team selling into both US and European markets, some companies run both: ZoomInfo for North American data and intent signals, Cognism for European contacts and phone-verified mobiles. The combined cost ($35,000-$60,000/year) covers both regions better than either platform alone. If you're in a Clay environment, both platforms are available as enrichment providers, so you can waterfall Cognism data after ZoomInfo for European contacts.</p>""",
+
+        "verdict": """<h2>The Verdict</h2>
+<p>Use Cognism if your GTM motion includes European markets, phone-based outbound, or GDPR compliance requirements. Cognism's Diamond Data mobile numbers and EMEA coverage are unmatched. The platform pays for itself if phone connect rates on your verified mobiles drive even a few additional enterprise conversations per month.</p>
+<p>Use ZoomInfo if your primary market is North America and you need the deepest possible data: intent signals, technographic tracking, org charts, and high-volume API access. ZoomInfo's data infrastructure is still the most complete for US B2B sales intelligence.</p>
+<p>Run both if your company sells internationally and has the budget. ZoomInfo covers North America, Cognism covers Europe, and the overlap in data gives you fallback coverage. For GTM Engineers building Clay waterfalls, chain both platforms for maximum coverage across regions. The cost is significant, but incomplete data costs more in missed pipeline.</p>""",
+
+        "faq": [
+            ("Is Cognism's data quality better than ZoomInfo's?", "It depends on geography. For European contacts and mobile phone numbers, Cognism is better. For North American contacts, technographic data, and intent signals, ZoomInfo is better. Neither platform has universally superior data."),
+            ("Can I use Cognism in a Clay waterfall?", "Yes. Cognism is available as an enrichment provider in Clay. A common pattern: ZoomInfo first for US contacts, Cognism second for European contacts or when ZoomInfo misses mobile numbers. The waterfall approach gives you the best of both databases."),
+            ("Does Cognism's Diamond Data actually work?", "Phone-verified mobile numbers do connect at higher rates. Independent reports and user feedback confirm 2-4x higher connect rates compared to unverified numbers from other providers. The verification process (human researchers dial the number) is labor-intensive but produces measurably better results."),
+            ("Which is better for compliance in regulated industries?", "Cognism. Their compliance infrastructure (Do Not Call lists, GDPR documentation, consent tracking) is built for European regulatory requirements. ZoomInfo has compliance tools, but they're designed primarily for US regulations. For healthcare, financial services, or any industry with strict data handling requirements in Europe, Cognism is the safer choice."),
+            ("Is ZoomInfo worth the premium over Cognism?", "For North American-only GTM motions, yes. ZoomInfo's intent data and data depth justify the cost if you're selling $50K+ ACV products to US enterprise accounts. For international or phone-heavy outbound motions, Cognism offers better value."),
+        ],
+    },
+
+    "leadiq-vs-lusha": {
+        "intro": """<p>LeadIQ and Lusha are both contact data tools that GTM Engineers use for quick prospecting, but they approach the problem differently. LeadIQ is a prospecting workflow tool: find contacts on LinkedIn, capture their data, and push to your CRM or sequencing tool in one click. Lusha is a contact data provider with a Chrome extension and API focused on email and phone number lookups. Both are faster and cheaper than ZoomInfo for individual contact capture.</p>
+<p>These tools occupy a specific niche: they're not full enrichment platforms like Clay or enterprise databases like ZoomInfo. They're designed for rapid, one-at-a-time or small-batch contact capture during prospecting sessions. For GTM Engineers who spend time browsing LinkedIn and need to grab contact details quickly, both tools reduce friction.</p>
+<p>This comparison evaluates data accuracy, CRM integration quality, pricing structures, and which tool fits different prospecting workflows.</p>""",
+
+        "feature_table": """<div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>LeadIQ</th><th>Lusha</th></tr>
+</thead>
+<tbody>
+<tr><td>Chrome Extension</td><td>LinkedIn overlay + one-click capture</td><td>LinkedIn + web overlay</td></tr>
+<tr><td>Email Accuracy</td><td>High (verified at capture)</td><td>High (community-contributed + verified)</td></tr>
+<tr><td>Phone Numbers</td><td>Direct dials + mobile</td><td>Direct dials + mobile (strength area)</td></tr>
+<tr><td>CRM Sync</td><td>One-click push to Salesforce, HubSpot</td><td>Push to Salesforce, HubSpot, Pipedrive</td></tr>
+<tr><td>Sequencing Integration</td><td>Push to Outreach, Salesloft, Groove</td><td>Basic (via CRM or export)</td></tr>
+<tr><td>AI Email Writing</td><td>AI personalized email drafts</td><td>No</td></tr>
+<tr><td>Enrichment API</td><td>Limited (prospecting-focused)</td><td>REST API for bulk enrichment</td></tr>
+<tr><td>Job Change Alerts</td><td>Yes (track prospects' role changes)</td><td>No</td></tr>
+<tr><td>Data Credits</td><td>Credits per contact captured</td><td>Credits per contact revealed</td></tr>
+<tr><td>Free Tier</td><td>15 verified emails + 5 mobile numbers/week</td><td>5 credits/month</td></tr>
+<tr><td>Pricing</td><td>$39-$79/user/month</td><td>$36-$59/user/month</td></tr>
+<tr><td>Best For</td><td>LinkedIn prospecting + CRM workflow</td><td>Quick contact lookups + bulk API</td></tr>
+</tbody>
+</table></div>""",
+
+        "tool_a_strengths": """<h2>Where LeadIQ Wins</h2>
+<p>LeadIQ's prospecting workflow is the smoothest on the market. Browse LinkedIn, find a prospect, click one button, and LeadIQ captures their contact data, enriches it, and pushes it directly to your CRM and sequencing tool. No exporting CSVs, no manual data entry, no switching between tabs. For GTM Engineers who prospect from LinkedIn daily, this one-click capture saves 30-60 minutes per prospecting session.</p>
+<p>Sequencing integration is a key differentiator. LeadIQ pushes contacts directly to Outreach, Salesloft, or Groove sequences with a single click from the Chrome extension. Lusha captures data but stops there. You'd need to export, import to your sequencing tool, and enroll manually. LeadIQ eliminates three steps in the prospecting-to-outbound pipeline.</p>
+<p>Job change tracking alerts you when saved prospects switch companies. "Sarah is now VP Sales at Company Y" is one of the strongest outbound triggers because people in new roles are 2-3x more likely to evaluate new tools. LeadIQ surfaces these signals automatically. Lusha has no equivalent feature.</p>
+<p>AI-generated personalized emails suggest outreach copy based on the prospect's profile, recent activity, and company context. The quality varies, but it provides a starting point that's faster than writing from scratch. For high-volume prospecting where writing unique emails for each prospect isn't practical, this acceleration matters.</p>""",
+
+        "tool_b_strengths": """<h2>Where Lusha Wins</h2>
+<p>Lusha's phone number data is consistently rated as one of the best in the industry. Their community-contributed data model (similar to a phone book built by users) produces direct dials and mobile numbers with high accuracy, especially for US and European contacts. If your outbound strategy relies on cold calling, Lusha's phone data provides a meaningful edge over LeadIQ's numbers.</p>
+<p>The enrichment API makes Lusha useful beyond one-at-a-time prospecting. You can programmatically look up contact data in bulk, integrate Lusha lookups into Clay waterfalls, or build custom enrichment workflows via API. LeadIQ is primarily a Chrome extension tool with limited programmatic access. For GTM Engineers building automated enrichment pipelines, Lusha's API flexibility matters.</p>
+<p>Pricing is simpler and slightly cheaper. Lusha's plans start at $36/user/month (Pro) vs LeadIQ's $39/user/month (Essential). The credit structures are comparable, but Lusha gives you more flexibility in how credits are used (Chrome extension, API, or bulk lookup). The cost advantage is modest but consistent across tiers.</p>
+<p>Lusha's web extension works beyond LinkedIn. While both tools focus on LinkedIn prospecting, Lusha's extension also surfaces contact data when you browse company websites, news articles, and other web pages. If you prospect outside of LinkedIn (company directories, event attendee lists, press mentions), Lusha captures data in more contexts.</p>""",
+
+        "pricing_comparison": """<h2>Pricing Breakdown</h2>
+<p>LeadIQ: Free tier gives 15 verified emails and 5 phone numbers per week. Essential plan ($39/user/month) includes more credits and CRM integration. Pro plan ($79/user/month) adds AI email writing, job change alerts, and more credits. Enterprise pricing is custom. Annual billing discounts apply. The credit-per-contact model means costs scale linearly with prospecting volume.</p>
+<p>Lusha: Free tier gives 5 credits/month. Pro plan ($36/user/month with annual billing) includes 40 credits/month. Premium ($59/user/month) includes 80 credits/month and API access. Scale plan is custom-priced for high-volume teams. Credits reset monthly and don't roll over on most plans.</p>
+<p>For a solo GTM Engineer prospecting 100-200 contacts per month: LeadIQ Pro costs $79/month, Lusha Premium costs $59/month. The $20/month difference is offset by LeadIQ's sequencing integration and job change alerts if you use those features. For teams of 5+, the cumulative savings with Lusha ($100+/month) are more significant. If API access for automated enrichment is important, Lusha's Premium plan includes it at $59/user/month. LeadIQ doesn't offer comparable API access.</p>""",
+
+        "verdict": """<h2>The Verdict</h2>
+<p>Use LeadIQ if your prospecting workflow is LinkedIn-centric and you want the fastest path from "found a prospect" to "enrolled in a sequence." LeadIQ's one-click capture, sequencing integration, and job change alerts create the most efficient prospecting workflow for GTM Engineers who live in LinkedIn and Outreach/Salesloft.</p>
+<p>Use Lusha if phone data quality is critical, you need API access for programmatic enrichment, or you want a slightly cheaper option for large teams. Lusha's phone numbers, bulk API, and web-wide coverage make it the better tool for phone-heavy outbound and automated enrichment workflows.</p>
+<p>Both tools are tactical: they solve the "get contact details quickly" problem and they solve it well. If you're already on Clay for enrichment, you might not need either one. Clay's waterfall approach uses providers like Lusha and others under the hood. These tools add the most value for GTM Engineers who prospect manually on LinkedIn and need instant data capture without building Clay workflows for every lookup.</p>""",
+
+        "faq": [
+            ("Do I need LeadIQ or Lusha if I have Clay?", "For automated enrichment workflows, probably not. Clay's waterfall approach covers the same data sources. LeadIQ and Lusha add value for manual, ad-hoc prospecting: browsing LinkedIn and grabbing contact data in real-time. If you prospect manually alongside your automated pipelines, these tools save time."),
+            ("Which has more accurate email data?", "Both verify emails at the time of capture or reveal, producing comparable accuracy rates. Neither has a meaningful accuracy advantage over the other. The difference is more about coverage (whether they have data for a specific contact) than accuracy (whether the data they provide is correct)."),
+            ("Can I use these tools for bulk list building?", "LeadIQ is designed for one-at-a-time or small-batch capture from LinkedIn. Lusha offers bulk lookups via its API or CSV upload feature, making it better for larger list-building projects. For true bulk enrichment (1,000+ contacts), you're better served by Apollo, Clay, or ZoomInfo."),
+            ("Which integrates better with HubSpot?", "Both have HubSpot integrations, but LeadIQ's is deeper. LeadIQ creates contacts in HubSpot with all enriched fields and associates them with the correct company record. Lusha's integration pushes basic contact data but may require manual field mapping for custom properties. For Salesforce, both integrations are comparable."),
+        ],
+    },
 }

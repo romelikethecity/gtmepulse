@@ -58,4 +58,62 @@ COMPARISONS = {
             ("Which is better for GTM Engineer career growth?", "Salesforce skills command higher salaries because they're scarcer in the GTM Engineer talent pool. HubSpot is easier to learn and more common. Ideally, learn HubSpot first (faster ramp), then add Salesforce (higher ceiling). SOQL and Flow Builder are the most valuable Salesforce skills for GTM Engineers."),
         ],
     },
+
+    "close-vs-pipedrive": {
+        "intro": """<p>Close and Pipedrive are both CRMs built for small sales teams, but they solve different problems. Close is a communication-first CRM with a built-in power dialer, email sequencing, and SMS. Pipedrive is a pipeline-management-first CRM with a visual deal board, activity tracking, and sales forecasting. Both cost a fraction of Salesforce and deploy in hours instead of months.</p>
+<p>For GTM Engineers at startups and SMBs, these CRMs are where enriched data lands and outbound results get tracked. The quality of the API, automation capabilities, and integration flexibility determine how much of your pipeline infrastructure you can automate vs how much requires manual work.</p>
+<p>This comparison evaluates both CRMs through the GTM Engineer lens: API quality, automation depth, calling infrastructure, and how well each platform supports automated pipeline workflows.</p>""",
+
+        "feature_table": """<div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>Close CRM</th><th>Pipedrive</th></tr>
+</thead>
+<tbody>
+<tr><td>Core Strength</td><td>Built-in calling + email sequences</td><td>Visual pipeline management</td></tr>
+<tr><td>Power Dialer</td><td>Yes (built-in, predictive dialer available)</td><td>Via Caller add-on ($5/user/mo)</td></tr>
+<tr><td>Email Sequences</td><td>Built-in multi-step sequences</td><td>Via Campaigns add-on</td></tr>
+<tr><td>SMS</td><td>Built-in SMS sending</td><td>Via third-party integrations</td></tr>
+<tr><td>Pipeline View</td><td>List-based + basic pipeline</td><td>Visual drag-and-drop pipeline (best in class)</td></tr>
+<tr><td>Workflow Automation</td><td>Triggered workflows</td><td>Workflow Automation (visual builder)</td></tr>
+<tr><td>API Quality</td><td>Excellent REST API (well-documented)</td><td>Good REST API</td></tr>
+<tr><td>Custom Fields</td><td>Unlimited custom fields</td><td>Unlimited custom fields</td></tr>
+<tr><td>Reporting</td><td>Built-in reports + custom dashboards</td><td>Insights dashboards + custom reports</td></tr>
+<tr><td>Integrations</td><td>50+ native integrations</td><td>400+ marketplace apps</td></tr>
+<tr><td>Pricing</td><td>$29-$139/user/month</td><td>$14-$99/user/month</td></tr>
+<tr><td>Free Tier</td><td>14-day trial</td><td>14-day trial</td></tr>
+<tr><td>Best For</td><td>Inside sales teams (phone + email heavy)</td><td>Pipeline-driven sales teams</td></tr>
+</tbody>
+</table></div>""",
+
+        "tool_a_strengths": """<h2>Where Close Wins</h2>
+<p>Close's built-in power dialer eliminates the need for a separate calling tool. Click to call from any contact record, log calls automatically, record conversations, and move to the next lead without leaving the CRM. The predictive dialer (Business plan) dials the next number while you're wrapping up the current call, maximizing call volume per hour. Pipedrive's calling is an add-on with basic functionality. For inside sales teams that live on the phone, Close's dialer is a category-leading feature.</p>
+<p>Email sequences are built into the CRM. Create multi-step email campaigns that pause when a prospect replies, track opens and clicks, and enroll leads directly from the contact record. Pipedrive handles email sequences through its Campaigns add-on, which feels like a bolted-on feature rather than a native capability. Close's email sequencing is tightly integrated with calling and SMS, enabling true multichannel sequences within the CRM.</p>
+<p>The API is one of the best among SMB CRMs. Well-documented REST endpoints, clean data structures, bulk operations, and webhook support make Close a favorite for GTM Engineers who integrate CRM data into automated workflows. Creating leads, updating deal stages, logging activities, and syncing enrichment data via API is straightforward and reliable.</p>
+<p>SMS capability built into the CRM lets you add text messages to your outreach cadence. For industries where SMS outreach is effective (real estate, recruiting, SMB services), this native capability eliminates a separate SMS tool. Pipedrive has no built-in SMS.</p>""",
+
+        "tool_b_strengths": """<h2>Where Pipedrive Wins</h2>
+<p>Pipedrive's visual pipeline is the best drag-and-drop deal board in the SMB CRM market. Kanban-style columns for each deal stage, drag deals between stages, and see your entire pipeline at a glance. For sales teams that think visually and manage deals by stage, Pipedrive's pipeline view is more intuitive than Close's list-based approach. Close added a pipeline view, but Pipedrive's is more polished and central to the product experience.</p>
+<p>The integration marketplace (400+ apps) is significantly broader than Close's 50+ native integrations. Pipedrive connects to more third-party tools out of the box: marketing automation, project management, accounting, customer support, and GTM tools. For teams with complex tech stacks, Pipedrive's marketplace reduces the custom integration work a GTM Engineer needs to do.</p>
+<p>Pricing starts lower and scales more gently. Pipedrive Essential ($14/user/month) gives small teams a functional CRM at minimal cost. Close Startup ($29/user/month) costs 2x at the entry level. For bootstrapped startups and early-stage teams where every dollar matters, Pipedrive's lower starting price gets you into a CRM faster.</p>
+<p>Workflow automation in Pipedrive is visual and accessible to non-technical users. Trigger-based automations (when a deal moves to stage X, create a task, send an email, update a field) can be built without code. Close has automation triggers, but Pipedrive's visual builder is easier for sales managers and RevOps to configure without depending on a GTM Engineer.</p>
+<p>Sales forecasting and revenue predictions are built into higher tiers. Pipedrive's Insights dashboards show weighted pipeline value, deal velocity, and win rate trends. Close has reporting, but Pipedrive's forecasting tools are more mature for data-driven pipeline management.</p>""",
+
+        "pricing_comparison": """<h2>Pricing Breakdown</h2>
+<p>Close CRM: Startup ($29/user/mo), Professional ($99/user/mo), Enterprise ($139/user/mo). Startup includes basic CRM, calling, and email. Professional adds power dialer, custom activities, and call recording. Enterprise adds predictive dialer, custom permissions, and call coaching. A 5-person team on Professional costs $495/month.</p>
+<p>Pipedrive: Essential ($14/user/mo), Advanced ($29/user/mo), Professional ($49/user/mo), Power ($64/user/mo), Enterprise ($99/user/mo). Essential gives you pipeline management and basic CRM. Advanced adds email sync and workflow automation. Professional adds reporting and contract management. A 5-person team on Professional costs $245/month.</p>
+<p>The pricing gap is substantial. A 5-person team: Close Professional ($495/mo) vs Pipedrive Professional ($245/mo). Close costs 2x more. The premium buys you a built-in power dialer, native email sequences, and SMS. If your team makes 50+ calls per day, the dialer alone justifies Close's premium (you'd pay $100-$300/month for a separate dialer tool). If your team is pipeline-management focused with moderate calling, Pipedrive delivers more value per dollar.</p>""",
+
+        "verdict": """<h2>The Verdict</h2>
+<p>Use Close if your sales motion is phone and email heavy. Inside sales teams, SDR operations, and outbound-first organizations get the most value from Close's built-in dialer, email sequences, and SMS. The API quality makes Close a strong choice for GTM Engineers building automated pipeline infrastructure. If your team makes 30+ calls per day, Close is the clear winner.</p>
+<p>Use Pipedrive if your sales motion is pipeline-management focused. Teams that manage deals visually, need broad marketplace integrations, and want lower per-seat costs should choose Pipedrive. The visual pipeline, workflow automation, and forecasting tools serve sales teams that prioritize deal management over call volume.</p>
+<p>Both CRMs are good choices for SMB teams that don't need Salesforce's complexity or HubSpot's all-in-one approach. Close wins on communication tools. Pipedrive wins on pipeline visualization and price. Your outbound motion decides: if you call, Close. If you don't, Pipedrive.</p>""",
+
+        "faq": [
+            ("Can Close or Pipedrive replace HubSpot?", "For CRM functionality, yes. Both handle contacts, deals, activities, and basic automation. What you lose is HubSpot's marketing hub (forms, landing pages, marketing automation) and the free Clearbit enrichment. If you use HubSpot primarily as a CRM, either Close or Pipedrive can replace it at lower cost. If you depend on HubSpot's marketing features, you'd need separate tools."),
+            ("Which has a better API for GTM Engineers?", "Close. The API documentation is clearer, bulk operations are more reliable, and the data model is more predictable. Pipedrive's API is functional but has quirks with custom fields and pagination. For automated enrichment syncing, lead creation, and deal updates via API, Close provides a smoother developer experience."),
+            ("Do I need a separate calling tool with Pipedrive?", "If your team makes more than a few calls per day, yes. Pipedrive's Caller add-on ($5/user/mo) handles basic click-to-call but lacks power dialing, predictive dialing, and call recording depth. For serious calling operations, you'd add a tool like Aircall ($30/user/mo) or Orum alongside Pipedrive."),
+            ("Can I migrate from one to the other?", "Both offer CSV import/export and basic migration tools. Migrating contacts and deals is straightforward. Custom fields, automations, and integrations need to be rebuilt. Plan 1-2 days for a complete migration. Both have customer success teams that assist with migration."),
+            ("Which is growing faster in the GTM Engineer community?", "Close has stronger adoption among GTM Engineers due to its API quality and communication-first design. Pipedrive is more popular with traditional sales teams and small businesses. In GTM Engineering job postings, Close CRM knowledge is mentioned more frequently than Pipedrive, reflecting its technical user base."),
+        ],
+    },
 }

@@ -112,4 +112,60 @@ COMPARISONS = {
             ("Can I run A/B tests in both?", "Yes. Both support A/B testing on email subject lines, body copy, and send times within sequences. Outreach's testing analytics are slightly more detailed, but both provide the basics needed to optimize campaigns."),
         ],
     },
+
+    "smartlead-vs-lemlist": {
+        "intro": """<p>Smartlead and Lemlist both power outbound campaigns, but they're built for different operators. Smartlead is a cold email infrastructure platform: unlimited sender accounts, advanced subsequences, and agency-grade client management. Lemlist is a multichannel outreach platform: email plus LinkedIn automation, custom image personalization, and a built-in lead database. The choice depends on whether you need email-only scale or multichannel reach.</p>
+<p>Both tools compete for the same budget line, and both show up frequently in GTM Engineer stacks. Smartlead has gained ground with agencies and high-volume operators. Lemlist has retained users who want LinkedIn touchpoints integrated into their sequences.</p>
+<p>This comparison covers deliverability infrastructure, personalization capabilities, multichannel features, pricing, and which tool fits different outbound strategies.</p>""",
+
+        "feature_table": """<div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>Smartlead</th><th>Lemlist</th></tr>
+</thead>
+<tbody>
+<tr><td>Channels</td><td>Email only</td><td>Email + LinkedIn + calls</td></tr>
+<tr><td>Sender Accounts</td><td>Unlimited</td><td>Multiple (plan-dependent)</td></tr>
+<tr><td>Inbox Warmup</td><td>Built-in (configurable)</td><td>Lemwarm (built-in)</td></tr>
+<tr><td>Subsequences</td><td>Advanced (by reply type/sentiment)</td><td>Basic follow-up logic</td></tr>
+<tr><td>Lead Database</td><td>None (import only)</td><td>450M+ contacts</td></tr>
+<tr><td>Personalization</td><td>Spintax + variables</td><td>Custom images, liquid syntax, dynamic content</td></tr>
+<tr><td>LinkedIn Steps</td><td>No</td><td>Profile visits, connections, messages</td></tr>
+<tr><td>Agency Features</td><td>White-label + sub-accounts</td><td>Limited agency tools</td></tr>
+<tr><td>API Quality</td><td>Comprehensive REST API</td><td>REST API</td></tr>
+<tr><td>CRM Integration</td><td>Via API/Zapier</td><td>HubSpot, Salesforce, Pipedrive (native)</td></tr>
+<tr><td>Deliverability Tools</td><td>Warmup + reputation tracking</td><td>Lemwarm + deliverability scoring</td></tr>
+<tr><td>Pricing</td><td>$39-$94/mo (workspace)</td><td>$39-$159/seat/mo</td></tr>
+</tbody>
+</table></div>""",
+
+        "tool_a_strengths": """<h2>Where Smartlead Wins</h2>
+<p>Smartlead's subsequence engine is the most sophisticated in cold email. You can route replies based on sentiment: positive replies go to a "book meeting" subsequence, objections go to an "address concerns" followup, out-of-office replies pause and resume automatically, and bounced emails get removed. Lemlist handles basic follow-ups but can't match this conditional routing depth. For high-volume operations where manually triaging replies isn't practical, Smartlead's automation saves hours per week.</p>
+<p>Agency infrastructure is Smartlead's core market. Full white-labeling (your branding, your domain), client-specific sub-accounts with isolated billing, per-client dashboards, and API-driven campaign management. If you run an outbound agency managing 10+ client accounts, Smartlead was designed for your workflow. Lemlist's agency tools exist but aren't as developed.</p>
+<p>The API is more comprehensive for programmatic campaign management. Bulk campaign creation, lead upload with custom field mapping, sequence modification, and webhook-driven automation are all available. GTM Engineers who control their sequencing tool programmatically through Clay or n8n get more capabilities from Smartlead's API.</p>
+<p>Warmup configuration gives you granular control. Adjust warmup volume, ramp speed, reply engagement rates, and interaction patterns per inbox. Lemlist's Lemwarm is more automated with less user control. For operators who want to fine-tune warmup strategy based on domain reputation data, Smartlead's configurability is an advantage.</p>""",
+
+        "tool_b_strengths": """<h2>Where Lemlist Wins</h2>
+<p>Multichannel sequencing is Lemlist's defining capability. Build campaigns that interleave email steps with LinkedIn profile visits, connection requests, and direct messages. In a market where email response rates keep declining, adding LinkedIn touchpoints lifts overall reply rates by 15-25%. Smartlead is email-only. If you want LinkedIn in your sequences, you'd need to add HeyReach or Expandi alongside Smartlead, which means managing two tools instead of one.</p>
+<p>Personalization goes beyond text variables. Lemlist lets you embed dynamic images with the prospect's name, company logo, or website screenshot. Custom video thumbnails increase click-through rates in crowded inboxes. These visual personalization features create messages that look handcrafted rather than templated. Smartlead handles text-based personalization (spintax, merge fields) but has no image or video personalization.</p>
+<p>The built-in lead database (450M+ contacts) means you can prospect and send from one tool. Search by title, company, industry, or location, then add contacts directly to a campaign. Smartlead requires you to import leads from external sources. For teams that want fewer tools in their stack, Lemlist's database eliminates the need for a separate prospecting step.</p>
+<p>Native CRM integrations with HubSpot, Salesforce, and Pipedrive give Lemlist a smoother connection to your CRM than Smartlead's API/Zapier approach. Two-way sync keeps your CRM updated with campaign engagement data (opens, replies, meetings booked) without building custom integrations.</p>""",
+
+        "pricing_comparison": """<h2>Pricing Breakdown</h2>
+<p>Smartlead: Basic ($39/mo for 2,000 active leads), Pro ($94/mo for 30,000 active leads), Custom ($174+/mo for unlimited). All plans include unlimited sender accounts, warmup, and API access. No per-seat pricing. A 5-person team pays the same as a solo operator. White-label agency features are included at all tiers.</p>
+<p>Lemlist: Email Starter ($39/seat/mo), Email Pro ($69/seat/mo), Multichannel Expert ($99/seat/mo), Outreach Scale ($159/seat/mo). LinkedIn automation requires Expert tier or above. A solo operator on Multichannel Expert pays $99/month. A 5-person team on the same plan pays $495/month.</p>
+<p>The pricing divergence at team scale is significant. A 5-person team: Smartlead Pro costs $94/month total. Lemlist Multichannel Expert costs $495/month total. That's a 5x difference. For email-only outbound, Smartlead wins decisively on cost. For multichannel outbound, Lemlist's premium is the price of LinkedIn integration. Whether that premium is worth it depends on whether LinkedIn touchpoints meaningfully improve your reply rates for your specific ICP.</p>""",
+
+        "verdict": """<h2>The Verdict</h2>
+<p>Use Smartlead if your outbound is email-first, you run an agency, or you need advanced reply-routing automation. Smartlead's subsequence engine, API capabilities, and per-workspace pricing make it the operator's choice for high-volume, email-centric outbound. The cost advantage over Lemlist is massive at team scale.</p>
+<p>Use Lemlist if multichannel outreach (email + LinkedIn) is central to your strategy. Lemlist's LinkedIn integration, visual personalization, and built-in lead database create a more complete outbound platform for teams targeting mid-market and enterprise prospects where LinkedIn touchpoints matter. The per-seat premium is the cost of that capability.</p>
+<p>The deciding factor is your ICP. If your prospects respond to email (SMB, mid-market, high-volume targets), Smartlead delivers more at lower cost. If your prospects live on LinkedIn and ignore cold email (enterprise decision-makers, C-suite), Lemlist's multichannel approach reaches them. Test both channels with a sample campaign before committing annual budget.</p>""",
+
+        "faq": [
+            ("Can I add LinkedIn automation to Smartlead?", "Not natively. You'd need to pair Smartlead with a LinkedIn automation tool like HeyReach or Expandi. The workflow: run email campaigns in Smartlead, run LinkedIn campaigns in the separate tool, and coordinate timing manually. Lemlist handles both channels in one sequence, which is simpler."),
+            ("Which has better deliverability?", "Both are comparable for email deliverability. Deliverability depends more on your sending practices (warmup duration, volume ramping, content quality, list hygiene) than the tool itself. Smartlead's configurable warmup gives more control. Lemlist's Lemwarm is more automated. The outcome is similar when configured properly."),
+            ("Is Lemlist's lead database good enough to replace Apollo?", "For quick prospecting, it covers many use cases. For deep enrichment (multi-source waterfall, phone numbers, technographic data), you still need Clay or Apollo. Lemlist's database is a convenience feature, not a replacement for dedicated enrichment tools."),
+            ("Which integrates better with Clay?", "Smartlead's API is more comprehensive for programmatic campaign management, making it slightly better for Clay integrations where you're creating campaigns and uploading leads via API. Lemlist works with Clay via webhooks but requires more configuration for automated campaign creation."),
+            ("Can I run both Smartlead and Lemlist?", "You can, but there's limited reason to. They serve the same function. If you want email volume (Smartlead) plus LinkedIn outreach (a separate tool), pair Smartlead with HeyReach instead of paying for two sequencing platforms."),
+        ],
+    },
 }

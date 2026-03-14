@@ -94,10 +94,11 @@ Plans:
   2. User can find 10 best-for roundup pages (e.g., /tools/best-gtm-tools-startups/) with ranked recommendations and use-case guidance
   3. Alternatives and roundup pages link to individual tool reviews and comparison pages where relevant
   4. Every alternatives and roundup page has FAQ section with 3+ Q&A pairs
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 10-01-PLAN.md — 10 alternatives pages + 10 best-for roundup pages
+- [ ] 10-01-PLAN.md — 10 alternatives pages with content modules and generator infrastructure
+- [ ] 10-02-PLAN.md — 10 best-for roundup pages with content modules and generator infrastructure
 
 ### Phase 11: Glossary, Job Board, and Newsletter
 **Goal**: Users can look up GTM Engineering terms, browse live job postings, and subscribe to automated weekly email updates
@@ -142,7 +143,7 @@ Phases execute in numeric order: 8 → 9 → 10 → 11 → 12
 | 4-7. State of GTME Content Wave | v2.0 | 15/15 | Archived | 2026-03-14 |
 | 8. Tool Reviews | 2/2 | Complete   | 2026-03-14 | - |
 | 9. Tool Categories and Comparisons | 2/2 | Complete   | 2026-03-14 | - |
-| 10. Alternatives and Roundups | v3.0 | 0/1 | Not started | - |
+| 10. Alternatives and Roundups | v3.0 | 0/2 | Not started | - |
 | 11. Glossary, Job Board, and Newsletter | v3.0 | 0/3 | Not started | - |
 | 12. Quality Sweep | v3.0 | 0/1 | Not started | - |
 

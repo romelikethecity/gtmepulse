@@ -7,27 +7,27 @@
 
 ### Tool Reviews
 
-- [ ] **TREV-01**: Clay review (data enrichment, 84% adoption, honest criticism)
-- [ ] **TREV-02**: Apollo review (enrichment + sequencing, 15-20% affiliate)
-- [ ] **TREV-03**: ZoomInfo review (enterprise enrichment, pricing criticism)
-- [ ] **TREV-04**: Clearbit review (enrichment, Salesforce acquisition context)
-- [ ] **TREV-05**: FullEnrich review (waterfall enrichment)
-- [ ] **TREV-06**: Lusha review (contact data)
-- [ ] **TREV-07**: Cognism review (EMEA-focused enrichment)
-- [ ] **TREV-08**: LeadIQ review (prospecting)
-- [ ] **TREV-09**: Persana review (AI enrichment)
-- [ ] **TREV-10**: Instantly review (outbound sequencing, 20-40% affiliate)
-- [ ] **TREV-11**: Smartlead review (outbound sequencing)
-- [ ] **TREV-12**: Outreach review (enterprise sequencing)
-- [ ] **TREV-13**: Salesloft review (enterprise sequencing)
-- [ ] **TREV-14**: Lemlist review (outbound + personalization)
-- [ ] **TREV-15**: HeyReach review (LinkedIn automation)
-- [ ] **TREV-16**: Woodpecker review (cold email)
-- [ ] **TREV-17**: HubSpot review (CRM for GTM Engineers)
-- [ ] **TREV-18**: Salesforce review (CRM for GTM Engineers)
-- [ ] **TREV-19**: Pipedrive review (SMB CRM)
-- [ ] **TREV-20**: Close review (sales-focused CRM)
-- [ ] **TREV-21**: Attio review (modern CRM)
+- [x] **TREV-01**: Clay review (data enrichment, 84% adoption, honest criticism)
+- [x] **TREV-02**: Apollo review (enrichment + sequencing, 15-20% affiliate)
+- [x] **TREV-03**: ZoomInfo review (enterprise enrichment, pricing criticism)
+- [x] **TREV-04**: Clearbit review (enrichment, Salesforce acquisition context)
+- [x] **TREV-05**: FullEnrich review (waterfall enrichment)
+- [x] **TREV-06**: Lusha review (contact data)
+- [x] **TREV-07**: Cognism review (EMEA-focused enrichment)
+- [x] **TREV-08**: LeadIQ review (prospecting)
+- [x] **TREV-09**: Persana review (AI enrichment)
+- [x] **TREV-10**: Instantly review (outbound sequencing, 20-40% affiliate)
+- [x] **TREV-11**: Smartlead review (outbound sequencing)
+- [x] **TREV-12**: Outreach review (enterprise sequencing)
+- [x] **TREV-13**: Salesloft review (enterprise sequencing)
+- [x] **TREV-14**: Lemlist review (outbound + personalization)
+- [x] **TREV-15**: HeyReach review (LinkedIn automation)
+- [x] **TREV-16**: Woodpecker review (cold email)
+- [x] **TREV-17**: HubSpot review (CRM for GTM Engineers)
+- [x] **TREV-18**: Salesforce review (CRM for GTM Engineers)
+- [x] **TREV-19**: Pipedrive review (SMB CRM)
+- [x] **TREV-20**: Close review (sales-focused CRM)
+- [x] **TREV-21**: Attio review (modern CRM)
 - [ ] **TREV-22**: Make review (workflow automation)
 - [ ] **TREV-23**: n8n review (self-hosted automation)
 - [ ] **TREV-24**: Zapier review (no-code automation)
@@ -147,27 +147,27 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TREV-01 | Phase 8 | Pending |
-| TREV-02 | Phase 8 | Pending |
-| TREV-03 | Phase 8 | Pending |
-| TREV-04 | Phase 8 | Pending |
-| TREV-05 | Phase 8 | Pending |
-| TREV-06 | Phase 8 | Pending |
-| TREV-07 | Phase 8 | Pending |
-| TREV-08 | Phase 8 | Pending |
-| TREV-09 | Phase 8 | Pending |
-| TREV-10 | Phase 8 | Pending |
-| TREV-11 | Phase 8 | Pending |
-| TREV-12 | Phase 8 | Pending |
-| TREV-13 | Phase 8 | Pending |
-| TREV-14 | Phase 8 | Pending |
-| TREV-15 | Phase 8 | Pending |
-| TREV-16 | Phase 8 | Pending |
-| TREV-17 | Phase 8 | Pending |
-| TREV-18 | Phase 8 | Pending |
-| TREV-19 | Phase 8 | Pending |
-| TREV-20 | Phase 8 | Pending |
-| TREV-21 | Phase 8 | Pending |
+| TREV-01 | Phase 8 | Complete |
+| TREV-02 | Phase 8 | Complete |
+| TREV-03 | Phase 8 | Complete |
+| TREV-04 | Phase 8 | Complete |
+| TREV-05 | Phase 8 | Complete |
+| TREV-06 | Phase 8 | Complete |
+| TREV-07 | Phase 8 | Complete |
+| TREV-08 | Phase 8 | Complete |
+| TREV-09 | Phase 8 | Complete |
+| TREV-10 | Phase 8 | Complete |
+| TREV-11 | Phase 8 | Complete |
+| TREV-12 | Phase 8 | Complete |
+| TREV-13 | Phase 8 | Complete |
+| TREV-14 | Phase 8 | Complete |
+| TREV-15 | Phase 8 | Complete |
+| TREV-16 | Phase 8 | Complete |
+| TREV-17 | Phase 8 | Complete |
+| TREV-18 | Phase 8 | Complete |
+| TREV-19 | Phase 8 | Complete |
+| TREV-20 | Phase 8 | Complete |
+| TREV-21 | Phase 8 | Complete |
 | TREV-22 | Phase 8 | Pending |
 | TREV-23 | Phase 8 | Pending |
 | TREV-24 | Phase 8 | Pending |

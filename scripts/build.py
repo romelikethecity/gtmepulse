@@ -9095,7 +9095,7 @@ BLOG_PAGES = [
     {"slug": "mid-size-pay", "title": "Why Mid-Size Companies Pay GTMEs the Most", "description": "Companies with 51-500 employees pay GTM Engineers more than startups or enterprises. The data and the reasons.", "emoji": "company", "stat": "51-500 Sweet Spot"},
 ]
 
-BUILT_BLOG_SLUGS = {"equity-gap", "coding-premium", "work-hours", "gen-z-function", "clay-love-hate", "latam-apac-agency", "title-dilution", "pre-seed-equity", "self-taught", "lead-gen-myth", "all-in-one-tool"}
+BUILT_BLOG_SLUGS = {"equity-gap", "coding-premium", "work-hours", "gen-z-function", "clay-love-hate", "latam-apac-agency", "title-dilution", "pre-seed-equity", "self-taught", "lead-gen-myth", "all-in-one-tool", "bonus-data", "december-explosion", "mid-size-pay"}
 
 
 def blog_related_links(current_slug):
@@ -10320,6 +10320,298 @@ def build_blog_all_in_one_tool():
     print(f"  Built: blog/all-in-one-tool/index.html")
 
 
+def build_blog_bonus_data():
+    """BLOG-12: GTM Engineer Bonus Data: 51% Get One."""
+    title = "GTM Engineer Bonus Data: 51% Get a Bonus"
+    description = (
+        "Just over half of GTM Engineers receive a bonus. Median"
+        " bonus ranges, who pays them, and when to negotiate bonus vs base."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Blog", "/blog/"), ("Bonus Data", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Blog</div>
+        <h1>GTM Engineer Bonus Data: 51% Get One</h1>
+        <p>Half the profession gets a bonus. The other half doesn't. The structure, size, and negotiation dynamics vary wildly by company type and stage.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">51%</span>
+        <span class="stat-label">Receive Bonus</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">10-25%</span>
+        <span class="stat-label">Typical Bonus Range</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">56%</span>
+        <span class="stat-label">10-25% of Base</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Survey Respondents</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The 51% Split</h2>
+    <p>The State of GTM Engineering Report 2026 found that 51% of GTM Engineers receive some form of bonus compensation. The other 49% receive base salary only (with or without equity). This near-even split makes bonus compensation one of the most variable elements of GTM Engineer pay packages.</p>
+    <p>For context, software engineers at comparable companies receive bonuses at roughly the same rate (50-55% depending on the survey). Sales roles are higher (70-80%, driven by commission structures). Operations roles are lower (30-40%). GTM Engineers sit right in the middle, which reflects the role's hybrid nature: part engineering, part revenue operations, part sales support.</p>
+
+    <h2>Bonus Size Distribution</h2>
+    <p>Among the 51% who receive bonuses, the distribution skews toward modest percentages of base salary:</p>
+    <p><strong>5-10% of base (24% of bonus recipients):</strong> The most common bonus structure at growth-stage and enterprise companies. A $130K base with a 7.5% bonus target yields $9,750 annual bonus. These are typically tied to company-wide metrics (revenue targets, customer retention) rather than individual GTM Engineering performance.</p>
+    <p><strong>10-25% of base (56% of bonus recipients):</strong> The sweet spot for in-house GTM Engineers at Series A through Series C companies. A $130K base with a 15% bonus target yields $19,500. These bonuses are more commonly tied to individual performance metrics: pipeline generated, leads delivered, system uptime, or project completion milestones.</p>
+    <p><strong>25-50% of base (15% of bonus recipients):</strong> Found primarily at companies that classify GTM Engineers under sales comp plans. A $130K base with a 35% bonus target yields $45,500. At this level, the bonus is significant enough to influence total comp. These roles tend to have higher variable pay and lower base relative to purely engineering-classified GTM roles.</p>
+    <p><strong>50%+ of base (5% of bonus recipients):</strong> Rare, and almost exclusively at companies where the GTM Engineer role is deeply embedded in the sales org. These comp structures look more like AE (Account Executive) comp plans with a GTM Engineering title. The base is typically lower ($90K-$110K), with an aggressive bonus bringing total on-target earnings to $150K-$180K.</p>
+
+    <h2>Who Pays Bonuses (and Who Doesn't)</h2>
+    <p>Company stage is the strongest predictor of bonus availability. The pattern mirrors how startups build comp frameworks as they grow.</p>
+    <p><strong>Pre-seed and seed companies (35% pay bonuses):</strong> Most early-stage companies don't have formal bonus structures. Compensation is base salary plus equity, with occasional spot bonuses for major milestones (launching the first outbound motion, hitting a pipeline target, shipping a critical integration). These spot bonuses are discretionary and irregular, ranging from $2K-$10K.</p>
+    <p><strong>Series A and B companies (55% pay bonuses):</strong> This is where formal bonus structures emerge. HR teams build comp frameworks, establish targets, and tie bonuses to quarterly or annual goals. The challenge at this stage: figuring out what metrics to tie GTM Engineer bonuses to. Pipeline generated? System uptime? Revenue influenced? The lack of standardized GTM Engineering metrics means bonus criteria vary widely.</p>
+    <p><strong>Growth and enterprise companies (65% pay bonuses):</strong> Established bonus programs with clear targets, consistent payout schedules, and HR-managed processes. GTM Engineers at these companies are slotted into existing comp bands. The bonus exists because the comp framework includes bonuses for the role's band, not because anyone specifically designed a GTM Engineering incentive plan.</p>
+
+    <h2>Agency Bonuses: A Different Game</h2>
+    <p>Agency GTM Engineers (30% of survey respondents) have a fundamentally different bonus dynamic. Agencies structure compensation around project delivery, client retention, and billable utilization.</p>
+    <p>Common agency bonus structures include:</p>
+    <p><strong>Client retention bonuses:</strong> 5-10% of the annual contract value for retaining clients beyond their initial engagement. If a $5K/month client stays for 12 months, the GTM Engineer who manages that account might receive a $3K-$6K retention bonus.</p>
+    <p><strong>New business bonuses:</strong> Some agencies pay GTM Engineers for bringing in new clients, typically 5-15% of the first month's contract value. This incentivizes GTM Engineers to turn their own outbound skills inward, prospecting for agency clients.</p>
+    <p><strong>Performance bonuses:</strong> Tied to client outcomes. If the GTM Engineer's work generates measurable pipeline for the client (e.g., 500 qualified leads in a month), the agency pays a bonus based on the result. These are rarer because attribution is complex, but agencies that implement them report higher practitioner engagement.</p>
+    <p>Solo agency operators don't receive "bonuses" in the traditional sense. Their compensation is their profit margin. A solo practitioner billing $8K/month with $500/month in tool costs has an effective bonus structure built into every invoice: the margin IS the bonus. Some solo operators pay themselves a base salary and treat profit above that as a bonus pool, but the distinction is psychological rather than structural.</p>
+
+    <h2>When to Negotiate for Bonus vs Higher Base</h2>
+    <p>The bonus vs base negotiation is one of the most important comp decisions a GTM Engineer can make. The right choice depends on your risk tolerance and the company's bonus reliability.</p>
+    <p><strong>Choose higher base when:</strong> The company is early-stage with no bonus track record. Bonus targets are tied to company-wide metrics you can't influence individually. The bonus structure is new and unproven. You have high fixed costs (mortgage, student loans) that require predictable income. In these cases, a higher guaranteed base is worth more than a larger potential bonus that may or may not materialize.</p>
+    <p><strong>Choose bonus potential when:</strong> The company has a history of paying bonuses at or above target. Bonus metrics are tied to individual GTM Engineering output you can control (pipeline generated, leads delivered, projects shipped). The bonus structure is transparent, with clear targets and payout schedules. You're confident in your ability to hit targets and want upside above market base rates.</p>
+    <p>A practical heuristic: if the company can't tell you what percentage of employees hit their bonus targets last year, the bonus is aspirational, not real. Ask the question. If the answer is vague, negotiate for base instead.</p>
+
+    <h2>Total Comp: Bonus vs No-Bonus Packages</h2>
+    <p>The total compensation comparison between bonus and no-bonus packages reveals an important pattern: companies that pay bonuses don't necessarily pay more in total.</p>
+    <p>Average total comp for GTM Engineers WITH bonuses: $145K-$165K (base + bonus). Average total comp for GTM Engineers WITHOUT bonuses: $135K-$155K (base only, but often with equity). The gap is $10K-$15K in favor of bonus recipients, but when you factor in equity value (for those who have it), the gap narrows or disappears.</p>
+    <p>Companies that don't pay bonuses often compensate with higher base salaries or larger equity grants. They've made a deliberate comp philosophy choice: "we pay you well in guaranteed compensation and let you share in company upside through equity rather than variable cash." This approach appeals to practitioners who prefer predictability.</p>
+    <p>Companies that pay bonuses have made the opposite choice: "we set a market-rate base and let you earn above-market total comp through performance." This appeals to practitioners who are confident in their ability to deliver measurable results and want financial upside tied to their individual contribution.</p>
+    <p>Neither structure is objectively better. The right choice depends on your personal financial situation, risk tolerance, and confidence in hitting targets. But knowing the total comp comparison helps you evaluate offers accurately instead of being swayed by headline bonus percentages.</p>
+    <p>For the full bonus analysis, see <a href="/salary/bonus/">bonus data</a>. For equity compensation, see <a href="/salary/equity/">equity analysis</a>. For the in-house vs agency comp comparison, see <a href="/comparisons/in-house-vs-agency/">in-house vs agency</a>.</p>
+
+{{blog_related_links("bonus-data")}}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer compensation data and negotiation insights.")
+    extra_head = get_breadcrumb_schema(crumbs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/blog/bonus-data/",
+        body_content=body, active_path="/blog/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("blog/bonus-data/index.html", page)
+    print(f"  Built: blog/bonus-data/index.html")
+
+
+def build_blog_december_explosion():
+    """BLOG-13: December 2025: The Month GTM Engineering Exploded."""
+    title = "December 2025: When GTM Engineering Exploded"
+    description = (
+        "624 job postings in a single month. December 2025 marked the"
+        " inflection point where GTM Engineering went mainstream."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Blog", "/blog/"), ("December Explosion", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Blog</div>
+        <h1>December 2025: The Month GTM Engineering Exploded</h1>
+        <p>From 63 postings in January 2024 to 624 in December 2025. One month tells the story of a profession crossing from niche to mainstream.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">624</span>
+        <span class="stat-label">Dec 2025 Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3,342</span>
+        <span class="stat-label">Total 2025 Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">63</span>
+        <span class="stat-label">Jan 2024 Postings</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">205%</span>
+        <span class="stat-label">YoY Growth</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The December Spike</h2>
+    <p>In December 2025, companies posted 624 GTM Engineer job listings. In a single month. To put that in perspective: the entire first quarter of 2024 produced fewer postings than that one month. January 2024 had 63 postings. December 2025 had nearly 10x that number.</p>
+    <p>December is historically a slow hiring month in tech. Companies freeze headcount. Recruiters take PTO. Budget cycles close. The fact that GTM Engineer postings peaked in December, against the usual seasonal pattern, signals something structural rather than cyclical. Companies weren't hiring GTM Engineers because they had leftover budget. They were hiring because they couldn't afford not to.</p>
+
+    <h2>The Month-by-Month Build</h2>
+    <p>The December spike didn't come from nowhere. It was the culmination of a 24-month acceleration curve that started in early 2024.</p>
+    <p><strong>Q1 2024 (Jan-Mar): 63-95 postings/month.</strong> The starting point. GTM Engineering was a niche role. Most postings came from Clay-adjacent startups and agencies. The role was recognizable to people in the Clay ecosystem but largely unknown outside it. Hiring managers who wanted a "GTM Engineer" had to explain the role to their HR teams, which slowed the posting process.</p>
+    <p><strong>Q2 2024 (Apr-Jun): 120-180 postings/month.</strong> The first acceleration. LinkedIn content about GTM Engineering started gaining traction. Several high-profile practitioners (Eric Nowoslawski, Nathan Lippi) posted about their workflows, generating thousands of impressions. Companies outside the Clay ecosystem started posting GTM Engineer roles. The title appeared in job boards beyond LinkedIn for the first time.</p>
+    <p><strong>Q3 2024 (Jul-Sep): 200-280 postings/month.</strong> Sustained growth. Conference mentions increased. GTM Engineer content became a regular feature on B2B SaaS podcasts. The first agency model scaled: companies started outsourcing GTM Engineering to agencies, creating both supply (agency practitioners) and demand (agency clients needing GTM Engineering services). Compensation data started appearing, which gave candidates benchmarks to negotiate with.</p>
+    <p><strong>Q4 2024 (Oct-Dec): 280-380 postings/month.</strong> Year-end push. Companies that had been experimenting with GTM Engineers in H1 converted those experiments into permanent headcount. Budget planning for 2025 included GTM Engineering roles for the first time at many companies. The Q4 numbers were 4-6x Q1, setting the stage for 2025.</p>
+    <p><strong>Q1 2025 (Jan-Mar): 350-420 postings/month.</strong> New year budgets activated. Companies that planned GTM Engineer hires in Q4 2024 started posting in January. The post-holiday hiring surge was stronger than expected. Remote GTM Engineer roles became common, expanding the candidate pool geographically.</p>
+    <p><strong>Q2 2025 (Apr-Jun): 420-500 postings/month.</strong> Steady acceleration. AI tool adoption (Claude, ChatGPT integration into workflows) made GTM Engineers more productive, which made the ROI case for hiring them stronger. Companies that hired one GTM Engineer and saw results started hiring second and third. The role moved from "experimental" to "core team" at mid-market companies.</p>
+    <p><strong>Q3 2025 (Jul-Sep): 480-550 postings/month.</strong> The growth rate held. What changed was the quality of postings. Companies started writing more specific job descriptions, listing Clay, Python, API experience, and specific CRM skills. The vague "GTM hire" postings gave way to detailed technical requirements. This maturation signal indicated that companies understood what they were hiring for, not just the title.</p>
+    <p><strong>Q4 2025 (Oct-Dec): 550-624 postings/month.</strong> The spike. October was strong at 550+. November held at 580+. December hit 624. The Q4 2025 numbers exceeded the entire year of 2024 combined. Something fundamental shifted.</p>
+
+    <h2>What Caused the Explosion</h2>
+    <p>No single factor explains 624 postings in December 2025. Several forces converged.</p>
+    <p><strong>Clay's growth trajectory.</strong> Clay's user base expanded significantly in H2 2025. More Clay users meant more companies with GTM automation infrastructure, which meant more demand for people to build and maintain that infrastructure. Clay didn't create the GTM Engineer role, but it created the tooling ecosystem that makes the role possible. As Clay grew, the role grew with it.</p>
+    <p><strong>AI tool adoption.</strong> LLM APIs (Claude, ChatGPT) became standard components of GTM workflows in 2025. AI-powered lead scoring, email personalization, and data classification weren't novelties anymore. They were production features that companies expected GTM Engineers to build and maintain. The AI layer added complexity to the stack, which increased the technical bar for the role and the demand for people who could meet it.</p>
+    <p><strong>Proven ROI at early adopters.</strong> Companies that hired GTM Engineers in 2023-2024 had 12-24 months of performance data. The numbers were compelling: automated pipeline generation, 3-5x outbound volume with the same headcount, measurable conversion improvements from better data enrichment. These results got shared in board meetings, which got shared with portfolio companies, which created a cascade of hiring decisions across the venture ecosystem.</p>
+    <p><strong>Budget cycle timing.</strong> Many companies operate on calendar-year budgets. December postings reflect Q1 hiring plans. Companies that approved GTM Engineering headcount in November board meetings posted the roles in December to start interviewing in January. The December spike is partly a leading indicator of Q1 2026 hiring intent.</p>
+
+    <h2>Is It Sustainable?</h2>
+    <p>The question everyone in GTM Engineering is asking: is 624 postings/month a peak or a plateau?</p>
+    <p>Comparison to other role growth curves offers some guidance. "Data Engineer" grew from niche to mainstream between 2014-2018, with job postings roughly tripling each year before stabilizing. "DevOps Engineer" followed a similar pattern from 2012-2016. Both roles eventually plateaued at a steady-state level much higher than their initial growth phase.</p>
+    <p>GTM Engineering is on a steeper curve than either precedent. 205% YoY growth exceeds what Data Engineering or DevOps saw during their equivalent growth phases. This could mean a faster maturation cycle (faster to plateau), or it could mean the total addressable market is larger (more companies need GTM Engineers than needed Data Engineers at the same stage).</p>
+    <p>The bull case: every B2B SaaS company with outbound sales motion eventually hires a GTM Engineer. That's thousands of companies. At current hiring rates, the market is still in early innings. Postings could continue growing to 800-1,000/month before plateauing.</p>
+    <p>The bear case: AI SDR tools improve rapidly, automating the tactical work that accounts for 40-50% of junior GTM Engineer workloads. Companies still need senior GTM Engineers for architecture and strategy, but demand for junior/mid roles softens. Postings plateau at current levels or dip in 2027 as AI absorbs the entry-level work.</p>
+    <p>The most likely outcome is somewhere between. Growth continues at a decelerating rate (150-180% in 2026 instead of 205%), with the mix shifting toward senior roles. The total number of GTM Engineers employed keeps rising, but the growth rate normalizes.</p>
+
+    <h2>What This Means for Compensation</h2>
+    <p>Rapid job posting growth has two competing effects on compensation.</p>
+    <p><strong>Demand-side pressure (upward):</strong> More companies competing for the same talent pool pushes salaries up. The December spike means more companies entering the market for GTM Engineers in Q1 2026. If supply (qualified candidates) doesn't grow as fast as demand (open roles), compensation rises. This is what happened in 2024-2025, with median salaries climbing from $115K to $132K.</p>
+    <p><strong>Supply-side growth (downward):</strong> The self-taught pipeline is producing new GTM Engineers rapidly. A 3-6 month learning curve means today's curious observer is next quarter's job candidate. As more people enter the field, the supply of junior GTM Engineers increases, which can compress entry-level salaries. The $45K coding premium means technical GTM Engineers are somewhat insulated from this effect, but non-technical practitioners are vulnerable.</p>
+    <p>The net effect depends on which force grows faster. In 2025, demand outpaced supply, and salaries rose. In 2026, the balance could shift. The December spike represents a lot of new demand, but the growing visibility of the role is also attracting a lot of new supply. Watch the salary data in Q2-Q3 2026 for the first signs of directional change.</p>
+
+    <h2>December as a Signal</h2>
+    <p>One month doesn't define a profession. But 624 postings in historically the slowest hiring month of the year is a signal that's hard to ignore. GTM Engineering has crossed the threshold from "emerging role" to "established function." Companies aren't experimenting anymore. They're building teams.</p>
+    <p>The practitioners who entered the field in 2023-2024 are in a strong position. They have 1-2 years of experience in a role that most companies are hiring for the first time. They've debugged the integrations, built the pipelines, and learned the edge cases that new hires will spend months discovering. That experience premium is real, and it shows up in the salary data.</p>
+    <p>For monthly trend data, see <a href="/careers/job-market-monthly-trends/">job market monthly trends</a>. For the annual growth story, see <a href="/careers/job-growth/">GTM Engineer job growth</a>. For headcount planning data, see <a href="/benchmarks/headcount-trends/">headcount trends</a>.</p>
+
+{{blog_related_links("december-explosion")}}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer job market data and hiring trends.")
+    extra_head = get_breadcrumb_schema(crumbs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/blog/december-explosion/",
+        body_content=body, active_path="/blog/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("blog/december-explosion/index.html", page)
+    print(f"  Built: blog/december-explosion/index.html")
+
+
+def build_blog_mid_size_pay():
+    """BLOG-14: Why Mid-Size Companies Pay GTMEs the Most."""
+    title = "Why Mid-Size Companies Pay GTMEs the Most"
+    description = (
+        "The 201-1,000 employee range is the compensation sweet spot"
+        " for GTM Engineers. Big enough for budget, small for impact."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Blog", "/blog/"), ("Mid-Size Pay", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Blog</div>
+        <h1>Why Mid-Size Companies Pay GTM Engineers the Most</h1>
+        <p>The 201-1,000 employee range is the Goldilocks zone. Big enough for tooling budgets. Small enough that one GTM Engineer moves the needle.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">201-1K</span>
+        <span class="stat-label">Highest Median Pay</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$145K</span>
+        <span class="stat-label">Median at Mid-Size</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$100K</span>
+        <span class="stat-label">Median at Startups</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">Median at Enterprise</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The Sweet Spot</h2>
+    <p>When you sort GTM Engineer salaries by company size, the highest medians don't come from the biggest companies. They come from the middle. Companies with 201-1,000 employees pay GTM Engineers a median of $145K, higher than both startups (under 50 employees, $100K median) and enterprises (1,000+, $132K median).</p>
+    <p>This pattern defies the assumption that bigger companies pay more. In most professional roles, compensation correlates positively with company size. Larger companies have more revenue, bigger budgets, and more established comp frameworks. But GTM Engineering breaks this pattern, and the reasons reveal something fundamental about how the role creates value.</p>
+
+    <h2>Why Mid-Size Companies Pay More</h2>
+    <p><strong>Budget without bureaucracy.</strong> Companies in the 201-1,000 range have graduated from startup constraints. They've raised Series B or C funding. They have revenue. Their tooling budgets are real: $50K-$200K annually for GTM infrastructure (Clay, CRM, sequencing tools, enrichment providers). But they haven't built the layers of management and process that slow down enterprise hiring. Comp decisions happen faster. Hiring managers have more flexibility. And when they find a good GTM Engineer, they can pay market rate without navigating a corporate comp committee.</p>
+    <p><strong>Individual impact is visible.</strong> At a 300-person company, a single GTM Engineer can own the entire outbound automation infrastructure. They're building the pipeline that sales teams depend on. When that GTM Engineer's work generates $3M in pipeline, everyone in the company knows who did it. That visibility translates to compensation. The GTM Engineer can point to specific revenue impact and negotiate accordingly.</p>
+    <p>Contrast this with a 5,000-person enterprise, where the GTM Engineer is one of 5-10 people on a "Revenue Operations" team. Their individual contribution is diluted across the team's output. Attribution is harder. The case for above-market compensation is weaker because no single person owns the result.</p>
+    <p><strong>Retention pressure.</strong> Mid-size companies compete for GTM Engineering talent against both startups (which offer equity) and enterprises (which offer stability). To win candidates from either end, they need to lead on cash compensation. A 400-person company can't offer the equity upside of a 20-person startup or the job security of a Fortune 500. What they can offer is the highest base salary plus a meaningful bonus, and the data shows that's exactly what they do.</p>
+
+    <h2>Why Startups Pay Less</h2>
+    <p>Startups under 50 employees pay GTM Engineers a $100K median. The gap to mid-size ($145K) is $45K, or roughly 31% less. Three factors drive this.</p>
+    <p><strong>Cash constraints.</strong> Pre-seed and seed companies have limited runway. Every dollar of salary is a dollar off the runway clock. Founders know that a $100K GTM Engineer extends their runway by months compared to a $145K hire. They compensate for the salary gap with equity (when they offer it) and the promise of early-stage career upside.</p>
+    <p><strong>Role ambiguity.</strong> At a 15-person startup, the "GTM Engineer" might also do product marketing, sales demos, and customer success. The role is broader but shallower. Companies pay for the GTM Engineering component of the role, not a full-time specialist salary. As the company grows and the role becomes purely GTM Engineering, the salary adjusts upward.</p>
+    <p><strong>Founder comp anchoring.</strong> At very early-stage companies, the founder's own compensation anchors the pay scale. If the CEO is paying themselves $120K, offering a GTM Engineer $145K creates internal tension. Startup pay scales are compressed, and everyone, including the GTM Engineer, earns below market until the company raises enough capital to reset compensation bands.</p>
+
+    <h2>Why Enterprise Pays Less Than Expected</h2>
+    <p>Enterprise companies (1,000+ employees) pay a $132K median. Higher than startups, but $13K below mid-size companies. This surprises people who assume that big companies always pay more. Three dynamics explain the gap.</p>
+    <p><strong>Team dilution.</strong> Enterprises hire GTM Engineering teams, not individual GTM Engineers. When you have 5-8 GTM Engineers on a team, the per-person compensation reflects the team structure. Junior and mid-level team members pull the median down. A senior GTM Engineer at an enterprise might earn $160K-$180K, but the team median includes the $95K-$110K junior hires.</p>
+    <p><strong>Comp band rigidity.</strong> Enterprise companies have established compensation bands managed by HR teams and comp consultants. "GTM Engineer" gets slotted into a band, typically somewhere between marketing operations and software engineering. The band has a range, and most hires land in the middle of it regardless of individual capability. The flexibility that mid-size companies use to pay above market doesn't exist in enterprise comp frameworks.</p>
+    <p><strong>Role classification.</strong> At enterprise companies, GTM Engineers are often classified under "Revenue Operations" or "Marketing Technology." These classifications carry comp bands designed for ops roles, which pay less than engineering bands. The same person doing the same work at a mid-size company (where they're classified as "Engineering") earns more because the classification triggers a different pay scale.</p>
+
+    <h2>The 51-200 Employee Zone</h2>
+    <p>Companies with 51-200 employees are the transition zone. They pay $115K-$130K median, above startups but below the 201-1,000 sweet spot. This range represents companies in the Series A to early Series B stage: enough funding for competitive salaries, but still building out their GTM infrastructure.</p>
+    <p>The 51-200 zone is where GTM Engineers often get their biggest professional development. The company is small enough that the GTM Engineer owns the entire stack, but large enough that the stack is complex: multiple sales teams, multiple products, multi-channel outbound, and CRM architecture that needs to scale. The salary reflects this complexity without reaching mid-size levels because the company hasn't reached the revenue scale that justifies $145K+ base salaries.</p>
+    <p>For career planning purposes, the 51-200 zone is a strong stepping stone. Build skills and a portfolio at a 100-person company, then move to a 400-person company for the salary jump. The skills transfer directly. The comp jump can be 15-25%.</p>
+
+    <h2>Career Planning with Company Size</h2>
+    <p>The company size salary curve creates a clear career strategy for GTM Engineers who want to maximize compensation.</p>
+    <p><strong>Years 0-2: Join a startup (under 50 employees).</strong> Accept below-market cash ($90K-$110K) in exchange for breadth of experience. Build everything from scratch. Learn by doing. If the equity works out, great. If not, you've built a portfolio of zero-to-one GTM infrastructure that makes you hireable anywhere.</p>
+    <p><strong>Years 2-4: Move to mid-size (201-1,000 employees).</strong> Cash in on your startup experience. The jump from $100K to $140K+ happens here. You're bringing proven skills to a company that has the budget to pay for them and the infrastructure complexity to keep you challenged. This is where compensation peaks for individual contributor GTM Engineers.</p>
+    <p><strong>Years 4+: Choose your path.</strong> Stay at mid-size for consistent high compensation. Move to enterprise for stability and team leadership opportunities (accepting slightly lower individual pay for management trajectory). Or go back to startups with more meaningful equity at the senior level (Lead/Staff GTM Engineer at a promising Series A).</p>
+    <p>The company size data also suggests one clear anti-pattern: staying at a startup beyond year 3 without meaningful equity vesting or a senior title promotion. The salary gap widens over time. A 4-year veteran at a 30-person company earning $110K could move to a 500-person company and earn $150K immediately. The longer you wait, the more cumulative income you leave on the table.</p>
+    <p>For salary data by company size, see <a href="/salary/company-size/">company size salary breakdown</a>. For stage-based comparisons, see <a href="/comparisons/seed-vs-series-b/">Seed vs Series B</a>. For funding stage salaries, see <a href="/salary/funding-stage/">salaries by funding stage</a>.</p>
+
+{{blog_related_links("mid-size-pay")}}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer salary data and career strategy.")
+    extra_head = get_breadcrumb_schema(crumbs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/blog/mid-size-pay/",
+        body_content=body, active_path="/blog/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("blog/mid-size-pay/index.html", page)
+    print(f"  Built: blog/mid-size-pay/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -10507,6 +10799,9 @@ def main():
     build_blog_self_taught()
     build_blog_lead_gen_myth()
     build_blog_all_in_one_tool()
+    build_blog_bonus_data()
+    build_blog_december_explosion()
+    build_blog_mid_size_pay()
 
     print("\n  Building meta files...")
     build_sitemap()

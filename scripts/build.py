@@ -5818,6 +5818,59 @@ TOOL_REVIEWS = [
      "title": "Attio Review 2026: The Modern CRM for Technical Teams",
      "meta_desc": "Attio review for GTM Engineers. Flexible data model, real-time syncing, API-first architecture, and why startups are choosing it over HubSpot.",
      "content_module": "tools_crm", "content_key": "attio"},
+
+    # Workflow Automation (3)
+    {"slug": "make-review", "name": "Make", "category": "Workflow Automation",
+     "url": "https://make.com", "price_range": "$0-$34.12/mo",
+     "title": "Make Review 2026: Visual Automation for GTM Pipelines",
+     "meta_desc": "Make (Integromat) review for GTM Engineers. Visual workflow builder, HTTP module flexibility, per-operation pricing, and how it compares to n8n and Zapier.",
+     "content_module": "tools_automation", "content_key": "make"},
+    {"slug": "n8n-review", "name": "n8n", "category": "Workflow Automation",
+     "url": "https://n8n.io", "price_range": "$0 (self-hosted) - $60/mo",
+     "title": "n8n Review 2026: Self-Hosted Automation at 54% Adoption",
+     "meta_desc": "n8n review for GTM Engineers. 54% adoption, self-hosting economics, code node flexibility, and why it's replacing Zapier in GTM stacks.",
+     "content_module": "tools_automation", "content_key": "n8n"},
+    {"slug": "zapier-review", "name": "Zapier", "category": "Workflow Automation",
+     "url": "https://zapier.com", "price_range": "$0-$103.50/mo",
+     "title": "Zapier Review 2026: 6,000+ Integrations, Per-Task Pricing",
+     "meta_desc": "Zapier review for GTM Engineers. Massive integration library, per-task pricing limits, AI features assessment, and when to switch to n8n or Make.",
+     "content_module": "tools_automation", "content_key": "zapier"},
+
+    # Intent Data (2)
+    {"slug": "6sense-review", "name": "6sense", "category": "Intent Data",
+     "url": "https://6sense.com", "price_range": "Custom ($25K-$100K+/yr)",
+     "title": "6sense Review 2026: Enterprise Intent Data at Enterprise Prices",
+     "meta_desc": "6sense review for GTM Engineers. Account identification, predictive scoring, ABM orchestration, pricing reality, and who can justify the cost.",
+     "content_module": "tools_intent", "content_key": "6sense"},
+    {"slug": "bombora-review", "name": "Bombora", "category": "Intent Data",
+     "url": "https://bombora.com", "price_range": "Custom ($15K-$30K+/yr)",
+     "title": "Bombora Review 2026: B2B Intent Data From the Publisher Co-op",
+     "meta_desc": "Bombora review for GTM Engineers. Company Surge signals, topic taxonomy, integration options, signal noise, and how it compares to 6sense.",
+     "content_module": "tools_intent", "content_key": "bombora"},
+
+    # Analytics (2)
+    {"slug": "segment-review", "name": "Segment", "category": "Analytics",
+     "url": "https://segment.com", "price_range": "$0-$120+/mo",
+     "title": "Segment Review 2026: CDP for Complex Data Stacks",
+     "meta_desc": "Segment review for GTM Engineers. Data routing, identity resolution, MTU pricing, Twilio acquisition impact, and whether you need a CDP.",
+     "content_module": "tools_analytics", "content_key": "segment"},
+    {"slug": "posthog-review", "name": "PostHog", "category": "Analytics",
+     "url": "https://posthog.com", "price_range": "$0 (1M events free)",
+     "title": "PostHog Review 2026: Open-Source Analytics for Technical Teams",
+     "meta_desc": "PostHog review for GTM Engineers. Product analytics, session replay, feature flags, generous free tier, and the developer-friendly alternative to Mixpanel.",
+     "content_module": "tools_analytics", "content_key": "posthog"},
+
+    # LinkedIn & Social (2)
+    {"slug": "linkedin-sales-nav-review", "name": "LinkedIn Sales Navigator", "category": "LinkedIn & Social",
+     "url": "https://linkedin.com/sales", "price_range": "$99.99-$179.99/mo",
+     "title": "Sales Navigator Review 2026: LinkedIn's Toll Road for Prospecting",
+     "meta_desc": "LinkedIn Sales Navigator review for GTM Engineers. Advanced search, InMail decline, CRM sync, pricing frustration, and whether Apollo is enough.",
+     "content_module": "tools_linkedin", "content_key": "linkedin_sales_nav"},
+    {"slug": "phantombuster-review", "name": "PhantomBuster", "category": "LinkedIn & Social",
+     "url": "https://phantombuster.com", "price_range": "$69-$439/mo",
+     "title": "PhantomBuster Review 2026: LinkedIn Automation and Its Risks",
+     "meta_desc": "PhantomBuster review for GTM Engineers. Profile scraping, connection automation, credit economics, LinkedIn ban risks, and ethical considerations.",
+     "content_module": "tools_linkedin", "content_key": "phantombuster"},
 ]
 
 BUILT_REVIEW_SLUGS = {r["slug"] for r in TOOL_REVIEWS}
@@ -5990,17 +6043,30 @@ def tool_related_links(current_slug):
 
 
 def _build_review_index_cards():
-    """Generate card HTML for review pages on the tool index."""
-    cards = ""
+    """Generate card HTML for review pages on the tool index, organized by category."""
+    # Group reviews by category, preserving insertion order
+    from collections import OrderedDict
+    categories = OrderedDict()
     for rev in TOOL_REVIEWS:
         if rev["slug"] in BUILT_REVIEW_SLUGS:
-            cards += f'''<a href="/tools/{rev["slug"]}/" class="salary-index-card">
+            cat = rev["category"]
+            if cat not in categories:
+                categories[cat] = []
+            categories[cat].append(rev)
+
+    html = ""
+    for cat, reviews in categories.items():
+        html += f'<h3 style="margin-top: var(--space-lg); margin-bottom: var(--space-sm); color: var(--gtme-accent);">{cat}</h3>\n'
+        html += '<div class="salary-index-grid">\n'
+        for rev in reviews:
+            html += f'''<a href="/tools/{rev["slug"]}/" class="salary-index-card">
     <h3>{rev["name"]} Review</h3>
     <div class="card-range">{rev["price_range"]}</div>
     <p>{rev["category"]}: honest criticism, pricing breakdown, and GTM Engineer use cases.</p>
 </a>
 '''
-    return cards
+        html += '</div>\n'
+    return html
 
 
 def build_tool_index():
@@ -6108,11 +6174,9 @@ def build_tool_index():
 
     {f'<h2>Coming Soon</h2><div class="salary-index-grid">{coming_soon_cards}</div>' if coming_soon_cards.strip() else ''}
 
-    <h2>Tool Reviews</h2>
-    <p>In-depth, vendor-neutral reviews of every major tool in the GTM Engineer stack. Honest criticism, real pricing, and specific use cases for practitioners.</p>
-    <div class="salary-index-grid">
-        {_build_review_index_cards()}
-    </div>
+    <h2>Tool Reviews (30)</h2>
+    <p>In-depth, vendor-neutral reviews of every major tool in the GTM Engineer stack. Honest criticism, real pricing, and specific use cases for practitioners. Organized by category.</p>
+    {_build_review_index_cards()}
 
     <h2>Tool Spend: Where the Money Goes</h2>
     <p>55% of agency GTM Engineers spend $5,000-$25,000 per year on tools. That's personal or company budget allocated specifically to the GTM stack. The breakdown skews toward data enrichment (Clay credits, Apollo subscriptions) and sequencing tools (Instantly, Smartlead). Workflow automation is the cheapest category for agencies using self-hosted n8n.</p>

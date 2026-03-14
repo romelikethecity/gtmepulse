@@ -28,15 +28,15 @@
 - [x] **TREV-19**: Pipedrive review (SMB CRM)
 - [x] **TREV-20**: Close review (sales-focused CRM)
 - [x] **TREV-21**: Attio review (modern CRM)
-- [ ] **TREV-22**: Make review (workflow automation)
-- [ ] **TREV-23**: n8n review (self-hosted automation)
-- [ ] **TREV-24**: Zapier review (no-code automation)
-- [ ] **TREV-25**: 6sense review (intent data)
-- [ ] **TREV-26**: Bombora review (intent data)
-- [ ] **TREV-27**: LinkedIn Sales Navigator review
-- [ ] **TREV-28**: PhantomBuster review (LinkedIn automation)
-- [ ] **TREV-29**: Segment review (CDP/analytics)
-- [ ] **TREV-30**: PostHog review (product analytics)
+- [x] **TREV-22**: Make review (workflow automation)
+- [x] **TREV-23**: n8n review (self-hosted automation)
+- [x] **TREV-24**: Zapier review (no-code automation)
+- [x] **TREV-25**: 6sense review (intent data)
+- [x] **TREV-26**: Bombora review (intent data)
+- [x] **TREV-27**: LinkedIn Sales Navigator review
+- [x] **TREV-28**: PhantomBuster review (LinkedIn automation)
+- [x] **TREV-29**: Segment review (CDP/analytics)
+- [x] **TREV-30**: PostHog review (product analytics)
 
 ### Tool Category Indexes
 
@@ -168,15 +168,15 @@
 | TREV-19 | Phase 8 | Complete |
 | TREV-20 | Phase 8 | Complete |
 | TREV-21 | Phase 8 | Complete |
-| TREV-22 | Phase 8 | Pending |
-| TREV-23 | Phase 8 | Pending |
-| TREV-24 | Phase 8 | Pending |
-| TREV-25 | Phase 8 | Pending |
-| TREV-26 | Phase 8 | Pending |
-| TREV-27 | Phase 8 | Pending |
-| TREV-28 | Phase 8 | Pending |
-| TREV-29 | Phase 8 | Pending |
-| TREV-30 | Phase 8 | Pending |
+| TREV-22 | Phase 8 | Complete |
+| TREV-23 | Phase 8 | Complete |
+| TREV-24 | Phase 8 | Complete |
+| TREV-25 | Phase 8 | Complete |
+| TREV-26 | Phase 8 | Complete |
+| TREV-27 | Phase 8 | Complete |
+| TREV-28 | Phase 8 | Complete |
+| TREV-29 | Phase 8 | Complete |
+| TREV-30 | Phase 8 | Complete |
 | TCAT-01 | Phase 9 | Pending |
 | TCAT-02 | Phase 9 | Pending |
 | TCAT-03 | Phase 9 | Pending |

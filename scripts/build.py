@@ -12238,6 +12238,226 @@ def glossary_related_links(current_slug):
 </section>'''
 
 
+def build_job_board():
+    """Generate /jobs/index.html with job cards, stats banner, and client-side filters."""
+    print("\n  Building job board...")
+
+    # Load jobs data
+    jobs_path = os.path.join(PROJECT_DIR, "data", "jobs.json")
+    try:
+        with open(jobs_path, "r", encoding="utf-8") as f:
+            jobs = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        jobs = []
+
+    crumbs = [("Home", "/"), ("Jobs", None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    if not jobs:
+        body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Board</div>
+        <h1>GTM Engineer Jobs</h1>
+        <p>Curated GTM Engineering roles from across the industry. Updated from 3,000+ tracked B2B SaaS job postings.</p>
+    </div>
+</section>
+<div class="salary-content">
+    <p>No current postings. Check back soon or subscribe to the newsletter for job alerts.</p>
+</div>
+'''
+        body += newsletter_cta_html("Get GTM Engineer job alerts and salary data delivered weekly.")
+        page = get_page_wrapper(
+            title="GTM Engineer Jobs: Open Roles and Hiring Data",
+            description=pad_description("Browse curated GTM Engineer job postings with salary data, remote filters, and hiring trends. Updated from 3,000+ tracked B2B SaaS positions."),
+            canonical_path="/jobs/",
+            body_content=body,
+            active_path="/jobs/",
+            extra_head=bc_schema,
+            body_class="page-inner",
+        )
+        write_page("jobs/index.html", page)
+        print("  Built: jobs/index.html (no jobs data)")
+        return
+
+    # Compute aggregate stats
+    total_roles = len(jobs)
+    salaries = [j["salary_min"] for j in jobs if j.get("salary_min")] + [j["salary_max"] for j in jobs if j.get("salary_max")]
+    median_salary = sorted(salaries)[len(salaries) // 2] if salaries else 0
+    median_display = f"${median_salary // 1000}K" if median_salary else "N/A"
+    remote_count = sum(1 for j in jobs if j.get("remote"))
+    pct_remote = round(remote_count / total_roles * 100) if total_roles else 0
+    # Top hiring city
+    city_counts = {}
+    for j in jobs:
+        loc = j.get("location", "Unknown")
+        city_counts[loc] = city_counts.get(loc, 0) + 1
+    top_city = max(city_counts, key=city_counts.get) if city_counts else "N/A"
+
+    # Unique locations and seniorities for filters
+    locations = sorted(set(j.get("location", "") for j in jobs))
+    seniorities = ["Junior", "Mid", "Senior", "Lead", "Staff", "Director", "VP"]
+
+    # Stats banner
+    stats_html = f'''<div class="salary-stats" style="max-width: 900px; grid-template-columns: repeat(4, 1fr);">
+    <div class="salary-stat-card">
+        <span class="stat-value">{total_roles}</span>
+        <span class="stat-label">Open Roles</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">{median_display}</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">{pct_remote}%</span>
+        <span class="stat-label">Remote</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">{top_city}</span>
+        <span class="stat-label">Top Hiring City</span>
+    </div>
+</div>'''
+
+    # Location datalist
+    location_options = "\n".join(f'<option value="{loc}">' for loc in locations)
+    seniority_options = '<option value="">All Seniority</option>\n' + "\n".join(
+        f'<option value="{s}">{s}</option>' for s in seniorities
+    )
+
+    # Filter bar
+    filter_html = f'''<div class="job-filters">
+    <select id="filter-seniority" onchange="filterJobs()" aria-label="Filter by seniority">
+        {seniority_options}
+    </select>
+    <input type="text" id="filter-location" list="location-list" placeholder="Filter by location" oninput="filterJobs()" aria-label="Filter by location">
+    <datalist id="location-list">
+        {location_options}
+    </datalist>
+    <label class="job-filter-toggle">
+        <input type="checkbox" id="filter-remote" onchange="filterJobs()"> Remote only
+    </label>
+</div>'''
+
+    # Relative date helper
+    from datetime import datetime as dt
+    today = dt.now()
+
+    def relative_date(date_str):
+        try:
+            d = dt.strptime(date_str, "%Y-%m-%d")
+            delta = (today - d).days
+            if delta == 0:
+                return "Today"
+            if delta == 1:
+                return "1 day ago"
+            if delta < 7:
+                return f"{delta} days ago"
+            if delta < 14:
+                return "1 week ago"
+            if delta < 30:
+                return f"{delta // 7} weeks ago"
+            return f"{delta // 30} months ago"
+        except (ValueError, TypeError):
+            return "Recently"
+
+    # Job cards
+    cards_html = ""
+    for j in jobs:
+        title = j.get("title", "GTM Engineer")
+        company = j.get("company", "")
+        location = j.get("location", "")
+        salary = j.get("salary_display", "Salary not disclosed")
+        remote = j.get("remote", False)
+        seniority = j.get("seniority", "Mid")
+        url = j.get("url", "#")
+        posted = j.get("posted_date", "")
+        source = j.get("source", "")
+
+        remote_badge = '<span class="job-badge-remote">Remote</span>' if remote else ""
+        seniority_badge = f'<span class="job-badge-seniority">{seniority}</span>'
+        source_badge = f'<span class="job-badge-source">{source}</span>' if source else ""
+        posted_relative = relative_date(posted)
+
+        cards_html += f'''<div class="job-card" data-seniority="{seniority}" data-location="{location}" data-remote="{'true' if remote else 'false'}">
+    <div class="job-card-header">
+        <h3 class="job-card-title"><a href="{url}" target="_blank" rel="noopener">{title}</a></h3>
+        <div class="job-card-badges">{seniority_badge} {remote_badge}</div>
+    </div>
+    <div class="job-card-meta">
+        <span class="job-card-company">{company}</span>
+        <span class="job-card-location">{location}</span>
+    </div>
+    <div class="job-card-footer">
+        <span class="job-salary">{salary}</span>
+        <span class="job-card-posted">{posted_relative}</span>
+        {source_badge}
+    </div>
+</div>
+'''
+
+    # Inline filter JS
+    filter_js = '''<script>
+function filterJobs() {
+    var seniority = document.getElementById('filter-seniority').value.toLowerCase();
+    var location = document.getElementById('filter-location').value.toLowerCase();
+    var remoteOnly = document.getElementById('filter-remote').checked;
+    var cards = document.querySelectorAll('.job-card');
+    var visible = 0;
+    cards.forEach(function(card) {
+        var matchSeniority = !seniority || card.getAttribute('data-seniority').toLowerCase() === seniority;
+        var matchLocation = !location || card.getAttribute('data-location').toLowerCase().indexOf(location) !== -1;
+        var matchRemote = !remoteOnly || card.getAttribute('data-remote') === 'true';
+        if (matchSeniority && matchLocation && matchRemote) {
+            card.style.display = '';
+            visible++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    var counter = document.getElementById('job-count');
+    if (counter) counter.textContent = visible + ' role' + (visible !== 1 ? 's' : '');
+}
+</script>'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Job Board</div>
+        <h1>GTM Engineer Jobs</h1>
+        <p>Curated GTM Engineering roles from across the industry. Updated from 3,000+ tracked B2B SaaS job postings.</p>
+    </div>
+</section>
+
+{stats_html}
+
+<div class="salary-content">
+    {filter_html}
+
+    <p id="job-count" style="font-size: var(--gtme-text-sm); color: var(--gtme-text-secondary); margin-bottom: var(--gtme-space-4);">{total_roles} role{"s" if total_roles != 1 else ""}</p>
+
+    <div class="job-card-grid">
+        {cards_html}
+    </div>
+</div>
+
+{filter_js}
+'''
+    body += newsletter_cta_html("Get GTM Engineer job alerts and salary data delivered weekly.")
+
+    page = get_page_wrapper(
+        title="GTM Engineer Jobs: Open Roles and Hiring Data",
+        description=pad_description("Browse curated GTM Engineer job postings with salary data, remote filters, and hiring trends. Updated from 3,000+ tracked B2B SaaS positions."),
+        canonical_path="/jobs/",
+        body_content=body,
+        active_path="/jobs/",
+        extra_head=bc_schema,
+        body_class="page-inner",
+    )
+    write_page("jobs/index.html", page)
+    print(f"  Built: jobs/index.html ({total_roles} jobs)")
+
+
 def build_glossary_index():
     """Generate /glossary/index.html with all 50 terms grouped by category."""
     print("\n  Building glossary index...")
@@ -12506,6 +12726,9 @@ def main():
     build_tool_comparisons()
     build_tool_alternatives()
     build_tool_roundups()
+
+    print("\n  Building job board...")
+    build_job_board()
 
     build_glossary_index()
     build_glossary_terms()

@@ -7,7 +7,7 @@ SITE_URL = "https://gtmepulse.com"
 SITE_TAGLINE = "Career intelligence for GTM Engineers"
 COPYRIGHT_YEAR = "2026"
 CURRENT_YEAR = 2026
-CSS_VERSION = "14"
+CSS_VERSION = "15"
 
 CTA_HREF = "/newsletter/"
 CTA_LABEL = "Get the Weekly Pulse"
@@ -56,6 +56,7 @@ NAV_ITEMS = [
             {"href": "/careers/agency-pricing/", "label": "Agency Pricing"},
         ],
     },
+    {"href": "/jobs/", "label": "Jobs"},
     {"href": "/newsletter/", "label": "Newsletter"},
 ]
 
@@ -82,6 +83,7 @@ FOOTER_COLUMNS = {
         {"href": "/careers/job-growth/", "label": "Job Market Growth"},
         {"href": "/careers/agency-pricing/", "label": "Agency Pricing"},
         {"href": "/glossary/", "label": "Glossary"},
+        {"href": "/jobs/", "label": "Job Board"},
         {"href": "/blog/", "label": "Blog"},
         {"href": "/newsletter/", "label": "Newsletter"},
         {"href": "/about/", "label": "About"},

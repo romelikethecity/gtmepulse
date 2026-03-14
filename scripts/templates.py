@@ -27,7 +27,7 @@ def get_html_head(title, description, canonical_path, extra_head=""):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FF4F1F">
+    <meta name="theme-color" content="#E8A838">
     <title>{full_title}</title>
     <meta name="description" content="{description}">
     <link rel="canonical" href="{canonical}">
@@ -99,7 +99,8 @@ def get_nav_html(active_path=""):
     return f'''<nav class="site-nav">
     <div class="nav-container">
         <a href="/" class="nav-brand">
-            <img src="/assets/logos/logo-horizontal-light.svg" alt="GTME Pulse" class="nav-logo" width="160" height="32">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#E8A838"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
         </a>
         <ul class="nav-links">
             {nav_links}
@@ -283,6 +284,39 @@ def get_faq_schema(qa_pairs):
     return f'    <script type="application/ld+json">{json.dumps(schema)}</script>\n'
 
 
+def get_software_application_schema(tool_data):
+    """Generate SoftwareApplication JSON-LD for tool review pages.
+
+    tool_data keys: name, description, category, url, price_range,
+                    os (default 'Web'), rating (optional dict with value, count).
+    """
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": tool_data["name"],
+        "description": tool_data.get("description", ""),
+        "applicationCategory": tool_data.get("category", "BusinessApplication"),
+        "operatingSystem": tool_data.get("os", "Web"),
+        "url": tool_data.get("url", ""),
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": tool_data.get("price_range", "Contact for pricing"),
+            "description": tool_data.get("price_range", "Contact for pricing"),
+        },
+    }
+    rating = tool_data.get("rating")
+    if rating:
+        schema["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": str(rating["value"]),
+            "ratingCount": str(rating["count"]),
+            "bestRating": "5",
+            "worstRating": "1",
+        }
+    return f'    <script type="application/ld+json">{json.dumps(schema)}</script>\n'
+
+
 # ---------------------------------------------------------------------------
 # Visual Component Helpers
 # ---------------------------------------------------------------------------
@@ -297,6 +331,21 @@ def breadcrumb_html(crumbs):
             parts.append(f'<a href="{url}" class="breadcrumb-link">{label}</a>'
                          f'<span class="breadcrumb-sep">/</span>')
     return f'<nav class="breadcrumb" aria-label="Breadcrumb">{"".join(parts)}</nav>'
+
+
+def faq_html(qa_pairs):
+    """Render visible FAQ section. qa_pairs = [(question, answer), ...]"""
+    items = ""
+    for q, a in qa_pairs:
+        items += f'''<div class="faq-item">
+    <h3 class="faq-question">{q}</h3>
+    <p class="faq-answer">{a}</p>
+</div>
+'''
+    return f'''<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    {items}
+</section>'''
 
 
 def newsletter_cta_html(context=""):

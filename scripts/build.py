@@ -14,7 +14,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from nav_config import *
 import templates
 from templates import (get_page_wrapper, write_page, get_homepage_schema,
-                       get_breadcrumb_schema, get_faq_schema, breadcrumb_html,
+                       get_breadcrumb_schema, get_faq_schema,
+                       get_software_application_schema, breadcrumb_html,
                        newsletter_cta_html, faq_html, ALL_PAGES)
 
 # ---------------------------------------------------------------------------
@@ -5693,7 +5694,273 @@ BUILT_TOOL_SLUGS = {
     "frustrations", "most-exciting", "unify-analysis",
     "annual-spend", "zoominfo-vs-apollo", "tool-wishlist",
     "python", "sql", "javascript", "zapier-vs-n8n", "hubspot-vs-salesforce",
+    # Review pages
+    "clay-review", "apollo-review", "zoominfo-review", "clearbit-review",
+    "fullenrich-review", "lusha-review", "cognism-review", "leadiq-review",
+    "persana-review", "instantly-review", "smartlead-review", "outreach-review",
+    "salesloft-review", "lemlist-review", "heyreach-review", "woodpecker-review",
+    "hubspot-review", "salesforce-review", "pipedrive-review", "close-review",
+    "attio-review",
 }
+
+# ---------------------------------------------------------------------------
+# Tool Reviews
+# ---------------------------------------------------------------------------
+
+TOOL_REVIEWS = [
+    # Data Enrichment & Orchestration (9)
+    {"slug": "clay-review", "name": "Clay", "category": "Data Enrichment & Orchestration",
+     "url": "https://clay.com", "price_range": "$0-$800/mo",
+     "title": "Clay Review 2026: The GTM Engineer's Command Center",
+     "meta_desc": "Honest Clay review for GTM Engineers. 84% adoption rate, pricing breakdown, workflow examples, and where Clay falls short.",
+     "content_module": "tools_enrichment", "content_key": "clay"},
+    {"slug": "apollo-review", "name": "Apollo.io", "category": "Data Enrichment & Orchestration",
+     "url": "https://apollo.io", "price_range": "$0-$149/mo",
+     "title": "Apollo.io Review 2026: Data + Outbound in One Platform",
+     "meta_desc": "Apollo.io review for GTM Engineers. Free tier breakdown, data accuracy reality check, and how it stacks against Clay and ZoomInfo.",
+     "content_module": "tools_enrichment", "content_key": "apollo"},
+    {"slug": "zoominfo-review", "name": "ZoomInfo", "category": "Data Enrichment & Orchestration",
+     "url": "https://zoominfo.com", "price_range": "Custom ($15K-$40K+/yr)",
+     "title": "ZoomInfo Review 2026: Enterprise Data at Enterprise Prices",
+     "meta_desc": "ZoomInfo review for GTM Engineers. Pricing opacity, data quality vs competitors, intent data value, and who should still be paying.",
+     "content_module": "tools_enrichment", "content_key": "zoominfo"},
+    {"slug": "clearbit-review", "name": "Clearbit", "category": "Data Enrichment & Orchestration",
+     "url": "https://clearbit.com", "price_range": "Free (HubSpot-bundled)",
+     "title": "Clearbit Review 2026: Free With HubSpot, But Is It Enough?",
+     "meta_desc": "Clearbit review for GTM Engineers. HubSpot acquisition impact, data coverage gaps, and when you need a standalone enrichment tool.",
+     "content_module": "tools_enrichment", "content_key": "clearbit"},
+    {"slug": "fullenrich-review", "name": "FullEnrich", "category": "Data Enrichment & Orchestration",
+     "url": "https://fullenrich.com", "price_range": "$29-$99/mo",
+     "title": "FullEnrich Review 2026: Waterfall Enrichment Done Right",
+     "meta_desc": "FullEnrich review for GTM Engineers. Triple-verified emails, waterfall enrichment across 15+ providers, and credit economics breakdown.",
+     "content_module": "tools_enrichment", "content_key": "fullenrich"},
+    {"slug": "lusha-review", "name": "Lusha", "category": "Data Enrichment & Orchestration",
+     "url": "https://lusha.com", "price_range": "$0-$79/mo",
+     "title": "Lusha Review 2026: Quick Contact Data for Small Teams",
+     "meta_desc": "Lusha review for GTM Engineers. Chrome extension workflow, credit limits, data accuracy vs Apollo and ZoomInfo, and scaling limitations.",
+     "content_module": "tools_enrichment", "content_key": "lusha"},
+    {"slug": "cognism-review", "name": "Cognism", "category": "Data Enrichment & Orchestration",
+     "url": "https://cognism.com", "price_range": "Custom ($15K-$35K+/yr)",
+     "title": "Cognism Review 2026: The EMEA Data Specialist",
+     "meta_desc": "Cognism review for GTM Engineers. European data coverage, GDPR compliance, Diamond Data phone numbers, and US market gaps.",
+     "content_module": "tools_enrichment", "content_key": "cognism"},
+    {"slug": "leadiq-review", "name": "LeadIQ", "category": "Data Enrichment & Orchestration",
+     "url": "https://leadiq.com", "price_range": "$0-$89/mo",
+     "title": "LeadIQ Review 2026: LinkedIn Prospecting Made Faster",
+     "meta_desc": "LeadIQ review for GTM Engineers. One-click LinkedIn capture, CRM sync speed, data quality vs Lusha, and where it fits in the enrichment stack.",
+     "content_module": "tools_enrichment", "content_key": "leadiq"},
+    {"slug": "persana-review", "name": "Persana AI", "category": "Data Enrichment & Orchestration",
+     "url": "https://persana.ai", "price_range": "$0-$149/mo",
+     "title": "Persana AI Review 2026: AI-Powered Prospecting Newcomer",
+     "meta_desc": "Persana AI review for GTM Engineers. AI enrichment workflows, signal-based prospecting, early-stage limitations, and Clay comparison.",
+     "content_module": "tools_enrichment", "content_key": "persana"},
+
+    # Outbound Sequencing (7)
+    {"slug": "instantly-review", "name": "Instantly", "category": "Outbound Sequencing",
+     "url": "https://instantly.ai", "price_range": "$30-$77.6/mo",
+     "title": "Instantly Review 2026: Cold Email at Scale",
+     "meta_desc": "Instantly review for GTM Engineers. Email warmup, sending limits, deliverability data, and how agencies run 50K+ emails per month.",
+     "content_module": "tools_outbound", "content_key": "instantly"},
+    {"slug": "smartlead-review", "name": "Smartlead", "category": "Outbound Sequencing",
+     "url": "https://smartlead.ai", "price_range": "$39-$94/mo",
+     "title": "Smartlead Review 2026: The Agency Cold Email Workhorse",
+     "meta_desc": "Smartlead review for GTM Engineers. Unlimited mailbox rotation, white-label agency features, API depth, and Instantly comparison.",
+     "content_module": "tools_outbound", "content_key": "smartlead"},
+    {"slug": "outreach-review", "name": "Outreach", "category": "Outbound Sequencing",
+     "url": "https://outreach.io", "price_range": "Custom ($100-$150/seat/mo)",
+     "title": "Outreach Review 2026: Enterprise Sales Engagement",
+     "meta_desc": "Outreach review for GTM Engineers. Sequence automation, CRM integration depth, pricing reality, and when Instantly is the better choice.",
+     "content_module": "tools_outbound", "content_key": "outreach"},
+    {"slug": "salesloft-review", "name": "Salesloft", "category": "Outbound Sequencing",
+     "url": "https://salesloft.com", "price_range": "Custom ($75-$125/seat/mo)",
+     "title": "Salesloft Review 2026: Outreach's Main Competitor",
+     "meta_desc": "Salesloft review for GTM Engineers. Cadence builder, Rhythm AI features, pricing vs Outreach, and the enterprise sales engagement landscape.",
+     "content_module": "tools_outbound", "content_key": "salesloft"},
+    {"slug": "lemlist-review", "name": "Lemlist", "category": "Outbound Sequencing",
+     "url": "https://lemlist.com", "price_range": "$39-$159/mo",
+     "title": "Lemlist Review 2026: Multichannel Outbound for SMBs",
+     "meta_desc": "Lemlist review for GTM Engineers. LinkedIn + email sequences, image personalization, deliverability tools, and scaling limitations.",
+     "content_module": "tools_outbound", "content_key": "lemlist"},
+    {"slug": "heyreach-review", "name": "HeyReach", "category": "Outbound Sequencing",
+     "url": "https://heyreach.io", "price_range": "$79-$499/mo",
+     "title": "HeyReach Review 2026: LinkedIn Automation at Scale",
+     "meta_desc": "HeyReach review for GTM Engineers. Multi-account LinkedIn automation, agency pricing, connection limits, and compliance risks.",
+     "content_module": "tools_outbound", "content_key": "heyreach"},
+    {"slug": "woodpecker-review", "name": "Woodpecker", "category": "Outbound Sequencing",
+     "url": "https://woodpecker.co", "price_range": "$29-$74/mo",
+     "title": "Woodpecker Review 2026: Reliable Cold Email for B2B",
+     "meta_desc": "Woodpecker review for GTM Engineers. Deliverability focus, A/B testing, agency features, and why it's the quiet alternative to Instantly.",
+     "content_module": "tools_outbound", "content_key": "woodpecker"},
+
+    # CRM (5)
+    {"slug": "hubspot-review", "name": "HubSpot CRM", "category": "CRM",
+     "url": "https://hubspot.com", "price_range": "$0-$1,200/mo",
+     "title": "HubSpot CRM Review 2026: The GTM Engineer's Default CRM",
+     "meta_desc": "HubSpot CRM review for GTM Engineers. Free tier power, workflow automation depth, API quality, and where Salesforce still wins.",
+     "content_module": "tools_crm", "content_key": "hubspot"},
+    {"slug": "salesforce-review", "name": "Salesforce", "category": "CRM",
+     "url": "https://salesforce.com", "price_range": "$25-$300/user/mo",
+     "title": "Salesforce Review 2026: Still the Enterprise Standard",
+     "meta_desc": "Salesforce review for GTM Engineers. SOQL power, AppExchange ecosystem, admin overhead, and when HubSpot is the smarter choice.",
+     "content_module": "tools_crm", "content_key": "salesforce"},
+    {"slug": "pipedrive-review", "name": "Pipedrive", "category": "CRM",
+     "url": "https://pipedrive.com", "price_range": "$14-$99/user/mo",
+     "title": "Pipedrive Review 2026: Simple Pipeline CRM for Small Teams",
+     "meta_desc": "Pipedrive review for GTM Engineers. Visual pipeline management, automation limits, API capabilities, and when you outgrow it.",
+     "content_module": "tools_crm", "content_key": "pipedrive"},
+    {"slug": "close-review", "name": "Close CRM", "category": "CRM",
+     "url": "https://close.com", "price_range": "$49-$139/user/mo",
+     "title": "Close CRM Review 2026: Built for Outbound-Heavy Teams",
+     "meta_desc": "Close CRM review for GTM Engineers. Built-in calling, email sequences inside CRM, API quality, and the outbound-first design philosophy.",
+     "content_module": "tools_crm", "content_key": "close"},
+    {"slug": "attio-review", "name": "Attio", "category": "CRM",
+     "url": "https://attio.com", "price_range": "$0-$119/user/mo",
+     "title": "Attio Review 2026: The Modern CRM for Technical Teams",
+     "meta_desc": "Attio review for GTM Engineers. Flexible data model, real-time syncing, API-first architecture, and why startups are choosing it over HubSpot.",
+     "content_module": "tools_crm", "content_key": "attio"},
+]
+
+BUILT_REVIEW_SLUGS = {r["slug"] for r in TOOL_REVIEWS}
+
+# Add review entries to TOOL_PAGES so they appear in index/related links
+for _rev in TOOL_REVIEWS:
+    TOOL_PAGES.append({"slug": _rev["slug"], "title": _rev["title"]})
+
+
+def _load_review_content(module_name, content_key):
+    """Load review content from content/ module. Returns dict with review sections."""
+    import importlib
+    try:
+        mod = importlib.import_module(f"content.{module_name}")
+        return mod.TOOL_REVIEWS.get(content_key, {})
+    except (ImportError, AttributeError) as e:
+        print(f"  WARNING: Could not load content/{module_name}.py key={content_key}: {e}")
+        return {}
+
+
+def review_related_links(current_slug):
+    """Generate related links for review pages, mixing reviews + benchmark pages."""
+    links = [("/tools/", "Tools Index")]
+    for rev in TOOL_REVIEWS:
+        if rev["slug"] != current_slug:
+            links.append((f"/tools/{rev['slug']}/", f"{rev['name']} Review"))
+    # Add benchmark cross-links
+    links.append(("/tools/tech-stack-benchmark/", "Tech Stack Benchmark"))
+    links.append(("/salary/coding-premium/", "Coding Premium: $45K Gap"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>More Tool Reviews</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def generate_tool_review(review):
+    """Generate a single tool review page."""
+    slug = review["slug"]
+    name = review["name"]
+    category = review["category"]
+    title = review["title"]
+    meta_desc = pad_description(review["meta_desc"])
+
+    # Load content from content module
+    content = _load_review_content(review["content_module"], review["content_key"])
+    if not content:
+        print(f"  SKIP (no content): {slug}")
+        return
+
+    overview = content.get("overview", "")
+    gtm_use_cases = content.get("gtm_use_cases", "")
+    pricing = content.get("pricing", "")
+    criticism = content.get("criticism", "")
+    verdict = content.get("verdict", "")
+    faq_pairs = content.get("faq", [])
+
+    # Breadcrumbs
+    crumbs = [("Home", "/"), ("Tools", "/tools/"), (f"{name} Review", None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # SoftwareApplication schema
+    sa_schema = get_software_application_schema({
+        "name": name,
+        "description": meta_desc,
+        "category": category,
+        "url": review["url"],
+        "price_range": review["price_range"],
+    })
+
+    # FAQ schema + visible HTML
+    faq_section = ""
+    faq_schema = ""
+    if faq_pairs:
+        faq_section = faq_html(faq_pairs)
+        faq_schema = get_faq_schema(faq_pairs)
+
+    # Affiliate disclosure for applicable tools
+    affiliate_tools = {"clay", "apollo", "instantly", "smartlead", "lemlist"}
+    affiliate_note = ""
+    if review["content_key"] in affiliate_tools:
+        affiliate_note = '<p class="affiliate-disclosure" style="font-size: 0.85rem; color: var(--gtme-text-tertiary); margin-top: 0.5rem;"><em>This review contains affiliate links. We may earn a commission if you sign up through our links. This does not affect our editorial independence or review scores.</em></p>'
+
+    # Build page body
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">{category}</div>
+        <h1>{name} Review</h1>
+        <p>{review["price_range"]}</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <h2>Overview</h2>
+    {overview}
+
+    <h2>GTM Engineer Use Cases</h2>
+    {gtm_use_cases}
+
+    <h2>Pricing Breakdown</h2>
+    {pricing}
+    {affiliate_note}
+
+    <h2>Honest Criticism</h2>
+    {criticism}
+
+    <h2>Verdict</h2>
+    {verdict}
+
+    {faq_section}
+</div>
+
+{review_related_links(slug)}
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html(f"Get weekly {category} tool intel.")
+
+    extra_head = bc_schema + sa_schema
+    if faq_schema:
+        extra_head += faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=meta_desc, canonical_path=f"/tools/{slug}/",
+        body_content=body, active_path="/tools/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page(f"tools/{slug}/index.html", page)
+    print(f"  Built: tools/{slug}/index.html")
+
+
+def build_tool_reviews():
+    """Build all tool review pages."""
+    print("\n  Building tool reviews...")
+    for review in TOOL_REVIEWS:
+        if review["slug"] in BUILT_REVIEW_SLUGS:
+            generate_tool_review(review)
 
 
 def tool_related_links(current_slug):
@@ -5715,6 +5982,20 @@ def tool_related_links(current_slug):
         {items}
     </div>
 </section>'''
+
+
+def _build_review_index_cards():
+    """Generate card HTML for review pages on the tool index."""
+    cards = ""
+    for rev in TOOL_REVIEWS:
+        if rev["slug"] in BUILT_REVIEW_SLUGS:
+            cards += f'''<a href="/tools/{rev["slug"]}/" class="salary-index-card">
+    <h3>{rev["name"]} Review</h3>
+    <div class="card-range">{rev["price_range"]}</div>
+    <p>{rev["category"]}: honest criticism, pricing breakdown, and GTM Engineer use cases.</p>
+</a>
+'''
+    return cards
 
 
 def build_tool_index():
@@ -5821,6 +6102,12 @@ def build_tool_index():
     </div>
 
     {f'<h2>Coming Soon</h2><div class="salary-index-grid">{coming_soon_cards}</div>' if coming_soon_cards.strip() else ''}
+
+    <h2>Tool Reviews</h2>
+    <p>In-depth, vendor-neutral reviews of every major tool in the GTM Engineer stack. Honest criticism, real pricing, and specific use cases for practitioners.</p>
+    <div class="salary-index-grid">
+        {_build_review_index_cards()}
+    </div>
 
     <h2>Tool Spend: Where the Money Goes</h2>
     <p>55% of agency GTM Engineers spend $5,000-$25,000 per year on tools. That's personal or company budget allocated specifically to the GTM stack. The breakdown skews toward data enrichment (Clay credits, Apollo subscriptions) and sequencing tools (Instantly, Smartlead). Workflow automation is the cheapest category for agencies using self-hosted n8n.</p>
@@ -10993,6 +11280,7 @@ def main():
     build_tool_python()
     build_tool_sql()
     build_tool_javascript()
+    build_tool_reviews()
 
     print("\n  Building benchmark pages...")
     build_bench_index()

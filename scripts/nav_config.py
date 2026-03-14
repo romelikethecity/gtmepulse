@@ -36,6 +36,7 @@ NAV_ITEMS = [
             {"href": "/tools/tech-stack-benchmark/", "label": "Tech Stack Benchmark"},
             {"href": "/tools/clay/", "label": "Clay: 84% Adoption"},
             {"href": "/tools/frustrations/", "label": "Tool Frustrations"},
+            {"href": "/tools/clay-review/", "label": "Tool Reviews"},
         ],
     },
     {"href": "/benchmarks/", "label": "Benchmarks"},

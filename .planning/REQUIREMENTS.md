@@ -117,13 +117,13 @@
 - [x] **BLOG-05**: "Why Clay Is Both the Most Loved and Most Hated GTM Tool" article
 - [x] **BLOG-06**: "LATAM and APAC Are Agency-Driven GTM Markets" article
 - [x] **BLOG-07**: "The GTM Engineer Title Is Getting Watered Down" article
-- [ ] **BLOG-08**: "Pre-Seed GTM Engineers Get the Best Equity Deals" article
-- [ ] **BLOG-09**: "Most GTM Engineers Are Self-Taught" article (121/228)
-- [ ] **BLOG-10**: "91% of GTM Engineers Do Lead Gen (But That's Not All)" article
-- [ ] **BLOG-11**: "The All-in-One Outbound Tool Doesn't Exist Yet" article
-- [ ] **BLOG-12**: "GTM Engineer Bonus Data: 51% Get One" article
-- [ ] **BLOG-13**: "December 2025: The Month GTM Engineering Exploded" article
-- [ ] **BLOG-14**: "Why Mid-Size Companies Pay GTMEs the Most" article
+- [x] **BLOG-08**: "Pre-Seed GTM Engineers Get the Best Equity Deals" article
+- [x] **BLOG-09**: "Most GTM Engineers Are Self-Taught" article (121/228)
+- [x] **BLOG-10**: "91% of GTM Engineers Do Lead Gen (But That's Not All)" article
+- [x] **BLOG-11**: "The All-in-One Outbound Tool Doesn't Exist Yet" article
+- [x] **BLOG-12**: "GTM Engineer Bonus Data: 51% Get One" article
+- [x] **BLOG-13**: "December 2025: The Month GTM Engineering Exploded" article
+- [x] **BLOG-14**: "Why Mid-Size Companies Pay GTMEs the Most" article
 
 ### Content Quality & SEO
 
@@ -244,13 +244,13 @@
 | BLOG-05 | Phase 7 | Complete |
 | BLOG-06 | Phase 7 | Complete |
 | BLOG-07 | Phase 7 | Complete |
-| BLOG-08 | Phase 7 | Pending |
-| BLOG-09 | Phase 7 | Pending |
-| BLOG-10 | Phase 7 | Pending |
-| BLOG-11 | Phase 7 | Pending |
-| BLOG-12 | Phase 7 | Pending |
-| BLOG-13 | Phase 7 | Pending |
-| BLOG-14 | Phase 7 | Pending |
+| BLOG-08 | Phase 7 | Complete |
+| BLOG-09 | Phase 7 | Complete |
+| BLOG-10 | Phase 7 | Complete |
+| BLOG-11 | Phase 7 | Complete |
+| BLOG-12 | Phase 7 | Complete |
+| BLOG-13 | Phase 7 | Complete |
+| BLOG-14 | Phase 7 | Complete |
 | QUAL2-01 | Phase 7 | Pending |
 | QUAL2-02 | Phase 7 | Pending |
 | QUAL2-03 | Phase 7 | Pending |

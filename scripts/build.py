@@ -8371,6 +8371,420 @@ def build_bench_future_predictions():
 
 
 # ---------------------------------------------------------------------------
+# Comparison Pages
+# ---------------------------------------------------------------------------
+
+COMP_PAGES = [
+    {"slug": "engineer-vs-operator", "title": "GTM Engineer vs GTM Operator: The $45K Difference", "description": "Salary, skills, tools, and career trajectory compared between GTM Engineers and GTM Operators.", "emoji": "versus", "stat": "$45K Gap"},
+    {"slug": "in-house-vs-agency", "title": "In-House vs Agency GTM Engineering Compared", "description": "56% in-house vs 30% agency split. Compensation, tools, work-life, and career paths side by side.", "emoji": "office", "stat": "56% vs 30%"},
+    {"slug": "engineer-vs-ai-sdr", "title": "GTM Engineer vs AI SDR: Replacement or Teammate?", "description": "AI SDRs automate outreach. GTM Engineers build the systems. Where they overlap and where they diverge.", "emoji": "robot", "stat": "71% AI Adoption"},
+    {"slug": "us-vs-europe-vs-apac", "title": "US vs Europe vs APAC GTM Engineer Salaries", "description": "US $135K median vs non-US $75K. Regional salary breakdown, agency fees, and growth markets.", "emoji": "globe", "stat": "1.8x Premium"},
+    {"slug": "seed-vs-series-b", "title": "Seed Stage vs Series B GTM Compensation", "description": "Series B leads at $145K median. Seed offers equity upside. Risk vs reward at every company stage.", "emoji": "growth", "stat": "$145K Series B"},
+    {"slug": "technical-vs-low-code", "title": "Technical vs Low-Code GTM Operators Compared", "description": "Python and SQL vs Clay and Zapier. The $45K salary premium for coding skills, career paths, and tools.", "emoji": "code", "stat": "$45K Premium"},
+]
+
+
+def comparison_related_links(current_slug):
+    """Generate related comparison page links plus cross-section links."""
+    links = [("/comparisons/", "Comparisons Index")]
+    for page in COMP_PAGES:
+        if page["slug"] != current_slug:
+            links.append((f"/comparisons/{page['slug']}/", page["title"]))
+    links.append(("/salary/", "Salary Data Index"))
+    links.append(("/careers/", "Career Guides"))
+    links.append(("/tools/", "Tools Index"))
+    links.append(("/benchmarks/", "Industry Benchmarks"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>Related Comparisons</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_comp_index():
+    """Comparisons index page at /comparisons/ with card grid."""
+    title = "GTM Engineering Comparisons and Analysis"
+    description = (
+        "Side-by-side comparisons for GTM Engineers. Engineer vs operator,"
+        " in-house vs agency, technical vs low-code, regional salaries."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Comparisons", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    card_data = [
+        ("engineer-vs-operator", "Engineer vs Operator", "The $45K coding premium separates two career tracks. Side-by-side skills, tools, salaries, and trajectory.", "$45K Gap"),
+        ("in-house-vs-agency", "In-House vs Agency", "56% work in-house. 30% run agencies or freelance. Compensation, flexibility, and long-term earnings compared.", "56% vs 30%"),
+        ("engineer-vs-ai-sdr", "GTM Engineer vs AI SDR", "AI SDRs handle outreach volume. GTM Engineers design the systems that make AI SDRs effective. Teammate, not replacement.", "71% AI Tools"),
+        ("us-vs-europe-vs-apac", "US vs Europe vs APAC", "US GTM Engineers earn 1.8x more than global peers. Regional salary data, agency fees, and growth markets.", "1.8x Premium"),
+        ("seed-vs-series-b", "Seed vs Series B Comp", "Series B and D+ lead at $145K median. Seed offers equity but lower cash. Risk vs reward at each stage.", "$145K Median"),
+        ("technical-vs-low-code", "Technical vs Low-Code", "Python/SQL vs Clay/Zapier. The bimodal coding distribution creates a $45K salary premium for technical skills.", "$45K Premium"),
+    ]
+
+    cards_html = ""
+    for slug, card_title, desc, stat in card_data:
+        cards_html += f'''<a href="/comparisons/{slug}/" class="salary-index-card">
+    <h3>{card_title}</h3>
+    <div class="card-range">{stat}</div>
+    <p>{desc}</p>
+</a>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Comparisons</div>
+        <h1>GTM Engineering Comparisons</h1>
+        <p>Data-backed, side-by-side analysis for career decisions, hiring frameworks, and compensation negotiations. Every comparison draws from the State of GTM Engineering Report 2026 (n=228) and 3,342 job postings.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">6</span>
+        <span class="stat-label">Comparisons</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Survey Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Coding Premium</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3,342</span>
+        <span class="stat-label">Job Postings</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Why Comparisons Matter for GTM Engineers</h2>
+    <p>The GTM Engineer role is only three years old. No HR department has a playbook for it. No career counselor studied it. When you're deciding between building an agency or going in-house, learning Python or doubling down on Clay, taking a seed-stage equity bet or a Series B salary bump, you're making the decision with incomplete data.</p>
+    <p>These comparisons fix that. Each one takes a specific career decision and maps it against real survey data from 228 practitioners and salary information from 3,342 job postings. No hedging, no "it depends" conclusions. We pick sides where the data supports it and flag trade-offs where it doesn't.</p>
+
+    <h2>How We Built These</h2>
+    <p>Every comparison follows the same structure: a central thesis backed by specific numbers, a side-by-side breakdown of key dimensions (salary, tools, skills, trajectory), an FAQ section addressing common questions, and cross-links to the underlying data pages.</p>
+    <p>The data comes from OneGTM's State of GTM Engineering Report 2026, which surveyed 228 working GTM Engineers across 32 countries. We supplemented survey data with our analysis of 3,342 job postings scraped from major boards between January 2024 and February 2026. Where we add editorial interpretation, we say so.</p>
+
+    <h2>The Comparisons</h2>
+    <p>Six matchups. Three are about career paths (engineer vs operator, in-house vs agency, technical vs low-code). Two are about compensation context (US vs global, seed vs growth stage). One is about the future of the role itself (GTM Engineer vs AI SDR).</p>
+    <p>Start with <a href="/comparisons/engineer-vs-operator/">Engineer vs Operator</a> if you're trying to figure out which track you're on. Start with <a href="/comparisons/us-vs-europe-vs-apac/">US vs Europe vs APAC</a> if you're evaluating a relocation or remote arrangement. Start with <a href="/comparisons/engineer-vs-ai-sdr/">GTM Engineer vs AI SDR</a> if you're worried about job security.</p>
+
+    <div class="salary-index-grid">
+        {cards_html}
+    </div>
+
+    <h2>Using These for Negotiation</h2>
+    <p>Each comparison page includes specific salary figures, tool adoption percentages, and career trajectory data. Pull these numbers into your negotiation prep. "GTM Engineers who code earn $45K more" is a better argument than "I think I deserve a raise." The <a href="/salary/coding-premium/">coding premium analysis</a> page has the supporting detail.</p>
+    <p>For hiring managers, these comparisons frame the role definition conversation. The <a href="/comparisons/engineer-vs-operator/">engineer vs operator</a> distinction matters for job descriptions, leveling, and comp bands. The <a href="/comparisons/in-house-vs-agency/">in-house vs agency</a> comparison helps set expectations about tool spend and deliverables.</p>
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineering comparisons and career intel.")
+    extra_head = get_breadcrumb_schema(crumbs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/comparisons/",
+        body_content=body, active_path="/comparisons/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("comparisons/index.html", page)
+    print(f"  Built: comparisons/index.html")
+
+
+def build_comp_engineer_vs_operator():
+    """COMP-01: GTM Engineer vs GTM Operator comparison page."""
+    title = "GTM Engineer vs Operator: $45K Salary Gap"
+    description = (
+        "GTM Engineers who code earn $45K more than operators."
+        " Skills, tools, day-in-the-life, and career trajectory compared."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Comparisons", "/comparisons/"), ("Engineer vs Operator", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Can an operator become a GTM Engineer?",
+         "Yes. 121 out of 228 survey respondents are self-taught. The most common path is learning Python basics, then building Clay tables that call APIs directly instead of using pre-built integrations. Start with a single workflow you currently do manually, automate it with code, and document the result. Most operators who make the transition do it within 6-12 months of focused learning."),
+        ("Which role is better for career growth?",
+         "Engineering track offers higher long-term earnings and more lateral mobility. GTM Engineers can move into solutions engineering, RevOps leadership, or technical product roles. Operators tend to plateau around $110K-$120K unless they pick up coding skills. The $45K premium compounds over a career."),
+        ("Do operators need to learn to code?",
+         "Not necessarily, but the data suggests they should. The bimodal salary distribution shows operators clustering around $90K-$110K while coders cluster at $135K-$155K. Low-code expertise in Clay, Zapier, and Make can sustain a solid career, but Python and SQL open doors that low-code tools can't."),
+        ("What tools do both roles use?",
+         "Clay (84% overall), CRM platforms (92%), and sequencing tools like Instantly or Smartlead. The divergence happens at the automation layer: operators use Make/Zapier for workflow automation while engineers write Python scripts and build API integrations directly. AI coding tools (71% adoption) are increasingly blurring this line."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Comparison</div>
+        <h1>GTM Engineer vs GTM Operator: The $45K Gap</h1>
+        <p>The GTM role is splitting in two. Engineers who write code earn $45K more on average. Here's what separates the tracks and what it means for your career.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$45K</span>
+        <span class="stat-label">Coding Premium</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~$155K</span>
+        <span class="stat-label">Engineer Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~$110K</span>
+        <span class="stat-label">Operator Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">121/228</span>
+        <span class="stat-label">Self-Taught</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The Bimodal Distribution</h2>
+    <p>Survey data from 228 GTM practitioners reveals a split that no one talks about directly: roughly 40% write code daily, roughly 45% never write code, and very few sit in between. This bimodal distribution creates two distinct career tracks with a $45K salary gap at the median.</p>
+    <p>Engineers, the coding group, cluster around $135K-$155K in total compensation. Operators, the no-code group, cluster around $90K-$110K. Both groups call themselves "GTM Engineers" on LinkedIn. Both work with Clay, CRMs, and sequencing tools. The difference is what happens when the pre-built integration breaks or the workflow needs custom logic.</p>
+
+    <h2>Skills Comparison</h2>
+    <p><strong>GTM Engineers</strong> write Python scripts for data transformation, build API integrations from scratch, write SQL queries against data warehouses, and use AI coding tools like Cursor and Claude Code. 71% of survey respondents use AI coding tools, and the adoption rate is higher among the engineering cohort. They debug webhook payloads, manage authentication flows, and build monitoring systems for their automations.</p>
+    <p><strong>GTM Operators</strong> configure Clay tables using the visual builder, set up Zapier/Make workflows with drag-and-drop connectors, manage CRM field mappings through the UI, and build outbound sequences in tools like Instantly or Smartlead. Their strength is speed of execution with existing tools. They can ship a new outbound campaign in hours because they don't need to write code to do it.</p>
+
+    <h2>Tool Stack Differences</h2>
+    <p>The overlap is significant. Clay appears in 84% of all respondents' stacks regardless of track. CRM adoption is 92%. Sequencing tools are near-universal. The divergence starts at the automation and infrastructure layer.</p>
+    <p>Engineers favor n8n (54% adoption) over Zapier because n8n supports custom code nodes. They use Python directly for complex data transformations that would require 15+ Zapier steps. They're more likely to interact with APIs using HTTP request nodes or raw scripts rather than pre-built connectors.</p>
+    <p>Operators favor Make and Zapier because the visual interface is faster for standard workflows. They use Clay's built-in enrichment steps rather than calling enrichment APIs directly. They're more likely to build within tool ecosystems than between them.</p>
+
+    <h2>Day in the Life</h2>
+    <p><strong>A GTM Engineer's morning:</strong> Checks monitoring dashboard for failed workflows from overnight runs. Debugs a broken API integration where the vendor changed their response format. Writes a Python script to deduplicate 40,000 leads against the CRM before a new campaign launch. Reviews pull request from a colleague who built a custom lead scoring model.</p>
+    <p><strong>A GTM Operator's morning:</strong> Opens Clay to check enrichment completion rates on yesterday's list build. Updates a Make scenario that triggers CRM record creation from form submissions. Builds a new outbound sequence in Instantly using a template from last month's best performer. Pulls a report on reply rates by persona segment for the weekly meeting.</p>
+
+    <h2>Career Trajectory</h2>
+    <p>The operator track has a clear ceiling. Without coding skills, lateral moves into solutions engineering, data engineering, or technical product management are difficult. The typical operator career path goes from GTM Operator to Senior GTM Operator to Head of GTM Ops. Compensation plateaus around $120K-$130K at most companies.</p>
+    <p>The engineering track has more exit options. GTM Engineers move into solutions engineering ($160K-$200K), RevOps leadership ($180K+), technical consulting ($150-$250/hr), or full-stack engineering. The coding skills transfer directly to adjacent roles in ways that Clay table expertise doesn't.</p>
+    <p>This isn't a judgment on which path is "better." Operators ship faster and often generate more immediate pipeline impact. But the salary data is unambiguous: the <a href="/salary/coding-premium/">$45K coding premium</a> is real, and it compounds over a career.</p>
+
+    <h2>Which Track Are You On?</h2>
+    <p>Ask yourself three questions. First: when a workflow breaks, do you open the tool's UI or a terminal? Second: when you need data that no pre-built enrichment provides, do you find a workaround or write a scraper? Third: when someone says "we need a custom integration," do you reach for Zapier or Python?</p>
+    <p>If your answers lean toward the first option in each pair, you're on the operator track. That's fine. But know that the $45K gap exists, and it grows wider at senior levels. If you want to cross over, Python is the most impactful skill to learn. 30% of job postings mention it specifically, and the salary premium for Python-proficient GTM Engineers is consistent across company sizes.</p>
+    <p>For the full salary breakdown, see the <a href="/salary/coding-premium/">coding premium analysis</a>. For career transition guidance, see <a href="/careers/do-you-need-to-code/">do you need to code?</a></p>
+
+{faq_html(faq_pairs)}
+{comparison_related_links("engineer-vs-operator")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineering salary data and career intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/comparisons/engineer-vs-operator/",
+        body_content=body, active_path="/comparisons/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("comparisons/engineer-vs-operator/index.html", page)
+    print(f"  Built: comparisons/engineer-vs-operator/index.html")
+
+
+def build_comp_in_house_vs_agency():
+    """COMP-02: In-House vs Agency GTM Engineering comparison page."""
+    title = "In-House vs Agency GTM Engineering (2026)"
+    description = (
+        "56% of GTM Engineers work in-house, 30% at agencies."
+        " Salary, tools, flexibility, and career paths compared with data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Comparisons", "/comparisons/"), ("In-House vs Agency", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Which pays more long-term?",
+         "It depends on your path. In-house GTM Engineers earn $130K-$175K in salary with equity potential at startups. Agency founders who scale past 5 clients can earn $200K-$400K in annual revenue, but most solo operators net $80K-$150K after tool costs. The median in-house salary ($135K) beats the median agency income for practitioners who aren't running their own shop."),
+        ("Is agency work sustainable?",
+         "For skilled operators, yes. Client retention is the top challenge (not finding clients). Agencies that specialize in a vertical or tool (e.g., Clay-first agencies) retain clients longer. The biggest risk is concentration: losing a $8K/mo client when you only have 4 clients is a 25% revenue hit. Diversification matters."),
+        ("Can you switch between in-house and agency?",
+         "Frequently. Many GTM Engineers start in-house, go freelance to test the market, and either build an agency or return to full-time with stronger negotiating position. In-house experience gives you credibility with agency clients. Agency experience gives you breadth that in-house hiring managers value. The skills transfer cleanly in both directions."),
+        ("Which has better work-life balance?",
+         "In-house roles have more predictable hours. 60% of in-house GTM Engineers report working 40-60 hours per week with clear boundaries. Agency operators set their own schedules but often work more total hours, especially during client onboarding or campaign launches. The flexibility of agency work appeals to many, but don't confuse flexibility with fewer hours."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Comparison</div>
+        <h1>In-House vs Agency GTM Engineering</h1>
+        <p>56% of GTM Engineers work in-house. 30% run agencies or freelance. The compensation models, tool stacks, and career trajectories look completely different.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">56%</span>
+        <span class="stat-label">In-House</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30%</span>
+        <span class="stat-label">Agency/Freelance</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$135K</span>
+        <span class="stat-label">In-House Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">96%</span>
+        <span class="stat-label">Agency Clay Use</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Two Business Models, One Skill Set</h2>
+    <p>The split is nearly 2:1 in favor of in-house roles, but the 30% who run agencies or freelance represent the fastest-growing segment of the GTM Engineering workforce. Agency GTM Engineers often started in-house, built expertise with specific tools, and realized they could serve multiple clients instead of one employer.</p>
+    <p>The financial math is straightforward. An in-house GTM Engineer earns a $135K salary plus benefits, equity (maybe, 68% get none), and job stability. An agency operator charges $5K-$8K per month per client. With 4-6 clients, that's $240K-$576K in annual revenue before expenses. Tool costs ($5K-$25K/year) and the lack of benefits narrow the gap, but the upside ceiling is higher on the agency side.</p>
+
+    <h2>Compensation Structure</h2>
+    <p><strong>In-house:</strong> Base salary ($130K-$175K at mid-to-senior levels), performance bonuses tied to pipeline metrics ($8K-$15K typical), health insurance, 401(k), PTO. Equity grants at startups (though 68% of GTM Engineers report having no meaningful equity). Predictable income, annual reviews, promotion ladders.</p>
+    <p><strong>Agency:</strong> Monthly retainers ($5K-$8K per client is the most common range). Per-project pricing for specific builds (Clay setup, outbound system architecture). Some agencies charge per-lead or per-meeting, though retainer models dominate. Revenue is variable: a great month can be 2x a bad month. No employer-provided benefits. Tool costs come out of revenue.</p>
+    <p>The breakeven point is roughly 2 clients at $6K/mo. That matches an in-house salary without benefits. Most agency operators need 3-4 clients to match total in-house compensation after tool costs, self-employment taxes, and insurance.</p>
+
+    <h2>Tool Stack Differences</h2>
+    <p>Clay adoption hits 96% at agencies versus 84% overall. That 12-point gap tells you something: Clay is the center of gravity for agency work. Agencies use 6-8 tools per operator compared to 4-5 for in-house teams. The breadth makes sense. Each client has a different CRM, different sequencing tool, different enrichment needs. Agencies need to be proficient across the entire stack.</p>
+    <p>In-house teams go deeper on fewer tools. They customize their CRM extensively, build internal dashboards, and optimize a single outbound stack. They're more likely to build custom integrations because they only need to build them once for their specific infrastructure.</p>
+
+    <h2>Work-Life and Flexibility</h2>
+    <p>In-house GTM Engineers report the most predictable schedules. 60% work 40-60 hours per week. Meetings are concentrated in business hours. Weekend work is rare outside of campaign launches or system migrations. The trade-off is less control over what you work on. Your roadmap comes from leadership, and pivot speed depends on organizational politics.</p>
+    <p>Agency operators have complete control over their schedule. They choose which clients to take, which projects to prioritize, and when to work. Most work from home or a co-working space. The flexibility is real. So is the pressure: when a client's campaign is underperforming at 10 PM, you're the one who fixes it. There's no "that's someone else's problem" in agency life.</p>
+
+    <h2>Career Trajectory</h2>
+    <p><strong>In-house path:</strong> GTM Engineer, Senior GTM Engineer, Lead/Staff GTM Engineer, Head of GTM Engineering, VP RevOps or VP Growth. Salary grows steadily. Equity accumulates if you pick the right companies. The ceiling is a leadership role at $200K-$300K+.</p>
+    <p><strong>Agency path:</strong> Solo freelancer, agency founder, agency owner with 2-5 employees, consulting firm. Revenue grows with client count and pricing power. The ceiling is a boutique agency doing $1M+ in annual revenue with a small team. Some agency founders exit to vendor roles (Clay, Apollo, etc.) at premium compensation.</p>
+    <p>Switching between paths is common and carries low friction. In-house experience gives you client credibility. Agency experience gives you breadth that hiring managers value. Many practitioners alternate between the two throughout their careers.</p>
+    <p>For agency pricing data, see the <a href="/salary/agency-fees/">agency fee guide</a>. For in-house salary benchmarks, see the <a href="/salary/">salary data index</a>. For starting an agency, see <a href="/careers/how-to-start-agency/">how to start a GTM agency</a>.</p>
+
+{faq_html(faq_pairs)}
+{comparison_related_links("in-house-vs-agency")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly salary shifts and agency market intel for GTM Engineers.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/comparisons/in-house-vs-agency/",
+        body_content=body, active_path="/comparisons/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("comparisons/in-house-vs-agency/index.html", page)
+    print(f"  Built: comparisons/in-house-vs-agency/index.html")
+
+
+def build_comp_engineer_vs_ai_sdr():
+    """COMP-03: GTM Engineer vs AI SDR comparison page."""
+    title = "GTM Engineer vs AI SDR: Teammate, Not Rival"
+    description = (
+        "AI SDRs automate outreach. GTM Engineers build the systems behind them."
+        " 71% use AI tools. Here is where they overlap and diverge."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Comparisons", "/comparisons/"), ("Engineer vs AI SDR", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Will AI SDRs replace GTM Engineers?",
+         "No. AI SDRs handle execution: sending emails, following up, qualifying inbound. GTM Engineers handle architecture: building the systems that determine who gets contacted, what message they see, and how responses flow into the pipeline. Replacing a GTM Engineer with an AI SDR is like replacing an architect with a brick-laying robot. You still need someone to design the building."),
+        ("Should GTM Engineers learn AI tools?",
+         "They already are. 71% of survey respondents use AI coding tools like Cursor or Claude Code. The practitioners who combine systems architecture skills with AI tool proficiency command the highest salaries. Learning to prompt engineer, fine-tune AI agents, and build AI-augmented workflows pays off fast for career growth."),
+        ("What can AI SDRs do that GTM Engineers can't?",
+         "Scale outreach volume without proportional time investment. An AI SDR can send and manage 1,000 personalized emails per day, handle basic reply categorization, and schedule meetings without human intervention. A GTM Engineer could build a system that does this, but the AI SDR is the system. Speed of execution at scale is the AI SDR advantage."),
+        ("What can GTM Engineers do that AI SDRs can't?",
+         "Design strategy. A GTM Engineer decides which ICP segments to target, which signals indicate buying intent, how to structure multi-channel sequences, and when to change approach based on performance data. AI SDRs execute the playbook. GTM Engineers write the playbook, then rebuild it when it stops working. Judgment, architecture, and cross-system integration require human engineering."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Comparison</div>
+        <h1>GTM Engineer vs AI SDR</h1>
+        <p>AI SDRs are a tool GTM Engineers build and manage. The relationship is augmentation, not replacement. 71% of GTM Engineers already use AI coding tools daily.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">71%</span>
+        <span class="stat-label">AI Tool Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Use Clay</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">39</span>
+        <span class="stat-label">Claude Mentions</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">GTME Median Salary</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>The "Will AI Take My Job" Question</h2>
+    <p>Every GTM Engineer has been asked this. Usually by a VP of Sales who just saw a demo of an AI SDR product. The answer is nuanced but the data is clear: GTM Engineers are adopting AI tools faster than almost any other technical role, and their salaries are rising, not falling.</p>
+    <p>71% of surveyed GTM Engineers use AI coding tools. Claude was cited as the most exciting tool with 39 mentions. "All-in-one outbound" (which includes AI SDR functionality) tops the tool wishlist. GTM Engineers aren't running from AI. They're building with it.</p>
+
+    <h2>What AI SDRs Do</h2>
+    <p>AI SDR products automate the execution layer of outbound sales. They generate personalized email copy at scale, manage follow-up sequences, categorize replies (interested, not interested, out of office), and book meetings on calendars. Products like 11x, Artisan, and Regie.ai operate in this space.</p>
+    <p>At their best, AI SDRs handle the repetitive volume work that used to require a team of human SDRs. A single AI SDR instance can manage thousands of concurrent outreach threads, personalize each message using enrichment data, and respond to replies in seconds.</p>
+    <p>At their worst, AI SDRs blast generic templates, damage sender reputation through poor deliverability management, and create pipeline that sales teams don't trust. The difference between good and bad AI SDR implementation is the system architecture behind it. That's where GTM Engineers come in.</p>
+
+    <h2>What GTM Engineers Build</h2>
+    <p>GTM Engineers design the infrastructure that makes AI SDRs effective. They build the ICP definition logic, the enrichment pipelines that feed AI SDRs accurate prospect data, the intent signal collection systems, the CRM integration layer, and the analytics framework that measures what's working.</p>
+    <p>Consider the workflow: A GTM Engineer builds a Clay table that enriches prospects with firmographic data, technographic signals, and intent indicators. That enriched data feeds into an AI SDR platform. The AI SDR generates personalized messages based on the enrichment. Replies route back through the CRM via webhooks the GTM Engineer configured. Performance data flows into a dashboard the GTM Engineer built to optimize future campaigns.</p>
+    <p>The AI SDR is one node in a system the GTM Engineer designed. Remove the GTM Engineer, and the AI SDR sends bad data to wrong prospects with generic messages. The tool works. The system doesn't.</p>
+
+    <h2>Convergence, Not Replacement</h2>
+    <p>The survey data points toward convergence. GTM Engineers are incorporating AI SDR capabilities into their tool stacks rather than being replaced by standalone AI SDR products. The "all-in-one outbound" wishlist item reflects this: practitioners want a single platform that combines enrichment, AI-generated messaging, multi-channel sequencing, and CRM sync.</p>
+    <p>Products like Clay are moving in this direction. Clay tables already combine enrichment, AI-powered research, and outreach triggers. Add native sequencing and you have an AI SDR built into the GTM Engineer's primary tool. The GTM Engineer's role evolves from building the plumbing between separate tools to orchestrating a unified system.</p>
+
+    <h2>Where the Roles Differ</h2>
+    <p><strong>GTM Engineer:</strong> Designs systems. Chooses which segments to target and why. Builds integrations between tools. Debugs when things break. Optimizes based on performance data. Decides when to change strategy. Salary: $132K median, $175K+ for senior engineers.</p>
+    <p><strong>AI SDR:</strong> Executes at scale. Sends messages. Follows up. Categorizes replies. Books meetings. Operates within parameters set by humans. Cost: $500-$3,000/month per seat for AI SDR software.</p>
+    <p>The cost comparison is telling. An AI SDR seat costs $6K-$36K per year. A GTM Engineer costs $132K+ per year. But the GTM Engineer designs the system that makes those AI SDR seats productive. It's the same dynamic as software engineering: you don't replace engineers with better compilers. You give engineers better compilers so they build better systems.</p>
+
+    <h2>Career Implications</h2>
+    <p>GTM Engineers who learn to work with AI SDR tools are more valuable, not less. The skill set is evolving from "build outbound systems" to "build AI-augmented outbound systems." Prompt engineering, AI agent configuration, and AI output quality evaluation are becoming core GTM Engineer skills.</p>
+    <p>The practitioners most at risk are those doing purely manual, repetitive outbound work without systems thinking. That's the SDR role, not the GTM Engineer role. The 5,205% growth in GTM Engineer job postings reflects companies investing in the architecture layer, even as they adopt AI SDR tools for the execution layer.</p>
+    <p>For AI coding tool adoption data, see the <a href="/tools/ai-coding-tools/">AI tools analysis</a>. For the full tool wishlist, see <a href="/tools/tool-wishlist/">tool wishlist data</a>. For salary trends, see the <a href="/salary/">salary data index</a>.</p>
+
+{faq_html(faq_pairs)}
+{comparison_related_links("engineer-vs-ai-sdr")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("AI trends, tool intel, and salary data for GTM Engineers. Weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/comparisons/engineer-vs-ai-sdr/",
+        body_content=body, active_path="/comparisons/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("comparisons/engineer-vs-ai-sdr/index.html", page)
+    print(f"  Built: comparisons/engineer-vs-ai-sdr/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -8534,6 +8948,12 @@ def main():
     build_bench_learning_resources()
     build_bench_headcount_trends()
     build_bench_future_predictions()
+
+    print("\n  Building comparison pages...")
+    build_comp_index()
+    build_comp_engineer_vs_operator()
+    build_comp_in_house_vs_agency()
+    build_comp_engineer_vs_ai_sdr()
 
     print("\n  Building meta files...")
     build_sitemap()

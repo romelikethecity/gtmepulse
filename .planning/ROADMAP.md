@@ -49,7 +49,7 @@ Plans:
 - [x] **Phase 8: Tool Reviews** - 30 individual tool review pages with SoftwareApplication schema and honest criticism (completed 2026-03-14)
 - [x] **Phase 9: Tool Categories and Comparisons** - 8 category index pages and 20 head-to-head comparison pages (completed 2026-03-14)
 - [x] **Phase 10: Alternatives and Roundups** - 10 alternatives pages and 10 best-for roundup pages (completed 2026-03-14)
-- [ ] **Phase 11: Glossary, Job Board, and Newsletter** - 50 glossary terms, job board with scraper pipeline, newsletter automation
+- [x] **Phase 11: Glossary, Job Board, and Newsletter** - 50 glossary terms, job board with scraper pipeline, newsletter automation (completed 2026-03-14)
 - [ ] **Phase 12: Quality Sweep** - Site-wide validation, schema audit, zero-warning build
 
 ## Phase Details
@@ -144,7 +144,7 @@ Phases execute in numeric order: 8 → 9 → 10 → 11 → 12
 | 8. Tool Reviews | 2/2 | Complete   | 2026-03-14 | - |
 | 9. Tool Categories and Comparisons | 2/2 | Complete   | 2026-03-14 | - |
 | 10. Alternatives and Roundups | 2/2 | Complete    | 2026-03-14 | - |
-| 11. Glossary, Job Board, and Newsletter | 2/3 | In Progress|  | - |
+| 11. Glossary, Job Board, and Newsletter | 3/3 | Complete   | 2026-03-14 | - |
 | 12. Quality Sweep | v3.0 | 0/1 | Not started | - |
 
 ---

@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v3.0
 milestone_name: Tool Reviews, Glossary, and Infrastructure
-status: in_progress
-stopped_at: Phase 11 complete
-last_updated: "2026-03-14T19:00:00Z"
-last_activity: 2026-03-14 — Phase 11 complete (glossary + job board + newsletter, 263 total pages)
+status: completed
+stopped_at: Completed 12-01-PLAN.md
+last_updated: "2026-03-16T22:53:21.605Z"
+last_activity: 2026-03-16 — Phase 12 complete (zero-warning build, QUAL3 schema validation)
 progress:
-  total_phases: 5
-  completed_phases: 4
-  total_plans: 11
-  completed_plans: 11
-  percent: 80
+  total_phases: 8
+  completed_phases: 5
+  total_plans: 12
+  completed_plans: 12
+  percent: 96
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-13)
 
 **Core value:** GTM Engineers can find accurate, vendor-neutral salary benchmarks and career intelligence in one place, with data no competitor provides.
-**Current focus:** v3.0 Phase 11 complete. 263 total pages. Phase 12 (Quality Sweep) remaining.
+**Current focus:** v3.0 complete. 263 total pages, zero build warnings, QUAL3 schema validation.
 
 ## Current Position
 
-Phase: 11 of 12 (Glossary, Job Board, and Newsletter) — COMPLETE
-Plan: 3 of 3 complete
-Status: Phase 12 not started
-Last activity: 2026-03-14 — Phase 11 complete (glossary + job board + newsletter)
+Phase: 12 of 12 (Quality Sweep) — COMPLETE
+Plan: 1 of 1 complete
+Status: Phase 12 complete
+Last activity: 2026-03-16 — Phase 12 complete (zero-warning build, QUAL3 schema validation)
 
-Progress: ████████░░ 80%
+Progress: [██████████] 96%
 
 ## Performance Metrics
 
@@ -66,6 +66,9 @@ Progress: ████████░░ 80%
 - [Phase 11-02]: Job board reuses salary-stats CSS pattern for stats banner
 - [Phase 11-02]: Client-side JS filtering with data attributes for zero-dependency filtering
 - [Phase 11-02]: JSON data files in data/ directory for build-time page generation
+- [Phase 12-01]: QUAL3 schema validation: SoftwareApplication on reviews, FAQPage on comparison/alternatives/roundup pages
+- [Phase 12-01]: Category index pages exempted from word count and source citation checks (listing pages)
+- [Phase 12-01]: Glossary title generation redesigned with multi-tier candidate system and term_short variants
 
 ### Pending Todos
 
@@ -79,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T19:00:00Z
-Stopped at: Phase 11 complete
+Last session: 2026-03-16T22:53:21.602Z
+Stopped at: Completed 12-01-PLAN.md
 Resume file: None

@@ -117,9 +117,9 @@
 
 ### Content Quality
 
-- [ ] **QUAL3-01**: Every tool review has SoftwareApplication JSON-LD schema
-- [ ] **QUAL3-02**: Every tool comparison has FAQPage schema with 3+ Q&A
-- [ ] **QUAL3-03**: Site-wide validation passes with zero warnings after all pages added
+- [x] **QUAL3-01**: Every tool review has SoftwareApplication JSON-LD schema
+- [x] **QUAL3-02**: Every tool comparison has FAQPage schema with 3+ Q&A
+- [x] **QUAL3-03**: Site-wide validation passes with zero warnings after all pages added
 
 ## Future Requirements
 
@@ -233,9 +233,9 @@
 | NEWS-02 | Phase 11 | Pending |
 | NEWS-03 | Phase 11 | Pending |
 | NEWS-04 | Phase 11 | Pending |
-| QUAL3-01 | Phase 12 | Pending |
-| QUAL3-02 | Phase 12 | Pending |
-| QUAL3-03 | Phase 12 | Pending |
+| QUAL3-01 | Phase 12 | Complete |
+| QUAL3-02 | Phase 12 | Complete |
+| QUAL3-03 | Phase 12 | Complete |
 
 **Coverage:**
 - v3.0 requirements: 109 total (TREV:30, TCAT:8, TCMP:20, TALT:10, TBST:10, GLOS:2, JOBS:2, NEWS:4, QUAL3:3)

@@ -78,47 +78,47 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ART-01 | TBD | Pending |
-| ART-02 | TBD | Pending |
-| ART-03 | TBD | Pending |
-| ART-04 | TBD | Pending |
-| ART-05 | TBD | Pending |
-| ART-06 | TBD | Pending |
-| ART-07 | TBD | Pending |
-| ART-08 | TBD | Pending |
-| ART-09 | TBD | Pending |
-| ART-10 | TBD | Pending |
-| ART-11 | TBD | Pending |
-| ART-12 | TBD | Pending |
-| ART-13 | TBD | Pending |
-| ART-14 | TBD | Pending |
-| ART-15 | TBD | Pending |
-| ART-16 | TBD | Pending |
-| ART-17 | TBD | Pending |
-| ART-18 | TBD | Pending |
-| ART-19 | TBD | Pending |
-| ART-20 | TBD | Pending |
-| ANLYT-01 | TBD | Pending |
-| ANLYT-02 | TBD | Pending |
-| ANLYT-03 | TBD | Pending |
-| NLIVE-01 | TBD | Pending |
-| NLIVE-02 | TBD | Pending |
-| NLIVE-03 | TBD | Pending |
-| NLIVE-04 | TBD | Pending |
-| NLIVE-05 | TBD | Pending |
-| NLIVE-06 | TBD | Pending |
-| OG-01 | TBD | Pending |
-| OG-02 | TBD | Pending |
-| OG-03 | TBD | Pending |
-| OG-04 | TBD | Pending |
-| QUAL4-01 | TBD | Pending |
-| QUAL4-02 | TBD | Pending |
+| ANLYT-01 | Phase 13 | Pending |
+| ANLYT-02 | Phase 13 | Pending |
+| ANLYT-03 | Phase 13 | Pending |
+| NLIVE-01 | Phase 13 | Pending |
+| NLIVE-02 | Phase 13 | Pending |
+| NLIVE-03 | Phase 13 | Pending |
+| NLIVE-04 | Phase 13 | Pending |
+| NLIVE-05 | Phase 13 | Pending |
+| NLIVE-06 | Phase 13 | Pending |
+| ART-01 | Phase 14 | Pending |
+| ART-02 | Phase 14 | Pending |
+| ART-03 | Phase 14 | Pending |
+| ART-04 | Phase 14 | Pending |
+| ART-05 | Phase 14 | Pending |
+| ART-06 | Phase 14 | Pending |
+| ART-07 | Phase 14 | Pending |
+| ART-08 | Phase 14 | Pending |
+| ART-09 | Phase 14 | Pending |
+| ART-10 | Phase 14 | Pending |
+| ART-11 | Phase 15 | Pending |
+| ART-12 | Phase 15 | Pending |
+| ART-13 | Phase 15 | Pending |
+| ART-14 | Phase 15 | Pending |
+| ART-15 | Phase 15 | Pending |
+| ART-16 | Phase 15 | Pending |
+| ART-17 | Phase 15 | Pending |
+| ART-18 | Phase 15 | Pending |
+| ART-19 | Phase 15 | Pending |
+| ART-20 | Phase 15 | Pending |
+| OG-01 | Phase 16 | Pending |
+| OG-02 | Phase 16 | Pending |
+| OG-03 | Phase 16 | Pending |
+| OG-04 | Phase 16 | Pending |
+| QUAL4-01 | Phase 17 | Pending |
+| QUAL4-02 | Phase 17 | Pending |
 
 **Coverage:**
 - v4.0 requirements: 35 total
-- Mapped to phases: 0
-- Unmapped: 35 ⚠️
+- Mapped to phases: 35
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-16*
-*Last updated: 2026-03-16 after initial definition*
+*Last updated: 2026-03-16 after roadmap phase assignment*

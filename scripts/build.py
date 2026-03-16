@@ -11975,6 +11975,13 @@ def validate_pages():
     # Data page directories (must have source citations, word count checks)
     DATA_DIRS = ("salary/", "careers/", "tools/", "benchmarks/", "comparisons/", "blog/")
 
+    # Category index pages are listing pages (tool cards), not data pages.
+    # Exempt from word count and source citation checks.
+    SKIP_WORD_COUNT = {f"tools/category/{c}/index.html" for c in
+                       ["data-enrichment", "outbound-sequencing", "crm", "workflow-automation",
+                        "ai-llm-tools", "intent-data", "analytics", "linkedin-social"]}
+    SKIP_SOURCE_CITATION = set(SKIP_WORD_COUNT)
+
     # False reframe patterns
     FALSE_REFRAME_PATTERNS = [
         r"not\s+\w+[\w\s]*,\s+it'?s\s+",
@@ -12053,14 +12060,15 @@ def validate_pages():
                     warnings.append(f"QUAL2-03: {rel}: only {len(internal_links)} internal links in content (want 3+)")
 
             # --- QUAL2-06: FAQPage schema on comparison pages ---
-            if rel.startswith("comparisons/") and rel != "comparisons/index.html":
+            # Comparisons live under tools/*-vs-*/ not comparisons/
+            if "tools/" in rel and "-vs-" in rel:
                 if "faqpage" not in html_lower:
                     warnings.append(f"QUAL2-06: {rel}: comparison page missing FAQPage schema")
 
             # --- QUAL2-08: Source citations on data pages ---
             is_data_page = any(rel.startswith(d) for d in DATA_DIRS)
             is_index = rel.endswith("/index.html") and rel.count("/") == 1
-            if is_data_page and not is_index:
+            if is_data_page and not is_index and rel not in SKIP_SOURCE_CITATION:
                 if "source-citation" not in html_lower and "state of gtm" not in html_lower:
                     warnings.append(f"QUAL2-08: {rel}: data page missing source citation")
 
@@ -12080,7 +12088,7 @@ def validate_pages():
                     break
 
             # --- QUAL2-04/05: Word counts (content body only, excluding nav/footer) ---
-            if is_data_page and not is_index:
+            if is_data_page and not is_index and rel not in SKIP_WORD_COUNT:
                 # Extract content body between header and footer
                 content_for_wc = html
                 header_end = html.find('</header>')
@@ -12105,6 +12113,29 @@ def validate_pages():
                 else:
                     if word_count < 1000:
                         warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 1000+ for data page)")
+
+            # --- QUAL3-01: SoftwareApplication schema on tool review pages ---
+            if re.match(r"tools/[^/]+-review/index\.html$", rel):
+                if "softwareapplication" not in html_lower:
+                    warnings.append(f"QUAL3-01: {rel}: tool review missing SoftwareApplication schema")
+
+            # --- QUAL3-02: FAQPage schema on comparison, alternatives, and roundup pages ---
+            faq_page_type = None
+            if re.match(r"tools/[^/]+-vs-[^/]+/index\.html$", rel):
+                faq_page_type = "comparison"
+            elif re.match(r"tools/[^/]+-alternatives/index\.html$", rel):
+                faq_page_type = "alternatives"
+            elif re.match(r"tools/best-[^/]+/index\.html$", rel):
+                faq_page_type = "roundup"
+
+            if faq_page_type:
+                if "faqpage" not in html_lower:
+                    warnings.append(f"QUAL3-02: {rel}: {faq_page_type} page missing FAQPage schema")
+                else:
+                    # Count Q&A pairs in the JSON-LD
+                    qa_count = html_lower.count('"@type": "question"') + html_lower.count('"@type":"question"')
+                    if qa_count < 3:
+                        warnings.append(f"QUAL3-02: {rel}: FAQPage schema has fewer than 3 Q&A pairs")
 
     # --- QUAL2-07: Duplicate detection (post-loop) ---
     for title, pages in all_titles.items():

@@ -52,6 +52,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Salesforce is the CRM that 72% of Fortune 500 companies use. For GTM Engineers at enterprise organizations, Salesforce is infrastructure that predates your tenure and will outlast it. The platform's strength is in its data model flexibility (custom objects, relationships, formula fields), the AppExchange ecosystem (5,000+ integrations), and SOQL (Salesforce Object Query Language) for data manipulation.</p>
 <p>GTM Engineers who master Salesforce internals (SOQL, Flow, Process Builder, Apex triggers) become high-value operators. Salesforce admin skills alone command $90K-$140K salaries. When you add GTM automation expertise on top of Salesforce knowledge, you're in the $150K-$200K range.</p>
+<p>Salesforce's AI push (Einstein GPT, Copilot) is adding generative features across the product, but adoption among GTM Engineers is still early. The practical applications today are AI-generated email drafts and opportunity scoring.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -79,10 +80,11 @@ TOOL_REVIEWS = {
 <p>Complexity is Salesforce's defining weakness. The admin overhead is real: field validation rules conflict with each other, Flow Builder errors are cryptic, page layout management is tedious, and the difference between Classic and Lightning UI still causes confusion. Companies with 50+ Salesforce users typically need a dedicated admin. Companies with 200+ need a Salesforce team. That's headcount cost on top of license cost.</p>
 <p>The UX hasn't kept pace with modern CRMs. Lightning was supposed to fix the Classic experience, but it's still clunky compared to HubSpot, Attio, or Close. Reps resist Salesforce adoption because the daily experience is friction-heavy. GTM Engineers spend time building workarounds (custom Lightning components, Chrome extensions, Slack integrations) to make Salesforce tolerable for end users.</p>
 <p>Pricing escalation is aggressive. Salesforce sales reps are excellent at expanding contracts year over year. Features that were included get unbundled into add-ons. Einstein AI, which sounds like a core feature, costs extra. API call limits on lower tiers force upgrades. The total cost of ownership is always higher than the initial quote suggests.</p>
+<p>Developer experience has improved but still carries technical debt from two decades of platform evolution. The transition from Classic to Lightning introduced parallel codebases that GTM Engineers need to understand. Apex triggers, Flow Builder, and Process Builder (now deprecated but still present in older orgs) create multiple automation paradigms within the same instance. New GTM Engineers inheriting a Salesforce org spend their first month just mapping the existing automation layer.</p>
 """,
     "verdict": """
 <p>Salesforce is the right CRM when your company has 100+ employees, complex data modeling needs, and the admin resources to manage it. The platform's flexibility, ecosystem, and enterprise credibility are unmatched. If your buyers expect to see Salesforce in your tech stack (common in enterprise B2B), that's a real consideration.</p>
-<p>For startups and teams under 50 people, HubSpot or Attio are better choices. The admin overhead, per-user cost, and implementation complexity of Salesforce don't pay off at small scale. Learn Salesforce skills (SOQL, Flow) because they're valuable on the market, but don't impose Salesforce on a team that doesn't need it yet.</p>
+<p>For startups and teams under 50 people, HubSpot or Attio are better choices. The admin overhead, per-user cost, and implementation complexity of Salesforce don't pay off at small scale. Learn Salesforce skills (SOQL, Flow) because they're valuable on the market, but don't impose Salesforce on a team that doesn't need it yet. GTM Engineers who can write SOQL queries and build Flows earn 15-20% more than those who only know HubSpot.</p>
 """,
     "faq": [
         ("Is Salesforce worth learning as a GTM Engineer?", "Yes. SOQL, Flow Builder, and Salesforce admin skills are among the highest-value CRM skills in the market. Even if you use HubSpot day-to-day, Salesforce knowledge opens doors at enterprise companies where GTM Engineer salaries are highest."),
@@ -95,6 +97,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Pipedrive is a visual pipeline CRM built for small sales teams that want simplicity over power. The product centers around a drag-and-drop deal board where you move deals through stages. It's the CRM equivalent of Trello: easy to understand, fast to set up, and limited when your needs get complex.</p>
 <p>For GTM Engineers at early-stage startups (under 20 employees), Pipedrive offers enough CRM functionality to manage a pipeline without the overhead of HubSpot or Salesforce. The API is clean, the automation features cover basic workflows, and the pricing is straightforward.</p>
+<p>Pipedrive's target user is a sales rep who wants to see their deals visually and get reminded about next steps. The product excels at this specific workflow: create deal, move through stages, track activities, close or lose. Where it falls short is when GTM Engineers try to extend Pipedrive beyond basic pipeline management into enrichment, complex automation, or multi-object data models. Pipedrive is a pipeline view with CRM features attached, not a CRM platform with pipeline features. That distinction matters as your team grows.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -120,10 +123,12 @@ TOOL_REVIEWS = {
     "criticism": """
 <p>Pipedrive hits a ceiling fast. Once your sales process involves multiple pipelines, complex deal routing, custom objects, or cross-object reporting, Pipedrive can't keep up. Teams that start on Pipedrive often migrate to HubSpot within 12-18 months as they grow. The migration is painful (data mapping, workflow recreation, team retraining), and the total cost of starting on Pipedrive then switching may surpass starting on HubSpot from day one.</p>
 <p>Reporting is basic compared to HubSpot or Salesforce. No cross-object reports, limited custom report builders, and no dashboard flexibility. GTM Engineers who need pipeline velocity metrics, cohort analysis, or attribution reporting will find Pipedrive's analytics inadequate.</p>
+<p>Email tracking and sequence automation are add-on features that cost extra. The base Essential plan doesn't include email sync or workflow automation. You need the Advanced plan ($34/user/mo) for email tracking and the Professional plan ($49/user/mo) for automation. These features are free on HubSpot's free tier, making Pipedrive's cost advantage less clear when you compare equivalent functionality.</p>
+<p>Custom fields are limited on lower tiers, and the data model is rigid compared to HubSpot or Attio. You can't create custom objects in Pipedrive. Everything maps to contacts, organizations, deals, or activities. GTM Engineers who need to track product usage events, partnership data, or custom entity types hit a structural wall that no workaround fixes. The product is built for simple sales workflows, and extending it beyond that is fighting the architecture.</p>
 """,
     "verdict": """
 <p>Pipedrive is the right CRM for sales teams under 10 people with a simple, linear sales process. If your deal flow is: lead comes in, gets qualified, demo happens, proposal sent, deal closes, Pipedrive handles that perfectly at a fair price. Don't overcomplicate your CRM choice for a 5-person team.</p>
-<p>If you're a GTM Engineer building automation-heavy workflows, HubSpot's free tier plus Professional upgrade path is a better investment than Pipedrive. The workflow engine difference alone justifies the cost. Pipedrive is for small teams that need a pipeline view, not for technical operators who need a workflow platform.</p>
+<p>If you're a GTM Engineer building automation-heavy workflows, HubSpot's free tier plus Professional upgrade path is a better investment than Pipedrive. The workflow engine difference alone justifies the cost. Pipedrive is for small teams that need a pipeline view, not for technical operators who need a workflow platform. The LeadBooster add-on ($32.50/mo) adds basic chatbot and web form features, but the implementation is shallow compared to HubSpot's form builder or Drift.</p>
 """,
     "faq": [
         ("Is Pipedrive good for GTM Engineers?", "For basic CRM needs at small startups, yes. For workflow automation, enrichment integration, and complex data models, no. GTM Engineers who build automated pipeline workflows will outgrow Pipedrive quickly."),
@@ -136,6 +141,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Close CRM is built for outbound-heavy sales teams. The product includes built-in calling (VoIP), SMS, email sequences, and video all inside the CRM. While HubSpot and Salesforce require third-party tools for calling and sequences (Outreach, Salesloft, Aircall), Close bundles everything into the CRM itself.</p>
 <p>This "all-in-one" approach means fewer integrations, fewer tools, and fewer data sync issues. For GTM Engineers at companies where the sales motion is high-velocity outbound (50+ calls/day, 100+ emails/day), Close's built-in communication tools reduce the stack from 4 tools to 1.</p>
+<p>Close has maintained focus on the SMB outbound segment while competitors expand into enterprise. The product's opinionated design choices (built-in calling, email-first sequences, simple pipeline views) make it faster to deploy and easier to maintain than enterprise CRMs. GTM Engineers at startups with 5-20 reps report getting Close running in a single afternoon, compared to weeks for Salesforce or days for HubSpot's workflow setup.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -160,10 +166,12 @@ TOOL_REVIEWS = {
 <p>Close's ecosystem is small. The AppExchange has 5,000+ Salesforce integrations. HubSpot's marketplace has 1,500+. Close has a few dozen. If your GTM stack includes niche tools that need CRM integration, Close may not support them natively. You'll build more custom integrations via API, which means more GTM Engineer time maintaining connectors.</p>
 <p>Reporting and analytics are functional but not deep. Close provides activity reports, pipeline reports, and leaderboards, but no cross-object reporting, no custom dashboards, and no attribution modeling. If your leadership wants the kind of reporting Salesforce provides, Close won't satisfy them.</p>
 <p>The product is purpose-built for SMB outbound sales. If your company's sales motion evolves toward enterprise (multi-stakeholder deals, complex approval processes, CPQ), Close doesn't scale with you. You'll migrate to Salesforce or HubSpot, and the migration cost offsets the savings from using Close initially.</p>
+<p>The built-in calling feature is VoIP-based, and call quality depends on internet connection stability. GTM Engineers in office environments with strong connections report solid quality. Remote workers on variable connections report dropped calls and audio artifacts. If cold calling is your primary outbound channel, test Close's call quality in your specific environment before committing. Dedicated dialers like Aircall or Dialpad offer stronger call infrastructure at the cost of added stack complexity.</p>
+<p>Contact enrichment and data hygiene aren't built in. Close stores and displays contact data but doesn't enrich it. New contacts enter with whatever fields you provide. There's no auto-enrichment, no data decay alerts, and no duplicate detection beyond basic email matching. GTM Engineers need to maintain data quality through external tools (Clay, Apollo) and periodic cleanup scripts.</p>
 """,
     "verdict": """
 <p>Close is the best CRM for outbound-heavy SMB sales teams (10-50 reps) where calling and email sequences are the core activities. The built-in dialer and sequences eliminate 2-3 tools from your stack, and the API is good enough for GTM Engineers to build custom workflows.</p>
-<p>Choose Close over HubSpot if your team makes 50+ calls per day. Choose HubSpot over Close if you need advanced workflow automation, Clearbit enrichment, or a larger integration ecosystem. Choose Salesforce over Close if you're selling to enterprise and need custom objects, complex approval flows, or SOC 2 compliance documentation.</p>
+<p>Choose Close over HubSpot if your team makes 50+ calls per day. Choose HubSpot over Close if you need advanced workflow automation, Clearbit enrichment, or a larger integration ecosystem. Choose Salesforce over Close if you're selling to enterprise and need custom objects, complex approval flows, or SOC 2 compliance documentation. Close's Power Dialer feature alone can replace a $50-$100/seat calling tool like Aircall or Dialpad.</p>
 """,
     "faq": [
         ("Is Close good for GTM Engineers?", "Yes, if your outbound motion is phone and email heavy. Close's API is clean, the built-in sequences reduce tool count, and the calling features save money on Aircall or Dialpad. Less automation power than HubSpot, but lower total cost for outbound-focused teams."),
@@ -176,6 +184,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Attio is the modern CRM for technical teams that find HubSpot too rigid and Salesforce too bloated. The product launched in 2023 and has gained rapid adoption among startups and technical founders who want a CRM that treats data like a database, not a form. Attio's flexible data model lets you create custom objects, relationships, and views that adapt to your specific GTM process.</p>
 <p>For GTM Engineers, Attio's appeal is the database-like experience. Create custom objects for anything (product usage events, partnership deals, hiring signals), build filtered views like you'd build database queries, and automate with an API that feels like it was designed by engineers, not CRM product managers.</p>
+<p>Attio's rapid iteration cycle means the product improves monthly. Recent additions include workflow automation triggers, improved reporting views, and deeper integration options. The risk of choosing a young CRM is offset by the pace of feature delivery.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -202,6 +211,7 @@ TOOL_REVIEWS = {
 <p>Attio is young, and the product has gaps. The automation engine is less mature than HubSpot's workflow builder. Advanced reporting features are still being built. The integration ecosystem is small (50-100 connectors vs HubSpot's 1,500+). If you need a specific integration today, it may not exist yet.</p>
 <p>Market adoption is limited. Attio works well for 5-50 person companies, but enterprise credibility is unproven. If your company's buyers or investors expect to see Salesforce or HubSpot, choosing Attio creates friction in procurement conversations and due diligence.</p>
 <p>Customer support is startup-tier. Response times are slower than HubSpot or Salesforce's paid support tiers. For companies that need guaranteed SLAs and dedicated account managers, Attio's support infrastructure isn't there yet.</p>
+<p>Data migration into Attio from established CRMs is manual and time-consuming. There's no automated migration tool for HubSpot or Salesforce imports. GTM Engineers moving to Attio need to map fields, transform data, and handle relationship linking through CSV imports or API scripts. For teams with 10,000+ CRM records and complex data models, the migration effort can take weeks.</p>
 """,
     "verdict": """
 <p>Attio is the best CRM for technical startup teams (under 50 people) who want flexible data modeling without Salesforce complexity. If your GTM process doesn't fit standard CRM templates, if your team thinks in databases rather than forms, and if you value API quality over integration breadth, Attio is worth evaluating.</p>

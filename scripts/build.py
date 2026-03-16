@@ -365,7 +365,7 @@ SALARY_VS = {
 
 def pad_description(desc, target_min=150, target_max=158):
     """Ensure description is within 150-158 chars by appending filler."""
-    suffixes = [" Updated weekly.", " Independent.", " Free."]
+    suffixes = [" Updated weekly.", " Independent.", " Free.", " No ads."]
     used = set()
     for suffix in suffixes:
         if target_min <= len(desc) <= target_max:
@@ -5711,47 +5711,47 @@ TOOL_REVIEWS = [
     # Data Enrichment & Orchestration (9)
     {"slug": "clay-review", "name": "Clay", "category": "Data Enrichment & Orchestration",
      "url": "https://clay.com", "price_range": "$0-$800/mo",
-     "title": "Clay Review 2026: The GTM Engineer's Command Center",
+     "title": "Clay Review 2026: GTM's Command Center",
      "meta_desc": "Honest Clay review for GTM Engineers. 84% adoption rate, pricing breakdown, workflow examples, and where Clay falls short.",
      "content_module": "tools_enrichment", "content_key": "clay"},
     {"slug": "apollo-review", "name": "Apollo.io", "category": "Data Enrichment & Orchestration",
      "url": "https://apollo.io", "price_range": "$0-$149/mo",
-     "title": "Apollo.io Review 2026: Data + Outbound in One Platform",
+     "title": "Apollo.io Review 2026: Data + Outbound",
      "meta_desc": "Apollo.io review for GTM Engineers. Free tier breakdown, data accuracy reality check, and how it stacks against Clay and ZoomInfo.",
      "content_module": "tools_enrichment", "content_key": "apollo"},
     {"slug": "zoominfo-review", "name": "ZoomInfo", "category": "Data Enrichment & Orchestration",
      "url": "https://zoominfo.com", "price_range": "Custom ($15K-$40K+/yr)",
-     "title": "ZoomInfo Review 2026: Enterprise Data at Enterprise Prices",
+     "title": "ZoomInfo Review 2026: Enterprise Data Costs",
      "meta_desc": "ZoomInfo review for GTM Engineers. Pricing opacity, data quality vs competitors, intent data value, and who should still be paying.",
      "content_module": "tools_enrichment", "content_key": "zoominfo"},
     {"slug": "clearbit-review", "name": "Clearbit", "category": "Data Enrichment & Orchestration",
      "url": "https://clearbit.com", "price_range": "Free (HubSpot-bundled)",
-     "title": "Clearbit Review 2026: Free With HubSpot, But Is It Enough?",
+     "title": "Clearbit Review 2026: Free With HubSpot",
      "meta_desc": "Clearbit review for GTM Engineers. HubSpot acquisition impact, data coverage gaps, and when you need a standalone enrichment tool.",
      "content_module": "tools_enrichment", "content_key": "clearbit"},
     {"slug": "fullenrich-review", "name": "FullEnrich", "category": "Data Enrichment & Orchestration",
      "url": "https://fullenrich.com", "price_range": "$29-$99/mo",
-     "title": "FullEnrich Review 2026: Waterfall Enrichment Done Right",
+     "title": "FullEnrich Review 2026: Waterfall Done Right",
      "meta_desc": "FullEnrich review for GTM Engineers. Triple-verified emails, waterfall enrichment across 15+ providers, and credit economics breakdown.",
      "content_module": "tools_enrichment", "content_key": "fullenrich"},
     {"slug": "lusha-review", "name": "Lusha", "category": "Data Enrichment & Orchestration",
      "url": "https://lusha.com", "price_range": "$0-$79/mo",
-     "title": "Lusha Review 2026: Quick Contact Data for Small Teams",
+     "title": "Lusha Review 2026: Quick Contact Data",
      "meta_desc": "Lusha review for GTM Engineers. Chrome extension workflow, credit limits, data accuracy vs Apollo and ZoomInfo, and scaling limitations.",
      "content_module": "tools_enrichment", "content_key": "lusha"},
     {"slug": "cognism-review", "name": "Cognism", "category": "Data Enrichment & Orchestration",
      "url": "https://cognism.com", "price_range": "Custom ($15K-$35K+/yr)",
-     "title": "Cognism Review 2026: The EMEA Data Specialist",
+     "title": "Cognism Review 2026: EMEA Data Specialist",
      "meta_desc": "Cognism review for GTM Engineers. European data coverage, GDPR compliance, Diamond Data phone numbers, and US market gaps.",
      "content_module": "tools_enrichment", "content_key": "cognism"},
     {"slug": "leadiq-review", "name": "LeadIQ", "category": "Data Enrichment & Orchestration",
      "url": "https://leadiq.com", "price_range": "$0-$89/mo",
-     "title": "LeadIQ Review 2026: LinkedIn Prospecting Made Faster",
+     "title": "LeadIQ Review 2026: Fast LinkedIn Capture",
      "meta_desc": "LeadIQ review for GTM Engineers. One-click LinkedIn capture, CRM sync speed, data quality vs Lusha, and where it fits in the enrichment stack.",
      "content_module": "tools_enrichment", "content_key": "leadiq"},
     {"slug": "persana-review", "name": "Persana AI", "category": "Data Enrichment & Orchestration",
      "url": "https://persana.ai", "price_range": "$0-$149/mo",
-     "title": "Persana AI Review 2026: AI-Powered Prospecting Newcomer",
+     "title": "Persana AI Review 2026: AI Prospecting",
      "meta_desc": "Persana AI review for GTM Engineers. AI enrichment workflows, signal-based prospecting, early-stage limitations, and Clay comparison.",
      "content_module": "tools_enrichment", "content_key": "persana"},
 
@@ -5763,112 +5763,112 @@ TOOL_REVIEWS = [
      "content_module": "tools_outbound", "content_key": "instantly"},
     {"slug": "smartlead-review", "name": "Smartlead", "category": "Outbound Sequencing",
      "url": "https://smartlead.ai", "price_range": "$39-$94/mo",
-     "title": "Smartlead Review 2026: The Agency Cold Email Workhorse",
+     "title": "Smartlead Review 2026: Agency Cold Email",
      "meta_desc": "Smartlead review for GTM Engineers. Unlimited mailbox rotation, white-label agency features, API depth, and Instantly comparison.",
      "content_module": "tools_outbound", "content_key": "smartlead"},
     {"slug": "outreach-review", "name": "Outreach", "category": "Outbound Sequencing",
      "url": "https://outreach.io", "price_range": "Custom ($100-$150/seat/mo)",
-     "title": "Outreach Review 2026: Enterprise Sales Engagement",
+     "title": "Outreach Review 2026: Enterprise Sequences",
      "meta_desc": "Outreach review for GTM Engineers. Sequence automation, CRM integration depth, pricing reality, and when Instantly is the better choice.",
      "content_module": "tools_outbound", "content_key": "outreach"},
     {"slug": "salesloft-review", "name": "Salesloft", "category": "Outbound Sequencing",
      "url": "https://salesloft.com", "price_range": "Custom ($75-$125/seat/mo)",
-     "title": "Salesloft Review 2026: Outreach's Main Competitor",
+     "title": "Salesloft Review 2026: Outreach Rival",
      "meta_desc": "Salesloft review for GTM Engineers. Cadence builder, Rhythm AI features, pricing vs Outreach, and the enterprise sales engagement market.",
      "content_module": "tools_outbound", "content_key": "salesloft"},
     {"slug": "lemlist-review", "name": "Lemlist", "category": "Outbound Sequencing",
      "url": "https://lemlist.com", "price_range": "$39-$159/mo",
-     "title": "Lemlist Review 2026: Multichannel Outbound for SMBs",
+     "title": "Lemlist Review 2026: Multichannel Outbound",
      "meta_desc": "Lemlist review for GTM Engineers. LinkedIn + email sequences, image personalization, deliverability tools, and scaling limitations.",
      "content_module": "tools_outbound", "content_key": "lemlist"},
     {"slug": "heyreach-review", "name": "HeyReach", "category": "Outbound Sequencing",
      "url": "https://heyreach.io", "price_range": "$79-$499/mo",
-     "title": "HeyReach Review 2026: LinkedIn Automation at Scale",
+     "title": "HeyReach Review 2026: LinkedIn at Scale",
      "meta_desc": "HeyReach review for GTM Engineers. Multi-account LinkedIn automation, agency pricing, connection limits, and compliance risks.",
      "content_module": "tools_outbound", "content_key": "heyreach"},
     {"slug": "woodpecker-review", "name": "Woodpecker", "category": "Outbound Sequencing",
      "url": "https://woodpecker.co", "price_range": "$29-$74/mo",
-     "title": "Woodpecker Review 2026: Reliable Cold Email for B2B",
+     "title": "Woodpecker Review 2026: B2B Cold Email",
      "meta_desc": "Woodpecker review for GTM Engineers. Deliverability focus, A/B testing, agency features, and why it's the quiet alternative to Instantly.",
      "content_module": "tools_outbound", "content_key": "woodpecker"},
 
     # CRM (5)
     {"slug": "hubspot-review", "name": "HubSpot CRM", "category": "CRM",
      "url": "https://hubspot.com", "price_range": "$0-$1,200/mo",
-     "title": "HubSpot CRM Review 2026: The GTM Engineer's Default CRM",
+     "title": "HubSpot CRM Review 2026: The GTM Default",
      "meta_desc": "HubSpot CRM review for GTM Engineers. Free tier power, workflow automation depth, API quality, and where Salesforce still wins.",
      "content_module": "tools_crm", "content_key": "hubspot"},
     {"slug": "salesforce-review", "name": "Salesforce", "category": "CRM",
      "url": "https://salesforce.com", "price_range": "$25-$300/user/mo",
-     "title": "Salesforce Review 2026: Still the Enterprise Standard",
+     "title": "Salesforce Review 2026: Enterprise CRM",
      "meta_desc": "Salesforce review for GTM Engineers. SOQL power, AppExchange ecosystem, admin overhead, and when HubSpot is the smarter choice.",
      "content_module": "tools_crm", "content_key": "salesforce"},
     {"slug": "pipedrive-review", "name": "Pipedrive", "category": "CRM",
      "url": "https://pipedrive.com", "price_range": "$14-$99/user/mo",
-     "title": "Pipedrive Review 2026: Simple Pipeline CRM for Small Teams",
+     "title": "Pipedrive Review 2026: Simple Pipeline CRM",
      "meta_desc": "Pipedrive review for GTM Engineers. Visual pipeline management, automation limits, API capabilities, and when you outgrow it.",
      "content_module": "tools_crm", "content_key": "pipedrive"},
     {"slug": "close-review", "name": "Close CRM", "category": "CRM",
      "url": "https://close.com", "price_range": "$49-$139/user/mo",
-     "title": "Close CRM Review 2026: Built for Outbound-Heavy Teams",
+     "title": "Close CRM Review 2026: Outbound-First",
      "meta_desc": "Close CRM review for GTM Engineers. Built-in calling, email sequences inside CRM, API quality, and the outbound-first design philosophy.",
      "content_module": "tools_crm", "content_key": "close"},
     {"slug": "attio-review", "name": "Attio", "category": "CRM",
      "url": "https://attio.com", "price_range": "$0-$119/user/mo",
-     "title": "Attio Review 2026: The Modern CRM for Technical Teams",
+     "title": "Attio Review 2026: Modern CRM for Builders",
      "meta_desc": "Attio review for GTM Engineers. Flexible data model, real-time syncing, API-first architecture, and why startups are choosing it over HubSpot.",
      "content_module": "tools_crm", "content_key": "attio"},
 
     # Workflow Automation (3)
     {"slug": "make-review", "name": "Make", "category": "Workflow Automation",
      "url": "https://make.com", "price_range": "$0-$34.12/mo",
-     "title": "Make Review 2026: Visual Automation for GTM Pipelines",
+     "title": "Make Review 2026: Visual GTM Automation",
      "meta_desc": "Make (Integromat) review for GTM Engineers. Visual workflow builder, HTTP module flexibility, per-operation pricing, and how it compares to n8n and Zapier.",
      "content_module": "tools_automation", "content_key": "make"},
     {"slug": "n8n-review", "name": "n8n", "category": "Workflow Automation",
      "url": "https://n8n.io", "price_range": "$0 (self-hosted) - $60/mo",
-     "title": "n8n Review 2026: Self-Hosted Automation at 54% Adoption",
+     "title": "n8n Review 2026: Self-Hosted Automation",
      "meta_desc": "n8n review for GTM Engineers. 54% adoption, self-hosting economics, code node flexibility, and why it's replacing Zapier in GTM stacks.",
      "content_module": "tools_automation", "content_key": "n8n"},
     {"slug": "zapier-review", "name": "Zapier", "category": "Workflow Automation",
      "url": "https://zapier.com", "price_range": "$0-$103.50/mo",
-     "title": "Zapier Review 2026: 6,000+ Integrations, Per-Task Pricing",
+     "title": "Zapier Review 2026: 6,000+ Integrations",
      "meta_desc": "Zapier review for GTM Engineers. Massive integration library, per-task pricing limits, AI features assessment, and when to switch to n8n or Make.",
      "content_module": "tools_automation", "content_key": "zapier"},
 
     # Intent Data (2)
     {"slug": "6sense-review", "name": "6sense", "category": "Intent Data",
      "url": "https://6sense.com", "price_range": "Custom ($25K-$100K+/yr)",
-     "title": "6sense Review 2026: Enterprise Intent Data at Enterprise Prices",
+     "title": "6sense Review 2026: Enterprise Intent Data",
      "meta_desc": "6sense review for GTM Engineers. Account identification, predictive scoring, ABM orchestration, pricing reality, and who can justify the cost.",
      "content_module": "tools_intent", "content_key": "6sense"},
     {"slug": "bombora-review", "name": "Bombora", "category": "Intent Data",
      "url": "https://bombora.com", "price_range": "Custom ($15K-$30K+/yr)",
-     "title": "Bombora Review 2026: B2B Intent Data From the Publisher Co-op",
+     "title": "Bombora Review 2026: Publisher Intent Data",
      "meta_desc": "Bombora review for GTM Engineers. Company Surge signals, topic taxonomy, integration options, signal noise, and how it compares to 6sense.",
      "content_module": "tools_intent", "content_key": "bombora"},
 
     # Analytics (2)
     {"slug": "segment-review", "name": "Segment", "category": "Analytics",
      "url": "https://segment.com", "price_range": "$0-$120+/mo",
-     "title": "Segment Review 2026: CDP for Complex Data Stacks",
+     "title": "Segment Review 2026: CDP for GTM Stacks",
      "meta_desc": "Segment review for GTM Engineers. Data routing, identity resolution, MTU pricing, Twilio acquisition impact, and whether you need a CDP.",
      "content_module": "tools_analytics", "content_key": "segment"},
     {"slug": "posthog-review", "name": "PostHog", "category": "Analytics",
      "url": "https://posthog.com", "price_range": "$0 (1M events free)",
-     "title": "PostHog Review 2026: Open-Source Analytics for Technical Teams",
+     "title": "PostHog Review 2026: Open-Source Analytics",
      "meta_desc": "PostHog review for GTM Engineers. Product analytics, session replay, feature flags, generous free tier, and the developer-friendly alternative to Mixpanel.",
      "content_module": "tools_analytics", "content_key": "posthog"},
 
     # LinkedIn & Social (2)
     {"slug": "linkedin-sales-nav-review", "name": "LinkedIn Sales Navigator", "category": "LinkedIn & Social",
      "url": "https://linkedin.com/sales", "price_range": "$99.99-$179.99/mo",
-     "title": "Sales Navigator Review 2026: LinkedIn's Toll Road for Prospecting",
+     "title": "Sales Navigator Review 2026: Worth It?",
      "meta_desc": "LinkedIn Sales Navigator review for GTM Engineers. Advanced search, InMail decline, CRM sync, pricing frustration, and whether Apollo is enough.",
      "content_module": "tools_linkedin", "content_key": "linkedin_sales_nav"},
     {"slug": "phantombuster-review", "name": "PhantomBuster", "category": "LinkedIn & Social",
      "url": "https://phantombuster.com", "price_range": "$69-$439/mo",
-     "title": "PhantomBuster Review 2026: LinkedIn Automation and Its Risks",
+     "title": "PhantomBuster Review 2026: LinkedIn Risks",
      "meta_desc": "PhantomBuster review for GTM Engineers. Profile scraping, connection automation, credit economics, LinkedIn ban risks, and ethical considerations.",
      "content_module": "tools_linkedin", "content_key": "phantombuster"},
 ]
@@ -5888,7 +5888,7 @@ TOOL_CATEGORIES = [
         "slug": "data-enrichment",
         "name": "Data Enrichment & Orchestration",
         "category_key": "Data Enrichment & Orchestration",
-        "title": "Best Data Enrichment Tools for GTM Engineers (2026)",
+        "title": "Data Enrichment Tools for GTM Engineers 2026",
         "meta_desc": "Compare 9 data enrichment and orchestration tools for GTM Engineers. Clay, Apollo, ZoomInfo, and more with honest reviews and pricing.",
         "intro": """<p>Data enrichment is the foundation of every GTM stack. You can write the best cold email on the planet, but if you're sending it to the wrong person at the wrong company with a dead email address, none of it matters. Enrichment tools take a name or domain and turn it into a complete contact profile: verified emails, phone numbers, job titles, company revenue, tech stack, funding data.</p>
 <p>For GTM Engineers, the enrichment layer is where most of your pipeline logic lives. Clay sits at 84% adoption in our 2026 survey because it orchestrates dozens of data sources in one workflow. Apollo bundles enrichment with outbound sequencing for teams that want fewer tools. ZoomInfo still dominates enterprise budgets despite pricing that makes founders wince.</p>
@@ -5899,7 +5899,7 @@ TOOL_CATEGORIES = [
         "slug": "outbound-sequencing",
         "name": "Outbound Sequencing",
         "category_key": "Outbound Sequencing",
-        "title": "Best Outbound Sequencing Tools for GTM Engineers (2026)",
+        "title": "Outbound Sequencing Tools for GTM Teams 2026",
         "meta_desc": "Compare 7 outbound sequencing tools for GTM Engineers. Instantly, Smartlead, Outreach, Salesloft, and more with pricing and deliverability data.",
         "intro": """<p>Outbound sequencing tools send your cold emails, warm-up your inboxes, and track replies across multi-step campaigns. They're the execution layer. Your enrichment data and copywriting mean nothing if emails bounce or land in spam. Deliverability is the single most important feature in this category.</p>
 <p>The outbound market split hard in 2024-2025. On one side: Instantly and Smartlead, built for high-volume cold outreach with rotating inboxes and aggressive warm-up. On the other: Outreach and Salesloft, enterprise platforms with CRM sync, call logging, and manager dashboards. GTM Engineers tend to favor the first camp because the API access is better and the pricing scales with volume instead of seats.</p>
@@ -5910,7 +5910,7 @@ TOOL_CATEGORIES = [
         "slug": "crm",
         "name": "CRM",
         "category_key": "CRM",
-        "title": "Best CRMs for GTM Engineers (2026)",
+        "title": "Best CRMs for GTM Engineers 2026: Compared",
         "meta_desc": "Compare 5 CRMs for GTM Engineers. HubSpot, Salesforce, Pipedrive, Close, and Attio with honest reviews, API quality, and automation depth.",
         "intro": """<p>92% of GTM Engineers use a CRM. That's near-universal adoption, but the CRM choice defines your entire automation surface area. A CRM with a bad API turns every integration into a hack. A CRM with deep workflow automation lets you build pipeline logic that runs without human intervention.</p>
 <p>For GTM Engineers, the CRM evaluation criteria are different from what a VP of Sales cares about. You need strong API documentation, flexible custom objects, webhook support, and automation triggers that fire reliably. Salesforce wins on customization depth but requires admin overhead. HubSpot wins on time-to-value and free-tier generosity. The newer players (Attio, Close) win on developer experience and speed.</p>
@@ -5921,7 +5921,7 @@ TOOL_CATEGORIES = [
         "slug": "workflow-automation",
         "name": "Workflow Automation",
         "category_key": "Workflow Automation",
-        "title": "Best Workflow Automation Tools for GTM Engineers (2026)",
+        "title": "Workflow Automation Tools for GTM Teams 2026",
         "meta_desc": "Compare Make, n8n, and Zapier for GTM Engineers. Self-hosted vs cloud, pricing models, execution limits, and which fits your automation stack.",
         "intro": """<p>Workflow automation tools are the glue connecting everything else. They move data between your enrichment tools, CRM, sequencing platform, and Slack channels. Without them, you're copying and pasting between tabs or writing custom scripts for every integration.</p>
 <p>n8n hit 54% adoption in our 2026 survey, overtaking Zapier for the first time among GTM Engineers. The reason is simple: n8n is self-hosted, has no per-execution pricing, and gives you full control over data flow. Make (formerly Integromat) offers a strong middle ground with visual workflows and reasonable pricing. Zapier remains the easiest to start with but becomes expensive fast at scale.</p>
@@ -5943,7 +5943,7 @@ TOOL_CATEGORIES = [
         "slug": "intent-data",
         "name": "Intent & Signal Data",
         "category_key": "Intent Data",
-        "title": "Best Intent Data Platforms for GTM Engineers (2026)",
+        "title": "Intent Data Platforms for GTM Engineers 2026",
         "meta_desc": "Compare intent data platforms for GTM Engineers. 6sense, Bombora, and signal-based targeting with pricing reality and integration patterns.",
         "intro": """<p>Intent data tells you who's actively researching solutions like yours before they ever fill out a form. These platforms track content consumption across publisher networks, review sites, and search patterns to surface accounts showing buying signals. For GTM Engineers, intent data is the difference between cold outreach and warm outreach.</p>
 <p>The intent data market is dominated by two players: 6sense (full ABM platform with intent baked in) and Bombora (pure intent data provider that feeds into other tools). 6sense costs $30K-$100K+ annually and wants to own your entire ABM workflow. Bombora sells data that you pipe into Clay, your CRM, or your sequencing tool for $25K-$50K/year.</p>
@@ -6078,7 +6078,7 @@ TOOL_COMPARISONS = [
      "content_module": "comparisons_enrichment", "content_key": "clay-vs-zoominfo",
      "category": "Data Enrichment & Orchestration"},
     {"slug": "instantly-vs-smartlead", "tool_a": "Instantly", "tool_b": "Smartlead",
-     "title": "Instantly vs Smartlead 2026: Cold Email Compared",
+     "title": "Instantly vs Smartlead 2026: Cold Email",
      "meta_desc": "Instantly vs Smartlead comparison for GTM Engineers. Deliverability, warmup, pricing, and agency features compared head-to-head.",
      "content_module": "comparisons_outbound", "content_key": "instantly-vs-smartlead",
      "category": "Outbound Sequencing"},
@@ -6113,7 +6113,7 @@ TOOL_COMPARISONS = [
      "content_module": "comparisons_enrichment", "content_key": "lemlist-vs-instantly",
      "category": "Outbound Sequencing"},
     {"slug": "clay-vs-clearbit", "tool_a": "Clay", "tool_b": "Clearbit",
-     "title": "Clay vs Clearbit 2026: Orchestration vs Free CRM Data",
+     "title": "Clay vs Clearbit 2026: Data Enrichment",
      "meta_desc": "Clay vs Clearbit comparison for GTM Engineers. Multi-source waterfall vs free HubSpot enrichment, and when you need both.",
      "content_module": "comparisons_enrichment", "content_key": "clay-vs-clearbit",
      "category": "Data Enrichment & Orchestration"},
@@ -6153,7 +6153,7 @@ TOOL_COMPARISONS = [
      "content_module": "comparisons_linkedin", "content_key": "linkedin-sales-nav-vs-apollo",
      "category": "LinkedIn & Social"},
     {"slug": "cognism-vs-zoominfo", "tool_a": "Cognism", "tool_b": "ZoomInfo",
-     "title": "Cognism vs ZoomInfo 2026: Data Provider Compared",
+     "title": "Cognism vs ZoomInfo 2026: Data Compared",
      "meta_desc": "Cognism vs ZoomInfo comparison for GTM Engineers. EMEA vs North America data, phone verification, compliance, and which platform fits your market.",
      "content_module": "comparisons_enrichment", "content_key": "cognism-vs-zoominfo",
      "category": "Data Enrichment & Orchestration"},
@@ -6329,27 +6329,27 @@ TOOL_ALTERNATIVES = [
      "content_module": "alternatives_enrichment", "content_key": "apollo",
      "category": "Data Enrichment & Orchestration"},
     {"slug": "zoominfo-alternatives", "tool_name": "ZoomInfo",
-     "title": "Best ZoomInfo Alternatives 2026 for GTM Engineers",
+     "title": "Best ZoomInfo Alternatives 2026 for GTM",
      "meta_desc": "Top ZoomInfo alternatives with transparent pricing. Get comparable B2B data without the enterprise contracts and opaque sales process.",
      "content_module": "alternatives_enrichment", "content_key": "zoominfo",
      "category": "Data Enrichment & Orchestration"},
     {"slug": "instantly-alternatives", "tool_name": "Instantly",
-     "title": "Best Instantly Alternatives 2026 for GTM Engineers",
+     "title": "Best Instantly Alternatives 2026 for GTM",
      "meta_desc": "Top Instantly alternatives for cold email and outbound. Multichannel options, agency features, and tools with better lead databases.",
      "content_module": "alternatives_outbound", "content_key": "instantly",
      "category": "Outbound Sequencing"},
     {"slug": "outreach-alternatives", "tool_name": "Outreach",
-     "title": "Best Outreach Alternatives 2026 for GTM Engineers",
+     "title": "Best Outreach Alternatives 2026 for GTM",
      "meta_desc": "Top Outreach alternatives compared. Enterprise sales engagement at a fraction of the cost, or lightweight tools that just work.",
      "content_module": "alternatives_outbound", "content_key": "outreach",
      "category": "Outbound Sequencing"},
     {"slug": "hubspot-alternatives", "tool_name": "HubSpot",
-     "title": "Best HubSpot Alternatives 2026 for GTM Engineers",
+     "title": "Best HubSpot Alternatives 2026 for GTM",
      "meta_desc": "Top HubSpot CRM alternatives compared with pricing, pros, and cons. From enterprise Salesforce to lightweight CRMs that cost 90% less.",
      "content_module": "alternatives_crm", "content_key": "hubspot",
      "category": "CRM"},
     {"slug": "salesforce-alternatives", "tool_name": "Salesforce",
-     "title": "Best Salesforce Alternatives 2026 for GTM Engineers",
+     "title": "Best Salesforce Alternatives 2026 for GTM",
      "meta_desc": "Top Salesforce alternatives with lower total cost of ownership. Modern CRMs, faster setup, and no dedicated admin required.",
      "content_module": "alternatives_crm", "content_key": "salesforce",
      "category": "CRM"},
@@ -6364,7 +6364,7 @@ TOOL_ALTERNATIVES = [
      "content_module": "alternatives_intent", "content_key": "6sense",
      "category": "Intent Data"},
     {"slug": "linkedin-sales-navigator-alternatives", "tool_name": "LinkedIn Sales Navigator",
-     "title": "Best Sales Navigator Alternatives 2026 for GTM Engineers",
+     "title": "Best Sales Nav Alternatives 2026 for GTM",
      "meta_desc": "Top LinkedIn Sales Navigator alternatives compared. Get prospecting data, contact capture, and outreach without the $100+/month per-seat fee.",
      "content_module": "alternatives_linkedin", "content_key": "linkedin-sales-navigator",
      "category": "LinkedIn & Social"},
@@ -6543,52 +6543,52 @@ def build_tool_alternatives():
 
 TOOL_ROUNDUPS = [
     {"slug": "best-gtm-tools-startups",
-     "title": "Best GTM Tools for Startups 2026",
+     "title": "Best GTM Tools for Startups 2026: Top Picks",
      "meta_desc": "The 6 best GTM tools for startups ranked by cost, speed to value, and scalability. Build a full outbound stack for under $500/month.",
      "content_module": "roundups_startup", "content_key": "best-gtm-tools-startups",
      "category_tag": "Startup Stack"},
     {"slug": "best-gtm-tools-enterprise",
-     "title": "Best GTM Tools for Enterprise 2026",
+     "title": "Best GTM Tools for Enterprise Teams 2026",
      "meta_desc": "Top enterprise GTM tools ranked for scale, compliance, and integration depth. ZoomInfo, Outreach, Salesforce, 6sense, and Segment compared.",
      "content_module": "roundups_startup", "content_key": "best-gtm-tools-enterprise",
      "category_tag": "Enterprise Stack"},
     {"slug": "best-free-gtm-tools",
-     "title": "Best Free GTM Tools 2026",
+     "title": "Best Free GTM Tools 2026: Zero-Cost Stack Guide",
      "meta_desc": "Build a complete GTM pipeline at zero cost. Apollo, HubSpot, n8n, PostHog, and LinkedIn free tiers ranked for real production use.",
      "content_module": "roundups_free", "content_key": "best-free-gtm-tools",
      "category_tag": "Free Tools"},
     {"slug": "best-data-enrichment-tools",
-     "title": "Best Data Enrichment Tools 2026",
+     "title": "Best Data Enrichment Tools 2026: Top Ranked",
      "meta_desc": "Top 8 data enrichment tools ranked by accuracy, coverage, and pricing. Clay, Apollo, ZoomInfo, Clearbit, FullEnrich, and more compared.",
      "content_module": "roundups_category", "content_key": "best-data-enrichment-tools",
      "category_tag": "Data Enrichment"},
     {"slug": "best-outbound-sequencing-tools",
-     "title": "Best Outbound Sequencing Tools 2026",
+     "title": "Best Outbound Sequencing Tools 2026: Ranked",
      "meta_desc": "Top 6 outbound sequencing tools ranked by deliverability, volume, and pricing. Instantly, Smartlead, Outreach, and more compared head-to-head.",
      "content_module": "roundups_category", "content_key": "best-outbound-sequencing-tools",
      "category_tag": "Outbound Sequencing"},
     {"slug": "best-crm-gtm-engineers",
-     "title": "Best CRM for GTM Engineers 2026",
+     "title": "Best CRM for GTM Engineers 2026: Top Ranked",
      "meta_desc": "Top 5 CRMs ranked by API quality, automation depth, and integration ecosystem. HubSpot, Salesforce, Attio, Close, and Pipedrive compared.",
      "content_module": "roundups_category", "content_key": "best-crm-gtm-engineers",
      "category_tag": "CRM"},
     {"slug": "best-workflow-automation-tools",
-     "title": "Best Workflow Automation Tools 2026",
+     "title": "Best Workflow Automation Tools 2026: Ranked",
      "meta_desc": "Make vs n8n vs Zapier for GTM automation. Pricing, complexity handling, and self-hosting options compared with a clear recommendation.",
      "content_module": "roundups_category", "content_key": "best-workflow-automation-tools",
      "category_tag": "Workflow Automation"},
     {"slug": "best-ai-tools-gtm",
-     "title": "Best AI Tools for GTM 2026",
+     "title": "Best AI Tools for GTM Engineers 2026: Ranked",
      "meta_desc": "Top AI-powered GTM tools ranked. Clay AI enrichment, Persana signal prospecting, Apollo AI sequences, and LLM workflows compared.",
      "content_module": "roundups_free", "content_key": "best-ai-tools-gtm",
      "category_tag": "AI & GTM"},
     {"slug": "best-linkedin-prospecting-tools",
-     "title": "Best LinkedIn Prospecting Tools 2026",
+     "title": "Best LinkedIn Prospecting Tools 2026: Ranked",
      "meta_desc": "Top LinkedIn prospecting tools ranked by data access and account safety. Sales Navigator, HeyReach, and PhantomBuster compared.",
      "content_module": "roundups_category", "content_key": "best-linkedin-prospecting-tools",
      "category_tag": "LinkedIn & Social"},
     {"slug": "best-intent-data-platforms",
-     "title": "Best Intent Data Platforms 2026",
+     "title": "Best Intent Data Platforms 2026: Top Ranked",
      "meta_desc": "Top intent data platforms ranked for signal quality and ROI. 6sense, Bombora, and G2 Buyer Intent compared with honest pricing.",
      "content_module": "roundups_category", "content_key": "best-intent-data-platforms",
      "category_tag": "Intent Data"},
@@ -12296,6 +12296,7 @@ def build_job_board():
 </section>
 <div class="salary-content">
     <p>No current postings. Check back soon or subscribe to the newsletter for job alerts.</p>
+    <p>While you wait, explore <a href="/salary/">GTM Engineer salary data</a>, learn <a href="/careers/what-is-a-gtm-engineer/">what a GTM Engineer does</a>, browse our <a href="/tools/">tool reviews</a>, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
 </div>
 '''
         body += newsletter_cta_html("Get GTM Engineer job alerts and salary data delivered weekly.")
@@ -12463,6 +12464,8 @@ function filterJobs() {
 {stats_html}
 
 <div class="salary-content">
+    <p style="margin-bottom: 1.5rem;">Explore <a href="/salary/">GTM Engineer salary data</a> to benchmark compensation, read <a href="/careers/what-is-a-gtm-engineer/">what a GTM Engineer does</a> for role context, browse our <a href="/tools/">tool reviews</a> to build your stack, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
+
     {filter_html}
 
     <p id="job-count" style="font-size: var(--gtme-text-sm); color: var(--gtme-text-secondary); margin-bottom: var(--gtme-space-4);">{total_roles} role{"s" if total_roles != 1 else ""}</p>
@@ -12624,15 +12627,30 @@ def generate_glossary_term(term_data):
 
     # Target 50-60 chars for full title (including " - GTME Pulse" suffix)
     suffix = " - GTME Pulse"
-    base_long = f"What is {term}? GTM Engineering Glossary"
-    base_mid = f"What is {term}? GTM Glossary"
-    base_short = f"{term} Defined"
-    if len(base_long + suffix) <= 60:
-        title = base_long
-    elif len(base_mid + suffix) <= 60:
-        title = base_mid
-    else:
-        title = base_short
+    # Strip parenthetical abbreviations for shorter title variants
+    term_short = re.sub(r'\s*\([^)]+\)', '', term).strip()
+    candidates = [
+        f"What is {term}? GTM Engineering Glossary",
+        f"What is {term}? GTM Engineer Glossary",
+        f"What is {term}? GTM Glossary Term",
+        f"What is {term}? GTM Glossary",
+        f"What is {term_short}? GTM Engineer Glossary",
+        f"What is {term_short}? GTM Glossary",
+        f"{term}: GTM Engineer Definition",
+        f"{term} Defined for GTM Engineers",
+        f"{term}: Definition and GTM Use Cases",
+        f"{term_short}: GTM Engineer Definition",
+        f"{term_short} Defined for GTM Engineers",
+        f"{term} Defined",
+    ]
+    title = None
+    for candidate in candidates:
+        full_len = len(candidate + suffix)
+        if 50 <= full_len <= 60:
+            title = candidate
+            break
+    if not title:
+        title = min(candidates, key=lambda c: abs(len(c + suffix) - 55))
     meta_desc = pad_description(f"What is {term}? Clear definition with real examples and use cases for GTM Engineers. Part of the GTME Pulse glossary.")
 
     page = get_page_wrapper(

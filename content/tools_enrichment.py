@@ -99,6 +99,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>ZoomInfo is the incumbent enterprise data provider. The largest B2B contact database, the deepest company intelligence, and the highest price tag in the category. For GTM Engineers at companies with $50K+ annual data budgets, ZoomInfo provides the most comprehensive contact and company data available.</p>
 <p>The platform covers 100M+ business professionals and 14M+ companies with direct dials, verified emails, org charts, technographics, intent signals, and buying committee mapping. The data quality, particularly for direct dial phone numbers and enterprise contacts, is measurably better than Apollo or Lusha.</p>
+<p>ZoomInfo also offers intent data, website visitor tracking (FormComplete), and engagement analytics through add-on modules. The product is expanding from a contact database into a revenue operations platform, though each new module adds to the already-high annual cost. For GTM Engineers evaluating ZoomInfo, the core question is whether your outbound volume and deal sizes justify the investment over cheaper alternatives.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -117,10 +118,12 @@ TOOL_REVIEWS = {
 <p>The pricing opacity is the #1 complaint across every review site, practitioner forum, and our own survey data. ZoomInfo won't publish prices because they price-discriminate based on company size and perceived willingness to pay. A 10-person startup and a 500-person company get quoted wildly different rates for the same product. This forces a sales conversation for basic product evaluation.</p>
 <p>Contract lock-in is aggressive. Annual contracts with auto-renewal clauses are standard. Cancellation requires written notice 60-90 days before renewal, and the process is intentionally friction-heavy. Multiple practitioners have reported being charged for renewal years after attempting to cancel.</p>
 <p>For GTM Engineers at startups and SMBs, the value proposition breaks down. You're paying $15K+ for data you could get from Apollo ($600/year) + Clay ($1,800/year) + FullEnrich ($350/year) combined. ZoomInfo's edge is in enterprise contact depth and direct dials. If those aren't critical to your workflow, the ROI doesn't work.</p>
+<p>Data freshness is another concern. ZoomInfo's database is massive, but stale records creep in at scale. Job title accuracy degrades for mid-market companies where employees change roles faster than ZoomInfo's crawlers update. Several practitioners in our survey reported 15-20% bounce rates on ZoomInfo-sourced emails for companies under 200 employees. The data quality premium you're paying for erodes outside the enterprise segment.</p>
+<p>API rate limits can also bottleneck GTM workflows. The standard plan caps API calls at levels that restrict high-volume enrichment pipelines. If you're building automated enrichment through Clay or n8n, you'll hit rate limits faster than expected and need to negotiate higher tiers, which adds cost.</p>
 """,
     "verdict": """
 <p>ZoomInfo is the right choice for enterprise GTM teams with budget, where direct dials and org charts drive revenue. If your ACV is $50K+ and you're running multi-threaded outbound into Fortune 500 accounts, ZoomInfo's data depth justifies the cost.</p>
-<p>For everyone else, skip it. Apollo + Clay + FullEnrich gives you 80% of the data at 10% of the cost. The contract terms alone should give startup GTM Engineers pause. ZoomInfo is built for and priced for enterprise sales organizations, not solo operators or small teams.</p>
+<p>For everyone else, skip it. The contract terms and pricing opacity make ZoomInfo a poor fit for agile GTM teams. Apollo + Clay + FullEnrich gives you 80% of the data at 10% of the cost. The contract terms alone should give startup GTM Engineers pause. ZoomInfo is built for and priced for enterprise sales organizations, not solo operators or small teams.</p>
 """,
     "faq": [
         ("How much does ZoomInfo cost?", "Annual contracts typically start at $15,000 and range to $40,000+ for standard packages. Enterprise deals with intent data and full API access can run past $60,000/year. ZoomInfo doesn't publish pricing."),
@@ -133,6 +136,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Clearbit was acquired by HubSpot in late 2023, and the product has shifted from a standalone enrichment API to a built-in HubSpot feature. For HubSpot users, Clearbit's enrichment data (company size, industry, tech stack, revenue range) flows directly into contact and company records at no additional cost.</p>
 <p>Before the acquisition, Clearbit was the go-to enrichment API for developer-oriented teams. The Reveal product (identifying anonymous website visitors), Prospector (contact search), and Enrichment API were popular among GTM Engineers who preferred API-first tools. Post-acquisition, the standalone products are being sunset in favor of HubSpot-native features.</p>
+<p>The practical impact for GTM Engineers: if you're already on HubSpot, Clearbit adds value with zero effort. If you're on Salesforce or any other CRM, Clearbit's future is uncertain enough that building workflows around it is a risk. The data quality is solid for company-level attributes but doesn't extend to individual contact emails or direct dials. Think of Clearbit as a CRM enrichment layer, not a prospecting tool. It tells you more about companies already in your pipeline but won't help you find new contacts.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -149,10 +153,13 @@ TOOL_REVIEWS = {
     "criticism": """
 <p>The HubSpot acquisition created a product identity crisis. GTM Engineers who loved Clearbit's standalone API are watching it get absorbed into a CRM they may not use. If you're a Salesforce shop, Clearbit's value proposition is evaporating. The API still works, but investment and development have shifted to HubSpot-native features.</p>
 <p>Enrichment depth is good for firmographics but shallow for contact data. Clearbit won't give you direct email addresses or phone numbers for individual contacts. It enriches company-level data (industry, headcount, revenue, tech stack) but you still need Apollo, Clay, or another provider for contact-level enrichment. That's a meaningful gap for outbound prospecting.</p>
+<p>Data freshness varies significantly by company size. Large enterprises (5,000+ employees) get updated regularly because they appear in multiple data sources. Mid-market companies (50-500 employees) can show stale tech stack or headcount data for months. Clearbit's crawling prioritizes high-traffic domains, so if your ICP targets smaller companies, expect data lags of 3-6 months on some records.</p>
+<p>The Reveal feature (website visitor identification) only identifies companies, not individuals. You'll see "Acme Corp visited your pricing page" but not which person at Acme Corp visited. Converting company-level signals into outbound lists still requires a separate enrichment step through Apollo or Clay. This creates an extra workflow step that competitors like 6sense handle natively.</p>
 """,
     "verdict": """
 <p>If you're on HubSpot, use Clearbit. It's free and automatic. The enrichment data flowing into your CRM improves lead scoring, segmentation, and reporting with zero marginal cost.</p>
-<p>If you're not on HubSpot, Clearbit is no longer the right choice for standalone enrichment. Apollo, Clay, or FullEnrich provide broader data coverage with clearer pricing. Clearbit's future is as a HubSpot feature, not an independent platform.</p>
+<p>If you're not on HubSpot, Clearbit is no longer the right choice for standalone enrichment. Apollo, Clay, or FullEnrich provide broader data coverage with clearer pricing. Clearbit's future is as a HubSpot feature, not an independent platform. If you're evaluating enrichment tools for a non-HubSpot stack, remove Clearbit from your shortlist and focus on Apollo, Clay, or FullEnrich, all of which have stronger standalone value and clearer product roadmaps for independent operation.</p>
+<p>One scenario where Clearbit still adds value outside HubSpot: anonymous visitor identification. The Reveal product (now HubSpot Breeze Intelligence) can identify companies visiting your website and feed that data into a Clay workflow for real-time intent scoring. If you're on HubSpot, this is free and automatic. If you're not, you need a separate visitor identification tool like Clearbit Reveal, RB2B, or Warmly. The Reveal API still functions for standalone use, but expect it to sunset within 18 months as HubSpot consolidates the product.</p>
 """,
     "faq": [
         ("Is Clearbit still a standalone product?", "Barely. Since the HubSpot acquisition, standalone Clearbit features are being folded into HubSpot. The API still works, but new feature development is HubSpot-native. Expect the standalone product to sunset within 1-2 years."),
@@ -165,6 +172,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>FullEnrich is a waterfall enrichment service that chains 15+ email and phone data providers together to maximize find rates. Instead of paying for ZoomInfo and hoping their single database has the contact you need, FullEnrich queries multiple providers in sequence until it finds a verified result.</p>
 <p>The product is simple by design: upload a list of people (name + company or LinkedIn URL), and FullEnrich returns triple-verified emails and phone numbers. No CRM, no sequences, no AI features. Just the highest possible email/phone match rate at a fraction of what enterprise providers charge.</p>
+<p>The waterfall approach works because no single email provider has complete coverage. Apollo might find 60% of emails for a given list. FullEnrich queries Apollo plus 14 other providers in sequence, catching the 15-25% that Apollo missed. For GTM Engineers running volume outbound, that incremental coverage translates directly into more conversations. The triple verification layer (syntax, domain, mailbox) keeps bounce rates under 3%, which protects sender reputation.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -189,10 +197,12 @@ TOOL_REVIEWS = {
     "criticism": """
 <p>Processing speed varies wildly. Simple email lookups return in seconds, but batch jobs of 1,000+ contacts can take 30-60 minutes. The waterfall approach means your request hits 15+ providers sequentially, and if providers are slow, your batch is slow. There's no way to prioritize speed over coverage or vice versa.</p>
 <p>The product is intentionally bare-bones. No CRM integration, no sequence builder, no analytics dashboard. You upload a list, get results, and export. If you need FullEnrich in an automated workflow, you're building the integration yourself via their API or using Clay's FullEnrich integration. This is fine for technical GTM Engineers but creates friction for less technical users.</p>
+<p>Duplicate detection has a 3-month window. If you submit the same contact twice within 90 days, the second request returns cached results without consuming credits. Outside that window, you're charged again. GTM Engineers running recurring enrichment on the same prospect lists need to track their own dedup logic to avoid credit waste. The API doesn't expose the cache status, so you can't programmatically check whether a contact will hit the cache or consume a fresh credit.</p>
+<p>Phone number coverage is strong for US contacts but drops off significantly for EMEA and APAC markets. If your ICP targets European decision-makers, expect phone find rates under 30% compared to 50-60% for US contacts. Email coverage holds up better internationally, but phone data remains a US-centric strength.</p>
 """,
     "verdict": """
 <p>FullEnrich is the best value in email verification and waterfall enrichment. If you're pairing it with Clay or Apollo as a secondary verification layer, it catches 15-25% more valid emails than either tool alone. The credit economics make it a no-brainer add-on to any enrichment stack.</p>
-<p>Don't use FullEnrich as your primary prospecting tool. It doesn't do search, filtering, or list building. Use Apollo or Clay to build your target list, then run it through FullEnrich for maximum coverage. The combination of Apollo (free tier) + FullEnrich ($29/mo) is the most cost-effective enrichment stack available for solo GTM Engineers.</p>
+<p>Don't use FullEnrich as your primary prospecting tool. It doesn't do search, filtering, or list building. Use Apollo or Clay to build your target list, then run it through FullEnrich for maximum coverage. The combination of Apollo (free tier) + FullEnrich ($29/mo) is the most cost-effective enrichment stack available for solo GTM Engineers. If you're running more than 500 cold emails per month, adding FullEnrich as your verification layer pays for itself in reduced bounces within the first campaign. The credit-based pricing also means you pay per enriched contact, not per seat, which scales better for solo operators than per-user tools like Lusha or Cognism. Credits roll over month to month on annual plans.</p>
 """,
     "faq": [
         ("What does waterfall enrichment mean?", "FullEnrich queries 15+ data providers in sequence for each contact. If Provider A doesn't have the email, it tries Provider B, then C, and so on. This maximizes find rates because no single provider has complete coverage."),
@@ -205,6 +215,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Lusha is a contact data provider focused on simplicity and speed. The Chrome extension lets you pull verified emails and direct dials from LinkedIn profiles in one click. The database covers 100M+ business contacts with a focus on decision-makers at mid-market companies.</p>
 <p>Lusha's strength is accessibility. There's no learning curve, no complex workflow builder, and no API required. Install the extension, visit a LinkedIn profile, click the Lusha icon, and you get contact data. This makes it popular among SDRs and GTM Engineers who need quick, one-off lookups rather than bulk enrichment.</p>
+<p>Lusha's database strength is direct dial phone numbers for North American mid-market contacts. The phone coverage competes with ZoomInfo at a fraction of the price. For GTM Engineers whose outbound strategy includes cold calling, Lusha's per-lookup phone data model is more cost-effective than ZoomInfo's annual contract, especially for teams doing fewer than 1,000 calls per month. Email coverage is competitive with Apollo's free tier for basic lookups but trails FullEnrich for bulk verification accuracy.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -229,10 +240,12 @@ TOOL_REVIEWS = {
     "criticism": """
 <p>Credit limits kill the value for high-volume users. At 480 credits/month on the Pro plan, you're paying roughly $0.10 per contact reveal. Apollo gives unlimited email credits at the same price point. If you need more than a few hundred lookups per month, Lusha's economics don't compete.</p>
 <p>Data coverage outside of the US and Western Europe is thin. Lusha's strength is North American mid-market contacts. If you're prospecting into APAC, Latin America, or smaller European markets, match rates drop to 30-40%. Cognism is a better choice for European-focused teams, and Apollo has broader global coverage.</p>
+<p>The Chrome extension, while fast, occasionally surfaces outdated job titles. Lusha's database updates lag behind LinkedIn profile changes by weeks or months. A contact who changed roles 60 days ago might still show their previous title and company in Lusha. For GTM Engineers who rely on accurate role targeting, this creates wasted outreach to people who've moved on. Cross-referencing Lusha results with LinkedIn before sending is an extra step that partly defeats the speed advantage.</p>
+<p>API access is locked behind the Scale plan (custom pricing), which limits automation options for technical GTM Engineers. If you want to integrate Lusha into Clay or n8n workflows, you're either paying enterprise rates or using the Chrome extension manually. Apollo and FullEnrich offer API access at much lower price points, making them better fits for automated enrichment pipelines.</p>
 """,
     "verdict": """
 <p>Lusha is the right tool for individual contributors who need quick, accurate contact lookups without building workflows. The Chrome extension is the fastest way to get emails and phone numbers from LinkedIn profiles. If you're doing fewer than 500 lookups per month and value simplicity over power, Lusha works.</p>
-<p>For GTM Engineers running high-volume outbound, Lusha's credit limits and per-seat pricing make it expensive relative to Apollo or Clay. Use Lusha as a supplement for quick lookups, not as your primary enrichment engine.</p>
+<p>For GTM Engineers running high-volume outbound, Lusha's credit limits and per-seat pricing make it expensive relative to Apollo or Clay. Use Lusha as a supplement for quick lookups, not as your primary enrichment engine. The free tier (50 credits/month) is enough to evaluate whether Lusha's data covers your ICP before committing to a paid plan. Start there and only upgrade if match rates meet your threshold. For phone-heavy outbound teams, Lusha's direct dial accuracy is competitive with Cognism at a lower price point.</p>
 """,
     "faq": [
         ("Is Lusha better than Apollo for contact data?", "Lusha is faster for one-off lookups (Chrome extension). Apollo is better for bulk enrichment and list building. Lusha's phone number coverage is competitive, but Apollo's unlimited email credits at $49/mo beat Lusha's credit limits for email-heavy workflows."),
@@ -245,6 +258,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Cognism is the European data specialist. While Apollo and ZoomInfo focus primarily on North American contacts, Cognism has built the deepest verified contact database for EMEA markets. The "Diamond Data" feature provides phone-verified direct dials with 98%+ accuracy, a level of verification no competitor matches.</p>
 <p>The platform combines contact search, email/phone enrichment, and intent data (powered by Bombora) with a strong emphasis on GDPR and European privacy compliance. For GTM Engineers prospecting into UK, DACH, Nordics, or Benelux markets, Cognism's data coverage and compliance posture are significant advantages.</p>
+<p>Cognism's competitive position depends on your target geography. For teams selling exclusively into European markets, the data depth is unmatched. For US-focused teams, Apollo and ZoomInfo provide better coverage at comparable or lower price points. The sweet spot is companies with 40%+ European revenue that need reliable contact data across DACH, UK, and Nordic markets without worrying about GDPR compliance headaches.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -261,10 +275,12 @@ TOOL_REVIEWS = {
     "criticism": """
 <p>US data coverage is Cognism's obvious weakness. If most of your prospecting targets North American companies, Apollo or ZoomInfo provide better coverage at a lower price. Cognism's US database is growing but still lags 2-3 years behind its European data in depth and accuracy.</p>
 <p>The pricing structure mirrors ZoomInfo's opacity, which is frustrating for a product targeting the mid-market. If Cognism wants to win SMB and startup GTM Engineers, transparent pricing would help. The mandatory annual contract is a barrier for teams testing the product.</p>
+<p>Integration options outside the major CRM and sequencing platforms are limited. While Cognism works with Salesforce, HubSpot, and Outreach, the API documentation trails behind Apollo and Clay in depth and developer experience. GTM Engineers building custom enrichment pipelines through n8n or Make will find fewer pre-built connectors and less community support than they'd get with Apollo or Clay integrations.</p>
+<p>The Chrome extension works well on LinkedIn but struggles with edge cases: profiles with privacy restrictions, profiles in non-Latin scripts, and company pages with multiple subsidiaries. These aren't dealbreakers, but they create friction for GTM Engineers who prospect across diverse markets. Diamond Data also has a limited verification window, meaning phone numbers verified 6+ months ago may have degraded accuracy as contacts change roles or companies.</p>
 """,
     "verdict": """
 <p>Cognism is the clear choice for GTM Engineers focused on European markets. Diamond Data phone numbers and GDPR compliance are genuine differentiators that no competitor matches. If 50%+ of your outbound targets EMEA, Cognism should be your primary data provider.</p>
-<p>For US-focused teams, Cognism isn't competitive with Apollo or ZoomInfo on coverage. The $15K+ annual contract makes it a hard sell as a secondary data source. Use it for EMEA, use Apollo or Clay for everything else.</p>
+<p>For US-focused teams, Cognism isn't competitive with Apollo or ZoomInfo on coverage. The $15K+ annual contract makes it a hard sell as a secondary data source. Use it for EMEA, use Apollo or Clay for everything else. The sweet spot for Cognism is companies with $5M+ ARR that sell into European markets and need compliant phone data. Below that revenue threshold, the annual cost is hard to justify over Apollo's free tier supplemented with manual LinkedIn research for European contacts. If you're testing the European market before committing to Cognism's contract, run a 500-prospect pilot through Apollo + FullEnrich and measure email deliverability rates. If you're above 90% delivery, you may not need Cognism's premium data. If you're below 80%, the data quality gap is real and Cognism's pricing starts to make sense.</p>
 """,
     "faq": [
         ("How does Cognism's data compare to ZoomInfo for European contacts?", "Cognism has better European coverage, particularly for phone numbers and smaller companies. ZoomInfo has better North American coverage. For EMEA-focused prospecting, Cognism's Diamond Data is the best available."),
@@ -277,6 +293,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>LeadIQ is a LinkedIn-first prospecting tool. The Chrome extension captures contact data from LinkedIn profiles and pushes it directly to your CRM or sequence tool in one click. It's built for the workflow of browsing LinkedIn Sales Navigator, identifying prospects, and capturing their contact info without leaving the browser.</p>
 <p>LeadIQ differentiates from Lusha and Apollo's extensions by focusing on speed-to-CRM. The one-click capture includes automatic CRM deduplication, contact routing, and sequence enrollment. For SDR teams and GTM Engineers who live in LinkedIn, LeadIQ removes the copy-paste friction between prospecting and outreach.</p>
+<p>The product also tracks job changes for saved contacts and generates AI-powered message drafts through its Scribe feature. Job change alerts are one of the strongest buying signals for outbound (new executives are 5x more likely to evaluate new tools in their first 90 days), and LeadIQ's automatic detection saves the manual work of monitoring LinkedIn for changes.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -301,10 +318,12 @@ TOOL_REVIEWS = {
     "criticism": """
 <p>LeadIQ is a point tool in an era where platforms win. It does one thing (LinkedIn capture) well, but GTM Engineers increasingly want enrichment, sequencing, and CRM in fewer tools. Clay can do what LeadIQ does plus 50 other things. Apollo's Chrome extension is free and includes email sequencing. LeadIQ's standalone value is shrinking as competitors add LinkedIn capture to their feature sets.</p>
 <p>Email accuracy is inconsistent. LeadIQ sources emails from multiple providers, and the verification quality varies. Bounce rates of 5-10% are typical, which is better than Apollo but worse than FullEnrich or Cognism's Diamond Data. For high-stakes outbound where sender reputation matters, you'll want a secondary verification step.</p>
+<p>The Scribe AI feature generates email drafts, but quality varies. The personalization relies on LinkedIn profile data, and for profiles with sparse content, the generated messages are generic. GTM Engineers who already use Claude or GPT-4 for email writing won't find Scribe compelling. It's a convenience feature for SDRs, not a differentiator for technical users.</p>
+<p>Job change tracking, while valuable, has a delay of 2-4 weeks from when someone updates their LinkedIn profile to when LeadIQ surfaces the alert. For fast-moving markets where timing matters, that lag means missing the optimal outreach window. Competing tools like Clay can detect job changes closer to real-time by monitoring LinkedIn data more frequently.</p>
 """,
     "verdict": """
 <p>LeadIQ is a solid tool for SDR teams that live in LinkedIn and need fast CRM capture. The job change tracking and sequence enrollment features save real time in daily prospecting workflows. If your team prospects 50+ contacts per day from LinkedIn, LeadIQ's speed advantage matters.</p>
-<p>For solo GTM Engineers or technical operators who build enrichment workflows in Clay, LeadIQ is redundant. Apollo's free Chrome extension covers basic LinkedIn capture, and Clay's LinkedIn integration handles enrichment. LeadIQ's sweet spot is SDR teams at companies with 5-20 reps who want minimal training and fast deployment.</p>
+<p>For solo GTM Engineers or technical operators who build enrichment workflows in Clay, LeadIQ is redundant. Apollo's free Chrome extension covers basic LinkedIn capture, and Clay's LinkedIn integration handles enrichment. LeadIQ's sweet spot is SDR teams at companies with 5-20 reps who want minimal training and fast deployment. If you're evaluating LeadIQ, run a 2-week trial alongside Apollo's free Chrome extension. If Apollo's capture speed and data quality meet your needs, you can save the $45-$89/month LeadIQ subscription. If the one-click CRM sync and job change alerts save your team an hour per day, LeadIQ earns its price. The job change detection alone can pay for the tool if you sell into roles with high turnover.</p>
 """,
     "faq": [
         ("Is LeadIQ better than Lusha?", "LeadIQ is better for CRM integration speed and job change tracking. Lusha has better phone number coverage. If your primary use case is LinkedIn-to-CRM capture, LeadIQ wins. If you need direct dials, Lusha is stronger."),
@@ -317,6 +336,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Persana AI is a newer entrant in the enrichment space, combining AI-powered prospecting with traditional contact data. The platform uses AI to identify buying signals, score prospects, and generate personalized outreach messages on top of a B2B contact database.</p>
 <p>The product targets GTM Engineers who want AI-native prospecting without building custom workflows in Clay. Persana pre-builds the signal detection and scoring that you'd manually configure in Clay, trading customizability for speed. The database covers 700M+ contacts and 200M+ companies, though coverage depth varies significantly by region and industry.</p>
+<p>Persana's bet is that AI-native prospecting will outperform manual workflow-based approaches within 2-3 years. The product auto-detects hiring signals, funding rounds, tech stack changes, and content engagement to surface high-propensity accounts. For GTM Engineers tired of configuring Clay tables for every signal type, Persana's pre-built signal detection is appealing. The trade-off is less control over how signals are weighted and scored.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -342,10 +362,11 @@ TOOL_REVIEWS = {
 <p>Persana is early-stage, and it shows. The database advertises 700M+ contacts, but coverage depth on specific personas and industries is inconsistent. Match rates for mid-market and SMB contacts can be 20-30% lower than Apollo or ZoomInfo. The "700M" number includes a lot of thin records with just a name and company, no email or phone.</p>
 <p>The AI features are promising but unproven at scale. Signal detection and prospect scoring depend on training data that Persana is still building. Clay's formula-based approach gives you more control and transparency over scoring logic. Persana's AI is a black box that works until it doesn't, and debugging AI scoring is harder than debugging Clay formulas.</p>
 <p>Integration ecosystem is limited compared to Clay's 75+ integrations. Persana connects to the major CRMs and sequence tools, but custom integrations require API work that the product doesn't make easy yet.</p>
+<p>Customer support and documentation are thin. The product moves fast, which means features change between sessions and documentation falls behind. GTM Engineers who need stable, well-documented APIs for production workflows will find Persana's current documentation insufficient. Community resources (tutorials, templates, user forums) are sparse compared to Clay's active community and n8n's template library. Building on Persana today means tolerating more ambiguity than most technical users prefer.</p>
 """,
     "verdict": """
 <p>Persana is worth watching but not worth betting on as your primary enrichment tool in 2026. The AI-native approach is compelling, and the pricing is competitive. If Persana's database depth catches up to Apollo's and the AI scoring matures, it could be a serious Clay alternative for less technical GTM Engineers.</p>
-<p>For now, use Clay for workflow flexibility, Apollo for cost-effective data, and keep Persana on your evaluation list for Q3-Q4 2026. Early adopters who test Persana alongside their Clay workflows will be the first to know if the AI approach delivers.</p>
+<p>For now, use Clay for workflow flexibility, Apollo for cost-effective data, and keep Persana on your evaluation list for Q3-Q4 2026. Early adopters who test Persana alongside their Clay workflows will be the first to know if the AI approach delivers. The free tier (100 credits/month) is enough to test signal quality on a small account list. Run Persana's AI scoring against your manual Clay scoring for 50 accounts and compare which approach identifies more qualified prospects. That test will tell you everything you need to know about whether Persana fits your workflow. The biggest risk with Persana is vendor stability. Newer AI enrichment startups have a high failure rate, and migrating away from a dead tool mid-campaign is painful. Keep your Clay workflows as the primary system and treat Persana as an experimental add-on until the company proves it can sustain growth through 2027.</p>
 """,
     "faq": [
         ("Is Persana a Clay competitor?", "Partially. Persana targets the same GTM Engineer persona but takes an AI-first approach vs Clay's workflow-first approach. Clay gives you more control. Persana gives you more automation. They're solving the same problem differently."),

@@ -316,7 +316,8 @@ ROUNDUPS = {
     "best-workflow-automation-tools": {
         "intro": """<p>Workflow automation tools are the glue that holds a GTM stack together. They connect your enrichment data to your CRM, sync your CRM to your sequencing tool, and trigger Slack alerts when a high-value lead takes an action. Without automation, you're copying data between tabs and manually triggering follow-ups. That's not engineering. That's data entry.</p>
 <p>We ranked these tools on execution model (per-operation pricing vs unlimited), complexity handling (branching logic, error handling, sub-workflows), integration breadth (how many GTM tools connect natively), and self-hosting options (for teams that need data control or want to eliminate per-execution fees).</p>
-<p>Three tools dominate GTM automation in 2026: Make, n8n, and Zapier. They cover different use cases, and most GTM Engineers have a strong opinion about which one is best. Here's the data-backed answer.</p>""",
+<p>Three tools dominate GTM automation in 2026: Make, n8n, and Zapier. They cover different use cases, and most GTM Engineers have a strong opinion about which one is best. Here's the data-backed answer.</p>
+<p>One pattern we see repeatedly: GTM Engineers start with Zapier because it's the easiest, hit the per-task pricing wall at 2,000-5,000 tasks/month, then migrate to Make or n8n. The migration takes 1-2 weeks for a typical stack. Starting with Make or n8n saves that migration cost, but Zapier's learning curve is the lowest of the three. Your team's technical comfort level should drive the initial choice, not just pricing. If your team includes a developer or GTM Engineer comfortable with self-hosting, n8n eliminates per-execution costs entirely.</p>""",
 
         "tools": [
             {
@@ -384,7 +385,8 @@ ROUNDUPS = {
     "best-linkedin-prospecting-tools": {
         "intro": """<p>LinkedIn is still the richest source of B2B prospect data, and it's getting harder to access. LinkedIn actively blocks scrapers, limits connection requests, and restricts API access. The tools that win in 2026 are the ones that balance feature power with account safety. Getting banned from LinkedIn costs more than any tool subscription.</p>
 <p>We evaluated LinkedIn tools on two axes: data access (can you extract emails, phone numbers, and company data from profiles?) and automation safety (will using this tool get your LinkedIn account restricted or banned?). Every tool on this list has been used in production for 3+ months without account issues, when used within recommended limits.</p>
-<p>The safe approach: use LinkedIn Sales Navigator for research and list building, then export to Apollo or Clay for contact data. The aggressive approach: use automation tools for connection requests, profile visits, and InMail at scale. The risk/reward trade-off is yours.</p>""",
+<p>The safe approach: use LinkedIn Sales Navigator for research and list building, then export to Apollo or Clay for contact data. The aggressive approach: use automation tools for connection requests, profile visits, and InMail at scale. The risk/reward trade-off is yours.</p>
+<p>A note on account safety: LinkedIn's enforcement is inconsistent. Some accounts run 100+ automated connection requests daily for months without issues. Others get flagged after 30. Variables include account age, connection count, content activity, and whether LinkedIn's detection algorithms have recently been updated. The safest pattern is dedicating a secondary LinkedIn account to outbound automation and keeping your primary professional profile clean. The cost of losing a 10-year LinkedIn network far outweighs any tool subscription.</p>""",
 
         "tools": [
             {

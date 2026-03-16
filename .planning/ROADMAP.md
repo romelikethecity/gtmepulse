@@ -125,10 +125,10 @@ Plans:
   1. Every tool review page has valid SoftwareApplication JSON-LD schema verified by build validation
   2. Every comparison page has FAQPage schema with 3+ Q&A pairs matching visible content
   3. `python3 scripts/build.py` completes with zero validation warnings across all ~260+ pages
-**Plans**: 3 plans
+**Plans**: 1 plan
 
 Plans:
-- [ ] 12-01-PLAN.md — Schema audit + validation fixes + full build verification
+- [ ] 12-01-PLAN.md — Schema validation enhancement + fix all 97 warnings + zero-warning build
 
 ## Progress
 

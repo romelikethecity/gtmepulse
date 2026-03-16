@@ -10,72 +10,56 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 
 ## Current State
 
-**v2.0 shipped 2026-03-14.** 133 pages live. Site is the definitive SEO resource for GTM Engineering salary, career, tools, and benchmark data.
+**v3.0 shipped 2026-03-16.** 263 pages live. Zero build warnings. Full tool review vertical complete with newsletter infrastructure.
 
-**What shipped in v2.0:**
-- Salary data overhaul: all pages use real State of GTME Report 2026 data (n=228)
-- 12 new salary pages (coding premium, equity, bonus, agency fees, etc.)
-- 28 career/agency/job market pages
-- 25 tools and benchmarks pages
-- 6 comparison pages + 14 blog articles
-- Site-wide quality validation (9 QUAL2 categories, zero warnings)
+**What shipped in v3.0:**
+- 30 tool reviews across 8 categories with SoftwareApplication JSON-LD and honest criticism
+- 8 category index pages + 20 head-to-head comparisons with FAQPage schema
+- 10 alternatives pages + 10 "best for" roundup pages
+- 50 glossary term pages with definitions, category grouping, and cross-linking
+- Job board page with filterable cards, stats banner, and scraper data pipeline
+- Newsletter infrastructure: Cloudflare Worker signup, weekly email generator, Monday cron
+- QUAL3 schema validation (SoftwareApplication on reviews, FAQPage on comparisons/alternatives/roundups)
 
-## Current Milestone: v3.0 Tool Reviews, Glossary, and Infrastructure
-
-**Goal:** Add the full tool review vertical (30 reviews, 8 category indexes, 20 comparisons, 10 alternatives, 10 roundups), 50 glossary terms, a job board wired to scraper data, and newsletter automation. Target ~130+ new pages plus infrastructure.
-
-**Target features:**
-- 30 individual tool reviews with deep, honest criticism and SoftwareApplication schema
-- 8 tool category index pages (Data Enrichment, Outbound, CRM, Workflow Automation, AI/LLM, Intent Data, Analytics, LinkedIn)
-- 20 X vs Y tool comparisons (Clay vs Apollo, Instantly vs Smartlead, etc.)
-- 10 alternatives pages (Clay alternatives, Apollo alternatives, etc.)
-- 10 "Best for" roundup pages (Best for Startups, Best for Enterprise, Best Free, etc.)
-- 50 glossary term pages with definitions, examples, and related links
-- Job board page wired to unified scraper exports (gtme audience, id=8)
-- Newsletter signup worker (Cloudflare Worker + Resend Audiences)
-- Weekly email generation + automated Monday send
+**Cumulative site stats:**
+- 263 pages, zero validation warnings
+- ~13,300 LOC Python (build system) + ~5,500 LOC content modules
+- 3 milestones shipped (v1.0, v2.0, v3.0) across 12 phases, 33 plans
 
 ## Requirements
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Build system skeleton (3-file Python split) — v1.0
+- ✓ CSS architecture (tokens.css + components.css + styles.css) — v1.0
+- ✓ Homepage, About, Newsletter, Privacy, Terms, 404 pages — v1.0
+- ✓ 45 salary pages (seniority, location, stage, vs comparisons, calculator, methodology) — v1.0
+- ✓ Newsletter signup via Cloudflare Worker + Resend — v1.0, v3.0
+- ✓ Auto-generated sitemap.xml, robots.txt, CNAME — v1.0
+- ✓ BreadcrumbList + FAQPage + Organization/WebSite schema — v1.0
+- ✓ Salary data overhaul with real State of GTME Report 2026 data (n=228) — v2.0
+- ✓ 28 career/agency/job-market pages — v2.0
+- ✓ 25 tools and benchmarks pages + 6 comparisons — v2.0
+- ✓ 14 blog articles — v2.0
+- ✓ Site-wide quality validation (9 QUAL2 categories) — v2.0
+- ✓ 30 tool reviews with SoftwareApplication schema — v3.0
+- ✓ 8 category indexes + 20 comparisons with FAQPage schema — v3.0
+- ✓ 10 alternatives + 10 roundup pages — v3.0
+- ✓ 50 glossary terms — v3.0
+- ✓ Job board with filterable cards and scraper pipeline — v3.0
+- ✓ Weekly email generator + automated Monday cron — v3.0
+- ✓ QUAL3 schema validation, zero-warning build — v3.0
 
 ### Active
 
-- [ ] Build system skeleton (3-file Python split: build.py, templates.py, nav_config.py)
-- [ ] CSS architecture (tokens.css + components.css + styles.css)
-- [ ] Homepage with hero, stats grid, section previews, newsletter CTA
-- [ ] About page (Rome Thorndike bio, site mission)
-- [ ] Newsletter page with fully wired Resend signup via Cloudflare Worker
-- [ ] Privacy policy and Terms of service pages
-- [ ] 404 error page
-- [ ] Salary index page with aggregate stats and links to all breakdowns
-- [ ] 4 salary-by-seniority pages (Junior, Mid, Senior, Lead/Staff)
-- [ ] 15 salary-by-location pages (SF, NYC, Austin, Seattle, Boston, Denver, Chicago, LA, Miami, Atlanta, Portland, DC, Dallas, San Diego, Remote)
-- [ ] 5 salary-by-company-stage pages (Seed, Series A, Series B, Growth, Enterprise)
-- [ ] 10 salary-vs-comparison pages (GTM Engineer vs RevOps, Sales Ops, Growth Engineer, SDR, Solutions Engineer, Marketing Ops, Sales Engineer, Data Engineer, Product Manager, AE)
-- [ ] Salary calculator page (email-gated full results)
-- [ ] Salary methodology page
-- [ ] Newsletter infrastructure (Cloudflare Worker + Resend Audiences integration)
-- [ ] Auto-generated sitemap.xml, robots.txt, CNAME
-- [ ] BreadcrumbList schema on all inner pages
-- [ ] FAQPage schema on salary comparison and breakdown pages
-- [ ] Organization + WebSite schema on homepage
-- [ ] 3+ internal links per page beyond nav/footer
-- [ ] Mobile-responsive design (375px, 768px, 1024px breakpoints)
+(None — planning next milestone)
 
 ### Out of Scope
 
-- Tool review pages (30 tools) — Wave 2
-- Tool comparison pages (20 matchups) — Wave 2
-- Career guide pages (~15 pages) — Wave 3
-- Glossary pages (50 terms) — Wave 3
-- Job board page — Wave 4
-- Insight articles — Wave 4
-- Email generation + weekly send automation — Wave 4
 - OG image auto-generation via Playwright — future enhancement
-- Dark mode toggle UI — tokens.css has dark mode variables but no toggle needed for v1
+- Dark mode toggle UI — tokens.css has dark mode variables but no toggle needed
+- Smart newsletter personalization — standard broadcast for now
+- Paid job board listings — manual JSON for now, payment integration later
 
 ## Context
 
@@ -83,15 +67,9 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 
 **Competitive landscape:** gtmengineerclub.com (5 stale posts), gtmehq.com (Clay template shop, mostly vaporware). Neither has salary data, tool comparisons, job board, or glossary. Wide open.
 
-**Reference implementations:**
-- therevopsreport.com (CRO Report) — salary page structure, newsletter worker pattern
-- SultanOfSaaS — template architecture, 3-file build system, content module pattern
+**Tech stack:** Python static site generator, GitHub Pages + Cloudflare DNS, Cloudflare Worker for newsletter, Resend for email.
 
-**Brand:** "Volt" direction. Light-mode dominant, #FF4F1F orange-red accent, Sora/Plus Jakarta Sans/Source Code Pro fonts. All brand assets (logos, favicons, tokens.css, OG template) already in project.
-
-**Data source:** State of GTME Report 2026 (228 respondents, 32 countries) + Clay Job Data (3,342 postings via Sentrion). Salary benchmarks originally hardcoded in build.py for Wave 1, now being replaced with real survey data. Job board data will come from unified scraper (gtme audience, id=8, 21 search terms) in Wave 4.
-
-**Newsletter:** "The GTME Pulse" via Resend + Cloudflare Worker. Signup form on site, automated Monday sends from scraper data (Wave 4).
+**Data sources:** State of GTME Report 2026 (n=228), Clay Job Data (3,342 postings), unified scraper (gtme audience, 21 search terms).
 
 **Monetization:** Tool affiliate links (Apollo 15-20%, Instantly 20-40%, Clay $50), newsletter sponsorships, job board paid listings, email-gated salary calculator.
 
@@ -99,23 +77,25 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 
 - **Tech stack**: Python static site generator only. No frameworks, no JS build tools, no databases.
 - **Hosting**: GitHub Pages + Cloudflare DNS. Output to `output/` directory.
-- **Content depth**: No thin pages. Every salary page must have 1,200-2,000 words with stats, market context, comp drivers, FAQ, and related links.
-- **Writing rules**: No em-dashes, no false reframes, no banned AI words (see CLAUDE.md), no spaces in stat numbers.
-- **SEO**: Every page needs title (50-60 chars), description (150-158 chars), canonical URL, schema markup, and internal links.
-- **Brand**: Must use tokens.css variables. Sora for headings, Plus Jakarta Sans for body, Source Code Pro for data/stats.
+- **Content depth**: No thin pages. Every page must meet minimum word counts per type.
+- **Writing rules**: No em-dashes, no false reframes, no banned AI words (see CLAUDE.md).
+- **SEO**: Every page needs title (50-60 chars), description (150-158 chars), canonical URL, schema markup.
+- **Brand**: Amber dark-mode-first. tokens.css variables. Sora/Plus Jakarta Sans/Source Code Pro fonts.
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Hardcode salary data in build.py | No external data source yet; move to JSON when scraper data available | — Pending |
-| 3-file Python split (build/templates/nav_config) | Proven pattern from SultanOfSaaS; easy to maintain at scale | — Pending |
-| Resend + Cloudflare Worker for newsletter | Same stack as therevopsreport.com; Rome already has Resend account and Workers setup | — Pending |
-| Wave ordering (salary first) | Salary data is the anchor differentiator; no competitor has it | — Pending |
-| Email-gate salary calculator only | Keep most content free for SEO; gate the high-value interactive tool | — Pending |
-
-| Use real State of GTME Report data | First-party survey data (n=228) is more credible than hardcoded estimates | — Pending |
-| Cite "Source: State of GTM Engineering Report 2026" on all data pages | Establishes authority, makes pages the definitive reference | — Pending |
+| Hardcode salary data in build.py | No external data source yet; move to JSON when scraper data available | ✓ Good (v1.0), migrated to real data (v2.0) |
+| 3-file Python split (build/templates/nav_config) | Proven pattern from SultanOfSaaS; easy to maintain at scale | ✓ Good |
+| Resend + Cloudflare Worker for newsletter | Same stack as therevopsreport.com; Rome already has Resend account and Workers setup | ✓ Good |
+| Wave ordering (salary first) | Salary data is the anchor differentiator; no competitor has it | ✓ Good |
+| Email-gate salary calculator only | Keep most content free for SEO; gate the high-value interactive tool | ✓ Good |
+| Use real State of GTME Report data | First-party survey data (n=228) is more credible than hardcoded estimates | ✓ Good |
+| Content modules in content/ directory | Keep build.py manageable as page count grows; auto-discovery via importlib | ✓ Good |
+| JSON data files in data/ directory | Separate volatile data from build code; scraper writes JSON, build reads it | ✓ Good |
+| Category index intros inlined in data dicts | 150-300 words per category, not worth separate content modules | ✓ Good |
+| Reuse salary CSS classes for tool/glossary pages | Avoid CSS bloat; salary-header/salary-content work for all data-heavy pages | ✓ Good |
 
 ---
-*Last updated: 2026-03-13 after milestone v2.0 initialization*
+*Last updated: 2026-03-16 after v3.0 milestone*

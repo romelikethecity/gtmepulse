@@ -52,11 +52,15 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 
 ### Active
 
-(None — planning next milestone)
+- [ ] Insight articles and playbooks (~20 data-driven articles)
+- [ ] GA4 and Google Search Console integration
+- [ ] Newsletter go-live (worker deploy, Resend audience, domain verification, server cron)
+- [ ] OG image auto-generation via Playwright
+- [ ] Additional blog content for organic traffic
+- [ ] Site-wide quality sweep for v4.0 pages
 
 ### Out of Scope
 
-- OG image auto-generation via Playwright — future enhancement
 - Dark mode toggle UI — tokens.css has dark mode variables but no toggle needed
 - Smart newsletter personalization — standard broadcast for now
 - Paid job board listings — manual JSON for now, payment integration later
@@ -97,5 +101,16 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 | Category index intros inlined in data dicts | 150-300 words per category, not worth separate content modules | ✓ Good |
 | Reuse salary CSS classes for tool/glossary pages | Avoid CSS bloat; salary-header/salary-content work for all data-heavy pages | ✓ Good |
 
+## Current Milestone: v4.0 Content Expansion and Go-Live Infrastructure
+
+**Goal:** Add ~20 insight articles/playbooks, set up GA4 + Search Console, deploy newsletter infrastructure live, generate OG images for all pages, and run a final quality sweep.
+
+**Target features:**
+- 20 insight articles (job market analysis, tool trend reports, playbooks, weekly pulse reports)
+- GA4 tracking + Google Search Console verification across all pages
+- Newsletter go-live: deploy Cloudflare Worker, create Resend audience, verify domain, set up server cron
+- OG image auto-generation via Playwright for all 280+ pages
+- Final quality sweep for new pages
+
 ---
-*Last updated: 2026-03-16 after v3.0 milestone*
+*Last updated: 2026-03-16 after v4.0 milestone initialization*

@@ -29,9 +29,6 @@ NAV_ITEMS = [
             {"href": "/salary/by-company-stage/", "label": "By Company Stage"},
             {"href": "/salary/comparisons/", "label": "Comparisons"},
             {"href": "/salary/calculator/", "label": "Salary Calculator"},
-            {"href": "/salary/coding-premium/", "label": "Coding Premium"},
-            {"href": "/salary/equity/", "label": "Equity Data"},
-            {"href": "/salary/agency-fees/", "label": "Agency Fees"},
         ],
     },
     {
@@ -40,16 +37,10 @@ NAV_ITEMS = [
         "children": [
             {"href": "/tools/", "label": "Tools Index"},
             {"href": "/tools/tech-stack-benchmark/", "label": "Tech Stack Benchmark"},
-            {"href": "/tools/clay/", "label": "Clay: 84% Adoption"},
-            {"href": "/tools/frustrations/", "label": "Tool Frustrations"},
-            {"href": "/tools/clay-review/", "label": "Tool Reviews"},
             {"href": "/tools/category/data-enrichment/", "label": "Tool Categories"},
+            {"href": "/tools/clay-review/", "label": "Tool Reviews"},
         ],
     },
-    {"href": "/benchmarks/", "label": "Benchmarks"},
-    {"href": "/comparisons/", "label": "Comparisons"},
-    {"href": "/glossary/", "label": "Glossary"},
-    {"href": "/blog/", "label": "Blog"},
     {
         "href": "/careers/",
         "label": "Careers",
@@ -57,11 +48,19 @@ NAV_ITEMS = [
             {"href": "/careers/", "label": "Career Guides"},
             {"href": "/careers/how-to-become-gtm-engineer/", "label": "How to Become a GTME"},
             {"href": "/careers/job-growth/", "label": "Job Market Growth"},
-            {"href": "/careers/agency-pricing/", "label": "Agency Pricing"},
         ],
     },
-    {"href": "/jobs/", "label": "Jobs"},
-    {"href": "/newsletter/", "label": "Newsletter"},
+    {"href": "/glossary/", "label": "Glossary"},
+    {
+        "href": "/benchmarks/",
+        "label": "Resources",
+        "children": [
+            {"href": "/benchmarks/", "label": "Benchmarks"},
+            {"href": "/comparisons/", "label": "Comparisons"},
+            {"href": "/blog/", "label": "Blog"},
+            {"href": "/jobs/", "label": "Job Board"},
+        ],
+    },
 ]
 
 FOOTER_COLUMNS = {

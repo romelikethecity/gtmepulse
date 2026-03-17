@@ -30,14 +30,14 @@ PREVIOUS_SNAPSHOT_FILE = os.path.join(DATA_DIR, 'previous_market_snapshot.json')
 BRAND = {
     'bg': '#0D0D0D',
     'surface': '#1A1A1A',
-    'amber': '#E8A838',
-    'gold': '#F5C45C',
-    'deep_amber': '#C47A1A',
+    'accent': '#FF4F1F',
+    'accent_light': '#FF7A52',
+    'accent_dark': '#CC3F19',
     'text': '#E8E8E8',
     'muted': '#666666',
     'green': '#22c55e',
     'red': '#ef4444',
-    'border': '#2A2216',
+    'border': '#2A1A16',
 }
 
 FROM_EMAIL = "The GTME Pulse <insights@gtmepulse.com>"
@@ -234,10 +234,10 @@ def generate_email_html(diff, date_str):
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="36" valign="middle">
-                    <div style="width: 32px; height: 32px; background: {BRAND['amber']}; border-radius: 7px; text-align: center; line-height: 32px; font-size: 14px; color: #fff;">~</div>
+                    <div style="width: 32px; height: 32px; background: {BRAND['accent']}; border-radius: 7px; text-align: center; line-height: 32px; font-size: 14px; color: #fff;">~</div>
                 </td>
                 <td valign="middle" style="padding-left: 10px;">
-                    <span style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['amber']};">Pulse</span></span>
+                    <span style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['accent']};">Pulse</span></span>
                 </td>
             </tr>
         </table>
@@ -245,12 +245,12 @@ def generate_email_html(diff, date_str):
 
     <tr><td style="padding: 24px; text-align: center;">
         <h1 style="margin: 0 0 16px; font-size: 24px; color: {BRAND['text']}; font-family: 'Sora', sans-serif;">No new data this week</h1>
-        <p style="margin: 0; font-size: 15px; color: {BRAND['deep_amber']}; line-height: 1.6;">The scraper hasn't collected new job data yet. Check back next Monday for fresh GTM Engineer market intelligence.</p>
+        <p style="margin: 0; font-size: 15px; color: {BRAND['accent_dark']}; line-height: 1.6;">The scraper hasn't collected new job data yet. Check back next Monday for fresh GTM Engineer market intelligence.</p>
     </td></tr>
 
     <tr><td style="padding: 16px 24px; border-top: 1px solid {BRAND['border']}; text-align: center;">
         <p style="margin: 0; font-size: 12px; color: {BRAND['muted']};">
-            <a href="{SITE_URL}" style="color: {BRAND['amber']}; text-decoration: none;">GTME Pulse</a> &middot; Career intelligence for GTM Engineers
+            <a href="{SITE_URL}" style="color: {BRAND['accent']}; text-decoration: none;">GTME Pulse</a> &middot; Career intelligence for GTM Engineers
         </p>
     </td></tr>
 
@@ -268,7 +268,7 @@ def generate_email_html(diff, date_str):
             seniority_rows += f'''
             <tr>
                 <td style="padding: 8px 12px; color: {BRAND['text']}; border-bottom: 1px solid {BRAND['border']};">{level}</td>
-                <td style="padding: 8px 12px; color: {BRAND['gold']}; font-weight: 600; border-bottom: 1px solid {BRAND['border']};">${data['median']:,}</td>
+                <td style="padding: 8px 12px; color: {BRAND['accent_light']}; font-weight: 600; border-bottom: 1px solid {BRAND['border']};">${data['median']:,}</td>
                 <td style="padding: 8px 12px; border-bottom: 1px solid {BRAND['border']};">{trend_arrow_salary(data['change'])}</td>
                 <td style="padding: 8px 12px; color: {BRAND['muted']}; border-bottom: 1px solid {BRAND['border']};">{data['count']}</td>
             </tr>'''
@@ -281,7 +281,7 @@ def generate_email_html(diff, date_str):
         tool_rows += f'''
         <tr>
             <td style="padding: 6px 12px; color: {BRAND['text']}; border-bottom: 1px solid {BRAND['border']};">{display_name}</td>
-            <td style="padding: 6px 12px; color: {BRAND['gold']}; border-bottom: 1px solid {BRAND['border']};">{tool['count']:,} ({pct}%)</td>
+            <td style="padding: 6px 12px; color: {BRAND['accent_light']}; border-bottom: 1px solid {BRAND['border']};">{tool['count']:,} ({pct}%)</td>
             <td style="padding: 6px 12px; border-bottom: 1px solid {BRAND['border']};">{trend_arrow(tool['change'])}</td>
         </tr>'''
 
@@ -293,7 +293,7 @@ def generate_email_html(diff, date_str):
         company_rows += f'''
         <tr>
             <td style="padding: 8px 12px; color: {BRAND['text']}; border-bottom: 1px solid {BRAND['border']};">{co['name']}</td>
-            <td style="padding: 8px 12px; color: {BRAND['gold']}; font-weight: 600; border-bottom: 1px solid {BRAND['border']};">{co['count']}</td>
+            <td style="padding: 8px 12px; color: {BRAND['accent_light']}; font-weight: 600; border-bottom: 1px solid {BRAND['border']};">{co['count']}</td>
             <td style="padding: 8px 12px; color: {BRAND['muted']}; border-bottom: 1px solid {BRAND['border']};">{sal_str}</td>
             <td style="padding: 8px 12px; color: {BRAND['muted']}; border-bottom: 1px solid {BRAND['border']};">{remote_str}</td>
         </tr>'''
@@ -318,17 +318,17 @@ def generate_email_html(diff, date_str):
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="36" valign="middle">
-                    <div style="width: 32px; height: 32px; background: {BRAND['amber']}; border-radius: 7px; text-align: center; line-height: 32px; font-size: 14px; color: #fff;">~</div>
+                    <div style="width: 32px; height: 32px; background: {BRAND['accent']}; border-radius: 7px; text-align: center; line-height: 32px; font-size: 14px; color: #fff;">~</div>
                 </td>
                 <td valign="middle" style="padding-left: 10px;">
-                    <span style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['amber']};">Pulse</span></span>
+                    <span style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['accent']};">Pulse</span></span>
                 </td>
             </tr>
         </table>
     </td></tr>
 
     <!-- Title -->
-    <tr><td style="padding: 0 24px 16px; border-bottom: 2px solid {BRAND['amber']};">
+    <tr><td style="padding: 0 24px 16px; border-bottom: 2px solid {BRAND['accent']};">
         <h1 style="margin: 0 0 6px; font-size: 28px; font-weight: 700; color: {BRAND['text']}; font-family: 'Sora', sans-serif; letter-spacing: -0.5px;">GTM ENGINEER MARKET PULSE</h1>
         <p style="margin: 0; font-size: 14px; color: {BRAND['muted']};">Week of {date_str} &middot; {diff['total_jobs']:,} active roles &middot; {diff['disclosure_rate']}% salary disclosure</p>
     </td></tr>
@@ -341,7 +341,7 @@ def generate_email_html(diff, date_str):
                     <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
                         <tr><td style="padding: 16px 20px;">
                             <div style="font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase; letter-spacing: 1px;">Active Roles</div>
-                            <div style="font-size: 32px; font-weight: 700; color: {BRAND['amber']}; font-family: 'Sora', sans-serif; margin-top: 4px;">{diff['total_jobs']:,}</div>
+                            <div style="font-size: 32px; font-weight: 700; color: {BRAND['accent']}; font-family: 'Sora', sans-serif; margin-top: 4px;">{diff['total_jobs']:,}</div>
                             <div style="font-size: 13px; margin-top: 6px;">{trend_arrow(diff['job_change'])} <span style="color: {BRAND['muted']};">vs last week</span></div>
                         </td></tr>
                     </table>
@@ -361,7 +361,7 @@ def generate_email_html(diff, date_str):
 
     <!-- Salary Snapshot -->
     {f"""<tr><td style="padding: 12px 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['deep_amber']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Salary by Seniority</h2>
+        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Salary by Seniority</h2>
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
             <tr>
                 <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Level</th>
@@ -375,7 +375,7 @@ def generate_email_html(diff, date_str):
 
     <!-- Tool Trends -->
     {f"""<tr><td style="padding: 0 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['deep_amber']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Tool Trends</h2>
+        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Tool Trends</h2>
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
             <tr>
                 <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Tool</th>
@@ -385,13 +385,13 @@ def generate_email_html(diff, date_str):
             {tool_rows}
         </table>
         <p style="font-size: 12px; color: {BRAND['muted']}; margin: 8px 0 0;">
-            <a href="{SITE_URL}/tools/" style="color: {BRAND['amber']}; text-decoration: none;">Full tool reviews &rarr;</a>
+            <a href="{SITE_URL}/tools/" style="color: {BRAND['accent']}; text-decoration: none;">Full tool reviews &rarr;</a>
         </p>
     </td></tr>""" if tool_rows else ""}
 
     <!-- Top Companies -->
     {f"""<tr><td style="padding: 0 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['deep_amber']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Top Hiring Companies</h2>
+        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Top Hiring Companies</h2>
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
             <tr>
                 <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Company</th>
@@ -405,11 +405,11 @@ def generate_email_html(diff, date_str):
 
     <!-- Hiring Signals -->
     {f"""<tr><td style="padding: 0 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['deep_amber']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Hiring Signals</h2>
+        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Hiring Signals</h2>
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px; padding: 16px;">
             <tr><td style="padding: 12px 16px; color: {BRAND['text']}; font-size: 14px; line-height: 1.8;">
-                Growth hires: <strong style="color: {BRAND['amber']};">{growth:,}</strong> &middot;
-                Turnaround: <strong style="color: {BRAND['deep_amber']};">{turnaround:,}</strong> &middot;
+                Growth hires: <strong style="color: {BRAND['accent']};">{growth:,}</strong> &middot;
+                Turnaround: <strong style="color: {BRAND['accent_dark']};">{turnaround:,}</strong> &middot;
                 Immediate fill: <strong>{immediate:,}</strong>
             </td></tr>
         </table>
@@ -417,7 +417,7 @@ def generate_email_html(diff, date_str):
 
     <!-- CTA -->
     <tr><td style="padding: 0 24px 24px; text-align: center;">
-        <a href="{SITE_URL}/salary/" style="display: inline-block; background: {BRAND['amber']}; color: {BRAND['bg']}; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; font-family: 'Sora', sans-serif;">See Full Salary Data</a>
+        <a href="{SITE_URL}/salary/" style="display: inline-block; background: {BRAND['accent']}; color: {BRAND['bg']}; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; font-family: 'Sora', sans-serif;">See Full Salary Data</a>
         <p style="font-size: 13px; color: {BRAND['muted']}; margin: 14px 0 0;">
             <a href="{SITE_URL}/salary/" style="color: {BRAND['muted']}; text-decoration: underline;">Salary benchmarks</a> &middot;
             <a href="{SITE_URL}/tools/" style="color: {BRAND['muted']}; text-decoration: underline;">Tool reviews</a> &middot;
@@ -430,9 +430,9 @@ def generate_email_html(diff, date_str):
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px; border: 1px solid {BRAND['border']};">
             <tr><td style="padding: 20px 24px; text-align: center;">
                 <p style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: {BRAND['text']}; font-family: 'Sora', sans-serif;">Know a GTM Engineer?</p>
-                <p style="margin: 0 0 16px; font-size: 14px; color: {BRAND['deep_amber']};">Forward this email to anyone building automated pipelines.</p>
+                <p style="margin: 0 0 16px; font-size: 14px; color: {BRAND['accent_dark']};">Forward this email to anyone building automated pipelines.</p>
                 <p style="margin: 0; font-size: 13px; color: {BRAND['muted']};">
-                    Not subscribed? <a href="{SITE_URL}/newsletter/" style="color: {BRAND['amber']}; text-decoration: underline; font-weight: 600;">Sign up here</a> - free, every Monday.
+                    Not subscribed? <a href="{SITE_URL}/newsletter/" style="color: {BRAND['accent']}; text-decoration: underline; font-weight: 600;">Sign up here</a> - free, every Monday.
                 </p>
             </td></tr>
         </table>
@@ -443,12 +443,12 @@ def generate_email_html(diff, date_str):
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
                 <td align="center" style="padding-bottom: 8px;">
-                    <div style="width: 24px; height: 24px; background: {BRAND['amber']}; border-radius: 5px; text-align: center; line-height: 24px; font-size: 11px; color: #fff; display: inline-block;">~</div>
+                    <div style="width: 24px; height: 24px; background: {BRAND['accent']}; border-radius: 5px; text-align: center; line-height: 24px; font-size: 11px; color: #fff; display: inline-block;">~</div>
                 </td>
             </tr>
             <tr><td align="center">
                 <p style="margin: 0; font-size: 12px; color: {BRAND['muted']}; line-height: 1.8;">
-                    <a href="{SITE_URL}" style="color: {BRAND['amber']}; text-decoration: none; font-weight: 600;">GTME Pulse</a> &middot; Career intelligence for GTM Engineers<br>
+                    <a href="{SITE_URL}" style="color: {BRAND['accent']}; text-decoration: none; font-weight: 600;">GTME Pulse</a> &middot; Career intelligence for GTM Engineers<br>
                     Data from {diff['total_jobs']:,} active job postings, updated every Monday.<br>
                     <a href="{SITE_URL}/newsletter/" style="color: {BRAND['muted']}; text-decoration: underline;">Subscribe</a> &middot;
                     <a href="{SITE_URL}" style="color: {BRAND['muted']}; text-decoration: underline;">gtmepulse.com</a>

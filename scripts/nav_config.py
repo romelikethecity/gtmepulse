@@ -12,7 +12,7 @@ CSS_VERSION = "15"
 CTA_HREF = "/newsletter/"
 CTA_LABEL = "Get the Weekly Pulse"
 
-SIGNUP_WORKER_URL = "https://gtme-newsletter-signup.rome-workers.workers.dev"
+SIGNUP_WORKER_URL = "https://newsletter-subscribe.rome-workers.workers.dev/subscribe"
 
 GA_MEASUREMENT_ID = ""  # Set to GA4 Measurement ID (e.g., "G-XXXXXXXXXX") to enable tracking
 GOOGLE_SITE_VERIFICATION = ""  # Set to verification filename (e.g., "google1234abcd.html") to generate file

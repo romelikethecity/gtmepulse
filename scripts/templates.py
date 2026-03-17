@@ -216,7 +216,7 @@ def get_page_wrapper(title, description, canonical_path, body_content,
             fetch(SIGNUP_URL, {{
                 method: 'POST',
                 headers: {{'Content-Type': 'application/json'}},
-                body: JSON.stringify({{email: email}})
+                body: JSON.stringify({{email: email, list: 'gtme-pulse'}})
             }})
             .then(function(r) {{ return r.json(); }})
             .then(function(data) {{

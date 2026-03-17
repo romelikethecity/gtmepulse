@@ -30,9 +30,9 @@
 
 ### Analytics
 
-- [ ] **ANLYT-01**: GA4 tracking snippet added to all pages via templates.py
-- [ ] **ANLYT-02**: Google Search Console verification (HTML file or meta tag method)
-- [ ] **ANLYT-03**: Event tracking for newsletter signups (GA4 custom event on form submit)
+- [x] **ANLYT-01**: GA4 tracking snippet added to all pages via templates.py
+- [x] **ANLYT-02**: Google Search Console verification (HTML file or meta tag method)
+- [x] **ANLYT-03**: Event tracking for newsletter signups (GA4 custom event on form submit)
 
 ### Newsletter Go-Live
 
@@ -78,9 +78,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ANLYT-01 | Phase 13 | Pending |
-| ANLYT-02 | Phase 13 | Pending |
-| ANLYT-03 | Phase 13 | Pending |
+| ANLYT-01 | Phase 13 | Complete |
+| ANLYT-02 | Phase 13 | Complete |
+| ANLYT-03 | Phase 13 | Complete |
 | NLIVE-01 | Phase 13 | Pending |
 | NLIVE-02 | Phase 13 | Pending |
 | NLIVE-03 | Phase 13 | Pending |

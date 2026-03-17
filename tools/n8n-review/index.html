@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E8A838">
+    <title>n8n Review 2026: Self-Hosted Automation - GTME Pulse</title>
+    <meta name="description" content="n8n review for GTM Engineers. 54% adoption, self-hosting economics, code node flexibility, and why it's replacing Zapier in GTM stacks. Updated weekly.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/n8n-review/">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/n8n-review/">
+    <meta property="og:title" content="n8n Review 2026: Self-Hosted Automation - GTME Pulse">
+    <meta property="og:description" content="n8n review for GTM Engineers. 54% adoption, self-hosting economics, code node flexibility, and why it's replacing Zapier in GTM stacks. Updated weekly.">
+    <meta property="og:site_name" content="GTME Pulse">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="n8n Review 2026: Self-Hosted Automation - GTME Pulse">
+    <meta name="twitter:description" content="n8n review for GTM Engineers. 54% adoption, self-hosting economics, code node flexibility, and why it's replacing Zapier in GTM stacks. Updated weekly.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=15">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=15">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "n8n Review"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "n8n", "description": "n8n review for GTM Engineers. 54% adoption, self-hosting economics, code node flexibility, and why it's replacing Zapier in GTM stacks. Updated weekly.", "applicationCategory": "Workflow Automation", "operatingSystem": "Web", "url": "https://n8n.io", "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "$0 (self-hosted) - $60/mo", "description": "$0 (self-hosted) - $60/mo"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How hard is it to self-host n8n?", "acceptedAnswer": {"@type": "Answer", "text": "If you've deployed any web application before, it's straightforward. Docker compose file, a reverse proxy (Caddy is the simplest), and 30 minutes of setup. If you've never touched a server, expect a full afternoon the first time. Railway and Render offer one-click deployments that skip the server management entirely."}}, {"@type": "Question", "name": "Is n8n better than Make for GTM Engineers?", "acceptedAnswer": {"@type": "Answer", "text": "For high-volume workflows, n8n wins on cost. Self-hosted n8n has zero per-execution fees. For visual simplicity and faster onboarding, Make wins. Most GTM Engineers who switch to n8n do so after hitting operation limits on Make or Zapier, not because n8n's interface is better."}}, {"@type": "Question", "name": "Can n8n handle enterprise-scale GTM workflows?", "acceptedAnswer": {"@type": "Answer", "text": "The self-hosted version handles enterprise volumes without throttling. Multiple agencies run 100,000+ executions per month on a single n8n instance. The bottleneck is your server's CPU and memory, not n8n's software limits. Scale vertically (bigger server) or horizontally (n8n queue mode with workers)."}}, {"@type": "Question", "name": "What programming languages does n8n support?", "acceptedAnswer": {"@type": "Answer", "text": "JavaScript natively in code nodes. Python support was added more recently and works through a subprocess. Most GTM Engineers use JavaScript for data transformations since n8n's internal data format is JSON-native. Python is useful for calling ML models or using libraries like pandas for data analysis within workflows."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#E8A838"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+<li><a href="/salary/agency-fees/">Agency Fees</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/clay/">Clay: 84% Adoption</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/benchmarks/">Benchmarks</a></li>
+<li class="nav-item"><a href="/comparisons/">Comparisons</a></li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/blog/">Blog</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/jobs/">Jobs</a></li>
+<li class="nav-item"><a href="/newsletter/">Newsletter</a></li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">n8n Review</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Workflow Automation</div>
+        <h1>n8n Review</h1>
+        <p>$0 (self-hosted) - $60/mo</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <h2>Overview</h2>
+    
+<p>n8n is the self-hosted workflow automation tool that 54% of GTM Engineers have adopted, making it the fastest-growing platform in the automation category. You run it on your own server (a $5-20/month VPS handles most workloads), connect your tools via 400+ built-in nodes, and execute workflows without per-run costs. For high-volume GTM operations, eliminating per-execution pricing changes the economics of automation entirely.</p>
+<p>The product works as a visual workflow builder with a code-first escape hatch. You drag nodes onto a canvas and connect them, similar to Make. But every node has a "Code" tab where you can write JavaScript or Python to transform data however you want. This hybrid approach lets you start visual and go programmatic when the visual tools hit their limits. GTM Engineers love this because enrichment pipelines always hit edge cases that require custom logic.</p>
+<p>n8n also offers a cloud-hosted version starting at $24/month for teams that don't want to manage infrastructure. But the self-hosted version is where the value proposition lives. Zero execution costs, full data control, and the ability to run resource-intensive workflows without worrying about plan limits.</p>
+
+
+    <h2>GTM Engineer Use Cases</h2>
+    
+<ul>
+    <li><strong>High-volume enrichment pipelines with zero per-execution costs.</strong> Process 50,000+ leads through multi-step enrichment workflows without worrying about operation limits. Self-hosted n8n costs the same whether you run 100 or 100,000 executions per month.</li>
+    <li><strong>Custom data transformations with JavaScript/Python code nodes.</strong> Write custom logic for lead scoring, company matching, data normalization, and deduplication inside n8n's code nodes. No restrictions on libraries or execution time.</li>
+    <li><strong>API orchestration across 400+ tools.</strong> Connect Clay, Apollo, HubSpot, Instantly, Smartlead, and any other tool with an API. n8n's HTTP Request node handles authentication, pagination, and rate limiting for APIs without native nodes.</li>
+    <li><strong>Webhook-triggered real-time workflows.</strong> React to CRM updates, form submissions, or Slack messages in real-time. n8n's webhook node starts workflows instantly without polling delays.</li>
+    <li><strong>AI-powered workflows with LLM nodes.</strong> n8n has native OpenAI and Anthropic nodes. Build workflows that use Claude or GPT to classify leads, write personalized emails, summarize meeting notes, or score company fit based on website content.</li>
+    <li><strong>Database operations without middleware.</strong> Connect directly to PostgreSQL, MySQL, or MongoDB to read/write data. Skip the API layer entirely for internal database operations.</li>
+</ul>
+
+
+    <h2>Pricing Breakdown</h2>
+    
+<table class="data-table">
+    <thead><tr><th>Plan</th><th>Price</th><th>Executions</th><th>Key Features</th></tr></thead>
+    <tbody>
+        <tr><td>Self-hosted (Community)</td><td>$0 + hosting</td><td>Unlimited</td><td>All nodes, no execution limits, full source code</td></tr>
+        <tr><td>Cloud Starter</td><td>$24/mo</td><td>2,500</td><td>5 active workflows, community support</td></tr>
+        <tr><td>Cloud Pro</td><td>$60/mo</td><td>10,000</td><td>Unlimited workflows, execution log, sharing</td></tr>
+        <tr><td>Cloud Enterprise</td><td>Custom</td><td>Custom</td><td>SSO, LDAP, dedicated infrastructure</td></tr>
+    </tbody>
+</table>
+<p>The self-hosted version is free and open-source. You pay only for server hosting, which runs $5-20/month on a VPS like Hetzner, DigitalOcean, or Railway. For GTM Engineers running dozens of workflows, this is dramatically cheaper than Make or Zapier at equivalent volumes.</p>
+<p>n8n Cloud is priced similarly to Make. The 2,500 execution limit on the Starter plan is tight for GTM workflows that process hundreds of records daily. Most practitioners who choose n8n specifically for cost savings go self-hosted.</p>
+
+    
+
+    <h2>Honest Criticism</h2>
+    
+<p>Self-hosting requires DevOps knowledge that many GTM Engineers don't have. Setting up n8n on a VPS means configuring Docker, managing SSL certificates, setting up reverse proxies (nginx or Caddy), and handling backups. If your server goes down at 2 AM, you're the one fixing it. The tradeoff for free execution is real operational responsibility.</p>
+<p>The UI lags on complex workflows. Workflows with 30+ nodes and multiple branches start to feel sluggish in the browser. Scrolling, zooming, and clicking between nodes gets noticeably slower. This is a browser performance issue that affects all visual automation tools, but n8n's electron-based interface seems to hit the wall sooner than Make does.</p>
+<p>Some community nodes lack documentation. n8n's node ecosystem is growing fast, but community-contributed nodes don't always include usage examples, error descriptions, or edge case handling. You'll find yourself reading the node's source code on GitHub to understand how authentication works or what response format to expect. The official nodes are well-documented; community nodes are a mixed bag.</p>
+<p>Version upgrades can break workflows. Self-hosted users manage their own upgrades, and n8n's release pace is aggressive (multiple releases per month). Breaking changes in node behavior or configuration format happen occasionally. The recommendation: pin your n8n version and upgrade on a schedule, testing workflows in staging first.</p>
+
+
+    <h2>Verdict</h2>
+    
+<p>n8n is the best automation tool for GTM Engineers who can self-host. The 54% adoption rate reflects a product that solves the fundamental cost problem with workflow automation: at scale, per-execution pricing makes complex pipelines prohibitively expensive. n8n eliminates that constraint.</p>
+<p>Use n8n if you're running high-volume workflows (1,000+ executions/month), you're comfortable with basic server administration, and you want the flexibility of code nodes alongside visual building. Skip n8n if you need zero infrastructure management (use Make or Zapier), if you're running fewer than 5 workflows (the self-hosting overhead isn't worth it), or if your team needs shared access with RBAC (n8n Cloud or Make are better fits for teams).</p>
+
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">How hard is it to self-host n8n?</h3>
+    <p class="faq-answer">If you've deployed any web application before, it's straightforward. Docker compose file, a reverse proxy (Caddy is the simplest), and 30 minutes of setup. If you've never touched a server, expect a full afternoon the first time. Railway and Render offer one-click deployments that skip the server management entirely.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is n8n better than Make for GTM Engineers?</h3>
+    <p class="faq-answer">For high-volume workflows, n8n wins on cost. Self-hosted n8n has zero per-execution fees. For visual simplicity and faster onboarding, Make wins. Most GTM Engineers who switch to n8n do so after hitting operation limits on Make or Zapier, not because n8n's interface is better.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Can n8n handle enterprise-scale GTM workflows?</h3>
+    <p class="faq-answer">The self-hosted version handles enterprise volumes without throttling. Multiple agencies run 100,000+ executions per month on a single n8n instance. The bottleneck is your server's CPU and memory, not n8n's software limits. Scale vertically (bigger server) or horizontally (n8n queue mode with workers).</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What programming languages does n8n support?</h3>
+    <p class="faq-answer">JavaScript natively in code nodes. Python support was added more recently and works through a subprocess. Most GTM Engineers use JavaScript for data transformations since n8n's internal data format is JSON-native. Python is useful for calling ML models or using libraries like pandas for data analysis within workflows.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>More Tool Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/apollo-review/" class="related-link-card">Apollo.io Review</a>
+<a href="/tools/zoominfo-review/" class="related-link-card">ZoomInfo Review</a>
+<a href="/tools/clearbit-review/" class="related-link-card">Clearbit Review</a>
+<a href="/tools/fullenrich-review/" class="related-link-card">FullEnrich Review</a>
+<a href="/tools/lusha-review/" class="related-link-card">Lusha Review</a>
+<a href="/tools/cognism-review/" class="related-link-card">Cognism Review</a>
+<a href="/tools/leadiq-review/" class="related-link-card">LeadIQ Review</a>
+<a href="/tools/persana-review/" class="related-link-card">Persana AI Review</a>
+<a href="/tools/instantly-review/" class="related-link-card">Instantly Review</a>
+<a href="/tools/smartlead-review/" class="related-link-card">Smartlead Review</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Workflow Automation tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

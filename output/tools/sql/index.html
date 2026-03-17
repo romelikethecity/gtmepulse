@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E8A838">
+    <title>SQL for GTM Engineers: Job Posting Data (2026) - GTME Pulse</title>
+    <meta name="description" content="SQL demand data from GTM Engineer job postings. Which companies require it, practical use cases, and how SQL compares to spreadsheet skills. Updated weekly.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/sql/">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/sql/">
+    <meta property="og:title" content="SQL for GTM Engineers: Job Posting Data (2026) - GTME Pulse">
+    <meta property="og:description" content="SQL demand data from GTM Engineer job postings. Which companies require it, practical use cases, and how SQL compares to spreadsheet skills. Updated weekly.">
+    <meta property="og:site_name" content="GTME Pulse">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SQL for GTM Engineers: Job Posting Data (2026) - GTME Pulse">
+    <meta name="twitter:description" content="SQL demand data from GTM Engineer job postings. Which companies require it, practical use cases, and how SQL compares to spreadsheet skills. Updated weekly.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=15">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=15">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "SQL"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do GTM Engineers need SQL?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the company. Enterprise teams with Salesforce and data warehouses list SQL in about 25% of job postings. Startup and agency roles rarely require it. SQL is most valuable when you need to query CRM data directly, build custom reports from data warehouses like BigQuery or Snowflake, or validate enrichment data at scale. For most GTM Engineers, knowing basic SELECT statements and JOINs is enough."}}, {"@type": "Question", "name": "What SQL do GTM Engineers use?", "acceptedAnswer": {"@type": "Answer", "text": "The most common SQL for GTM Engineers is reading data, not writing it. SELECT queries with WHERE filters, JOINs across tables, GROUP BY for aggregation, and basic subqueries. Salesforce uses SOQL (a SQL variant) for custom reports and automation. HubSpot custom reports use a SQL-like query builder. BigQuery and Snowflake use standard SQL for data warehouse access. You rarely need stored procedures, triggers, or database administration skills."}}, {"@type": "Question", "name": "Is SQL or Python more valuable for GTM Engineers?", "acceptedAnswer": {"@type": "Answer", "text": "Python has a larger salary impact ($45K coding premium) and broader application. SQL is more commonly listed in enterprise job postings but produces a smaller direct salary bump. The ideal combination: Python for automation and API integrations, SQL for querying data warehouses and CRM databases. If you pick one, Python offers more versatility. If you already work with enterprise data, SQL fills an immediate gap."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#E8A838"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+<li><a href="/salary/agency-fees/">Agency Fees</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/clay/">Clay: 84% Adoption</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/benchmarks/">Benchmarks</a></li>
+<li class="nav-item"><a href="/comparisons/">Comparisons</a></li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/blog/">Blog</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/jobs/">Jobs</a></li>
+<li class="nav-item"><a href="/newsletter/">Newsletter</a></li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">SQL</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Tool Intelligence</div>
+        <h1>SQL for GTM Engineers: Job Posting Data</h1>
+        <p>SQL appears in about 25% of GTM Engineer job postings, concentrated in enterprise roles with data warehouse access. It's a secondary skill behind Python, but the right companies pay well for it. From job posting analysis and 228 survey responses.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">~25%</span>
+        <span class="stat-label">Job Posting Frequency</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">Enterprise</span>
+        <span class="stat-label">Primary Demand Source</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">SOQL</span>
+        <span class="stat-label">Salesforce Variant</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Where SQL Shows Up in GTM Engineering</h2>
+    <p>SQL demand in GTM Engineer roles follows a clear pattern: the bigger the company, the more likely they want SQL. Enterprise teams running Salesforce, with data flowing into Snowflake or BigQuery, need someone who can pull data without waiting for a BI analyst. That someone is often the GTM Engineer.</p>
+    <p>At startups and agencies, SQL is rarely mentioned. The data lives in Clay, Apollo, and spreadsheets. You don't need SQL to query a CSV. The tools handle data access through their own interfaces, and workflow automation handles the connections between them.</p>
+    <p>The split creates a career consideration. If you're targeting enterprise GTM Engineering roles at companies with 500+ employees, SQL is worth learning. If you're focused on agency work or startup roles, your time is better spent on Python and tool-specific skills.</p>
+
+    <h2>Practical SQL Use Cases for GTM Engineers</h2>
+    <p><strong>Salesforce SOQL queries.</strong> Salesforce uses SOQL (Salesforce Object Query Language), a SQL variant for querying its database. GTM Engineers use SOQL to pull custom lead lists, audit data quality, and build reports that Salesforce's standard reporting can't handle. Example: finding all leads created in the last 90 days with no activity, grouped by source. That's a simple SOQL query that would take 30 minutes of manual filtering in the Salesforce UI.</p>
+    <p><strong>Data warehouse access.</strong> Companies using BigQuery, Snowflake, or Redshift store marketing and sales data in a centralized warehouse. GTM Engineers query these warehouses to analyze campaign performance, identify intent signals from product usage data, and build custom attribution models. The queries are standard SQL with JOINs across event tables, user tables, and CRM sync tables.</p>
+    <p><strong>HubSpot custom reports.</strong> HubSpot's custom report builder uses a SQL-like interface for complex queries. While most reports use the drag-and-drop builder, advanced analytics (cohort analysis, multi-touch attribution) require understanding joins, filters, and aggregations. Practitioners who know SQL build better HubSpot reports because they understand what the query builder is doing under the hood.</p>
+    <p><strong>Enrichment data validation.</strong> After running enrichment workflows, GTM Engineers need to verify data quality at scale. SQL queries against a staging database or data warehouse answer questions like: what percentage of records have valid email addresses? Which enrichment source produced the most duplicates? How many records changed industry classification after re-enrichment? These validation queries catch data quality issues before bad data reaches the CRM.</p>
+    <p><strong>Pipeline and revenue reporting.</strong> GTM Engineers at enterprise companies build pipeline reports that combine CRM data with marketing data. SQL joins between Salesforce opportunity data and marketing attribution data produce the multi-touch reports that revenue leaders want. Building these in SQL is faster and more flexible than using pre-built BI dashboards.</p>
+
+    <h2>Which Companies Require SQL</h2>
+    <p>The pattern is straightforward. Series B and later companies with dedicated data infrastructure list SQL as a requirement. These organizations have data warehouses, BI tools, and data engineering teams that have built the foundation. They want GTM Engineers who can work with that infrastructure.</p>
+    <p>Seed and Series A companies almost never require SQL. Their data lives in SaaS tools, not warehouses. The GTM Engineer's job is connecting those tools and building outbound systems, not querying databases.</p>
+    <p>Agencies fall somewhere in between. Large agencies with enterprise clients sometimes need SQL to work with client data warehouses. Smaller agencies focused on startups don't. If an agency job posting mentions SQL, it's a signal that they handle enterprise accounts.</p>
+    <p>Geographic patterns exist too. SQL demand is higher in job postings from traditional tech hubs (San Francisco, New York, Seattle) where enterprise companies cluster. Remote-friendly postings from newer companies are less likely to require it.</p>
+
+    <h2>SQL vs Spreadsheet Formulas</h2>
+    <p>Many GTM Engineers who don't know SQL accomplish similar tasks with spreadsheets. VLOOKUP, INDEX/MATCH, QUERY functions in Google Sheets, and pivot tables handle smaller data sets. The question is where spreadsheets hit their limits.</p>
+    <p>Under 10,000 rows: spreadsheets are fine. The formulas work, the data loads quickly, and collaboration is easy. Most agency GTM Engineers never work with data sets larger than this for a single client engagement.</p>
+    <p>Between 10,000 and 100,000 rows: spreadsheets slow down. Formulas take seconds to recalculate. Pivot tables lag. This is where SQL starts to pay off. A query that takes 30 seconds in BigQuery would crash a Google Sheet.</p>
+    <p>Above 100,000 rows: spreadsheets aren't an option. Enterprise GTM Engineers working with product usage data, intent signals, or historical CRM records routinely handle millions of rows. SQL is the only practical tool at this scale.</p>
+    <p>The transition point for most GTM Engineers: when you find yourself waiting for spreadsheets to load, or when you're splitting large exports into multiple files to avoid Excel's row limit. That's when SQL becomes a time-saver rather than a nice-to-have.</p>
+
+    <h2>SQL vs Python for GTM Data Work</h2>
+    <p>SQL and Python serve different purposes. SQL reads data from databases. Python transforms data and connects systems. They complement each other rather than compete.</p>
+    <p>The common pattern: use SQL to pull a data set from a warehouse, then use Python to transform it and push it somewhere else. Pull leads from BigQuery with a SQL query, clean them with a Python script using pandas, and load them into HubSpot via the API. Each tool handles the part it's best at.</p>
+    <p>If you're choosing between learning SQL or Python first, the answer depends on your current role. Enterprise GTM Engineer with data warehouse access? SQL gives you immediate value. Agency GTM Engineer or startup role? Python's versatility makes it the better first investment.</p>
+    <p>For the full analysis of coding's impact on GTM Engineer compensation, see the <a href="/salary/coding-premium/">coding premium data</a>. For Python-specific skills and learning path, check the <a href="/tools/python/">Python for GTM Engineers</a> guide. And for the broader skills demand picture, see the <a href="/careers/skills-gap/">skills gap analysis</a>.</p>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Do GTM Engineers need SQL?</h3>
+    <p class="faq-answer">It depends on the company. Enterprise teams with Salesforce and data warehouses list SQL in about 25% of job postings. Startup and agency roles rarely require it. SQL is most valuable when you need to query CRM data directly, build custom reports from data warehouses like BigQuery or Snowflake, or validate enrichment data at scale. For most GTM Engineers, knowing basic SELECT statements and JOINs is enough.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What SQL do GTM Engineers use?</h3>
+    <p class="faq-answer">The most common SQL for GTM Engineers is reading data, not writing it. SELECT queries with WHERE filters, JOINs across tables, GROUP BY for aggregation, and basic subqueries. Salesforce uses SOQL (a SQL variant) for custom reports and automation. HubSpot custom reports use a SQL-like query builder. BigQuery and Snowflake use standard SQL for data warehouse access. You rarely need stored procedures, triggers, or database administration skills.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is SQL or Python more valuable for GTM Engineers?</h3>
+    <p class="faq-answer">Python has a larger salary impact ($45K coding premium) and broader application. SQL is more commonly listed in enterprise job postings but produces a smaller direct salary bump. The ideal combination: Python for automation and API integrations, SQL for querying data warehouses and CRM databases. If you pick one, Python offers more versatility. If you already work with enterprise data, SQL fills an immediate gap.</p>
+</div>
+
+</section>
+<section class="related-links">
+    <h2>Related Tool Data</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/tech-stack-benchmark/" class="related-link-card">Tech Stack Benchmark</a>
+<a href="/tools/clay/" class="related-link-card">Clay: 84% Adoption</a>
+<a href="/tools/crm-adoption/" class="related-link-card">CRM Adoption: 92%</a>
+<a href="/tools/ai-coding-tools/" class="related-link-card">AI Coding Tools: 71%</a>
+<a href="/tools/n8n-adoption/" class="related-link-card">n8n Adoption: 54%</a>
+<a href="/tools/frustrations/" class="related-link-card">Tool Frustrations</a>
+<a href="/tools/most-exciting/" class="related-link-card">Most Exciting Tools</a>
+<a href="/tools/unify-analysis/" class="related-link-card">Unify: 8.8% Adoption</a>
+<a href="/tools/annual-spend/" class="related-link-card">Annual Tool Spend</a>
+<a href="/tools/zoominfo-vs-apollo/" class="related-link-card">ZoomInfo vs Apollo</a>
+<a href="/tools/tool-wishlist/" class="related-link-card">Tool Wishlist</a>
+
+    </div>
+</section>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly GTM data skills and career intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

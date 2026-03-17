@@ -14,7 +14,7 @@ CTA_LABEL = "Get the Weekly Pulse"
 
 SIGNUP_WORKER_URL = "https://newsletter-subscribe.rome-workers.workers.dev/subscribe"
 
-GA_MEASUREMENT_ID = ""  # Set to GA4 Measurement ID (e.g., "G-XXXXXXXXXX") to enable tracking
+GA_MEASUREMENT_ID = "G-KFWVZ2V6YL"
 GOOGLE_SITE_VERIFICATION = ""  # Set to verification filename (e.g., "google1234abcd.html") to generate file
 GOOGLE_SITE_VERIFICATION_META = ""  # Set to verification code for meta tag method (alternative to HTML file)
 

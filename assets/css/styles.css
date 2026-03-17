@@ -218,9 +218,20 @@
     flex: 1;
     padding: var(--gtme-space-2) var(--gtme-space-3);
     border-radius: var(--gtme-radius-md);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--gtme-text-inverse);
     font-family: var(--gtme-font-body);
     font-size: var(--gtme-text-sm);
+}
+
+.footer-newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-newsletter-form input:focus {
+    outline: none;
+    border-color: var(--gtme-accent);
 }
 
 .footer-newsletter-form button {
@@ -347,7 +358,7 @@
 }
 
 .logo-name {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-sm);
     font-weight: var(--gtme-weight-semibold);
     color: var(--gtme-text-secondary);
@@ -501,7 +512,7 @@
 }
 
 .vs-badge {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: 0.65rem;
     font-weight: 700;
     background: var(--gtme-text-secondary);
@@ -536,7 +547,7 @@ body.page-home .main-content {
 }
 
 .salary-eyebrow {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-xs);
     color: var(--gtme-accent);
     text-transform: uppercase;
@@ -573,7 +584,7 @@ body.page-home .main-content {
 }
 
 .salary-stat-card .stat-value {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-xl);
     font-weight: var(--gtme-weight-bold);
     color: var(--gtme-accent);
@@ -612,7 +623,7 @@ body.page-home .main-content {
 .range-bar-labels {
     display: flex;
     justify-content: space-between;
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-sm);
     color: var(--gtme-text-secondary);
 }
@@ -739,7 +750,7 @@ body.page-home .main-content {
 }
 
 .error-code {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-3xl);
     font-weight: var(--gtme-weight-extrabold);
     color: var(--gtme-accent);
@@ -783,7 +794,7 @@ body.page-home .main-content {
 }
 
 .salary-index-card .card-range {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-sm);
     color: var(--gtme-accent);
     margin-bottom: var(--gtme-space-2);
@@ -833,7 +844,7 @@ body.page-home .main-content {
 }
 
 .calculator-result .result-range {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-2xl);
     font-weight: var(--gtme-weight-bold);
     color: var(--gtme-accent);
@@ -976,7 +987,7 @@ body.page-home .main-content {
 }
 
 .job-salary {
-    font-family: var(--gtme-font-mono);
+    font-family: var(--gtme-font-heading);
     font-weight: var(--gtme-weight-semibold);
     font-size: var(--gtme-text-sm);
     color: var(--gtme-text-primary);

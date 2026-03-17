@@ -14,6 +14,8 @@ CTA_LABEL = "Get the Weekly Pulse"
 
 SIGNUP_WORKER_URL = "https://gtme-newsletter-signup.rome-workers.workers.dev"
 
+GA_MEASUREMENT_ID = ""  # Set to GA4 Measurement ID (e.g., "G-XXXXXXXXXX") to enable tracking
+
 NAV_ITEMS = [
     {
         "href": "/salary/",

@@ -62,6 +62,15 @@ def get_html_head(title, description, canonical_path, extra_head=""):
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/components.css?v={CSS_VERSION}">
     <link rel="stylesheet" href="/assets/css/styles.css?v={CSS_VERSION}">
+{"" if not GA_MEASUREMENT_ID else f"""
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', '{GA_MEASUREMENT_ID}');
+    </script>"""}
 {extra_head}
 </head>'''
 
@@ -211,6 +220,7 @@ def get_page_wrapper(title, description, canonical_path, body_content,
             .then(function(r) {{ return r.json(); }})
             .then(function(data) {{
                 if (data.success) {{
+                    if (typeof gtag === 'function') {{ gtag('event', 'newsletter_signup', {{'event_category': 'engagement', 'event_label': email}}); }}
                     form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\\\'re in! Check your inbox.</p>';
                 }} else {{
                     btn.textContent = origText;

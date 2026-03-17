@@ -4,8 +4,8 @@
   "description": "The independent resource hub for GTM Engineers",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0D0D0D",
-  "theme_color": "#E8A838",
+  "background_color": "#FAFAFA",
+  "theme_color": "#FF4F1F",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

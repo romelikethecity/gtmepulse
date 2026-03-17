@@ -12828,6 +12828,13 @@ def main():
         f.write("gtmepulse.com\n")
     print("  Built: CNAME")
 
+    # Google Search Console verification file
+    if GOOGLE_SITE_VERIFICATION:
+        verification_path = os.path.join(OUTPUT_DIR, GOOGLE_SITE_VERIFICATION)
+        with open(verification_path, "w", encoding="utf-8") as f:
+            f.write(f"google-site-verification: {GOOGLE_SITE_VERIFICATION}")
+        print(f"  Generated {GOOGLE_SITE_VERIFICATION}")
+
     validate_pages()
 
     print(f"\n=== Build complete: {len(ALL_PAGES)} pages ===")

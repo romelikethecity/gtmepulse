@@ -15,6 +15,8 @@ CTA_LABEL = "Get the Weekly Pulse"
 SIGNUP_WORKER_URL = "https://gtme-newsletter-signup.rome-workers.workers.dev"
 
 GA_MEASUREMENT_ID = ""  # Set to GA4 Measurement ID (e.g., "G-XXXXXXXXXX") to enable tracking
+GOOGLE_SITE_VERIFICATION = ""  # Set to verification filename (e.g., "google1234abcd.html") to generate file
+GOOGLE_SITE_VERIFICATION_META = ""  # Set to verification code for meta tag method (alternative to HTML file)
 
 NAV_ITEMS = [
     {

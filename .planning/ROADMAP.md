@@ -70,7 +70,11 @@ Plans:
   3. Newsletter signup form on the site creates a contact in the Resend GTME Pulse audience
   4. A test email sends successfully via the Monday cron pipeline and arrives in inbox
   5. GA4 fires a custom event when a visitor submits the newsletter signup form
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 13-01-PLAN.md — GA4 tracking, Search Console verification, signup event tracking
+- [ ] 13-02-PLAN.md — Newsletter worker deploy, Resend setup, server cron, e2e test
 
 ### Phase 14: Insight Articles Batch 1
 **Goal**: 10 published insight articles covering job market analysis, salary trends, tool adoption, the State of GTME 2026 report, and hands-on playbooks for Clay, outbound automation, LinkedIn outreach, email deliverability, and API integration
@@ -121,7 +125,7 @@ Plans:
 | v1.0 Foundation + Salary | 1-3 | 8 | Complete | 2026-03-10 |
 | v2.0 Content Wave | 4-7 | 15 | Complete | 2026-03-14 |
 | v3.0 Tool Reviews + Infra | 8-12 | 10 | Complete | 2026-03-16 |
-| v4.0 Content + Go-Live | 13-17 | TBD | Not started | - |
+| v4.0 Content + Go-Live | 13-17 | 2+ | In progress | - |
 
 ---
 *Roadmap created: 2026-03-10 (Wave 1)*

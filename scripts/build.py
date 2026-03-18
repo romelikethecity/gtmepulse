@@ -15,8 +15,8 @@ from nav_config import *
 import templates
 from templates import (get_page_wrapper, write_page, get_homepage_schema,
                        get_breadcrumb_schema, get_faq_schema,
-                       get_software_application_schema, breadcrumb_html,
-                       newsletter_cta_html, faq_html, ALL_PAGES)
+                       get_software_application_schema, get_article_schema,
+                       breadcrumb_html, newsletter_cta_html, faq_html, ALL_PAGES)
 
 # ---------------------------------------------------------------------------
 # Path constants
@@ -11961,6 +11961,122 @@ def build_blog_mid_size_pay():
 
 
 # ---------------------------------------------------------------------------
+# Insight Articles
+# ---------------------------------------------------------------------------
+
+INSIGHT_PAGES = [
+    {"slug": "job-market-2026", "title": "GTM Engineer Job Market: 2026 Analysis", "description": "3,000+ open roles, 205% YoY growth, and Clay in 69% of postings. The complete GTM Engineer job market breakdown.", "category": "Market Analysis"},
+    {"slug": "salary-trends", "title": "GTM Engineer Salary Trends: What the Data Shows", "description": "$132K median, $45K coding premium, and equity gaps across seniority levels. Full salary trend analysis.", "category": "Market Analysis"},
+    {"slug": "tool-adoption", "title": "GTM Tool Adoption: Which Tools Are Winning", "description": "Clay at 69% adoption, the Instantly vs Smartlead battle, and why GTM Engineers stack 5-8 tools.", "category": "Market Analysis"},
+    {"slug": "state-of-gtme-2026", "title": "State of GTM Engineering 2026: Key Findings", "description": "228 respondents, median age 25, 53% self-taught. The complete State of GTM Engineering survey results.", "category": "Market Analysis"},
+    {"slug": "clay-ecosystem", "title": "The Clay Ecosystem: Who Builds What", "description": "Inside the Clay ecosystem: agencies, freelancers, integrations, and the community driving adoption.", "category": "Playbook"},
+    {"slug": "outbound-stack", "title": "The 2026 Outbound Stack: What Top GTM Engineers Use", "description": "The outbound tech stack that top-performing GTM Engineers run. Tools, workflows, and integration patterns.", "category": "Playbook"},
+    {"slug": "clay-playbook", "title": "Clay Playbook: Advanced Workflows That Work", "description": "Battle-tested Clay workflows for enrichment, scoring, and routing. From basic tables to production pipelines.", "category": "Playbook"},
+    {"slug": "linkedin-outreach", "title": "LinkedIn Outreach for GTM Engineers: A Technical Guide", "description": "API-driven LinkedIn outreach strategies for GTM Engineers. Automation, compliance, and conversion data.", "category": "Playbook"},
+    {"slug": "email-deliverability", "title": "Email Deliverability for GTM Engineers", "description": "DNS records, warm-up protocols, and inbox placement rates. Technical email deliverability for outbound teams.", "category": "Playbook"},
+    {"slug": "api-integration", "title": "API Integration Patterns for GTM Engineers", "description": "Webhook architectures, rate limit handling, and data transformation patterns for GTM automation.", "category": "Playbook"},
+]
+
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026"}
+
+
+def insight_related_links(current_slug):
+    """Generate related insight article links plus cross-section links."""
+    links = [("/insights/", "Insights Index")]
+    for page in INSIGHT_PAGES:
+        if page["slug"] != current_slug and page["slug"] in BUILT_INSIGHT_SLUGS:
+            links.append((f"/insights/{page['slug']}/", page["title"]))
+    links.append(("/salary/", "Salary Data Index"))
+    links.append(("/tools/", "Tools Index"))
+    links.append(("/blog/", "Blog"))
+    links.append(("/careers/", "Career Guides"))
+    links.append(("/glossary/", "Glossary"))
+    links = links[:12]
+    items = ""
+    for href, label in links:
+        items += f'<a href="{href}" class="related-link-card">{label}</a>\n'
+    return f'''<section class="related-links">
+    <h2>More Insights</h2>
+    <div class="related-links-grid">
+        {items}
+    </div>
+</section>'''
+
+
+def build_insights_index():
+    """Insights index page at /insights/ with card grid for published articles."""
+    title = "GTM Engineering Insights: Data-Backed Analysis"
+    description = (
+        "Data-driven analysis of the GTM Engineer job market, salary trends,"
+        " tool adoption, and career paths. Research-backed insights."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    cards_html = ""
+    built_count = 0
+    for page in INSIGHT_PAGES:
+        if page["slug"] not in BUILT_INSIGHT_SLUGS:
+            continue
+        built_count += 1
+        cards_html += f'''<a href="/insights/{page["slug"]}/" class="salary-index-card">
+    <span class="card-badge">{page["category"]}</span>
+    <h3>{page["title"]}</h3>
+    <p>{page["description"]}</p>
+</a>
+'''
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Insights</div>
+        <h1>GTM Engineering Insights</h1>
+        <p>Research-backed analysis of the GTM Engineer market. Each article combines survey data from 228 practitioners with job posting analysis from 3,342 listings. Numbers first, opinion second.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">{built_count}</span>
+        <span class="stat-label">Articles</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Survey Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3,342</span>
+        <span class="stat-label">Job Postings Analyzed</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">32</span>
+        <span class="stat-label">Countries Covered</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>All Insights</h2>
+    <div class="salary-index-grid">
+        {cards_html}
+    </div>
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer market data and analysis.")
+    extra_head = get_breadcrumb_schema(crumbs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/index.html", page)
+    print(f"  Built: insights/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -11973,7 +12089,7 @@ def validate_pages():
     SKIP_BREADCRUMB = {"index.html", "privacy/index.html", "terms/index.html", "404.html", "newsletter/index.html"}
     SKIP_INTERNAL_LINKS = {"index.html", "privacy/index.html", "terms/index.html", "404.html", "newsletter/index.html"}
     # Data page directories (must have source citations, word count checks)
-    DATA_DIRS = ("salary/", "careers/", "tools/", "benchmarks/", "comparisons/", "blog/")
+    DATA_DIRS = ("salary/", "careers/", "tools/", "benchmarks/", "comparisons/", "blog/", "insights/")
 
     # Category index pages are listing pages (tool cards), not data pages.
     # Exempt from word count and source citation checks.
@@ -12106,6 +12222,9 @@ def validate_pages():
                 if rel.startswith("blog/"):
                     if word_count < 1300:
                         warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1300+ for blog)")
+                elif rel.startswith("insights/"):
+                    if word_count < 1300:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1300+ for insights)")
                 elif rel.startswith("salary/calculator"):
                     # Calculator is interactive (JS-driven), word count threshold is lower
                     if word_count < 500:
@@ -12819,6 +12938,9 @@ def main():
     build_blog_bonus_data()
     build_blog_december_explosion()
     build_blog_mid_size_pay()
+
+    print("\n  Building insight articles...")
+    build_insights_index()
 
     print("\n  Building meta files...")
     build_sitemap()

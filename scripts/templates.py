@@ -374,6 +374,36 @@ def get_software_application_schema(tool_data):
     return f'    <script type="application/ld+json">{json.dumps(schema)}</script>\n'
 
 
+def get_article_schema(title, description, slug, date_published, word_count):
+    """Generate Article JSON-LD for insight articles."""
+    url = f"{SITE_URL}/insights/{slug}/"
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": description,
+        "wordCount": word_count,
+        "author": {
+            "@type": "Person",
+            "name": "Rome Thorndike",
+            "url": f"{SITE_URL}/about/",
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": SITE_NAME,
+            "url": SITE_URL,
+        },
+        "datePublished": date_published,
+        "dateModified": date_published,
+        "url": url,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": url,
+        },
+    }
+    return f'    <script type="application/ld+json">{json.dumps(schema)}</script>\n'
+
+
 # ---------------------------------------------------------------------------
 # Visual Component Helpers
 # ---------------------------------------------------------------------------

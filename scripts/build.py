@@ -11977,7 +11977,7 @@ INSIGHT_PAGES = [
     {"slug": "api-integration", "title": "API Integration Patterns for GTM Engineers", "description": "Webhook architectures, rate limit handling, and data transformation patterns for GTM automation.", "category": "Playbook"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook"}
 
 
 def insight_related_links(current_slug):
@@ -12724,6 +12724,124 @@ def build_insight_outbound_stack():
     )
     write_page("insights/outbound-stack/index.html", page)
     print(f"  Built: insights/outbound-stack/index.html")
+
+
+def build_insight_clay_playbook():
+    """ART-07: Build Your First Clay Table: A Step-by-Step Playbook."""
+    title = "Build Your First Clay Table: A Playbook"
+    description = (
+        "Step-by-step guide to building your first Clay enrichment table."
+        " From workspace setup to waterfall enrichment to sequencer export."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Clay Playbook", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="clay-playbook", date_published="2026-03-17", word_count=2300)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>Build Your First Clay Table: A Step&#8209;by&#8209;Step Playbook</h1>
+        <p>69% of GTM Engineers use Clay. Most of them started with a single enrichment table. This guide walks you from zero to a working lead enrichment pipeline in about 30 minutes.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">7</span>
+        <span class="stat-label">Steps</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">~30min</span>
+        <span class="stat-label">To First Table</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">Of GTMEs Start Here</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">100&#8209;10K</span>
+        <span class="stat-label">Leads Per Week</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Before You Start</h2>
+    <p>This playbook assumes you have a Clay account (free tier works fine for your first table), a list of target companies or contacts, and a basic understanding of what <a href="/glossary/data-enrichment/">data enrichment</a> means. If you don't know why GTM Engineers use Clay, read the <a href="/insights/clay-ecosystem/">Clay ecosystem breakdown</a> first.</p>
+    <p>You don't need to code. You don't need API keys (yet). Clay's built-in integrations handle the heavy lifting. The goal here is to get a working enrichment table running so you can see the output, understand the workflow, and decide how to scale it.</p>
+
+    <h2>Step 1: Setting Up Your Clay Workspace</h2>
+    <p>When you first sign into Clay, you land in your personal workspace. Think of a workspace as a folder that holds all your tables, integrations, and settings. Solo operators typically use one workspace. Teams of 3+ engineers create separate workspaces for different campaigns or clients.</p>
+    <p><strong>Account types matter.</strong> Clay's free plan gives you 100 credits/month. The Explorer plan ($149/mo) gives you 6,000. For your first table, 100 credits is enough to enrich 20-50 rows depending on which integrations you use. Don't upgrade until you've built your first table and understand the credit consumption model.</p>
+    <p><strong>Workspace vs personal.</strong> Personal tables live in your account. Workspace tables can be shared with team members. If you're learning solo, personal tables are fine. If you're building for a team, create a named workspace from the start so you don't have to migrate tables later.</p>
+    <p>For a full walkthrough of Clay's workspace features, check <a href="https://www.clay.com/university" target="_blank" rel="noopener">Clay University</a>. Their onboarding videos cover the UI basics better than text ever could.</p>
+
+    <h2>Step 2: Creating Your First Table</h2>
+    <p>A Clay table is a spreadsheet. Rows are companies or people. Columns are data fields. The magic is that columns can be enrichment actions, not just static data.</p>
+    <p><strong>Three ways to populate your first table:</strong></p>
+    <p><strong>CSV import</strong> is the fastest path. Export a list from LinkedIn Sales Navigator, your CRM, or a spreadsheet. Upload the CSV to Clay. Map the columns (company name, domain, contact name, email if you have it). Start with 50-100 rows for your first table. Resist the urge to upload 10,000 rows before you've validated the workflow.</p>
+    <p><strong>CRM import</strong> pulls contacts directly from HubSpot or Salesforce. Useful if your target list already lives in your CRM. Clay syncs the records and creates rows automatically. The CRM import also enables two-way sync later (pushing enriched data back to your CRM).</p>
+    <p><strong>Manual entry</strong> works for small, targeted lists. Type in 10-20 company names and domains. This is the best approach for your very first table because you can see exactly how each enrichment column processes each row.</p>
+
+    <h2>Step 3: Adding Enrichment Columns</h2>
+    <p>This is where Clay earns its reputation. Click "Add Column" and select an enrichment provider. Each provider returns different data points. Here's the starter set most GTM Engineers use.</p>
+    <p><strong>Clearbit (company enrichment):</strong> Give it a domain. It returns company size, industry, location, funding, tech stack, and social profiles. This is your firmographic foundation. One credit per lookup. Map the Clearbit fields to separate columns in your table (employee count, industry, etc.) so you can filter and sort later.</p>
+    <p><strong>Apollo (contact finding):</strong> Give it a company domain and a title filter (e.g., "VP Sales" or "Head of Marketing"). Apollo returns matching contacts with name, title, email, and LinkedIn URL. This is how you go from "I want to reach Acme Corp" to "John Smith, VP Sales, john@acme.com." Two credits per lookup.</p>
+    <p><strong>OpenAI (AI processing):</strong> Give it any text input and a prompt. Use it for lead scoring ("Based on this company's industry, size, and tech stack, rate their fit for our product on a scale of 1-10"), personalization ("Write a one-sentence opener referencing this company's recent funding round"), or classification ("Is this company B2B or B2C?"). One credit per call.</p>
+    <p><strong>HTTP API (custom enrichment):</strong> For anything not covered by Clay's built-in integrations. Point it at any REST API endpoint. GTM Engineers use this for scraping company tech stacks, pulling Crunchbase funding data, checking job posting counts on LinkedIn, and dozens of other custom data points. Requires basic API knowledge (HTTP methods, headers, JSON parsing). Two credits per call.</p>
+
+    <h2>Step 4: Building a Waterfall Enrichment Flow</h2>
+    <p><a href="/glossary/waterfall-enrichment/">Waterfall enrichment</a> is the technique that separates beginner Clay users from power users. Instead of relying on one data source for email addresses, you chain multiple sources in sequence.</p>
+    <p><strong>How it works in Clay:</strong> Add a "Find Email" column using Apollo as the primary source. Then add a second column: "If Apollo email is empty, run Hunter." Then a third: "If Hunter is also empty, run FullEnrich." Each column uses conditional logic to check whether the previous column returned a result.</p>
+    <p><strong>The math is compelling.</strong> Apollo alone finds emails for about 60-65% of B2B contacts. Adding Hunter as a fallback recovers another 10-15%. Adding a third source (FullEnrich, Lusha, or People Data Labs) recovers another 5-10%. Total coverage: 75-90%, depending on your target market. Tech companies resolve higher. Traditional industries resolve lower.</p>
+    <p><strong>Credit cost:</strong> The waterfall approach uses more credits per row, but only for rows where the primary source missed. If Apollo finds the email (65% of the time), the fallback columns don't fire and don't consume credits. A 3-source waterfall typically costs 1.5-2x what a single source costs, while delivering 25-35% more results. The ROI is obvious.</p>
+    <p>Set up your first waterfall with just two sources (Apollo + Hunter). Add a third source after you've validated the flow works correctly.</p>
+
+    <h2>Step 5: Filtering and Scoring Leads</h2>
+    <p>Raw enrichment data isn't useful until you filter it. Your goal is to separate high-ICP prospects from noise before any data leaves Clay.</p>
+    <p><strong>Formula columns</strong> let you build conditional logic. "If employee count is between 50 and 500 AND industry contains 'SaaS' AND funding is Series A or B, then ICP_score = 'High'." Clay's formula syntax is similar to Excel but with access to all your enrichment columns. Start simple. Three criteria is enough for your first scoring model.</p>
+    <p><strong>AI scoring</strong> works when you can't express your ICP in simple rules. Add an OpenAI column with a prompt like: "You are an ICP scoring assistant. Based on the following company data, score this prospect 1-10 for fit with a B2B SaaS product that sells to mid-market sales teams." Feed it all relevant columns as context. AI scoring is slower and costs more credits, but it catches nuances that formula logic misses.</p>
+    <p><strong>Filter aggressively.</strong> A common mistake is exporting everything. If you enriched 500 contacts, your filter should cut that to 150-250 high-fit prospects. Better to send 200 well-targeted emails than 500 poorly targeted ones. Your reply rate is directly proportional to your filtering quality. For more on what GTM Engineers are paid to do this work, see the <a href="/salary/">salary data</a>.</p>
+
+    <h2>Step 6: Exporting to Your Sequencer</h2>
+    <p>Your enriched, filtered table needs to go somewhere. For most GTM Engineers, that's Instantly, Smartlead, or Outreach. Clay exports as CSV or pushes directly to supported platforms.</p>
+    <p><strong>CSV export (universal):</strong> Select the columns you want to export (email, first name, last name, company, and any personalization variables). Download the CSV. Upload to your sequencer. Map the columns to your email template variables. This works with every sequencer on the market.</p>
+    <p><strong>Direct integration (faster):</strong> Clay has native integrations with Instantly, HubSpot, Salesforce, and others. Configure the integration once, then push rows from Clay to your destination with one click. The direct push is faster and less error-prone than CSV export, but requires initial setup.</p>
+    <p><strong>What to export:</strong> At minimum, export email, first name, company name, and one personalization variable (industry, recent funding, tech stack). The personalization variable is what makes your outbound feel targeted rather than mass-blasted. Our <a href="/insights/outbound-stack/">outbound stack guide</a> covers the full sequencer selection and campaign setup process.</p>
+
+    <h2>Step 7: Common Mistakes and How to Avoid Them</h2>
+    <p>Every new Clay user makes the same mistakes. Here are the ones that cost the most credits and time.</p>
+    <p><strong>Credit burn from large tables.</strong> Your first instinct will be to upload 5,000 rows and run every enrichment column at once. Don't. Start with 50-100 rows. Validate that each enrichment column returns useful data. Check the credit consumption per column. Then scale up gradually. One GTM Engineer in our survey burned through a full month of credits in a single afternoon by running a poorly configured 10,000-row table.</p>
+    <p><strong>Rate limits from upstream providers.</strong> Apollo throttles after 500 requests. Clearbit after 1,000. When you hit a rate limit, Clay queues the remaining requests and processes them over hours. For time-sensitive campaigns, this delay kills your workflow. The fix: batch your tables into chunks of 500 rows and stagger execution across hours or days.</p>
+    <p><strong>Data quality assumptions.</strong> Enrichment data is not ground truth. Email addresses can be outdated (people change jobs). Company data can be stale (employee counts lag by months). Phone numbers can be wrong. Always verify emails before sending (use ZeroBounce, NeverBounce, or MillionVerifier). Never assume enriched data is clean enough to use without validation.</p>
+    <p><strong>Skipping the filter step.</strong> Enrichment without filtering produces garbage outbound. If you skip Step 5 and export all enriched contacts to your sequencer, your reply rates will suffer. Filtering is not optional. It's the step that turns a database export into a targeted campaign.</p>
+    <p><strong>Not saving templates.</strong> Once you build a table that works, save it as a template. You'll rebuild this exact workflow next week for a different target segment. Templates preserve your column configuration, enrichment sources, formulas, and export settings. Building from scratch every time is a waste of hours.</p>
+
+    <h2>Scaling from 100 to 10,000 Leads Per Week</h2>
+    <p>Your first table processed 50-100 rows. Scaling to production volume requires three changes.</p>
+    <p><strong>Upgrade your Clay plan.</strong> Explorer gives you 6,000 credits/month. Pro gives you 24,000. Business gives you 150,000. Match your plan to your volume needs. A rough formula: multiply your weekly row count by the number of enrichment columns by 4.3 (weeks per month). That's your monthly credit consumption.</p>
+    <p><strong>Automate the input.</strong> Instead of manually uploading CSVs, connect Clay to your data sources. CRM sync pulls new accounts automatically. LinkedIn Sales Nav integration imports saved leads. Webhook triggers create rows from external events (new Slack message, new form submission, new CRM deal). The goal is zero manual data entry.</p>
+    <p><strong>Automate the output.</strong> Instead of downloading CSVs and uploading to Instantly, use Clay's direct integrations or build a Make/n8n workflow that moves data from Clay to your sequencer automatically. The full pipeline becomes: trigger event creates Clay row, enrichment columns fire automatically, scoring formula filters the row, qualified rows push to your sequencer. You review the output daily instead of building it manually.</p>
+    <p>For career paths related to Clay mastery, see <a href="/careers/how-to-become-gtm-engineer/">how to become a GTM Engineer</a>. And check the <a href="/tools/clay-review/">Clay review</a> for the latest on pricing, features, and platform updates.</p>
+
+{insight_related_links("clay-playbook")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly Clay tips and GTM automation playbooks.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/clay-playbook/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/clay-playbook/index.html", page)
+    print(f"  Built: insights/clay-playbook/index.html")
 
 
 # ---------------------------------------------------------------------------
@@ -13597,6 +13715,7 @@ def main():
     build_insight_state_of_gtme()
     build_insight_clay_ecosystem()
     build_insight_outbound_stack()
+    build_insight_clay_playbook()
 
     print("\n  Building meta files...")
     build_sitemap()

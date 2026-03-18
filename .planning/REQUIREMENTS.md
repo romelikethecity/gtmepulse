@@ -11,9 +11,9 @@
 - [x] **ART-02**: Salary trends deep dive (median shifts, seniority premiums, location arbitrage, equity breakdown)
 - [x] **ART-03**: Tool adoption report (which tools appear in job postings, market share shifts, emerging tools)
 - [x] **ART-04**: "State of GTM Engineering 2026" summary article (key findings from n=228 survey)
-- [ ] **ART-05**: Clay ecosystem breakdown (integrations, use cases, why 69% adoption, limitations)
-- [ ] **ART-06**: Outbound automation stack guide (sequencing + enrichment + CRM wiring)
-- [ ] **ART-07**: Building your first Clay table playbook (step-by-step for new GTM Engineers)
+- [x] **ART-05**: Clay ecosystem breakdown (integrations, use cases, why 69% adoption, limitations)
+- [x] **ART-06**: Outbound automation stack guide (sequencing + enrichment + CRM wiring)
+- [x] **ART-07**: Building your first Clay table playbook (step-by-step for new GTM Engineers)
 - [ ] **ART-08**: LinkedIn outreach automation playbook (Sales Nav + PhantomBuster/HeyReach)
 - [ ] **ART-09**: Email deliverability guide for GTM Engineers (warmup, domains, reputation)
 - [ ] **ART-10**: API integration patterns for GTM Engineers (webhooks, Zapier/Make, Python scripts)
@@ -91,9 +91,9 @@
 | ART-02 | Phase 14 | Complete |
 | ART-03 | Phase 14 | Complete |
 | ART-04 | Phase 14 | Complete |
-| ART-05 | Phase 14 | Pending |
-| ART-06 | Phase 14 | Pending |
-| ART-07 | Phase 14 | Pending |
+| ART-05 | Phase 14 | Complete |
+| ART-06 | Phase 14 | Complete |
+| ART-07 | Phase 14 | Complete |
 | ART-08 | Phase 14 | Pending |
 | ART-09 | Phase 14 | Pending |
 | ART-10 | Phase 14 | Pending |

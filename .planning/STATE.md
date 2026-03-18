@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v4.0
 milestone_name: Content Expansion and Go-Live Infrastructure
 status: in_progress
-stopped_at: Completed 13-01-PLAN.md
-last_updated: "2026-03-17T00:14:19Z"
-last_activity: 2026-03-17 — Completed Phase 13 Plan 01 (GA4 + Search Console)
+stopped_at: Completed 14-01-PLAN.md
+last_updated: "2026-03-18T07:23:49.684Z"
+last_activity: 2026-03-18 — Phase 14 Plan 01 complete
 progress:
-  total_phases: 5
-  completed_phases: 0
-  total_plans: 1
-  completed_plans: 1
-  percent: 5
+  total_phases: 8
+  completed_phases: 1
+  total_plans: 7
+  completed_plans: 4
+  percent: 20
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-16)
 
 **Core value:** GTM Engineers can find accurate, vendor-neutral salary benchmarks and career intelligence in one place, with data no competitor provides.
-**Current focus:** v4.0 Phase 13 — Analytics and Newsletter Go-Live
+**Current focus:** v4.0 Phase 14 — Insight Articles Batch 1
 
 ## Current Position
 
-Phase: 13 of 17 (Analytics and Newsletter Go-Live)
-Plan: 1 of 1 complete
-Status: Plan 01 complete
-Last activity: 2026-03-17 — Completed 13-01 (GA4 + Search Console)
+Phase: 14 of 17 (Insight Articles Batch 1)
+Plan: 1 of 3 (Insight Articles Infrastructure + Data Analysis)
+Status: in_progress
+Last activity: 2026-03-18 — Phase 14 Plan 01 complete
 
-Progress: [=] 5%
+Progress: [████░░░░░░░░░░░░░░░░] 20%
 
 ## Performance Metrics
 
@@ -51,6 +51,8 @@ Progress: [=] 5%
 - [v4.0]: Analytics + Newsletter grouped together (both infrastructure, no content dependency)
 - [v4.0]: Articles split into two batches of 10 for manageability
 - [13-01]: Analytics/verification as config-driven feature flags (empty string = off, set value = on)
+- [Phase 14]: Cloned blog pattern for insight articles (salary-header + salary-stats + salary-content layout)
+- [Phase 14]: Insight article word count floor set to 1300 matching blog articles
 
 ### Pending Todos
 
@@ -64,6 +66,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-17T00:14:19Z
-Stopped at: Completed 13-01-PLAN.md
+Last session: 2026-03-18T07:23:49.679Z
+Stopped at: Completed 14-01-PLAN.md
 Resume file: None

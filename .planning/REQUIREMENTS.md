@@ -7,10 +7,10 @@
 
 ### Insight Articles
 
-- [ ] **ART-01**: Job market analysis article (total GTME roles, growth trends, top hiring companies, remote %)
-- [ ] **ART-02**: Salary trends deep dive (median shifts, seniority premiums, location arbitrage, equity breakdown)
-- [ ] **ART-03**: Tool adoption report (which tools appear in job postings, market share shifts, emerging tools)
-- [ ] **ART-04**: "State of GTM Engineering 2026" summary article (key findings from n=228 survey)
+- [x] **ART-01**: Job market analysis article (total GTME roles, growth trends, top hiring companies, remote %)
+- [x] **ART-02**: Salary trends deep dive (median shifts, seniority premiums, location arbitrage, equity breakdown)
+- [x] **ART-03**: Tool adoption report (which tools appear in job postings, market share shifts, emerging tools)
+- [x] **ART-04**: "State of GTM Engineering 2026" summary article (key findings from n=228 survey)
 - [ ] **ART-05**: Clay ecosystem breakdown (integrations, use cases, why 69% adoption, limitations)
 - [ ] **ART-06**: Outbound automation stack guide (sequencing + enrichment + CRM wiring)
 - [ ] **ART-07**: Building your first Clay table playbook (step-by-step for new GTM Engineers)
@@ -87,10 +87,10 @@
 | NLIVE-04 | Phase 13 | Pending |
 | NLIVE-05 | Phase 13 | Pending |
 | NLIVE-06 | Phase 13 | Pending |
-| ART-01 | Phase 14 | Pending |
-| ART-02 | Phase 14 | Pending |
-| ART-03 | Phase 14 | Pending |
-| ART-04 | Phase 14 | Pending |
+| ART-01 | Phase 14 | Complete |
+| ART-02 | Phase 14 | Complete |
+| ART-03 | Phase 14 | Complete |
+| ART-04 | Phase 14 | Complete |
 | ART-05 | Phase 14 | Pending |
 | ART-06 | Phase 14 | Pending |
 | ART-07 | Phase 14 | Pending |

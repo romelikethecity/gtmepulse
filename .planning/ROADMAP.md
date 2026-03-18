@@ -85,7 +85,12 @@ Plans:
   2. Each article has Article JSON-LD schema with author Person markup for Rome Thorndike
   3. Each article meets the 1,500-2,500 word target with 3+ internal links and 2+ outbound citations
   4. The insights index page lists all 10 articles with excerpts and links
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 14-01-PLAN.md — Infrastructure (Article schema, insights index, validator, nav) + data articles ART-01 through ART-04
+- [ ] 14-02-PLAN.md — Clay ecosystem (ART-05), outbound stack (ART-06), Clay playbook (ART-07)
+- [ ] 14-03-PLAN.md — LinkedIn outreach (ART-08), email deliverability (ART-09), API integration (ART-10)
 
 ### Phase 15: Insight Articles Batch 2
 **Goal**: 10 more published insight articles covering data enrichment strategy, hiring guides, freelance rates, ROI analysis, intent data, CRM hygiene, pulse report templates, tech stack audits, revenue attribution, and remote market analysis
@@ -125,7 +130,7 @@ Plans:
 | v1.0 Foundation + Salary | 1-3 | 8 | Complete | 2026-03-10 |
 | v2.0 Content Wave | 4-7 | 15 | Complete | 2026-03-14 |
 | v3.0 Tool Reviews + Infra | 8-12 | 10 | Complete | 2026-03-16 |
-| v4.0 Content + Go-Live | 13-17 | 2+ | In progress | - |
+| v4.0 Content + Go-Live | 13-17 | 5+ | In progress | - |
 
 ---
 *Roadmap created: 2026-03-10 (Wave 1)*

@@ -14,9 +14,9 @@
 - [x] **ART-05**: Clay ecosystem breakdown (integrations, use cases, why 69% adoption, limitations)
 - [x] **ART-06**: Outbound automation stack guide (sequencing + enrichment + CRM wiring)
 - [x] **ART-07**: Building your first Clay table playbook (step-by-step for new GTM Engineers)
-- [ ] **ART-08**: LinkedIn outreach automation playbook (Sales Nav + PhantomBuster/HeyReach)
-- [ ] **ART-09**: Email deliverability guide for GTM Engineers (warmup, domains, reputation)
-- [ ] **ART-10**: API integration patterns for GTM Engineers (webhooks, Zapier/Make, Python scripts)
+- [x] **ART-08**: LinkedIn outreach automation playbook (Sales Nav + PhantomBuster/HeyReach)
+- [x] **ART-09**: Email deliverability guide for GTM Engineers (warmup, domains, reputation)
+- [x] **ART-10**: API integration patterns for GTM Engineers (webhooks, Zapier/Make, Python scripts)
 - [ ] **ART-11**: Data enrichment waterfall strategy (multi-vendor, cost optimization, accuracy benchmarks)
 - [ ] **ART-12**: GTM Engineer hiring guide for managers (what to look for, interview process, comp benchmarks)
 - [ ] **ART-13**: Freelance GTM Engineering rate guide (hourly vs retainer, pricing by deliverable)
@@ -94,9 +94,9 @@
 | ART-05 | Phase 14 | Complete |
 | ART-06 | Phase 14 | Complete |
 | ART-07 | Phase 14 | Complete |
-| ART-08 | Phase 14 | Pending |
-| ART-09 | Phase 14 | Pending |
-| ART-10 | Phase 14 | Pending |
+| ART-08 | Phase 14 | Complete |
+| ART-09 | Phase 14 | Complete |
+| ART-10 | Phase 14 | Complete |
 | ART-11 | Phase 15 | Pending |
 | ART-12 | Phase 15 | Pending |
 | ART-13 | Phase 15 | Pending |

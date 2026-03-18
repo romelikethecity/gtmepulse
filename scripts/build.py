@@ -11977,7 +11977,7 @@ INSIGHT_PAGES = [
     {"slug": "api-integration", "title": "API Integration Patterns for GTM Engineers", "description": "Webhook architectures, rate limit handling, and data transformation patterns for GTM automation.", "category": "Playbook"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack"}
 
 
 def insight_related_links(current_slug):
@@ -12494,6 +12494,236 @@ def build_insight_state_of_gtme():
     )
     write_page("insights/state-of-gtme-2026/index.html", page)
     print(f"  Built: insights/state-of-gtme-2026/index.html")
+
+
+def build_insight_clay_ecosystem():
+    """ART-05: Clay Ecosystem: Why 69% of GTMEs Use It."""
+    title = "Clay Ecosystem: Why 69% of GTMEs Use It"
+    description = (
+        "69% of GTM Engineers use Clay for data enrichment and orchestration."
+        " Integrations, use cases, limitations, and alternatives analyzed."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Clay Ecosystem", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="clay-ecosystem", date_published="2026-03-17", word_count=2200)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Market Analysis</div>
+        <h1>Clay Ecosystem: Why 69% of GTMEs Use It</h1>
+        <p>Clay dominates the GTM Engineer toolstack. Not because it's perfect, but because nothing else connects 200+ data sources in a single spreadsheet-like interface. Here's why it won, where it fails, and what the ecosystem around it looks like.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">Adoption Rate</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">200+</span>
+        <span class="stat-label">Integrations</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">#1</span>
+        <span class="stat-label">Loved and Frustrating</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$149&#8209;$800/mo</span>
+        <span class="stat-label">Pricing Range</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>How Clay Became the Default</h2>
+    <p>Three years ago, enriching a lead list meant buying a ZoomInfo license, exporting a CSV, uploading it to Clearbit, cross-referencing with LinkedIn, and manually merging the results. That workflow took hours for a few hundred leads. Clay collapsed it into one interface.</p>
+    <p>The key insight wasn't the data. It was the orchestration. Clay didn't build its own database of 300 million contacts. It connected to everyone else's. Clearbit, Apollo, Hunter, FullEnrich, Lusha, People Data Labs, OpenAI. Each one plugged into a column. Run a waterfall across three enrichment providers in sequence, score the results with GPT-4, and export to your CRM. All without leaving one tab.</p>
+    <p>That's why 69% of surveyed GTM Engineers in our <a href="/insights/state-of-gtme-2026/">State of GTM Engineering 2026 report</a> said they use Clay. The next closest tool, Apollo, sits at 40%. The gap is enormous.</p>
+
+    <h2>The Integration Ecosystem</h2>
+    <p>Clay's moat is its integration library. With 200+ connectors, it touches every layer of the go-to-market stack. The primary categories break down like this.</p>
+    <p><strong>Data enrichment providers:</strong> Clearbit (company data), Apollo (contact data), Hunter (email finding), FullEnrich (waterfall enrichment), Lusha (phone numbers), People Data Labs (bulk data). These are the most-used integrations. A typical Clay table uses 2-4 enrichment sources in a <a href="/glossary/waterfall-enrichment/">waterfall pattern</a>, where one provider's miss triggers a fallback to the next.</p>
+    <p><strong>AI and LLM integrations:</strong> OpenAI (GPT-4, GPT-3.5), Claude, and Perplexity. GTM Engineers use these for lead scoring, personalization at scale, company research summaries, and classifying prospects by ICP fit. The AI column is the single most transformative Clay feature. It turns raw data into actionable intelligence without manual review.</p>
+    <p><strong>CRM and sequencing outputs:</strong> <a href="/comparisons/hubspot-vs-salesforce/">HubSpot and Salesforce</a> for CRM pushes, Instantly and Smartlead for outbound sequencing, Outreach and Salesloft for enterprise sequences. The output integrations complete the pipeline: enrich in Clay, score with AI, push to your sequencer or CRM.</p>
+    <p><strong>Webhooks and HTTP API:</strong> The catch-all. Any service with an API becomes a Clay integration through the HTTP request column. GTM Engineers use this for custom enrichment (scraping company tech stacks, pulling Crunchbase funding data, checking job posting counts). It's the integration layer that makes everything else possible.</p>
+    <p>You can review the full category breakdown in our <a href="/tools/category/data-enrichment/">data enrichment section</a>.</p>
+
+    <h2>Primary Use Cases</h2>
+    <p><strong>Lead enrichment</strong> is the starting point. Import a list of companies or contacts, add enrichment columns, export the enriched data. This is what 80%+ of Clay users do first. It works well for lists under 5,000 records. Above that, credit consumption and rate limits become a factor.</p>
+    <p><strong>Waterfall enrichment</strong> is where the power users operate. Instead of one enrichment source, you chain 3-4 in sequence. Try Apollo first. If Apollo returns no email, try Hunter. If Hunter fails, try FullEnrich. Each step only runs on records that didn't resolve in the previous step. This pattern recovers 15-30% more contacts than any single provider alone.</p>
+    <p><strong>Account scoring</strong> uses formula columns and AI to assign scores based on firmographic and technographic data. Company has 50-200 employees, uses Salesforce, raised Series A-B funding, and is hiring for SDRs? That's a high-ICP account. Clay can calculate this automatically for every row.</p>
+    <p><strong>Signal monitoring</strong> is the newest use case. Clay tables can refresh on a schedule, re-running enrichment columns on new data. Job posting changes, funding announcements, tech stack updates. GTM Engineers use scheduled Clay tables as signal detection systems, triggering outbound campaigns when target accounts hit specific criteria.</p>
+
+    <h2>Where Clay Falls Short</h2>
+    <p>Clay ranked as both the #1 most loved and #1 most frustrating tool in our survey. That's not a contradiction. It's a consequence of being indispensable and imperfect at the same time.</p>
+    <p><strong>Pricing complexity.</strong> Clay's credit system is opaque. Different integrations cost different credits. A waterfall enrichment across four providers can burn 8-12 credits per row. At scale, costs compound fast. Our survey respondents flagged pricing as Clay's #1 frustration. A 10,000-row enrichment table can cost $200-$800 depending on the integrations used, and it's hard to predict costs before running the table. The <a href="/tools/clay-review/">full Clay review</a> breaks down the pricing tiers.</p>
+    <p><strong>Learning curve.</strong> Clay's interface is powerful but dense. New users spend 2-4 weeks reaching proficiency. The spreadsheet metaphor helps (everyone understands rows and columns), but the enrichment column configuration, formula syntax, and waterfall logic take time to master. Clay University and Nathan Lippi's <a href="https://www.clay.com/university" target="_blank" rel="noopener">Clay Bootcamp</a> help, but the onboarding investment is real.</p>
+    <p><strong>Rate limits and throttling.</strong> Running large tables (10,000+ rows) triggers rate limits on upstream providers. Apollo might throttle after 500 requests, Clearbit after 1,000. Clay queues the remaining requests, but completion times stretch from minutes to hours. GTM Engineers running high-volume enrichment learn to batch their tables and stagger execution.</p>
+    <p><strong>Data quality variation.</strong> Clay doesn't generate data. It pulls from third-party providers. That means data quality depends on which provider you're using, for which data point, in which geography. Apollo's email data is strong in the US but weaker in EMEA. Clearbit's company data is reliable for tech companies but thin for traditional industries. The quality inconsistency forces GTM Engineers to build verification steps into every workflow, adding complexity and cost.</p>
+
+    <h2>Alternatives and When They Win</h2>
+    <p>Clay isn't the only option. Two alternatives capture meaningful market share.</p>
+    <p><strong>Apollo</strong> wins when simplicity matters more than flexibility. Apollo bundles a contact database, enrichment, email sequencing, and a basic CRM into one platform. For teams that want one tool instead of five, Apollo at $99/mo is compelling. The trade-off: Apollo's enrichment uses its own database only (no waterfall across providers), and its sequencing features are basic compared to dedicated tools like Instantly. See the <a href="/comparisons/clay-vs-apollo/">Clay vs Apollo comparison</a> for the full analysis.</p>
+    <p><strong>ZoomInfo</strong> wins in enterprise compliance environments. ZoomInfo's data provenance, GDPR compliance frameworks, and vendor security reviews make it the default for companies with strict procurement policies. GTM Engineers at large enterprises often use ZoomInfo for approved enrichment and Clay for experimental workflows, running them in parallel. Our <a href="/comparisons/clay-vs-zoominfo/">Clay vs ZoomInfo comparison</a> covers the decision framework.</p>
+
+    <h2>The Clay + Sequencer Pairing</h2>
+    <p>Clay doesn't send emails. It enriches, scores, and segments. The outbound sending happens in a sequencer, and the two most common pairings are Clay + Instantly and Clay + Smartlead.</p>
+    <p><strong>Clay + Instantly</strong> is the dominant stack for startups and solo GTM Engineers. Instantly's sender rotation, warmup system, and deliverability optimization complement Clay's enrichment capabilities. Enrich in Clay, export to Instantly, launch multi-step campaigns. This pairing appears in 45% of survey respondents' toolstacks.</p>
+    <p><strong>Clay + Smartlead</strong> appeals to agencies and multi-client operators. Smartlead's white-label features and client workspace management make it the agency choice. The enrichment-to-sequence workflow mirrors the Instantly pairing, with the added layer of client separation and reporting. Check our <a href="/comparisons/instantly-vs-smartlead/">Instantly vs Smartlead comparison</a> for the detailed breakdown.</p>
+    <p>For the full outbound stack architecture, see our <a href="/insights/outbound-stack/">outbound automation stack guide</a>.</p>
+
+    <h2>Tables vs Workspaces</h2>
+    <p>Clay has two core concepts. <strong>Tables</strong> are individual enrichment workflows, like a spreadsheet with data columns. <strong>Workspaces</strong> are organizational containers that hold multiple tables, shared integrations, and team settings.</p>
+    <p>The distinction matters for growing teams. Solo GTM Engineers typically work in a single workspace with 5-20 tables. Teams of 3+ engineers need workspace management: shared API keys, credit allocation, table templates, and access controls. Clay's workspace features have improved significantly in 2025-2026, but multi-user collaboration remains rougher than mature tools like Notion or Google Sheets.</p>
+    <p>For teams scaling from one to five GTM Engineers, the workspace architecture decision is critical. Our <a href="/insights/clay-playbook/">Clay playbook</a> walks through the setup process from first table to team workspace.</p>
+
+    <h2>What Comes Next</h2>
+    <p>Clay's roadmap signals three directions. More AI-native features (Clay AI already writes enrichment formulas and suggests columns). Deeper CRM integrations (bi-directional sync with HubSpot and Salesforce, not just one-way pushes). And workflow automation (triggering Clay tables from external events, closing the gap with tools like Make and n8n).</p>
+    <p>The competitive picture is shifting too. Apollo continues expanding its enrichment capabilities. FullEnrich is building a waterfall-native alternative. And new entrants like Persana are targeting Clay's position with AI-first approaches. Whether Clay maintains its 69% dominance depends on execution, pricing, and how fast the alternatives catch up.</p>
+    <p>For the broader tool adoption trends, see our <a href="/insights/tool-adoption/">tool adoption analysis</a>.</p>
+
+{insight_related_links("clay-ecosystem")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly Clay ecosystem updates and GTM tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/clay-ecosystem/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/clay-ecosystem/index.html", page)
+    print(f"  Built: insights/clay-ecosystem/index.html")
+
+
+def build_insight_outbound_stack():
+    """ART-06: The Outbound Automation Stack for GTM Engineers."""
+    title = "The Outbound Automation Stack for GTM Engineers"
+    description = (
+        "4-layer outbound stack breakdown: enrichment, sequencing, CRM, and analytics."
+        " Budget tiers from $500/mo to $5K+, with recommended tool combos."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Outbound Stack", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="outbound-stack", date_published="2026-03-17", word_count=2300)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>The Outbound Automation Stack for GTM Engineers</h1>
+        <p>The average GTM Engineer uses 5-8 tools. The best ones know which four layers matter, how to connect them, and where to spend based on budget. This is the architecture guide.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">4</span>
+        <span class="stat-label">Stack Layers</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5&#8209;8</span>
+        <span class="stat-label">Avg Tools Per GTME</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$500&#8209;$5K/mo</span>
+        <span class="stat-label">Typical Spend</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">Start with Clay</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The 4-Layer Architecture</h2>
+    <p>Every outbound automation stack has four layers. Skip one and the whole system underperforms. Each layer has a specific job, and the tools you pick depend on budget, team size, and target market.</p>
+    <p><strong>Layer 1: Data Enrichment.</strong> This is where you build your target list and enrich it with contact data, firmographics, technographics, and intent signals. <a href="/insights/clay-ecosystem/">Clay</a> dominates this layer at 69% adoption. Apollo is the main alternative. The output of Layer 1 is a clean, enriched list of contacts with verified emails, company data, and ICP scores.</p>
+    <p><strong>Layer 2: Outbound Sequencing.</strong> This is where you send emails, manage follow-ups, and handle replies. <a href="/comparisons/instantly-vs-smartlead/">Instantly and Smartlead</a> own the startup and agency market. Outreach and Salesloft dominate enterprise. The output of Layer 2 is meetings booked from cold outbound.</p>
+    <p><strong>Layer 3: CRM.</strong> This is where deals live after the meeting is booked. <a href="/comparisons/hubspot-vs-salesforce/">HubSpot and Salesforce</a> are the two options for 90%+ of GTM teams. The CRM receives enriched contact data from Layer 1 and deal progression data from Layer 2. It's the system of record.</p>
+    <p><strong>Layer 4: Analytics.</strong> This is where you measure what's working. Reply rates, meeting rates, pipeline generated, revenue attributed. Most GTM Engineers cobble this together from CRM reports, sequencer dashboards, and spreadsheets. Dedicated analytics tools like Mixpanel or PostHog are rare in outbound stacks but growing.</p>
+
+    <h2>Stack by Budget: $500/mo Starter</h2>
+    <p>A solo GTM Engineer or early-stage startup can run effective outbound for $500/month. Here's the stack.</p>
+    <p><strong>Enrichment:</strong> Apollo ($99/mo). Apollo's built-in database gives you contact finding, email verification, and basic enrichment in one tool. You won't get waterfall enrichment or AI scoring, but for lists under 1,000 contacts/month, Apollo covers the basics. If you have more budget flexibility, Clay's Explorer plan ($149/mo) is worth the upgrade for the waterfall capability.</p>
+    <p><strong>Sequencing:</strong> Instantly ($37/mo). Instantly's Growth plan gives you unlimited email accounts, warmup, and basic A/B testing. Combined with 2-3 warmed-up Google Workspace accounts ($6/mo each), you have a functional sending infrastructure for under $60/month.</p>
+    <p><strong>CRM:</strong> HubSpot Free. HubSpot's free CRM handles contact management, deal tracking, and basic reporting. It's limited (no custom properties, minimal automation), but it works for teams under 5 people with fewer than 500 deals.</p>
+    <p><strong>Analytics:</strong> Google Sheets + HubSpot reports. At this budget, dedicated analytics tools aren't justified. Track your core metrics (emails sent, reply rate, meetings booked, pipeline value) in a weekly spreadsheet alongside HubSpot's built-in dashboards.</p>
+
+    <h2>Stack by Budget: $2K/mo Growth</h2>
+    <p>A funded startup with a dedicated GTM Engineer and real pipeline targets. This is where the stack gets powerful.</p>
+    <p><strong>Enrichment:</strong> Clay Pro ($349/mo) + one supplementary provider. Clay Pro gives you enough credits for 5,000-10,000 enrichments per month with waterfall flows across 3-4 providers. Add Hunter ($49/mo) or FullEnrich as a fallback source. The AI columns in Clay Pro let you score and personalize at scale.</p>
+    <p><strong>Sequencing:</strong> Instantly Growth ($97/mo) or Smartlead ($79/mo). At this tier, you need multi-sender rotation, advanced A/B testing, and deliverability analytics. Both tools handle it well. Instantly if you're running a single brand. <a href="/comparisons/instantly-vs-smartlead/">Smartlead if you're managing multiple brands</a> or client work.</p>
+    <p><strong>CRM:</strong> HubSpot Starter ($20/mo) or Salesforce Essentials ($25/user/mo). You need custom properties, basic workflow automation, and proper pipeline stages. HubSpot Starter is easier to configure. Salesforce gives you more flexibility and scales better past 10,000 contacts.</p>
+    <p><strong>Analytics:</strong> CRM reports + <a href="/tools/">tool-native dashboards</a>. Instantly and Smartlead both provide campaign analytics. HubSpot or Salesforce provide pipeline reporting. At $2K/mo, the gap is attribution: connecting which sequences generated which pipeline. Most GTM Engineers build this with custom CRM properties and a monthly analysis spreadsheet.</p>
+
+    <h2>Stack by Budget: $5K+/mo Enterprise</h2>
+    <p>A GTM team with 2-5 engineers, a full sales team, and enterprise compliance requirements.</p>
+    <p><strong>Enrichment:</strong> Clay Business ($800/mo) + ZoomInfo ($15K+/yr). Clay handles experimental workflows and waterfall enrichment. ZoomInfo provides the compliance-approved data source that procurement signed off on. Running both in parallel is common at this tier. ZoomInfo for approved outbound, Clay for everything else.</p>
+    <p><strong>Sequencing:</strong> Outreach or Salesloft ($100-150/user/mo). Enterprise sequencers offer manager dashboards, call integration, compliance recording, and CRM-native workflow triggers. They cost 3-5x more than Instantly but integrate with enterprise sales processes.</p>
+    <p><strong>CRM:</strong> Salesforce Professional ($80/user/mo) or HubSpot Professional ($800/mo). Full automation, custom objects, advanced reporting, and API access for custom integrations. At this budget, the CRM is the center of the GTM tech stack, not an afterthought.</p>
+    <p><strong>Analytics:</strong> Dedicated tooling. Mixpanel or Amplitude for product-led signals. Attribution tools like Dreamdata or HockeyStack for connecting outbound touches to revenue. At $5K+/mo, the analytics layer becomes its own competency.</p>
+
+    <h2>Clay + Instantly: The Default Stack Walkthrough</h2>
+    <p>The most common GTM Engineer stack is Clay + Instantly. Here's how they connect.</p>
+    <p><strong>Step 1: Build your list in Clay.</strong> Import target accounts from LinkedIn Sales Nav exports, CRM exports, or manual lists. Add enrichment columns: company size, industry, funding, technology stack, contact name, title, email.</p>
+    <p><strong>Step 2: Waterfall enrich.</strong> Add a waterfall enrichment column for email. Primary: Apollo. Fallback 1: Hunter. Fallback 2: FullEnrich. Run the table. Expect 70-85% email coverage depending on your target market (tech companies resolve higher than traditional industries).</p>
+    <p><strong>Step 3: Score and filter.</strong> Add an AI column to score each row against your ICP criteria. Filter to rows scoring above your threshold. A good ICP filter reduces your list by 30-50% but improves reply rates by 2-3x. Quality beats quantity in cold outbound.</p>
+    <p><strong>Step 4: Export to Instantly.</strong> Export the filtered list as CSV. Upload to Instantly. Map the columns (email, first name, company, custom variables). The custom variables power your personalization in email templates. For a step-by-step walkthrough, see our <a href="/insights/clay-playbook/">Clay playbook</a>.</p>
+    <p><strong>Step 5: Launch sequences.</strong> Build your multi-step sequence in Instantly. 3-5 emails over 14-21 days. Use the Clay-enriched variables for personalization (company name, industry, tech stack, recent news). Set up sender rotation across 3-5 email accounts to protect deliverability.</p>
+
+    <h2>Data Waterfall Strategy</h2>
+    <p>Waterfall enrichment is the single most impactful technique for outbound data quality. The concept is simple: try your best data source first, then fall back to the next if it misses.</p>
+    <p><strong>Primary source:</strong> Your highest-accuracy provider for the data point. For B2B emails, that's typically Apollo or Clearbit.</p>
+    <p><strong>Fallback 1:</strong> A different provider that covers gaps in your primary. Hunter finds emails through web scraping that database providers miss. FullEnrich aggregates 15+ sources.</p>
+    <p><strong>Fallback 2:</strong> A catch-all or manual research trigger. If two automated sources miss, flag for manual LinkedIn research or skip the contact entirely.</p>
+    <p><strong>Verification layer:</strong> Run all found emails through a verification service (ZeroBounce, NeverBounce, or MillionVerifier) before sending. Verification catches 5-10% of invalid emails that passed enrichment. Skipping verification destroys sender reputation.</p>
+    <p>This strategy typically recovers 15-30% more valid contacts than any single provider. At scale, that's hundreds of additional qualified prospects per month from the same target list. For more on <a href="/glossary/data-enrichment/">data enrichment concepts</a>, check the glossary.</p>
+
+    <h2>Deliverability Fundamentals</h2>
+    <p>The best enrichment and sequencing stack in the world means nothing if your emails land in spam. Deliverability is infrastructure, and GTM Engineers own it.</p>
+    <p><strong>Domain warmup:</strong> New sending domains need 2-4 weeks of gradual volume increase before hitting full capacity. Start with 5 emails/day per account, increase by 5/day each week. Use <a href="https://instantly.ai/blog/email-warmup" target="_blank" rel="noopener">Instantly's built-in warmup</a> or Smartlead's warmup pool.</p>
+    <p><strong>Domain rotation:</strong> Never send cold outbound from your primary company domain. Buy 3-5 lookalike domains (e.g., tryacme.com, getacme.io) and rotate sending across them. If one domain gets flagged, your primary domain stays clean.</p>
+    <p><strong>SPF, DKIM, DMARC:</strong> Three DNS records that authenticate your sending domains. SPF tells email servers which IPs can send from your domain. DKIM cryptographically signs your emails. DMARC tells receivers what to do with emails that fail SPF or DKIM checks. All three must be configured correctly. Missing any one of them drops inbox placement by 20-40%.</p>
+    <p>Deliverability is a topic deep enough for its own guide. See our <a href="/insights/email-deliverability/">email deliverability article</a> for the full technical breakdown.</p>
+
+    <h2>CRM Integration Patterns</h2>
+    <p>Getting enriched data into your CRM cleanly is harder than it sounds. The two dominant patterns depend on your CRM.</p>
+    <p><strong>HubSpot:</strong> Use Clay's native HubSpot integration or CSV import. Map enrichment fields to HubSpot contact properties. Create custom properties for data that HubSpot doesn't have natively (tech stack, ICP score, enrichment source). HubSpot's API is forgiving with data types and handles deduplication by email address automatically.</p>
+    <p><strong>Salesforce:</strong> More configuration required. Map Clay fields to Salesforce contact and account fields. Handle the contact-account relationship (Salesforce requires contacts to belong to accounts, which means you need to create or match accounts before importing contacts). Use <a href="https://www.smartlead.ai/blog/cold-email-outreach" target="_blank" rel="noopener">Salesforce Data Loader</a> or a middleware like Make/n8n for automated sync. Salesforce field validation rules can reject imports if data formats don't match exactly.</p>
+
+    <h2>Measuring Outbound Performance</h2>
+    <p>Three metrics matter. Everything else is vanity.</p>
+    <p><strong>Reply rate:</strong> The percentage of sent emails that receive a human reply (excluding auto-replies and bounces). Healthy cold outbound runs 3-8% reply rates. Below 2% means your list quality, messaging, or deliverability needs work. Above 10% is exceptional and usually signals strong ICP targeting.</p>
+    <p><strong>Meeting rate:</strong> The percentage of positive replies that convert to booked meetings. This measures your reply-to-meeting handoff. 40-60% is the benchmark. Lower numbers indicate slow follow-up (responding to interested replies within hours, not days, matters enormously) or weak qualification.</p>
+    <p><strong>Pipeline generated:</strong> The dollar value of opportunities created from outbound. This is the metric that justifies the entire stack. Track it monthly. Measure it against total stack cost. A healthy outbound operation generates 5-10x its tool cost in pipeline value. If your stack costs $2K/mo and generates less than $10K/mo in pipeline, something in the system is broken.</p>
+    <p>For the full tool directory, explore the <a href="/tools/">tools index</a>. For salary data on the people building these stacks, see the <a href="/salary/">salary index</a>.</p>
+
+{insight_related_links("outbound-stack")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly outbound stack insights and GTM tool recommendations.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/outbound-stack/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/outbound-stack/index.html", page)
+    print(f"  Built: insights/outbound-stack/index.html")
 
 
 # ---------------------------------------------------------------------------
@@ -13365,6 +13595,8 @@ def main():
     build_insight_salary_trends()
     build_insight_tool_adoption()
     build_insight_state_of_gtme()
+    build_insight_clay_ecosystem()
+    build_insight_outbound_stack()
 
     print("\n  Building meta files...")
     build_sitemap()

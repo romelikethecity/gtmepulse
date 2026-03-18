@@ -11977,7 +11977,7 @@ INSIGHT_PAGES = [
     {"slug": "api-integration", "title": "API Integration Patterns for GTM Engineers", "description": "Webhook architectures, rate limit handling, and data transformation patterns for GTM automation.", "category": "Playbook"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability"}
 
 
 def insight_related_links(current_slug):
@@ -12842,6 +12842,238 @@ def build_insight_clay_playbook():
     )
     write_page("insights/clay-playbook/index.html", page)
     print(f"  Built: insights/clay-playbook/index.html")
+
+
+def build_insight_linkedin_outreach():
+    """ART-08: LinkedIn Outreach Automation for GTM Engineers."""
+    title = "LinkedIn Outreach Automation for GTM Engineers"
+    description = (
+        "Sales Navigator filters, automation tool comparison, connection rate benchmarks,"
+        " and multi-channel sequencing patterns for GTM outbound."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("LinkedIn Outreach", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="linkedin-outreach", date_published="2026-03-18", word_count=2200)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>LinkedIn Outreach Automation for GTM Engineers</h1>
+        <p>LinkedIn outbound converts at 3-5x the rate of cold email for warm prospects. But automation without strategy gets your account restricted. This is the playbook for doing it right.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">30%</span>
+        <span class="stat-label">Avg Connection Rate</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">300/wk</span>
+        <span class="stat-label">Safe Connection Limit</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3&#8209;5x</span>
+        <span class="stat-label">Reply Rate vs Cold Email</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5&#8209;8</span>
+        <span class="stat-label">Touchpoints Per Sequence</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why LinkedIn Outreach Matters for GTM Engineers</h2>
+    <p>Cold email is getting harder. Inbox providers are tightening filters. Google's 2024 bulk sender requirements raised the bar for domain reputation. Meanwhile, LinkedIn remains the one channel where B2B buyers expect to be contacted by people selling things.</p>
+    <p>The numbers support this. Connection requests with personalized notes see 25-35% acceptance rates. InMail response rates average 10-15% for well-targeted messages. Compare that to cold email, where 1-3% reply rates are considered solid. LinkedIn wins on engagement because the platform carries built-in social proof: your profile, mutual connections, content activity, and company affiliation all do work before your message ever gets read.</p>
+    <p>For GTM Engineers specifically, LinkedIn outreach fits naturally into the automation-first mindset. You're already building enrichment pipelines in <a href="/insights/clay-ecosystem/">Clay</a> and sequencing campaigns in <a href="/tools/category/outbound-sequencing/">outbound tools</a>. Adding LinkedIn as a parallel channel multiplies your pipeline coverage without starting from scratch.</p>
+
+    <h2>Sales Navigator: Your Targeting Foundation</h2>
+    <p>LinkedIn Sales Navigator is the starting point for any serious LinkedIn outreach operation. The free LinkedIn search is deliberately limited. Sales Navigator gives you boolean filters, saved searches, lead lists, and account-level tracking that make precision targeting possible.</p>
+    <p><strong>Boolean search filters.</strong> Combine title, company size, industry, geography, and seniority level into targeted queries. Example: <code>(VP OR "Vice President" OR Director) AND (Sales OR Revenue) AND NOT (Assistant OR Intern)</code> filtered to companies with 50-500 employees in SaaS. This kind of specificity is impossible on free LinkedIn.</p>
+    <p><strong>Saved searches with alerts.</strong> Save your best-performing boolean queries. Sales Navigator emails you when new prospects match your criteria. This creates a steady inbound flow of targets without manual searching. Top GTM Engineers run 5-10 saved searches simultaneously, each targeting a different ICP segment.</p>
+    <p><strong>Lead lists for campaign management.</strong> Organize prospects into lists by campaign, segment, or priority tier. Lists integrate with most automation tools (PhantomBuster, HeyReach, Expandi) via CSV export or direct API connection. Keep lists under 1,000 prospects for manageable campaign sizes.</p>
+    <p><strong>Account-level signals.</strong> Sales Navigator surfaces company growth signals: headcount changes, job postings, news mentions, and leadership changes. These signals provide personalization hooks that boost connection acceptance rates. "Saw you're hiring 3 SDRs" is more compelling than "I'd love to connect."</p>
+
+    <h2>Automation Tools: A Practical Comparison</h2>
+    <p>Four tools dominate <a href="/tools/category/linkedin-social/">LinkedIn automation</a> for GTM Engineers. Each has a distinct use case.</p>
+    <p><strong>PhantomBuster</strong> ($69-$159/mo) is the Swiss army knife. It scrapes Sales Navigator searches, auto-sends connection requests, messages connections, extracts profile data, and chains actions into sequences called "Phantoms." Best for: solo operators who want maximum flexibility. PhantomBuster runs actions from your browser session, so you need to keep your session cookie updated. The learning curve is moderate. Power users chain 3-4 Phantoms together for full prospecting workflows.</p>
+    <p><strong>HeyReach</strong> ($79-$499/mo) is built for multi-account LinkedIn outreach. If you run outreach from 3-5 LinkedIn accounts (common in agencies and larger teams), HeyReach distributes activity across accounts to stay under per-account limits. Best for: teams running volume. The <a href="/comparisons/heyreach-vs-expandi/">HeyReach vs Expandi comparison</a> covers the differences in depth. HeyReach's reporting shows per-account and aggregate metrics, which matters when you're managing multiple sender profiles.</p>
+    <p><strong>Expandi</strong> ($99/mo) is cloud-based, which means it runs without your browser. It simulates human behavior patterns (random delays, varying message lengths, workday-only activity) to reduce detection risk. Best for: safety-conscious operators who prioritize account longevity over raw volume. Expandi's smart sequences combine connection requests, profile views, InMails, and follow-ups into automated workflows.</p>
+    <p><strong>Dripify</strong> ($59-$99/mo) is the simplest option. Upload a Sales Navigator search URL, write your connection message and follow-ups, set daily limits, and go. No scripting, no complex configuration. Best for: GTM Engineers who want basic LinkedIn automation running in under 30 minutes. The trade-off is less flexibility. Dripify sequences are linear (connect, wait, message, wait, follow-up) without the branching logic that PhantomBuster and Expandi offer.</p>
+
+    <h2>Connection Request Strategy</h2>
+    <p>The connection request is your first impression. Get it wrong and your acceptance rate drops below 15%. Get it right and you're at 30-40%.</p>
+    <p><strong>Personalization at scale.</strong> Merge fields are table stakes. Every tool supports &#123;&#123;firstName&#125;&#125; and &#123;&#123;companyName&#125;&#125;. What separates high-performing campaigns is context-specific personalization: referencing a recent post, a mutual connection, a company milestone, or a shared group membership. Clay can enrich LinkedIn profile data to find these hooks automatically.</p>
+    <p><strong>No-note requests.</strong> Some practitioners skip the connection note entirely. LinkedIn data suggests blank connection requests have a 20-25% acceptance rate. Notes average 25-35%. The gap is smaller than most people expect. Blank requests work well when your profile is strong (clear title, professional photo, relevant mutual connections). Notes work better when you need to establish context ("We're both in the Clay community" or "Saw your talk at SaaStr").</p>
+    <p><strong>Message length matters.</strong> Connection notes max out at 300 characters. The sweet spot is 100-200 characters: long enough to establish relevance, short enough to read in 3 seconds. Messages past 250 characters see declining acceptance rates. Don't pitch in the connection request. Save the pitch for the follow-up message after they accept.</p>
+    <p><strong>Timing your sends.</strong> Connection requests sent Tuesday through Thursday, 8-11 AM in the prospect's local timezone, see the highest acceptance rates. Avoid weekends and Monday mornings (inbox overload). Most automation tools let you set timezone-aware send windows.</p>
+
+    <h2>Multi-Channel Sequencing: LinkedIn + Email</h2>
+    <p>The highest-performing GTM Engineers don't choose between LinkedIn and email. They run both in coordinated sequences. The <a href="/insights/outbound-stack/">outbound stack guide</a> covers the full architecture. Here's the LinkedIn-specific coordination pattern.</p>
+    <p><strong>The standard multi-channel sequence:</strong></p>
+    <p>Day 1: Send connection request on LinkedIn. Day 3: If not accepted, send cold email #1. Day 5: View their LinkedIn profile (triggers a notification). Day 7: Send cold email #2 with different angle. Day 10: If connection accepted, send LinkedIn DM. Day 14: Final email with breakup framing.</p>
+    <p>This pattern works because each touchpoint reinforces the others. The prospect sees your name on LinkedIn, then in their inbox, then on LinkedIn again. Familiarity builds trust. Multi-channel sequences see 30-50% higher overall response rates compared to single-channel campaigns.</p>
+    <p><strong>Message variation is critical.</strong> Your LinkedIn message and email should not be identical. LinkedIn messages are conversational and short (50-100 words). Emails can be more detailed (100-150 words). Use different angles: LinkedIn focuses on mutual connections or shared context, email focuses on the business case or pain point. If both channels repeat the same pitch, it feels like spam rather than genuine outreach.</p>
+    <p><strong>Tool coordination.</strong> Most GTM Engineers manage this with separate tools: <a href="/insights/email-deliverability/">email deliverability</a> tools for the email side, LinkedIn automation for the social side. Some platforms (Outreach, Salesloft, Apollo) offer built-in LinkedIn steps in their sequences, but the automation is limited to manual reminders rather than auto-send. True LinkedIn automation requires a dedicated tool running alongside your email sequencer.</p>
+
+    <h2>Compliance and Account Safety</h2>
+    <p>LinkedIn actively detects and restricts automation. Account restrictions range from temporary limits (can't send connections for a week) to permanent bans. The cost of losing a well-established LinkedIn profile is high, especially for GTM Engineers whose personal brand drives inbound leads.</p>
+    <p><strong>LinkedIn's official position</strong> prohibits all third-party automation tools. Their <a href="https://www.linkedin.com/legal/user-agreement" target="_blank" rel="noopener">User Agreement</a> Section 8.2 explicitly bans scraping and automated messaging. Every tool in this guide violates that policy. That's the reality. The question isn't whether automation is "allowed." It's how to minimize detection risk.</p>
+    <p><strong>Daily limits.</strong> Safe daily limits for a warmed account: 20-30 connection requests, 50-80 profile views, 20-30 messages to connections. New accounts or recently restricted accounts should start at half these numbers. Ramp up gradually over 2-3 weeks. Tools like Expandi automate this ramp-up process.</p>
+    <p><strong>Account warming.</strong> Before running any automation, spend 2 weeks using LinkedIn manually. Post content, comment on posts, engage with your feed, accept incoming connections. This establishes behavioral patterns that make automated activity less suspicious. A brand-new account that immediately starts sending 30 connection requests per day will get flagged within 48 hours.</p>
+    <p><strong>Proxy and IP considerations.</strong> Cloud-based tools (Expandi, HeyReach) route traffic through their own IP addresses, which LinkedIn can correlate with automation. Some operators use residential proxies matched to their geographic location. Others stick with browser-based tools (PhantomBuster) that operate from their own IP. There's no consensus on which approach is safer. Both work if you respect daily limits.</p>
+    <p><strong>Multiple accounts.</strong> <a href="https://www.heyreach.io/blog/linkedin-multiple-accounts" target="_blank" rel="noopener">Running outreach from multiple LinkedIn accounts</a> distributes risk. If one account gets restricted, your campaign continues from others. HeyReach is the primary tool for multi-account management. The setup requires separate LinkedIn profiles (typically team members or purpose-built profiles) and separate email addresses for each profile.</p>
+
+    <h2>Measuring LinkedIn Outreach Performance</h2>
+    <p><strong>Connection rate:</strong> Accepted connections divided by sent requests. Benchmark: 25-35% for well-targeted campaigns. Below 20% means your targeting or messaging needs work. Above 40% means you've found a strong ICP-message fit.</p>
+    <p><strong>Reply rate:</strong> Responses to your follow-up messages (after connection) divided by accepted connections. Benchmark: 15-25%. This is where your message quality matters most. The connection request gets you in the door. The follow-up DM determines whether you get a meeting.</p>
+    <p><strong>Meeting conversion:</strong> Meetings booked divided by replies. Benchmark: 20-40% of positive replies convert to meetings. Track this metric to understand where your funnel leaks. High reply rate but low meeting conversion usually means your ask is too aggressive or your qualifying criteria are too loose.</p>
+    <p><strong>Profile view to connection ratio:</strong> Profile views you receive divided by connection requests sent. Higher ratios indicate your profile is doing its job. Prospects check your profile before accepting. A weak profile (vague headline, no photo, sparse experience) kills connection rates regardless of message quality.</p>
+
+    <h2>When LinkedIn Wins vs When Email Wins</h2>
+    <p>LinkedIn outreach works best for: enterprise prospects (Director+ titles), relationship-heavy sales cycles, warm introductions through mutual connections, content-driven engagement, and targeting companies where email addresses are hard to find (government, education, healthcare).</p>
+    <p>Email works best for: high-volume prospecting (hundreds per day vs dozens), time-sensitive campaigns, markets where LinkedIn adoption is low, and scenarios where you need tracking data (open rates, click rates, reply detection). The <a href="/insights/email-deliverability/">email deliverability guide</a> covers the technical infrastructure for email-first outbound.</p>
+    <p>The best approach for most GTM Engineers: use LinkedIn for your top 20% highest-value prospects (personalized, low-volume, high-touch) and email for the remaining 80% (templated, high-volume, automated). Build both channels into your <a href="/insights/outbound-stack/">outbound stack</a> and <a href="/careers/how-to-become-gtm-engineer/">career toolkit</a>.</p>
+    <p>For tools that help you build LinkedIn outreach into automated workflows, check the <a href="/glossary/outbound-sequencing/">outbound sequencing glossary entry</a>.</p>
+
+{insight_related_links("linkedin-outreach")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("LinkedIn automation tips and GTM outbound playbooks, weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/linkedin-outreach/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/linkedin-outreach/index.html", page)
+    print(f"  Built: insights/linkedin-outreach/index.html")
+
+
+def build_insight_email_deliverability():
+    """ART-09: Email Deliverability for GTM Engineers."""
+    title = "Email Deliverability for GTM Engineers"
+    description = (
+        "Domain setup, warmup protocols, sender reputation, and inbox placement."
+        " The technical deliverability guide for cold outbound at scale."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Email Deliverability", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="email-deliverability", date_published="2026-03-18", word_count=2300)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>Email Deliverability for GTM Engineers</h1>
+        <p>Your outbound campaign is only as good as your inbox placement rate. This guide covers domain setup, warmup, reputation monitoring, and the math behind scaling cold email without getting blacklisted.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">3&#8209;5</span>
+        <span class="stat-label">Domains Minimum</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">14&#8209;day</span>
+        <span class="stat-label">Warmup Period</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">50&#8209;100</span>
+        <span class="stat-label">Emails/Domain/Day</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">&lt;2%</span>
+        <span class="stat-label">Bounce Rate Target</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Deliverability Is a GTM Engineering Problem</h2>
+    <p>Most cold emails never reach the inbox. Industry data puts average inbox placement at 79-85% for legitimate B2B senders. For cold outbound without proper infrastructure, it drops to 50-60%. That means half your carefully crafted messages land in spam or get silently rejected.</p>
+    <p>Deliverability is a technical problem, which makes it a GTM Engineer problem. Sales reps write the copy. Marketing picks the audience. But the infrastructure that determines whether those messages arrive? That's DNS records, domain reputation, IP warming, authentication protocols, and sending patterns. That's engineering work.</p>
+    <p>Get this right and your team's outbound performance doubles without changing a single word of copy. Get it wrong and no amount of A/B testing on subject lines matters because nobody's seeing them.</p>
+
+    <h2>Domain Setup: The Foundation</h2>
+    <p><strong>Never send cold outbound from your primary domain.</strong> If your company is acme.com, buy acme-mail.com, getacme.com, and tryacme.com for outbound. If acme.com gets blacklisted from cold outreach, your entire company loses email functionality: customer support, invoicing, team communication, everything. Secondary domains isolate this risk.</p>
+    <p><strong>Buy 3-5 domains minimum.</strong> Each domain gets its own mailboxes. If one domain's reputation drops, you rotate to another while it recovers. Domain names should look professional and related to your brand. Avoid random strings (xk7mail.com) or obvious spam patterns (acme-offers.com). Good patterns: tryacme.com, acmehq.com, acme-team.com.</p>
+    <p><strong>SPF (Sender Policy Framework).</strong> A DNS TXT record that tells receiving servers which mail servers can send on behalf of your domain. Without SPF, your emails look suspicious. Setup: add a TXT record to your domain's DNS. Example: <code>v=spf1 include:_spf.google.com ~all</code> for Google Workspace. Each email provider has specific SPF values. Add all of them. SPF validates in under a minute once the DNS propagates.</p>
+    <p><strong>DKIM (DomainKeys Identified Mail).</strong> A cryptographic signature added to each outgoing email. It proves the email wasn't modified in transit. Your email provider generates the DKIM keys. You add a CNAME or TXT record to DNS with the public key. DKIM failures are one of the top reasons emails land in spam.</p>
+    <p><strong>DMARC (Domain-based Message Authentication).</strong> A policy record that tells receiving servers what to do when SPF or DKIM fails. Start with a monitoring-only policy: <code>v=DMARC1; p=none; rua=mailto:dmarc@acme.com</code>. This sends you reports without rejecting mail. After 2-4 weeks of clean reports, upgrade to <code>p=quarantine</code> or <code>p=reject</code>. DMARC builds on SPF and DKIM. Without those two in place first, DMARC does nothing.</p>
+
+    <h2>Warmup Strategy</h2>
+    <p>A brand-new domain with zero sending history has no reputation. No reputation is worse than bad reputation, because spam filters default to caution. Warmup builds a sending history that establishes your domain as legitimate.</p>
+    <p><strong>The warmup process:</strong> Send real-looking emails between your new mailboxes and a network of established addresses. Warmup tools automate this. They send emails from your accounts to their network, mark them as "not spam," move them to inbox, reply to some, and star others. This teaches Google, Microsoft, and Yahoo that your domain sends wanted mail.</p>
+    <p><strong>14 days minimum.</strong> The standard warmup period is 14 days before sending any cold outbound. Some operators push it to 21-28 days for extra safety. During warmup, volume ramps gradually: 5-10 emails on day 1, 10-20 on day 3, 20-40 on day 7, 40-80 on day 14. Don't shortcut this. Sending 100 cold emails from a 3-day-old domain will tank your reputation before it exists.</p>
+    <p><strong>Warmup tools.</strong> <a href="/comparisons/instantly-vs-smartlead/">Instantly and Smartlead</a> both include built-in warmup. Warmup Inbox ($9/mo per address) is a standalone option. Lemwarm (part of Lemlist) is another. The built-in tools are simpler. Standalone warmup gives you more control over the warmup network size and engagement patterns.</p>
+    <p><strong>Don't stop warmup after launch.</strong> Keep warmup running at 20-30% of your daily volume even after you start cold outreach. This maintains a baseline of "positive" email interactions that balance out the inevitable spam reports from cold recipients. Turning off warmup after launch is a common mistake that causes gradual reputation decline.</p>
+
+    <h2>Reputation Management</h2>
+    <p>Your sender reputation is a score that inbox providers assign to your domain and IP address. It determines inbox placement. High reputation = inbox. Low reputation = spam. There's no public dashboard for this. You have to infer it from metrics and third-party tools.</p>
+    <p><strong>Sender score.</strong> <a href="https://senderscore.org/" target="_blank" rel="noopener">SenderScore.org</a> rates your IP on a 0-100 scale. Above 80 is good. Below 70 is trouble. Check weekly. If your score drops, reduce sending volume immediately and investigate the cause (high bounce rate, spam complaints, blacklist hit).</p>
+    <p><strong>Blacklist monitoring.</strong> Dozens of blacklists exist (Spamhaus, Barracuda, SpamCop, SORBS). Getting listed on any of them destroys deliverability. Use MXToolbox or your email tool's built-in monitoring to check daily. If you're listed, most blacklists have a delisting process that takes 24-72 hours. The fix is always the same: stop sending, resolve the underlying issue (bad list, high complaints), then request removal.</p>
+    <p><strong>Bounce rate thresholds.</strong> Keep hard bounces below 2%. Hard bounces (invalid email addresses) signal to inbox providers that you're sending to unverified lists. Above 3%, expect deliverability problems. Above 5%, expect blacklisting. The solution: validate every email address before sending. ZeroBounce, NeverBounce, and MillionVerifier cost $0.003-0.008 per verification. That's $3-8 per thousand contacts. Cheap insurance against reputation damage.</p>
+    <p><strong>Spam complaint rate.</strong> <a href="https://support.google.com/a/answer/81126" target="_blank" rel="noopener">Google requires</a> complaint rates below 0.3%. Microsoft uses similar thresholds. One complaint per 333 emails is the ceiling. To stay under this: target well (ICP-fit prospects only), include unsubscribe links, and stop emailing anyone who doesn't respond after 3-4 touches.</p>
+
+    <h2>Content That Reaches the Inbox</h2>
+    <p><strong>Plain text wins.</strong> Cold emails with HTML formatting, images, and tracking pixels get flagged more often than plain text. The reason: spam filters associate heavy HTML with marketing emails and phishing. Your first email in a sequence should always be plain text. Save HTML templates for newsletters and marketing, not cold outbound.</p>
+    <p><strong>Link tracking impact.</strong> Most <a href="/tools/category/outbound-sequencing/">outbound sequencing tools</a> track link clicks by routing URLs through their own domains. This means your email contains links to instantly-domains.com instead of your actual URL. Spam filters notice. Options: disable link tracking entirely (recommended for cold first touch), use your own custom tracking domain (better), or accept lower inbox rates for the analytics data (trade-off).</p>
+    <p><strong>Spam trigger words.</strong> The classic "free," "guaranteed," "act now" triggers still matter, but modern spam filters are more sophisticated. They evaluate overall email patterns rather than individual words. That said, avoid: all-caps subject lines, excessive exclamation marks, urgency language ("limited time"), and financial claims ("save 50%"). Write like you're messaging a colleague, not writing ad copy.</p>
+    <p><strong>Personalization signals.</strong> Emails with merge fields (recipient's name, company, industry) perform better with spam filters because they look less like mass blasts. Clay enrichment data enables deep personalization: referencing a prospect's tech stack, recent funding round, or job posting signals. This doubles as both a deliverability tactic and a response rate optimizer.</p>
+
+    <h2>Infrastructure: Instantly vs Smartlead</h2>
+    <p>Two platforms dominate cold email infrastructure for GTM Engineers. The <a href="/comparisons/instantly-vs-smartlead/">full comparison</a> covers features in depth. Here's the deliverability-specific breakdown.</p>
+    <p><strong>Instantly</strong> ($30-$97/mo) includes a warmup network of 200,000+ accounts, built-in email validation, automated inbox rotation, and a deliverability dashboard that shows inbox placement rates per domain. Instantly's "Unibox" aggregates replies from all mailboxes into one view. For deliverability, the key advantage is their large warmup network, which builds reputation faster than smaller networks.</p>
+    <p><strong>Smartlead</strong> ($39-$94/mo) offers a similar warmup network, plus more granular sending controls. You can set per-mailbox daily limits, customize warmup reply rates, and A/B test sending patterns. Smartlead's "Master Inbox" mirrors Instantly's unified reply management. For deliverability, Smartlead's advantage is finer control over warmup parameters.</p>
+    <p><strong>Email validation integration.</strong> Both platforms integrate with ZeroBounce and NeverBounce for pre-send verification. Run validation before importing contacts. Don't rely on your sequencer to catch bad emails mid-campaign. By the time a bounce registers, the damage to your sender reputation is done. Check the <a href="/tools/instantly-review/">Instantly review</a> for current feature updates.</p>
+
+    <h2>Domain Rotation Strategy</h2>
+    <p>Domain rotation distributes sending volume across multiple domains, reducing the load on any single domain's reputation. It's the cold email equivalent of load balancing.</p>
+    <p><strong>The math:</strong> 3 domains x 3 mailboxes each x 50 emails per mailbox per day = 450 emails per day total capacity. Scale with more domains, not higher per-mailbox volume. Pushing a single mailbox past 100 emails/day is a reputation risk, regardless of how good your warmup is.</p>
+    <p><strong>Rotation patterns.</strong> Daily rotation sends from Domain A on Monday, Domain B on Tuesday, Domain C on Wednesday. This gives each domain 2 rest days per week. Intra-day rotation distributes each day's sends across all domains simultaneously. Both work. Intra-day rotation keeps volume per domain lower on any given day, which some operators prefer.</p>
+    <p><strong>When a domain burns.</strong> Deliverability drops, bounce rates spike, or you get blacklisted. Remove the domain from rotation immediately. Let it rest (no sends) for 2-4 weeks while warmup runs. Most domains recover. Some don't. That's why you start with 3-5 domains: losing one doesn't kill your operation. Replacements take 2-3 weeks to warm up.</p>
+
+    <h2>Monitoring and Troubleshooting</h2>
+    <p><strong>GlockApps</strong> ($59-$199/mo) tests inbox placement across Gmail, Outlook, Yahoo, and other providers. Send a test email, and GlockApps shows you where it landed: inbox, spam, promotions tab, or missing entirely. Run placement tests weekly and after any infrastructure change (new domain, new mailbox, warmup adjustment).</p>
+    <p><strong>Mail Tester</strong> (free, mail-tester.com) scores individual emails on a 1-10 scale. It checks SPF, DKIM, DMARC, content quality, blacklist status, and formatting. Quick and useful for spot-checking. Score above 8 is good. Below 6 means something is broken.</p>
+    <p><strong>Google Postmaster Tools</strong> (free) shows your domain's reputation with Gmail specifically. Since Gmail accounts for 40-50% of B2B email, this matters disproportionately. It reports spam rate, authentication rate, and encryption rate. Set this up on day one.</p>
+    <p><strong>Troubleshooting checklist:</strong> Inbox rates dropping? Check in order: bounce rate (above 2%?), spam complaints (above 0.3%?), blacklist status (MXToolbox), authentication records (SPF/DKIM/DMARC all passing?), sending volume (sudden increase?), content (new template with triggers?). Fix the first thing you find. Test. Repeat.</p>
+
+    <h2>The Cold Email Math</h2>
+    <p>Every GTM Engineer needs to understand the capacity formula for their outbound operation. The <a href="/insights/outbound-stack/">outbound stack guide</a> covers tool selection. Here's the deliverability math that determines your ceiling.</p>
+    <p><strong>Capacity = Domains x Mailboxes x Daily Volume.</strong> Conservative example: 3 domains, 3 mailboxes each, 50 emails per mailbox = 450 emails/day = ~9,000 emails/month (20 working days). That's enough for most early-stage outbound operations.</p>
+    <p><strong>Scaling example:</strong> 5 domains, 3 mailboxes each, 75 emails per mailbox = 1,125 emails/day = ~22,500 emails/month. This requires more infrastructure investment (domains, Google Workspace or Outlook seats, warmup for each mailbox) but supports mid-market sales teams running multiple campaigns simultaneously.</p>
+    <p><strong>Cost per mailbox.</strong> Google Workspace: $7.20/mo per mailbox. Domain: $10-15/year. Warmup tool: $3-9/mo per mailbox. Total per mailbox: $12-20/mo. For the conservative setup (9 mailboxes): $108-180/mo in infrastructure before your sequencer subscription. For the scaled setup (15 mailboxes): $180-300/mo.</p>
+    <p><strong>The conversion funnel.</strong> 9,000 emails/month at 50% inbox rate = 4,500 delivered. At 3% reply rate = 135 replies. At 30% meeting conversion = 40 meetings/month. At 25% close rate = 10 new customers/month. These are realistic benchmarks for well-targeted B2B outbound. Improving deliverability from 50% to 85% (via proper setup) nearly doubles your meetings without adding a single new prospect to your list.</p>
+    <p>For the LinkedIn side of your multi-channel strategy, see the <a href="/insights/linkedin-outreach/">LinkedIn outreach playbook</a>. And check <a href="/glossary/email-deliverability/">the glossary entry</a> for quick-reference definitions of key deliverability terms.</p>
+
+{insight_related_links("email-deliverability")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Cold email infrastructure tips and deliverability data, weekly.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/email-deliverability/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/email-deliverability/index.html", page)
+    print(f"  Built: insights/email-deliverability/index.html")
 
 
 # ---------------------------------------------------------------------------
@@ -13716,6 +13948,8 @@ def main():
     build_insight_clay_ecosystem()
     build_insight_outbound_stack()
     build_insight_clay_playbook()
+    build_insight_linkedin_outreach()
+    build_insight_email_deliverability()
 
     print("\n  Building meta files...")
     build_sitemap()

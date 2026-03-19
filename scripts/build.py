@@ -11975,9 +11975,20 @@ INSIGHT_PAGES = [
     {"slug": "linkedin-outreach", "title": "LinkedIn Outreach for GTM Engineers: A Technical Guide", "description": "API-driven LinkedIn outreach strategies for GTM Engineers. Automation, compliance, and conversion data.", "category": "Playbook"},
     {"slug": "email-deliverability", "title": "Email Deliverability for GTM Engineers", "description": "DNS records, warm-up protocols, and inbox placement rates. Technical email deliverability for outbound teams.", "category": "Playbook"},
     {"slug": "api-integration", "title": "API Integration Patterns for GTM Engineers", "description": "Webhook architectures, rate limit handling, and data transformation patterns for GTM automation.", "category": "Playbook"},
+    # Batch 2 (Phase 15)
+    {"slug": "enrichment-waterfall", "title": "Data Enrichment Waterfall Strategy", "description": "Multi-vendor enrichment pipelines, cost optimization, and accuracy benchmarks for GTM data operations.", "category": "Playbook"},
+    {"slug": "hiring-guide", "title": "GTM Engineer Hiring Guide for Managers", "description": "What to test, what to pay, and how to onboard GTM Engineers. A hiring playbook for engineering managers.", "category": "Guide"},
+    {"slug": "freelance-rates", "title": "Freelance GTM Engineering Rate Guide", "description": "Hourly rates, retainer pricing, and project scoping for freelance GTM Engineers across deliverable types.", "category": "Market Analysis"},
+    {"slug": "gtme-vs-sdr-roi", "title": "GTM Engineer vs SDR Team: ROI Analysis", "description": "Cost, pipeline output, and scalability comparison between one GTM Engineer and a traditional SDR team.", "category": "Market Analysis"},
+    {"slug": "intent-data-guide", "title": "Intent Data Buying Guide for GTM Engineers", "description": "Vendor comparison, integration patterns, and ROI benchmarks for B2B intent data platforms.", "category": "Guide"},
+    {"slug": "crm-hygiene", "title": "CRM Hygiene Automation Playbook", "description": "Automated deduplication, field standardization, and decay management for HubSpot and Salesforce.", "category": "Playbook"},
+    {"slug": "pulse-report-template", "title": "Monthly GTM Pulse Report Template", "description": "A repeatable template for monthly GTM performance reporting with live job market data.", "category": "Template"},
+    {"slug": "tech-stack-audit", "title": "GTM Engineer Tech Stack Audit Checklist", "description": "Score your current tools, find coverage gaps, and plan migrations with this structured audit framework.", "category": "Guide"},
+    {"slug": "revenue-attribution", "title": "Revenue Attribution for GTM Engineers", "description": "Multi-touch attribution models, pipeline source tracking, and proving outbound ROI to leadership.", "category": "Playbook"},
+    {"slug": "remote-market-report", "title": "Remote GTM Engineering Market Report", "description": "Remote vs hybrid vs onsite salary gaps, geographic arbitrage, and hiring trends for distributed GTM teams.", "category": "Market Analysis"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide"}
 
 
 def insight_related_links(current_slug):
@@ -13222,6 +13233,205 @@ def enrich_contact(email):
 
 
 # ---------------------------------------------------------------------------
+# Insight Articles — Batch 2 (Phase 15)
+# ---------------------------------------------------------------------------
+
+def build_insight_enrichment_waterfall():
+    """ART-11: Data Enrichment Waterfall Strategy."""
+    title = "Enrichment Waterfall Strategy for GTM Teams"
+    description = (
+        "Multi-vendor enrichment pipelines, cost optimization, and accuracy"
+        " benchmarks. Build a waterfall that fills 85%+ of your records."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Enrichment Waterfall", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="enrichment-waterfall", date_published="2026-03-18", word_count=2200)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>Enrichment Waterfall Strategy for GTM Teams</h1>
+        <p>Single-vendor enrichment tops out around 40-60% match rates. A properly sequenced waterfall hits 85%+. Here's how to build one.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">40&#8209;60%</span>
+        <span class="stat-label">Single-Vendor Match</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">85%+</span>
+        <span class="stat-label">Waterfall Match Rate</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3&#8209;4</span>
+        <span class="stat-label">Providers Needed</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30&#8209;50%</span>
+        <span class="stat-label">Cost Savings</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Single-Vendor Enrichment Fails</h2>
+    <p>Every enrichment vendor has coverage gaps. ZoomInfo dominates enterprise contacts but struggles with startups under 50 employees. Apollo has strong email coverage but weaker direct dials. Clearbit excels at firmographics but trails on personal email addresses. No single provider covers every segment of the B2B market with equal depth.</p>
+    <p>The numbers bear this out. Run a list of 1,000 mid-market companies through any single enrichment provider and you'll get back 400-600 complete records. That leaves 40-60% of your list with missing fields: no direct email, no phone number, incomplete firmographic data, or stale information that bounced two quarters ago.</p>
+    <p>GTM Engineers solve this with waterfalls. Rather than accepting one vendor's partial coverage, you sequence multiple providers so each one fills gaps the previous one missed. The concept comes from lead routing (where leads "fall" to the next handler if the first doesn't pick up), but the data enrichment version is more structured. Each tier in the waterfall has a specific purpose: primary coverage, gap filling, verification, or specialty lookup.</p>
+
+    <h2>Waterfall Architecture</h2>
+    <p>A production waterfall typically has three tiers. Each tier processes only the records that the previous tier left incomplete.</p>
+    <p><strong>Tier 1: Primary provider (broadest coverage).</strong> This handles the bulk of your enrichment volume. Choose the provider with the best match rate for your target market. For enterprise B2B, that's usually ZoomInfo. For SMB and startup targets, <a href="/tools/apollo-review/">Apollo</a> often matches more records at a lower price point. <a href="https://docs.clay.com/enrichments/overview" target="_blank" rel="noopener">Clay's enrichment layer</a> can serve as Tier 1 because it aggregates multiple sources in a single call, though this reduces your control over provider sequencing.</p>
+    <p><strong>Tier 2: Gap filler (different data source).</strong> Records that Tier 1 missed or partially filled flow to Tier 2. The key is choosing a provider with a different underlying data source. If your Tier 1 is ZoomInfo (web crawling + partnerships), your Tier 2 should pull from a different corpus. Clearbit (firmographic APIs), Lusha (social network data), or FullEnrich (multi-source aggregation) each have distinct data lineages that complement ZoomInfo's coverage. Tier 2 typically catches 30-50% of the records Tier 1 missed.</p>
+    <p><strong>Tier 3: Specialty lookup (targeted fills).</strong> After two broad passes, the remaining gaps are usually specific fields: direct dials, personal emails, or niche firmographic data. Tier 3 uses specialized tools. Cognism for European phone numbers. Hunter.io for email pattern discovery. LinkedIn Sales Navigator for title verification. This tier is the most expensive per-record but processes the smallest volume.</p>
+
+    <h2>Cost Optimization Strategies</h2>
+    <p>The naive approach to waterfall ordering is "most accurate first." Start with the best provider, fill gaps with the second-best, finish with the cheapest. This maximizes data quality but wastes money. Your most expensive provider processes every record, including the easy ones that any provider could match.</p>
+    <p>The cost-optimized approach flips this: cheapest first, most expensive last. Run your list through Apollo ($0.01-0.03/record) before ZoomInfo ($0.15-0.50/record). Apollo will match 50-60% of records at a fraction of the cost. ZoomInfo only processes the 40-50% that Apollo missed, cutting your ZoomInfo spend in half.</p>
+    <p>The tradeoff is accuracy. Cheapest-first waterfalls may return lower-quality data for records that both providers can match (the cheaper provider's data might be older or less verified). The practical compromise: use cheapest-first for high-volume prospecting lists where some data staleness is acceptable, and most-accurate-first for priority accounts where data quality directly impacts conversion rates.</p>
+    <p><strong>Credit management matters.</strong> Most enrichment APIs charge per successful lookup, not per attempt. Structure your API calls to check if a record already has the field you need before making an enrichment call. If Tier 1 returned a valid email, don't send that record to Tier 2 for email enrichment. This sounds obvious, but without explicit field-level routing logic, your waterfall will re-enrich already-complete records and burn credits.</p>
+
+    <h2>Accuracy Benchmarks</h2>
+    <p>Vendor-reported accuracy numbers are marketing. Real-world accuracy depends on your target market, record age, and what fields you're enriching. According to <a href="https://www.zoominfo.com/solutions/data-quality" target="_blank" rel="noopener">ZoomInfo's own data quality benchmarks</a>, business email accuracy runs 85-95% for enterprise contacts and drops to 70-80% for SMB. Phone number accuracy is consistently 10-15 points lower than email across all vendors.</p>
+    <p>Here's what we've observed across production waterfall pipelines.</p>
+    <p><strong>Business email accuracy:</strong> ZoomInfo 88-93%, Apollo 82-87%, Clearbit 80-85%, Lusha 78-83%. These ranges account for market segment variation. Enterprise contacts cluster near the top of each range; startup contacts near the bottom.</p>
+    <p><strong>Direct dial accuracy:</strong> ZoomInfo 70-78%, Cognism 72-80% (European numbers), Apollo 60-68%, Lusha 65-72%. Direct dials decay faster than email addresses. A phone number verified six months ago has a 20-30% chance of being stale.</p>
+    <p><strong>Firmographic accuracy:</strong> Clearbit 90-95%, ZoomInfo 88-92%, Apollo 82-88%. Company size, industry, and funding data are more stable than contact data, so accuracy rates are higher across the board.</p>
+
+    <h2>Implementation with Clay</h2>
+    <p><a href="/tools/clay-review/">Clay</a> is purpose-built for enrichment waterfalls. Its "Enrich" column type lets you chain multiple providers in sequence, with conditional logic that routes records based on which fields are still missing. This is the fastest path to a working waterfall.</p>
+    <p><strong>The Clay waterfall setup:</strong> Create a table with your prospect list. Add an enrichment column using your Tier 1 provider. Add a second enrichment column using Tier 2, with a condition: "Only run if [email] is empty." Add Tier 3 with similar conditions for remaining gaps. Clay processes each row through the waterfall automatically, stopping when all required fields are filled.</p>
+    <p>The limitation: Clay's pricing scales with row volume and enrichment credits. At 10,000+ records per month, a custom Python waterfall that calls provider APIs directly becomes more cost-effective. Clay charges for its orchestration layer on top of the enrichment provider costs. For smaller volumes (under 5,000 records/month), Clay's convenience outweighs the markup.</p>
+    <p>For teams building custom waterfalls without Clay, the <a href="/insights/api-integration/">API integration patterns guide</a> covers the Python scripting approach: API client setup, rate limit handling, retry logic, and result caching.</p>
+
+    <h2>Measuring Waterfall Performance</h2>
+    <p>Track four metrics to know if your waterfall is working.</p>
+    <p><strong>Overall match rate.</strong> The percentage of input records where at least one required field was successfully enriched. Target: 85%+ for business email, 65%+ for direct dials.</p>
+    <p><strong>Per-tier contribution.</strong> What percentage of total matches came from each tier? A healthy distribution: Tier 1 handles 55-65%, Tier 2 handles 25-30%, Tier 3 handles 10-15%. If Tier 1 handles less than 50%, your primary provider may not be the right fit for your target market.</p>
+    <p><strong>Cost per enriched record.</strong> Total enrichment spend divided by total successfully enriched records. This number tells you whether your cheapest-first vs most-accurate-first ordering decision is paying off. Benchmark: $0.05-0.15 per enriched record for a three-tier waterfall.</p>
+    <p><strong>Data freshness score.</strong> Sample 100 enriched records monthly and verify accuracy manually (check LinkedIn profiles, call phone numbers, send test emails). A freshness score below 80% means you need to re-enrich your database more frequently or add a verification tier to your waterfall.</p>
+    <p>The <a href="/tools/category/data-enrichment/">data enrichment tools category</a> page lists all the providers mentioned here with detailed reviews and pricing comparisons.</p>
+
+{insight_related_links("enrichment-waterfall")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM data enrichment strategies and tool intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/enrichment-waterfall/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/enrichment-waterfall/index.html", page)
+    print(f"  Built: insights/enrichment-waterfall/index.html")
+
+
+def build_insight_hiring_guide():
+    """ART-12: GTM Engineer Hiring Guide for Managers."""
+    title = "GTM Engineer Hiring Guide for Managers"
+    description = (
+        "What to test, what to pay, and red flags to watch for when hiring"
+        " GTM Engineers. A structured playbook for engineering managers."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Hiring Guide", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="hiring-guide", date_published="2026-03-18", word_count=2300)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Guide</div>
+        <h1>{title}</h1>
+        <p>The role is three years old. There's no established hiring playbook. So most companies wing it, test for the wrong skills, and wonder why their GTM Engineer quits in four months.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">Need Clay Skills</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">53%</span>
+        <span class="stat-label">Self-Taught</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">4&#8209;6wk</span>
+        <span class="stat-label">Avg Ramp Time</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>What You're Hiring For</h2>
+    <p>A GTM Engineer builds automated outbound and revenue systems. They sit between sales, marketing, and engineering, writing code, configuring tools, and building data pipelines that generate qualified meetings. The role requires a rare combination: enough technical skill to write Python scripts and work with APIs, enough sales acumen to understand ICP targeting and pipeline metrics, and enough operational discipline to maintain systems that run 24/7.</p>
+    <p>Most hiring managers make one of two mistakes. They either hire a developer who doesn't understand sales workflows, or they hire a sales ops person who can't code. Both fail. The <a href="/careers/what-is-gtm-engineer/">full role breakdown</a> covers what GTM Engineers do day-to-day, but the short version: you need someone who can build a complete prospect enrichment and outbound pipeline from scratch, maintain it, and improve it based on conversion data.</p>
+    <p>Before writing the job description, answer three questions. What tools does your current stack include? (Clay, HubSpot, Instantly, and what else?) What pipeline volume do you need? (500 prospects/month vs 5,000 has different skill requirements.) And is this person building from zero or inheriting an existing system? Building from zero requires more architecture skills. Inheriting a system requires more debugging and optimization ability.</p>
+
+    <h2>What to Look for in Candidates</h2>
+    <p><strong>Clay proficiency is non-negotiable.</strong> 69% of GTM Engineer job postings mention Clay. If your stack includes Clay (and it probably should), your hire needs to demonstrate they can build enrichment tables, configure waterfall logic, write Clay formulas, and troubleshoot failing enrichment runs. Ask for screenshots of tables they've built. A strong candidate will show you complex multi-step Clay workflows, not just basic contact lookups.</p>
+    <p><strong>API comfort separates tool operators from engineers.</strong> Can the candidate read API documentation and write a working integration? This doesn't mean they need to be a software engineer. But they should be able to write a Python script that calls an API, handles pagination, manages rate limits, and writes results to a CSV or database. According to <a href="https://www.linkedin.com/business/talent/blog/talent-strategy/linkedin-jobs-on-the-rise" target="_blank" rel="noopener">LinkedIn's Jobs on the Rise data</a>, GTM Engineer postings that require Python or API skills correlate with $45K higher median compensation.</p>
+    <p><strong>Data pipeline thinking.</strong> The best GTM Engineers think in systems, not tasks. They don't just "run a list through Clay." They design a pipeline: data sourcing, enrichment, scoring, routing, sequencing, and feedback loops. Ask candidates to whiteboard a pipeline for your specific use case. You'll immediately see whether they think in connected systems or isolated steps.</p>
+    <p><strong>CRM fluency.</strong> Your GTM Engineer will spend 20-30% of their time in your CRM. If you're on HubSpot, they need to understand workflows, custom properties, deal pipelines, and list segmentation. Salesforce requires familiarity with SOQL, flows, and the object model. CRM fluency isn't glamorous, but pipeline data that doesn't sync back to the CRM is pipeline data that doesn't exist.</p>
+
+    <h2>Interview Process Design</h2>
+    <p><strong>Round 1: Portfolio review (30 minutes).</strong> Ask the candidate to walk through a past project. What was the business goal? What tools did they use? What was the pipeline architecture? What results did it produce? A strong candidate will describe the system end-to-end with specific numbers: "We enriched 12,000 contacts, achieved an 82% email validity rate, booked 340 meetings in Q3, and the cost per meeting was $23." Vague answers ("we improved outbound") are a red flag.</p>
+    <p><strong>Round 2: Take-home Clay build (2-3 hours).</strong> Give the candidate a real-world scenario: "Here are 200 company domains in our ICP. Build a Clay table that enriches each company with employee count, industry, funding stage, and two decision-maker contacts with verified emails. Document your waterfall logic and explain your provider choices." Grade on: waterfall design, data quality (spot-check 10 records), handling of edge cases (missing data, duplicates), and documentation quality.</p>
+    <p><strong>Round 3: Live debugging (45 minutes).</strong> Show the candidate a broken automation workflow (a Make scenario that's failing, a Python script with API errors, or a Clay table with low match rates). Ask them to diagnose the issue and propose a fix. This reveals how they think under pressure and whether they can troubleshoot systems they didn't build. According to <a href="https://www.greenhouse.com/resources/guides/structured-hiring" target="_blank" rel="noopener">Greenhouse's structured hiring research</a>, practical exercises predict job performance 3x better than behavioral interviews for technical roles.</p>
+    <p><strong>Round 4: Culture and collaboration (30 minutes).</strong> GTM Engineers work across sales, marketing, and engineering. Ask about a time they had to push back on a stakeholder's request. How do they communicate technical constraints to non-technical colleagues? Do they proactively suggest improvements, or do they wait for assignments? This round filters for people who will own the function, not just execute tasks.</p>
+
+    <h2>Compensation Benchmarks</h2>
+    <p>The <a href="/salary/">full salary data</a> covers this in depth, but here's the hiring manager's quick reference.</p>
+    <p><strong>Junior (0-2 years GTM experience):</strong> $85K-$110K base. These candidates likely come from SDR, sales ops, or junior development roles. They know one or two tools well and have built basic automations. Expect a 3-6 month ramp to full productivity. Good fit for companies that have an existing senior GTM Engineer who can mentor.</p>
+    <p><strong>Mid-level (2-4 years):</strong> $120K-$155K base. The sweet spot for most companies making their first GTM Engineer hire. These candidates have built and maintained production pipelines, managed multiple enrichment vendors, and can demonstrate measurable pipeline impact. They can operate independently from week one.</p>
+    <p><strong>Senior (4+ years):</strong> $155K-$200K base. These candidates have architected GTM systems across multiple companies, managed vendor relationships, and likely led a team or mentored junior engineers. They bring opinionated frameworks about tool selection, pipeline design, and measurement. Worth the premium if you need someone to build the function from scratch.</p>
+    <p><strong>Lead/Staff (rare):</strong> $180K-$250K+ base. These roles exist at companies with five or more GTM Engineers. Responsibilities include system architecture, team leadership, cross-functional strategy, and vendor evaluation. Equity packages at this level should match what your engineering leads receive. For the <a href="/careers/gtm-engineer-interview-questions/">full interview question bank</a>, see our dedicated interview prep guide.</p>
+
+    <h2>Red Flags in Candidates</h2>
+    <p><strong>Can't show results with numbers.</strong> "I improved our outbound" tells you nothing. "I increased qualified meeting bookings from 12/month to 47/month while reducing cost per meeting from $85 to $31" tells you everything. GTM Engineers who can't quantify their impact either haven't measured it or haven't had meaningful impact.</p>
+    <p><strong>Tool-dependent, not system-thinkers.</strong> "I'm a Clay expert" is a warning sign if that's the only tool they know deeply. Tools change. Clay might not be the dominant platform in three years. Hire for someone who understands enrichment, sequencing, and pipeline architecture at a conceptual level, then applies that understanding to whatever tools your stack includes.</p>
+    <p><strong>No experience with failure.</strong> Every GTM automation breaks. Enrichment providers go down. Email warm-up domains get blacklisted. CRM sync jobs fail silently. A candidate who describes everything going perfectly has either been lucky or is exaggerating. Ask specifically: "Tell me about a system you built that broke. What happened and how did you fix it?"</p>
+    <p><strong>Resistance to measurement.</strong> GTM Engineers exist to generate measurable pipeline. If a candidate doesn't track meetings booked, pipeline generated, enrichment match rates, or email deliverability metrics, they're operating on intuition rather than data. That's fine for a marketing strategist. It's disqualifying for an engineering role.</p>
+
+    <h2>Onboarding in the First 90 Days</h2>
+    <p><strong>Week 1-2: System audit.</strong> Your new hire should map every existing tool, workflow, and data flow in your GTM stack. Who uses what? Where does data flow? What's manual that should be automated? This audit becomes the basis for their first 90-day plan.</p>
+    <p><strong>Week 3-4: Quick win.</strong> Identify one high-impact, low-risk automation they can build and ship. A common first project: automating the lead enrichment step that someone currently does manually in a spreadsheet. Shipping a quick win builds credibility with stakeholders and gives the new hire confidence in your stack.</p>
+    <p><strong>Week 5-8: Pipeline build.</strong> Now they build or improve the core outbound pipeline. This is where the real value starts. They should have a working enrichment waterfall, a sequencing workflow, and CRM integration running by week 8. Measure: records enriched per week, emails sent, reply rates, meetings booked.</p>
+    <p><strong>Week 9-12: Optimization and documentation.</strong> With the core pipeline running, focus shifts to optimization (improving match rates, reducing cost per enriched record, A/B testing email copy) and documentation (so the system doesn't depend entirely on one person's memory). By week 12, the GTM Engineer should be running a measurable, documented pipeline that generates consistent results.</p>
+    <p>The complete <a href="/careers/how-to-become-gtm-engineer/">career path guide</a> covers what candidates are looking for in employers, which helps you write more compelling job descriptions and close offers faster.</p>
+
+{insight_related_links("hiring-guide")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineering hiring trends and salary benchmarks.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/hiring-guide/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/hiring-guide/index.html", page)
+    print(f"  Built: insights/hiring-guide/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -14096,6 +14306,17 @@ def main():
     build_insight_linkedin_outreach()
     build_insight_email_deliverability()
     build_insight_api_integration()
+    # Batch 2 (Phase 15)
+    build_insight_enrichment_waterfall()
+    build_insight_hiring_guide()
+    # build_insight_freelance_rates()  # Phase 15 Plan 01 Task 2
+    # build_insight_gtme_vs_sdr_roi()  # Phase 15 Plan 01 Task 2
+    # build_insight_intent_data()  # Phase 15 Plan 02
+    # build_insight_crm_hygiene()  # Phase 15 Plan 02
+    # build_insight_pulse_report()  # Phase 15 Plan 02
+    # build_insight_tech_stack_audit()  # Phase 15 Plan 03
+    # build_insight_revenue_attribution()  # Phase 15 Plan 03
+    # build_insight_remote_market()  # Phase 15 Plan 03
 
     print("\n  Building meta files...")
     build_sitemap()

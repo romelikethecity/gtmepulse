@@ -54,7 +54,7 @@ Plans:
 
 - [ ] **Phase 13: Analytics and Newsletter Go-Live** - GA4 tracking, Search Console, newsletter infrastructure deployed and sending
 - [x] **Phase 14: Insight Articles Batch 1** - First 10 data-driven articles (market analysis, tool reports, playbooks) (completed 2026-03-18)
-- [ ] **Phase 15: Insight Articles Batch 2** - Second 10 articles (hiring guides, rate guides, ROI analysis, pulse reports)
+- [x] **Phase 15: Insight Articles Batch 2** - Second 10 articles (hiring guides, rate guides, ROI analysis, pulse reports) (completed 2026-03-19)
 - [ ] **Phase 16: OG Image Generation** - Playwright-based OG image pipeline for all 280+ pages
 - [ ] **Phase 17: v4.0 Quality Sweep** - All new pages validated, zero-warning build
 
@@ -134,7 +134,7 @@ Plans:
 | Milestone | Phases | Plans | Status | Shipped |
 |-----------|--------|-------|--------|---------|
 | v1.0 Foundation + Salary | 1-3 | 8 | Complete | 2026-03-10 |
-| v2.0 Content Wave | 4-7 | 15 | 2/3 | In Progress|  | v3.0 Tool Reviews + Infra | 8-12 | 10 | Complete | 2026-03-16 |
+| v2.0 Content Wave | 4-7 | 15 | 3/3 | Complete   | 2026-03-19 | v3.0 Tool Reviews + Infra | 8-12 | 10 | Complete | 2026-03-16 |
 | v4.0 Content + Go-Live | 13-17 | 5+ | In progress | - |
 
 ---

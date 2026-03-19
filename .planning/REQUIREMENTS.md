@@ -24,9 +24,9 @@
 - [x] **ART-15**: Intent data buying guide (6sense vs Bombora vs G2, signal types, integration)
 - [x] **ART-16**: CRM hygiene automation playbook (dedup, routing, lifecycle stages via code)
 - [x] **ART-17**: Monthly pulse report template page (auto-populated from scraper data)
-- [ ] **ART-18**: GTM Engineer tech stack audit checklist (evaluate your current stack)
-- [ ] **ART-19**: Revenue attribution for GTM Engineers (proving pipeline impact with data)
-- [ ] **ART-20**: Remote GTM Engineering market report (geo distribution, salary by location, timezone patterns)
+- [x] **ART-18**: GTM Engineer tech stack audit checklist (evaluate your current stack)
+- [x] **ART-19**: Revenue attribution for GTM Engineers (proving pipeline impact with data)
+- [x] **ART-20**: Remote GTM Engineering market report (geo distribution, salary by location, timezone patterns)
 
 ### Analytics
 
@@ -104,9 +104,9 @@
 | ART-15 | Phase 15 | Complete |
 | ART-16 | Phase 15 | Complete |
 | ART-17 | Phase 15 | Complete |
-| ART-18 | Phase 15 | Pending |
-| ART-19 | Phase 15 | Pending |
-| ART-20 | Phase 15 | Pending |
+| ART-18 | Phase 15 | Complete |
+| ART-19 | Phase 15 | Complete |
+| ART-20 | Phase 15 | Complete |
 | OG-01 | Phase 16 | Pending |
 | OG-02 | Phase 16 | Pending |
 | OG-03 | Phase 16 | Pending |

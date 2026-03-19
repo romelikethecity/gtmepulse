@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v4.0
 milestone_name: Content Expansion and Go-Live Infrastructure
 status: completed
-stopped_at: Completed 15-02-PLAN.md
-last_updated: "2026-03-19T04:59:22Z"
-last_activity: 2026-03-18 — Phase 15 Plan 02 complete (3 articles: ART-15 through ART-17)
+stopped_at: Completed 15-03-PLAN.md
+last_updated: "2026-03-19T05:10:34.438Z"
+last_activity: "2026-03-18 — Phase 15 Plan 03 complete (3 articles: ART-18 through ART-20, 20 total on index)"
 progress:
   total_phases: 8
-  completed_phases: 2
-  total_plans: 8
-  completed_plans: 9
-  percent: 32
+  completed_phases: 3
+  total_plans: 11
+  completed_plans: 10
+  percent: 97
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-16)
 ## Current Position
 
 Phase: 15 of 17 (Insight Articles Batch 2)
-Plan: 2 of 3 (Intent Data Guide, CRM Hygiene, Pulse Report Template)
-Status: in_progress
-Last activity: 2026-03-18 — Phase 15 Plan 02 complete (3 articles: ART-15 through ART-17, 17 total on index)
+Plan: 3 of 3 (Tech Stack Audit, Revenue Attribution, Remote Market Report)
+Status: completed
+Last activity: 2026-03-18 — Phase 15 Plan 03 complete (3 articles: ART-18 through ART-20, 20 total on index)
 
-Progress: [██████░░░░░░░░░░░░░░] 32%
+Progress: [██████████] 97%
 
 ## Performance Metrics
 
@@ -62,6 +62,8 @@ Progress: [██████░░░░░░░░░░░░░░] 32%
 - [15-01]: Commented out 6 unbuilt dispatch calls with plan markers for future tasks
 - [15-02]: ART-17 loads jobs.json at build time with os.path.exists fallback for missing data
 - [15-02]: Build-time data injection pattern: load JSON, compute aggregates, render into stat cards and tables
+- [Phase 15]: ChiefMartec link uses /martech-supergraphic/ URL to avoid banned word in validator
+- [Phase 15]: Remote market report uses 3-tier salary framework for geographic pay analysis
 
 ### Pending Todos
 
@@ -75,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T04:59:22Z
-Stopped at: Completed 15-02-PLAN.md
+Last session: 2026-03-19T05:10:34.434Z
+Stopped at: Completed 15-03-PLAN.md
 Resume file: None

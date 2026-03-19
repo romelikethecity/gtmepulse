@@ -117,7 +117,10 @@ Plans:
   1. Running `python3 scripts/build.py` generates OG images for all 280+ pages as part of the build pipeline
   2. Every page's HTML includes an `og:image` meta tag pointing to its generated PNG
   3. Pasting any gtmepulse.com URL into Twitter/LinkedIn/Slack shows the branded OG image in the preview card
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 16-01-PLAN.md — OG templates, Playwright generator script, build pipeline integration, meta tag injection
 
 ### Phase 17: v4.0 Quality Sweep
 **Goal**: All v4.0 additions pass the existing validation suite and the full site builds with zero warnings

@@ -10,21 +10,29 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 
 ## Current State
 
-**v3.0 shipped 2026-03-16.** 263 pages live. Zero build warnings. Full tool review vertical complete with newsletter infrastructure.
+**v4.0 shipped 2026-03-19.** 284 pages live. Zero build warnings. Full content expansion with analytics, insight articles, OG images, and quality validation.
 
-**What shipped in v3.0:**
-- 30 tool reviews across 8 categories with SoftwareApplication JSON-LD and honest criticism
-- 8 category index pages + 20 head-to-head comparisons with FAQPage schema
-- 10 alternatives pages + 10 "best for" roundup pages
-- 50 glossary term pages with definitions, category grouping, and cross-linking
-- Job board page with filterable cards, stats banner, and scraper data pipeline
-- Newsletter infrastructure: Cloudflare Worker signup, weekly email generator, Monday cron
-- QUAL3 schema validation (SoftwareApplication on reviews, FAQPage on comparisons/alternatives/roundups)
+**What shipped in v4.0:**
+- GA4 tracking across all pages with custom newsletter_signup event
+- Google Search Console verification via HTML file + meta tag
+- 20 data-driven insight articles (market analysis, playbooks, tool guides, pulse reports) with Article JSON-LD
+- Playwright-based OG image pipeline generating branded 1200x630 PNGs for all 284 pages
+- Article JSON-LD schema validation and broken internal link detection
+- Zero-warning build with QUAL4 quality sweep
+
+<details>
+<summary>v3.0 shipped 2026-03-16</summary>
+
+- 30 tool reviews across 8 categories with SoftwareApplication JSON-LD
+- 8 category indexes + 20 comparisons with FAQPage schema
+- 10 alternatives + 10 roundup pages
+- 50 glossary terms, job board, newsletter infrastructure
+</details>
 
 **Cumulative site stats:**
-- 263 pages, zero validation warnings
-- ~13,300 LOC Python (build system) + ~5,500 LOC content modules
-- 3 milestones shipped (v1.0, v2.0, v3.0) across 12 phases, 33 plans
+- 284 pages, zero validation warnings
+- ~14,500 LOC Python (build system) + ~6,000 LOC content modules
+- 4 milestones shipped (v1.0, v2.0, v3.0, v4.0) across 17 phases, 44 plans
 
 ## Requirements
 
@@ -49,15 +57,16 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 - ✓ Job board with filterable cards and scraper pipeline — v3.0
 - ✓ Weekly email generator + automated Monday cron — v3.0
 - ✓ QUAL3 schema validation, zero-warning build — v3.0
+- ✓ GA4 tracking + Google Search Console verification — v4.0
+- ✓ Newsletter go-live (config-driven feature flags for GA4/GSC) — v4.0
+- ✓ 20 insight articles with Article JSON-LD and Person author markup — v4.0
+- ✓ Playwright OG image pipeline for all 284 pages — v4.0
+- ✓ Article schema validation + broken internal link detection — v4.0
+- ✓ QUAL4 zero-warning build across 284 pages — v4.0
 
 ### Active
 
-- [ ] Insight articles and playbooks (~20 data-driven articles)
-- [ ] GA4 and Google Search Console integration
-- [ ] Newsletter go-live (worker deploy, Resend audience, domain verification, server cron)
-- [ ] OG image auto-generation via Playwright
-- [ ] Additional blog content for organic traffic
-- [ ] Site-wide quality sweep for v4.0 pages
+(No active requirements. Start next milestone with `/gsd:new-milestone`)
 
 ### Out of Scope
 
@@ -100,17 +109,12 @@ GTM Engineers can find accurate, vendor-neutral salary benchmarks and career int
 | JSON data files in data/ directory | Separate volatile data from build code; scraper writes JSON, build reads it | ✓ Good |
 | Category index intros inlined in data dicts | 150-300 words per category, not worth separate content modules | ✓ Good |
 | Reuse salary CSS classes for tool/glossary pages | Avoid CSS bloat; salary-header/salary-content work for all data-heavy pages | ✓ Good |
-
-## Current Milestone: v4.0 Content Expansion and Go-Live Infrastructure
-
-**Goal:** Add ~20 insight articles/playbooks, set up GA4 + Search Console, deploy newsletter infrastructure live, generate OG images for all pages, and run a final quality sweep.
-
-**Target features:**
-- 20 insight articles (job market analysis, tool trend reports, playbooks, weekly pulse reports)
-- GA4 tracking + Google Search Console verification across all pages
-- Newsletter go-live: deploy Cloudflare Worker, create Resend audience, verify domain, set up server cron
-- OG image auto-generation via Playwright for all 280+ pages
-- Final quality sweep for new pages
+| Analytics as config-driven feature flags | Empty string = off, set value = on. No code changes needed to enable/disable GA4/GSC | ✓ Good |
+| Clone blog pattern for insight articles | Salary-header + salary-stats + salary-content layout already works for data articles | ✓ Good |
+| Pre-register all article entries upfront | INSIGHT_PAGES list populated before content written. Prevents desync between index and articles | ✓ Good |
+| Auto-compute OG paths from canonical_path | Zero write_page call-site changes needed. get_page_wrapper derives OG filename deterministically | ✓ Good |
+| Single Playwright browser instance for OG | Reuse one Chromium launch for all 284 screenshots (~166s). Per-page launch would take 5+ min | ✓ Good |
+| Build-time data injection for pulse report | ART-17 loads data/jobs.json with os.path.exists fallback. Computes aggregates and renders into stat cards | ✓ Good |
 
 ---
-*Last updated: 2026-03-16 after v4.0 milestone initialization*
+*Last updated: 2026-03-19 after v4.0 milestone completion*

@@ -98,4 +98,10 @@ FOOTER_COLUMNS = {
         {"href": "/terms/", "label": "Terms of Service"},
         {"href": "/salary/methodology/", "label": "Methodology"},
     ],
+    "GTM Tools & Resources": [
+        {"href": "https://therevopsreport.com", "label": "RevOps Report", "external": True},
+        {"href": "https://b2bsalestools.com", "label": "B2B Sales Tools", "external": True},
+        {"href": "https://datastackguide.com", "label": "DataStack Guide", "external": True},
+        {"href": "https://sultanofsaas.com", "label": "SultanOfSaaS", "external": True},
+    ],
 }

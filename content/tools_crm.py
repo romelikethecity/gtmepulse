@@ -96,7 +96,7 @@ TOOL_REVIEWS = {
 "pipedrive": {
     "overview": """
 <p>Pipedrive is a visual pipeline CRM built for small sales teams that want simplicity over power. The product centers around a drag-and-drop deal board where you move deals through stages. It's the CRM equivalent of Trello: easy to understand, fast to set up, and limited when your needs get complex.</p>
-<p>For GTM Engineers at early-stage startups (under 20 employees), Pipedrive offers enough CRM functionality to manage a pipeline without the overhead of HubSpot or Salesforce. The API is clean, the automation features cover basic workflows, and the pricing is straightforward.</p>
+<p>For GTM Engineers at early-stage startups (under 20 employees), Pipedrive offers enough CRM functionality to manage a pipeline without the overhead of HubSpot or Salesforce. The API is clean, the automation features cover basic workflows, and the pricing is straightforward. Pipedrive also supports 22 languages and has 100,000+ companies using the platform globally, making it one of the most widely adopted SMB CRMs.</p>
 <p>Pipedrive's target user is a sales rep who wants to see their deals visually and get reminded about next steps. The product excels at this specific workflow: create deal, move through stages, track activities, close or lose. Where it falls short is when GTM Engineers try to extend Pipedrive beyond basic pipeline management into enrichment, complex automation, or multi-object data models. Pipedrive is a pipeline view with CRM features attached, not a CRM platform with pipeline features. That distinction matters as your team grows.</p>
 """,
     "gtm_use_cases": """
@@ -141,7 +141,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Close CRM is built for outbound-heavy sales teams. The product includes built-in calling (VoIP), SMS, email sequences, and video all inside the CRM. While HubSpot and Salesforce require third-party tools for calling and sequences (Outreach, Salesloft, Aircall), Close bundles everything into the CRM itself.</p>
 <p>This "all-in-one" approach means fewer integrations, fewer tools, and fewer data sync issues. For GTM Engineers at companies where the sales motion is high-velocity outbound (50+ calls/day, 100+ emails/day), Close's built-in communication tools reduce the stack from 4 tools to 1.</p>
-<p>Close has maintained focus on the SMB outbound segment while competitors expand into enterprise. The product's opinionated design choices (built-in calling, email-first sequences, simple pipeline views) make it faster to deploy and easier to maintain than enterprise CRMs. GTM Engineers at startups with 5-20 reps report getting Close running in a single afternoon, compared to weeks for Salesforce or days for HubSpot's workflow setup.</p>
+<p>Close supports native Zoom integration for video calls logged directly to contact records, rounding out the communication stack. Close has maintained focus on the SMB outbound segment while competitors expand into enterprise. The product's opinionated design choices (built-in calling, email-first sequences, simple pipeline views) make it faster to deploy and easier to maintain than enterprise CRMs. GTM Engineers at startups with 5-20 reps report getting Close running in a single afternoon, compared to weeks for Salesforce or days for HubSpot's workflow setup.</p>
 """,
     "gtm_use_cases": """
 <ul>
@@ -184,7 +184,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Attio is the modern CRM for technical teams that find HubSpot too rigid and Salesforce too bloated. The product launched in 2023 and has gained rapid adoption among startups and technical founders who want a CRM that treats data like a database, not a form. Attio's flexible data model lets you create custom objects, relationships, and views that adapt to your specific GTM process.</p>
 <p>For GTM Engineers, Attio's appeal is the database-like experience. Create custom objects for anything (product usage events, partnership deals, hiring signals), build filtered views like you'd build database queries, and automate with an API that feels like it was designed by engineers, not CRM product managers.</p>
-<p>Attio's rapid iteration cycle means the product improves monthly. Recent additions include workflow automation triggers, improved reporting views, and deeper integration options. The risk of choosing a young CRM is offset by the pace of feature delivery.</p>
+<p>Attio raised a $23.5M Series A in 2024, signaling runway for continued product development. Attio's rapid iteration cycle means the product improves monthly. Recent additions include workflow automation triggers, improved reporting views, and deeper integration options. The risk of choosing a young CRM is offset by the pace of feature delivery.</p>
 """,
     "gtm_use_cases": """
 <ul>

@@ -171,7 +171,7 @@ TOOL_REVIEWS = {
 "fullenrich": {
     "overview": """
 <p>FullEnrich is a waterfall enrichment service that chains 15+ email and phone data providers together to maximize find rates. Instead of paying for ZoomInfo and hoping their single database has the contact you need, FullEnrich queries multiple providers in sequence until it finds a verified result.</p>
-<p>The product is simple by design: upload a list of people (name + company or LinkedIn URL), and FullEnrich returns triple-verified emails and phone numbers. No CRM, no sequences, no AI features. Just the highest possible email/phone match rate at a fraction of what enterprise providers charge.</p>
+<p>The product is simple by design: upload a list of people (name + company or LinkedIn URL), and FullEnrich returns triple-verified emails and phone numbers. No CRM, no sequences, no AI features. Just the highest possible email/phone match rate at a fraction of what enterprise providers charge. The company is based in France and serves over 2,000 B2B teams globally.</p>
 <p>The waterfall approach works because no single email provider has complete coverage. Apollo might find 60% of emails for a given list. FullEnrich queries Apollo plus 14 other providers in sequence, catching the 15-25% that Apollo missed. For GTM Engineers running volume outbound, that incremental coverage translates directly into more conversations. The triple verification layer (syntax, domain, mailbox) keeps bounce rates under 3%, which protects sender reputation.</p>
 """,
     "gtm_use_cases": """

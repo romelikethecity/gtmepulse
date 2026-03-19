@@ -51,7 +51,7 @@ TOOL_REVIEWS = {
 "smartlead": {
     "overview": """
 <p>Smartlead is Instantly's main competitor in the cold email infrastructure space. The platform offers unlimited mailbox connections, email warmup, and multi-channel outreach (email + LinkedIn) with a particular focus on agency workflows. Smartlead's API depth and white-label features make it the preferred choice for GTM agencies managing campaigns across multiple clients.</p>
-<p>Smartlead's development team ships updates frequently, adding features that close the gap with Instantly while maintaining API-first architecture that Instantly lacks at lower price tiers. The product recently added subsequences (automated follow-up paths based on prospect behavior), improved the unified inbox for managing replies at scale, and expanded webhook support for real-time CRM syncing.</p>
+<p>Smartlead's development team ships updates frequently, with a public changelog showing 50+ feature releases in 2025 alone, closing the gap with Instantly while maintaining API-first architecture that Instantly lacks at lower price tiers. The platform now supports Spintax in email copy for message variation at scale. The product recently added subsequences (automated follow-up paths based on prospect behavior), improved the unified inbox for managing replies at scale, and expanded webhook support for real-time CRM syncing.</p>
 <p>The product covers the same core functionality as Instantly (warmup, rotation, sequences, unified inbox) but adds webhook integrations, API access on lower tiers, and agency management tools that Instantly charges more for. The tradeoff is a steeper learning curve and a less polished interface.</p>
 """,
     "gtm_use_cases": """
@@ -95,7 +95,7 @@ TOOL_REVIEWS = {
 
 "outreach": {
     "overview": """
-<p>Outreach is the enterprise sales engagement platform. It's the tool that VP Sales at companies with 50+ reps standardize on for multi-channel outbound sequences, pipeline management, and revenue intelligence. Outreach serves a fundamentally different market than Instantly or Smartlead: it's built for managed sales teams, not solo operators.</p>
+<p>Outreach is the enterprise sales engagement platform. It's the tool that VP Sales at companies with 50+ reps standardize on for multi-channel outbound sequences, pipeline management, and revenue intelligence. Outreach serves a fundamentally different market than Instantly or Smartlead: it's built for managed sales teams with 10+ reps running structured outbound motions, not solo operators or small squads running scrappy campaigns.</p>
 <p>The platform combines email sequences, phone dialers, LinkedIn touchpoints, meeting scheduling, pipeline analytics, and AI-powered coaching in one interface. For GTM Engineers at enterprise companies, Outreach is often the system they build workflows around rather than choosing independently.</p>
 <p>Outreach's market position has shifted since 2024. The product is evolving from a sales engagement tool into a broader revenue execution platform, adding deal intelligence, mutual action plans, and AI-powered coaching. This expansion means the product does more, but each addition increases the learning curve and configuration time. GTM Engineers at enterprise companies spend 2-4 hours per week maintaining Outreach configurations: updating templates, adjusting sequence timing, and troubleshooting CRM sync issues.</p>
 """,
@@ -133,7 +133,7 @@ TOOL_REVIEWS = {
     "overview": """
 <p>Salesloft is Outreach's primary competitor in the enterprise sales engagement category. The platform covers email/phone/LinkedIn sequences (called "cadences"), deal management, conversation intelligence, and revenue forecasting. Salesloft and Outreach are so functionally similar that most buying decisions come down to UX preference and CRM integration quality.</p>
 <p>Salesloft's "Rhythm" AI feature attempts to prioritize a rep's daily actions based on buying signals and historical conversion data. It tells reps which prospects to contact, through which channel, and when. For GTM Engineers, Salesloft is typically an inherited tool that the sales org chose, not a tool they'd pick independently.</p>
-<p>Salesloft was acquired by Vista Equity Partners in early 2024, and the product roadmap reflects private equity priorities: margin improvement and feature consolidation. The conversation intelligence module (formerly a separate product) is now bundled into higher tiers. For GTM Engineers, this means more features per dollar but also more complexity per login. Whether the all-in-one direction helps or hurts depends on whether your team uses 3 Salesloft features or 10.</p>
+<p>Salesloft was acquired by Vista Equity Partners in early 2024 for a reported $2.3B, and the product roadmap reflects private equity priorities: margin improvement and feature consolidation. The platform now serves over 4,000 customers including IBM, Shopify, and Stripe. The conversation intelligence module (formerly a separate product) is now bundled into higher tiers. For GTM Engineers, this means more features per dollar but also more complexity per login. Whether the all-in-one direction helps or hurts depends on whether your team uses 3 Salesloft features or 10.</p>
 """,
     "gtm_use_cases": """
 <ul>

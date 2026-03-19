@@ -14361,6 +14361,7 @@ def validate_pages():
     warnings = []
     all_titles = {}       # title -> [rel_paths]
     all_descs = {}        # description -> [rel_paths]
+    page_internal_links = {}  # rel_path -> [list of internal hrefs]
 
     # Pages exempt from certain checks
     SKIP_BREADCRUMB = {"index.html", "privacy/index.html", "terms/index.html", "404.html", "newsletter/index.html"}
@@ -14462,6 +14463,22 @@ def validate_pages():
                 if len(internal_links) < 3:
                     warnings.append(f"QUAL2-03: {rel}: only {len(internal_links)} internal links in content (want 3+)")
 
+            # Collect internal links from content body only (for QUAL4-02 broken link check)
+            # Use content between header/breadcrumb and footer to avoid nav/footer links to planned pages
+            link_check_html = html
+            lc_header_end = html.find('</header>')
+            lc_breadcrumb_end = html.find('</nav>', html.find('class="breadcrumb"')) if 'class="breadcrumb"' in html else -1
+            lc_start = max(lc_header_end, lc_breadcrumb_end) if max(lc_header_end, lc_breadcrumb_end) > 0 else 0
+            lc_footer_start = html.find('<footer')
+            if lc_start > 0 and lc_footer_start > lc_start:
+                link_check_html = html[lc_start:lc_footer_start]
+            elif lc_footer_start > 0:
+                link_check_html = html[:lc_footer_start]
+            content_internal_hrefs = re.findall(r'<a\s[^>]*href="(/[^"]*)"', link_check_html)
+            # Filter out protocol-relative links (//...)
+            content_internal_hrefs = [h for h in content_internal_hrefs if not h.startswith("//")]
+            page_internal_links[rel] = content_internal_hrefs
+
             # --- QUAL2-06: FAQPage schema on comparison pages ---
             # Comparisons live under tools/*-vs-*/ not comparisons/
             if "tools/" in rel and "-vs-" in rel:
@@ -14525,6 +14542,11 @@ def validate_pages():
                 if "softwareapplication" not in html_lower:
                     warnings.append(f"QUAL3-01: {rel}: tool review missing SoftwareApplication schema")
 
+            # --- QUAL4-01: Article schema on insight pages ---
+            if re.match(r"insights/[^/]+/index\.html$", rel) and rel != "insights/index.html":
+                if '"article"' not in html_lower and '"@type": "article"' not in html_lower:
+                    warnings.append(f"QUAL4-01: {rel}: insight article missing Article schema")
+
             # --- QUAL3-02: FAQPage schema on comparison, alternatives, and roundup pages ---
             faq_page_type = None
             if re.match(r"tools/[^/]+-vs-[^/]+/index\.html$", rel):
@@ -14550,6 +14572,42 @@ def validate_pages():
     for desc, pages in all_descs.items():
         if len(pages) > 1:
             warnings.append(f"QUAL2-07: DUPLICATE DESCRIPTION: \"{desc}\" used by {', '.join(pages)}")
+
+    # --- QUAL4-02: Broken internal links ---
+    built_paths = set()
+    for root2, dirs2, files2 in os.walk(OUTPUT_DIR):
+        for f2 in files2:
+            rel2 = os.path.relpath(os.path.join(root2, f2), OUTPUT_DIR)
+            # Normalize: /foo/index.html -> /foo/ and /foo/index.html
+            norm_dir = "/" + rel2.replace("index.html", "").rstrip("/")
+            if norm_dir == "/":
+                built_paths.add("/")
+            else:
+                built_paths.add(norm_dir + "/")
+                built_paths.add(norm_dir)
+            built_paths.add("/" + rel2)
+    # Also add root
+    built_paths.add("/")
+
+    broken_links_seen = set()
+    broken_link_count = 0
+    for page_rel, hrefs in page_internal_links.items():
+        for href in hrefs:
+            # Strip anchors and query strings
+            clean = href.split("#")[0].split("?")[0]
+            if not clean:
+                continue
+            if clean not in built_paths:
+                key = (page_rel, clean)
+                if key not in broken_links_seen:
+                    broken_links_seen.add(key)
+                    broken_link_count += 1
+    if broken_link_count > 0:
+        unique_targets = set(k[1] for k in broken_links_seen)
+        print(f"\n  QUAL4-02: {broken_link_count} broken internal link(s) across {len(unique_targets)} unique target(s)")
+        for target in sorted(unique_targets):
+            pages_with = [k[0] for k in broken_links_seen if k[1] == target]
+            print(f"    {target} (referenced by {len(pages_with)} page(s))")
 
     if warnings:
         print(f"\n  Content validation: {len(warnings)} warning(s)")

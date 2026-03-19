@@ -11988,7 +11988,7 @@ INSIGHT_PAGES = [
     {"slug": "remote-market-report", "title": "Remote GTM Engineering Market Report", "description": "Remote vs hybrid vs onsite salary gaps, geographic arbitrage, and hiring trends for distributed GTM teams.", "category": "Market Analysis"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template", "tech-stack-audit", "revenue-attribution"}
 
 
 def insight_related_links(current_slug):
@@ -13987,6 +13987,258 @@ def build_insight_pulse_report():
     print(f"  Built: insights/pulse-report-template/index.html")
 
 
+def build_insight_tech_stack_audit():
+    """ART-18: GTM Engineer Tech Stack Audit Checklist."""
+    title = "GTM Engineer Tech Stack Audit Checklist"
+    description = (
+        "Score your current GTM tools, find coverage gaps, and cut bloat."
+        " A structured audit framework for enrichment, sequencing, and CRM."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Tech Stack Audit", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="tech-stack-audit", date_published="2026-03-18", word_count=2200)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Guide</div>
+        <h1>GTM Engineer Tech Stack Audit Checklist</h1>
+        <p>Most GTM teams run 5-8 tools with overlapping features, redundant data sources, and integrations held together by duct tape. This checklist gives you a structured way to score every tool, find what to cut, and decide what to build yourself.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">5&#8209;8</span>
+        <span class="stat-label">Tools Per GTM Stack</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$2K&#8209;$15K</span>
+        <span class="stat-label">Monthly Stack Cost</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">30&#8209;40%</span>
+        <span class="stat-label">Typical Feature Overlap</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">6</span>
+        <span class="stat-label">Layers to Audit</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Audit Your Stack</h2>
+    <p>GTM stacks grow by accumulation. Someone signs up for an enrichment trial. A sales rep brings their favorite sequencing tool. The CEO's friend recommends an intent data vendor. Six months later, you're paying for three enrichment sources, two of which cover the same contact fields with different accuracy rates. Nobody knows which data feeds the CRM, and every new hire gets a different answer about which tools to use.</p>
+    <p>The <a href="https://chiefmartec.com/martech-supergraphic/" target="_blank" rel="noopener">ChiefMartec Martech Survey</a> now catalogs over 14,000 tools across marketing and sales technology categories. The average B2B company uses 12-20 of them. For GTM Engineers specifically, the core working stack runs 5-8 tools, but those tools are the backbone of the entire pipeline. When they're redundant, poorly integrated, or underused, every downstream metric suffers.</p>
+    <p>A quarterly audit forces three outcomes: you find redundant tools and cut spending, you discover integration gaps where data drops between systems, and you build a migration plan before contracts auto-renew.</p>
+
+    <h2>The Six-Layer Audit Framework</h2>
+    <p>Every GTM stack consists of six functional layers. Each layer has a primary job, and every tool in your stack maps to one or more of these layers. The audit scores each tool against the layer it serves.</p>
+
+    <h3>Layer 1: Data Enrichment</h3>
+    <p><strong>What it does:</strong> Takes a company name or domain and returns contact data, firmographics, technographics, and org charts. This is the foundation. Bad enrichment data ruins everything downstream.</p>
+    <p><strong>Audit questions:</strong> What's your match rate on target ICPs? How many enrichment sources do you pay for, and how much overlap exists between them? What's your cost per enriched contact? Do you have a <a href="/insights/enrichment-waterfall/">waterfall strategy</a> or are you hitting one source and hoping for the best?</p>
+    <p><strong>Common bloat pattern:</strong> Paying for Apollo, ZoomInfo, and Clearbit when two of those three cover 90% of the same contacts. The fix: run a 500-contact overlap test. Export matches from each source against the same target list and measure unique coverage. Keep the two with the highest combined unique coverage. Drop the third.</p>
+    <p>Score each enrichment tool on four axes: <strong>coverage</strong> (match rate on your ICP), <strong>accuracy</strong> (email bounce rate on enriched contacts), <strong>freshness</strong> (how recently data was verified), and <strong>cost per contact</strong> (total annual spend divided by unique contacts enriched). See the full <a href="/tools/category/data-enrichment/">data enrichment category</a> for vendor-specific analysis.</p>
+
+    <h3>Layer 2: Outbound Sequencing</h3>
+    <p><strong>What it does:</strong> Sends multi-step email and LinkedIn sequences at scale. Manages reply detection, bounce handling, and follow-up cadences.</p>
+    <p><strong>Audit questions:</strong> What's your deliverability rate across all sending domains? How many sequences are active vs. abandoned? What percentage of sequences complete all steps? Does your tool support the sending volume you need?</p>
+    <p><strong>Common bloat pattern:</strong> Running both Instantly and Smartlead because different reps prefer different UIs. The tools do the same thing. Pick the one with better deliverability monitoring and consolidate. Check our <a href="/insights/outbound-stack/">outbound stack guide</a> for head-to-head analysis.</p>
+
+    <h3>Layer 3: CRM</h3>
+    <p><strong>What it does:</strong> Serves as the system of record for contacts, companies, deals, and pipeline activity. Everything flows into the CRM. If the CRM is dirty, nothing downstream works.</p>
+    <p><strong>Audit questions:</strong> What's your duplicate contact rate? How many fields have inconsistent formatting (phone numbers, addresses, job titles)? Do enrichment results automatically write back to the CRM? How long does it take a new contact to flow from enrichment to CRM to first sequence?</p>
+    <p><strong>Common bloat pattern:</strong> Using both HubSpot and a separate pipeline management tool when HubSpot handles both. Or paying for Salesforce enterprise licenses when your team of three would run fine on HubSpot Professional.</p>
+
+    <h3>Layer 4: Workflow Automation</h3>
+    <p><strong>What it does:</strong> Connects tools, triggers actions based on events, and runs multi-step processes without manual intervention. This is the glue layer.</p>
+    <p><strong>Audit questions:</strong> How many active workflows do you run? What's the failure rate on automated sequences? How many manual steps still exist in your pipeline that could be automated? Do you use one automation platform or several?</p>
+    <p><strong>Common bloat pattern:</strong> Running Zapier for simple triggers AND Make for complex workflows AND custom Python scripts for edge cases. Consolidate to one platform (Make or n8n handle both simple and complex workflows) plus Python for anything that needs custom logic. Three automation layers means three places where breakdowns happen.</p>
+
+    <h3>Layer 5: Analytics and Signals</h3>
+    <p><strong>What it does:</strong> Tracks product usage, website behavior, and buying signals that inform outbound timing and prioritization.</p>
+    <p><strong>Audit questions:</strong> Can you trace a closed-won deal back to the first touchpoint? How many analytics tools feed into your CRM? Do you have a single source of truth for pipeline attribution? Check the <a href="/tools/category/analytics-product-signals/">analytics tools category</a> for platform comparisons.</p>
+    <p><strong>Common bloat pattern:</strong> Paying for Mixpanel, Amplitude, AND Segment when Segment feeding into one analytics platform would cover everything. Product analytics tools are particularly prone to redundancy because marketing, product, and sales teams each pick their own.</p>
+
+    <h3>Layer 6: Intent Data</h3>
+    <p><strong>What it does:</strong> Identifies accounts showing buying signals based on content consumption, review site activity, or web research patterns.</p>
+    <p><strong>Audit questions:</strong> What's the signal-to-noise ratio on your intent data? How quickly do intent-flagged accounts enter outbound sequences? Can you measure whether intent-flagged accounts close at a higher rate than cold outbound? See our <a href="/insights/intent-data-guide/">intent data buying guide</a> for vendor evaluation criteria.</p>
+    <p><strong>Common bloat pattern:</strong> Subscribing to Bombora AND G2 intent AND 6sense when a single source provides sufficient signal for your account volume. Unless you're working 10,000+ accounts, one intent source is usually enough.</p>
+
+    <h2>The Scoring Rubric</h2>
+    <p>Score each tool in your stack on five criteria using a 1-5 scale.</p>
+    <p><strong>Coverage (1-5):</strong> Does this tool handle 80%+ of the use cases in its layer? A 5 means the tool covers nearly all your needs. A 1 means you're using it for one narrow function.</p>
+    <p><strong>Cost efficiency (1-5):</strong> Total annual cost divided by the value it delivers. Compare against what you'd pay for the next-best alternative. A 5 means it's the most cost-effective option available. A 1 means you're overpaying significantly.</p>
+    <p><strong>Integration depth (1-5):</strong> How well does this tool connect with the rest of your stack? A 5 means data flows automatically in both directions with your CRM and automation platform. A 1 means you're exporting CSVs and uploading them manually.</p>
+    <p><strong>Maintenance burden (1-5, inverted):</strong> How much engineering time does this tool consume? A 5 means it runs without intervention. A 1 means someone spends hours per week fixing broken workflows, updating credentials, or babysitting API connections.</p>
+    <p><strong>Utilization (1-5):</strong> What percentage of the tool's capabilities do you use? A 5 means you use 80%+ of features you pay for. A 1 means you're paying for an enterprise plan and using one feature.</p>
+    <p><strong>Total score range: 5-25 per tool.</strong> Tools scoring below 15 are candidates for replacement or consolidation. Tools scoring 20+ are keepers. The gray zone (15-19) requires deeper analysis: often the tool is fine but underutilized, meaning the fix is training, not replacement.</p>
+
+    <h2>Build vs. Buy Decision Framework</h2>
+    <p>GTM Engineers face a recurring question at every layer: should we pay for a vendor tool or build it ourselves? The answer depends on three factors.</p>
+    <p><strong>Build when:</strong> The tool handles a workflow specific to your company that no vendor supports well. The API you need is straightforward (most enrichment APIs are simple REST calls). You have Python/scripting capacity on the team. The vendor equivalent costs more than the engineering time to maintain a custom solution.</p>
+    <p><strong>Buy when:</strong> The tool requires infrastructure you don't want to maintain (email sending reputation, deliverability monitoring). The vendor has proprietary data you can't replicate (intent data co-ops, contact databases). The tool needs a UI that non-technical team members use daily. The build would take more than two weeks and the vendor costs less than $500/month.</p>
+    <p>The <a href="https://www.gartner.com/en/digital-markets/insights/martech-stack-optimization" target="_blank" rel="noopener">Gartner research on marketing technology utilization</a> consistently finds that companies use only 42% of their martech stack capabilities. That stat extends to GTM tools. Before buying a new tool, confirm you're using what you already pay for.</p>
+    <p>Enrichment is the layer most commonly built in-house, because API calls to multiple vendors and waterfall logic are straightforward engineering work. Sequencing is the layer most commonly bought, because email reputation management and deliverability monitoring require infrastructure that's expensive to build and maintain.</p>
+
+    <h2>Quarterly Audit Cadence</h2>
+    <p>Run the full audit once per quarter. Here's the checklist, broken into a one-week cycle.</p>
+    <p><strong>Day 1-2: Inventory.</strong> List every tool with login credentials for your GTM stack. Include tools that individuals use but the team doesn't share. Check credit card statements for tools nobody remembers signing up for. Pull usage data from each tool's admin dashboard (last login date, active users, API call volume).</p>
+    <p><strong>Day 3: Scoring.</strong> Score each tool on the five criteria above. Have at least two team members score independently to catch bias. Average the scores. Flag anything below 15 and anything where scorers disagree by more than 5 points.</p>
+    <p><strong>Day 4: Overlap analysis.</strong> Map which tools cover the same layer. For any layer with two or more tools, run the overlap test: same input list through each tool, measure unique vs. duplicated output. Calculate the cost of overlap (annual spend on the redundant tool minus switching cost).</p>
+    <p><strong>Day 5: Decision and migration plan.</strong> For each tool scoring below 15 or flagged as redundant, decide: cut, consolidate, or train. Cut means canceling at the next renewal date. Consolidate means migrating functionality to another tool that already covers the layer. Train means the tool is fine but underused, and the team needs onboarding on missing features.</p>
+    <p>Document everything in a shared scorecard. When renewal dates approach, you have the data to make fast decisions instead of defaulting to auto-renewal because nobody did the analysis. The <a href="/tools/">tools index</a> provides current pricing and feature comparisons for all major GTM tools to support vendor evaluation.</p>
+
+    <h2>Red Flags That Trigger an Immediate Review</h2>
+    <p>Don't wait for the quarterly cycle if you spot these patterns.</p>
+    <p><strong>Three or more tools in one layer.</strong> You're paying for redundancy. Run the overlap test now.</p>
+    <p><strong>Any tool with zero logins in 30 days.</strong> You're paying for shelf-ware. Cancel or reassign the license.</p>
+    <p><strong>Integration failures more than twice per week.</strong> The tool isn't reliable enough for production workflows. Evaluate alternatives.</p>
+    <p><strong>Cost per enriched contact exceeds $0.50.</strong> Unless you're enriching enterprise accounts with specialized data points, you're overpaying. Benchmark against <a href="/insights/tool-adoption/">current market rates</a>.</p>
+    <p><strong>More than 20% of pipeline data requires manual cleanup.</strong> Your enrichment or CRM hygiene layer has gaps. Fix the source data instead of adding cleanup steps downstream.</p>
+
+{insight_related_links("tech-stack-audit")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM stack analysis and tool recommendations.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/tech-stack-audit/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/tech-stack-audit/index.html", page)
+    print(f"  Built: insights/tech-stack-audit/index.html")
+
+
+def build_insight_revenue_attribution():
+    """ART-19: Revenue Attribution for GTM Engineers."""
+    title = "Revenue Attribution for GTM Engineers"
+    description = (
+        "Multi-touch attribution models, pipeline tracking, and proving"
+        " outbound ROI. Build dashboards that connect activity to revenue."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Revenue Attribution", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="revenue-attribution", date_published="2026-03-18", word_count=2100)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>Revenue Attribution for GTM Engineers</h1>
+        <p>The single most important skill for keeping your GTM Engineer role: proving that your work generates pipeline and closes deals. If leadership can't see the revenue connection, you're a cost center. This guide covers the models, metrics, and dashboards that make your impact visible.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">3&#8209;7x</span>
+        <span class="stat-label">Pipeline ROI Target</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">4</span>
+        <span class="stat-label">Attribution Models</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">Median GTME Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">6&#8209;8</span>
+        <span class="stat-label">Touches Before Close</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Attribution Is a Career Skill</h2>
+    <p>GTM Engineer is a new role. Many hiring managers and CFOs don't yet understand what the position produces. When budget cuts come, roles without clear revenue attribution get cut first. "I built automation workflows" is not a defense. "My outbound sequences generated $2.4M in pipeline last quarter, 18% of total company pipeline" is.</p>
+    <p>Attribution transforms the GTM Engineer from "the person who sets up Clay tables" to "the person responsible for 18% of our pipeline." That distinction is the difference between a $130K cost line and a revenue-generating function that the company scales up. Our <a href="/salary/">salary data</a> shows that GTM Engineers who can demonstrate pipeline impact earn 20-30% more than those who can't. The skill pays for itself.</p>
+    <p>The goal here: building measurement infrastructure that accurately reflects the value of automated outbound systems. If your sequences aren't generating pipeline, attribution will show that too, and that's equally valuable information for deciding where to invest engineering time.</p>
+
+    <h2>Multi-Touch Attribution Models</h2>
+    <p>B2B deals involve multiple touchpoints before a buyer signs. The attribution model determines how credit gets distributed across those touchpoints. Four models matter for GTM Engineers.</p>
+
+    <h3>First-Touch Attribution</h3>
+    <p><strong>How it works:</strong> 100% of revenue credit goes to whatever brought the prospect into your system. If an outbound email was the first interaction, the GTM Engineer's sequence gets full credit for the deal.</p>
+    <p><strong>When to use it:</strong> When you need to prove that outbound prospecting fills the top of the funnel. First-touch is the simplest model to implement and the easiest for leadership to understand. It answers: "Where do our deals come from originally?"</p>
+    <p><strong>The limitation:</strong> It ignores everything that happened after the first touch. A prospect might respond to your email, attend three webinars, get nurtured by marketing for four months, and close after a product demo. First-touch gives the email 100% credit and the rest zero. That's misleading if your goal is optimizing the full funnel.</p>
+
+    <h3>Last-Touch Attribution</h3>
+    <p><strong>How it works:</strong> 100% of revenue credit goes to the final touchpoint before the deal closes. If the last interaction was a sales call, sales gets all the credit.</p>
+    <p><strong>When to use it:</strong> When you need to understand what closes deals, not what starts them. Last-touch is common in sales-led organizations because it maps to the salesperson who "brought in" the revenue.</p>
+    <p><strong>The risk for GTM Engineers:</strong> Last-touch attribution almost always credits the sales rep or AE who ran the final meetings. Your outbound sequence that sourced the lead six months ago gets zero credit. If your company uses last-touch, you need to supplement it with source tracking (see below) or your contribution becomes invisible.</p>
+
+    <h3>Linear Attribution</h3>
+    <p><strong>How it works:</strong> Revenue credit is split equally across every touchpoint. If there were 6 interactions before close, each gets 16.7% credit.</p>
+    <p><strong>When to use it:</strong> When you want a balanced view that doesn't over-index on any single interaction. Linear is fair but lacks nuance. It treats a cold outbound email the same as the final pricing negotiation call.</p>
+    <p><strong>For GTM Engineers:</strong> Linear attribution is adequate when you're first building measurement infrastructure. It's simple to implement and gives you a starting baseline. Once you have 6+ months of data, graduate to W-shaped for more accurate modeling.</p>
+
+    <h3>W-Shaped Attribution</h3>
+    <p><strong>How it works:</strong> 30% credit to the first touch (lead creation), 30% to the lead-to-opportunity conversion point, 30% to the opportunity-to-close conversion, and the remaining 10% split across all other touchpoints.</p>
+    <p><strong>When to use it:</strong> When you have enough data points to identify the three critical conversion moments. W-shaped is the most accurate model for B2B companies with 60+ day sales cycles.</p>
+    <p><strong>Why it works for GTM Engineers:</strong> Outbound sequences typically create the lead (first touch, 30% credit) or convert the lead to an opportunity (second W, 30% credit). Either way, your contribution shows up prominently. W-shaped attribution is the model to advocate for internally because it accurately weights the moments where automated outbound creates the most value.</p>
+
+    <h2>What to Track</h2>
+    <p>Attribution models are only as good as the data flowing into them. Here's what to measure and where the data lives.</p>
+    <p><strong>Sequences sent and delivered.</strong> Volume of outbound activity per week. Tracked in your sequencing tool (Instantly, Smartlead, Outreach). Matters because it sets the baseline: if you're sending 500 sequences/week and generating 20 meetings, leadership can model the cost per meeting.</p>
+    <p><strong>Reply rate and positive reply rate.</strong> Percentage of sequences that get responses, and the subset of those that are positive (interested, requesting a call). The gap between reply rate and positive reply rate tells you about message quality. Track both by sequence, by ICP segment, and by time period.</p>
+    <p><strong>Meetings booked from outbound.</strong> The number that matters most for weekly reporting. A meeting booked is the clearest signal that outbound automation is working. Use UTM parameters or CRM fields to distinguish outbound-sourced meetings from inbound, referral, or partner-sourced meetings.</p>
+    <p><strong>Pipeline created (dollar value).</strong> Sum of opportunity values for deals sourced by outbound activity. This is the number that makes CFOs pay attention. Track it monthly and quarterly. Compare outbound-sourced pipeline to the fully loaded cost of the GTM Engineering function (your salary + tools) to calculate ROI.</p>
+    <p><strong>Closed-won influenced.</strong> Deals that closed where outbound activity touched the account at any point in the buyer journey, even if outbound wasn't the original source. "Influenced" is a broader metric than "sourced" and captures cases where your sequences re-engaged a stale lead or multi-threaded into additional contacts. Track this in your CRM using contact role or campaign member objects.</p>
+
+    <h2>Building Attribution in HubSpot vs Salesforce</h2>
+    <p><strong>HubSpot.</strong> HubSpot's built-in attribution reporting (Marketing Hub Enterprise) supports first-touch, last-touch, linear, and U-shaped models out of the box. To track outbound-sourced pipeline: create a custom contact property "Original Source Detail" and populate it via workflow when a contact is created from an outbound sequence. Use HubSpot's campaign object to group all outbound sequences under a single campaign. Pull the "Revenue by Campaign" report to see total pipeline and closed-won attributed to outbound.</p>
+    <p><strong>Salesforce.</strong> Salesforce requires more configuration but offers more flexibility. Use Campaign Member objects to track which contacts were touched by outbound sequences. Create a custom Opportunity field "Primary Source" with picklist values (Outbound, Inbound, Referral, Partner). Build a <a href="https://www.bizible.com/blog/multi-touch-attribution-full-guide" target="_blank" rel="noopener">multi-touch attribution report</a> using Campaign Influence (available in Salesforce Enterprise+). For advanced attribution, tools like Bizible (now part of Marketo/Adobe) provide W-shaped and custom models that write attribution data directly back to Salesforce records.</p>
+    <p>Regardless of CRM, the critical step is connecting your sequencing tool to your CRM so that outbound activity creates trackable records. Most sequencing platforms (<a href="https://www.hubspot.com/products/crm/attribution-reporting" target="_blank" rel="noopener">HubSpot integration docs</a> cover the major tools) support native CRM sync. If yours doesn't, build a webhook-triggered workflow in Make or n8n that creates a CRM activity record when a sequence gets a positive reply.</p>
+
+    <h2>Dashboard Design for Weekly Reviews</h2>
+    <p>A good attribution dashboard answers three questions in under 30 seconds: Are we generating enough pipeline? Which channels and sequences drive the best results? Where should we invest more?</p>
+    <p><strong>Row 1: Pipeline summary.</strong> Four cards showing: Total pipeline created this month, outbound-sourced pipeline, outbound-influenced pipeline, and outbound pipeline as a percentage of total. Use period-over-period comparison (this month vs. last month) with directional arrows. Green for up, red for down.</p>
+    <p><strong>Row 2: Funnel conversion.</strong> A horizontal funnel chart showing: Sequences sent > Replies > Positive replies > Meetings booked > Opportunities created > Closed-won. Label each stage with both count and conversion rate. This visualization immediately reveals where your funnel leaks.</p>
+    <p><strong>Row 3: Sequence performance table.</strong> List your top 10 active sequences with columns for: send volume, reply rate, meeting rate, pipeline generated, and cost per meeting. Sort by pipeline generated. This tells you which sequences to scale and which to retire.</p>
+    <p><strong>Row 4: Attribution breakdown.</strong> Pie or bar chart showing pipeline by source (outbound, inbound, referral, partner, organic). If outbound represents less than 15% of pipeline, either the sequences need improvement or the tracking needs fixing. If outbound represents more than 50%, document it loudly. That's your job security.</p>
+    <p>Build this dashboard in your CRM's native reporting tool first. Move to a BI tool (Looker, Metabase, Mode) only if CRM reporting can't handle the joins. Our <a href="/tools/category/analytics-product-signals/">analytics tools section</a> covers the major platforms.</p>
+
+    <h2>UTM Parameters and CRM Field Strategy</h2>
+    <p>Clean attribution starts with consistent UTM tagging and CRM field hygiene. Without these, you're guessing at source data.</p>
+    <p><strong>UTM structure for outbound:</strong> Use <code>utm_source=outbound</code>, <code>utm_medium=email</code>, <code>utm_campaign=[sequence-name]</code>, and <code>utm_content=[variant]</code> on every link in every outbound email. When a prospect clicks through to your site, these parameters get captured by your analytics platform and, if configured correctly, written back to the CRM contact record.</p>
+    <p><strong>CRM fields to create:</strong> At minimum, add these custom fields to your Contact and Opportunity objects: <strong>Lead Source</strong> (picklist: Outbound, Inbound, Referral, Event, Partner), <strong>Lead Source Detail</strong> (text: the specific sequence or campaign name), <strong>First Touch Date</strong> (date: when outbound first reached this contact), and <strong>Outbound Sequence Name</strong> (text: which sequence generated the response). Populate these fields via automation, not manual entry. Manual entry means inconsistent data.</p>
+    <p>The <a href="/careers/">career guides</a> cover how to position these metrics in performance reviews and compensation discussions. Attribution data is the foundation of every salary negotiation for GTM Engineers.</p>
+
+    <h2>Common Attribution Mistakes</h2>
+    <p><strong>Counting pipeline that would have closed anyway.</strong> If an account was already in active sales conversation and your outbound sequence also reached them, claiming full credit for that pipeline is misleading. Use a "first meaningful touch" rule: outbound gets source credit only if it was the first interaction that generated a response. Otherwise, it gets "influenced" credit, which is still valuable but more honest.</p>
+    <p><strong>Ignoring time-to-pipeline.</strong> Raw pipeline numbers don't capture velocity. A sequence that generates $500K in pipeline over 12 months is less valuable than one that generates $300K in 3 months. Track time from first outbound touch to opportunity creation alongside dollar values.</p>
+    <p><strong>Not segmenting by ICP.</strong> Overall attribution numbers hide segment-level performance. Your sequences might generate strong pipeline from mid-market SaaS companies and zero pipeline from enterprise financial services. If you report only the aggregate, you miss the signal about where to focus. Break attribution down by company size, industry, and persona.</p>
+    <p><strong>Letting tracking break silently.</strong> UTM parameters get stripped by some email clients. CRM sync breaks when API credentials expire. Integration failures mean outbound touches don't get recorded. Build a weekly data quality check: compare sequences sent in your outbound tool against CRM records created. If there's a gap greater than 10%, something in the tracking chain is broken. Fix it before the quarterly review.</p>
+
+{insight_related_links("revenue-attribution")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly pipeline attribution data and GTM performance analysis.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/revenue-attribution/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/revenue-attribution/index.html", page)
+    print(f"  Built: insights/revenue-attribution/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -14870,8 +15122,8 @@ def main():
     build_insight_intent_data()
     build_insight_crm_hygiene()
     build_insight_pulse_report()
-    # build_insight_tech_stack_audit()  # Phase 15 Plan 03
-    # build_insight_revenue_attribution()  # Phase 15 Plan 03
+    build_insight_tech_stack_audit()
+    build_insight_revenue_attribution()
     # build_insight_remote_market()  # Phase 15 Plan 03
 
     print("\n  Building meta files...")

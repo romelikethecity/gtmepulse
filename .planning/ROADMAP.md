@@ -130,7 +130,10 @@ Plans:
   1. All 20 insight articles pass validation checks (title length, word count, internal links, schema markup)
   2. `python3 scripts/build.py` completes with zero warnings across all ~283+ pages
   3. No broken internal links across the entire site
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 17-01-PLAN.md — Add QUAL4 validation checks, fix 8 word count warnings, zero-warning build
 
 ## Progress
 

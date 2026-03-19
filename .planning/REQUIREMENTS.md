@@ -52,8 +52,8 @@
 
 ### Quality
 
-- [ ] **QUAL4-01**: All new article pages pass existing validation (title length, word count, internal links, schema)
-- [ ] **QUAL4-02**: Zero-warning build across all ~283+ pages after v4.0 additions
+- [x] **QUAL4-01**: All new article pages pass existing validation (title length, word count, internal links, schema)
+- [x] **QUAL4-02**: Zero-warning build across all ~283+ pages after v4.0 additions
 
 ## Future Requirements
 
@@ -111,8 +111,8 @@
 | OG-02 | Phase 16 | Complete |
 | OG-03 | Phase 16 | Complete |
 | OG-04 | Phase 16 | Complete |
-| QUAL4-01 | Phase 17 | Pending |
-| QUAL4-02 | Phase 17 | Pending |
+| QUAL4-01 | Phase 17 | Complete |
+| QUAL4-02 | Phase 17 | Complete |
 
 **Coverage:**
 - v4.0 requirements: 35 total

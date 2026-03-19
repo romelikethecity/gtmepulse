@@ -11988,7 +11988,7 @@ INSIGHT_PAGES = [
     {"slug": "remote-market-report", "title": "Remote GTM Engineering Market Report", "description": "Remote vs hybrid vs onsite salary gaps, geographic arbitrage, and hiring trends for distributed GTM teams.", "category": "Market Analysis"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template"}
 
 
 def insight_related_links(current_slug):
@@ -13822,6 +13822,171 @@ def build_insight_crm_hygiene():
     print(f"  Built: insights/crm-hygiene/index.html")
 
 
+def build_insight_pulse_report():
+    """ART-17: Monthly GTM Pulse Report Template with live data from jobs.json."""
+    # Load jobs data at build time
+    jobs_path = os.path.join(PROJECT_DIR, "data", "jobs.json")
+    jobs = []
+    if os.path.exists(jobs_path):
+        with open(jobs_path, "r", encoding="utf-8") as f:
+            jobs = json.load(f)
+
+    # Compute aggregate stats
+    total_roles = len(jobs)
+    remote_count = sum(1 for j in jobs if j.get("remote", False))
+    remote_pct = round((remote_count / total_roles * 100)) if total_roles > 0 else 0
+
+    salary_mins = [j["salary_min"] for j in jobs if j.get("salary_min")]
+    salary_maxs = [j["salary_max"] for j in jobs if j.get("salary_max")]
+    all_salaries = salary_mins + salary_maxs
+    if all_salaries:
+        salary_floor = min(salary_mins) if salary_mins else 0
+        salary_ceil = max(salary_maxs) if salary_maxs else 0
+        median_salary = sorted(all_salaries)[len(all_salaries) // 2]
+        salary_range_display = f"${salary_floor // 1000}K&#8209;${salary_ceil // 1000}K"
+        median_display = f"${median_salary // 1000}K"
+    else:
+        salary_range_display = "N/A"
+        median_display = "N/A"
+
+    # Top hiring companies
+    company_counts = {}
+    for j in jobs:
+        c = j.get("company", "Unknown")
+        company_counts[c] = company_counts.get(c, 0) + 1
+    top_companies = sorted(company_counts.items(), key=lambda x: -x[1])
+    top_company = top_companies[0][0] if top_companies else "N/A"
+
+    # Seniority distribution
+    seniority_counts = {}
+    for j in jobs:
+        s = j.get("seniority", "Unknown")
+        seniority_counts[s] = seniority_counts.get(s, 0) + 1
+    seniority_rows = ""
+    for level, count in sorted(seniority_counts.items(), key=lambda x: -x[1]):
+        pct = round(count / total_roles * 100) if total_roles > 0 else 0
+        seniority_rows += f"<tr><td>{level}</td><td>{count}</td><td>{pct}%</td></tr>\n"
+
+    # Data freshness date
+    from datetime import datetime
+    data_date = datetime.now().strftime("%B %d, %Y")
+
+    title = "Monthly GTM Pulse Report: Template With Data"
+    description = (
+        "A repeatable template for monthly GTM performance reporting."
+        " Live job market data, salary snapshots, and hiring velocity."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Pulse Report Template", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="pulse-report-template", date_published="2026-03-18", word_count=2000)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Template</div>
+        <h1>Monthly GTM Pulse Report: Template With Data</h1>
+        <p>A copy-and-adapt template for reporting GTM engineering market data to leadership every month. This page renders live stats from our job market pipeline. Steal the format.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">{total_roles}</span>
+        <span class="stat-label">Tracked Roles</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">{remote_pct}%</span>
+        <span class="stat-label">Remote Positions</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">{median_display}</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">{salary_range_display}</span>
+        <span class="stat-label">Full Salary Range</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026 &middot; Data as of: {data_date}</p>
+
+    <h2>Why Monthly Pulse Reports Matter</h2>
+    <p>Leadership doesn't read dashboards. They read summaries. A monthly pulse report translates raw market data into decisions: should we hire another GTM Engineer? Are our salary offers competitive? Which tools are gaining traction? Is the market tightening or loosening?</p>
+    <p>Without a structured report, market intelligence lives in Slack threads, scattered spreadsheets, and someone's memory. The pulse report creates a single artifact that tracks trends over time. After 3-4 months, you have a dataset that shows direction, not just snapshots. That's when the report becomes a strategic asset instead of a status update.</p>
+    <p>The template below is both a framework you can copy and a live example. The stat cards above pull from our <a href="/jobs/">job market pipeline</a>. Every number updates when the site rebuilds with fresh scraper data.</p>
+
+    <h2>Section 1: Market Snapshot</h2>
+    <p>Open with the headline numbers. These are the stats that leadership scans in 10 seconds to get the pulse.</p>
+    <p><strong>Template fields:</strong> Total open roles (this month vs last month, with delta). Percentage remote (trend direction). Median salary (movement since last report). Top hiring companies (new entrants, departures). Net new listings this month vs last month.</p>
+    <p><strong>Live example from our pipeline:</strong></p>
+    <table>
+        <thead><tr><th>Metric</th><th>Current Value</th><th>Notes</th></tr></thead>
+        <tbody>
+            <tr><td>Total Tracked Roles</td><td>{total_roles}</td><td>Across all seniority levels</td></tr>
+            <tr><td>Remote Positions</td><td>{remote_pct}%</td><td>{remote_count} of {total_roles} roles</td></tr>
+            <tr><td>Salary Range</td><td>{salary_range_display}</td><td>Min to max across all postings</td></tr>
+            <tr><td>Median Salary</td><td>{median_display}</td><td>Midpoint of all disclosed salaries</td></tr>
+            <tr><td>Top Hiring Company</td><td>{top_company}</td><td>By number of open roles</td></tr>
+        </tbody>
+    </table>
+    <p>Keep the snapshot table to 5-7 rows. More than that and leadership skips it. Highlight the deltas. "Total roles up 12% MoM" is more actionable than "Total roles: 47." If you're building this for the first time, you won't have month-over-month comparisons yet. That's fine. Start capturing the baseline. The comparisons come in Month 2.</p>
+
+    <h2>Section 2: Salary Movement</h2>
+    <p>Track salary shifts by seniority band. This section answers the question: "Are we paying competitively?"</p>
+    <p><strong>Template fields:</strong> Median salary by seniority level. Month-over-month change (up/down/flat). Notable outliers (companies offering 20%+ above median). Geographic premium data (SF vs Austin vs Remote).</p>
+    <p><strong>Seniority distribution from current data:</strong></p>
+    <table>
+        <thead><tr><th>Seniority</th><th>Open Roles</th><th>% of Total</th></tr></thead>
+        <tbody>
+            {seniority_rows}
+        </tbody>
+    </table>
+    <p>For salary benchmarking context, our <a href="/salary/">salary data index</a> breaks down compensation by seniority, location, and company stage. Cross-reference your pulse report numbers against the benchmarks to identify where your offers fall in the distribution.</p>
+    <p>The pattern to watch: when senior and lead roles grow as a percentage of total postings, it signals market maturation. Companies that hired junior GTM Engineers in 2024 are now building teams and need experienced leads. When junior roles dominate, it signals expansion into new companies that are creating the function for the first time.</p>
+
+    <h2>Section 3: Tool Adoption Shifts</h2>
+    <p>Track which tools appear in job descriptions, which ones are growing in mention frequency, and which are declining.</p>
+    <p><strong>Template fields:</strong> Top 10 tools mentioned in job postings (ranked by frequency). New tool entries (tools that appeared this month but not last month). Declining tools (tools mentioned less frequently than previous month). Stack pattern analysis (common tool combinations).</p>
+    <p>Source this data by parsing job description text for tool mentions. Build a keyword list of 30-40 tools (Clay, Apollo, HubSpot, Salesforce, Instantly, Smartlead, Make, n8n, etc.) and count occurrences across your job posting corpus. For a deeper look at the current tool adoption data, see our <a href="/insights/tool-adoption/">tool adoption analysis</a>.</p>
+    <p>The signal in tool adoption data: when a tool's mention frequency jumps 20%+ month-over-month, that's a meaningful adoption wave. When it drops 20%+, that's either market correction or a competitor eating share. Both are worth calling out in the report.</p>
+
+    <h2>Section 4: Hiring Velocity</h2>
+    <p>Hiring velocity measures the speed of the GTM engineering job market. Are companies posting more roles or fewer? Are listings staying open longer or filling faster?</p>
+    <p><strong>Template fields:</strong> New listings this month (vs previous month). Average days listed before removal. Companies with 3+ concurrent open roles (signals team-building, not backfill). Geographic distribution shifts (new cities appearing, concentration changes).</p>
+    <p>Velocity trends tell you more than absolute numbers. A market with 100 open roles and 30 new listings per month is healthier than a market with 200 open roles and 10 new listings per month. The second scenario has stale, unfilled positions. The first has active demand and turnover.</p>
+    <p>For GTM Engineering, the <a href="https://www.bls.gov/ooh/computer-and-information-technology/home.htm" target="_blank" rel="noopener">Bureau of Labor Statistics</a> doesn't track the role specifically (it's too new), but their broader tech employment data provides useful context for overall market conditions.</p>
+
+    <h2>Section 5: Presenting to Leadership</h2>
+    <p>The report is only useful if leadership reads it. Three rules for presentation.</p>
+    <p><strong>Lead with the "so what."</strong> Don't start with methodology. Start with the one finding that requires a decision. "Our senior GTM Engineer offers are 15% below market median. We'll lose candidates to companies like {top_company} unless we adjust." That's a decision prompt. "Here are the salary trends" is a data dump.</p>
+    <p><strong>Use comparison frames.</strong> Raw numbers are meaningless without context. "$165K median salary" doesn't land. "$165K median, up from $148K six months ago, driven by demand for Clay + Python hybrid skills" tells a story. Always compare to the previous period and explain what's driving the change.</p>
+    <p><strong>Include one recommendation per section.</strong> Don't just report the data. Say what you think the company should do about it. "Tool adoption data shows 40% of competitor job postings now require Make or n8n experience. We should add workflow automation to our GTM Engineer job description." Recommendations turn a report into a strategic document.</p>
+
+    <h2>Building the Pipeline</h2>
+    <p>This template is most powerful when backed by automated data collection. Our approach: a scraper pipeline runs twice weekly, tagging new job postings with seniority, location, salary, tools mentioned, and remote status. The raw data lands in JSON files that the site builder reads at compile time. No manual data entry.</p>
+    <p>You can build something similar with a combination of job board APIs (LinkedIn, Indeed, Greenhouse), a classification layer (regex patterns or LLM-based extraction for tools and seniority), and a storage layer (JSON files, SQLite, or a proper database). The <a href="https://economicgraph.linkedin.com/" target="_blank" rel="noopener">LinkedIn Economic Graph</a> provides aggregate workforce data that's useful for validating your findings against a larger dataset.</p>
+    <p>For teams without engineering resources to build a custom pipeline, start with manual collection. Create a spreadsheet with the template fields above. Spend 30 minutes per week scanning job boards and recording the data points. After three months of manual collection, you'll know exactly which data points matter most. Then automate those specific fields. Don't build the full pipeline before you know what leadership cares about.</p>
+    <p>The <a href="/insights/job-market-2026/">2026 job market analysis</a> provides historical context for the numbers in this template, and the <a href="/salary/">salary data section</a> offers deeper breakdowns by every dimension covered here.</p>
+
+{insight_related_links("pulse-report-template")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM market data and hiring velocity reports.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/pulse-report-template/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/pulse-report-template/index.html", page)
+    print(f"  Built: insights/pulse-report-template/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -14704,7 +14869,7 @@ def main():
     build_insight_gtme_vs_sdr_roi()
     build_insight_intent_data()
     build_insight_crm_hygiene()
-    # build_insight_pulse_report()  # Phase 15 Plan 02
+    build_insight_pulse_report()
     # build_insight_tech_stack_audit()  # Phase 15 Plan 03
     # build_insight_revenue_attribution()  # Phase 15 Plan 03
     # build_insight_remote_market()  # Phase 15 Plan 03

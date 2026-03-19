@@ -11988,7 +11988,7 @@ INSIGHT_PAGES = [
     {"slug": "remote-market-report", "title": "Remote GTM Engineering Market Report", "description": "Remote vs hybrid vs onsite salary gaps, geographic arbitrage, and hiring trends for distributed GTM teams.", "category": "Market Analysis"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene"}
 
 
 def insight_related_links(current_slug):
@@ -13623,6 +13623,205 @@ def build_insight_gtme_vs_sdr_roi():
     print(f"  Built: insights/gtme-vs-sdr-roi/index.html")
 
 
+def build_insight_intent_data():
+    """ART-15: Intent Data Buying Guide for GTM Engineers."""
+    title = "Intent Data Buying Guide for GTM Engineers"
+    description = (
+        "Vendor comparison, integration patterns, and ROI benchmarks for"
+        " B2B intent data. 6sense, Bombora, G2, and TrustRadius evaluated."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Intent Data Guide", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="intent-data-guide", date_published="2026-03-18", word_count=2100)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Guide</div>
+        <h1>Intent Data Buying Guide for GTM Engineers</h1>
+        <p>Intent data promises to tell you which accounts are in-market before they raise their hand. Some vendors deliver on that promise. Most don't. This guide separates signal from noise.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$24K&#8209;$120K</span>
+        <span class="stat-label">Annual Platform Cost</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">2&#8209;4x</span>
+        <span class="stat-label">Pipeline Lift (Best Case)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">60&#8209;180</span>
+        <span class="stat-label">Days to Prove ROI</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">4</span>
+        <span class="stat-label">Major Vendors Compared</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>What Intent Data Measures</h2>
+    <p>Intent data tracks digital research behavior across the B2B web. When someone at a target company reads three articles about CRM migration, downloads a vendor comparison PDF, and visits G2's CRM category page, that cluster of activity generates an intent signal. The theory: companies actively researching a topic are more likely to buy a solution in that category.</p>
+    <p>Three types of digital behavior generate intent signals. <strong>Content consumption</strong> covers articles, whitepapers, and video views across publisher networks. <strong>Web research spikes</strong> track when a company's search volume for specific topics jumps above their baseline. <strong>Review site activity</strong> captures product page visits, comparison views, and profile interactions on sites like G2 and TrustRadius.</p>
+    <p>The critical distinction: intent data tells you a company is researching a topic, not that they're ready to buy. A company spiking on "CRM migration" might be starting a 12-month evaluation, or an intern might be writing a blog post. The signal is directional, not deterministic. GTM Engineers who treat intent as a prioritization input (not a trigger for immediate outbound) get better results.</p>
+
+    <h2>First-Party vs Third-Party Intent</h2>
+    <p><strong>First-party intent</strong> comes from your own properties: website visits, content downloads, product trials, pricing page views. You control the data quality. You know exactly what pages were visited and for how long. The limitation is volume. Your website captures intent from prospects who already know you exist, which skews toward later-stage buyers.</p>
+    <p><strong>Third-party intent</strong> comes from external content networks, publisher co-ops, and review platforms. Bombora's Data Co-op aggregates consumption data from 5,000+ B2B websites. <a href="https://6sense.com/platform/intent-data/" target="_blank" rel="noopener">6sense combines third-party signals with AI predictions</a> to identify accounts showing research behavior across the web. The advantage: you catch buyer research activity before they ever visit your site.</p>
+    <p>The tradeoff is transparency. Third-party intent providers rarely disclose exactly which websites generated a signal. You're trusting their data co-op methodology and matching algorithms. Some vendors match IP addresses to companies (which breaks down with remote work). Others use cookie-based tracking (which is eroding). The best use both methods and layer in additional signals like hiring patterns and technographic changes.</p>
+    <p>For most GTM Engineering teams, the right approach combines both. Use first-party intent (website visitor identification via Clearbit Reveal, HubSpot tracking, or similar) as your highest-confidence signal. Layer third-party intent on top to expand your view of in-market accounts you haven't reached yet.</p>
+
+    <h2>Vendor Comparison</h2>
+    <p>Four vendors dominate the B2B intent data market. Each has a different data methodology, coverage footprint, and integration approach.</p>
+    <p><strong><a href="/tools/category/intent-signal-data/">6sense</a> Surge Data.</strong> 6sense combines third-party content consumption signals with proprietary AI models that predict buying stage. Their "Revenue AI" platform assigns accounts to buying stages (awareness, consideration, decision, purchase) based on signal patterns. Strongest for enterprise accounts with 500+ employees. Pricing starts around $60K/year for the platform, with intent data as a core module. Best integration path: direct CRM sync with stage-based alerts. The AI predictions add genuine value when you have enough historical data to train the model. For smaller companies with thin CRM history, the predictions are less reliable.</p>
+    <p><strong><a href="https://bombora.com/company-surge/" target="_blank" rel="noopener">Bombora Company Surge</a>.</strong> Bombora operates the largest B2B intent data co-op, aggregating content consumption from 5,000+ publisher websites. Their "Company Surge" score measures when a company's research volume on a topic exceeds their normal baseline. Strongest for topic-level intent across broad market segments. Pricing runs $24K-$72K/year depending on topic count and account volume. Best integration path: Bombora feeds into most major platforms (6sense, Demandbase, HubSpot, Salesforce) as a data layer. The pure data approach (no AI predictions) means you control the interpretation, which GTM Engineers often prefer.</p>
+    <p><strong>G2 Buyer Intent.</strong> G2 captures intent from its 80M+ annual software review visitors. When someone from a target account views product profiles, reads reviews, or compares vendors on G2, that activity generates an intent signal. The signal quality is high because G2 visitors have strong purchase intent by definition. Pricing is bundled with G2 marketing solutions (typically $30K-$60K/year). Best integration path: webhook alerts to Slack or CRM. The limitation: coverage is narrow. G2 only captures intent for companies evaluating software categories listed on their platform.</p>
+    <p><strong>TrustRadius Buyer Intent.</strong> Similar model to G2 but with deeper enterprise buyer coverage. TrustRadius intent signals come from product research, review reading, and comparison activity on their platform. Their buyer intent data integrates with most marketing automation platforms. Pricing is comparable to G2. The differentiator: TrustRadius skews toward larger enterprise buyers, so if your target market is mid-market to enterprise, their signal coverage may be stronger than G2's.</p>
+
+    <h2>Integration Patterns</h2>
+    <p>Raw intent data is useless sitting in a dashboard. The value comes from routing signals into systems where they trigger action.</p>
+    <p><strong>CRM enrichment.</strong> The baseline integration: push intent scores as account-level fields in your CRM. Add a "Surge Score" or "Intent Level" field to the Account object in <a href="/comparisons/hubspot-vs-salesforce/">HubSpot or Salesforce</a>. Update it daily via API sync. Sales reps see intent context alongside their existing account data. This is table-stakes. Every vendor supports it.</p>
+    <p><strong>Lead scoring models.</strong> Intent signals become scoring inputs. An account showing surge behavior on your target topic gets +20 points. An account on G2 comparing you to a competitor gets +30. Layer these signals with first-party engagement (email opens, website visits) and firmographic fit (right industry, right size) for a composite score. The <a href="/tools/">tools index</a> covers scoring platforms in detail.</p>
+    <p><strong>Trigger-based outbound.</strong> The highest-impact pattern: use intent spikes to trigger automated outbound sequences. When Bombora flags a surge on "data enrichment" for a target account, automatically enroll that account's decision-makers in a personalized outbound sequence via <a href="/comparisons/6sense-vs-bombora/">your sequencing tool</a>. The message references their likely research area without being creepy about it. "We work with companies evaluating their enrichment stack" works. "We noticed you read three articles about data enrichment this week" does not.</p>
+    <p><strong>ABM campaign targeting.</strong> Feed intent-qualified account lists to LinkedIn Ads, Google Ads, or programmatic display campaigns. Show ads to companies actively researching your category. This reduces wasted ad spend by focusing budget on accounts that are in-market rather than spraying across your entire TAM.</p>
+
+    <h2>Pricing and ROI Calculation</h2>
+    <p>Intent data platforms fall into three pricing tiers.</p>
+    <p><strong>Entry tier ($24K-$40K/year):</strong> Bombora standalone data feed, G2 intent basics, TrustRadius intent. You get the raw signals and basic integrations. No AI predictions, no orchestration layer. Good for teams that have their own scoring infrastructure and just need the data.</p>
+    <p><strong>Mid tier ($40K-$80K/year):</strong> Bombora with expanded topics, G2 with marketing solutions, 6sense essentials. Includes some automation, better reporting, and more integration options. This is where most mid-market B2B companies start.</p>
+    <p><strong>Enterprise tier ($80K-$120K+/year):</strong> 6sense Revenue AI full platform, Demandbase One, combined multi-source intent with orchestration. AI-driven predictions, automated campaign triggers, full-stack ABM capabilities. Worth it only if you have the sales volume and ACV to justify the spend.</p>
+    <p><strong>ROI math:</strong> If your average deal size is $50K ARR and intent data helps you close 2 additional deals per quarter, that's $400K in annual revenue lift against $24K-$120K in platform cost. The math works for companies with $30K+ ACV. Below that, the platform cost often exceeds the incremental revenue, especially in the first year while you're calibrating signal quality.</p>
+
+    <h2>When Intent Data Is Worth It vs When It's Noise</h2>
+    <p><strong>Intent data works when:</strong> You sell to a defined market with $30K+ ACV. Your sales cycle is 60+ days (enough time for research behavior to surface). You have the infrastructure to act on signals within 48 hours. You're running outbound at scale (1,000+ accounts) and need a prioritization layer.</p>
+    <p><strong>Intent data is noise when:</strong> Your ACV is under $10K (the math doesn't close). Your market is too niche for intent co-ops to have meaningful coverage. You can't act on signals quickly (if it takes your team two weeks to follow up on a surge alert, the signal has decayed). Your total addressable account list is under 500 (at that size, just work the whole list).</p>
+    <p>The honest assessment: most B2B companies that buy intent data underuse it. They get the dashboard, check it occasionally, and never build the automation infrastructure to turn signals into action. If you're going to invest in intent data, commit engineering resources to building the integration layer. Otherwise, you're paying for a reporting tool.</p>
+    <p>Start with a 90-day pilot on one intent source. Measure signal-to-meeting conversion rate against your baseline outbound. If intent-flagged accounts convert at 2x+ your cold outbound rate, expand. If they don't, the data isn't matching your market well enough to justify the spend.</p>
+
+{insight_related_links("intent-data-guide")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM intent data strategies and vendor analysis.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/intent-data-guide/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/intent-data-guide/index.html", page)
+    print(f"  Built: insights/intent-data-guide/index.html")
+
+
+def build_insight_crm_hygiene():
+    """ART-16: CRM Hygiene Automation Playbook."""
+    title = "CRM Hygiene Automation Playbook for GTM Teams"
+    description = (
+        "Automated dedup, lifecycle management, and dead lead detection"
+        " for HubSpot and Salesforce. Stop losing deals to dirty data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("CRM Hygiene", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="crm-hygiene", date_published="2026-03-18", word_count=2200)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>CRM Hygiene Automation Playbook for GTM Teams</h1>
+        <p>Dirty CRM data costs B2B companies 12% of revenue on average. Most of that loss is preventable with automation. This playbook covers dedup, enrichment triggers, dead lead detection, and lifecycle management.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">12%</span>
+        <span class="stat-label">Revenue Lost to Bad Data</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">25&#8209;30%</span>
+        <span class="stat-label">CRM Records Decay/Year</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3&#8209;5hrs</span>
+        <span class="stat-label">Weekly Manual Cleanup</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">90%+</span>
+        <span class="stat-label">Automatable Tasks</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The Real Cost of Dirty CRM Data</h2>
+    <p>Pipeline velocity drops when reps waste time on duplicate records. A sales rep calls a prospect, has a great conversation, logs notes to one contact record. Next week, a different rep calls the same person from a duplicate record, asks the same questions, and looks unprofessional. The prospect questions whether your team communicates internally. That deal just got harder.</p>
+    <p>Reporting accuracy collapses with inconsistent data. Marketing says they generated 200 MQLs last month. Sales says they received 140. The gap? 60 records with missing or incorrect lifecycle stages, routing to the wrong owner, or sitting in limbo between lead and contact objects. Leadership makes resource allocation decisions based on these numbers. <a href="https://www.salesforce.com/resources/articles/crm-data-management/" target="_blank" rel="noopener">Salesforce's own research</a> estimates that bad data costs organizations an average of $12.9 million per year.</p>
+    <p>Routing errors compound the problem. A lead from a named account gets assigned to a round-robin SDR instead of the account executive who's been building the relationship for six months. The SDR sends a cold sequence. The AE finds out two days later. The account contact is confused and annoyed. This happens because the CRM's routing logic depends on clean, consistent data fields (company name standardization, territory assignments, account ownership) that nobody maintains.</p>
+
+    <h2>Automated Deduplication</h2>
+    <p>Dedup is the highest-ROI hygiene automation. A typical B2B CRM with 50,000 records has 5-15% duplicates. That's 2,500 to 7,500 records that cause confusion, split activity history, and inflate pipeline reports.</p>
+    <p><strong>Fuzzy matching on company name + domain.</strong> Exact-match dedup catches the easy ones: two records for "Acme Inc." with the same email. Fuzzy matching catches the rest: "Acme" vs "Acme, Inc." vs "ACME Corp" vs "acme.io." Build your matching logic on two fields: company domain (normalize to root domain, strip www/subdomains) and company name (lowercase, strip legal suffixes like Inc/LLC/Corp, compare using Levenshtein distance with a 0.85+ similarity threshold).</p>
+    <p><strong>Merge strategy.</strong> When you find duplicates, don't just delete one. Merge them. Keep the record with the most recent activity. Preserve all email addresses and phone numbers (move extras to secondary fields). Combine activity history from both records. Transfer all deal associations to the surviving record. In <a href="/comparisons/hubspot-vs-salesforce/">HubSpot</a>, the merge API handles most of this automatically. In Salesforce, you'll need Apex code or a tool like Duplicate Check to handle the merge logic.</p>
+    <p><strong>Prevention over cleanup.</strong> Dedup automation should run at two points: on record creation (block or flag duplicates before they enter the CRM) and on a scheduled sweep (weekly scan for duplicates that slipped through). The creation-time check is more valuable because it prevents the problem rather than fixing it after damage is done.</p>
+
+    <h2>Lifecycle Stage Automation</h2>
+    <p>Manual lifecycle management is where CRM hygiene breaks down fastest. A lead fills out a demo form but stays marked as "Subscriber" because nobody updated the stage. An opportunity closes-lost but the associated contacts remain "Marketing Qualified." Over time, your funnel metrics become fiction.</p>
+    <p><strong>Event-driven stage transitions.</strong> Define explicit rules for every stage change. Subscriber to Lead: any form fill or content download. Lead to MQL: scoring threshold hit (50+ points from a combination of engagement and fit signals). MQL to SQL: AE accepts the lead and creates an opportunity. SQL to Opportunity: first meeting completed. Each transition should fire automatically based on the triggering event, with no manual intervention required.</p>
+    <p><strong>Regression handling.</strong> Stages should also move backward. If an MQL doesn't respond to three outreach attempts over 30 days, regress to Lead. If an SQL's opportunity is marked closed-lost, regress the contact to a nurture stage. If a customer churns, move them to "Former Customer" so they don't receive renewal emails. These reverse transitions are the ones most teams skip, and they're the ones that cause the worst reporting errors.</p>
+    <p><strong>Implementation.</strong> In HubSpot, use Workflows with enrollment triggers based on list membership or property changes. In <a href="https://help.salesforce.com/s/articleView?id=sf.process_overview.htm" target="_blank" rel="noopener">Salesforce, Process Builder or Flow</a> handles the same logic. For teams on Make or n8n, build a CRM webhook listener that catches record updates and applies stage transition rules via API calls back to the CRM.</p>
+
+    <h2>Lead Routing via Code</h2>
+    <p>Manual lead assignment is a bottleneck and an error source. Reps cherry-pick leads. Hot leads sit unassigned over weekends. Territory rules live in someone's head instead of in code.</p>
+    <p><strong>Rule-based routing.</strong> Build a routing function that takes a lead record as input and returns an owner assignment. Rules execute in priority order. Named accounts route to the assigned AE. Geographic territories route based on state/country. Company size tiers route to the appropriate team (enterprise AEs for 1,000+ employees, mid-market for 100-999, SMB for under 100). Everything else hits round-robin. The function runs on every new lead creation.</p>
+    <p><strong>Round-robin with weighting.</strong> Simple round-robin assigns leads evenly. Weighted round-robin adjusts distribution based on rep capacity. A ramping rep gets 50% of the normal load. A rep at 120% of quota gets fewer leads. A rep on PTO gets zero. Track assignment counts in a separate table and reset weekly.</p>
+    <p><strong>Speed-to-lead tracking.</strong> Route leads and measure response time. If a lead isn't contacted within 5 minutes (for inbound demo requests) or 4 hours (for content downloads), escalate to a backup owner or reassign. Fast response correlates directly with conversion rate. A lead contacted within 5 minutes is 21x more likely to qualify than one contacted after 30 minutes.</p>
+
+    <h2>Contact Enrichment Triggers</h2>
+    <p>Don't enrich every contact at creation. That burns credits on leads that may never matter. Instead, trigger enrichment at decision points.</p>
+    <p><strong>Trigger 1: MQL threshold.</strong> When a lead hits MQL score, enrich with full firmographic data, direct dial, LinkedIn profile, and technographic signals. This gives the AE a complete profile for the first outreach. Cost per enrichment: $0.10-0.50 depending on the provider and fields requested.</p>
+    <p><strong>Trigger 2: Opportunity creation.</strong> When a deal opens, enrich all contacts associated with the account. Pull org charts, identify additional stakeholders, verify existing contact data is current. Stale phone numbers and outdated titles at this stage kill deals.</p>
+    <p><strong>Trigger 3: Data decay schedule.</strong> Re-enrich active contacts every 90 days. B2B contact data decays at 25-30% per year (job changes, company moves, phone number changes). A quarterly re-enrichment pass keeps your active pipeline contacts current. For inactive contacts (no engagement in 180+ days), skip re-enrichment to save credits. The <a href="/insights/enrichment-waterfall/">enrichment waterfall guide</a> covers multi-vendor enrichment architecture in detail.</p>
+
+    <h2>Dead Lead Detection and Archival</h2>
+    <p>Every CRM accumulates dead weight. Contacts who never responded. Companies that went out of business. Leads with bounced emails and disconnected phones. These records inflate your database size, slow down searches, and skew reporting.</p>
+    <p><strong>Detection criteria.</strong> Flag a contact as dead if: email hard-bounced (permanent delivery failure). Phone number is disconnected (verified via call or enrichment check). No activity in 365+ days (no email opens, no website visits, no form fills, no calls logged). Company domain is expired or returns a parking page. Job title shows "Looking for opportunities" or similar unemployed indicators.</p>
+    <p><strong>Archival workflow.</strong> Don't delete dead leads immediately. Move them to an archive status. Remove them from active lists and sequences. Exclude them from reporting. Keep the records for 12 months in case of reactivation (someone changes jobs and re-engages from a new company). After 12 months with no reactivation, purge. Run this workflow monthly.</p>
+    <p><strong>Impact on reporting.</strong> Archiving dead leads immediately improves your conversion metrics. If 20% of your "leads" are dead weight, your real MQL-to-SQL conversion rate is 25% higher than what your CRM reports. Clean out the dead records and your funnel metrics start reflecting reality.</p>
+
+    <h2>Implementation Paths</h2>
+    <p><strong>HubSpot Workflows:</strong> HubSpot's workflow engine handles most of these automations natively. Enrollment triggers based on property changes, scheduled actions for time-based rules, branching logic for routing decisions, and built-in dedup tools. The limitation: HubSpot workflows can't call external APIs directly (you need Operations Hub or a middleware like Make for that).</p>
+    <p><strong>Salesforce Apex + Flow:</strong> Salesforce gives you full programmatic control. Apex triggers fire on record events. Flow Builder handles declarative automation. For dedup, the Duplicate Management rules work for prevention; for cleanup of existing dupes, you'll need Apex batch jobs or a third-party tool. The power is flexibility. The cost is maintenance: Apex code needs a developer to update.</p>
+    <p><strong><a href="/tools/category/workflow-automation/">Make/n8n</a>:</strong> For teams without HubSpot Operations Hub or Salesforce developers, Make and n8n provide the integration layer. Build scenarios that listen to CRM webhooks, apply routing/enrichment/hygiene logic, and write results back to the CRM via API. The advantage: no vendor lock-in. Your automation logic lives in a visual workflow builder that any ops person can modify. The disadvantage: another tool in the stack to maintain.</p>
+    <p>Start with the three highest-impact automations: creation-time dedup, event-driven lifecycle stages, and rule-based lead routing. These three cover 80% of the hygiene problems that damage pipeline accuracy. Add enrichment triggers and dead lead detection once the foundation is solid. For a broader view of CRM tools and their capabilities, see the <a href="/tools/category/crm/">CRM tools category</a> and <a href="/glossary/">glossary</a> for definitions of key terms.</p>
+
+{insight_related_links("crm-hygiene")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly CRM automation strategies and data operations intel.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/crm-hygiene/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/crm-hygiene/index.html", page)
+    print(f"  Built: insights/crm-hygiene/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -14503,8 +14702,8 @@ def main():
     build_insight_hiring_guide()
     build_insight_freelance_rates()
     build_insight_gtme_vs_sdr_roi()
-    # build_insight_intent_data()  # Phase 15 Plan 02
-    # build_insight_crm_hygiene()  # Phase 15 Plan 02
+    build_insight_intent_data()
+    build_insight_crm_hygiene()
     # build_insight_pulse_report()  # Phase 15 Plan 02
     # build_insight_tech_stack_audit()  # Phase 15 Plan 03
     # build_insight_revenue_attribution()  # Phase 15 Plan 03

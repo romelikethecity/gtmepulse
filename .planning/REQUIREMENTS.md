@@ -45,10 +45,10 @@
 
 ### OG Images
 
-- [ ] **OG-01**: Playwright-based OG image generator script (reads HTML templates, screenshots to PNG)
-- [ ] **OG-02**: OG image HTML templates for each page type (salary, tool review, comparison, article, glossary)
-- [ ] **OG-03**: Build integration (generate OG images as part of build.py pipeline)
-- [ ] **OG-04**: All 280+ pages reference their generated OG image in meta tags
+- [x] **OG-01**: Playwright-based OG image generator script (reads HTML templates, screenshots to PNG)
+- [x] **OG-02**: OG image HTML templates for each page type (salary, tool review, comparison, article, glossary)
+- [x] **OG-03**: Build integration (generate OG images as part of build.py pipeline)
+- [x] **OG-04**: All 280+ pages reference their generated OG image in meta tags
 
 ### Quality
 
@@ -107,10 +107,10 @@
 | ART-18 | Phase 15 | Complete |
 | ART-19 | Phase 15 | Complete |
 | ART-20 | Phase 15 | Complete |
-| OG-01 | Phase 16 | Pending |
-| OG-02 | Phase 16 | Pending |
-| OG-03 | Phase 16 | Pending |
-| OG-04 | Phase 16 | Pending |
+| OG-01 | Phase 16 | Complete |
+| OG-02 | Phase 16 | Complete |
+| OG-03 | Phase 16 | Complete |
+| OG-04 | Phase 16 | Complete |
 | QUAL4-01 | Phase 17 | Pending |
 | QUAL4-02 | Phase 17 | Pending |
 

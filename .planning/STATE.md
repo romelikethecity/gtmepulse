@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v4.0
 milestone_name: Content Expansion and Go-Live Infrastructure
 status: completed
-stopped_at: Completed 15-01-PLAN.md
-last_updated: "2026-03-19T04:49:10Z"
-last_activity: 2026-03-18 — Phase 15 Plan 01 complete (4 articles: ART-11 through ART-14)
+stopped_at: Completed 15-02-PLAN.md
+last_updated: "2026-03-19T04:59:22Z"
+last_activity: 2026-03-18 — Phase 15 Plan 02 complete (3 articles: ART-15 through ART-17)
 progress:
   total_phases: 8
   completed_phases: 2
   total_plans: 8
-  completed_plans: 8
-  percent: 29
+  completed_plans: 9
+  percent: 32
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-16)
 ## Current Position
 
 Phase: 15 of 17 (Insight Articles Batch 2)
-Plan: 1 of 3 (First 4 Articles: Enrichment Waterfall, Hiring Guide, Freelance Rates, GTME vs SDR ROI)
+Plan: 2 of 3 (Intent Data Guide, CRM Hygiene, Pulse Report Template)
 Status: in_progress
-Last activity: 2026-03-18 — Phase 15 Plan 01 complete (4 articles: ART-11 through ART-14, 14 total on index)
+Last activity: 2026-03-18 — Phase 15 Plan 02 complete (3 articles: ART-15 through ART-17, 17 total on index)
 
-Progress: [██████░░░░░░░░░░░░░░] 29%
+Progress: [██████░░░░░░░░░░░░░░] 32%
 
 ## Performance Metrics
 
@@ -60,6 +60,8 @@ Progress: [██████░░░░░░░░░░░░░░] 29%
 - [14-04]: Selected authoritative sources matching each article's domain for outbound citations
 - [15-01]: Registered all 10 Batch 2 entries in INSIGHT_PAGES upfront to prevent desync
 - [15-01]: Commented out 6 unbuilt dispatch calls with plan markers for future tasks
+- [15-02]: ART-17 loads jobs.json at build time with os.path.exists fallback for missing data
+- [15-02]: Build-time data injection pattern: load JSON, compute aggregates, render into stat cards and tables
 
 ### Pending Todos
 
@@ -73,6 +75,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T04:49:10Z
-Stopped at: Completed 15-01-PLAN.md
+Last session: 2026-03-19T04:59:22Z
+Stopped at: Completed 15-02-PLAN.md
 Resume file: None

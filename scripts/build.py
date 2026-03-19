@@ -11988,7 +11988,7 @@ INSIGHT_PAGES = [
     {"slug": "remote-market-report", "title": "Remote GTM Engineering Market Report", "description": "Remote vs hybrid vs onsite salary gaps, geographic arbitrage, and hiring trends for distributed GTM teams.", "category": "Market Analysis"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi"}
 
 
 def insight_related_links(current_slug):
@@ -13431,6 +13431,198 @@ def build_insight_hiring_guide():
     print(f"  Built: insights/hiring-guide/index.html")
 
 
+def build_insight_freelance_rates():
+    """ART-13: Freelance GTM Engineering Rate Guide."""
+    title = "Freelance GTM Engineering Rate Guide 2026"
+    description = (
+        "Hourly rates by deliverable type, retainer pricing models, and"
+        " project scoping strategies for freelance GTM Engineers."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Freelance Rates", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="freelance-rates", date_published="2026-03-18", word_count=2100)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Market Analysis</div>
+        <h1>{title}</h1>
+        <p>Freelance GTM Engineers charge anywhere from $75/hr to $350/hr. The spread reflects experience, deliverable complexity, and whether clients understand what they're buying.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$150&#8209;250</span>
+        <span class="stat-label">Clay Table Build (/hr)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$200&#8209;350</span>
+        <span class="stat-label">Pipeline Arch. (/hr)</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$5&#8209;15K</span>
+        <span class="stat-label">Monthly Retainer</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">2&#8209;3x</span>
+        <span class="stat-label">vs Full-Time Hourly</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Hourly vs Retainer Pricing</h2>
+    <p>Two pricing models dominate freelance GTM Engineering. Hourly rates work for defined projects with clear scope: build this Clay table, fix this enrichment pipeline, set up this CRM integration. Retainers work for ongoing automation management where the client needs continuous optimization, monitoring, and expansion of their GTM systems.</p>
+    <p>The economics favor retainers for experienced freelancers. A $10K/month retainer with 25-30 hours of actual work nets $333-400/hr effective rate. Hourly billing caps your earnings at the stated rate and introduces unpaid time for scope discussions, status updates, and context-switching between clients. Most freelance GTM Engineers start with hourly billing to build a client base, then transition existing clients to retainers once they've proven value.</p>
+    <p>Retainers also solve the client's biggest concern: availability. A client on a $10K/month retainer knows their GTM Engineer is committed. Hourly clients compete for your calendar with other hourly clients. When your enrichment pipeline breaks at 2pm on a Tuesday, the retainer client gets immediate attention. The hourly client gets scheduled for Thursday.</p>
+
+    <h2>Rate Benchmarks by Deliverable</h2>
+    <p><strong>Clay table builds: $150-250/hr.</strong> Building enrichment tables, configuring waterfall logic, setting up conditional formulas, and connecting Clay to downstream tools. This is the bread-and-butter deliverable for freelance GTM Engineers. A typical Clay project takes 8-20 hours: scoping the data model (2-3 hours), building the table (4-10 hours), testing and fixing edge cases (2-5 hours), and documentation (1-2 hours). Total project cost: $1,200-5,000. According to <a href="https://www.upwork.com/research/future-workforce-report" target="_blank" rel="noopener">Upwork's workforce research</a>, specialized automation freelancers command 40-60% premiums over generalist rates.</p>
+    <p><strong>Full pipeline architecture: $200-350/hr.</strong> Designing and building a complete outbound system from data sourcing through enrichment, scoring, sequencing, and CRM sync. This involves tool selection, vendor evaluation, integration architecture, and workflow design. These projects run 40-80 hours over 4-8 weeks. Total project cost: $8,000-28,000. Clients paying at this level expect a documented, maintainable system that their team can operate after handoff.</p>
+    <p><strong>Outbound sequence setup: $100-175/hr.</strong> Configuring Instantly, Smartlead, or Outreach campaigns: email copy, sending schedules, warm-up configuration, domain rotation, and deliverability monitoring. Lower hourly rate because the work is more templated. A typical engagement: 10-15 hours to set up 3-5 sequences with A/B variants. Total: $1,000-2,625.</p>
+    <p><strong>CRM integration and automation: $125-225/hr.</strong> Connecting external tools to HubSpot or Salesforce via APIs, webhooks, or middleware (Make/n8n). Building automated workflows for lead routing, deal stage updates, and activity logging. Project scope varies widely: a simple webhook integration might take 4 hours ($500-900), while a full CRM automation suite runs 30-50 hours ($3,750-11,250).</p>
+    <p><strong>Ongoing automation management: $5,000-15,000/month retainer.</strong> Monitoring pipeline health, troubleshooting failures, optimizing enrichment match rates, updating email copy based on performance data, and expanding to new segments. This is the recurring revenue play for freelancers. A typical engagement: 15-25 hours/month of active work plus on-call availability for urgent issues. The <a href="/careers/freelance-consulting/">freelance consulting guide</a> covers client acquisition strategies for landing these retainers.</p>
+
+    <h2>Pricing by Experience Level</h2>
+    <p><strong>Entry-level (0-1 year freelancing, 1-2 years GTM experience): $75-125/hr.</strong> You've built Clay tables and outbound sequences, probably for one or two employers. Your portfolio has 2-3 projects. You're competing on price because you can't yet compete on reputation. At this level, your hourly rate maps closely to the full-time equivalent: a $100K/year GTM Engineer works out to roughly $48/hr, so $75-125/hr represents a reasonable freelance premium for project-based work.</p>
+    <p><strong>Mid-level (1-3 years freelancing, 3-5 years GTM experience): $150-250/hr.</strong> You have a portfolio of 5-10 completed projects, 2-3 ongoing retainer clients, and referral flow from past clients. You've handled pipeline architecture, not just tool configuration. Clients hire you for your judgment about what to build, not just your ability to build it. This is where most successful freelance GTM Engineers stabilize.</p>
+    <p><strong>Expert (3+ years freelancing, 5+ years GTM experience): $250-350/hr.</strong> You're known in the market. You've spoken at events, published content, or built a visible presence in the Clay/GTM community. You turn away more work than you accept. Clients pay the premium because your experience reduces project risk: you've seen the failure modes, you know which vendors to avoid, and you can architect systems that scale. <a href="https://www.toptal.com/finance/freelance-rates" target="_blank" rel="noopener">Toptal's freelance compensation data</a> shows similar 3x rate progression from entry to expert across technical disciplines.</p>
+
+    <h2>How to Scope Projects</h2>
+    <p>Scope creep kills freelance profitability. A "quick Clay table" becomes a "full pipeline with CRM sync and reporting dashboard" when scope isn't locked down upfront. Three rules for scoping GTM Engineering projects.</p>
+    <p><strong>Define deliverables, not hours.</strong> "Build an enrichment waterfall that processes 5,000 records/month with 80%+ match rate" is a deliverable. "Work on enrichment for 20 hours" is a time block. Deliverable-based scoping protects both parties: the client knows what they're getting, and you can optimize your process without being penalized for working faster.</p>
+    <p><strong>Cap revision rounds.</strong> Include 2 rounds of revisions in every project scope. Additional revisions billed at your hourly rate. Without this boundary, clients will iterate indefinitely on non-critical details ("can we change the email subject line format?") at your expense.</p>
+    <p><strong>Separate build from operate.</strong> Building a pipeline is a project. Operating it is a retainer. Don't let project pricing include ongoing management. Scope the build with a clear handoff point (documentation, training session, support period of 2 weeks), then offer a separate retainer proposal for ongoing management. This prevents the "just one more thing" trap where a $5,000 project becomes a $5,000/month unpaid retainer.</p>
+
+    <h2>Common Pricing Mistakes</h2>
+    <p><strong>Charging by the hour for everything.</strong> If you can build a Clay enrichment table in 3 hours that saves the client 20 hours/month of manual work, charging $450 (3 hours x $150/hr) undervalues the outcome. The table is worth $3,000-5,000 based on the time it saves. Price based on value delivered, not time spent, especially for repeatable deliverables you've built before.</p>
+    <p><strong>Discounting for "future work."</strong> "Give us a good rate on this project and we'll have more work coming." This promise materializes about 30% of the time. Charge full rate for every project. If the client becomes a repeat customer, the efficiency gain (less onboarding, faster context) effectively gives them a discount without reducing your rate.</p>
+    <p><strong>Not charging for consulting time.</strong> Scoping calls, architecture discussions, and tool evaluations are billable work. If a client spends 2 hours picking your brain about their GTM strategy before signing a project, those 2 hours should be invoiced. Gate free consulting at 30 minutes. Anything beyond that is paid discovery at your hourly rate.</p>
+
+    <h2>When to Raise Rates</h2>
+    <p>Raise rates when you're fully booked. If every hour of your available capacity is sold, your rates are too low. Market equilibrium: you should be turning away 20-30% of inbound inquiries on price. If nobody pushes back on your rates, you're leaving money on the table.</p>
+    <p>Raise rates for new clients first. Existing retainer clients get grandfathered at their current rate for 3-6 months, then receive a rate increase with 60 days notice. This protects relationships while moving your average rate up.</p>
+    <p>The freelance rate ceiling for GTM Engineering hasn't been established yet. The role is too new. Top freelance software engineers charge $400-600/hr. Top freelance management consultants charge $500-1,000/hr. GTM Engineering freelance rates will settle somewhere in the $300-500/hr range for experts as the market matures. If you're building that expertise now, you're setting up for those rates in 2-3 years. Compare these freelance rates against <a href="/salary/">full-time compensation data</a> to understand the full financial picture. For salary trend data that contextualizes freelance pricing, see the <a href="/insights/salary-trends/">salary trends analysis</a>.</p>
+
+{insight_related_links("freelance-rates")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineering market data and compensation benchmarks.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/freelance-rates/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/freelance-rates/index.html", page)
+    print(f"  Built: insights/freelance-rates/index.html")
+
+
+def build_insight_gtme_vs_sdr_roi():
+    """ART-14: GTM Engineer vs SDR Team: ROI Analysis."""
+    title = "GTM Engineer vs SDR Team: Full ROI Analysis"
+    description = (
+        "One GTM Engineer at $150K vs 3-4 SDRs at $55K each. Pipeline"
+        " output, cost per meeting, and scalability compared head to head."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("GTME vs SDR ROI", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="gtme-vs-sdr-roi", date_published="2026-03-18", word_count=2400)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Market Analysis</div>
+        <h1>{title}</h1>
+        <p>The math has shifted. One GTM Engineer with the right stack can generate more qualified pipeline than a team of 3-4 SDRs. Here are the numbers.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$150K</span>
+        <span class="stat-label">1 GTM Engineer</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$220K+</span>
+        <span class="stat-label">3 SDRs + Mgmt</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3&#8209;5x</span>
+        <span class="stat-label">Pipeline Volume</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">60&#8209;75%</span>
+        <span class="stat-label">Lower Cost/Meeting</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The Full Cost Comparison</h2>
+    <p>Start with the obvious number: base salary. A mid-level GTM Engineer costs $130K-160K in base compensation (the <a href="/salary/">salary index</a> has the full breakdown by seniority and location). A single SDR costs $45K-65K base plus $15K-25K in variable comp (OTE of $60K-90K). Three SDRs run $180K-270K in total OTE.</p>
+    <p>But base salary is the wrong comparison. Total cost includes overhead that most ROI calculations ignore.</p>
+    <p><strong>GTM Engineer total cost:</strong> $150K base + $8K-15K in tool subscriptions (Clay, enrichment credits, sequencing platform) + $5K-10K in benefits/taxes overhead. Total: $163K-175K/year for one person running automated pipeline.</p>
+    <p><strong>SDR team total cost:</strong> 3 SDRs at $70K OTE each = $210K + $15K-25K SDR manager allocation (most companies need a manager for every 6-8 SDRs, so 3 SDRs consume roughly 40% of a manager's time at $120K) + $5K-10K per SDR in tool licenses (Outreach/Salesloft seat, LinkedIn Sales Nav, CRM seat) = $15K-30K tools + $15K-30K benefits overhead. Total: $255K-295K/year for three people plus partial management.</p>
+    <p>The gap: a GTM Engineer costs 40-55% less than a 3-person SDR team before accounting for output differences.</p>
+
+    <h2>Pipeline Output: Volume and Quality</h2>
+    <p>An SDR running manual outbound can personalize and send 50-80 emails per day, make 40-60 calls, and manage 15-25 LinkedIn touchpoints. Call it 150 touches/day per SDR. Three SDRs: 450 touches/day, ~9,000 per month. According to <a href="https://www.bridgegroupinc.com/sdr-metrics-report" target="_blank" rel="noopener">The Bridge Group's SDR metrics report</a>, the average SDR books 8-12 qualified meetings per month. Three SDRs: 24-36 meetings/month.</p>
+    <p>A GTM Engineer running automated outbound can process 5,000-15,000 prospects per month through an enrichment and sequencing pipeline. With proper targeting, email personalization via LLM, and multi-channel sequencing, this produces 40-80 qualified meetings per month. The volume is 3-5x higher because the bottleneck shifts from human sending capacity to lead quality and deliverability limits.</p>
+    <p>Meeting quality is the counterargument SDR advocates raise. "SDR meetings are more qualified because humans personalize better." The data doesn't support this at the aggregate level. LLM-personalized outbound with good targeting data produces meetings that convert to pipeline at comparable rates (15-25% meeting-to-opportunity conversion) as SDR-sourced meetings. The variable is targeting accuracy, not the personalization method. A GTM Engineer with a well-tuned ICP filter generates meetings as qualified as an SDR who manually researches each prospect.</p>
+
+    <h2>Cost Per Meeting</h2>
+    <p>This is where the comparison gets stark.</p>
+    <p><strong>SDR team:</strong> $255K-295K annual cost / 288-432 annual meetings (24-36/month x 12) = $580-1,025 per qualified meeting. The <a href="https://www.forrester.com/report/the-roi-of-sales-development" target="_blank" rel="noopener">Forrester B2B sales development research</a> pegs the industry average at $600-900 per SDR-sourced meeting, which aligns with our calculation.</p>
+    <p><strong>GTM Engineer:</strong> $163K-175K annual cost / 480-960 annual meetings (40-80/month x 12) = $170-365 per qualified meeting.</p>
+    <p>The GTM Engineer produces meetings at 60-75% lower cost. Even if you assume the GTM Engineer books at the low end (40/month) and the SDR team hits the high end (36/month), the cost-per-meeting advantage holds: $340 vs $580. The economics only break down if you believe automated outbound produces zero qualified meetings, which contradicts the data from every company that has made this transition.</p>
+
+    <h2>Scalability</h2>
+    <p>Scaling an SDR team is linear. Want 2x the pipeline? Hire 2x the SDRs. Each additional SDR costs another $70K-90K OTE, needs a desk (or laptop), requires onboarding (3-4 months to full ramp), and adds management load. Going from 3 SDRs to 6 SDRs costs $210K-270K in incremental spend and takes 4-6 months to reach full capacity.</p>
+    <p>Scaling a GTM Engineer's output is logarithmic. Want 2x the pipeline? Add more sequences, expand to new segments, or increase enrichment volume. The incremental cost is tool credits and compute, not headcount. Going from 10,000 prospects/month to 20,000 costs an additional $2K-5K/month in enrichment and sequencing credits. No additional salary, no onboarding period, no management overhead.</p>
+    <p>The practical ceiling for a single GTM Engineer is around 20,000-30,000 prospects/month before deliverability constraints (domain warming limits, sending volume caps) require infrastructure expansion. Beyond that, you add a second GTM Engineer or split by segment/geography. But the first GTM Engineer handles the volume that would require 6-8 SDRs.</p>
+
+    <h2>Ramp Time</h2>
+    <p>SDR ramp time is well-documented: 3-4 months to full productivity. During ramp, an SDR operates at roughly 40-60% of their eventual output. For a 3-person SDR team hired simultaneously, you're paying full salary for 3-4 months before seeing full pipeline contribution.</p>
+    <p>GTM Engineer ramp time varies more widely. An experienced GTM Engineer who inherits an existing stack can reach full productivity in 4-6 weeks. One building a system from scratch needs 8-12 weeks: 2-3 weeks for stack audit and tool setup, 3-4 weeks for pipeline construction and testing, 2-4 weeks for optimization and scaling. The ramp cost is lower in absolute terms (one salary vs three) but the time-to-impact can be longer if the infrastructure doesn't exist yet.</p>
+    <p>For the salary comparison at each seniority level, see the <a href="/salary/gtm-engineer-vs-sdr/">GTM Engineer vs SDR salary page</a>.</p>
+
+    <h2>Where SDR Teams Still Win</h2>
+    <p>The GTM Engineer model has blind spots. Intellectual honesty requires acknowledging them.</p>
+    <p><strong>Phone-heavy sales motions.</strong> If your sales process depends on cold calling and live conversations as the primary channel (common in financial services, insurance, and some enterprise software), SDRs outperform automated outbound. GTM Engineers optimize email, LinkedIn, and multi-channel sequences. They don't make phone calls at scale. If phone is your primary channel, you need humans on the phones.</p>
+    <p><strong>High-touch, low-volume enterprise deals.</strong> When your total addressable market is 200 accounts and each deal is $500K+, the math changes. You don't need 10,000 prospects/month. You need 20 deeply researched, highly personalized approaches per quarter. A skilled enterprise SDR who spends 4-5 hours per account on research, relationship mapping, and multi-threaded outreach creates value that automation can't replicate. GTM Engineers add value here as support (enrichment, research automation), but the outreach itself needs a human touch.</p>
+    <p><strong>Brand-new markets with no automation playbook.</strong> When you're entering a new segment where you don't yet know the ICP, the messaging that lands, or the channels that work, SDRs provide a feedback loop that automation can't. An SDR who makes 50 calls hears objections, learns what clicks, and brings market intelligence back. A GTM Engineer running automated sequences gets reply rate data but misses the qualitative signals. Use SDRs for market discovery, then hand the playbook to a GTM Engineer for scale.</p>
+
+    <h2>The Hybrid Model</h2>
+    <p>The highest-performing revenue teams in 2026 use both. The GTM Engineer builds and runs the automated pipeline: enrichment, scoring, sequencing, and meeting booking for high-volume segments. SDRs handle the accounts that need human outreach: enterprise targets, warm inbound follow-up, and event-driven prospecting. The GTM Engineer feeds the SDRs enriched, scored leads so their manual effort focuses on the highest-value targets.</p>
+    <p>This model requires a smaller SDR team (1-2 instead of 4-6) paired with a GTM Engineer. Total cost: $150K (GTME) + $140K-180K (2 SDRs) = $290K-330K. Pipeline output: automated sequences cover 80% of addressable market, SDRs cover the top 20%. Combined meeting output typically exceeds a full SDR team at comparable or lower cost.</p>
+    <p>The transition from SDR-only to hybrid or GTME-only is happening across B2B SaaS. Our <a href="/insights/job-market-2026/">2026 job market analysis</a> shows 205% YoY growth in GTM Engineer postings while SDR postings have flattened. The market is pricing in the ROI advantage. Companies that make the switch earlier capture the cost savings sooner.</p>
+
+{insight_related_links("gtme-vs-sdr-roi")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM pipeline economics and hiring intelligence.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/gtme-vs-sdr-roi/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/gtme-vs-sdr-roi/index.html", page)
+    print(f"  Built: insights/gtme-vs-sdr-roi/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -14309,8 +14501,8 @@ def main():
     # Batch 2 (Phase 15)
     build_insight_enrichment_waterfall()
     build_insight_hiring_guide()
-    # build_insight_freelance_rates()  # Phase 15 Plan 01 Task 2
-    # build_insight_gtme_vs_sdr_roi()  # Phase 15 Plan 01 Task 2
+    build_insight_freelance_rates()
+    build_insight_gtme_vs_sdr_roi()
     # build_insight_intent_data()  # Phase 15 Plan 02
     # build_insight_crm_hygiene()  # Phase 15 Plan 02
     # build_insight_pulse_report()  # Phase 15 Plan 02

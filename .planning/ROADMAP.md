@@ -91,7 +91,7 @@ Plans:
 - [x] 14-01-PLAN.md — Infrastructure (Article schema, insights index, validator, nav) + data articles ART-01 through ART-04
 - [x] 14-02-PLAN.md — Clay ecosystem (ART-05), outbound stack (ART-06), Clay playbook (ART-07)
 - [x] 14-03-PLAN.md — LinkedIn outreach (ART-08), email deliverability (ART-09), API integration (ART-10)
-- [ ] 14-04-PLAN.md — Gap closure: Add missing outbound citations to 5 articles (ART-02, ART-04, ART-05, ART-07, ART-10)
+- [x] 14-04-PLAN.md — Gap closure: Add missing outbound citations to 5 articles (ART-02, ART-04, ART-05, ART-07, ART-10)
 
 ### Phase 15: Insight Articles Batch 2
 **Goal**: 10 more published insight articles covering data enrichment strategy, hiring guides, freelance rates, ROI analysis, intent data, CRM hygiene, pulse report templates, tech stack audits, revenue attribution, and remote market analysis
@@ -102,7 +102,12 @@ Plans:
   2. Each new article has Article JSON-LD schema, meets word count targets, and has proper internal/external links
   3. The insights index page lists all 20 articles organized by category
   4. The monthly pulse report template page (ART-17) pulls data from existing JSON data files
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 15-01-PLAN.md — Registry setup + enrichment waterfall (ART-11), hiring guide (ART-12), freelance rates (ART-13), GTME vs SDR ROI (ART-14)
+- [ ] 15-02-PLAN.md — Intent data guide (ART-15), CRM hygiene (ART-16), pulse report template with live data (ART-17)
+- [ ] 15-03-PLAN.md — Tech stack audit (ART-18), revenue attribution (ART-19), remote market report (ART-20)
 
 ### Phase 16: OG Image Generation
 **Goal**: Every page on the site has a unique, auto-generated OG image so that social shares and link previews display branded visuals instead of generic defaults

@@ -134,7 +134,7 @@ Plans:
 | Milestone | Phases | Plans | Status | Shipped |
 |-----------|--------|-------|--------|---------|
 | v1.0 Foundation + Salary | 1-3 | 8 | Complete | 2026-03-10 |
-| v2.0 Content Wave | 4-7 | 15 | 3/3 | Complete   | 2026-03-19 | v3.0 Tool Reviews + Infra | 8-12 | 10 | Complete | 2026-03-16 |
+| v2.0 Content Wave | 4-7 | 15 | 3/3 | Complete    | 2026-03-19 | v3.0 Tool Reviews + Infra | 8-12 | 10 | Complete | 2026-03-16 |
 | v4.0 Content + Go-Live | 13-17 | 5+ | In progress | - |
 
 ---

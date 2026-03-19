@@ -17,10 +17,10 @@
 - [x] **ART-08**: LinkedIn outreach automation playbook (Sales Nav + PhantomBuster/HeyReach)
 - [x] **ART-09**: Email deliverability guide for GTM Engineers (warmup, domains, reputation)
 - [x] **ART-10**: API integration patterns for GTM Engineers (webhooks, Zapier/Make, Python scripts)
-- [ ] **ART-11**: Data enrichment waterfall strategy (multi-vendor, cost optimization, accuracy benchmarks)
-- [ ] **ART-12**: GTM Engineer hiring guide for managers (what to look for, interview process, comp benchmarks)
-- [ ] **ART-13**: Freelance GTM Engineering rate guide (hourly vs retainer, pricing by deliverable)
-- [ ] **ART-14**: GTM Engineer vs SDR team ROI analysis (cost comparison, pipeline output, scalability)
+- [x] **ART-11**: Data enrichment waterfall strategy (multi-vendor, cost optimization, accuracy benchmarks)
+- [x] **ART-12**: GTM Engineer hiring guide for managers (what to look for, interview process, comp benchmarks)
+- [x] **ART-13**: Freelance GTM Engineering rate guide (hourly vs retainer, pricing by deliverable)
+- [x] **ART-14**: GTM Engineer vs SDR team ROI analysis (cost comparison, pipeline output, scalability)
 - [ ] **ART-15**: Intent data buying guide (6sense vs Bombora vs G2, signal types, integration)
 - [ ] **ART-16**: CRM hygiene automation playbook (dedup, routing, lifecycle stages via code)
 - [ ] **ART-17**: Monthly pulse report template page (auto-populated from scraper data)
@@ -97,10 +97,10 @@
 | ART-08 | Phase 14 | Complete |
 | ART-09 | Phase 14 | Complete |
 | ART-10 | Phase 14 | Complete |
-| ART-11 | Phase 15 | Pending |
-| ART-12 | Phase 15 | Pending |
-| ART-13 | Phase 15 | Pending |
-| ART-14 | Phase 15 | Pending |
+| ART-11 | Phase 15 | Complete |
+| ART-12 | Phase 15 | Complete |
+| ART-13 | Phase 15 | Complete |
+| ART-14 | Phase 15 | Complete |
 | ART-15 | Phase 15 | Pending |
 | ART-16 | Phase 15 | Pending |
 | ART-17 | Phase 15 | Pending |

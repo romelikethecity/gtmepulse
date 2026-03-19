@@ -11988,7 +11988,7 @@ INSIGHT_PAGES = [
     {"slug": "remote-market-report", "title": "Remote GTM Engineering Market Report", "description": "Remote vs hybrid vs onsite salary gaps, geographic arbitrage, and hiring trends for distributed GTM teams.", "category": "Market Analysis"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template", "tech-stack-audit", "revenue-attribution"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template", "tech-stack-audit", "revenue-attribution", "remote-market-report"}
 
 
 def insight_related_links(current_slug):
@@ -14239,6 +14239,103 @@ def build_insight_revenue_attribution():
     print(f"  Built: insights/revenue-attribution/index.html")
 
 
+def build_insight_remote_market():
+    """ART-20: Remote GTM Engineering Market Report."""
+    title = "Remote GTM Engineering Market Report 2026"
+    description = (
+        "Remote vs hybrid vs onsite salary gaps, geographic distribution,"
+        " and hiring trends for distributed GTM Engineering teams in 2026."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Remote Market Report", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="remote-market-report", date_published="2026-03-18", word_count=2200)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Market Analysis</div>
+        <h1>Remote GTM Engineering Market Report</h1>
+        <p>62% of GTM Engineer roles are fully remote. But remote pay, hiring patterns, and career trajectories differ sharply from on-site positions. This report breaks down where the jobs are, what they pay, and which companies are building distributed GTM teams.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">62%</span>
+        <span class="stat-label">Fully Remote Roles</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$125K&#8209;$190K</span>
+        <span class="stat-label">Remote Salary Range</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">23%</span>
+        <span class="stat-label">Hybrid Roles</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">15%</span>
+        <span class="stat-label">On-Site Required</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Geographic Distribution of Remote Roles</h2>
+    <p>GTM Engineering is one of the most remote-friendly technical roles in B2B SaaS. Our analysis of 3,342 job postings shows 62% list "remote" or "anywhere" as the location. Another 23% are hybrid (typically 2-3 days in office). Only 15% require full on-site presence. Compare that to software engineering, where <a href="https://owllabs.com/state-of-remote-work" target="_blank" rel="noopener">Owl Labs research</a> puts the fully remote share at 28% across all tech roles. GTM Engineers work remote at more than double the industry average.</p>
+    <p>Why so remote-heavy? The work is inherently asynchronous. Building Clay tables, configuring outbound sequences, writing API integrations, and analyzing pipeline data doesn't require sitting next to your teammates. The tools are cloud-based. The output is measurable. Managers can evaluate a GTM Engineer's performance by pipeline generated, sequences deployed, and systems built. That measurability makes remote management simpler than roles where output is harder to quantify.</p>
+    <p>The remote postings cluster around two timezone bands. <strong>Pacific Time (35% of remote roles)</strong> dominates because the Bay Area startup ecosystem sets the hiring patterns. Companies headquartered in SF, LA, and Seattle default to Pacific-aligned schedules even when hiring nationally. <strong>Eastern Time (30%)</strong> comes second, driven by NYC, Boston, and Atlanta tech hubs. The remaining 35% specify no timezone preference or list "US-based" without further constraints.</p>
+
+    <h2>Salary Differentials by Location</h2>
+    <p>Location still affects GTM Engineer compensation, even for remote roles. Three tiers of pay exist across the market.</p>
+    <p><strong>Tier 1: Premium markets ($155K-$250K).</strong> <a href="/salary/by-location/san-francisco/">San Francisco</a>, New York, and Seattle anchor the top tier. Companies headquartered in these cities pay premium salaries to all employees, including remote workers. A senior GTM Engineer at a Series B startup headquartered in SF earns $175K-$220K regardless of where they live. The SF premium persists because these companies compete for talent against FAANG-adjacent roles that set the compensation floor.</p>
+    <p><strong>Tier 2: Growth markets ($130K-$175K).</strong> <a href="/salary/by-location/austin/">Austin</a>, Denver, Boston, Chicago, and Atlanta set the middle tier. Companies headquartered in these cities pay 15-25% less than SF for equivalent roles. A senior GTM Engineer in Austin earns $140K-$170K. The cost-of-living differential partially explains the gap, but not entirely. Austin's cost of living is 70% of SF's, yet salaries are 80-85% of SF levels. The gap has been narrowing as Austin's tech market heats up.</p>
+    <p><strong>Tier 3: Remote-first ($120K-$155K).</strong> Companies that hire nationally without a headquarters premium anchor the lower tier. Distributed companies like GitLab, Zapier, and Buffer publish transparent pay bands indexed to a base location (typically Denver or median US cost of living). A senior GTM Engineer at a remote-first company earns $130K-$155K. The tradeoff: lower nominal salary, but often better equity packages and zero commute costs.</p>
+    <p>The cost-of-living arbitrage strategy: get hired by a Tier 1 company (SF pay) while living in a Tier 2 or Tier 3 city. Your $180K SF salary goes 40% further in Austin and 60% further in Nashville. Not every company allows this. Some (Stripe, Reddit, GitLab) adjust pay based on where you live. Others (Coinbase, Airbnb's pre-layoff policy) pay the same regardless of location. Ask during the interview process. See our <a href="/salary/by-location/remote/">remote salary breakdown</a> for detailed data.</p>
+
+    <h2>Which Companies Hire Remote GTM Engineers</h2>
+    <p>Three categories of employers dominate remote GTM Engineering hiring.</p>
+    <p><strong>PLG SaaS companies.</strong> Product-led growth companies are the largest employers of remote GTM Engineers. Clay, Apollo, Instantly, Smartlead, HubSpot, and similar tools in the GTM stack hire GTM Engineers to eat their own dog food. When your product is outbound automation, having in-house GTM Engineers who build on your platform makes strategic sense. These roles are almost always remote because the companies themselves serve distributed sales teams.</p>
+    <p><strong>Growth-stage startups (Series A-C).</strong> Startups between $5M-$50M ARR hire GTM Engineers to replace their first SDR team or augment a small sales team with automated outbound. These companies hire remote because they can't compete with FAANG salaries in SF, so they expand the talent pool nationally. The job descriptions emphasize Clay experience, Python scripting, and the ability to build "from zero."</p>
+    <p><strong>Agencies and consultancies.</strong> GTM Engineering agencies (a category that barely existed before 2024) hire contractors and full-time remote GTM Engineers to serve multiple clients. These roles pay less in base salary ($90K-$130K) but offer variety, faster skill development, and sometimes revenue-share on client results. The agency model is fully remote by default because clients are distributed.</p>
+    <p>Companies that rarely hire remote GTM Engineers: enterprise B2B companies with established field sales teams (they prefer on-site for cross-functional coordination), financial services companies (compliance requirements often mandate on-site), and early-stage startups (sub-$2M ARR) where the founding team works in one office.</p>
+
+    <h2>Timezone Clustering and Collaboration</h2>
+    <p>Remote GTM Engineers face one structural constraint that on-site workers don't: timezone alignment for synchronous work. Three patterns emerge in how companies handle this.</p>
+    <p><strong>Timezone-flexible (40% of remote roles).</strong> These companies specify "US-based" or "Americas timezone" and allow any location within that band. Weekly team syncs happen at midday Eastern (9 AM Pacific), and everything else is async. This model works best for teams of 1-3 GTM Engineers where coordination needs are minimal.</p>
+    <p><strong>Timezone-anchored (45% of remote roles).</strong> These companies require overlap with a specific timezone, usually Pacific or Eastern. The job posting says "remote" but then specifies "core hours 9 AM - 1 PM PT." This model works for larger GTM teams (4+) or roles that require daily coordination with sales reps in a specific region.</p>
+    <p><strong>Globally distributed (15% of remote roles).</strong> A smaller but growing category: companies that hire GTM Engineers in Europe, Canada, or Asia-Pacific. These roles often focus on regional outbound (EMEA prospecting, APAC market entry) and operate semi-independently from the US team. Salaries are typically denominated in local currency and benchmarked to local markets, which means 30-50% lower than US pay for equivalent work.</p>
+
+    <h2>International Remote Opportunities</h2>
+    <p><strong>Canada.</strong> Toronto and Vancouver have growing GTM Engineering markets. Canadian roles pay $90K-$140K CAD ($65K-$100K USD), significantly below US equivalents. The opportunity: work for a US company remotely from Canada. Several US startups hire Canadian contractors to access talent at 60-70% of US salary costs. Immigration is straightforward for US companies hiring Canadian employees through an employer of record (Deel, Remote.com).</p>
+    <p><strong>United Kingdom.</strong> London's SaaS ecosystem produces GTM Engineer roles at 65K-100K GBP ($80K-$125K USD). The UK market lags the US by 12-18 months in GTM Engineering adoption. Fewer companies use the "GTM Engineer" title explicitly, but the role exists under titles like "Revenue Operations Engineer" or "Growth Engineer." The <a href="https://www.linkedin.com/pulse/remote-work-trends-2026/" target="_blank" rel="noopener">LinkedIn workforce data</a> shows remote UK tech roles growing 18% year-over-year.</p>
+    <p><strong>European Union.</strong> Germany, Netherlands, and France have emerging GTM Engineering markets. Salaries range from 55K-90K EUR ($60K-$98K USD). The constraint: GDPR adds compliance layers to outbound prospecting that don't exist in the US. GTM Engineers working EU-focused outbound need to understand opt-in requirements, data processing agreements, and legitimate interest bases. This compliance knowledge creates a niche specialization with salary premiums of 10-15% over non-specialized roles.</p>
+
+    <h2>Building a Remote GTM Engineering Career</h2>
+    <p>Remote GTM Engineers face specific career challenges that on-site workers avoid. Visibility is the biggest one. When you're not in the office, your work needs to speak louder. Three strategies address this.</p>
+    <p><strong>Document everything publicly.</strong> Write weekly updates in a shared channel (Slack, Notion, or whatever your team uses) covering: sequences launched, pipeline generated, experiments run, and results. Make your output visible to people who would otherwise never see it. The <a href="/insights/revenue-attribution/">revenue attribution guide</a> covers how to measure and present your impact.</p>
+    <p><strong>Own a metric.</strong> Attach your name to a pipeline number. "Rome is responsible for outbound-sourced pipeline" is a clearer value proposition than "Rome manages automation." When budget conversations happen, the person attached to a revenue metric is the last to get cut. Check the <a href="/insights/salary-trends/">salary trends data</a> for how pipeline ownership correlates with compensation.</p>
+    <p><strong>Build your external brand.</strong> Remote workers benefit disproportionately from public visibility. Write about your work on LinkedIn. Share Clay templates. Publish your outbound results (anonymized). The GTM Engineering community is small enough that consistent, specific content gets noticed fast. External visibility creates inbound job opportunities, which gives you negotiating power even at your current company.</p>
+    <p>The remote GTM Engineering market is expanding. Companies that resisted remote work in 2023-2024 are hiring remote GTM Engineers in 2026 because the talent pool is too small to restrict by geography. For practitioners, the calculus is clear: build measurable, documented output. Remote work gives you lifestyle flexibility, but only if your results are undeniable. The <a href="/salary/by-location/remote/">remote salary page</a> tracks compensation trends for distributed GTM roles.</p>
+
+{insight_related_links("remote-market-report")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly remote GTM job market data and salary analysis.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/remote-market-report/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/remote-market-report/index.html", page)
+    print(f"  Built: insights/remote-market-report/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -15124,7 +15221,7 @@ def main():
     build_insight_pulse_report()
     build_insight_tech_stack_audit()
     build_insight_revenue_attribution()
-    # build_insight_remote_market()  # Phase 15 Plan 03
+    build_insight_remote_market()
 
     print("\n  Building meta files...")
     build_sitemap()

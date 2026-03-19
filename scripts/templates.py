@@ -17,10 +17,20 @@ OUTPUT_DIR = ""
 # HTML Head
 # ---------------------------------------------------------------------------
 
-def get_html_head(title, description, canonical_path, extra_head=""):
+def get_html_head(title, description, canonical_path, extra_head="", og_image=""):
     """Generate complete <head> section."""
     canonical = f"{SITE_URL}{canonical_path}"
     full_title = f"{title} - {SITE_NAME}" if title != SITE_NAME else SITE_NAME
+
+    og_image_tags = ""
+    twitter_image_tag = ""
+    if og_image:
+        og_image_url = f"{SITE_URL}{og_image}"
+        og_image_tags = f"""
+    <meta property="og:image" content="{og_image_url}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">"""
+        twitter_image_tag = f'\n    <meta name="twitter:image" content="{og_image_url}">'
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -39,12 +49,12 @@ def get_html_head(title, description, canonical_path, extra_head=""):
     <meta property="og:url" content="{canonical}">
     <meta property="og:title" content="{full_title}">
     <meta property="og:description" content="{description}">
-    <meta property="og:site_name" content="{SITE_NAME}">
+    <meta property="og:site_name" content="{SITE_NAME}">{og_image_tags}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{full_title}">
-    <meta name="twitter:description" content="{description}">
+    <meta name="twitter:description" content="{description}">{twitter_image_tag}
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -172,7 +182,14 @@ def get_page_wrapper(title, description, canonical_path, body_content,
     """Assemble a full HTML document."""
     bc = f' class="{body_class}"' if body_class else ""
 
-    head = get_html_head(title, description, canonical_path, extra_head)
+    # Auto-compute OG image path from canonical_path
+    og_stem = canonical_path.strip("/").replace("/", "-")
+    # Strip .html extension if present (e.g. 404.html -> 404)
+    if og_stem.endswith(".html"):
+        og_stem = og_stem[:-5]
+    og_image = f"/assets/og/{og_stem}.png" if og_stem else "/assets/og/index.png"
+
+    head = get_html_head(title, description, canonical_path, extra_head, og_image=og_image)
     nav = get_nav_html(active_path)
     footer = get_footer_html()
 

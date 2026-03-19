@@ -25,6 +25,9 @@ def og_filename_from_path(rel_path):
     """
     # Strip index.html suffix
     stem = rel_path.replace("/index.html", "").replace("index.html", "")
+    # Strip any remaining .html extension (e.g. 404.html -> 404)
+    if stem.endswith(".html"):
+        stem = stem[:-5]
     # Strip trailing slash
     stem = stem.strip("/")
     # Replace path separators with hyphens

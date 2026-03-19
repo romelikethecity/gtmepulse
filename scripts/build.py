@@ -17,6 +17,23 @@ from templates import (get_page_wrapper, write_page, get_homepage_schema,
                        get_breadcrumb_schema, get_faq_schema,
                        get_software_application_schema, get_article_schema,
                        breadcrumb_html, newsletter_cta_html, faq_html, ALL_PAGES)
+from generate_og_images import generate_og_images, og_filename_from_path, og_template_for_path
+
+# OG image generation state
+OG_PAGES = []
+SKIP_OG = "--skip-og" in sys.argv
+
+
+def register_og(rel_path, title, subtitle=""):
+    """Register a page for OG image generation."""
+    OG_PAGES.append({
+        "rel_path": rel_path,
+        "title": title,
+        "subtitle": subtitle,
+        "template": og_template_for_path(rel_path),
+        "og_filename": og_filename_from_path(rel_path),
+    })
+
 
 # ---------------------------------------------------------------------------
 # Path constants
@@ -14415,6 +14432,16 @@ def validate_pages():
                 if f'name="{tw_tag}"' not in html_lower:
                     warnings.append(f"QUAL2-01: {rel}: missing {tw_tag}")
 
+            # --- OG-04: og:image validation ---
+            if not SKIP_OG:
+                if 'og:image' not in html_lower:
+                    warnings.append(f"OG-04: {rel}: missing og:image meta tag")
+                og_img_match = re.search(r'<meta property="og:image" content="https://gtmepulse\.com(/assets/og/[^"]+)"', html)
+                if og_img_match:
+                    og_file = os.path.join(OUTPUT_DIR, og_img_match.group(1).lstrip("/"))
+                    if not os.path.exists(og_file):
+                        warnings.append(f"OG-04: {rel}: og:image references {og_img_match.group(1)} but file missing")
+
             # --- QUAL2-02: BreadcrumbList schema ---
             if rel not in SKIP_BREADCRUMB:
                 if "breadcrumblist" not in html_lower:
@@ -15222,6 +15249,26 @@ def main():
     build_insight_tech_stack_audit()
     build_insight_revenue_attribution()
     build_insight_remote_market()
+
+    # Register all pages for OG image generation
+    print("\n  Registering OG pages...")
+    for rel_path in ALL_PAGES:
+        filepath = os.path.join(OUTPUT_DIR, rel_path)
+        with open(filepath, "r", encoding="utf-8") as f:
+            html = f.read()
+        title_match = re.search(r'<meta property="og:title" content="(.*?)"', html)
+        title = title_match.group(1).replace(" - GTME Pulse", "") if title_match else "GTME Pulse"
+        desc_match = re.search(r'<meta name="description" content="(.*?)"', html)
+        subtitle = desc_match.group(1)[:80] if desc_match else ""
+        register_og(rel_path, title, subtitle)
+    print(f"  Registered {len(OG_PAGES)} pages for OG generation")
+
+    # Generate OG images
+    if not SKIP_OG:
+        print("\n  Generating OG images...")
+        generate_og_images(OG_PAGES, OUTPUT_DIR, os.path.join(PROJECT_DIR, "og-templates"))
+    else:
+        print("\n  Skipping OG image generation (--skip-og)")
 
     print("\n  Building meta files...")
     build_sitemap()

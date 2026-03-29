@@ -797,4 +797,104 @@ GLOSSARY_TERMS = {
             ("/tools/clay-vs-apollo/", "Clay vs Apollo"),
         ],
     },
+
+    # =========================================================================
+    # New Terms (Batch 2)
+    # =========================================================================
+
+    "signal-based-selling": {
+        "term": "Signal-Based Selling",
+        "category": "Analytics & Signals",
+        "definition": "A sales methodology that prioritizes outreach based on real-time buyer signals (job changes, funding events, tech installs, content engagement) rather than static firmographic lists or territory assignments.",
+        "body": """<p>Signal-based selling flips the traditional outbound model. Instead of building a static list of 10,000 accounts and blasting through them, you monitor for buying signals and contact prospects at the moment they show intent. A VP of Sales starts a new role, a company raises a Series B, a target account visits your pricing page three times in a week. Those signals trigger outreach.</p>
+<p>The technical infrastructure requires three layers. First, a signal ingestion layer that monitors sources: job change alerts from LinkedIn Sales Navigator, funding data from Crunchbase or PitchBook, technographic changes from BuiltWith or Wappalyzer, and first-party intent from your website and product. Second, a scoring layer that prioritizes which signals matter most for your ICP. Third, an activation layer that routes high-priority signals into outbound sequences automatically.</p>
+<p>GTM Engineers build these pipelines in Clay, n8n, or custom Python scripts. A common setup: Clay monitors a list of target accounts, enriches new signals daily, scores them against your ICP, and pushes qualified signals into Instantly or Outreach sequences within hours of the event. The timing advantage is the whole point. Reaching a new VP of Sales in week one of their role converts at 3-5x the rate of reaching them six months later.</p>
+<p>The shift from volume-based outbound to signal-based selling is the core reason GTM Engineers exist. Automated signal detection and routing replaces what previously required a team of SDRs manually monitoring LinkedIn and trigger event databases.</p>""",
+        "related_links": [
+            ("/glossary/intent-data/", "Intent Data"),
+            ("/glossary/buyer-signal/", "Buyer Signal"),
+            ("/glossary/lead-scoring/", "Lead Scoring"),
+            ("/tools/category/intent-data/", "Intent Data Tools"),
+        ],
+    },
+
+    "revenue-orchestration": {
+        "term": "Revenue Orchestration",
+        "category": "Career & Industry",
+        "definition": "The coordination of tools, data, and workflows across the entire revenue cycle (marketing, sales, customer success) into a unified system that moves prospects from signal to closed deal with minimal manual handoffs.",
+        "body": """<p>Revenue orchestration is what happens when GTM Engineering scales beyond outbound sequences. It connects the full revenue cycle: marketing generates awareness, product signals identify interested users, enrichment qualifies them, outbound sequences engage them, CRM tracks the deal, and customer success retains them. Orchestration ties these stages together with automated data flows and trigger-based actions.</p>
+<p>In practice, revenue orchestration looks like this. A prospect visits your pricing page (product signal). That event fires a webhook to Clay, which enriches the visitor's company data. If the company matches your ICP (50-500 employees, SaaS, Series A+), Clay pushes the contact to HubSpot as a qualified lead and enrolls them in an Instantly outbound sequence. When the prospect replies, the sequence pauses automatically and a Slack notification alerts the AE. After the deal closes, the customer data flows to the CS team's tooling for onboarding triggers.</p>
+<p>The tools that power orchestration: Clay or n8n for data workflows, HubSpot or Salesforce for CRM, Instantly or Outreach for sequencing, Segment or Hightouch for product data, and webhooks connecting everything. The GTM Engineer designs, builds, and maintains the connections between these systems.</p>
+<p>Revenue orchestration is sometimes confused with revenue operations (RevOps). The difference: RevOps focuses on process design, reporting, and strategic alignment across go-to-market teams. Revenue orchestration is the technical implementation layer. It's the difference between drawing the blueprint and wiring the building.</p>""",
+        "related_links": [
+            ("/glossary/data-orchestration/", "Data Orchestration"),
+            ("/glossary/revenue-operations/", "Revenue Operations"),
+            ("/glossary/gtm-engineer/", "GTM Engineer"),
+            ("/careers/how-to-become-gtm-engineer/", "How to Become a GTM Engineer"),
+        ],
+    },
+
+    "clay-table": {
+        "term": "Clay Table",
+        "category": "Data & Enrichment",
+        "definition": "The primary workspace in Clay's enrichment platform, structured as a spreadsheet-like grid where each row represents a lead or account and each column runs an enrichment, transformation, or AI operation.",
+        "body": """<p>A Clay table is where GTM Engineers spend most of their working hours. It looks like a spreadsheet, but each column can execute an API call, run an LLM prompt, or trigger a multi-step enrichment waterfall. You import a list of companies or people into the rows. Then you add columns that progressively enrich, filter, score, and qualify each record.</p>
+<p>A typical Clay table structure: Column A is the company domain (your input). Column B enriches with Clearbit for firmographics. Column C filters by employee count. Column D finds the VP of Sales via Apollo. Column E verifies their email through FullEnrich. Column F generates a personalized email opener using Claude. Column G pushes the complete record to HubSpot. Each column executes in sequence, left to right, for every row.</p>
+<p>Tables support conditional logic. You can skip expensive enrichment steps for records that already have the data you need. You can branch based on company size, routing enterprise accounts to one sequence and mid-market to another. You can set up error handling so that failed API calls retry or fall through to a backup provider.</p>
+<p>GTM Engineers build table templates for repeatable workflows: ICP qualification tables, contact enrichment tables, account research tables, and lead scoring tables. Experienced engineers maintain libraries of 10-20 templates they customize for each client or campaign. The table is the fundamental unit of work in Clay, the same way a workflow is the fundamental unit in n8n or Make.</p>""",
+        "related_links": [
+            ("/tools/clay-review/", "Clay Review"),
+            ("/glossary/clay-formula/", "Clay Formula"),
+            ("/glossary/data-orchestration/", "Data Orchestration"),
+            ("/glossary/waterfall-enrichment/", "Waterfall Enrichment"),
+        ],
+    },
+
+    "webhook-automation": {
+        "term": "Webhook Automation",
+        "category": "Automation & Workflows",
+        "definition": "An event-driven integration pattern where one system sends an HTTP POST request to another system's URL whenever a specified event occurs, enabling real-time data transfer and workflow triggers without polling.",
+        "body": """<p>Webhook automation is the connective tissue of modern GTM stacks. When a lead fills out a form, the form tool sends a webhook to your enrichment pipeline. When a deal moves to "Closed Won" in the CRM, a webhook triggers the onboarding sequence. When a prospect opens an email three times, a webhook fires a Slack alert to the account executive. Every one of these is a webhook: an HTTP POST request carrying event data from one system to another.</p>
+<p>The basic mechanics: System A registers a URL (the webhook endpoint) with System B. When an event happens in System B, it sends a JSON payload to that URL. System A processes the payload and takes action. No polling, no scheduled batch jobs, no manual data transfers. Events flow in real time.</p>
+<p>GTM Engineers use webhooks constantly. Clay accepts incoming webhooks to trigger table runs. n8n and Make use webhook nodes as workflow triggers. HubSpot and Salesforce fire webhooks on record changes. Instantly sends webhooks on email opens, replies, and bounces. Connecting these systems via webhooks creates an event-driven architecture where actions cascade automatically.</p>
+<p>Common pitfalls: webhook endpoints go down and events are lost (use a queue like Hookdeck or n8n's built-in retry logic). Payload formats change without notice (validate incoming data before processing). Rate limits cause backlogs during high-volume campaigns (implement exponential backoff). Building reliable webhook automation requires handling these failure modes, not just the happy path.</p>""",
+        "related_links": [
+            ("/glossary/webhook/", "Webhook"),
+            ("/glossary/api-integration/", "API Integration"),
+            ("/glossary/workflow-automation/", "Workflow Automation"),
+            ("/tools/category/workflow-automation/", "Workflow Automation Tools"),
+        ],
+    },
+
+    "lead-routing": {
+        "term": "Lead Routing",
+        "category": "CRM & Pipeline",
+        "definition": "The automated assignment of inbound or enriched leads to specific sales reps, sequences, or workflows based on predefined rules such as territory, company size, lead score, or round-robin distribution.",
+        "body": """<p>Lead routing determines what happens to a lead after it enters your system. A form submission comes in. Is it a current customer? Route to the account manager. Is it an enterprise prospect in EMEA? Route to the enterprise AE covering Europe. Is it a mid-market company that matches your ICP but hasn't been contacted? Route to the outbound sequence for that segment. These routing decisions happen in milliseconds when properly automated.</p>
+<p>The routing logic lives in your CRM, your automation platform, or both. HubSpot and Salesforce have built-in lead assignment rules. But GTM Engineers typically build more sophisticated routing using Clay or n8n because the native CRM rules can't handle multi-step enrichment before routing. You need to enrich the lead with firmographics, score it against your ICP, check for duplicates, and then route it, all before the sales team sees it.</p>
+<p>A production routing workflow: incoming lead triggers a webhook to Clay. Clay enriches the domain with Clearbit (employee count, industry, tech stack). If the company has 50-500 employees and uses HubSpot, it gets routed to the mid-market team. If 500+, enterprise team. If under 50, automated nurture sequence. If the company already exists in the CRM, the lead gets matched to the existing account and assigned to the owning rep. All of this runs without human intervention.</p>
+<p>Bad lead routing kills pipeline. Leads that sit unrouted for 24 hours convert at half the rate of leads contacted within 5 minutes. The speed advantage of automated routing is the entire value proposition. Every minute a qualified lead waits is money left on the table.</p>""",
+        "related_links": [
+            ("/glossary/lead-scoring/", "Lead Scoring"),
+            ("/glossary/crm/", "CRM"),
+            ("/glossary/workflow-automation/", "Workflow Automation"),
+            ("/tools/hubspot-review/", "HubSpot Review"),
+        ],
+    },
+
+    "buying-committee": {
+        "term": "Buying Committee",
+        "category": "Career & Industry",
+        "definition": "The group of stakeholders within a target account who collectively influence or make a B2B purchasing decision, typically including the economic buyer, technical evaluator, end users, and executive sponsor.",
+        "body": """<p>B2B sales rarely involve a single decision-maker. A buying committee includes everyone who touches the purchase: the VP who controls the budget, the manager who will use the tool daily, the IT lead who evaluates security compliance, and the CFO who signs off on contracts above a certain threshold. Mapping these stakeholders and engaging the right ones at the right time is what separates automated outbound from strategic account-based selling.</p>
+<p>For GTM Engineers, the buying committee changes the enrichment target. Instead of finding one contact per company, you need 3-7 contacts across different functions. A typical Clay workflow for committee mapping: start with the target company domain, find all VP and Director-level contacts via Apollo, filter by relevant departments (Sales, Marketing, Operations, IT), verify emails through FullEnrich, and push the full committee to the CRM as a contact cluster linked to the account.</p>
+<p>Multi-threading into a buying committee is the outbound strategy that matches this enrichment approach. Instead of sending one sequence to the VP of Sales, you send tailored sequences to each committee member with messaging that maps to their role. The VP gets ROI and pipeline metrics. The manager gets workflow and time-saving angles. The IT lead gets security and compliance information. Coordinating this across 3-5 contacts per account requires automation. Manual multi-threading doesn't scale past 20 accounts.</p>
+<p>Account-based selling tools like 6sense and Demandbase attempt to identify buying committees through intent signals. GTM Engineers increasingly build their own committee identification pipelines in Clay, combining LinkedIn data, org chart tools, and LLM-powered role classification to map committees at a fraction of the cost of enterprise ABM platforms.</p>""",
+        "related_links": [
+            ("/glossary/total-addressable-market/", "Total Addressable Market"),
+            ("/glossary/account-executive/", "Account Executive"),
+            ("/glossary/intent-data/", "Intent Data"),
+            ("/glossary/ai-personalization/", "AI Personalization"),
+        ],
+    },
 }

@@ -12014,9 +12014,16 @@ INSIGHT_PAGES = [
     {"slug": "how-to-get-hired", "title": "How to Get Hired as a GTM Engineer in 2026", "description": "Actionable steps to land a GTM Engineer job in 2026. Portfolio building, skill stacking, and interview preparation.", "category": "Guide"},
     {"slug": "portfolio-guide", "title": "GTM Engineer Portfolio: What to Include", "description": "What belongs in a GTM Engineer portfolio. Project examples, metrics to highlight, and presentation formats that work.", "category": "Guide"},
     {"slug": "data-pipeline-architecture", "title": "Sales Data Pipeline Architecture for GTM Teams", "description": "How to architect a sales data pipeline. Source systems, transformation layers, and delivery patterns for GTM Engineers.", "category": "Playbook"},
+    # Batch 5 — How-To Tutorials
+    {"slug": "how-to-set-up-clay-enrichment-workflow", "title": "How to Set Up a Clay Enrichment Workflow", "description": "Step-by-step guide to building a Clay enrichment workflow from scratch. Table setup, waterfall logic, and CRM integration.", "category": "Guide"},
+    {"slug": "how-to-build-email-warm-up-infrastructure", "title": "How to Build Email Warm-Up Infrastructure", "description": "Complete guide to email warm-up for cold outbound. Domain setup, DNS records, warm-up tools, and timeline to full volume.", "category": "Guide"},
+    {"slug": "how-to-create-outbound-sequence-templates", "title": "How to Create Outbound Sequence Templates", "description": "Build reusable outbound sequence templates with proven structures, timing cadences, and personalization frameworks.", "category": "Guide"},
+    {"slug": "how-to-set-up-webhook-automation-for-sales", "title": "How to Set Up Webhook Automation for Sales", "description": "Build webhook-driven sales automation. Event triggers, payload handling, error management, and production deployment.", "category": "Guide"},
+    {"slug": "how-to-build-a-lead-scoring-model-without-code", "title": "How to Build a Lead Scoring Model Without Code", "description": "Build a lead scoring model using Clay, HubSpot, or spreadsheet logic. No Python required. Weighted criteria and automation.", "category": "Guide"},
+    {"slug": "how-to-automate-linkedin-connection-requests-safely", "title": "How to Automate LinkedIn Outreach Safely", "description": "Automate LinkedIn connection requests without getting banned. Rate limits, tool options, compliance, and safety protocols.", "category": "Guide"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template", "tech-stack-audit", "revenue-attribution", "remote-market-report", "clay-vs-apollo", "revenue-pipeline-from-scratch", "interview-questions-2026", "job-description-template", "gtme-vs-sales-ops", "apollo-vs-instantly", "how-to-get-hired", "portfolio-guide", "data-pipeline-architecture"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template", "tech-stack-audit", "revenue-attribution", "remote-market-report", "clay-vs-apollo", "revenue-pipeline-from-scratch", "interview-questions-2026", "job-description-template", "gtme-vs-sales-ops", "apollo-vs-instantly", "how-to-get-hired", "portfolio-guide", "data-pipeline-architecture", "how-to-set-up-clay-enrichment-workflow", "how-to-build-email-warm-up-infrastructure", "how-to-create-outbound-sequence-templates", "how-to-set-up-webhook-automation-for-sales", "how-to-build-a-lead-scoring-model-without-code", "how-to-automate-linkedin-connection-requests-safely"}
 
 
 def insight_related_links(current_slug):
@@ -15436,6 +15443,630 @@ def build_insight_data_pipeline_architecture():
 
 
 # ---------------------------------------------------------------------------
+# How-To Tutorials (Batch 5)
+# ---------------------------------------------------------------------------
+
+def build_insight_clay_enrichment_workflow():
+    """HT-01: How to Set Up a Clay Enrichment Workflow."""
+    title = "How to Set Up a Clay Enrichment Workflow"
+    description = pad_description(
+        "Step-by-step guide to building a Clay enrichment workflow from scratch. Table setup, waterfall logic, and CRM integration."
+    )
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Clay Enrichment Workflow", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="how-to-set-up-clay-enrichment-workflow", date_published="2026-03-29", word_count=2400)
+
+    faq_pairs = [
+        ("How long does it take to set up a Clay enrichment workflow?",
+         "A basic enrichment table takes 30-60 minutes to build. A production workflow with waterfall logic, error handling, and CRM integration takes 2-4 hours for your first build. Subsequent workflows go faster because you reuse column templates. Most GTM Engineers maintain a library of pre-built table structures they customize per campaign."),
+        ("How much does a Clay enrichment workflow cost per lead?",
+         "Cost depends on how many enrichment providers you chain together. A basic workflow (one provider + email verification) costs $0.03-0.05 per lead. A full waterfall with 3-4 providers, LLM scoring, and verification runs $0.10-0.25 per lead. At 1,000 leads/month on Clay's Explorer plan ($349), your total cost is roughly $450-600/month including credits."),
+        ("Can I build enrichment workflows without Clay?",
+         "Yes. n8n and Make can replicate Clay's enrichment logic using API nodes. Python scripts calling enrichment APIs directly give you the most flexibility and lowest per-record cost at high volume. Clay's advantage is speed of setup and visual debugging. For under 5,000 records/month, Clay is usually the right choice. Above that, consider a hybrid approach with custom scripts handling the bulk and Clay for ad hoc research."),
+    ]
+    faq_schema = get_faq_schema(faq_pairs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>How to Set Up a Clay Enrichment Workflow</h1>
+        <p>From empty table to production-ready enrichment pipeline. Every step, with the logic behind each decision.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>What You Will Build</h2>
+    <p>By the end of this guide, you will have a working Clay table that takes a list of company domains, enriches them with firmographic and contact data from multiple providers, verifies emails, scores leads against your ICP, and pushes qualified records to your CRM. The whole pipeline runs automatically for every row you add.</p>
+    <p>This is the foundational <a href="/glossary/clay-table/">Clay table</a> pattern. Every GTM Engineer builds some version of it. Once you understand the structure, you can customize it for any ICP, any set of enrichment providers, and any downstream tool.</p>
+
+    <h2>Prerequisites</h2>
+    <p>You need a Clay account (Explorer plan or above for waterfall features). You need API access to at least one enrichment provider. Apollo's free tier works for initial setup. You need a CRM to push results to. HubSpot's free tier is fine for testing.</p>
+    <p>Optional but recommended: a <a href="/glossary/email-verification/">verification service</a> (NeverBounce, ZeroBounce, or MillionVerifier) and a second enrichment provider (FullEnrich, Clearbit, or Cognism) for waterfall coverage.</p>
+
+    <h2>Step 1: Define Your ICP Filters</h2>
+    <p>Before opening Clay, write down your qualification criteria. Company size (employee count range), industry, geography, tech stack signals, and funding stage. These become your filter columns.</p>
+    <p>Example ICP: SaaS companies with 50-500 employees, based in the US, using HubSpot, Series A through Series C. That gives you five filter dimensions.</p>
+    <p>Skipping this step is the most common mistake. Engineers jump into Clay, build enrichment columns, and then realize they have 5,000 enriched records with no way to prioritize them. Define your filters first. Enrichment is expensive. Don't enrich records you will discard.</p>
+
+    <h2>Step 2: Create the Table and Import Source Data</h2>
+    <p>Create a new Clay table. Your first column is the company domain. This is your primary key. Every enrichment step references it.</p>
+    <p>Import source data. Common sources: a CSV export from LinkedIn Sales Navigator, a list scraped from a directory, or a manually curated list of target accounts. Start with 50-100 rows for testing. Do not import your full list until the workflow is validated.</p>
+    <p>Add a "Status" column (text type) and set it to "New" for all rows. You will use this to track which records have been processed, qualified, or pushed to CRM.</p>
+
+    <h2>Step 3: Add Firmographic Enrichment</h2>
+    <p>Add your first enrichment column. Use Clay's built-in Clearbit integration or Apollo Company Enrichment. Map the input to your domain column. The output gives you employee count, industry, annual revenue, tech stack, and headquarters location.</p>
+    <p>Create filter columns that reference the enrichment output. Employee count column with a formula: IF the employee count is between 50 and 500, return "Pass." Otherwise, return "Fail." Do the same for industry and geography. These filters run automatically for every row.</p>
+    <p>Add a compound filter column: IF all individual filters pass, return "ICP Match." This single column tells you whether to continue enriching this record or skip it. Set conditional logic on downstream columns to only run when ICP Match equals "Pass." This saves credits on records that don't qualify.</p>
+
+    <h2>Step 4: Build the Contact Enrichment Waterfall</h2>
+    <p>This is where <a href="/glossary/waterfall-enrichment/">waterfall enrichment</a> earns its keep. You need to find the right person at each qualifying company. Add a People Search column using Apollo (find contacts by title at the company domain). Filter for your target titles: VP of Sales, Head of Revenue, Director of Sales Operations.</p>
+    <p>Apollo won't find everyone. Add a second enrichment column using a different provider (FullEnrich, Cognism, or Lusha). Set a condition: only run this column if Apollo returned no results. This is the waterfall. Provider A first, Provider B only on misses.</p>
+    <p>For email enrichment, chain the same way. Apollo for email first. If no email, try FullEnrich. If still no email, try Hunter.io's domain search. Each step only fires when the previous one failed, keeping costs minimal.</p>
+
+    <h2>Step 5: Verify Emails</h2>
+    <p>Never push unverified emails to your outbound sequences. Add a verification column using NeverBounce, ZeroBounce, or MillionVerifier. Map the email from the previous step as input.</p>
+    <p>Create a filter column: IF verification result is "valid" or "catch-all," return "Sendable." If "invalid" or "disposable," return "Skip." <a href="/glossary/catch-all-domain/">Catch-all domains</a> require judgment. Some teams send to them; others skip them to protect sender reputation. Start conservative: skip catch-alls until your sending domain is fully warmed.</p>
+
+    <h2>Step 6: Score and Prioritize</h2>
+    <p>Add a <a href="/glossary/lead-scoring/">lead scoring</a> column. You can use a simple formula (weighted points for company size, title seniority, tech stack match) or an LLM-powered scoring column that reads the prospect's LinkedIn bio and company description to assign a 1-10 score.</p>
+    <p>The formula approach is faster and cheaper. A sample scoring model: 3 points for ICP industry match, 2 points for target title, 2 points for company size sweet spot, 1 point for tech stack signal, 2 points for recent funding. Total possible: 10. Set a threshold of 6+ for outbound, 4-5 for nurture, below 4 for discard.</p>
+    <p>The LLM approach costs ~$0.01 per row (using Clay's GPT or Claude integration) but catches nuances that formulas miss. "This company's LinkedIn posts indicate they're expanding their sales team" is something an LLM catches that a formula can't.</p>
+
+    <h2>Step 7: Push to CRM and Sequences</h2>
+    <p>Add a CRM push column. Clay integrates natively with HubSpot and Salesforce. Map your enriched fields: first name, last name, email, company, title, employee count, lead score, and any custom fields you want for segmentation.</p>
+    <p>Set the push to only trigger when: ICP Match is "Pass," email verification is "Sendable," and lead score is above your threshold. This ensures only qualified, verified contacts enter your <a href="/glossary/crm/">CRM</a>.</p>
+    <p>For outbound sequence enrollment, add a second push column to Instantly or your <a href="/glossary/outbound-sequencing/">sequencing tool</a>. Map the same contact data plus the personalization variables your sequence templates require (company name, recent news, mutual connection).</p>
+
+    <h2>Step 8: Test with 50 Records</h2>
+    <p>Run the full pipeline on your 50-row test batch. Check every column for errors. Common issues: API rate limits on enrichment providers, malformed domains that cause lookup failures, and filter logic that's too aggressive (filtering out good prospects) or too loose (qualifying junk).</p>
+    <p>Manually review 10 records end-to-end. Confirm the enrichment data is accurate, the email is correct, the lead score makes sense, and the CRM record was created properly. Fix any issues before scaling.</p>
+
+    <h2>Step 9: Scale to Full Volume</h2>
+    <p>Once validated, import your full source list. Clay processes rows in parallel, but enrichment API rate limits may throttle throughput. A 5,000-row table typically takes 2-4 hours to fully process depending on how many enrichment steps you chain.</p>
+    <p>Set up a recurring import if your source data refreshes. Clay supports scheduled imports from Google Sheets, CSV URLs, and webhooks. For signal-based workflows, configure a <a href="/glossary/webhook-automation/">webhook trigger</a> that adds rows to the table whenever a new target account appears in your system.</p>
+
+    <h2>Common Mistakes</h2>
+    <p><strong>Enriching before filtering.</strong> Running expensive enrichment on records that will fail ICP filters wastes credits. Always filter on cheap data (company size, geography) before running contact lookups.</p>
+    <p><strong>Single-provider dependency.</strong> Relying on one enrichment source means you accept that provider's coverage gaps. Apollo might cover 75% of your targets. Adding a second provider in waterfall mode pushes coverage to 85-90%.</p>
+    <p><strong>Skipping email verification.</strong> Sending to unverified emails damages your <a href="/glossary/deliverability/">sender reputation</a>. A 5% bounce rate triggers spam filters. Verification costs $0.003-0.005 per email. There is no valid reason to skip it.</p>
+    <p><strong>No test batch.</strong> Importing 10,000 records before validating the workflow means 10,000 records of potential garbage in your CRM. Always test with a small batch first.</p>
+
+{faq_html(faq_pairs)}
+
+{insight_related_links("how-to-set-up-clay-enrichment-workflow")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly Clay workflows and enrichment strategies for GTM Engineers.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema + faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/how-to-set-up-clay-enrichment-workflow/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/how-to-set-up-clay-enrichment-workflow/index.html", page)
+    print(f"  Built: insights/how-to-set-up-clay-enrichment-workflow/index.html")
+
+
+def build_insight_email_warm_up_infrastructure():
+    """HT-02: How to Build Email Warm-Up Infrastructure."""
+    title = "How to Build Email Warm-Up Infrastructure"
+    description = pad_description(
+        "Complete guide to email warm-up for cold outbound. Domain setup, DNS records, warm-up tools, and timeline to full volume."
+    )
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Email Warm-Up Infrastructure", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="how-to-build-email-warm-up-infrastructure", date_published="2026-03-29", word_count=2200)
+
+    faq_pairs = [
+        ("How long does email warm-up take?",
+         "Plan for 2-4 weeks minimum. Start by sending 5-10 emails per day and increase by 5-10 per day each week. Most warm-up tools automate this ramp. Aggressive warm-up (reaching full volume in under two weeks) risks spam classification. Patient warm-up protects your sender reputation long-term."),
+        ("How many sending domains do I need?",
+         "One sending domain per 50-75 emails per day is a safe ratio. If you plan to send 300 cold emails daily, set up 4-6 sending domains. Each domain needs its own mailbox, DNS records, and warm-up cycle. More domains spread risk and improve deliverability."),
+        ("Can I use my primary company domain for cold outreach?",
+         "Never use your primary domain for cold email. If the domain gets flagged or blacklisted, your entire company email (support, billing, internal) is affected. Always use a secondary sending domain. Format it similarly to your primary (getcompany.com, trycompany.com, company.io) so it looks legitimate to recipients."),
+    ]
+    faq_schema = get_faq_schema(faq_pairs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>How to Build Email Warm-Up Infrastructure</h1>
+        <p>The foundation of every cold outbound operation. Get this wrong and nothing else matters.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Warm-Up Exists</h2>
+    <p>Email providers (Google, Microsoft, Yahoo) assign reputation scores to <a href="/glossary/sending-domain/">sending domains</a>. A brand-new domain has zero reputation. If you start sending 200 cold emails per day from a domain with no history, inbox providers classify you as a spammer immediately. Your emails land in junk folders. Your domain gets blacklisted. The campaign fails before it starts.</p>
+    <p><a href="/glossary/email-warm-up/">Warm-up</a> is the process of gradually building sender reputation by sending small volumes of email that get opened, replied to, and marked as important. This signals to inbox providers that your domain sends legitimate mail. Once reputation is established, you can ramp to production volume with inbox placement rates above 90%.</p>
+
+    <h2>Step 1: Register Sending Domains</h2>
+    <p>Buy 3-5 secondary domains for outbound. Keep them close to your primary brand. If your company is acme.com, register acmeapp.com, getacme.com, acmeteam.com, or acme.io. Avoid domains that look spammy (acme-offers.com, best-acme-deals.com).</p>
+    <p>Use a mainstream registrar (Namecheap, Cloudflare, Google Domains). Avoid registrars with poor abuse handling. The domain age doesn't matter as much as you might think. A 1-week-old domain with proper warm-up outperforms a 6-month-old domain that was never warmed.</p>
+    <p>Purchase domains immediately. They need time to age slightly (72 hours minimum) before you start the warm-up process. Some practitioners wait 1-2 weeks. The waiting period is debatable, but the warm-up process itself is not.</p>
+
+    <h2>Step 2: Configure DNS Records</h2>
+    <p>Every sending domain needs four DNS records configured correctly. Missing any of these causes immediate <a href="/glossary/deliverability/">deliverability</a> problems.</p>
+    <p><strong>SPF (Sender Policy Framework):</strong> A TXT record that tells inbox providers which mail servers are authorized to send email from your domain. Your email provider (Google Workspace, Microsoft 365) gives you the exact record to add. Typically something like: <code>v=spf1 include:_spf.google.com ~all</code></p>
+    <p><strong>DKIM (DomainKeys Identified Mail):</strong> A cryptographic signature that proves the email was sent by your domain and wasn't modified in transit. Your email provider generates a public key that you add as a TXT or CNAME record. This is the most frequently misconfigured record.</p>
+    <p><strong>DMARC (Domain-based Message Authentication):</strong> A policy record that tells inbox providers what to do when SPF or DKIM checks fail. Start with a monitoring policy: <code>v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com</code>. After warm-up, tighten to <code>p=quarantine</code> or <code>p=reject</code>.</p>
+    <p><strong>Custom tracking domain:</strong> Your outbound sequencing tool (Instantly, Smartlead, Lemlist) uses a tracking domain for open and click tracking. Set up a CNAME record pointing to the tool's tracking server. Using the tool's default tracking domain is a spam signal because that domain is shared across thousands of senders.</p>
+
+    <h2>Step 3: Create Mailboxes</h2>
+    <p>Set up Google Workspace or Microsoft 365 mailboxes on each sending domain. Google Workspace costs $7.20/user/month. Microsoft 365 Business Basic costs $6/user/month. Either works. Google has slightly better deliverability for B2B, but the difference is marginal.</p>
+    <p>Create 2-3 mailboxes per domain: firstname@domain.com, firstname.lastname@domain.com, and a backup. Fill out the profile: add a profile photo, write a short bio, and set a signature with your name, title, company, and website link. Empty profiles are a spam signal.</p>
+    <p>Enable two-factor authentication on every mailbox. Connect each mailbox to your outbound sequencing tool. Test that you can send and receive email from each mailbox manually before starting automated warm-up.</p>
+
+    <h2>Step 4: Run Automated Warm-Up</h2>
+    <p>Connect your mailboxes to a warm-up tool. Instantly includes warm-up in its plans. Smartlead has built-in warm-up. Standalone options include Warmbox, Mailwarm, and Lemwarm. The warm-up tool sends emails between your mailboxes and a network of other mailboxes, automatically opening them, replying, and marking them as important.</p>
+    <p>Start at 5-10 warm-up emails per day per mailbox. Increase by 3-5 per day. Target 40-50 warm-up emails per day after 2-3 weeks. Monitor inbox placement rates in the warm-up tool's dashboard. You want to see 95%+ inbox placement before starting cold outreach.</p>
+    <p>Do not rush this step. Two weeks of patient warm-up saves you from months of deliverability problems. Every GTM Engineer who has burned a domain learned this lesson the expensive way.</p>
+
+    <h2>Step 5: Ramp Cold Volume Gradually</h2>
+    <p>After 2-3 weeks of warm-up with 95%+ inbox placement, start sending cold emails. Begin at 10-15 cold emails per day per mailbox. Keep warm-up running simultaneously (this is important; do not disable warm-up when you start sending cold mail).</p>
+    <p>Increase cold volume by 5-10 emails per day per week. Monitor your <a href="/glossary/bounce-rate/">bounce rate</a> (keep under 3%), spam complaint rate (keep under 0.1%), and <a href="/glossary/reply-rate/">reply rate</a> (a healthy indicator of engaged recipients).</p>
+    <p>If bounce rates spike above 5% or inbox placement drops below 80%, reduce volume immediately. Diagnose the cause: bad data, aggressive copy, or a domain reputation hit. Fix before scaling back up.</p>
+    <p>Target steady-state: 50-75 cold emails per day per mailbox. With 3 mailboxes across 5 domains, that's 750-1,125 emails per day. Plenty for most outbound campaigns. If you need more volume, add domains and mailboxes. Don't push individual mailboxes past 75-100/day.</p>
+
+    <h2>Step 6: Monitor and Maintain</h2>
+    <p>Warm-up is not a one-time setup. It's ongoing maintenance. Check these weekly:</p>
+    <p><strong>Inbox placement rate.</strong> Use GlockApps or mail-tester.com to test deliverability across Google, Outlook, and Yahoo. 90%+ is good. Below 80% is a problem.</p>
+    <p><strong>Blacklist status.</strong> Check MXToolbox for blacklist inclusion. If a domain lands on a blacklist, pause sending from it immediately and request delisting.</p>
+    <p><strong>Google Postmaster Tools.</strong> If you're sending to Gmail addresses (you are), Google Postmaster Tools shows your domain reputation, spam rate, and authentication pass rates. This is the most authoritative deliverability data available. Set it up for every sending domain.</p>
+    <p><strong>DNS record validity.</strong> Misconfigurations happen. Registrar updates, CDN changes, or accidental edits can break SPF/DKIM/DMARC. Run a monthly check using dmarcly.com or similar tools.</p>
+
+    <h2>Infrastructure Checklist</h2>
+    <p>Quick reference for the complete setup. Run through this list before launching any cold outbound campaign.</p>
+    <p>1. 3-5 secondary sending domains registered (not your primary domain)</p>
+    <p>2. SPF, DKIM, DMARC, and custom tracking domain configured for each</p>
+    <p>3. Google Workspace or Microsoft 365 mailboxes created (2-3 per domain)</p>
+    <p>4. Profiles completed (photo, bio, signature)</p>
+    <p>5. Warm-up tool connected and running for 2+ weeks</p>
+    <p>6. Inbox placement at 95%+ before cold sends begin</p>
+    <p>7. Cold volume ramping at 5-10/day per mailbox per week</p>
+    <p>8. Monitoring dashboard configured (GlockApps, Postmaster Tools, MXToolbox)</p>
+    <p>For detailed tool comparisons of outbound sequencing platforms, check the <a href="/tools/category/outbound-sequencing/">outbound sequencing tools directory</a>. For <a href="/glossary/deliverability/">deliverability</a> fundamentals, see the glossary.</p>
+
+{faq_html(faq_pairs)}
+
+{insight_related_links("how-to-build-email-warm-up-infrastructure")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly deliverability insights and outbound automation strategies.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema + faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/how-to-build-email-warm-up-infrastructure/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/how-to-build-email-warm-up-infrastructure/index.html", page)
+    print(f"  Built: insights/how-to-build-email-warm-up-infrastructure/index.html")
+
+
+def build_insight_outbound_sequence_templates():
+    """HT-03: How to Create Outbound Sequence Templates."""
+    title = "How to Create Outbound Sequence Templates"
+    description = pad_description(
+        "Build reusable outbound sequence templates with proven structures, timing cadences, and personalization frameworks."
+    )
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Outbound Sequence Templates", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="how-to-create-outbound-sequence-templates", date_published="2026-03-29", word_count=2000)
+
+    faq_pairs = [
+        ("How many steps should an outbound sequence have?",
+         "4-7 steps across 14-21 days performs best for most B2B outbound. Fewer than 4 steps leaves pipeline on the table. More than 7 steps shows diminishing returns and risks annoying prospects. Most replies come on steps 2-4. The first email does the heavy lifting; follow-ups are reminders."),
+        ("What reply rate should I expect from cold outbound?",
+         "2-5% reply rate is normal for well-targeted cold email. Above 5% is strong. Above 8% is exceptional. Below 1% means something is broken: bad targeting, poor copy, deliverability issues, or stale data. Reply rate depends more on targeting precision and offer relevance than on copywriting tricks."),
+        ("Should I use the same sequence for all prospects?",
+         "No. Build 2-4 sequence variants based on persona (VP of Sales vs Director of Ops), company stage (startup vs enterprise), and signal strength (cold list vs warm intent signal). The structure stays the same. The copy, pain points, and social proof change. One-size-fits-all sequences underperform segmented campaigns by 40-60%."),
+    ]
+    faq_schema = get_faq_schema(faq_pairs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>How to Create Outbound Sequence Templates</h1>
+        <p>Reusable sequence frameworks that convert. Structure, timing, and personalization layers that scale.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Templates Matter</h2>
+    <p>GTM Engineers run campaigns for multiple segments, multiple ICPs, sometimes multiple clients. Writing every sequence from scratch wastes hours. Templates give you a proven structure that you customize with segment-specific copy, pain points, and <a href="/glossary/spintax/">spintax</a> variations.</p>
+    <p>A good template library includes: a cold outbound intro sequence, a re-engagement sequence for stale leads, a signal-based sequence triggered by intent data, and a break-up/final touch sequence. With these four, you cover 80% of outbound scenarios.</p>
+
+    <h2>Step 1: Define Sequence Structure</h2>
+    <p>Every sequence needs a skeleton before you write copy. Define the number of steps, the channel mix (email only, or email + LinkedIn + phone), the timing between steps, and the goal of each step.</p>
+    <p>A proven 5-step email structure:</p>
+    <p><strong>Step 1 (Day 1):</strong> Cold intro. State who you are, why you're reaching out, and one specific pain point relevant to their role. End with a low-friction CTA (question, not a meeting request).</p>
+    <p><strong>Step 2 (Day 3):</strong> Value add. Share a relevant case study, data point, or insight that demonstrates you understand their world. No pitch. No CTA for a meeting. Just value.</p>
+    <p><strong>Step 3 (Day 7):</strong> Social proof. Reference a similar company (by name if possible, by description if not) and what result they achieved. This is where you earn the right to ask for time.</p>
+    <p><strong>Step 4 (Day 12):</strong> Direct ask. Short email. Reference your previous messages. Ask for 15 minutes. Offer two specific times. Make it easy to say yes.</p>
+    <p><strong>Step 5 (Day 18):</strong> Breakup. Let them know this is your last message. Ask a closing question: "Is this not a priority right now, or should I reach out next quarter?" Breakup emails often get the highest reply rates because they remove pressure.</p>
+
+    <h2>Step 2: Write Modular Copy Blocks</h2>
+    <p>Don't write full emails. Write modular blocks that slot into the template structure. Each block serves a function: opener, pain point, value prop, social proof, CTA. Mix and match blocks to create sequence variants without rewriting from scratch.</p>
+    <p><strong>Opener blocks (3-4 variants):</strong> "Noticed [company] is [hiring for X / expanding into Y / using Z tool]." "Saw your post about [topic] on LinkedIn." "[Mutual connection] mentioned your team is working on [initiative]." Each opener references something specific about the prospect or their company. Generic openers ("I help companies like yours") get deleted.</p>
+    <p><strong>Pain point blocks (3-4 per persona):</strong> For VP of Sales: "Pipeline coverage below 3x heading into Q2." For Director of Ops: "Manual data entry eating 10+ hours per week across the team." For Head of Revenue: "Outbound conversion below 2% despite increasing send volume." Each pain point block maps to a persona. <a href="/glossary/ai-personalization/">AI personalization</a> tools can generate additional variants, but start with hand-written blocks that resonate with your actual customers.</p>
+    <p><strong>Social proof blocks (2-3):</strong> "[Similar company] reduced enrichment costs by 60% while increasing coverage from 70% to 92%." "After implementing automated lead routing, [customer] cut response time from 4 hours to 12 minutes." Use real numbers from real customers. If you don't have case studies, use anonymized examples: "A Series B SaaS company in the HR space..."</p>
+    <p><strong>CTA blocks:</strong> Low-friction: "Is this something your team is thinking about?" Medium: "Worth a 15-minute conversation?" High-friction: "I have [specific date] at [time] open. Does that work?" Escalate friction across the sequence. Step 1 gets a question. Step 4 gets a calendar ask.</p>
+
+    <h2>Step 3: Add Personalization Variables</h2>
+    <p>Personalization happens at two levels: merge fields and custom research. Merge fields are automated: {{first_name}}, {{company}}, {{title}}, {{city}}. These come from your enrichment pipeline. Custom research is manual or LLM-generated: a reference to a recent company announcement, a comment on a LinkedIn post, or a note about their tech stack.</p>
+    <p>The ROI of deep personalization diminishes after the first sentence. Spend your personalization budget (time or LLM credits) on the email opener. The rest of the email can use merge fields. A personalized first line with a templated body outperforms a fully generic email by 2-3x on reply rate, and it outperforms a fully personalized email by a negligible margin.</p>
+    <p>Set up your <a href="/glossary/clay-table/">Clay table</a> to output personalization variables alongside contact data. Column for "personalization_line" that uses an LLM prompt to generate a custom opener based on the prospect's LinkedIn bio and recent company news. This column feeds directly into your sequence tool's merge fields.</p>
+
+    <h2>Step 4: Build Spintax Variations</h2>
+    <p>Inbox providers flag identical emails sent to multiple recipients. <a href="/glossary/spintax/">Spintax</a> creates text variations that make each email unique to algorithms while keeping the core message intact.</p>
+    <p>Apply spintax to: greetings (Hi/Hey/Hello), transition phrases (I noticed/I saw/Came across), CTAs (worth exploring/worth discussing/worth a quick chat), and sign-offs (Best/Cheers/Thanks). Don't apply spintax to your value proposition or pain points. Those need to be consistent and clear.</p>
+    <p>Most sequencing tools (Instantly, Smartlead, Lemlist) support spintax natively with {{spin}} syntax. Test your spintax by generating 10 previews and reading them aloud. If any combination sounds awkward, rewrite the variants.</p>
+
+    <h2>Step 5: Configure Timing and Conditions</h2>
+    <p>Set sending windows: Tuesday through Thursday, 8-11 AM in the recipient's timezone. Avoid Monday mornings (inbox overload) and Friday afternoons (checked out). Sending time matters less than you think for reply rates, but it matters a lot for open rates.</p>
+    <p>Configure exit conditions. If the prospect replies (positive or negative), stop the sequence. If they book a meeting via your calendar link, stop the sequence. If they unsubscribe, remove them from all sequences. If their email bounces, flag for data review and stop.</p>
+    <p>For multi-channel sequences that include LinkedIn steps, space them between email steps. Email Day 1, LinkedIn connection request Day 2, Email Day 4, LinkedIn message Day 6. The multi-channel touch pattern increases visibility without increasing email volume per mailbox.</p>
+
+    <h2>Step 6: Test Before Scaling</h2>
+    <p>Run every new sequence template on a test batch of 25-50 prospects before full deployment. Monitor: open rates (50%+ is healthy), reply rates (3%+ for cold), bounce rates (under 2%), and unsubscribe rates (under 0.5%).</p>
+    <p>Run <a href="/glossary/a-b-testing-outbound/">A/B tests</a> on subject lines first (they have the biggest impact on open rates), then on openers, then on CTAs. Test one variable at a time. Changing subject line and CTA simultaneously makes it impossible to attribute results.</p>
+    <p>Build a <a href="/glossary/a-b-testing-outbound/">testing cadence</a> into your workflow. Every new campaign tests at least one element against the current best performer. Incremental improvements compound. A 10% improvement in reply rate from better subject lines, stacked with a 15% improvement from better segmentation, compounds to 26% more replies.</p>
+
+    <h2>Template Library Starter Kit</h2>
+    <p><strong>Template 1: Cold Intro (ICP match, no signal).</strong> 5 steps, email only, 18-day span. Used for lists built from ICP filtering with no recent buying signal. Conversion expectation: 2-3% reply rate.</p>
+    <p><strong>Template 2: Signal-Based (job change, funding, tech install).</strong> 4 steps, email + LinkedIn, 14-day span. Used when a <a href="/glossary/buyer-signal/">buyer signal</a> triggers outreach. Conversion expectation: 5-8% reply rate. The signal goes in the opener: "Congrats on the Series B" or "Saw you just started at [company]."</p>
+    <p><strong>Template 3: Re-engagement.</strong> 3 steps, email only, 10-day span. Used for prospects who engaged previously but went cold. Reference the prior interaction. Conversion expectation: 3-5% reply rate.</p>
+    <p><strong>Template 4: Multi-thread.</strong> 3 steps per contact, 2-4 contacts per account, staggered by 2 days. Used for <a href="/glossary/buying-committee/">buying committee</a> engagement. Each contact gets tailored copy for their role. Conversion expectation: 10-15% account-level reply rate.</p>
+
+{faq_html(faq_pairs)}
+
+{insight_related_links("how-to-create-outbound-sequence-templates")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly outbound sequence strategies and conversion benchmarks.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema + faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/how-to-create-outbound-sequence-templates/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/how-to-create-outbound-sequence-templates/index.html", page)
+    print(f"  Built: insights/how-to-create-outbound-sequence-templates/index.html")
+
+
+def build_insight_webhook_automation_sales():
+    """HT-04: How to Set Up Webhook Automation for Sales."""
+    title = "How to Set Up Webhook Automation for Sales"
+    description = pad_description(
+        "Build webhook-driven sales automation. Event triggers, payload handling, error management, and production deployment."
+    )
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Webhook Automation for Sales", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="how-to-set-up-webhook-automation-for-sales", date_published="2026-03-29", word_count=2100)
+
+    faq_pairs = [
+        ("What is a webhook in simple terms?",
+         "A webhook is an automatic notification from one tool to another. When something happens in Tool A (a form submission, a deal stage change, an email reply), Tool A sends a message to Tool B's URL with the event details. Tool B then takes action. No human intervention, no scheduled checks, no manual data transfers. The event triggers the action in real time."),
+        ("Do I need to know how to code to use webhooks?",
+         "Not necessarily. Tools like n8n, Make, and Zapier provide visual webhook builders where you configure triggers and actions without writing code. Clay accepts incoming webhooks natively. For custom payload transformation or complex routing logic, basic JavaScript or Python helps. But 80% of sales webhook automation can be built with no-code tools."),
+        ("How do I handle webhook failures?",
+         "Three strategies: retry logic (automatically resend failed webhooks after a delay), dead letter queues (store failed events for manual review), and monitoring alerts (Slack notification when a webhook fails). Most automation platforms have built-in retry. For critical workflows, add a monitoring layer using Hookdeck or a custom health check."),
+    ]
+    faq_schema = get_faq_schema(faq_pairs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>How to Set Up Webhook Automation for Sales</h1>
+        <p>Event-driven architecture for your GTM stack. Real-time data flow between every tool in your pipeline.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Webhooks for Sales</h2>
+    <p>Most sales tool integrations rely on scheduled syncs. HubSpot syncs with Salesforce every 15 minutes. Your enrichment tool exports a CSV that you import daily. These batch processes create lag. A hot lead fills out a form at 9:03 AM and the sales rep doesn't see it until the 9:15 sync. In that 12-minute gap, the prospect has moved on to a competitor's demo.</p>
+    <p><a href="/glossary/webhook/">Webhooks</a> eliminate that lag. The form submission fires a webhook instantly. The webhook triggers enrichment, lead scoring, <a href="/glossary/lead-routing/">routing</a>, and rep notification in seconds. The sales rep sees the qualified lead in Slack before the prospect closes the browser tab.</p>
+
+    <h2>Step 1: Map Your Event-Action Pairs</h2>
+    <p>Before configuring anything, list every event in your sales process that should trigger an automated action. Common pairs:</p>
+    <p><strong>Form submission</strong> triggers enrichment + lead scoring + CRM record creation + rep notification.</p>
+    <p><strong>Deal stage change to "Demo Scheduled"</strong> triggers calendar hold for the AE, pre-call research enrichment in Clay, and a Slack alert to the account team.</p>
+    <p><strong>Email reply detected</strong> triggers sequence pause, sentiment analysis via LLM, and Slack notification to the rep with the reply text and suggested response.</p>
+    <p><strong>Website pricing page visit (3+ times in 7 days)</strong> triggers reverse IP lookup, contact enrichment if the company matches ICP, and fast-track sequence enrollment.</p>
+    <p><strong>Customer churns</strong> triggers win-back sequence enrollment after 30-day cooldown, NPS survey, and account review task in CRM.</p>
+    <p>Write these pairs down. Each one becomes a webhook workflow. Prioritize by revenue impact. The form submission to rep notification flow is almost always the highest-value webhook to build first.</p>
+
+    <h2>Step 2: Choose Your Webhook Platform</h2>
+    <p>You need a platform that receives webhooks, processes the payload, and routes actions to downstream tools. Three options based on technical comfort.</p>
+    <p><strong>n8n (self-hosted or cloud):</strong> The most flexible option. Visual workflow builder with a webhook trigger node. Supports conditional logic, data transformation, HTTP requests to any API, and error handling. Self-hosted version is free. Cloud version starts at $24/month. Best for GTM Engineers comfortable with light technical work.</p>
+    <p><strong>Make (formerly Integromat):</strong> Visual builder with strong webhook support. Easier learning curve than n8n but less flexible for custom API calls. Starts at $9/month. Good for teams that want visual debugging without self-hosting.</p>
+    <p><strong>Clay:</strong> Accepts incoming webhooks to trigger table runs. The webhook payload becomes a new row. Every column then runs its enrichment and transformation logic on that row. Best when your webhook workflow primarily involves data enrichment and CRM pushing.</p>
+    <p>For complex routing logic (different actions based on lead score, company size, or geographic region), n8n or Make gives you more flexibility than Clay. For enrichment-heavy workflows, Clay is purpose-built.</p>
+
+    <h2>Step 3: Configure the Webhook Endpoint</h2>
+    <p>In your chosen platform, create a new workflow with a webhook trigger. The platform generates a URL. This URL is your endpoint. Any tool that sends an HTTP POST request to this URL with a JSON payload triggers the workflow.</p>
+    <p>Copy the webhook URL. Go to the source tool (your form builder, CRM, or sequencing platform) and configure it to send events to this URL. Most modern SaaS tools have a "Webhooks" section in their settings. HubSpot, Salesforce, Instantly, Typeform, and Stripe all support outgoing webhooks natively.</p>
+    <p>Test the connection by triggering a test event. Submit a test form, change a deal stage on a test record, or use the source tool's "Send Test" button. Verify that your webhook platform receives the payload. Inspect the payload structure. Every field you need for downstream actions must be present in the payload.</p>
+
+    <h2>Step 4: Parse and Transform the Payload</h2>
+    <p>Webhooks send raw JSON payloads. The structure varies by tool. A HubSpot webhook for a deal stage change sends a nested object with the deal ID, pipeline, stage, associated contacts, and custom properties. A Typeform submission sends form fields as an array of objects with field IDs.</p>
+    <p>Add a data transformation step in your workflow that extracts the fields you need and maps them to a clean structure. Extract email, company domain, first name, last name, and any custom fields. Normalize the data: lowercase emails, strip whitespace, standardize company names.</p>
+    <p>This parsing step is where most webhook automations break. Source tools change their payload schema without notice. A Typeform update renames a field ID. A HubSpot API version change restructures the JSON. Build validation into your parsing: check that required fields exist before proceeding. If a required field is missing, log the error and skip the record instead of crashing the workflow.</p>
+
+    <h2>Step 5: Add Enrichment and Scoring</h2>
+    <p>With clean data extracted, add enrichment steps. Call the Apollo API to get firmographic data. Call FullEnrich for email verification. Use an <a href="/glossary/llm-api/">LLM API</a> call to classify the lead's intent based on form responses or email content.</p>
+    <p>Add a scoring node that evaluates the enriched data against your ICP criteria. Output a numeric score and a routing label (Qualified, Nurture, Disqualified). This score determines what happens next.</p>
+
+    <h2>Step 6: Route Actions Based on Score</h2>
+    <p>Add a conditional branch. If the score is above your qualification threshold: create a CRM record, enroll in a fast-track outbound sequence, and send a Slack alert to the assigned rep. If the score is below threshold but above disqualification: add to a nurture drip campaign. If disqualified: log the record and take no outbound action.</p>
+    <p>For CRM integration, use your platform's native HubSpot or Salesforce nodes. Map all enriched fields to CRM properties. Set the lead owner based on territory rules or round-robin assignment. Create a task for the rep to follow up within the SLA window.</p>
+    <p>For Slack notifications, format the alert with actionable context: prospect name, company, title, lead score, and the event that triggered the webhook. Include a direct link to the CRM record. The rep should be able to act on the notification without leaving Slack.</p>
+
+    <h2>Step 7: Handle Errors and Failures</h2>
+    <p>Production webhook automations fail. APIs go down. Rate limits trigger. Payload schemas change. Authentication tokens expire. Plan for all of these.</p>
+    <p><strong>Retry logic:</strong> Configure automatic retries with exponential backoff. First retry after 30 seconds, second after 2 minutes, third after 10 minutes. Most temporary failures (rate limits, brief outages) resolve within minutes.</p>
+    <p><strong>Error notifications:</strong> Send a Slack message to your #ops-alerts channel whenever a workflow fails after all retries. Include the error message, the payload that caused the failure, and a link to the workflow execution log.</p>
+    <p><strong>Dead letter storage:</strong> Save failed payloads to a Google Sheet or database table. Review weekly. Reprocess after fixing the underlying issue. Lost webhook events mean lost leads.</p>
+    <p><strong>Idempotency:</strong> Webhooks can fire multiple times for the same event (source tool retries, network issues). Build deduplication logic: check if a CRM record with this email already exists before creating a new one. Use event IDs or email addresses as dedup keys.</p>
+
+    <h2>Step 8: Monitor and Optimize</h2>
+    <p>Track three metrics for every webhook workflow: success rate (percentage of events processed without error), latency (time from event to final action), and throughput (events processed per hour). Most <a href="/glossary/workflow-automation/">automation platforms</a> provide execution logs with this data.</p>
+    <p>Set up a weekly review. Check error logs, identify recurring failures, and fix the root causes. Common root causes: expired API keys, changed payload schemas, and rate limit exhaustion during high-volume campaigns.</p>
+    <p>Optimization targets: under 30 seconds from webhook receipt to CRM record creation. Under 2 minutes from webhook receipt to rep Slack notification. Under 5 minutes from webhook receipt to sequence enrollment. These are achievable with any modern webhook platform. If you're seeing longer latencies, look for bottlenecks in enrichment API response times or conditional logic complexity.</p>
+
+{faq_html(faq_pairs)}
+
+{insight_related_links("how-to-set-up-webhook-automation-for-sales")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly automation architecture patterns for GTM Engineers.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema + faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/how-to-set-up-webhook-automation-for-sales/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/how-to-set-up-webhook-automation-for-sales/index.html", page)
+    print(f"  Built: insights/how-to-set-up-webhook-automation-for-sales/index.html")
+
+
+def build_insight_lead_scoring_no_code():
+    """HT-05: How to Build a Lead Scoring Model Without Code."""
+    title = "Build a Lead Scoring Model Without Code"
+    description = pad_description(
+        "Build a lead scoring model using Clay, HubSpot, or spreadsheet logic. No Python required. Weighted criteria and automation."
+    )
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("Lead Scoring Without Code", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="how-to-build-a-lead-scoring-model-without-code", date_published="2026-03-29", word_count=2000)
+
+    faq_pairs = [
+        ("How many scoring criteria should a lead scoring model have?",
+         "5-8 criteria is the sweet spot. Fewer than 5 and your score doesn't differentiate well. More than 10 and you're over-fitting to noise. Start with the criteria that your sales team says matter most: company size, title seniority, tech stack, and engagement signals. Add criteria only when you have data showing they predict conversion."),
+        ("Should I use positive scoring, negative scoring, or both?",
+         "Both. Positive scores for ICP match factors (right company size, right title, right industry). Negative scores (penalties) for disqualification signals (competitor employee, student email domain, company too small). A prospect can score 8 out of 10 on positive factors but still be disqualified by a negative signal like 'already a customer.'"),
+        ("How often should I update my scoring model?",
+         "Review quarterly. Compare your scored leads against actual conversion data. If high-scoring leads aren't converting, your weights are wrong. If low-scoring leads are converting, you're missing a signal. Adjust weights and criteria based on what the data shows, not what the team assumes."),
+    ]
+    faq_schema = get_faq_schema(faq_pairs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>Build a Lead Scoring Model Without Code</h1>
+        <p>Weighted scoring that separates ready buyers from noise. Built in Clay, HubSpot, or a spreadsheet.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>What Lead Scoring Does</h2>
+    <p><a href="/glossary/lead-scoring/">Lead scoring</a> assigns a numeric value to every lead based on how closely they match your ideal customer profile and how engaged they are with your company. The score determines what happens next: high scores get fast-tracked to sales, medium scores enter nurture sequences, low scores get filtered out.</p>
+    <p>Without scoring, every lead gets the same treatment. Your best AE spends time on a 5-person startup that will never buy, while a perfect-fit enterprise prospect sits in the queue. Scoring is prioritization. It ensures your sales team works the leads most likely to convert, in the order most likely to produce revenue.</p>
+
+    <h2>Step 1: Define Your Scoring Criteria</h2>
+    <p>Pull your last 50 closed-won deals and your last 50 closed-lost deals. List every attribute you can find: company size, industry, title of the buyer, tech stack, funding stage, geographic location, how they found you, and how many times they engaged before converting.</p>
+    <p>Look for patterns. Do closed-won deals cluster around a certain company size range? A specific set of industries? A particular buyer title? These patterns become your scoring criteria.</p>
+    <p>If you don't have enough deal data (common at early-stage companies), interview your sales team. Ask: "When you get on a call and know within 2 minutes it's going to close, what do those companies have in common?" Their intuition is a reasonable starting point until you have data to validate or correct it.</p>
+    <p>Example scoring criteria for a SaaS company selling to mid-market:</p>
+
+    <h2>Step 2: Assign Point Values</h2>
+    <p>Create a simple table. Each criterion gets a point value based on how strongly it predicts conversion. Use a 1-3 point scale for simplicity. Don't over-engineer this.</p>
+    <p><strong>Company size 50-500 employees:</strong> +3 (this is your ICP sweet spot)</p>
+    <p><strong>Company size 500-2000:</strong> +2 (good but longer sales cycles)</p>
+    <p><strong>Company size under 50:</strong> +0 (typically too small to buy)</p>
+    <p><strong>SaaS industry:</strong> +2</p>
+    <p><strong>Non-SaaS B2B:</strong> +1</p>
+    <p><strong>B2C or non-profit:</strong> -2 (negative score, disqualification signal)</p>
+    <p><strong>VP or C-level title:</strong> +3</p>
+    <p><strong>Director title:</strong> +2</p>
+    <p><strong>Manager or individual contributor:</strong> +1</p>
+    <p><strong>Uses HubSpot (your target CRM):</strong> +2</p>
+    <p><strong>Uses Salesforce:</strong> +1</p>
+    <p><strong>Series A-C funding:</strong> +2</p>
+    <p><strong>Visited pricing page:</strong> +3</p>
+    <p><strong>Downloaded content:</strong> +1</p>
+    <p><strong>Competitor employee:</strong> -5 (hard disqualification)</p>
+    <p>Maximum possible score in this model: 15. Set your threshold at 8+ for sales-qualified, 4-7 for nurture, below 4 for discard.</p>
+
+    <h2>Step 3: Build in Clay (Recommended)</h2>
+    <p>Clay makes lead scoring visual and automatic. Create a <a href="/glossary/clay-table/">Clay table</a> with your lead data. Add enrichment columns for any criteria you can't get from the source data (Clearbit for employee count, Apollo for title, BuiltWith for tech stack).</p>
+    <p>Add a formula column for each scoring criterion. For company size: <code>IF(/Employee Count >= 50 AND /Employee Count <= 500, 3, IF(/Employee Count > 500 AND /Employee Count <= 2000, 2, 0))</code></p>
+    <p>Add a "Total Score" column that sums all individual score columns. Add a "Status" column: <code>IF(/Total Score >= 8, "Sales-Qualified", IF(/Total Score >= 4, "Nurture", "Discard"))</code></p>
+    <p>Add a CRM push column that only fires when Status equals "Sales-Qualified." Add a sequence enrollment column for "Nurture" leads. Your scoring model now runs automatically for every row.</p>
+
+    <h2>Step 4: Build in HubSpot (Alternative)</h2>
+    <p>HubSpot has built-in lead scoring in its Marketing Hub (Professional tier and above). Go to Settings > Properties > Create Property > Score. Define positive and negative scoring rules based on contact and company properties.</p>
+    <p>HubSpot's advantage: scoring updates in real time as properties change. When a contact's company gets enriched with new firmographic data, the score recalculates automatically. When a contact visits the pricing page, the engagement score updates immediately.</p>
+    <p>HubSpot's limitation: you can only score on properties that exist in HubSpot. If your scoring criteria include data that lives outside HubSpot (tech stack from BuiltWith, intent signals from 6sense), you need to sync that data into HubSpot contact properties first. This is where <a href="/glossary/reverse-etl/">reverse ETL</a> or Clay integrations fill the gap.</p>
+
+    <h2>Step 5: Build in a Spreadsheet (Simplest)</h2>
+    <p>If you have fewer than 500 leads per month, a Google Sheet works. Column A: lead email. Columns B-G: enriched data points (from Clay export or manual research). Columns H-M: score formulas matching your criteria. Column N: total score (SUM of score columns). Column O: status (IF-based classification).</p>
+    <p>Export from your enrichment tool, paste into the scoring sheet, and the formulas calculate instantly. Sort by total score. Work the list from the top.</p>
+    <p>The spreadsheet approach doesn't scale, but it validates your scoring logic before you invest time building it in Clay or HubSpot. If the scored list matches your sales team's intuition about lead quality, the model is working. If it doesn't, adjust weights before automating.</p>
+
+    <h2>Step 6: Validate and Calibrate</h2>
+    <p>Run your scoring model for 30 days. Track which scored leads convert to meetings and which meetings convert to deals. Compare your score predictions against actual outcomes.</p>
+    <p>Calculate conversion rate by score band. If leads scoring 8-10 convert at 15% and leads scoring 4-7 convert at 3%, your model is differentiating well. If leads scoring 8-10 convert at 5% and leads scoring 4-7 convert at 4%, your model isn't adding value. The criteria or weights need adjustment.</p>
+    <p>Common calibration findings: engagement signals (pricing page visits, content downloads) are more predictive than firmographic signals (company size, industry) for most B2B companies. If your model is purely firmographic, adding behavioral signals usually improves accuracy significantly.</p>
+    <p>Adjust weights quarterly. Sales teams change, products evolve, and market conditions shift. A scoring model that worked in Q1 may need recalibration by Q3. The good news: recalibrating means changing a few numbers in your formula columns, not rebuilding the entire system.</p>
+
+    <h2>Common Mistakes</h2>
+    <p><strong>Too many criteria.</strong> 15 scoring factors with 1-point increments creates a model that scores everything between 6 and 9. There's no separation. Use fewer criteria with larger point values. The model should produce a wide distribution.</p>
+    <p><strong>No negative scoring.</strong> Without disqualification signals, competitors, students, and existing customers score high on positive factors and waste sales time. Always include hard disqualifiers with large negative scores.</p>
+    <p><strong>Never validating.</strong> A scoring model built on assumptions and never checked against real conversion data is worse than no model. At least with no model, the sales team applies their own judgment. A bad model overrides that judgment with incorrect prioritization.</p>
+    <p><strong>Scoring without acting.</strong> A lead score that nobody looks at is useless. Wire your scores to automation: high scores trigger immediate rep notification, medium scores enter nurture sequences, low scores get archived. The score should drive action, not sit in a CRM field.</p>
+
+{faq_html(faq_pairs)}
+
+{insight_related_links("how-to-build-a-lead-scoring-model-without-code")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly lead scoring strategies and pipeline optimization insights.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema + faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/how-to-build-a-lead-scoring-model-without-code/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/how-to-build-a-lead-scoring-model-without-code/index.html", page)
+    print(f"  Built: insights/how-to-build-a-lead-scoring-model-without-code/index.html")
+
+
+def build_insight_linkedin_automation_safely():
+    """HT-06: How to Automate LinkedIn Connection Requests Safely."""
+    title = "How to Automate LinkedIn Outreach Safely"
+    description = pad_description(
+        "Automate LinkedIn connection requests without getting banned. Rate limits, tool options, compliance, and safety protocols."
+    )
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("LinkedIn Automation Safety", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="how-to-automate-linkedin-connection-requests-safely", date_published="2026-03-29", word_count=2100)
+
+    faq_pairs = [
+        ("How many LinkedIn connection requests can I send per day safely?",
+         "20-30 per day is the safe range for most accounts. LinkedIn's official weekly limit is approximately 100-200 connection requests (it varies by account age, network size, and acceptance rate). Staying under 30/day keeps you well within limits. Accounts with large networks and high acceptance rates can push slightly higher, but the risk-reward is poor."),
+        ("Will I get banned for using LinkedIn automation tools?",
+         "LinkedIn bans accounts that violate their Terms of Service. Browser-based automation tools (extensions that simulate clicks) carry higher risk because LinkedIn can detect them. Cloud-based tools that use dedicated sessions carry lower risk but are not zero-risk. The safest approach: stay within daily limits, use a cloud-based tool, maintain a high acceptance rate (40%+), and don't automate messaging that looks like spam."),
+        ("Should I use a separate LinkedIn account for outbound?",
+         "Some practitioners use a secondary LinkedIn account for outbound to protect their primary profile. This violates LinkedIn's Terms of Service (one account per person). A safer approach: use your real profile but with conservative limits. If your account gets restricted, you can appeal. If a fake account gets banned, it's gone permanently with no recourse."),
+    ]
+    faq_schema = get_faq_schema(faq_pairs)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>Automate LinkedIn Outreach Safely</h1>
+        <p>Connection requests, follow-up messages, and profile views on autopilot. Without losing your account.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The Risk Spectrum</h2>
+    <p>LinkedIn automation exists in a gray area. LinkedIn's Terms of Service prohibit automated activity. Every automation tool violates these terms to some degree. The question isn't whether you're violating TOS. It's how much risk you're taking and how to minimize it.</p>
+    <p>Risk factors: volume of daily actions, type of automation (connection requests vs. messaging vs. profile views), tool architecture (browser extension vs. cloud-based), and content quality (personalized messages vs. obvious templates). High volume + browser extension + spammy templates = ban. Low volume + cloud-based + personalized messages = sustainable for months or years.</p>
+    <p>Some GTM Engineers run LinkedIn automation for years without issues. Others get restricted within weeks. The difference is almost always volume discipline and message quality.</p>
+
+    <h2>Step 1: Choose the Right Tool Architecture</h2>
+    <p><strong>Cloud-based tools (HeyReach, Expandi, Dripify):</strong> These tools run in the cloud using dedicated IP addresses and browser sessions. They simulate human behavior with randomized delays, working hours, and action patterns. Lower detection risk than browser extensions because the automation doesn't interact with your local browser.</p>
+    <p><strong>Browser extensions (PhantomBuster, various Chrome extensions):</strong> These inject JavaScript into your LinkedIn browser tab and automate actions by simulating clicks. Higher detection risk because LinkedIn can detect automation scripts running in the browser. Cheaper than cloud tools. Suitable for low-volume, intermittent use.</p>
+    <p><strong>API-based (LinkedIn's official API):</strong> LinkedIn's Marketing API and Sales Navigator API provide sanctioned automation for certain actions. Very limited scope. You can't send connection requests via API. But you can extract search results, monitor profile data, and integrate Sales Navigator data with your CRM. Use the official API for data extraction and a cloud-based tool for outreach actions.</p>
+    <p>Recommendation for GTM Engineers: a cloud-based tool (HeyReach or Expandi) for connection requests and follow-up messages, combined with LinkedIn Sales Navigator for prospect identification. This gives you the best balance of capability and safety.</p>
+
+    <h2>Step 2: Set Conservative Daily Limits</h2>
+    <p>The single most important safety measure is volume control. LinkedIn monitors daily action patterns. Sudden spikes in connection requests, profile views, or messages trigger automatic review.</p>
+    <p><strong>Connection requests:</strong> 20-25 per day. Not per session. Per day total. Include a personalized note with every request (requests with notes have 2-3x higher acceptance rates and look less automated to LinkedIn's detection systems).</p>
+    <p><strong>Profile views:</strong> 50-80 per day. LinkedIn notifies users when you view their profile. This is a soft touchpoint. Many prospects check your profile after seeing the notification, which warms them up before your connection request arrives.</p>
+    <p><strong>Messages (to 1st-degree connections):</strong> 30-50 per day. Messages to existing connections are lower risk than connection requests. Keep messages personalized and conversational. Bulk-sent identical messages are easy for LinkedIn to detect.</p>
+    <p><strong>InMail (Sales Navigator):</strong> Limited by your subscription tier. InMails are sent through LinkedIn's official system and don't carry automation risk. But they cost credits and have lower response rates than connection requests with personalized notes.</p>
+
+    <h2>Step 3: Build Your Prospect List</h2>
+    <p>Use LinkedIn Sales Navigator to build a targeted prospect list. Filter by title, company size, industry, geography, and seniority level. Save the search as a lead list in Sales Navigator.</p>
+    <p>Export the list to your automation tool. Most cloud-based tools integrate directly with Sales Navigator searches. The tool imports the prospect profiles and queues them for your automation sequence.</p>
+    <p>Quality matters more than quantity. A list of 200 highly targeted prospects with 40% acceptance rate outperforms a list of 2,000 loosely targeted prospects with 10% acceptance rate. And the 200-person list takes 8-10 days to work through at 25/day, giving you time to respond to acceptances personally.</p>
+
+    <h2>Step 4: Write Connection Request Notes</h2>
+    <p>LinkedIn connection request notes are limited to 300 characters. Every character matters. The note needs to: establish relevance (why should they accept?), feel personal (not templated), and avoid selling (connection requests that pitch get ignored and reported).</p>
+    <p>Effective note frameworks:</p>
+    <p><strong>Mutual interest:</strong> "Saw your post on [topic]. Working on similar problems at [your company]. Would be great to connect and swap notes."</p>
+    <p><strong>Industry peer:</strong> "Fellow [title/function] here. Building outbound automation for [industry] companies. Your approach at [their company] caught my attention."</p>
+    <p><strong>Compliment + relevance:</strong> "[Company]'s growth this year has been impressive. We work with similar companies on [specific area]. Happy to connect."</p>
+    <p>What doesn't work: "I'd love to connect." (No reason given.) "We help companies like yours..." (Selling in the connection request.) "I have an amazing opportunity..." (Spam trigger.)</p>
+    <p>Use <a href="/glossary/spintax/">spintax</a> in your automation tool to create variations of each note. This prevents LinkedIn from detecting identical messages across your outreach. {{Hi|Hey|Hello}} {{first_name}}, {{saw your post about|noticed your work on|came across your take on}} {{topic}}...</p>
+
+    <h2>Step 5: Design the Follow-Up Sequence</h2>
+    <p>After a prospect accepts your connection request, you have a warm opening. Don't blow it with an immediate sales pitch. Design a 3-step follow-up sequence with patience built in.</p>
+    <p><strong>Step 1 (Day 0, on acceptance):</strong> Thank them for connecting. Share a useful resource (article, report, tool recommendation) related to their role. No pitch. No ask. Pure value.</p>
+    <p><strong>Step 2 (Day 4-5):</strong> Light engagement. Comment on or reference something they posted recently. If they haven't posted, reference something about their company. Ask a question that invites dialogue. Still no pitch.</p>
+    <p><strong>Step 3 (Day 10-14):</strong> The soft transition. Reference the value you shared earlier. Briefly mention what you do and how it's relevant to their situation. Ask if they'd be open to a short conversation. This is your first and only ask in the sequence.</p>
+    <p>If no response after Step 3, stop. Don't send follow-up after follow-up through LinkedIn messages. You can add them to an email sequence (you now have their verified identity from their LinkedIn profile, which your <a href="/glossary/data-enrichment/">enrichment tools</a> can use to find their email). Multi-channel touch without multi-channel spam.</p>
+
+    <h2>Step 6: Monitor Account Health</h2>
+    <p>Watch these indicators daily:</p>
+    <p><strong>Connection request acceptance rate.</strong> Track weekly. If it drops below 30%, your targeting is off or your notes need improvement. Low acceptance rates signal to LinkedIn that you're sending unwanted requests.</p>
+    <p><strong>Pending connection requests.</strong> LinkedIn limits how many pending (unanswered) requests you can have. If you're sending 25/day with a 20% acceptance rate, you accumulate pending requests fast. Withdraw pending requests older than 2 weeks to keep the count low.</p>
+    <p><strong>Restriction warnings.</strong> If LinkedIn sends you a warning or temporarily restricts your account, stop all automation immediately. Wait 48-72 hours. Reduce your daily limits by 50% when you resume. A second restriction is much harder to recover from than the first.</p>
+    <p><strong>SSI score (Social Selling Index).</strong> Check at linkedin.com/sales/ssi. A score above 70 indicates healthy account activity patterns. Below 50 suggests you're not engaging enough organically to support automated outreach. Post content, engage with your feed, and build your organic presence alongside automation.</p>
+
+    <h2>Step 7: Integrate with Your GTM Stack</h2>
+    <p>LinkedIn automation works best as part of a multi-channel outbound system, not in isolation. Connect your LinkedIn tool to the rest of your stack:</p>
+    <p><strong>CRM sync:</strong> When a prospect accepts your connection request, create or update their CRM record. Track LinkedIn touchpoints alongside email touchpoints in a unified timeline.</p>
+    <p><strong>Email enrichment:</strong> Use accepted connections to enrich your contact data. LinkedIn profile data (title, company, location) feeds your <a href="/glossary/clay-table/">Clay enrichment table</a>. Finding their email from a confirmed LinkedIn connection is more reliable than enriching a name-only record.</p>
+    <p><strong>Sequence coordination:</strong> If a prospect is in both a LinkedIn sequence and an email sequence, coordinate the timing. Don't send a LinkedIn message and an email on the same day. Stagger touches across channels. Most GTM Engineers build a coordination layer in n8n or Make that checks touchpoint history before sending.</p>
+    <p>The combination of LinkedIn warm touch + email direct pitch outperforms either channel alone. LinkedIn builds familiarity and trust. Email delivers the detailed value proposition and meeting request. Together, they create a multi-touch experience that feels personal, not automated.</p>
+
+{faq_html(faq_pairs)}
+
+{insight_related_links("how-to-automate-linkedin-connection-requests-safely")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly LinkedIn strategy and multi-channel outbound insights.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema + faq_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/how-to-automate-linkedin-connection-requests-safely/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/how-to-automate-linkedin-connection-requests-safely/index.html", page)
+    print(f"  Built: insights/how-to-automate-linkedin-connection-requests-safely/index.html")
+
+
+# ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
 
@@ -15768,6 +16399,14 @@ GLOSSARY_TERMS = [
     {"slug": "prompt-engineering", "term": "Prompt Engineering", "category": "AI & LLM"},
     {"slug": "ai-sdr", "term": "AI SDR", "category": "AI & LLM"},
     {"slug": "clay-formula", "term": "Clay Formula", "category": "AI & LLM"},
+
+    # Batch 2 — New Terms
+    {"slug": "signal-based-selling", "term": "Signal-Based Selling", "category": "Analytics & Signals"},
+    {"slug": "revenue-orchestration", "term": "Revenue Orchestration", "category": "Career & Industry"},
+    {"slug": "clay-table", "term": "Clay Table", "category": "Data & Enrichment"},
+    {"slug": "webhook-automation", "term": "Webhook Automation", "category": "Automation & Workflows"},
+    {"slug": "lead-routing", "term": "Lead Routing", "category": "CRM & Pipeline"},
+    {"slug": "buying-committee", "term": "Buying Committee", "category": "Career & Industry"},
 ]
 
 
@@ -16093,7 +16732,7 @@ def build_glossary_index():
     <div class="salary-header-inner">
         <div class="salary-eyebrow">Reference</div>
         <h1>GTM Engineering Glossary</h1>
-        <p>50 terms every GTM Engineer should know. Definitions, real examples, and links to deeper resources across tools, salary data, and career guides.</p>
+        <p>56 terms every GTM Engineer should know. Definitions, real examples, and links to deeper resources across tools, salary data, and career guides.</p>
     </div>
 </section>
 
@@ -16104,8 +16743,8 @@ def build_glossary_index():
     body += newsletter_cta_html("Get weekly GTM Engineering terms, tool intel, and career insights.")
 
     page = get_page_wrapper(
-        title="GTM Engineering Glossary: 50 Key Terms",
-        description=pad_description("Master the GTM Engineering vocabulary. 50 key terms with definitions, examples, and cross-links to tool reviews, salary data, and career guides."),
+        title="GTM Engineering Glossary: 56 Key Terms",
+        description=pad_description("Master the GTM Engineering vocabulary. 56 key terms with definitions, examples, and cross-links to tool reviews, salary data, and career guides."),
         canonical_path="/glossary/",
         body_content=body,
         active_path="/glossary/",
@@ -16400,6 +17039,13 @@ def main():
     build_insight_how_to_get_hired()
     build_insight_portfolio_guide()
     build_insight_data_pipeline_architecture()
+    # Batch 5 — How-To Tutorials
+    build_insight_clay_enrichment_workflow()
+    build_insight_email_warm_up_infrastructure()
+    build_insight_outbound_sequence_templates()
+    build_insight_webhook_automation_sales()
+    build_insight_lead_scoring_no_code()
+    build_insight_linkedin_automation_safely()
 
     # Register all pages for OG image generation
     print("\n  Registering OG pages...")

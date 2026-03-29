@@ -11,6 +11,7 @@ from nav_config import *
 # Module-level state (set by build.py at startup)
 ALL_PAGES = []
 OUTPUT_DIR = ""
+SKIP_OG = False
 
 
 # ---------------------------------------------------------------------------
@@ -183,12 +184,13 @@ def get_page_wrapper(title, description, canonical_path, body_content,
     """Assemble a full HTML document."""
     bc = f' class="{body_class}"' if body_class else ""
 
-    # Auto-compute OG image path from canonical_path
-    og_stem = canonical_path.strip("/").replace("/", "-")
-    # Strip .html extension if present (e.g. 404.html -> 404)
-    if og_stem.endswith(".html"):
-        og_stem = og_stem[:-5]
-    og_image = f"/assets/og/{og_stem}.png" if og_stem else "/assets/og/index.png"
+    # Auto-compute OG image path from canonical_path (skip if OG generation disabled)
+    og_image = ""
+    if not SKIP_OG:
+        og_stem = canonical_path.strip("/").replace("/", "-")
+        if og_stem.endswith(".html"):
+            og_stem = og_stem[:-5]
+        og_image = f"/assets/og/{og_stem}.png" if og_stem else "/assets/og/index.png"
 
     head = get_html_head(title, description, canonical_path, extra_head, og_image=og_image)
     nav = get_nav_html(active_path)

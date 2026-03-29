@@ -47,6 +47,7 @@ BUILD_DATE = datetime.now().strftime("%Y-%m-%d")
 
 # Wire up templates module
 templates.OUTPUT_DIR = OUTPUT_DIR
+templates.SKIP_OG = SKIP_OG
 
 
 # ---------------------------------------------------------------------------

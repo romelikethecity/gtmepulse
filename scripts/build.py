@@ -6610,6 +6610,11 @@ TOOL_ROUNDUPS = [
      "meta_desc": "Top intent data platforms ranked for signal quality and ROI. 6sense, Bombora, and G2 Buyer Intent compared with honest pricing.",
      "content_module": "roundups_category", "content_key": "best-intent-data-platforms",
      "category_tag": "Intent Data"},
+    {"slug": "best-data-enrichment-tools-for-gtm-engineers",
+     "title": "Best Data Enrichment Tools for GTM Engineers 2026",
+     "meta_desc": "7 data enrichment tools ranked for GTM engineers. Clay, Apollo, Verum, ZoomInfo, and more compared on accuracy, pricing, and workflow fit.",
+     "content_module": "roundups_enrichment", "content_key": "best-data-enrichment-tools-for-gtm-engineers",
+     "category_tag": "Data Enrichment"},
 ]
 
 BUILT_ROUNDUP_SLUGS = {r["slug"] for r in TOOL_ROUNDUPS}

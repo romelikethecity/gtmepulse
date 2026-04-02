@@ -6615,6 +6615,11 @@ TOOL_ROUNDUPS = [
      "meta_desc": "7 data enrichment tools ranked for GTM engineers. Clay, Apollo, Verum, ZoomInfo, and more compared on accuracy, pricing, and workflow fit.",
      "content_module": "roundups_enrichment", "content_key": "best-data-enrichment-tools-for-gtm-engineers",
      "category_tag": "Data Enrichment"},
+    {"slug": "best-clay-alternatives",
+     "title": "Best Clay Alternatives for Data Enrichment 2026",
+     "meta_desc": "7 Clay alternatives for GTM engineers. Apollo, Verum, ZoomInfo, PDL, and more compared on enrichment coverage, pricing, and workflow fit.",
+     "content_module": "roundups_clay_alternatives", "content_key": "best-clay-alternatives",
+     "category_tag": "Clay Alternatives"},
 ]
 
 BUILT_ROUNDUP_SLUGS = {r["slug"] for r in TOOL_ROUNDUPS}

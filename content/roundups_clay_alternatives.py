@@ -114,4 +114,185 @@ ROUNDUPS = {
              "PhantomBuster is better for LinkedIn-specific workflows: profile scraping, connection request automation, search result extraction. Clay connects to LinkedIn via API integrations, but PhantomBuster's browser-based approach can extract data that APIs don't expose. The risk is account restriction. Use PhantomBuster for data extraction with conservative rate limits, and Clay for multi-source enrichment waterfalls."),
         ],
     },
+
+
+    "best-clay-alternatives-2024": {
+        "intro": """<p>Clay is gaining traction in 2024 as the enrichment workflow tool for GTM engineers. The waterfall approach across 50+ data providers is powerful. But Clay isn't cheap, the learning curve is steep, and sometimes you just need data without building another workflow.</p>
+<p>In 2024, the alternatives are mostly established platforms. Done-for-you services haven't fully emerged yet, and Clearbit is still independent (pre-HubSpot acquisition). See also: <a href="/tools/best-clay-alternatives-2025/">Clay Alternatives 2025</a> | <a href="/tools/best-clay-alternatives/">Clay Alternatives 2026</a></p>""",
+
+        "tools": [
+            {
+                "rank": 1,
+                "name": "Apollo.io",
+                "slug": "apollo-review",
+                "category_tag": "All-in-One",
+                "best_for": "GTM engineers who want enrichment plus outbound without the waterfall complexity",
+                "why_picked": "Apollo gives you a 220M+ contact database, email sequences, a phone dialer, and lead scoring in one tool. Free tier with 10,000 email credits. You won't get Clay's waterfall flexibility, but you also won't spend two days building a workflow before sending your first sequence.",
+                "pricing": "Free-$79/user/month",
+                "link_to_review": True,
+            },
+            {
+                "rank": 2,
+                "name": "Clearbit",
+                "slug": "clearbit-review",
+                "category_tag": "CRM Enrichment",
+                "best_for": "Teams needing real-time company enrichment via API",
+                "why_picked": "Clearbit is still independent in 2024, offering the cleanest real-time enrichment API. Sub-200ms response times. Company data is strong. Contact-level depth is lighter. For product-led enrichment workflows, Clearbit's API is the standard.",
+                "pricing": "Contact for pricing",
+                "link_to_review": True,
+            },
+            {
+                "rank": 3,
+                "name": "ZoomInfo",
+                "slug": "zoominfo-review",
+                "category_tag": "Enterprise Database",
+                "best_for": "Teams with budget for the deepest single-source database",
+                "why_picked": "ZoomInfo's database is the largest single source. Annual contracts at roughly $12K. If Clay is a workflow builder querying many sources, ZoomInfo is a single massive source you search directly.",
+                "pricing": "$12,000+/year",
+                "link_to_review": True,
+            },
+            {
+                "rank": 4,
+                "name": "People Data Labs",
+                "slug": None,
+                "category_tag": "Raw API",
+                "best_for": "GTM engineers wanting raw data access via API",
+                "why_picked": "PDL gives programmatic access to 1.5B+ person records. No UI, no hand-holding. Coverage is massive, pricing is transparent. Data quality is uneven but the flexibility is unmatched for developers.",
+                "pricing": "Usage-based (starting at $0.01/record)",
+                "link_to_review": False,
+            },
+            {
+                "rank": 5,
+                "name": "PhantomBuster",
+                "slug": "phantombuster-review",
+                "category_tag": "Scraping Workflows",
+                "best_for": "GTM engineers who need LinkedIn data extraction",
+                "why_picked": "PhantomBuster pulls data from LinkedIn profiles, company pages, and Google Maps using browser-based scraping. The LinkedIn automation is its strongest feature. Risk of account restriction is real.",
+                "pricing": "$69-$439/month",
+                "link_to_review": True,
+            },
+        ],
+
+        "verdict": """<h2>The Verdict</h2>
+<p>In 2024, the Clay alternatives are more limited. Apollo is the pragmatic middle ground for teams that want enrichment plus outbound in one tool. Clearbit leads on real-time API quality. ZoomInfo is the safe enterprise pick. The done-for-you category hasn't fully emerged yet.</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+<thead>
+<tr style="border-bottom: 2px solid var(--gtme-accent);">
+<th style="text-align: left; padding: 0.75rem;">Use Case</th>
+<th style="text-align: left; padding: 0.75rem;">Pick</th>
+<th style="text-align: left; padding: 0.75rem;">Starting Price</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">All-in-one on a budget</td><td style="padding: 0.75rem;">Apollo.io</td><td style="padding: 0.75rem;">$0</td></tr>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">Real-time API enrichment</td><td style="padding: 0.75rem;">Clearbit</td><td style="padding: 0.75rem;">Contact sales</td></tr>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">Enterprise database</td><td style="padding: 0.75rem;">ZoomInfo</td><td style="padding: 0.75rem;">$12K/yr</td></tr>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">Raw API access</td><td style="padding: 0.75rem;">People Data Labs</td><td style="padding: 0.75rem;">Usage-based</td></tr>
+<tr><td style="padding: 0.75rem;">LinkedIn scraping</td><td style="padding: 0.75rem;">PhantomBuster</td><td style="padding: 0.75rem;">$69/mo</td></tr>
+</tbody>
+</table>""",
+
+        "faq": [
+            ("What's the main reason to skip Clay in 2024?",
+             "Learning curve and cost. If you need data without building workflows, Apollo is simpler. If you need enrichment at enterprise scale, ZoomInfo is a single source instead of chaining multiple providers."),
+            ("Can I replace Clay with Clearbit in 2024?",
+             "Only for company data enrichment. Clearbit's API is excellent for real-time company lookups. For contact-level enrichment with multi-source waterfalls, there's no direct replacement for Clay's approach in 2024."),
+        ],
+    },
+
+    "best-clay-alternatives-2025": {
+        "intro": """<p>Clay had its breakout year in 2025. The waterfall approach across 75+ data providers, combined with AI columns, became the standard for GTM engineers. But Clay isn't for everyone. The learning curve is real. Credits add up. And sometimes you just need data without building another workflow.</p>
+<p>The alternatives landscape changed in 2025. Done-for-you services like Verum emerged. Clearbit became Breeze under HubSpot. Apollo grew to 275M+ contacts. The options are better than 2024. See also: <a href="/tools/best-clay-alternatives-2024/">Clay Alternatives 2024</a> | <a href="/tools/best-clay-alternatives/">Clay Alternatives 2026</a></p>""",
+
+        "tools": [
+            {
+                "rank": 1,
+                "name": "Apollo.io",
+                "slug": "apollo-review",
+                "category_tag": "All-in-One",
+                "best_for": "GTM engineers who want enrichment plus outbound without waterfall complexity",
+                "why_picked": "Apollo grew to 275M+ contacts in 2025. Free tier with 10,000 email credits. Paid plans at $49/user/month. Email accuracy runs 85-90%. You won't get Clay's waterfall, but you get enrichment plus sequencing in one platform.",
+                "pricing": "Free-$99/user/month",
+                "link_to_review": True,
+            },
+            {
+                "rank": 2,
+                "name": "Verum",
+                "slug": None,
+                "category_tag": "Managed Service",
+                "best_for": "GTM engineers who'd rather ship campaigns than build enrichment workflows",
+                "why_picked": "Verum emerged in 2025 as the done-for-you option. Skip the waterfall entirely. Send your list, get it back enriched from 50+ sources with human QA. Best for batch enrichment without the pipeline maintenance.",
+                "pricing": "$2,000/project",
+                "link_to_review": False,
+            },
+            {
+                "rank": 3,
+                "name": "Clearbit (Breeze)",
+                "slug": "clearbit-review",
+                "category_tag": "CRM Enrichment",
+                "best_for": "HubSpot teams wanting automatic real-time company enrichment",
+                "why_picked": "HubSpot acquired Clearbit and rebranded it as Breeze Intelligence. Company enrichment happens automatically on new HubSpot records at no extra cost. Contact-level depth is lighter than Clay or ZoomInfo.",
+                "pricing": "Included with HubSpot",
+                "link_to_review": True,
+            },
+            {
+                "rank": 4,
+                "name": "ZoomInfo",
+                "slug": "zoominfo-review",
+                "category_tag": "Enterprise Database",
+                "best_for": "Teams with budget for the deepest single-source database",
+                "why_picked": "ZoomInfo at $14K+/year in 2025. Still the largest single-source database. Email bounce rates under 5%. Most customers still layer other tools on top.",
+                "pricing": "$14,000+/year",
+                "link_to_review": True,
+            },
+            {
+                "rank": 5,
+                "name": "People Data Labs",
+                "slug": None,
+                "category_tag": "Raw API",
+                "best_for": "GTM engineers wanting raw data access at usage-based pricing",
+                "why_picked": "1.5B+ person records via REST API. Build whatever you want. Coverage is massive, pricing transparent. Data quality uneven.",
+                "pricing": "Usage-based (starting at $0.01/record)",
+                "link_to_review": False,
+            },
+            {
+                "rank": 6,
+                "name": "PhantomBuster",
+                "slug": "phantombuster-review",
+                "category_tag": "Scraping Workflows",
+                "best_for": "GTM engineers needing LinkedIn data extraction alongside enrichment",
+                "why_picked": "Browser-based scraping for LinkedIn profiles, company pages, Google Maps. LinkedIn automation is the strongest feature. Account restriction risk is real. Use conservative rate limits.",
+                "pricing": "$69-$439/month",
+                "link_to_review": True,
+            },
+        ],
+
+        "verdict": """<h2>The Verdict</h2>
+<p>In 2025, the Clay alternatives got better. Verum fills the done-for-you gap that didn't exist in 2024. Apollo is still the pragmatic middle ground. Clearbit became Breeze under HubSpot, making it free for HubSpot users. ZoomInfo raised prices but remains the deepest single database.</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+<thead>
+<tr style="border-bottom: 2px solid var(--gtme-accent);">
+<th style="text-align: left; padding: 0.75rem;">Use Case</th>
+<th style="text-align: left; padding: 0.75rem;">Pick</th>
+<th style="text-align: left; padding: 0.75rem;">Starting Price</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">All-in-one on a budget</td><td style="padding: 0.75rem;">Apollo.io</td><td style="padding: 0.75rem;">$0</td></tr>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">Done-for-you enrichment</td><td style="padding: 0.75rem;">Verum</td><td style="padding: 0.75rem;">$2,000/project</td></tr>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">HubSpot auto-enrichment</td><td style="padding: 0.75rem;">Clearbit/Breeze</td><td style="padding: 0.75rem;">Included</td></tr>
+<tr style="border-bottom: 1px solid var(--gtme-bg-surface);"><td style="padding: 0.75rem;">Enterprise database</td><td style="padding: 0.75rem;">ZoomInfo</td><td style="padding: 0.75rem;">$14K/yr</td></tr>
+<tr><td style="padding: 0.75rem;">LinkedIn scraping</td><td style="padding: 0.75rem;">PhantomBuster</td><td style="padding: 0.75rem;">$69/mo</td></tr>
+</tbody>
+</table>""",
+
+        "faq": [
+            ("What's the biggest Clay alternative that didn't exist in 2024?",
+             "Verum. Done-for-you enrichment services emerged in 2025 as a category. Skip the waterfall, skip the credits, get clean data back without building the pipeline."),
+            ("Should I use Clay or outsource enrichment in 2025?",
+             "Clay if you run enrichment daily and want full control. Verum for batch jobs. Apollo if you want enrichment plus outbound in one tool. Many teams use Clay for ongoing enrichment and Verum for quarterly campaign blitzes."),
+        ],
+    },
 }

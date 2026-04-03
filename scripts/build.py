@@ -6665,6 +6665,16 @@ TOOL_ROUNDUPS = [
      "meta_desc": "n8n vs Make vs Zapier for GTM automation. Pricing, AI capabilities, and self-hosting compared. Clear winner for GTM engineers.",
      "content_module": "roundups_automation", "content_key": "zapier-vs-make-vs-n8n",
      "category_tag": "Workflow Automation"},
+    {"slug": "best-gtm-automation-platforms",
+     "title": "Best GTM Automation Platforms 2026: Ranked",
+     "meta_desc": "7 GTM automation platforms ranked by flexibility, pricing, and workflow depth. Clay, n8n, Make, Zapier, Apollo, Tray.io, and Pipedream compared.",
+     "content_module": "roundups_gtm_platforms", "content_key": "best-gtm-automation-platforms",
+     "category_tag": "GTM Automation"},
+    {"slug": "best-ai-agents-for-gtm",
+     "title": "Best AI Agents for GTM Teams 2026: Ranked",
+     "meta_desc": "7 AI agents for GTM teams ranked. Clay AI, 11x, n8n AI nodes, Artisan, Relevance AI, AiSDR, and CrewAI compared on cost and capability.",
+     "content_module": "roundups_ai_agents", "content_key": "best-ai-agents-for-gtm",
+     "category_tag": "AI Agents"},
 ]
 
 BUILT_ROUNDUP_SLUGS = {r["slug"] for r in TOOL_ROUNDUPS}

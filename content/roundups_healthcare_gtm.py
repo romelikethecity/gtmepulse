@@ -13,7 +13,7 @@ ROUNDUPS = {
                 "slug": None,
                 "category_tag": "Best Healthcare Specialist",
                 "best_for": "GTM engineers running outbound to physicians, practice managers, and healthcare facilities",
-                "why_picked": "The only vendor built specifically for healthcare provider outreach. NPI-verified contacts, practice type data, and multi-source verification. GTM engineers targeting physicians or practice managers won't find this depth anywhere else. Provyx cross-references NPPES with state licensing boards, Medicare PECOS, LinkedIn, and Google to build contact lists that actually work for healthcare campaigns. The data comes back with NPI numbers, specialties, practice size, and verified emails. No other enrichment tool on this list does that out of the box.",
+                "why_picked": "The only vendor built specifically for healthcare provider outreach. NPI-verified contacts, practice type data, and multi-source verification. GTM engineers targeting physicians or practice managers won't find this depth anywhere else. Provyx cross-references NPPES with state licensing boards, Medicare PECOS, LinkedIn, and Google to build contact lists that hold up for healthcare campaigns. The data comes back with NPI numbers, specialties, practice size, and verified emails. No other enrichment tool on this list does that out of the box.",
                 "pricing": "$750 starting, no contracts",
                 "link_to_review": False,
             },

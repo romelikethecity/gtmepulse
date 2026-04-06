@@ -23,7 +23,7 @@ ROUNDUPS = {
                 "slug": "apollo-review",
                 "category_tag": "All-in-One",
                 "best_for": "GTM engineers who want enrichment, prospecting, and outbound sequences in one platform",
-                "why_picked": "Apollo's 275M+ contact database gives you solid North American and Western European coverage. The free tier includes 10,000 email credits per month. Paid plans unlock unlimited email lookups at $49/user/month, which is hard to beat on pure economics. Email accuracy runs 85-90% on verified contacts, lower than premium providers but good enough for most outbound. The built-in sequencing means you can go from enriched list to live campaign without switching tools.",
+                "why_picked": "Apollo's 275M+ contact database gives you solid North American and Western European coverage. The free tier includes 10,000 email credits per month. Paid plans include unlimited email lookups at $49/user/month, which is hard to beat on pure economics. Email accuracy runs 85-90% on verified contacts, lower than premium providers but good enough for most outbound. The built-in sequencing means you can go from enriched list to live campaign without switching tools.",
                 "pricing": "Free-$99/user/month",
                 "link_to_review": True,
             },
@@ -106,7 +106,7 @@ ROUNDUPS = {
         "faq": [
             ("What's the difference between enrichment tools and enrichment services?",
              "Tools give you software to run enrichment yourself. Clay, Apollo, and ZoomInfo are tools. You configure the waterfall, manage credits, handle dedup, and maintain the pipeline. Services like Verum do the enrichment for you. You send a list, they send it back clean. Tools are better for ongoing, daily enrichment. Services are better for large batch jobs or teams without the bandwidth to build and maintain pipelines."),
-            ("How many data sources do I actually need in a waterfall?",
+            ("How many data sources do I need in a waterfall?",
              "Three to five covers most use cases. A typical waterfall: Apollo for initial email lookup (free), then Clearbit or DropContact for gaps, then a phone number provider. Clay makes it easy to chain more, but diminishing returns kick in after five sources. Each additional provider adds maybe 3-5% coverage. Focus on the first three sources before optimizing the tail."),
             ("Is People Data Labs accurate enough for outbound?",
              "PDL's email data needs secondary verification. The coverage is massive (1.5B+ records), but a significant percentage of emails are outdated or unverified. If you're pulling from PDL, always run the results through NeverBounce or ZeroBounce before sending. Phone numbers from PDL are even less reliable. Use PDL for company and firmographic data, and verify contact data through a second source."),
@@ -127,7 +127,7 @@ ROUNDUPS = {
                 "slug": "clay-review",
                 "category_tag": "Enrichment",
                 "best_for": "GTM engineers building enrichment waterfalls with full control",
-                "why_picked": "Clay is gaining traction in 2024 as the tool for building custom enrichment waterfalls. Chain 50+ data providers into a single workflow. The credit-based pricing means you pay per enrichment, not per seat. It's not yet mainstream, but early GTM engineers are building their entire data operations around it.",
+                "why_picked": "Clay is gaining traction in 2024 as the tool for building custom enrichment waterfalls. Chain 50+ data providers into a single workflow where each source fills gaps the previous one missed. The credit-based pricing means you pay per enrichment, not per seat, which keeps costs predictable as you scale. It's not yet mainstream, but early GTM engineers are building their entire data operations around it. The learning curve is real, and you'll spend a few days building your first waterfall, but the coverage beats any single database.",
                 "pricing": "$149-$800/month",
                 "link_to_review": True,
             },
@@ -137,7 +137,7 @@ ROUNDUPS = {
                 "slug": "apollo-review",
                 "category_tag": "All-in-One",
                 "best_for": "GTM engineers wanting enrichment, prospecting, and sequences in one platform",
-                "why_picked": "Apollo's 220M+ contact database gives you solid coverage. The free tier includes 10,000 email credits per month. Paid plans at $39/user/month include unlimited lookups. The built-in sequencing means you go from enriched list to live campaign without switching tools.",
+                "why_picked": "Apollo's 220M+ contact database gives you solid coverage for North American and Western European contacts. The free tier includes 10,000 email credits per month, which is generous enough for most small teams to prove value. Paid plans at $39/user/month include unlimited lookups. The built-in sequencing means you go from enriched list to live campaign without switching tools. Email accuracy runs around 85% on verified contacts, lower than premium providers but good enough for most outbound motions.",
                 "pricing": "Free-$79/user/month",
                 "link_to_review": True,
             },
@@ -147,7 +147,7 @@ ROUNDUPS = {
                 "slug": "clearbit-review",
                 "category_tag": "CRM Enrichment",
                 "best_for": "Teams needing real-time API-first company enrichment",
-                "why_picked": "Clearbit is still independent in 2024 and offers the cleanest real-time enrichment API. Sub-200ms response times. Company data is particularly strong. For GTM engineers building product-led enrichment workflows, Clearbit's API is the standard.",
+                "why_picked": "Clearbit is still independent in 2024 and offers the cleanest real-time enrichment API on the market. Sub-200ms response times make it practical for product-led enrichment workflows where you need to enrich a visitor's company data while they're still on your site. Company data is particularly strong: industry, headcount, revenue range, tech stack. Contact-level depth is lighter than dedicated providers. For GTM engineers building real-time enrichment into their product or signup flow, Clearbit's API is the standard that others get measured against.",
                 "pricing": "Contact for pricing",
                 "link_to_review": True,
             },
@@ -157,7 +157,7 @@ ROUNDUPS = {
                 "slug": "zoominfo-review",
                 "category_tag": "Enterprise Database",
                 "best_for": "Teams with budget for the deepest single-source B2B database",
-                "why_picked": "ZoomInfo's database is the largest. Annual contracts start around $12K. Data accuracy is better than Apollo's on VP+ contacts. Most ZoomInfo customers layer additional tools on top for coverage gaps.",
+                "why_picked": "ZoomInfo's database is the largest single source for B2B contacts in 2024. Annual contracts start around $12K and climb fast with add-ons. Data accuracy is measurably better than Apollo's on VP+ contacts, with email bounce rates consistently under 5%. The intent data and technographic layers add targeting dimensions that smaller providers don't offer. Most ZoomInfo customers still layer additional tools on top for coverage gaps, which says something about the limits of any single database.",
                 "pricing": "$12,000+/year",
                 "link_to_review": True,
             },
@@ -167,14 +167,14 @@ ROUNDUPS = {
                 "slug": None,
                 "category_tag": "Raw API",
                 "best_for": "GTM engineers who want raw data access through a clean API",
-                "why_picked": "PDL gives programmatic access to 1.5B+ person records via REST API. No UI, no hand-holding. You query and build on top. Coverage is massive, pricing is transparent. Data quality is uneven but the flexibility is unmatched.",
+                "why_picked": "PDL gives programmatic access to 1.5B+ person records via REST API. No UI, no workflow builder, no hand-holding. You query the API, get back JSON, and build whatever you want on top. Coverage is massive and pricing is transparent at $0.01-0.10 per record. Data quality is uneven since PDL aggregates from public sources, so email freshness varies. If you write Python and want raw materials instead of finished tools, PDL gives you the flexibility. Everyone else should use Clay or Apollo.",
                 "pricing": "Usage-based (starting at $0.01/record)",
                 "link_to_review": False,
             },
         ],
 
         "verdict": """<h2>The Verdict</h2>
-<p>Clay is the emerging pick for GTM engineers who want control over enrichment in 2024. The waterfall model is powerful but the tool is still gaining adoption. Apollo is the pragmatic default. ZoomInfo is the safe enterprise choice. Clearbit leads on real-time API quality.</p>
+<p>Clay is the emerging pick for GTM engineers who want control over enrichment in 2024. The waterfall model is powerful, letting you chain multiple data providers to fill gaps that no single database covers. The tool is still gaining adoption, so community templates and shared workflows are limited. Apollo is the pragmatic default for teams that want enrichment plus outbound in one platform without building workflows. ZoomInfo is the safe enterprise choice with the deepest database, though the $12K+ price tag limits access. Clearbit leads on real-time API quality for product-led enrichment.</p>
 
 <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
 <thead>
@@ -195,11 +195,11 @@ ROUNDUPS = {
 
         "faq": [
             ("What's the best enrichment tool for new GTM engineers in 2024?",
-             "Start with Apollo. The free tier gives you enough to prove the value. Move to Clay when you need multi-source waterfalls. ZoomInfo when your company can afford it."),
+             "Start with Apollo. The free tier gives you 10,000 email credits per month, which is enough to prove the value of enrichment to your team. Move to Clay when you need multi-source waterfalls that chain three or more providers for better coverage. ZoomInfo when your company can afford the $12K+ annual contract and needs enterprise-grade data depth."),
             ("Is Clay worth it in 2024?",
-             "If you're technical and run enrichment daily, yes. The learning curve is real but the payoff is custom waterfalls that beat any single database on coverage. For teams without a GTM engineer, Apollo is simpler."),
+             "If you're technical and run enrichment daily, yes. The learning curve takes a few days to get past, but the payoff is custom waterfalls that beat any single database on coverage. Clay lets you chain Apollo, Clearbit, DropContact, and other providers so each one fills gaps the previous one missed. For teams without a GTM engineer or anyone comfortable building workflows, Apollo is simpler and covers 80% of the enrichment need without the complexity."),
             ("How much does data enrichment cost for a small GTM team in 2024?",
-             "Apollo's free tier handles most small teams. Clay starts at $149/month with credit-based pricing on top. ZoomInfo runs $12K+/year. For teams under 10 people doing fewer than 5,000 enrichments per month, Apollo's free plan plus occasional Clay credits is the most cost-effective setup."),
+             "Apollo's free tier handles most small teams doing under 10,000 enrichments per month. Clay starts at $149/month with credit-based pricing on top, so actual cost depends on how many enrichments you run. ZoomInfo starts at $12K+/year. For teams under 10 people doing fewer than 5,000 enrichments per month, Apollo's free plan is the most cost-effective starting point. Add Clay credits when you find specific segments where Apollo's data has gaps."),
         ],
     },
 
@@ -214,7 +214,7 @@ ROUNDUPS = {
                 "slug": "clay-review",
                 "category_tag": "Enrichment",
                 "best_for": "GTM engineers building enrichment waterfalls with full control over every step",
-                "why_picked": "Clay hit its stride in 2025. Chain 75+ data providers into a single waterfall. AI columns score, categorize, and write personalized openers. The credit-based pricing means you pay per enrichment. For GTM engineers, Clay is now the operating system for enrichment.",
+                "why_picked": "Clay hit its stride in 2025. Chain 75+ data providers into a single waterfall where each source fills gaps the previous one missed. AI columns score leads, categorize companies, and write personalized openers without leaving the platform. The credit-based pricing means you pay per enrichment, not per seat. For GTM engineers who think in workflows and want full control over their data pipeline, Clay is now the operating system for enrichment. The community of shared templates and workflows also grew significantly in 2025.",
                 "pricing": "$149-$800/month",
                 "link_to_review": True,
             },
@@ -224,7 +224,7 @@ ROUNDUPS = {
                 "slug": "apollo-review",
                 "category_tag": "All-in-One",
                 "best_for": "GTM engineers who want enrichment, prospecting, and outbound in one platform",
-                "why_picked": "Apollo's database grew to 275M+ contacts in 2025. Free tier still includes 10,000 email credits per month. Paid plans at $49/user/month. Email accuracy runs 85-90%. The pragmatic middle ground between Clay's complexity and ZoomInfo's price.",
+                "why_picked": "Apollo's database grew to 275M+ contacts in 2025, making it the largest free-tier enrichment source available. Free tier still includes 10,000 email credits per month. Paid plans at $49/user/month with unlimited email lookups. Email accuracy runs 85-90% on verified contacts, lower than ZoomInfo but good enough for most outbound motions. The pragmatic middle ground between Clay's complexity and ZoomInfo's price, with built-in sequencing that lets you go from enriched list to live campaign without switching tools.",
                 "pricing": "Free-$99/user/month",
                 "link_to_review": True,
             },
@@ -234,7 +234,7 @@ ROUNDUPS = {
                 "slug": None,
                 "category_tag": "Managed Service",
                 "best_for": "GTM engineers who'd rather ship campaigns than debug enrichment pipelines",
-                "why_picked": "Verum emerged in 2025 as the done-for-you option. Send a CSV, get it back enriched from 50+ sources with human QA. No credits to burn, no pipeline to maintain. If you need batch enrichment without building the waterfall, Verum saves a week of pipeline work.",
+                "why_picked": "Verum emerged in 2025 as the done-for-you option for teams that don't want to build another workflow. Send a CSV, get it back enriched from 50+ sources with human QA on every record. No credits to burn, no waterfall to debug, no pipeline to maintain. Best for quarterly campaign preparation, territory reassignment, and any batch job where you'd rather spend the week running outreach than building the enrichment pipeline. The trade-off is you're outsourcing the process rather than owning it.",
                 "pricing": "$2,000/project",
                 "link_to_review": False,
             },
@@ -244,7 +244,7 @@ ROUNDUPS = {
                 "slug": "clearbit-review",
                 "category_tag": "CRM Enrichment",
                 "best_for": "HubSpot teams that want automatic real-time company enrichment",
-                "why_picked": "HubSpot acquired Clearbit and rebranded it as Breeze Intelligence in 2025. If you're on HubSpot, company enrichment happens automatically on new CRM records at no extra cost. Contact-level depth is lighter than dedicated providers.",
+                "why_picked": "HubSpot acquired Clearbit and rebranded it as Breeze Intelligence in 2025. If you're on HubSpot, company enrichment happens automatically on new CRM records at no extra cost. Industry, headcount, revenue range, and tech stack populate without any manual effort. Contact-level depth is lighter than dedicated providers like ZoomInfo or Cognism. For HubSpot shops, the play is using Breeze as your baseline company data and layering Apollo or Clay on top for contact-level gaps.",
                 "pricing": "Included with HubSpot (additional credits available)",
                 "link_to_review": True,
             },
@@ -254,7 +254,7 @@ ROUNDUPS = {
                 "slug": "zoominfo-review",
                 "category_tag": "Enterprise Database",
                 "best_for": "Teams with budget for the deepest single-source B2B database",
-                "why_picked": "ZoomInfo raised prices to $14K+ per year in 2025. The database is still the largest. Email bounce rates under 5%. But most customers layer Clay or other tools on top for coverage gaps.",
+                "why_picked": "ZoomInfo raised prices to $14K+ per year in 2025. The database is still the largest single source with 100M+ business profiles. Email bounce rates consistently run under 5% on verified contacts. Intent data and technographics add targeting layers that smaller providers don't offer. But most customers layer Clay or other tools on top for coverage gaps, which says something about the limits of any single database even at this price point.",
                 "pricing": "$14,000+/year",
                 "link_to_review": True,
             },
@@ -264,14 +264,14 @@ ROUNDUPS = {
                 "slug": None,
                 "category_tag": "Raw API",
                 "best_for": "GTM engineers who want raw data access at usage-based pricing",
-                "why_picked": "PDL's 1.5B+ records via REST API. Build whatever you want on top. Coverage is massive, pricing is transparent. Data quality is uneven but the flexibility appeals to developers.",
+                "why_picked": "PDL's 1.5B+ records available via REST API for developers who want to build custom enrichment into their own systems. Coverage is massive and pricing is transparent at $0.01-0.10 per record. Data quality is uneven since PDL aggregates from public sources, so freshness varies. Always run PDL email results through a verification tool before using them in outbound. The flexibility appeals to technical teams who want raw materials rather than a pre-built workflow.",
                 "pricing": "Usage-based (starting at $0.01/record)",
                 "link_to_review": False,
             },
         ],
 
         "verdict": """<h2>The Verdict</h2>
-<p>Clay won 2025. The waterfall model across 75+ sources, combined with AI columns and a flexible workflow engine, makes it the clear center of the GTM engineer's stack. Verum is the answer for batch jobs where you'd rather outsource the whole thing. Apollo is the pragmatic middle ground at $49/month.</p>
+<p>Clay won 2025. The waterfall model across 75+ sources, combined with AI columns and a flexible workflow engine, makes it the clear center of the GTM engineer's stack. If you're technical and run enrichment on an ongoing basis, Clay gives you more coverage and control than any single database. Verum is the answer for batch jobs where you'd rather outsource the entire waterfall and get clean data back without building the pipeline. Apollo is the pragmatic middle ground at $49/month for teams that want enrichment and outbound in one platform without the workflow complexity.</p>
 
 <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
 <thead>
@@ -292,11 +292,11 @@ ROUNDUPS = {
 
         "faq": [
             ("What changed in GTM enrichment tools in 2025?",
-             "Clay went mainstream. Clearbit became Breeze under HubSpot. Done-for-you services like Verum emerged. Apollo grew to 275M+ contacts. ZoomInfo raised prices to $14K+."),
+             "Several major shifts. Clay went from niche to mainstream, with job postings mentioning Clay growing significantly through the year. Clearbit was acquired by HubSpot and rebranded as Breeze Intelligence, making company enrichment free for HubSpot users. Done-for-you enrichment services like Verum emerged as a category for teams that don't want to build pipelines. Apollo grew to 275M+ contacts while keeping its free tier intact. ZoomInfo raised prices above $14K/year."),
             ("Should I use Clay or outsource enrichment in 2025?",
-             "Clay if you run enrichment daily and want control. Verum if you need batch enrichment quarterly without maintaining the pipeline. Many teams use both."),
+             "Clay if you run enrichment daily, have a technical team member to maintain workflows, and want full control over data sources and logic. Verum if you need batch enrichment quarterly for campaign preparation without maintaining the pipeline yourself. Many teams use both: Clay for ongoing daily enrichment and Verum for large batch projects where building a one-time workflow isn't worth the effort."),
             ("How does Clearbit becoming Breeze affect my enrichment stack in 2025?",
-             "If you use HubSpot, company enrichment is now free via Breeze Intelligence. Contact-level data is lighter than Clay or Apollo. For HubSpot shops, Breeze handles basic firmographic enrichment, and you layer Clay or Apollo on top for deeper contact data."),
+             "If you use HubSpot, company enrichment is now free via Breeze Intelligence. Industry, headcount, revenue range, and tech stack populate automatically on new CRM records. Contact-level data is lighter than Clay or Apollo, so you won't get direct dials or multi-source email coverage from Breeze alone. For HubSpot shops, Breeze handles the company data layer, and you layer Clay or Apollo on top for deeper contact-level enrichment."),
         ],
     },
 }

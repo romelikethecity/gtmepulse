@@ -3,7 +3,7 @@
 ROUNDUPS = {
     "best-cold-email-infrastructure": {
         "intro": """<p>Sending cold email in 2026 is an infrastructure problem. You need dedicated domains, warmed inboxes, rotation logic, and deliverability monitoring before your first campaign goes out. The tools below handle the plumbing so your emails land in inboxes instead of spam folders.</p>
-<p>We ranked these platforms on four things that matter for GTM Engineers: inbox management at scale (can you run 50+ inboxes without losing track?), warmup quality (do their warmup networks actually improve reputation?), deliverability analytics (can you diagnose problems before reply rates tank?), and API access for automation workflows. Price matters too, but cheap infrastructure that lands in spam isn't a deal.</p>""",
+<p>We ranked these platforms on four things that matter for GTM Engineers: inbox management at scale (can you run 50+ inboxes without losing track?), warmup quality (do their warmup networks measurably improve reputation?), deliverability analytics (can you diagnose problems before reply rates tank?), and API access for automation workflows. Price matters too, but cheap infrastructure that lands in spam isn't a deal.</p>""",
 
         "tools": [
             {

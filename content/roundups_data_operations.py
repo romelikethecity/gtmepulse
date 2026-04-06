@@ -147,7 +147,7 @@ ROUNDUPS = {
                 "slug": "apollo-review",
                 "category_tag": "All-in-One",
                 "best_for": "Teams that want a single-source database with built-in outbound instead of a multi-source waterfall",
-                "why_picked": "Apollo isn't a waterfall tool. It's a single large database (275M+ contacts) with enrichment, prospecting, and sequencing built in. Many teams start here and only build a waterfall when they hit Apollo's coverage gaps. The free tier gives you 10,000 email credits per month. Paid plans unlock unlimited email lookups. Email accuracy runs 85-90% on verified contacts. For teams that don't want to manage multiple providers, Apollo is the simplest path to enriched contact data. You'll sacrifice coverage on niche segments, but the speed-to-value is unmatched.",
+                "why_picked": "Apollo isn't a waterfall tool. It's a single large database (275M+ contacts) with enrichment, prospecting, and sequencing built in. Many teams start here and only build a waterfall when they hit Apollo's coverage gaps. The free tier gives you 10,000 email credits per month. Paid plans include unlimited email lookups. Email accuracy runs 85-90% on verified contacts. For teams that don't want to manage multiple providers, Apollo is the simplest path to enriched contact data. You'll sacrifice coverage on niche segments, but the speed-to-value is unmatched.",
                 "pricing": "Free-$99/user/month",
                 "link_to_review": True,
             },

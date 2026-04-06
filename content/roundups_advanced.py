@@ -75,7 +75,7 @@ ROUNDUPS = {
 
         "faq": [
             ("Is web scraping legal for GTM purposes?",
-             "Generally yes for publicly available data, but with caveats. The legal landscape varies by jurisdiction. In the US, the hiQ Labs v. LinkedIn ruling supports scraping public data. But many sites prohibit scraping in their Terms of Service, which creates contractual risk even if it's not criminal. Avoid scraping personal data protected by GDPR/CCPA, copyrighted content, or data behind login walls without permission. When in doubt, check the target site's robots.txt and Terms of Service."),
+             "Generally yes for publicly available data, but with caveats. The legal situation varies by jurisdiction. In the US, the hiQ Labs v. LinkedIn ruling supports scraping public data. But many sites prohibit scraping in their Terms of Service, which creates contractual risk even if it's not criminal. Avoid scraping personal data protected by GDPR/CCPA, copyrighted content, or data behind login walls without permission. When in doubt, check the target site's robots.txt and Terms of Service."),
             ("Should I use a scraping tool or pay for a data provider?",
              "Data providers are more reliable, easier to maintain, and come with legal coverage. Scrapers are cheaper and give you access to data that providers don't carry. The rule of thumb: if a data provider covers what you need (contact data, company info, tech stack), pay for it. If you need niche data from specific websites (competitor pricing, industry directories, job boards), build a scraper."),
             ("How do I handle sites that block scrapers?",

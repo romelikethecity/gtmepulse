@@ -55,9 +55,9 @@ templates.SKIP_OG = SKIP_OG
 # ---------------------------------------------------------------------------
 
 BANNED_WORDS = [
-    "robust", "leverage", "synergy", "holistic", "cutting-edge", "seamless",
+    "robust", "leverage", "synergy", "holistic", "advanced", "smooth",
     "game-changer", "paradigm shift", "revolutionary",
-    "genuinely", "truly", "really", "actually", "quite", "extremely",
+    "", "", "really", "actually", "quite", "extremely",
     "unlock", "unleash", "enhance", "exceed", "empower", "supercharge",
     "harness", "spearhead", "delve",
     "landscape", "tapestry", "frontier", "resonates", "positioning",
@@ -10938,7 +10938,7 @@ def build_blog_work_hours():
     <h2>The Agency Comparison</h2>
     <p>Agency GTM Engineers (30% of respondents) report different work patterns. Agency hours are more variable: some weeks are 50+ during client onboarding or campaign launches, while others drop to 30 during gaps between projects. The overall hours per week are comparable, but the distribution feels different because agency work has natural start and end points for each engagement.</p>
     <p>Agency GTM Engineers also share the load differently. Most agencies have 2-5 practitioners who can cover for each other. If one person goes on vacation, someone else can monitor their client's workflows. This safety net doesn't exist for in-house solo practitioners.</p>
-    <p>The trade-off: in-house GTM Engineers own the outcomes and often have more autonomy over the technical stack. Agency practitioners work on more diverse problems but face the constant pressure of client deliverables and billable utilization. Neither arrangement is low-stress. For more on this trade-off, see the <a href="/comparisons/in-house-vs-agency/">in-house vs agency comparison</a>.</p>
+    <p>The trade-off: in-house GTM Engineers own the outcomes and often have more autonomy over the technical stack. Agency practitioners work on more diverse problems but face the constant pressure of client deliverables and billable use. Neither arrangement is low-stress. For more on this trade-off, see the <a href="/comparisons/in-house-vs-agency/">in-house vs agency comparison</a>.</p>
 
     <h2>Automation Doesn't Eliminate Work</h2>
     <p>Here's the uncomfortable truth: automation shifts the type of work, but it doesn't reduce the total volume. Before GTM Engineers, a team of 5 SDRs might spend 200 hours per week on manual prospecting, email writing, and follow-up. A GTM Engineer automates 80% of that work. But the remaining 20% (debugging, optimizing, maintaining, building new workflows) takes 40-60 hours from one person.</p>
@@ -11842,7 +11842,7 @@ def build_blog_bonus_data():
     <p><strong>Growth and enterprise companies (65% pay bonuses):</strong> Established bonus programs with clear targets, consistent payout schedules, and HR-managed processes. GTM Engineers at these companies are slotted into existing comp bands. The bonus exists because the comp framework includes bonuses for the role's band, not because anyone specifically designed a GTM Engineering incentive plan.</p>
 
     <h2>Agency Bonuses: A Different Game</h2>
-    <p>Agency GTM Engineers (30% of survey respondents) have a fundamentally different bonus dynamic. Agencies structure compensation around project delivery, client retention, and billable utilization.</p>
+    <p>Agency GTM Engineers (30% of survey respondents) have a fundamentally different bonus dynamic. Agencies structure compensation around project delivery, client retention, and billable use.</p>
     <p>Common agency bonus structures include:</p>
     <p><strong>Client retention bonuses:</strong> 5-10% of the annual contract value for retaining clients beyond their initial engagement. If a $5K/month client stays for 12 months, the GTM Engineer who manages that account might receive a $3K-$6K retention bonus.</p>
     <p><strong>New business bonuses:</strong> Some agencies pay GTM Engineers for bringing in new clients, typically 5-15% of the first month's contract value. This incentivizes GTM Engineers to turn their own outbound skills inward, prospecting for agency clients.</p>
@@ -14221,14 +14221,14 @@ def build_insight_tech_stack_audit():
     <p><strong>Cost efficiency (1-5):</strong> Total annual cost divided by the value it delivers. Compare against what you'd pay for the next-best alternative. A 5 means it's the most cost-effective option available. A 1 means you're overpaying significantly.</p>
     <p><strong>Integration depth (1-5):</strong> How well does this tool connect with the rest of your stack? A 5 means data flows automatically in both directions with your CRM and automation platform. A 1 means you're exporting CSVs and uploading them manually.</p>
     <p><strong>Maintenance burden (1-5, inverted):</strong> How much engineering time does this tool consume? A 5 means it runs without intervention. A 1 means someone spends hours per week fixing broken workflows, updating credentials, or babysitting API connections.</p>
-    <p><strong>Utilization (1-5):</strong> What percentage of the tool's capabilities do you use? A 5 means you use 80%+ of features you pay for. A 1 means you're paying for an enterprise plan and using one feature.</p>
+    <p><strong>Use (1-5):</strong> What percentage of the tool's capabilities do you use? A 5 means you use 80%+ of features you pay for. A 1 means you're paying for an enterprise plan and using one feature.</p>
     <p><strong>Total score range: 5-25 per tool.</strong> Tools scoring below 15 are candidates for replacement or consolidation. Tools scoring 20+ are keepers. The gray zone (15-19) requires deeper analysis: often the tool is fine but underutilized, meaning the fix is training, not replacement.</p>
 
     <h2>Build vs. Buy Decision Framework</h2>
     <p>GTM Engineers face a recurring question at every layer: should we pay for a vendor tool or build it ourselves? The answer depends on three factors.</p>
     <p><strong>Build when:</strong> The tool handles a workflow specific to your company that no vendor supports well. The API you need is straightforward (most enrichment APIs are simple REST calls). You have Python/scripting capacity on the team. The vendor equivalent costs more than the engineering time to maintain a custom solution.</p>
     <p><strong>Buy when:</strong> The tool requires infrastructure you don't want to maintain (email sending reputation, deliverability monitoring). The vendor has proprietary data you can't replicate (intent data co-ops, contact databases). The tool needs a UI that non-technical team members use daily. The build would take more than two weeks and the vendor costs less than $500/month.</p>
-    <p>The <a href="https://www.gartner.com/en/digital-markets/insights/martech-stack-optimization" target="_blank" rel="noopener">Gartner research on marketing technology utilization</a> consistently finds that companies use only 42% of their martech stack capabilities. That stat extends to GTM tools. Before buying a new tool, confirm you're using what you already pay for.</p>
+    <p>The <a href="https://www.gartner.com/en/digital-markets/insights/martech-stack-optimization" target="_blank" rel="noopener">Gartner research on marketing technology use</a> consistently finds that companies use only 42% of their martech stack capabilities. That stat extends to GTM tools. Before buying a new tool, confirm you're using what you already pay for.</p>
     <p>Enrichment is the layer most commonly built in-house, because API calls to multiple vendors and waterfall logic are straightforward engineering work. Sequencing is the layer most commonly bought, because email reputation management and deliverability monitoring require infrastructure that's expensive to build and maintain.</p>
 
     <h2>Quarterly Audit Cadence</h2>
@@ -17734,8 +17734,8 @@ def build_insight_clay_vs_manual_prospecting_roi():
 
     <h2>Clay Plan Pricing Breakdown</h2>
     <p><strong>Clay Free (100 credits/month):</strong> Enough to test the platform on 10-15 contacts. Not enough for any production use. Use the free tier to validate that Clay's enrichment covers your target market before committing to a paid plan.</p>
-    <p><strong>Clay Explorer ($149/month, 5,000 credits):</strong> The entry point for production use. At 7 credits per contact average (enrichment + verification), you can process ~700 contacts/month. Per-contact cost at full utilization: $0.21. Best for single-rep operations or teams processing under 1,000 contacts/month.</p>
-    <p><strong>Clay Pro ($349/month, 10,000 credits):</strong> For teams running deeper waterfalls (3-4 stages) or processing 1,000+ contacts/month. Per-contact cost at full utilization: $0.35 at 7 credits per contact, dropping to $0.17 if you process 2,000+ contacts and supplement with Apollo credits for Stage 2. Includes CRM integrations and webhook actions.</p>
+    <p><strong>Clay Explorer ($149/month, 5,000 credits):</strong> The entry point for production use. At 7 credits per contact average (enrichment + verification), you can process ~700 contacts/month. Per-contact cost at full use: $0.21. Best for single-rep operations or teams processing under 1,000 contacts/month.</p>
+    <p><strong>Clay Pro ($349/month, 10,000 credits):</strong> For teams running deeper waterfalls (3-4 stages) or processing 1,000+ contacts/month. Per-contact cost at full use: $0.35 at 7 credits per contact, dropping to $0.17 if you process 2,000+ contacts and supplement with Apollo credits for Stage 2. Includes CRM integrations and webhook actions.</p>
     <p><strong>Clay Team ($720/month, 25,000 credits):</strong> For multi-person GTM teams or agencies managing multiple client accounts. Per-contact cost at scale: $0.10-0.15. Includes team workspaces, shared templates, and advanced permissions. The break-even vs manual research is nearly immediate at this plan level.</p>
     <p><strong>Annual pricing:</strong> Clay offers 20% discounts on annual plans. Explorer drops to $119/month, Pro to $279/month, Team to $576/month. If you've run Clay for 2+ months and know it works for your use case, the annual plan saves $360-1,728/year.</p>
 

@@ -25,13 +25,14 @@ def get_html_head(title, description, canonical_path, extra_head="", og_image=""
 
     og_image_tags = ""
     twitter_image_tag = ""
-    if og_image:
-        og_image_url = f"{SITE_URL}{og_image}"
-        og_image_tags = f"""
+    # Use provided og_image or fall back to default PNG
+    effective_og_image = og_image or "/assets/favicons/og-icon-256.png"
+    og_image_url = f"{SITE_URL}{effective_og_image}"
+    og_image_tags = f"""
     <meta property="og:image" content="{og_image_url}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">"""
-        twitter_image_tag = f'\n    <meta name="twitter:image" content="{og_image_url}">'
+    twitter_image_tag = f'\n    <meta name="twitter:image" content="{og_image_url}">'
 
     return f'''<!DOCTYPE html>
 <html lang="en">

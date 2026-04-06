@@ -198,6 +198,8 @@ ROUNDUPS = {
              "Learning curve and cost. If you need data without building workflows, Apollo is simpler. If you need enrichment at enterprise scale, ZoomInfo is a single source instead of chaining multiple providers."),
             ("Can I replace Clay with Clearbit in 2024?",
              "Only for company data enrichment. Clearbit's API is excellent for real-time company lookups. For contact-level enrichment with multi-source waterfalls, there's no direct replacement for Clay's approach in 2024."),
+            ("What's the cheapest way to get Clay-like enrichment in 2024?",
+             "Apollo's free tier gives you 10,000 email credits per month with decent contact data. Pair it with PhantomBuster for LinkedIn scraping and you get a basic waterfall without Clay's price tag. The tradeoff: more manual work and fewer data sources."),
         ],
     },
 
@@ -293,6 +295,8 @@ ROUNDUPS = {
              "Verum. Done-for-you enrichment services emerged in 2025 as a category. Skip the waterfall, skip the credits, get clean data back without building the pipeline."),
             ("Should I use Clay or outsource enrichment in 2025?",
              "Clay if you run enrichment daily and want full control. Verum for batch jobs. Apollo if you want enrichment plus outbound in one tool. Many teams use Clay for ongoing enrichment and Verum for quarterly campaign blitzes."),
+            ("Is Apollo a real Clay alternative or a different tool category?",
+             "Different category, but overlapping use case. Apollo is a database with built-in sequences. Clay is a workflow tool that chains multiple databases. If you just need contacts and emails, Apollo replaces Clay. If you need multi-source waterfalls with custom logic, Apollo is a data source inside Clay, not a replacement for it."),
         ],
     },
 }

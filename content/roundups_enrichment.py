@@ -198,6 +198,8 @@ ROUNDUPS = {
              "Start with Apollo. The free tier gives you enough to prove the value. Move to Clay when you need multi-source waterfalls. ZoomInfo when your company can afford it."),
             ("Is Clay worth it in 2024?",
              "If you're technical and run enrichment daily, yes. The learning curve is real but the payoff is custom waterfalls that beat any single database on coverage. For teams without a GTM engineer, Apollo is simpler."),
+            ("How much does data enrichment cost for a small GTM team in 2024?",
+             "Apollo's free tier handles most small teams. Clay starts at $149/month with credit-based pricing on top. ZoomInfo runs $12K+/year. For teams under 10 people doing fewer than 5,000 enrichments per month, Apollo's free plan plus occasional Clay credits is the most cost-effective setup."),
         ],
     },
 
@@ -293,6 +295,8 @@ ROUNDUPS = {
              "Clay went mainstream. Clearbit became Breeze under HubSpot. Done-for-you services like Verum emerged. Apollo grew to 275M+ contacts. ZoomInfo raised prices to $14K+."),
             ("Should I use Clay or outsource enrichment in 2025?",
              "Clay if you run enrichment daily and want control. Verum if you need batch enrichment quarterly without maintaining the pipeline. Many teams use both."),
+            ("How does Clearbit becoming Breeze affect my enrichment stack in 2025?",
+             "If you use HubSpot, company enrichment is now free via Breeze Intelligence. Contact-level data is lighter than Clay or Apollo. For HubSpot shops, Breeze handles basic firmographic enrichment, and you layer Clay or Apollo on top for deeper contact data."),
         ],
     },
 }

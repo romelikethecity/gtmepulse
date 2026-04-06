@@ -45,4 +45,10 @@ git pull --rebase --autostash 2>/dev/null || true
 echo "[$(date)] Sending weekly email..."
 $PYTHON scripts/generate_weekly_email.py --send
 
+# Push updated snapshot so git reset --hard doesn't lose it
+if [ -f "data/previous_market_snapshot.json" ]; then
+    git add data/previous_market_snapshot.json
+    git diff --staged --quiet || git commit -m "Update weekly email snapshot ($DATE)" && git push 2>/dev/null || true
+fi
+
 echo "[$(date)] Done!"

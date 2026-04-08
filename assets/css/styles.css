@@ -1213,3 +1213,27 @@ body.page-home .main-content {
     }
 }
 
+/* ---- Content Figures ---- */
+.content-figure {
+    margin: var(--gtme-space-8) 0;
+    padding: 0;
+    border: 1px solid var(--gtme-border);
+    border-radius: var(--gtme-radius-lg);
+    background: var(--gtme-bg-surface);
+    overflow: hidden;
+}
+
+.content-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.content-figure figcaption {
+    padding: var(--gtme-space-3) var(--gtme-space-4);
+    font-size: var(--gtme-text-sm);
+    color: var(--gtme-text-secondary);
+    border-top: 1px solid var(--gtme-border-subtle);
+    background: var(--gtme-bg-primary);
+}
+

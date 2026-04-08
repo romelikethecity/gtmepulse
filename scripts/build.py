@@ -65,6 +65,35 @@ BANNED_WORDS = [
 
 
 # ---------------------------------------------------------------------------
+# Content Figure Helper
+# ---------------------------------------------------------------------------
+
+CONTENT_FIGURES = {
+    "salary": ("salary-data.svg", "GTM Engineer salary ranges by seniority, location, and company stage"),
+    "tools": ("tools-stack.svg", "Tool adoption rates across 228 GTM Engineering practitioners"),
+    "careers": ("career-path.svg", "GTM Engineer career trajectory from entry to lead level"),
+    "glossary": ("glossary-terms.svg", "Key GTM engineering terms and acronyms defined"),
+    "insights": ("insights-analysis.svg", "Job market growth, salary trends, and market intelligence"),
+    "blog": ("blog-editorial.svg", "Data-driven opinion and analysis on GTM engineering"),
+    "benchmarks": ("benchmarks-data.svg", "Survey-backed performance benchmarks from 228 practitioners"),
+    "comparisons": ("comparisons-versus.svg", "Head-to-head analysis of roles, approaches, and strategies"),
+    "jobs": ("jobs-board.svg", "Live GTM Engineer job postings updated twice weekly"),
+    "newsletter": ("newsletter-digest.svg", "Weekly job market data, salary shifts, and tool intel"),
+}
+
+
+def content_figure_html(page_type):
+    """Return HTML for a content figure SVG, or empty string if type unknown."""
+    if page_type not in CONTENT_FIGURES:
+        return ""
+    filename, caption = CONTENT_FIGURES[page_type]
+    return f'''<figure class="content-figure">
+    <img src="/assets/images/content/{filename}" alt="{caption}" width="1200" height="630" loading="lazy">
+    <figcaption>{caption}</figcaption>
+</figure>'''
+
+
+# ---------------------------------------------------------------------------
 # Salary Data (State of GTM Engineering Report 2026, n=228)
 # ---------------------------------------------------------------------------
 
@@ -682,6 +711,7 @@ def build_newsletter_page():
         <h1>The Weekly Pulse: GTM Engineer Newsletter</h1>
     </section>
     <p class="lead">Every Monday: salary shifts, tool intel, hiring trends, and job market data for GTM Engineers. Built from 3,000+ tracked B2B SaaS job postings.</p>
+    {content_figure_html("newsletter")}
     <form class="hero-signup" onsubmit="return false;">
         <input type="email" placeholder="Your email" aria-label="Email address" required>
         <button type="submit" class="btn btn--primary">Get the Weekly Pulse</button>
@@ -869,6 +899,8 @@ def build_salary_index():
 </section>
 
 {salary_stats_html({"min": 60000, "max": 250000, "median": 135000, "sample": 228})}
+
+{content_figure_html("salary")}
 
 <div class="salary-content">
     <h2>By Seniority</h2>
@@ -2842,6 +2874,8 @@ def build_career_index():
         <span class="stat-label">Median Salary</span>
     </div>
 </div>
+
+{content_figure_html("careers")}
 
 <div class="salary-content">
     <h2>Career Guides</h2>
@@ -7133,6 +7167,8 @@ def build_tool_index():
     </div>
 </div>
 
+{content_figure_html("tools")}
+
 <div class="salary-content">
     <h2>The GTM Engineer Stack in 2026</h2>
     <p>GTM Engineers run on a specific set of tools. The stack has standardized faster than anyone expected. Clay sits at the center for 84% of practitioners, CRM adoption is near-universal at 92%, and AI coding tools have hit 71% in what feels like overnight adoption.</p>
@@ -8846,6 +8882,8 @@ def build_bench_index():
     </div>
 </div>
 
+{content_figure_html("benchmarks")}
+
 <div class="salary-content">
     <h2>The First Real Benchmark for GTM Engineers</h2>
     <p>Before OneGTM's State of GTM Engineering Report 2026, there was no industry-wide benchmark for this role. Every salary estimate was anecdotal. Every claim about tool adoption was a vendor's self-reported number. This report changed that.</p>
@@ -9925,6 +9963,8 @@ def build_comp_index():
     </div>
 </div>
 
+{content_figure_html("comparisons")}
+
 <div class="salary-content">
     <h2>Why Comparisons Matter for GTM Engineers</h2>
     <p>The GTM Engineer role is only three years old. No HR department has a playbook for it. No career counselor studied it. When you're deciding between building an agency or going in-house, learning Python or doubling down on Clay, taking a seed-stage equity bet or a Series B salary bump, you're making the decision with incomplete data.</p>
@@ -10634,6 +10674,8 @@ def build_blog_index():
         <span class="stat-label">Countries</span>
     </div>
 </div>
+
+{content_figure_html("blog")}
 
 <div class="salary-content">
     <h2>Why We Write These</h2>
@@ -12211,6 +12253,8 @@ def build_insights_index():
         <span class="stat-label">Countries Covered</span>
     </div>
 </div>
+
+{content_figure_html("insights")}
 
 <div class="salary-content">
     <h2>All Insights</h2>
@@ -18187,6 +18231,7 @@ def build_job_board():
         <p>Curated GTM Engineering roles from across the industry. Updated from 3,000+ tracked B2B SaaS job postings.</p>
     </div>
 </section>
+{content_figure_html("jobs")}
 <div class="salary-content">
     <p>No current postings. Check back soon or subscribe to the newsletter for job alerts.</p>
     <p>While you wait, explore <a href="/salary/">GTM Engineer salary data</a>, learn <a href="/careers/what-is-a-gtm-engineer/">what a GTM Engineer does</a>, browse our <a href="/tools/">tool reviews</a>, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
@@ -18356,6 +18401,8 @@ function filterJobs() {
 
 {stats_html}
 
+{content_figure_html("jobs")}
+
 <div class="salary-content">
     <p style="margin-bottom: 1.5rem;">Explore <a href="/salary/">GTM Engineer salary data</a> to benchmark compensation, read <a href="/careers/what-is-a-gtm-engineer/">what a GTM Engineer does</a> for role context, browse our <a href="/tools/">tool reviews</a> to build your stack, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
 
@@ -18443,6 +18490,8 @@ def build_glossary_index():
         <p>56 terms every GTM Engineer should know. Definitions, real examples, and links to deeper resources across tools, salary data, and career guides.</p>
     </div>
 </section>
+
+{content_figure_html("glossary")}
 
 <div class="salary-content">
     {category_sections}

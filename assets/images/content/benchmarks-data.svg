@@ -41,18 +41,22 @@
   <!-- Donut chart placeholder -->
   <rect x="640" y="320" width="460" height="200" rx="10" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1"/>
   <text x="670" y="355" fill="#111111" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Reporting Structure</text>
-  <!-- Simple pie segments -->
-  <circle cx="800" cy="430" r="60" fill="none" stroke="#FF4F1F" stroke-width="20" stroke-dasharray="145 232" stroke-dashoffset="0" opacity="0.9"/>
-  <circle cx="800" cy="430" r="60" fill="none" stroke="#FF4F1F" stroke-width="20" stroke-dasharray="95 282" stroke-dashoffset="-145" opacity="0.5"/>
-  <circle cx="800" cy="430" r="60" fill="none" stroke="#FF4F1F" stroke-width="20" stroke-dasharray="75 302" stroke-dashoffset="-240" opacity="0.3"/>
+  <!-- Donut chart: circumference = 2*pi*60 = 377 -->
+  <!-- Sales 38% = 143, Marketing 25% = 94, RevOps 20% = 75, Other 17% = 65 -->
+  <circle cx="800" cy="430" r="60" fill="none" stroke="#FF4F1F" stroke-width="20" stroke-dasharray="143 234" stroke-dashoffset="94" opacity="0.9"/>
+  <circle cx="800" cy="430" r="60" fill="none" stroke="#FF4F1F" stroke-width="20" stroke-dasharray="94 283" stroke-dashoffset="-49" opacity="0.6"/>
+  <circle cx="800" cy="430" r="60" fill="none" stroke="#FF4F1F" stroke-width="20" stroke-dasharray="75 302" stroke-dashoffset="-143" opacity="0.4"/>
+  <circle cx="800" cy="430" r="60" fill="none" stroke="#9B9B9B" stroke-width="20" stroke-dasharray="65 312" stroke-dashoffset="-218" opacity="0.25"/>
   <circle cx="800" cy="430" r="40" fill="#FFFFFF"/>
   <!-- Legend -->
-  <rect x="900" y="400" width="10" height="10" rx="2" fill="#FF4F1F" opacity="0.9"/>
-  <text x="918" y="410" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="12">Sales (38%)</text>
-  <rect x="900" y="425" width="10" height="10" rx="2" fill="#FF4F1F" opacity="0.5"/>
-  <text x="918" y="435" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="12">Marketing (25%)</text>
-  <rect x="900" y="450" width="10" height="10" rx="2" fill="#FF4F1F" opacity="0.3"/>
-  <text x="918" y="460" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="12">RevOps (20%)</text>
+  <rect x="900" y="390" width="10" height="10" rx="2" fill="#FF4F1F" opacity="0.9"/>
+  <text x="918" y="400" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="12">Sales (38%)</text>
+  <rect x="900" y="412" width="10" height="10" rx="2" fill="#FF4F1F" opacity="0.6"/>
+  <text x="918" y="422" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="12">Marketing (25%)</text>
+  <rect x="900" y="434" width="10" height="10" rx="2" fill="#FF4F1F" opacity="0.4"/>
+  <text x="918" y="444" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="12">RevOps (20%)</text>
+  <rect x="900" y="456" width="10" height="10" rx="2" fill="#9B9B9B" opacity="0.25"/>
+  <text x="918" y="466" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="12">Other (17%)</text>
   <!-- Footer -->
   <text x="600" y="570" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle">State of GTM Engineering Report 2026</text>
 </svg>

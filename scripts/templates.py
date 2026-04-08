@@ -274,7 +274,7 @@ def get_page_wrapper(title, description, canonical_path, body_content,
 
     content_figure = '''<figure class="content-figure">
   <img src="/assets/images/content/industry-intelligence-dashboard.svg" alt="GTM intelligence dashboard showing salary trends, hiring velocity, and go-to-market data" width="1200" height="500" loading="lazy">
-  <figcaption>Go-to-market intelligence: hiring signals, salary benchmarks, and market trends updated weekly.</figcaption>
+  <figcaption>Go-to-market intelligence: hiring signals, salary benchmarks, and market trends.</figcaption>
 </figure>'''
 
     return f'''{head}
@@ -282,8 +282,8 @@ def get_page_wrapper(title, description, canonical_path, body_content,
 {nav}
 <main class="main-content">
 {body_content}
-</main>
 {content_figure}
+</main>
 {footer}
 {inline_js}
 </body>

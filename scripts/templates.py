@@ -272,12 +272,18 @@ def get_page_wrapper(title, description, canonical_path, body_content,
 }})();
 </script>'''
 
+    content_figure = '''<figure class="content-figure">
+  <img src="/assets/images/content/industry-intelligence-dashboard.svg" alt="GTM intelligence dashboard showing salary trends, hiring velocity, and go-to-market data" width="1200" height="500" loading="lazy">
+  <figcaption>Go-to-market intelligence: hiring signals, salary benchmarks, and market trends updated weekly.</figcaption>
+</figure>'''
+
     return f'''{head}
 <body{bc}>
 {nav}
 <main class="main-content">
 {body_content}
 </main>
+{content_figure}
 {footer}
 {inline_js}
 </body>

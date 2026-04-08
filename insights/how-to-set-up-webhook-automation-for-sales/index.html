@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>How to Set Up Webhook Automation for Sales - GTME Pulse</title>
+    <meta name="description" content="Build webhook-driven sales automation. Event triggers, payload handling, error management, and production deployment. Updated weekly. Independent. Free.">
+    <link rel="canonical" href="https://gtmepulse.com/insights/how-to-set-up-webhook-automation-for-sales/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/insights/how-to-set-up-webhook-automation-for-sales/">
+    <meta property="og:title" content="How to Set Up Webhook Automation for Sales - GTME Pulse">
+    <meta property="og:description" content="Build webhook-driven sales automation. Event triggers, payload handling, error management, and production deployment. Updated weekly. Independent. Free.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Set Up Webhook Automation for Sales - GTME Pulse">
+    <meta name="twitter:description" content="Build webhook-driven sales automation. Event triggers, payload handling, error management, and production deployment. Updated weekly. Independent. Free.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=17">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=17">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://gtmepulse.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "Webhook Automation for Sales"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Set Up Webhook Automation for Sales", "description": "Build webhook-driven sales automation. Event triggers, payload handling, error management, and production deployment. Updated weekly. Independent. Free.", "wordCount": 2100, "author": {"@type": "Person", "name": "Rome Thorndike", "url": "https://gtmepulse.com/about/"}, "publisher": {"@type": "Organization", "name": "GTME Pulse", "url": "https://gtmepulse.com"}, "datePublished": "2026-03-29", "dateModified": "2026-03-29", "url": "https://gtmepulse.com/insights/how-to-set-up-webhook-automation-for-sales/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gtmepulse.com/insights/how-to-set-up-webhook-automation-for-sales/"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a webhook in simple terms?", "acceptedAnswer": {"@type": "Answer", "text": "A webhook is an automatic notification from one tool to another. When something happens in Tool A (a form submission, a deal stage change, an email reply), Tool A sends a message to Tool B's URL with the event details. Tool B then takes action. No human intervention, no scheduled checks, no manual data transfers. The event triggers the action in real time."}}, {"@type": "Question", "name": "Do I need to know how to code to use webhooks?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Tools like n8n, Make, and Zapier provide visual webhook builders where you configure triggers and actions without writing code. Clay accepts incoming webhooks natively. For custom payload transformation or complex routing logic, basic JavaScript or Python helps. But 80% of sales webhook automation can be built with no-code tools."}}, {"@type": "Question", "name": "How do I handle webhook failures?", "acceptedAnswer": {"@type": "Answer", "text": "Three strategies: retry logic (automatically resend failed webhooks after a delay), dead letter queues (store failed events for manual review), and monitoring alerts (Slack notification when a webhook fails). Most automation platforms have built-in retry. For critical workflows, add a monitoring layer using Hookdeck or a custom health check."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/" class="active">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/insights/" class="breadcrumb-link">Insights</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Webhook Automation for Sales</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>How to Set Up Webhook Automation for Sales</h1>
+        <p>Event-driven architecture for your GTM stack. Real-time data flow between every tool in your pipeline.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>Why Webhooks for Sales</h2>
+    <p>Most sales tool integrations rely on scheduled syncs. HubSpot syncs with Salesforce every 15 minutes. Your enrichment tool exports a CSV that you import daily. These batch processes create lag. A hot lead fills out a form at 9:03 AM and the sales rep doesn't see it until the 9:15 sync. In that 12-minute gap, the prospect has moved on to a competitor's demo.</p>
+    <p><a href="/glossary/webhook/">Webhooks</a> eliminate that lag. The form submission fires a webhook instantly. The webhook triggers enrichment, lead scoring, <a href="/glossary/lead-routing/">routing</a>, and rep notification in seconds. The sales rep sees the qualified lead in Slack before the prospect closes the browser tab.</p>
+
+    <h2>Step 1: Map Your Event-Action Pairs</h2>
+    <p>Before configuring anything, list every event in your sales process that should trigger an automated action. Common pairs:</p>
+    <p><strong>Form submission</strong> triggers enrichment + lead scoring + CRM record creation + rep notification.</p>
+    <p><strong>Deal stage change to "Demo Scheduled"</strong> triggers calendar hold for the AE, pre-call research enrichment in Clay, and a Slack alert to the account team.</p>
+    <p><strong>Email reply detected</strong> triggers sequence pause, sentiment analysis via LLM, and Slack notification to the rep with the reply text and suggested response.</p>
+    <p><strong>Website pricing page visit (3+ times in 7 days)</strong> triggers reverse IP lookup, contact enrichment if the company matches ICP, and fast-track sequence enrollment.</p>
+    <p><strong>Customer churns</strong> triggers win-back sequence enrollment after 30-day cooldown, NPS survey, and account review task in CRM.</p>
+    <p>Write these pairs down. Each one becomes a webhook workflow. Prioritize by revenue impact. The form submission to rep notification flow is almost always the highest-value webhook to build first.</p>
+
+    <h2>Step 2: Choose Your Webhook Platform</h2>
+    <p>You need a platform that receives webhooks, processes the payload, and routes actions to downstream tools. Three options based on technical comfort.</p>
+    <p><strong>n8n (self-hosted or cloud):</strong> The most flexible option. Visual workflow builder with a webhook trigger node. Supports conditional logic, data transformation, HTTP requests to any API, and error handling. Self-hosted version is free. Cloud version starts at $24/month. Best for GTM Engineers comfortable with light technical work.</p>
+    <p><strong>Make (formerly Integromat):</strong> Visual builder with strong webhook support. Easier learning curve than n8n but less flexible for custom API calls. Starts at $9/month. Good for teams that want visual debugging without self-hosting.</p>
+    <p><strong>Clay:</strong> Accepts incoming webhooks to trigger table runs. The webhook payload becomes a new row. Every column then runs its enrichment and transformation logic on that row. Best when your webhook workflow primarily involves data enrichment and CRM pushing.</p>
+    <p>For complex routing logic (different actions based on lead score, company size, or geographic region), n8n or Make gives you more flexibility than Clay. For enrichment-heavy workflows, Clay is purpose-built.</p>
+
+    <h2>Step 3: Configure the Webhook Endpoint</h2>
+    <p>In your chosen platform, create a new workflow with a webhook trigger. The platform generates a URL. This URL is your endpoint. Any tool that sends an HTTP POST request to this URL with a JSON payload triggers the workflow.</p>
+    <p>Copy the webhook URL. Go to the source tool (your form builder, CRM, or sequencing platform) and configure it to send events to this URL. Most modern SaaS tools have a "Webhooks" section in their settings. HubSpot, Salesforce, Instantly, Typeform, and Stripe all support outgoing webhooks natively.</p>
+    <p>Test the connection by triggering a test event. Submit a test form, change a deal stage on a test record, or use the source tool's "Send Test" button. Verify that your webhook platform receives the payload. Inspect the payload structure. Every field you need for downstream actions must be present in the payload.</p>
+
+    <h2>Step 4: Parse and Transform the Payload</h2>
+    <p>Webhooks send raw JSON payloads. The structure varies by tool. A HubSpot webhook for a deal stage change sends a nested object with the deal ID, pipeline, stage, associated contacts, and custom properties. A Typeform submission sends form fields as an array of objects with field IDs.</p>
+    <p>Add a data transformation step in your workflow that extracts the fields you need and maps them to a clean structure. Extract email, company domain, first name, last name, and any custom fields. Normalize the data: lowercase emails, strip whitespace, standardize company names.</p>
+    <p>This parsing step is where most webhook automations break. Source tools change their payload schema without notice. A Typeform update renames a field ID. A HubSpot API version change restructures the JSON. Build validation into your parsing: check that required fields exist before proceeding. If a required field is missing, log the error and skip the record instead of crashing the workflow.</p>
+
+    <h2>Step 5: Add Enrichment and Scoring</h2>
+    <p>With clean data extracted, add enrichment steps. Call the Apollo API to get firmographic data. Call FullEnrich for email verification. Use an <a href="/glossary/llm-api/">LLM API</a> call to classify the lead's intent based on form responses or email content.</p>
+    <p>Add a scoring node that evaluates the enriched data against your ICP criteria. Output a numeric score and a routing label (Qualified, Nurture, Disqualified). This score determines what happens next.</p>
+
+    <h2>Step 6: Route Actions Based on Score</h2>
+    <p>Add a conditional branch. If the score is above your qualification threshold: create a CRM record, enroll in a fast-track outbound sequence, and send a Slack alert to the assigned rep. If the score is below threshold but above disqualification: add to a nurture drip campaign. If disqualified: log the record and take no outbound action.</p>
+    <p>For CRM integration, use your platform's native HubSpot or Salesforce nodes. Map all enriched fields to CRM properties. Set the lead owner based on territory rules or round-robin assignment. Create a task for the rep to follow up within the SLA window.</p>
+    <p>For Slack notifications, format the alert with actionable context: prospect name, company, title, lead score, and the event that triggered the webhook. Include a direct link to the CRM record. The rep should be able to act on the notification without leaving Slack.</p>
+
+    <h2>Step 7: Handle Errors and Failures</h2>
+    <p>Production webhook automations fail. APIs go down. Rate limits trigger. Payload schemas change. Authentication tokens expire. Plan for all of these.</p>
+    <p><strong>Retry logic:</strong> Configure automatic retries with exponential backoff. First retry after 30 seconds, second after 2 minutes, third after 10 minutes. Most temporary failures (rate limits, brief outages) resolve within minutes.</p>
+    <p><strong>Error notifications:</strong> Send a Slack message to your #ops-alerts channel whenever a workflow fails after all retries. Include the error message, the payload that caused the failure, and a link to the workflow execution log.</p>
+    <p><strong>Dead letter storage:</strong> Save failed payloads to a Google Sheet or database table. Review weekly. Reprocess after fixing the underlying issue. Lost webhook events mean lost leads.</p>
+    <p><strong>Idempotency:</strong> Webhooks can fire multiple times for the same event (source tool retries, network issues). Build deduplication logic: check if a CRM record with this email already exists before creating a new one. Use event IDs or email addresses as dedup keys.</p>
+
+    <h2>Step 8: Monitor and Optimize</h2>
+    <p>Track three metrics for every webhook workflow: success rate (percentage of events processed without error), latency (time from event to final action), and throughput (events processed per hour). Most <a href="/glossary/workflow-automation/">automation platforms</a> provide execution logs with this data.</p>
+    <p>Set up a weekly review. Check error logs, identify recurring failures, and fix the root causes. Common root causes: expired API keys, changed payload schemas, and rate limit exhaustion during high-volume campaigns.</p>
+    <p>Optimization targets: under 30 seconds from webhook receipt to CRM record creation. Under 2 minutes from webhook receipt to rep Slack notification. Under 5 minutes from webhook receipt to sequence enrollment. These are achievable with any modern webhook platform. If you're seeing longer latencies, look for bottlenecks in enrichment API response times or conditional logic complexity.</p>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">What is a webhook in simple terms?</h3>
+    <p class="faq-answer">A webhook is an automatic notification from one tool to another. When something happens in Tool A (a form submission, a deal stage change, an email reply), Tool A sends a message to Tool B's URL with the event details. Tool B then takes action. No human intervention, no scheduled checks, no manual data transfers. The event triggers the action in real time.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Do I need to know how to code to use webhooks?</h3>
+    <p class="faq-answer">Not necessarily. Tools like n8n, Make, and Zapier provide visual webhook builders where you configure triggers and actions without writing code. Clay accepts incoming webhooks natively. For custom payload transformation or complex routing logic, basic JavaScript or Python helps. But 80% of sales webhook automation can be built with no-code tools.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How do I handle webhook failures?</h3>
+    <p class="faq-answer">Three strategies: retry logic (automatically resend failed webhooks after a delay), dead letter queues (store failed events for manual review), and monitoring alerts (Slack notification when a webhook fails). Most automation platforms have built-in retry. For critical workflows, add a monitoring layer using Hookdeck or a custom health check.</p>
+</div>
+
+</section>
+
+<section class="related-links">
+    <h2>More Insights</h2>
+    <div class="related-links-grid">
+        <a href="/insights/" class="related-link-card">Insights Index</a>
+<a href="/insights/job-market-2026/" class="related-link-card">GTM Engineer Job Market: 2026 Analysis</a>
+<a href="/insights/salary-trends/" class="related-link-card">GTM Engineer Salary Trends: What the Data Shows</a>
+<a href="/insights/tool-adoption/" class="related-link-card">GTM Tool Adoption: Which Tools Are Winning</a>
+<a href="/insights/state-of-gtme-2026/" class="related-link-card">State of GTM Engineering 2026: Key Findings</a>
+<a href="/insights/clay-ecosystem/" class="related-link-card">The Clay Ecosystem: Who Builds What</a>
+<a href="/insights/outbound-stack/" class="related-link-card">The 2026 Outbound Stack: What Top GTM Engineers Use</a>
+<a href="/insights/clay-playbook/" class="related-link-card">Clay Playbook: Advanced Workflows That Work</a>
+<a href="/insights/linkedin-outreach/" class="related-link-card">LinkedIn Outreach for GTM Engineers: A Technical Guide</a>
+<a href="/insights/email-deliverability/" class="related-link-card">Email Deliverability for GTM Engineers</a>
+<a href="/insights/api-integration/" class="related-link-card">API Integration Patterns for GTM Engineers</a>
+<a href="/insights/enrichment-waterfall/" class="related-link-card">Data Enrichment Waterfall Strategy</a>
+
+    </div>
+</section>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Weekly automation architecture patterns for GTM Engineers.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+<figure class="content-figure">
+  <img src="/assets/images/content/industry-intelligence-dashboard.svg" alt="GTM intelligence dashboard showing salary trends, hiring velocity, and go-to-market data" width="1200" height="500" loading="lazy">
+  <figcaption>Go-to-market intelligence: hiring signals, salary benchmarks, and market trends.</figcaption>
+</figure>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>How to Build an AI SDR Pipeline in 2026 - GTME Pulse</title>
+    <meta name="description" content="Build a full AI SDR pipeline with Clay, n8n, Instantly, Apollo, and NeverBounce. Architecture guide with tool picks at each step. Updated weekly. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/how-to-build-ai-sdr-pipeline/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/how-to-build-ai-sdr-pipeline/">
+    <meta property="og:title" content="How to Build an AI SDR Pipeline in 2026 - GTME Pulse">
+    <meta property="og:description" content="Build a full AI SDR pipeline with Clay, n8n, Instantly, Apollo, and NeverBounce. Architecture guide with tool picks at each step. Updated weekly. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Build an AI SDR Pipeline in 2026 - GTME Pulse">
+    <meta name="twitter:description" content="Build a full AI SDR pipeline with Clay, n8n, Instantly, Apollo, and NeverBounce. Architecture guide with tool picks at each step. Updated weekly. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=17">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=17">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "How to Build an AI SDR Pipeline in"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to build an AI SDR pipeline?", "acceptedAnswer": {"@type": "Answer", "text": "A functional v1 takes 2-3 weeks for a GTM Engineer comfortable with Clay and n8n. Week 1: Clay enrichment tables and AI personalization. Week 2: n8n orchestration connecting Clay to verification and Instantly. Week 3: reply handling, error management, and testing with a small batch. Plan for another 2-3 weeks of iteration before the pipeline runs reliably at scale."}}, {"@type": "Question", "name": "Can this replace a human SDR?", "acceptedAnswer": {"@type": "Answer", "text": "For initial outbound (first touch, follow-ups, meeting booking), yes. The AI SDR pipeline handles volume and personalization at a level that would take 3-5 human SDRs. Where it falls short: complex objection handling, relationship building, multi-threaded conversations, and deals that require nuance. Most teams use the AI pipeline for top-of-funnel and human SDRs for qualified conversations."}}, {"@type": "Question", "name": "What volume can this pipeline handle?", "acceptedAnswer": {"@type": "Answer", "text": "With the tools listed, 2,000-5,000 personalized emails per month per GTM Engineer. The bottleneck is usually Clay credits for enrichment, not sending capacity. Instantly can handle much higher volume. To scale beyond 5,000/month, you'll need higher Clay plans or a hybrid approach using Apollo for initial enrichment and Clay for personalization only."}}, {"@type": "Question", "name": "What's the biggest mistake people make building AI SDR pipelines?", "acceptedAnswer": {"@type": "Answer", "text": "Skipping verification. GTM Engineers get excited about the enrichment and personalization layers and forget to verify emails before sending. One bad campaign with a 15% bounce rate can damage your sending domain for months. Always verify. It costs pennies per email and prevents the most expensive mistake in outbound: a burned domain."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">How to Build an AI SDR Pipeline in</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">AI SDR Pipeline</div>
+        <h1>How to Build an AI SDR Pipeline in 2026</h1>
+        <p>Ranked and reviewed with opinionated picks, pricing, and use-case guidance.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p>The AI SDR is a pipeline, not a single tool. Research, enrichment, personalization, verification, sending, and reply handling, all connected by automation. Building it requires stitching together 4-6 tools into a workflow that runs without you babysitting each step.</p>
+<p>This guide walks through the architecture of a production AI SDR pipeline, tool by tool. We cover what each layer does, which tool handles it best, and how to connect them. By the end, you'll have a blueprint for an automated outbound system that finds prospects, writes personalized emails, verifies deliverability, and sends at scale.</p>
+<p>Total cost for the stack below: $300-$600/month depending on volume. That's less than a single SDR's monthly Salesforce seat.</p>
+    <p class="affiliate-disclosure" style="font-size: 0.85rem; color: var(--gtme-text-tertiary); margin-top: 0.5rem;"><em>This page contains affiliate links. We may earn a commission if you sign up through our links. This does not affect our editorial independence or rankings.</em></p>
+
+    
+    <div class="roundup-tool" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gtme-bg-surface);">
+        <h2>#1: <a href="/tools/clay-review/" style="color: var(--gtme-accent); text-decoration: none;">Clay</a> <a href="/tools/clay-review/" style="font-size: 0.85rem; color: var(--gtme-accent); text-decoration: none;">[Full Review]</a></h2>
+        <span style="display: inline-block; background: var(--gtme-bg-tinted); color: var(--gtme-accent); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem;">Research + Enrichment Layer</span>
+        <p><strong>Best for:</strong> The enrichment engine that feeds every downstream step with clean, multi-source data</p>
+        <p>Clay is the research and enrichment layer of your AI SDR pipeline. Start with a list of target companies or job titles, then use Clay's waterfall enrichment to find decision-makers, verify their emails, pull company data, and generate personalization signals. The AI columns can summarize a prospect's company, identify pain points from their job posting, or draft personalized opening lines. Everything happens inside a single table. The output feeds directly into your sending tool. At $149/month for the Explorer plan, you get enough credits for 2,000-3,000 enriched contacts per month.</p>
+        <p><strong>Pricing:</strong> $149-$800/mo</p>
+    </div>
+
+    <div class="roundup-tool" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gtme-bg-surface);">
+        <h2>#2: <a href="/tools/n8n-review/" style="color: var(--gtme-accent); text-decoration: none;">n8n</a> <a href="/tools/n8n-review/" style="font-size: 0.85rem; color: var(--gtme-accent); text-decoration: none;">[Full Review]</a></h2>
+        <span style="display: inline-block; background: var(--gtme-bg-tinted); color: var(--gtme-accent); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem;">Orchestration + AI Agents</span>
+        <p><strong>Best for:</strong> The automation backbone that connects every tool and runs AI agents for complex decisions</p>
+        <p>n8n is the orchestration layer. It connects Clay's enrichment output to your verification tool, routes verified contacts to your sending platform, and handles reply classification with AI nodes. The AI Agent node lets you build custom logic: classify replies as interested/not interested/wrong person, route positive replies to your CRM, and trigger follow-up sequences based on engagement. Self-hosted n8n is free with zero per-execution costs, which matters when you're running thousands of workflow executions per month. The visual workflow builder makes it accessible, but you'll want some technical comfort with APIs and webhooks.</p>
+        <p><strong>Pricing:</strong> Free (self-hosted) / $60+/mo (cloud)</p>
+    </div>
+
+    <div class="roundup-tool" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gtme-bg-surface);">
+        <h2>#3: <a href="/tools/instantly-review/" style="color: var(--gtme-accent); text-decoration: none;">Instantly</a> <a href="/tools/instantly-review/" style="font-size: 0.85rem; color: var(--gtme-accent); text-decoration: none;">[Full Review]</a></h2>
+        <span style="display: inline-block; background: var(--gtme-bg-tinted); color: var(--gtme-accent); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem;">Sending Layer</span>
+        <p><strong>Best for:</strong> The email delivery infrastructure that handles warmup, rotation, and deliverability</p>
+        <p>Instantly handles the actual email sending. Your enriched, verified, personalized contacts flow from n8n into Instantly's campaigns via API. Instantly manages inbox rotation, warmup, deliverability monitoring, and send scheduling. The unlimited email accounts model means you can scale sending infrastructure without per-inbox costs. The API supports campaign creation, lead upload, and analytics retrieval, so n8n can manage everything programmatically. At $30/month, it's the cheapest layer in the stack.</p>
+        <p><strong>Pricing:</strong> $30-$77.6/mo</p>
+    </div>
+
+    <div class="roundup-tool" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gtme-bg-surface);">
+        <h2>#4: <a href="/tools/apollo-review/" style="color: var(--gtme-accent); text-decoration: none;">Apollo.io</a> <a href="/tools/apollo-review/" style="font-size: 0.85rem; color: var(--gtme-accent); text-decoration: none;">[Full Review]</a></h2>
+        <span style="display: inline-block; background: var(--gtme-bg-tinted); color: var(--gtme-accent); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem;">Data Fallback Layer</span>
+        <p><strong>Best for:</strong> Supplemental contact data when Clay's waterfall misses or you need quick list building</p>
+        <p>Apollo serves as the data fallback in your AI SDR pipeline. When Clay's enrichment waterfall doesn't find a direct email or phone number, Apollo's 270M+ contact database fills the gap. The free tier gives you 10,000 email credits per month, which is enough to supplement Clay's enrichment without adding cost. Apollo also works as a quick list builder for testing new ICPs before investing Clay credits in full enrichment. Don't run your entire pipeline through Apollo's sending infrastructure. Use it for data, not delivery.</p>
+        <p><strong>Pricing:</strong> Free / $49-$149/mo</p>
+    </div>
+
+    <div class="roundup-tool" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gtme-bg-surface);">
+        <h2>#5: NeverBounce</h2>
+        <span style="display: inline-block; background: var(--gtme-bg-tinted); color: var(--gtme-accent); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem;">Verification Layer</span>
+        <p><strong>Best for:</strong> Email verification before sending to protect sender reputation</p>
+        <p>NeverBounce sits between enrichment and sending. Every email that passes through Clay's enrichment gets verified before it reaches Instantly. This catches invalid addresses, disposable emails, and hard bounces that would damage your sender reputation. The API handles real-time verification in your n8n workflow: enrich the contact, verify the email, skip if invalid, send if valid. At $8 per 1,000 verifications, the cost is negligible relative to the deliverability protection. The ZoomInfo integration is a bonus if you're in that ecosystem.</p>
+        <p><strong>Pricing:</strong> $8+ per 1,000 verifications</p>
+    </div>
+
+
+    <h2>Putting It Together: The Full Pipeline</h2>
+<p><strong>Step 1: Define targets.</strong> Build your ICP criteria in Clay. Company size, industry, tech stack, geography. Pull an initial list of target companies.</p>
+<p><strong>Step 2: Find people.</strong> Use Clay's waterfall enrichment to find decision-makers at each company. Job title filtering, email finding, phone number lookup. Supplement gaps with Apollo's database.</p>
+<p><strong>Step 3: Research and personalize.</strong> Clay's AI columns analyze each prospect's company website, recent news, job postings, and LinkedIn activity. Generate personalized opening lines, pain point hypotheses, and relevant case study references. This is where AI earns its keep.</p>
+<p><strong>Step 4: Verify.</strong> Run every email through NeverBounce via n8n. Skip invalid addresses. Flag catch-all domains for manual review.</p>
+<p><strong>Step 5: Load and send.</strong> n8n pushes verified, personalized contacts into Instantly campaigns via API. Instantly handles inbox rotation, warmup, and delivery scheduling.</p>
+<p><strong>Step 6: Handle replies.</strong> n8n monitors Instantly for replies. AI Agent nodes classify responses. Interested replies get routed to your CRM with context. Unsubscribe requests get processed automatically. Wrong-person replies get flagged for data correction.</p>
+<p>This pipeline runs 24/7 with minimal manual intervention. A single GTM Engineer can manage outbound to 2,000-5,000 prospects per month with this stack. The total cost: $250-$500/month in tools, plus your time building and maintaining the workflows.</p>
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">How long does it take to build an AI SDR pipeline?</h3>
+    <p class="faq-answer">A functional v1 takes 2-3 weeks for a GTM Engineer comfortable with Clay and n8n. Week 1: Clay enrichment tables and AI personalization. Week 2: n8n orchestration connecting Clay to verification and Instantly. Week 3: reply handling, error management, and testing with a small batch. Plan for another 2-3 weeks of iteration before the pipeline runs reliably at scale.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Can this replace a human SDR?</h3>
+    <p class="faq-answer">For initial outbound (first touch, follow-ups, meeting booking), yes. The AI SDR pipeline handles volume and personalization at a level that would take 3-5 human SDRs. Where it falls short: complex objection handling, relationship building, multi-threaded conversations, and deals that require nuance. Most teams use the AI pipeline for top-of-funnel and human SDRs for qualified conversations.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What volume can this pipeline handle?</h3>
+    <p class="faq-answer">With the tools listed, 2,000-5,000 personalized emails per month per GTM Engineer. The bottleneck is usually Clay credits for enrichment, not sending capacity. Instantly can handle much higher volume. To scale beyond 5,000/month, you'll need higher Clay plans or a hybrid approach using Apollo for initial enrichment and Clay for personalization only.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What's the biggest mistake people make building AI SDR pipelines?</h3>
+    <p class="faq-answer">Skipping verification. GTM Engineers get excited about the enrichment and personalization layers and forget to verify emails before sending. One bad campaign with a 15% bounce rate can damage your sending domain for months. Always verify. It costs pennies per email and prevents the most expensive mistake in outbound: a burned domain.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>Related Roundups & Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/best-gtm-tools-startups/" class="related-link-card">Best GTM Tools for Startups: Top Picks</a>
+<a href="/tools/best-gtm-tools-enterprise/" class="related-link-card">Best GTM Tools for Enterprise Teams</a>
+<a href="/tools/best-free-gtm-tools/" class="related-link-card">Best Free GTM Tools: Zero-Cost Stack Guide</a>
+<a href="/tools/best-data-enrichment-tools/" class="related-link-card">Best Data Enrichment Tools: Top Ranked</a>
+<a href="/tools/best-outbound-sequencing-tools/" class="related-link-card">Best Outbound Sequencing Tools: Ranked</a>
+<a href="/tools/best-crm-gtm-engineers/" class="related-link-card">Best CRM for GTM Engineers: Top Ranked</a>
+<a href="/tools/best-workflow-automation-tools/" class="related-link-card">Best Workflow Automation Tools: Ranked</a>
+<a href="/tools/best-ai-tools-gtm/" class="related-link-card">Best AI Tools for GTM Engineers: Ranked</a>
+<a href="/tools/best-linkedin-prospecting-tools/" class="related-link-card">Best LinkedIn Prospecting Tools: Ranked</a>
+<a href="/tools/best-intent-data-platforms/" class="related-link-card">Best Intent Data Platforms: Top Ranked</a>
+<a href="/tools/best-data-enrichment-tools-for-gtm-engineers/" class="related-link-card">Best Data Enrichment Tools for GTM Engineers</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly GTM tool rankings and intel delivered to your inbox.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+<figure class="content-figure">
+  <img src="/assets/images/content/industry-intelligence-dashboard.svg" alt="GTM intelligence dashboard showing salary trends, hiring velocity, and go-to-market data" width="1200" height="500" loading="lazy">
+  <figcaption>Go-to-market intelligence: hiring signals, salary benchmarks, and market trends.</figcaption>
+</figure>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Cold Email Deliverability: DNS, SPF, DKIM, DMARC - GTME Pulse</title>
+    <meta name="description" content="Technical guide to cold email deliverability. DNS configuration, authentication protocols, and inbox placement optimization. Updated weekly. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/insights/cold-email-deliverability-guide/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/insights/cold-email-deliverability-guide/">
+    <meta property="og:title" content="Cold Email Deliverability: DNS, SPF, DKIM, DMARC - GTME Pulse">
+    <meta property="og:description" content="Technical guide to cold email deliverability. DNS configuration, authentication protocols, and inbox placement optimization. Updated weekly. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cold Email Deliverability: DNS, SPF, DKIM, DMARC - GTME Pulse">
+    <meta name="twitter:description" content="Technical guide to cold email deliverability. DNS configuration, authentication protocols, and inbox placement optimization. Updated weekly. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=17">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=17">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://gtmepulse.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "Cold Email Deliverability Guide"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cold Email Deliverability: DNS, SPF, DKIM, DMARC", "description": "Technical guide to cold email deliverability. DNS configuration, authentication protocols, and inbox placement optimization. Updated weekly. Independent.", "wordCount": 2300, "author": {"@type": "Person", "name": "Rome Thorndike", "url": "https://gtmepulse.com/about/"}, "publisher": {"@type": "Organization", "name": "GTME Pulse", "url": "https://gtmepulse.com"}, "datePublished": "2026-04-02", "dateModified": "2026-04-02", "url": "https://gtmepulse.com/insights/cold-email-deliverability-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gtmepulse.com/insights/cold-email-deliverability-guide/"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Most common DNS mistake?", "acceptedAnswer": {"@type": "Answer", "text": "Multiple SPF records. Each domain allows one SPF TXT record. Merge into single record with multiple includes. Use MXToolbox to validate."}}, {"@type": "Question", "name": "How to check if emails land in spam?", "acceptedAnswer": {"@type": "Answer", "text": "GlockApps or mail-tester.com. Send to seed addresses across providers. Run weekly during warm-up, monthly in production. Google Postmaster Tools for Gmail-specific data."}}, {"@type": "Question", "name": "Can I fix deliverability after problems start?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but slowly. Pause sending 7-14 days. Run warm-up only. Resume at 25% volume. Full recovery: 2-4 weeks. Request blacklist delisting individually."}}, {"@type": "Question", "name": "Does content affect deliverability?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Plain text outperforms HTML for cold outbound. One link max. No URL shorteners. No images. Short subjects (3-5 words). Look like a human note, not a campaign."}}, {"@type": "Question", "name": "What bounce rate is too high?", "acceptedAnswer": {"@type": "Answer", "text": "Keep under 3% total. Hard bounces under 1%. Above 5%: stop immediately, clean list. Cause is almost always bad data."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/" class="active">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/insights/" class="breadcrumb-link">Insights</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Cold Email Deliverability Guide</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Guide</div>
+        <h1>Cold Email Deliverability: DNS, SPF, DKIM, DMARC</h1>
+        <p>Your emails either reach the inbox or they don't. Everything in your outbound campaign depends on this.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | April 2026</p>
+
+    <h2>Deliverability Is Infrastructure</h2>
+    <p>Perfect cold email, perfect ICP, perfect timing. None of it matters if the email lands in spam. Target 90%+ inbox placement. Below 80%: you have an infrastructure problem. Below 60%: you're burning domains and need to stop sending immediately.</p>
+    <p>Deliverability is binary at scale. If you send 500 emails per day at 90% inbox placement, 450 reach the prospect. At 60% placement, only 300 reach. That 150-email gap compounds daily. Over a month, it's 4,500 missed contacts. At a 3% meeting rate, that's 135 lost meetings per month from the same campaign. Fix deliverability before you touch copy, targeting, or timing. See the <a href="/insights/how-to-build-email-warm-up-infrastructure/">warm-up guide</a> for the companion piece on getting new domains ready.</p>
+
+    <h2>SPF (Sender Policy Framework)</h2>
+    <p>SPF is a TXT record in your DNS that lists which mail servers are authorized to send email from your domain. When a receiving server gets your email, it checks SPF to confirm the sending server is allowed.</p>
+    <p><strong>Setup:</strong> One SPF record per domain. Multiple includes within a single record: <code>v=spf1 include:_spf.google.com include:spf.instantly.ai ~all</code>. The <code>~all</code> softfail means non-listed servers get flagged but not rejected. Move to <code>-all</code> (hardfail) after you've confirmed all legitimate senders are included.</p>
+    <p><strong>The 10-lookup limit:</strong> SPF allows a maximum of 10 DNS lookups. Each <code>include:</code> counts as one lookup, and nested includes within those count too. Google Workspace alone uses 3-4 lookups. Add Instantly, Smartlead, and a marketing email tool and you'll hit the limit. When you go past 10, SPF breaks silently and all your emails fail authentication.</p>
+    <p><strong>Fix: SPF flattening.</strong> Services like AutoSPF ($5/month per domain) or manually resolving includes to IP addresses eliminate nested lookups. Check your current lookup count with MXToolbox's SPF lookup tool before adding new services.</p>
+    <p><strong>Common mistake:</strong> Multiple SPF records. If you add a second TXT record starting with <code>v=spf1</code> instead of merging into the existing one, both records become invalid. This is the single most common DNS error in cold outbound setups. Always merge, never add a second record.</p>
+
+    <h2>DKIM (DomainKeys Identified Mail)</h2>
+    <p>DKIM adds a cryptographic signature to every outgoing email. The receiving server checks this signature against a public key stored in your DNS. If the signature matches, the email hasn't been tampered with in transit.</p>
+    <p><strong>Google Workspace setup:</strong> Admin Console, then Apps, then Gmail, then Authenticate email. Generate a 2048-bit key. Google gives you a TXT record to add to DNS. After adding it, return to the Admin Console and click "Start authentication." The record takes 24-48 hours to propagate.</p>
+    <p><strong>Microsoft 365 setup:</strong> Microsoft Defender, then Email authentication, then DKIM. Select your domain and enable signing. Microsoft generates the CNAME records. Add them to your DNS provider.</p>
+    <p><strong>Multiple DKIM records are OK</strong> (unlike SPF). Each service gets its own DKIM selector. Google uses <code>google._domainkey</code>, Instantly uses its own selector. They don't conflict.</p>
+    <p><strong>Key rotation:</strong> Rotate DKIM keys every 6-12 months. Google Workspace makes this easy: generate a new key in the Admin Console and update the DNS record. Old keys stop working 48 hours after you switch. Mark a calendar reminder.</p>
+
+    <h2>DMARC</h2>
+    <p>DMARC tells receiving servers what to do when SPF and DKIM fail. It also sends you reports about who is sending email from your domain (including spoofers).</p>
+    <p><strong>Phase 1 (monitoring):</strong> <code>v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com</code>. This collects data without affecting delivery. Run for 2-4 weeks to see which services send from your domain and whether SPF/DKIM pass for all of them.</p>
+    <p><strong>Phase 2 (quarantine):</strong> <code>p=quarantine</code> after you've confirmed all legitimate senders pass. Failed emails go to spam instead of inbox. This catches spoofers without blocking legitimate mail.</p>
+    <p><strong>Phase 3 (reject):</strong> <code>p=reject</code> for your primary business domain. Failed emails get rejected outright. Don't apply this to cold outbound domains until you've verified everything works perfectly. A misconfigured reject policy blocks your own emails.</p>
+    <p><strong>Report parsing:</strong> Raw DMARC reports are XML and unreadable. Use dmarcly.com ($7.99/month), EasyDMARC (free tier available), or Postmark's free DMARC tool. These show you which emails pass/fail and from which IP addresses. Check weekly during the first month, then monthly.</p>
+
+    <h2>Custom Tracking Domains</h2>
+    <p>Outbound tools like Instantly, Smartlead, and Lemlist track opens and clicks through redirect URLs. By default, these use shared tracking domains that hundreds of other senders also use. If one of those senders gets blacklisted, the shared domain's reputation drags yours down.</p>
+    <p><strong>Setup:</strong> Create a CNAME record for each sending domain pointing to your outbound tool's tracking server. For Instantly: <code>track.yourdomain.com CNAME custom.instantly.ai</code>. For Smartlead: <code>track.yourdomain.com CNAME custom.smartlead.ai</code>. Each domain gets its own tracking subdomain.</p>
+    <p><strong>Why this matters:</strong> Custom tracking domains isolate your reputation. If another sender on a shared domain gets blacklisted, it doesn't affect you. This is a 5-minute setup that prevents deliverability disasters you can not control.</p>
+
+    <h2>Inbox Placement Optimization</h2>
+    <p><strong>Plain text over HTML.</strong> Cold emails that look like personal messages land in the inbox. HTML newsletters with images and styled formatting land in Promotions or spam. Use plain text for all cold outbound. Save HTML for marketing emails to opted-in lists.</p>
+    <p><strong>One link maximum.</strong> Multiple links trigger spam filters. Include one link: either your calendar or your website. Not both. No link is even better for the first email in a sequence. Ask a question instead of including a CTA link.</p>
+    <p><strong>No URL shorteners.</strong> bit.ly, tinyurl, and similar services are used heavily by spammers. Using them in cold email is a deliverability penalty. Use full URLs or custom tracking domains.</p>
+    <p><strong>Subject line formatting:</strong> 3-5 words. Lowercase or sentence case. No punctuation except a question mark. Subject lines that look like internal emails outperform marketing-style subjects by 2-3x in open rate. Good: "quick question about [topic]." Bad: "Unlock Your Sales Potential with Our Platform!"</p>
+    <p><strong>Consistent daily volume.</strong> Spikes in sending volume trigger spam filters. If you normally send 50/day and suddenly send 200, providers flag it. Ramp gradually. Space sends throughout the day (not all at 9 AM). Most outbound tools handle scheduling natively.</p>
+    <p><strong>Verify every email before sending.</strong> Bounce rates above 3% damage sender reputation. Above 5%: stop sending immediately and clean your list. Verification costs $0.003-0.005 per email. At 500 emails, that's $1.50-2.50 to prevent deliverability damage that costs weeks to recover from.</p>
+
+    <h2>Monitoring Stack</h2>
+    <p><strong>Google Postmaster Tools (free):</strong> Domain reputation, spam rate, IP reputation, DKIM/SPF/DMARC pass rates for Gmail. Required for any cold outbound operation. Takes 10 minutes to set up. Check weekly.</p>
+    <p><strong>GlockApps ($59/month):</strong> Send test emails to seed addresses at Gmail, Outlook, Yahoo, and corporate providers. See exactly where your email lands: inbox, spam, promotions, or blocked. Run before launching a new campaign and weekly during active sends.</p>
+    <p><strong>MXToolbox (free):</strong> Blacklist monitoring across 100+ blacklists. IP and domain checks. SPF/DKIM/DMARC validation. Bookmark the lookup page and check your sending domains weekly.</p>
+    <p><strong>DMARC reporting:</strong> Your DMARC report parser shows authentication pass/fail rates and unauthorized senders. Check weekly during the first month of a new domain, monthly afterward.</p>
+    <p><strong>Your outbound tool's dashboard:</strong> Open rates, bounce rates, reply rates, unsubscribe rates. If open rates drop below 30% suddenly, it's a deliverability issue, not a copy issue. If bounce rates spike above 3%, stop and investigate.</p>
+
+    <h2>Recovery Playbooks</h2>
+    <p><strong>Blacklisted domain:</strong> Stop all sending immediately. Identify which blacklist(s) through MXToolbox. Submit delisting requests (most process in 24-72 hours). Pause the domain for 7-14 days after delisting. Resume with warm-up only. Re-introduce cold sends after 95%+ inbox placement for 7 consecutive days.</p>
+    <p><strong>Inbox placement drops (below 80%):</strong> Reduce sending volume by 50%. Audit all DNS records (SPF, DKIM, DMARC). Check for content issues (spammy words, too many links). Run GlockApps test. Fix identified issues. Ramp volume back up over 2 weeks.</p>
+    <p><strong>Bounce rate spike (above 5%):</strong> Stop sending immediately. The data is bad. Re-verify your entire send list. Remove all bounced, invalid, and catch-all addresses. Check your enrichment source: if a specific provider's data is bouncing, remove their results and replace via your <a href="/insights/data-enrichment-waterfall-architecture/">waterfall</a>. Resume only after re-verification shows under 2% estimated bounce rate.</p>
+    <p><strong>Domain burned (consistent sub-50% placement):</strong> Retire the domain permanently. Don't try to recover it. The recovery process takes 4-6 weeks and often fails. Buy a new domain, warm it up for 3-4 weeks, and migrate. See the <a href="/insights/email-infrastructure-setup-guide/">infrastructure guide</a> for domain replacement.</p>
+
+    <h2>Deliverability Tool Costs</h2>
+    <p><strong>Google Postmaster Tools (free):</strong> Required for any cold outbound operation. Shows domain reputation, spam rate, IP reputation, and authentication pass rates for Gmail. Takes 10 minutes to set up. No reason not to use it.</p>
+    <p><strong>GlockApps ($59/month Starter):</strong> Inbox placement testing across Gmail, Outlook, Yahoo, and corporate providers. Send test emails to seed addresses and see exactly where they land. Run before every new campaign launch and weekly during active sends. The $59/month prevents deliverability problems that cost thousands in lost pipeline.</p>
+    <p><strong>MXToolbox (free):</strong> Blacklist monitoring, DNS validation, SPF/DKIM/DMARC checks. The free tier covers everything most teams need. Pro ($129/month) adds automated monitoring with alerts, worth it if you manage 10+ sending domains.</p>
+    <p><strong>Mail-tester.com (free, 3 tests/day):</strong> Send a test email to their address and get a deliverability score with specific fix recommendations. Perfect for quick pre-launch checks. Limited to 3 tests per day on the free tier.</p>
+    <p><strong>EasyDMARC (free tier available):</strong> DMARC report parsing and monitoring. The free tier handles one domain. Paid tiers ($24.99/month+) support multiple domains with aggregate reporting. Better UX than reading raw XML reports.</p>
+    <p><strong>AutoSPF ($5/month per domain):</strong> SPF flattening service that resolves the 10-lookup limit. If you have 4+ services sending from a single domain, the $5/month prevents SPF failures that break authentication silently.</p>
+
+    <h2>Common Deliverability Mistakes</h2>
+    <p><strong>Sending from your primary domain.</strong> If you send cold email from yourbrand.com and it gets flagged, your company's regular business email suffers. Always use separate sending domains (getyourbrand.com, yourbrandhq.com) for cold outbound. Protect your primary domain at all costs.</p>
+    <p><strong>Volume spikes.</strong> Jumping from 50 emails/day to 300 in one day triggers every spam filter. Ramp volume by 20-30% per week maximum. If you need to send a large batch urgently, spread it across multiple domains and multiple days.</p>
+    <p><strong>Ignoring catch-all domains.</strong> Catch-all domains accept all emails regardless of whether the address exists. Your verification tool flags them as "accept-all" rather than "valid." Sending to catch-all domains produces unpredictable bounce rates. Route catch-all addresses to a LinkedIn-only outreach track instead of email sequences.</p>
+    <p><strong>Shared tracking domains.</strong> The default tracking domain on Instantly, Smartlead, and Lemlist is shared with thousands of other senders. If one of them spams, the shared domain gets flagged and your tracking links get blocked. Set up custom tracking domains for every sending domain. It takes 5 minutes each.</p>
+    <p><strong>Not monitoring spam complaints.</strong> Google triggers filtering at 0.3% complaint rate. At 500 emails/day, that is just 1.5 complaints. One bad day with irrelevant targeting can push you over the threshold. Monitor daily during active campaigns. If complaints spike, pause and audit your targeting before the damage compounds.</p>
+
+    <h2>Deliverability Checklist</h2>
+    <p>Run through this before sending any cold email campaign:</p>
+    <p>1. SPF record configured with all sending services merged into one TXT record. 2. DKIM 2048-bit key generated and DNS record added. 3. DMARC record set (start with p=none for monitoring). 4. Custom tracking domains configured for every sending domain. 5. Google Postmaster Tools verified for all sending domains. 6. GlockApps test showing 90%+ inbox placement. 7. MXToolbox blacklist check clean on all sending IPs and domains. 8. Email list verified with bounce rate under 2%. 9. Warm-up running at 20-30/day per mailbox alongside cold sends. 10. Daily volume limits set per mailbox (50-75 cold/day maximum). 11. Plain text format, one link maximum, no URL shorteners. 12. Unsubscribe mechanism in every email signature.</p>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Most common DNS mistake?</h3>
+    <p class="faq-answer">Multiple SPF records. Each domain allows one SPF TXT record. Merge into single record with multiple includes. Use MXToolbox to validate.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How to check if emails land in spam?</h3>
+    <p class="faq-answer">GlockApps or mail-tester.com. Send to seed addresses across providers. Run weekly during warm-up, monthly in production. Google Postmaster Tools for Gmail-specific data.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Can I fix deliverability after problems start?</h3>
+    <p class="faq-answer">Yes, but slowly. Pause sending 7-14 days. Run warm-up only. Resume at 25% volume. Full recovery: 2-4 weeks. Request blacklist delisting individually.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Does content affect deliverability?</h3>
+    <p class="faq-answer">Yes. Plain text outperforms HTML for cold outbound. One link max. No URL shorteners. No images. Short subjects (3-5 words). Look like a human note, not a campaign.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What bounce rate is too high?</h3>
+    <p class="faq-answer">Keep under 3% total. Hard bounces under 1%. Above 5%: stop immediately, clean list. Cause is almost always bad data.</p>
+</div>
+
+</section>
+
+<section class="related-links">
+    <h2>More Insights</h2>
+    <div class="related-links-grid">
+        <a href="/insights/" class="related-link-card">Insights Index</a>
+<a href="/insights/job-market-2026/" class="related-link-card">GTM Engineer Job Market: 2026 Analysis</a>
+<a href="/insights/salary-trends/" class="related-link-card">GTM Engineer Salary Trends: What the Data Shows</a>
+<a href="/insights/tool-adoption/" class="related-link-card">GTM Tool Adoption: Which Tools Are Winning</a>
+<a href="/insights/state-of-gtme-2026/" class="related-link-card">State of GTM Engineering 2026: Key Findings</a>
+<a href="/insights/clay-ecosystem/" class="related-link-card">The Clay Ecosystem: Who Builds What</a>
+<a href="/insights/outbound-stack/" class="related-link-card">The 2026 Outbound Stack: What Top GTM Engineers Use</a>
+<a href="/insights/clay-playbook/" class="related-link-card">Clay Playbook: Advanced Workflows That Work</a>
+<a href="/insights/linkedin-outreach/" class="related-link-card">LinkedIn Outreach for GTM Engineers: A Technical Guide</a>
+<a href="/insights/email-deliverability/" class="related-link-card">Email Deliverability for GTM Engineers</a>
+<a href="/insights/api-integration/" class="related-link-card">API Integration Patterns for GTM Engineers</a>
+<a href="/insights/enrichment-waterfall/" class="related-link-card">Data Enrichment Waterfall Strategy</a>
+
+    </div>
+</section>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Weekly email deliverability insights and outbound infrastructure tips.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+<figure class="content-figure">
+  <img src="/assets/images/content/industry-intelligence-dashboard.svg" alt="GTM intelligence dashboard showing salary trends, hiring velocity, and go-to-market data" width="1200" height="500" loading="lazy">
+  <figcaption>Go-to-market intelligence: hiring signals, salary benchmarks, and market trends.</figcaption>
+</figure>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

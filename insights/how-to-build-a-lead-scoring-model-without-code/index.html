@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Build a Lead Scoring Model Without Code - GTME Pulse</title>
+    <meta name="description" content="Build a lead scoring model using Clay, HubSpot, or spreadsheet logic. No Python required. Weighted criteria and automation. Updated weekly. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/insights/how-to-build-a-lead-scoring-model-without-code/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/insights/how-to-build-a-lead-scoring-model-without-code/">
+    <meta property="og:title" content="Build a Lead Scoring Model Without Code - GTME Pulse">
+    <meta property="og:description" content="Build a lead scoring model using Clay, HubSpot, or spreadsheet logic. No Python required. Weighted criteria and automation. Updated weekly. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Build a Lead Scoring Model Without Code - GTME Pulse">
+    <meta name="twitter:description" content="Build a lead scoring model using Clay, HubSpot, or spreadsheet logic. No Python required. Weighted criteria and automation. Updated weekly. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=17">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=17">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://gtmepulse.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "Lead Scoring Without Code"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Build a Lead Scoring Model Without Code", "description": "Build a lead scoring model using Clay, HubSpot, or spreadsheet logic. No Python required. Weighted criteria and automation. Updated weekly. Independent.", "wordCount": 2000, "author": {"@type": "Person", "name": "Rome Thorndike", "url": "https://gtmepulse.com/about/"}, "publisher": {"@type": "Organization", "name": "GTME Pulse", "url": "https://gtmepulse.com"}, "datePublished": "2026-03-29", "dateModified": "2026-03-29", "url": "https://gtmepulse.com/insights/how-to-build-a-lead-scoring-model-without-code/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gtmepulse.com/insights/how-to-build-a-lead-scoring-model-without-code/"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many scoring criteria should a lead scoring model have?", "acceptedAnswer": {"@type": "Answer", "text": "5-8 criteria is the sweet spot. Fewer than 5 and your score doesn't differentiate well. More than 10 and you're over-fitting to noise. Start with the criteria that your sales team says matter most: company size, title seniority, tech stack, and engagement signals. Add criteria only when you have data showing they predict conversion."}}, {"@type": "Question", "name": "Should I use positive scoring, negative scoring, or both?", "acceptedAnswer": {"@type": "Answer", "text": "Both. Positive scores for ICP match factors (right company size, right title, right industry). Negative scores (penalties) for disqualification signals (competitor employee, student email domain, company too small). A prospect can score 8 out of 10 on positive factors but still be disqualified by a negative signal like 'already a customer.'"}}, {"@type": "Question", "name": "How often should I update my scoring model?", "acceptedAnswer": {"@type": "Answer", "text": "Review quarterly. Compare your scored leads against actual conversion data. If high-scoring leads aren't converting, your weights are wrong. If low-scoring leads are converting, you're missing a signal. Adjust weights and criteria based on what the data shows, not what the team assumes."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/" class="active">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/insights/" class="breadcrumb-link">Insights</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Lead Scoring Without Code</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">How-To Guide</div>
+        <h1>Build a Lead Scoring Model Without Code</h1>
+        <p>Weighted scoring that separates ready buyers from noise. Built in Clay, HubSpot, or a spreadsheet.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>What Lead Scoring Does</h2>
+    <p><a href="/glossary/lead-scoring/">Lead scoring</a> assigns a numeric value to every lead based on how closely they match your ideal customer profile and how engaged they are with your company. The score determines what happens next: high scores get fast-tracked to sales, medium scores enter nurture sequences, low scores get filtered out.</p>
+    <p>Without scoring, every lead gets the same treatment. Your best AE spends time on a 5-person startup that will never buy, while a perfect-fit enterprise prospect sits in the queue. Scoring is prioritization. It ensures your sales team works the leads most likely to convert, in the order most likely to produce revenue.</p>
+
+    <h2>Step 1: Define Your Scoring Criteria</h2>
+    <p>Pull your last 50 closed-won deals and your last 50 closed-lost deals. List every attribute you can find: company size, industry, title of the buyer, tech stack, funding stage, geographic location, how they found you, and how many times they engaged before converting.</p>
+    <p>Look for patterns. Do closed-won deals cluster around a certain company size range? A specific set of industries? A particular buyer title? These patterns become your scoring criteria.</p>
+    <p>If you don't have enough deal data (common at early-stage companies), interview your sales team. Ask: "When you get on a call and know within 2 minutes it's going to close, what do those companies have in common?" Their intuition is a reasonable starting point until you have data to validate or correct it.</p>
+    <p>Example scoring criteria for a SaaS company selling to mid-market:</p>
+
+    <h2>Step 2: Assign Point Values</h2>
+    <p>Create a simple table. Each criterion gets a point value based on how strongly it predicts conversion. Use a 1-3 point scale for simplicity. Don't over-engineer this.</p>
+    <p><strong>Company size 50-500 employees:</strong> +3 (this is your ICP sweet spot)</p>
+    <p><strong>Company size 500-2000:</strong> +2 (good but longer sales cycles)</p>
+    <p><strong>Company size under 50:</strong> +0 (typically too small to buy)</p>
+    <p><strong>SaaS industry:</strong> +2</p>
+    <p><strong>Non-SaaS B2B:</strong> +1</p>
+    <p><strong>B2C or non-profit:</strong> -2 (negative score, disqualification signal)</p>
+    <p><strong>VP or C-level title:</strong> +3</p>
+    <p><strong>Director title:</strong> +2</p>
+    <p><strong>Manager or individual contributor:</strong> +1</p>
+    <p><strong>Uses HubSpot (your target CRM):</strong> +2</p>
+    <p><strong>Uses Salesforce:</strong> +1</p>
+    <p><strong>Series A-C funding:</strong> +2</p>
+    <p><strong>Visited pricing page:</strong> +3</p>
+    <p><strong>Downloaded content:</strong> +1</p>
+    <p><strong>Competitor employee:</strong> -5 (hard disqualification)</p>
+    <p>Maximum possible score in this model: 15. Set your threshold at 8+ for sales-qualified, 4-7 for nurture, below 4 for discard.</p>
+
+    <h2>Step 3: Build in Clay (Recommended)</h2>
+    <p>Clay makes lead scoring visual and automatic. Create a <a href="/glossary/clay-table/">Clay table</a> with your lead data. Add enrichment columns for any criteria you can't get from the source data (Clearbit for employee count, Apollo for title, BuiltWith for tech stack).</p>
+    <p>Add a formula column for each scoring criterion. For company size: <code>IF(/Employee Count >= 50 AND /Employee Count <= 500, 3, IF(/Employee Count > 500 AND /Employee Count <= 2000, 2, 0))</code></p>
+    <p>Add a "Total Score" column that sums all individual score columns. Add a "Status" column: <code>IF(/Total Score >= 8, "Sales-Qualified", IF(/Total Score >= 4, "Nurture", "Discard"))</code></p>
+    <p>Add a CRM push column that only fires when Status equals "Sales-Qualified." Add a sequence enrollment column for "Nurture" leads. Your scoring model now runs automatically for every row.</p>
+
+    <h2>Step 4: Build in HubSpot (Alternative)</h2>
+    <p>HubSpot has built-in lead scoring in its Marketing Hub (Professional tier and above). Go to Settings > Properties > Create Property > Score. Define positive and negative scoring rules based on contact and company properties.</p>
+    <p>HubSpot's advantage: scoring updates in real time as properties change. When a contact's company gets enriched with new firmographic data, the score recalculates automatically. When a contact visits the pricing page, the engagement score updates immediately.</p>
+    <p>HubSpot's limitation: you can only score on properties that exist in HubSpot. If your scoring criteria include data that lives outside HubSpot (tech stack from BuiltWith, intent signals from 6sense), you need to sync that data into HubSpot contact properties first. This is where <a href="/glossary/reverse-etl/">reverse ETL</a> or Clay integrations fill the gap.</p>
+
+    <h2>Step 5: Build in a Spreadsheet (Simplest)</h2>
+    <p>If you have fewer than 500 leads per month, a Google Sheet works. Column A: lead email. Columns B-G: enriched data points (from Clay export or manual research). Columns H-M: score formulas matching your criteria. Column N: total score (SUM of score columns). Column O: status (IF-based classification).</p>
+    <p>Export from your enrichment tool, paste into the scoring sheet, and the formulas calculate instantly. Sort by total score. Work the list from the top.</p>
+    <p>The spreadsheet approach doesn't scale, but it validates your scoring logic before you invest time building it in Clay or HubSpot. If the scored list matches your sales team's intuition about lead quality, the model is working. If it doesn't, adjust weights before automating.</p>
+
+    <h2>Step 6: Validate and Calibrate</h2>
+    <p>Run your scoring model for 30 days. Track which scored leads convert to meetings and which meetings convert to deals. Compare your score predictions against actual outcomes.</p>
+    <p>Calculate conversion rate by score band. If leads scoring 8-10 convert at 15% and leads scoring 4-7 convert at 3%, your model is differentiating well. If leads scoring 8-10 convert at 5% and leads scoring 4-7 convert at 4%, your model isn't adding value. The criteria or weights need adjustment.</p>
+    <p>Common calibration findings: engagement signals (pricing page visits, content downloads) are more predictive than firmographic signals (company size, industry) for most B2B companies. If your model is purely firmographic, adding behavioral signals usually improves accuracy significantly.</p>
+    <p>Adjust weights quarterly. Sales teams change, products evolve, and market conditions shift. A scoring model that worked in Q1 may need recalibration by Q3. The good news: recalibrating means changing a few numbers in your formula columns, not rebuilding the entire system.</p>
+
+    <h2>Common Mistakes</h2>
+    <p><strong>Too many criteria.</strong> 15 scoring factors with 1-point increments creates a model that scores everything between 6 and 9. There's no separation. Use fewer criteria with larger point values. The model should produce a wide distribution.</p>
+    <p><strong>No negative scoring.</strong> Without disqualification signals, competitors, students, and existing customers score high on positive factors and waste sales time. Always include hard disqualifiers with large negative scores.</p>
+    <p><strong>Never validating.</strong> A scoring model built on assumptions and never checked against real conversion data is worse than no model. At least with no model, the sales team applies their own judgment. A bad model overrides that judgment with incorrect prioritization.</p>
+    <p><strong>Scoring without acting.</strong> A lead score that nobody looks at is useless. Wire your scores to automation: high scores trigger immediate rep notification, medium scores enter nurture sequences, low scores get archived. The score should drive action, not sit in a CRM field.</p>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">How many scoring criteria should a lead scoring model have?</h3>
+    <p class="faq-answer">5-8 criteria is the sweet spot. Fewer than 5 and your score doesn't differentiate well. More than 10 and you're over-fitting to noise. Start with the criteria that your sales team says matter most: company size, title seniority, tech stack, and engagement signals. Add criteria only when you have data showing they predict conversion.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Should I use positive scoring, negative scoring, or both?</h3>
+    <p class="faq-answer">Both. Positive scores for ICP match factors (right company size, right title, right industry). Negative scores (penalties) for disqualification signals (competitor employee, student email domain, company too small). A prospect can score 8 out of 10 on positive factors but still be disqualified by a negative signal like 'already a customer.'</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How often should I update my scoring model?</h3>
+    <p class="faq-answer">Review quarterly. Compare your scored leads against actual conversion data. If high-scoring leads aren't converting, your weights are wrong. If low-scoring leads are converting, you're missing a signal. Adjust weights and criteria based on what the data shows, not what the team assumes.</p>
+</div>
+
+</section>
+
+<section class="related-links">
+    <h2>More Insights</h2>
+    <div class="related-links-grid">
+        <a href="/insights/" class="related-link-card">Insights Index</a>
+<a href="/insights/job-market-2026/" class="related-link-card">GTM Engineer Job Market: 2026 Analysis</a>
+<a href="/insights/salary-trends/" class="related-link-card">GTM Engineer Salary Trends: What the Data Shows</a>
+<a href="/insights/tool-adoption/" class="related-link-card">GTM Tool Adoption: Which Tools Are Winning</a>
+<a href="/insights/state-of-gtme-2026/" class="related-link-card">State of GTM Engineering 2026: Key Findings</a>
+<a href="/insights/clay-ecosystem/" class="related-link-card">The Clay Ecosystem: Who Builds What</a>
+<a href="/insights/outbound-stack/" class="related-link-card">The 2026 Outbound Stack: What Top GTM Engineers Use</a>
+<a href="/insights/clay-playbook/" class="related-link-card">Clay Playbook: Advanced Workflows That Work</a>
+<a href="/insights/linkedin-outreach/" class="related-link-card">LinkedIn Outreach for GTM Engineers: A Technical Guide</a>
+<a href="/insights/email-deliverability/" class="related-link-card">Email Deliverability for GTM Engineers</a>
+<a href="/insights/api-integration/" class="related-link-card">API Integration Patterns for GTM Engineers</a>
+<a href="/insights/enrichment-waterfall/" class="related-link-card">Data Enrichment Waterfall Strategy</a>
+
+    </div>
+</section>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Weekly lead scoring strategies and pipeline optimization insights.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+<figure class="content-figure">
+  <img src="/assets/images/content/industry-intelligence-dashboard.svg" alt="GTM intelligence dashboard showing salary trends, hiring velocity, and go-to-market data" width="1200" height="500" loading="lazy">
+  <figcaption>Go-to-market intelligence: hiring signals, salary benchmarks, and market trends.</figcaption>
+</figure>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

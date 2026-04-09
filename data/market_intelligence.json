@@ -1,0 +1,96 @@
+{
+  "date": "April 09, 2026",
+  "total_jobs": 43,
+  "tools": {
+    "Rag": 27,
+    "Clay": 24,
+    "Python": 23,
+    "Rust": 21,
+    "Salesforce": 19,
+    "Hubspot": 19,
+    "Zapier": 18,
+    "N8N": 15,
+    "Apollo": 12,
+    "Javascript": 12,
+    "Claude": 9,
+    "Aws": 8,
+    "Zoominfo": 8,
+    "Instantly": 6,
+    "Tableau": 6,
+    "Looker": 6,
+    "Openai": 6,
+    "Gong": 6,
+    "Typescript": 6,
+    "Power Bi": 5,
+    "Prompt Engineering": 5,
+    "Hubspot Marketing": 4,
+    "Embeddings": 3,
+    "Chili Piper": 3,
+    "Chili Piper Routing": 3,
+    "Metabase": 3,
+    "Workato": 3,
+    "Workato Ipaas": 3,
+    "Salesforce Marketing Cloud": 2,
+    "Clearbit": 2,
+    "Iterable": 2,
+    "Cohere": 2,
+    "Pipedrive": 2,
+    "Lemlist": 2,
+    "Smartlead": 2,
+    "Gainsight": 2,
+    "Marketo": 2,
+    "Linkedin Sales Navigator": 2,
+    "Mixpanel": 2,
+    "Posthog": 2,
+    "Pinecone": 2,
+    "Weaviate": 2,
+    "Pgvector": 2,
+    "Salesloft": 1,
+    "Gemini": 1,
+    "Lusha": 1,
+    "Impartner": 1,
+    "Planhat": 1,
+    "Hightouch": 1,
+    "Intercom": 1
+  },
+  "segment": {
+    "Enterprise": 11,
+    "Fortune 500": 1,
+    "Smb": 1
+  },
+  "hiring_signals": {
+    "Growth Hire": 36,
+    "Turnaround": 14,
+    "Immediate": 2
+  },
+  "comp_signals": {
+    "Equity": 33
+  },
+  "deal_size": {
+    "Seven Figure": 3,
+    "Enterprise Deal": 2
+  },
+  "team_structure": {
+    "Build Team": 31,
+    "First Hire": 7,
+    "Reports Cro": 4
+  },
+  "geo_focus": {
+    "Global": 18,
+    "North America": 6,
+    "Emea": 3,
+    "Latam": 1
+  },
+  "motion": {
+    "Channel": 7,
+    "Abm": 2,
+    "Plg": 1,
+    "Direct": 1
+  },
+  "sales_cycle": {
+    "Long": 3
+  },
+  "methodology": {
+    "Meddic": 1
+  }
+}

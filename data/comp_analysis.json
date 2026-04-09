@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-04-09T08:55:43.616774",
+  "total_records": 43,
+  "records_with_salary": 23,
+  "disclosure_rate": 53.5,
+  "salary_stats": {
+    "min": 48,
+    "max": 250000,
+    "median": 120000,
+    "avg": 118141,
+    "count_with_salary": 23
+  },
+  "by_seniority": {
+    "Unknown": {
+      "count": 19,
+      "min_base_avg": 110644,
+      "max_base_avg": 150087,
+      "median": 120000
+    }
+  },
+  "by_metro": {
+    "Austin": {
+      "count": 3,
+      "min_base_avg": 98016,
+      "max_base_avg": 130020,
+      "median": 120000
+    },
+    "San Francisco": {
+      "count": 4,
+      "min_base_avg": 130000,
+      "max_base_avg": 202500,
+      "median": 140000
+    },
+    "Unknown": {
+      "count": 4,
+      "min_base_avg": 92300,
+      "max_base_avg": 135400,
+      "median": 114000
+    },
+    "New York": {
+      "count": 10,
+      "min_base_avg": 134300,
+      "max_base_avg": 170500,
+      "median": 135000
+    }
+  },
+  "by_remote": {
+    "onsite": {
+      "count": 23,
+      "min_base_avg": 118141,
+      "max_base_avg": 161463,
+      "median": 120000
+    }
+  },
+  "top_paying_roles": [
+    {
+      "title": "Director, GTM Automations & Data",
+      "company": "Gong",
+      "salary_min": 174000.0,
+      "salary_max": 250000.0,
+      "seniority": "Director"
+    },
+    {
+      "title": "Senior Manager, Go-To-Market Engineering",
+      "company": "Aircall",
+      "salary_min": 190000.0,
+      "salary_max": 245000.0,
+      "seniority": "Senior"
+    },
+    {
+      "title": "GTM Engineering and Systems Manager",
+      "company": "ASHBY",
+      "salary_min": 160000.0,
+      "salary_max": 230000.0,
+      "seniority": "Mid"
+    },
+    {
+      "title": "GTM Engineer",
+      "company": "Playground",
+      "salary_min": 160000.0,
+      "salary_max": 210000.0,
+      "seniority": ""
+    },
+    {
+      "title": "Growth Engineer",
+      "company": "Dust",
+      "salary_min": 100000.0,
+      "salary_max": 200000.0,
+      "seniority": ""
+    },
+    {
+      "title": "Founding Growth Marketer / GTM Engineer",
+      "company": "",
+      "salary_min": 120000.0,
+      "salary_max": 200000.0,
+      "seniority": ""
+    },
+    {
+      "title": "GTM Engineer",
+      "company": "Hebbia",
+      "salary_min": 140000.0,
+      "salary_max": 190000.0,
+      "seniority": ""
+    },
+    {
+      "title": "Marketing: GTM Engineer - onsite - New York, NY",
+      "company": "gd resources",
+      "salary_min": 135000.0,
+      "salary_max": 185000.0,
+      "seniority": ""
+    },
+    {
+      "title": "Sr. Enterprise Growth Engineer",
+      "company": "Addepar",
+      "salary_min": 146000.0,
+      "salary_max": 182000.0,
+      "seniority": ""
+    },
+    {
+      "title": "GTM Engineer",
+      "company": "",
+      "salary_min": 140000.0,
+      "salary_max": 180000.0,
+      "seniority": ""
+    }
+  ]
+}

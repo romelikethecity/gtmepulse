@@ -14177,7 +14177,8 @@ def build_insight_pulse_report():
     jobs = []
     if os.path.exists(jobs_path):
         with open(jobs_path, "r", encoding="utf-8") as f:
-            jobs = json.load(f)
+            raw = json.load(f)
+        jobs = raw.get("jobs", raw) if isinstance(raw, dict) else raw
 
     # Compute aggregate stats
     total_roles = len(jobs)
@@ -18373,7 +18374,9 @@ def build_job_board():
     jobs_path = os.path.join(PROJECT_DIR, "data", "jobs.json")
     try:
         with open(jobs_path, "r", encoding="utf-8") as f:
-            jobs = json.load(f)
+            raw = json.load(f)
+        # Support both flat list and nested {"jobs": [...]} formats
+        jobs = raw.get("jobs", raw) if isinstance(raw, dict) else raw
     except (FileNotFoundError, json.JSONDecodeError):
         jobs = []
 
@@ -18412,7 +18415,7 @@ def build_job_board():
 
     # Compute aggregate stats
     total_roles = len(jobs)
-    salaries = [j["salary_min"] for j in jobs if j.get("salary_min")] + [j["salary_max"] for j in jobs if j.get("salary_max")]
+    salaries = [j.get("salary_min") or j.get("min_amount") for j in jobs if (j.get("salary_min") or j.get("min_amount"))] + [j.get("salary_max") or j.get("max_amount") for j in jobs if (j.get("salary_max") or j.get("max_amount"))]
     median_salary = sorted(salaries)[len(salaries) // 2] if salaries else 0
     median_display = f"${median_salary // 1000}K" if median_salary else "N/A"
     remote_count = sum(1 for j in jobs if j.get("remote"))

@@ -403,6 +403,44 @@ SALARY_VS = {
             ("Could an AE become a GTM Engineer?", "AEs understand the sales process deeply, which is valuable. The gap is technical: learning Clay, automation tools, data enrichment, and ideally Python/SQL. It's a significant pivot but AEs who enjoy building systems more than running deals can make it work."),
         ],
     },
+    "implementation-manager": {
+        "label": "Implementation Manager",
+        "slug": "vs-implementation-manager",
+        "gtme_range": "$60K-$250K+",
+        "other_range": "$85K-$150K",
+        "gtme_median": "$135K",
+        "other_median": "$112K",
+        "verdict": "GTM Engineers earn 35-45% more than Implementation Managers at equivalent experience levels.",
+        "context": [
+            "Implementation Managers own the post-sale deployment of SaaS products. They run onboarding projects, coordinate between customer teams and internal engineering, and track time-to-value. GTM Engineers build the automated pipeline that generates the deals Implementation Managers later deploy.",
+            "The compensation gap reflects the revenue impact difference. Implementation Managers operate in the cost center of professional services. GTM Engineers operate in the revenue center of pipeline generation. Both require project management skills and technical understanding, but proximity to revenue creation drives higher comp for GTM Engineering.",
+            "The career crossover is underrated. Implementation Managers understand customer workflows, technical integrations, and CRM configuration deeply. Those skills translate directly to building automated outbound systems. Adding Clay, enrichment APIs, and Python closes the gap in 4-6 months.",
+        ],
+        "faq": [
+            ("What does an Implementation Manager do vs a GTM Engineer?", "Implementation Managers deploy SaaS products for customers after the sale closes. They run onboarding, configure integrations, and drive adoption. GTM Engineers build automated outbound systems that generate the pipeline before the sale. One is post-sale delivery; the other is pre-sale infrastructure."),
+            ("Can Implementation Managers transition to GTM Engineering?", "Yes, and the transition is smoother than most people expect. Implementation Managers already know CRM configuration, integration architecture, and project management. The gap is outbound automation tools (Clay, Instantly, Make) and data enrichment concepts. Most can transition in 4-6 months."),
+            ("Which role has better long-term growth?", "GTM Engineering is growing 205% YoY with limited talent supply. Implementation Manager roles grow in line with SaaS company headcount, roughly 10-15% annually. The compensation ceiling for GTM Engineering ($250K+) is higher than typical Implementation Manager tracks ($150K-$170K at director level)."),
+        ],
+    },
+    "technical-account-manager": {
+        "label": "Technical Account Manager",
+        "slug": "vs-technical-account-manager",
+        "gtme_range": "$60K-$250K+",
+        "other_range": "$100K-$180K",
+        "gtme_median": "$135K",
+        "other_median": "$135K",
+        "verdict": "Nearly identical median compensation. TAMs have more customer-facing work; GTM Engineers have more building-focused work.",
+        "context": [
+            "Technical Account Managers (TAMs) and GTM Engineers share a similar technical depth but apply it in opposite directions. TAMs face outward toward existing customers, managing technical relationships, troubleshooting integrations, and driving adoption. GTM Engineers face inward toward the pipeline, building automated systems that generate new business.",
+            "The compensation parity reflects comparable skill requirements. Both need API literacy, CRM expertise, and the ability to translate between technical and business contexts. TAMs tend to have more variable comp tied to retention and expansion; GTM Engineers lean toward higher base salary with pipeline-linked bonuses.",
+            "TAMs who enjoy building systems more than managing relationships should consider the GTM Engineering path. The technical skills transfer directly. The shift is from reactive customer support to proactive pipeline engineering. It is a mindset change more than a skill change.",
+        ],
+        "faq": [
+            ("What is the difference between a TAM and a GTM Engineer?", "TAMs manage technical relationships with existing customers. They troubleshoot issues, drive product adoption, and coordinate between customer and engineering teams. GTM Engineers build automated outbound infrastructure to generate new pipeline. TAMs are post-sale and customer-facing; GTM Engineers are pre-sale and systems-facing."),
+            ("Do TAMs or GTM Engineers earn more?", "Median compensation is nearly identical at $135K. TAMs have more variable comp tied to account retention and expansion. GTM Engineers have higher base salary percentages. Total comp depends on the specific company and whether the TAM hits retention targets."),
+            ("How does a TAM move into GTM Engineering?", "TAMs already have API skills, CRM knowledge, and technical communication abilities. The gap is in outbound automation: Clay, data enrichment waterfalls, sequencing tools, and Python scripting for pipeline automation. Focus on building a portfolio of automated outbound workflows. Most TAMs can transition in 3-6 months."),
+        ],
+    },
 }
 
 
@@ -2792,6 +2830,7 @@ CAREER_PAGES = [
     {"slug": "reporting-structure", "title": "Reporting Structure Data"},
     {"slug": "impact-measurement", "title": "How GTM Engineers Measure Impact"},
     {"slug": "skills-gap", "title": "Skills Gap: What Postings Want"},
+    {"slug": "implementation-to-gtm-engineer", "title": "Implementation to GTM Engineer"},
 ]
 
 
@@ -4179,6 +4218,126 @@ def build_career_skills_gap():
     )
     write_page("careers/skills-gap/index.html", page)
     print(f"  Built: careers/skills-gap/index.html")
+
+
+def build_career_implementation_to_gtme():
+    """CAREER-13: Implementation/SE/TAM to GTM Engineer transition guide."""
+    title = "Implementation to GTM Engineer: Career Transition"
+    description = (
+        "How Solutions Engineers, Implementation Managers, and TAMs transition"
+        " to GTM Engineering. Skills map, timeline, and salary uplift data."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Career Guides", "/careers/"), ("Implementation to GTM Engineer", None)]
+    bc_html = breadcrumb_html(crumbs)
+
+    faq_pairs = [
+        ("Can an Implementation Manager become a GTM Engineer?",
+         "Yes. Implementation Managers already understand CRM configuration, integration architecture, and customer workflows. The gap is outbound automation tools: Clay, enrichment APIs, sequencing platforms (Instantly, Smartlead), and optionally Python. Most transitions take 4-6 months of focused skill-building alongside the current role."),
+        ("What skills transfer from Solutions Engineering to GTM Engineering?",
+         "API literacy, CRM configuration, demo environment setup, technical communication, and project management all transfer directly. SEs who have built custom integrations or POC environments have 80% of the technical foundation. The remaining 20% is learning GTM-specific tools: Clay for enrichment, outbound sequencers for delivery, and data waterfall architecture for reliability."),
+        ("What is the salary increase from Implementation to GTM Engineering?",
+         "Implementation Managers earn a median of $112K. GTM Engineers earn a median of $135K. That is a 20% increase at the median. Senior GTM Engineers earn $175K-$225K, compared to $130K-$150K for senior Implementation Managers. The ceiling is higher because GTM Engineering sits in the revenue center, not the cost center."),
+        ("How long does the transition from TAM to GTM Engineer take?",
+         "TAMs typically transition fastest because they already have API skills, CRM depth, and technical communication abilities. Most TAMs can become competitive GTM Engineer candidates in 3-4 months. The timeline extends to 6 months for Implementation Managers who need to build more technical depth."),
+        ("Do I need to quit my current role to transition?",
+         "No. Build GTM Engineering skills on nights and weekends. Create a Clay portfolio, automate a personal outbound campaign, and document the results. Many successful GTM Engineers transitioned by building internal tools at their current company first, then applying those skills to a GTM Engineer role when ready."),
+    ]
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Transition</div>
+        <h1>From Implementation to GTM Engineer</h1>
+        <p>Solutions Engineers, Implementation Managers, and Technical Account Managers have 70-80% of the skills GTM Engineering requires. Here is how to close the gap, what the timeline looks like, and what the salary uplift is.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">20%+</span>
+        <span class="stat-label">Median Salary Uplift</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">3-6mo</span>
+        <span class="stat-label">Transition Timeline</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">205%</span>
+        <span class="stat-label">GTM Eng Job Growth YoY</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>Why Implementation Pros Make Great GTM Engineers</h2>
+    <p>The implementation-to-GTM-Engineering pipeline is one of the most natural career transitions in B2B SaaS. Implementation professionals spend their days configuring CRMs, building integrations between systems, managing technical projects, and translating business requirements into working configurations. GTM Engineers do the same things, just pointed at pipeline generation instead of customer delivery.</p>
+    <p>Three specific skills transfer directly:</p>
+    <ul>
+        <li><strong>CRM configuration depth.</strong> Implementation Managers and SEs configure Salesforce and HubSpot daily. GTM Engineers need this same CRM fluency to build enrichment pipelines, manage lead routing, and automate data flows. If you can set up custom objects, workflows, and API integrations in a CRM, you have the foundation.</li>
+        <li><strong>Integration architecture.</strong> Implementation pros connect SaaS tools to each other. Webhook configurations, API authentication, data mapping between systems. GTM Engineers do identical work when connecting Clay to CRMs, sequencers to enrichment tools, and intent data to routing logic.</li>
+        <li><strong>Project management.</strong> Running an implementation project (timeline, stakeholders, deliverables, edge cases) maps directly to building a GTM system. Both require scoping, testing, iterating, and documenting. The project management muscle is the same.</li>
+    </ul>
+
+    <h2>The Skills You Need to Add</h2>
+    <p>The 20-30% skills gap falls into three areas. None of them are hard for someone with implementation experience.</p>
+    <p><strong>Clay proficiency.</strong> Clay is the center of gravity for GTM Engineering. It appears in 84% of job postings. For an implementation professional, Clay will feel familiar. It is a data enrichment and workflow tool with a spreadsheet-like interface, API integrations, and conditional logic. If you can configure a complex Salesforce flow, you can build a Clay table. Budget 2-3 weeks to become proficient. Clay University (free) covers the fundamentals. Then build 3-5 portfolio tables that demonstrate enrichment waterfall logic.</p>
+    <p><strong>Outbound sequencing.</strong> Implementation pros rarely work with outbound email tools. GTM Engineers live in them. Pick one: Instantly, Smartlead, or Lemlist. Learn email warm-up, deliverability basics, and multi-step sequence design. The technical bar is lower than CRM configuration. One week of focused learning is enough to understand the mechanics.</p>
+    <p><strong>Data enrichment waterfall design.</strong> This is the architectural skill that separates GTM Engineers from CRM admins. A waterfall queries multiple data sources in priority order: try LinkedIn first, fall back to company website, then use a catch-all provider. Implementation pros understand data flow and fallback logic from building integrations. Applying that thinking to enrichment waterfalls is a small conceptual step. Read the <a href="/insights/data-enrichment-waterfall-architecture/">enrichment waterfall architecture guide</a> for the full framework.</p>
+
+    <h2>Transition by Current Role</h2>
+    <p><strong>Solutions Engineers (3-4 months).</strong> SEs have the shortest path. You already build demo environments, configure APIs, and understand the sales cycle. Your gap is narrowest: learn Clay, pick up an outbound sequencer, and build a portfolio. The SE-to-GTME transition is so natural that some SEs do it internally when their company starts a GTM Engineering function.</p>
+    <p><strong>Technical Account Managers (3-5 months).</strong> TAMs have strong API skills and CRM depth from managing customer accounts. The shift is from reactive (responding to customer needs) to proactive (building systems that generate pipeline). Learn Clay and outbound tools. Build an automated prospecting system as a portfolio project. The technical skills transfer cleanly. The mindset shift from customer management to pipeline generation takes a few months to internalize.</p>
+    <p><strong>Implementation Managers (4-6 months).</strong> Implementation Managers have the strongest project management skills but may have less hands-on technical depth than SEs or TAMs. If you've been managing implementations rather than configuring systems directly, budget extra time for Clay and API fundamentals. If you've been hands-on with CRM configuration and integrations, the timeline is closer to 4 months.</p>
+    <p><strong>Onboarding Specialists (5-7 months).</strong> Onboarding specialists understand customer workflows and product adoption. The technical gap is larger: you need to add CRM configuration, API basics, Clay, and outbound tools. The advantage is that onboarding specialists understand what makes customers successful, which informs better targeting and messaging in outbound systems.</p>
+
+    <h2>The Portfolio That Gets You Hired</h2>
+    <p>GTM Engineering hiring managers care about demonstrated output, not credentials. Build three things:</p>
+    <ol>
+        <li><strong>A Clay enrichment table.</strong> Take a list of 100 target companies, enrich them with contact data, email verification, and ICP scoring. Show the waterfall logic: which sources you tried, hit rates at each step, and final output quality. This demonstrates the core GTM Engineering skill.</li>
+        <li><strong>An automated outbound campaign.</strong> Set up a complete outbound flow: enrichment, personalization, sequence delivery, and response handling. Even if you run it against a test list, the architecture demonstrates your ability to build end-to-end systems.</li>
+        <li><strong>A CRM integration.</strong> Connect Clay output to a CRM with proper field mapping, deduplication, and lead routing. This leverages your existing implementation skills while showing GTM-specific application. Document the data flow and decision logic.</li>
+    </ol>
+    <p>Post these projects on LinkedIn with breakdowns of what you built and why. The GTM Engineering community is small and active. Visibility matters for getting interviews.</p>
+
+    <h2>Salary Impact</h2>
+    <p>The financial case is straightforward:</p>
+    <table class="data-table">
+        <thead><tr><th>Role</th><th>Median</th><th>Senior Range</th></tr></thead>
+        <tbody>
+            <tr><td>Implementation Manager</td><td>$112K</td><td>$130K-$150K</td></tr>
+            <tr><td>Technical Account Manager</td><td>$135K</td><td>$150K-$180K</td></tr>
+            <tr><td>Solutions Engineer</td><td>$155K</td><td>$170K-$220K</td></tr>
+            <tr><td>GTM Engineer</td><td>$135K</td><td>$175K-$250K+</td></tr>
+        </tbody>
+    </table>
+    <p>For Implementation Managers, the median uplift is 20%+. For TAMs, the median is comparable, but the senior ceiling is higher. For SEs, the median is slightly lower, but GTM Engineering's 205% YoY growth means faster promotion timelines and more negotiating power.</p>
+    <p>The ceiling is the real story. Senior GTM Engineers at growth-stage companies earn $200K-$280K total comp. Director-level roles ($250K+) are emerging. These comp levels exceed what most implementation career tracks offer outside of VP positions.</p>
+    <p>See the full salary breakdowns: <a href="/salary/vs-implementation-manager/">GTM Engineer vs Implementation Manager</a> and <a href="/salary/vs-solutions-engineer/">GTM Engineer vs Solutions Engineer</a>.</p>
+
+    <h2>First Steps This Week</h2>
+    <ol>
+        <li><strong>Sign up for Clay</strong> (free tier available). Build your first enrichment table using a list of 50 companies in your target market.</li>
+        <li><strong>Complete Clay University</strong> fundamentals (3-5 hours). Focus on enrichment actions, waterfall logic, and CRM integration.</li>
+        <li><strong>Subscribe to 3 GTM Engineering practitioners on LinkedIn:</strong> Eric Nowoslawski, Nathan Lippi, and Matteo Tittarelli. Their content shows real workflows and builds your understanding of how the role works in practice.</li>
+        <li><strong>Read the <a href="/careers/how-to-become-gtm-engineer/">full career guide</a></strong> for the complete skill development roadmap.</li>
+    </ol>
+
+{faq_html(faq_pairs)}
+{career_related_links("implementation-to-gtm-engineer")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Get weekly GTM Engineer career data and transition tips.")
+    extra_head = get_breadcrumb_schema(crumbs) + get_faq_schema(faq_pairs)
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/careers/implementation-to-gtm-engineer/",
+        body_content=body, active_path="/careers/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("careers/implementation-to-gtm-engineer/index.html", page)
+    print(f"  Built: careers/implementation-to-gtm-engineer/index.html")
 
 
 # ---------------------------------------------------------------------------
@@ -18673,6 +18832,7 @@ def main():
     build_career_reporting_structure()
     build_career_impact()
     build_career_skills_gap()
+    build_career_implementation_to_gtme()
 
     print("\n  Building agency pages...")
     build_agency_pricing()

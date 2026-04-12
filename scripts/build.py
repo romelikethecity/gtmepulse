@@ -18891,6 +18891,201 @@ def build_glossary_terms():
 
 
 # ---------------------------------------------------------------------------
+# Top Voices
+# ---------------------------------------------------------------------------
+
+def build_top_voices():
+    """Build the Top 25 GTM Engineering Voices page."""
+    print("  Building top voices page...")
+
+    # Load voice data
+    data_path = os.path.join(PROJECT_DIR, "data", "top_voices.json")
+    with open(data_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    voices = data["voices"]
+    leaders = [v for v in voices if v.get("tier") == "leader"]
+    rising = [v for v in voices if v.get("tier") == "rising"]
+    last_updated = data.get("last_updated", BUILD_DATE)
+
+    title = "Top 25 GTM Engineering Voices of 2026"
+    meta_desc = pad_description(
+        "Data-driven rankings of the 25 most influential GTM Engineers, builders, "
+        "and thought leaders on LinkedIn. Updated for 2026."
+    )
+
+    crumbs = [("Home", "/"), ("Top Voices", None)]
+    bc_html = breadcrumb_html(crumbs)
+    bc_schema = get_breadcrumb_schema(crumbs)
+
+    # ItemList schema
+    list_items = ""
+    for v in voices:
+        list_items += f'''
+        {{
+            "@type": "ListItem",
+            "position": {v["rank"]},
+            "item": {{
+                "@type": "Person",
+                "name": "{v["name"]}",
+                "jobTitle": "{v["title"]}",
+                "worksFor": {{
+                    "@type": "Organization",
+                    "name": "{v["company"]}"
+                }},
+                "url": "{v["linkedin_url"]}"
+            }}
+        }},'''
+    list_items = list_items.rstrip(",")
+
+    list_schema = f'''<script type="application/ld+json">
+{{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "{title}",
+    "description": "{data.get("subtitle", "")}",
+    "numberOfItems": {len(voices)},
+    "itemListElement": [{list_items}
+    ]
+}}
+</script>
+'''
+
+    # Article schema (inline since get_article_schema hardcodes /insights/ path)
+    article_obj = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": meta_desc,
+        "wordCount": 2000,
+        "author": {
+            "@type": "Person",
+            "name": "Rome Thorndike",
+            "url": f"{SITE_URL}/about/",
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": SITE_NAME,
+            "url": SITE_URL,
+        },
+        "datePublished": "2026-04-12",
+        "dateModified": last_updated,
+        "url": f"{SITE_URL}/top-voices/",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": f"{SITE_URL}/top-voices/",
+        },
+    }
+    article_schema = f'    <script type="application/ld+json">{json.dumps(article_obj)}</script>\n'
+
+    # Build voice cards
+    def voice_card(v, expanded=True):
+        tags_html = ""
+        for tag in v.get("tags", []):
+            tags_html += f'<span class="voice-tag">{tag}</span>'
+
+        rank_class = "voice-rank-top" if v["rank"] <= 3 else "voice-rank"
+
+        bio_html = f'<p class="voice-bio">{v["bio"]}</p>' if expanded else ""
+
+        return f'''<div class="voice-card" id="voice-{v["rank"]}">
+    <div class="voice-card-header">
+        <div class="{rank_class}">#{v["rank"]}</div>
+        <div class="voice-card-info">
+            <h3 class="voice-name"><a href="{v["linkedin_url"]}" target="_blank" rel="noopener">{v["name"]}</a></h3>
+            <p class="voice-title">{v["title"]} at {v["company"]}</p>
+            <div class="voice-tags">{tags_html}</div>
+        </div>
+        <a href="{v["linkedin_url"]}" target="_blank" rel="noopener" class="voice-linkedin-btn" aria-label="View {v["name"]} on LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+    </div>
+    {bio_html}
+</div>'''
+
+    # Leaders section
+    leaders_html = ""
+    for v in leaders:
+        leaders_html += voice_card(v, expanded=True)
+
+    # Rising voices section
+    rising_html = ""
+    for v in rising:
+        rising_html += voice_card(v, expanded=True)
+
+    # Quick nav - jump links
+    jump_links = ""
+    for v in voices:
+        jump_links += f'<a href="#voice-{v["rank"]}" class="voice-jump-link">#{v["rank"]} {v["name"].split()[0]}</a>'
+
+    # Methodology section
+    methodology_html = f'''<details class="voice-methodology">
+    <summary><strong>How We Ranked These Voices</strong></summary>
+    <div class="methodology-content">
+        <p>{data.get("methodology", "")}</p>
+        <p>We evaluated candidates across five dimensions:</p>
+        <ul>
+            <li><strong>Topic relevance</strong> (required): Must actively post about GTM Engineering, outbound automation, or technical sales infrastructure.</li>
+            <li><strong>Cross-list recognition</strong> (30%): Appeared on multiple industry "top voices" lists from independent publications.</li>
+            <li><strong>Content frequency</strong> (25%): Regular posting cadence with minimum 2+ posts per month on relevant topics.</li>
+            <li><strong>Community impact</strong> (25%): Engagement quality, community building, educational contributions.</li>
+            <li><strong>Originality</strong> (20%): Original frameworks, data, and insights vs. resharing existing content.</li>
+        </ul>
+        <p>This list is updated annually. <a href="/newsletter/">Subscribe to GTME Pulse</a> to get notified when we refresh the rankings.</p>
+    </div>
+</details>'''
+
+    body = f'''{bc_html}
+<section class="voices-hero">
+    <div class="voices-hero-inner">
+        <div class="salary-eyebrow">2026 RANKINGS</div>
+        <h1>{title}</h1>
+        <p class="voices-subtitle">{data.get("subtitle", "")}</p>
+        <p class="voices-meta">Last updated: {last_updated} &middot; {len(voices)} voices ranked</p>
+    </div>
+</section>
+
+<div class="voices-content">
+    {methodology_html}
+
+    <div class="voices-jump-nav">
+        {jump_links}
+    </div>
+
+    <h2 class="voices-section-heading">Top 10 Leaders</h2>
+    <p>The most recognized and influential voices shaping GTM Engineering today.</p>
+    <div class="voices-grid">
+        {leaders_html}
+    </div>
+
+    <h2 class="voices-section-heading">Rising Voices (11-25)</h2>
+    <p>Builders and thought leaders gaining momentum in the GTM Engineering community.</p>
+    <div class="voices-grid">
+        {rising_html}
+    </div>
+</div>
+
+{newsletter_cta_html("Get weekly GTM Engineering insights from the voices shaping the industry.")}
+
+<section class="voices-share-cta">
+    <h2>Made the List?</h2>
+    <p>Share it. Tag us on LinkedIn. We will amplify your post.</p>
+    <p>Know someone who should be on next year's list? <a href="mailto:rome@getprovyx.com">Let us know</a>.</p>
+</section>
+'''
+
+    extra_head = bc_schema + list_schema + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=meta_desc, canonical_path="/top-voices/",
+        body_content=body, active_path="/top-voices/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("top-voices/index.html", page)
+    print(f"  Built: top-voices/index.html ({len(voices)} voices)")
+
+
+# ---------------------------------------------------------------------------
 # Main pipeline
 # ---------------------------------------------------------------------------
 
@@ -19037,6 +19232,9 @@ def main():
     build_blog_bonus_data()
     build_blog_december_explosion()
     build_blog_mid_size_pay()
+
+    print("\n  Building top voices...")
+    build_top_voices()
 
     print("\n  Building insight articles...")
     build_insights_index()

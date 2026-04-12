@@ -1,24 +1,30 @@
 {
-  "generated_at": "2026-04-09T08:55:43.616774",
-  "total_records": 43,
-  "records_with_salary": 23,
-  "disclosure_rate": 53.5,
+  "generated_at": "2026-04-12T08:56:08.984176",
+  "total_records": 47,
+  "records_with_salary": 25,
+  "disclosure_rate": 53.2,
   "salary_stats": {
     "min": 48,
     "max": 250000,
     "median": 120000,
-    "avg": 118141,
-    "count_with_salary": 23
+    "avg": 119369,
+    "count_with_salary": 25
   },
   "by_seniority": {
     "Unknown": {
-      "count": 19,
-      "min_base_avg": 110644,
-      "max_base_avg": 150087,
+      "count": 21,
+      "min_base_avg": 112821,
+      "max_base_avg": 151507,
       "median": 120000
     }
   },
   "by_metro": {
+    "Unknown": {
+      "count": 5,
+      "min_base_avg": 100240,
+      "max_base_avg": 141320,
+      "median": 114000
+    },
     "Austin": {
       "count": 3,
       "min_base_avg": 98016,
@@ -31,12 +37,6 @@
       "max_base_avg": 202500,
       "median": 140000
     },
-    "Unknown": {
-      "count": 4,
-      "min_base_avg": 92300,
-      "max_base_avg": 135400,
-      "median": 114000
-    },
     "New York": {
       "count": 10,
       "min_base_avg": 134300,
@@ -46,9 +46,9 @@
   },
   "by_remote": {
     "onsite": {
-      "count": 23,
-      "min_base_avg": 118141,
-      "max_base_avg": 161463,
+      "count": 25,
+      "min_base_avg": 119369,
+      "max_base_avg": 161746,
       "median": 120000
     }
   },

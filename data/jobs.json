@@ -1,7 +1,357 @@
 {
-  "last_updated": "2026-04-09",
-  "total_jobs": 43,
+  "last_updated": "2026-04-12",
+  "total_jobs": 47,
   "jobs": [
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer",
+      "company": "Fossa",
+      "location": "Boston, MA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": 135000,
+      "max_amount": 165000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-09",
+      "date_scraped": "2026-04-11",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=1a7fcc6adbe772ce",
+      "description": "Modern software runs on open source — and managing the compliance, security, and regulatory complexity that comes with it is one of the biggest problems facing engineering and legal teams today. FOSSA is the platform they use to address these challenges. We help thousands of organizations automate license compliance, prioritize vulnerabilities, generate and operationalize SBOMs, and meet regulatory requirements. Whether it's scanning AI\\-generated code for IP risks or helping a company through M\\&A due diligence, FOSSA gives teams the confidence to ship software they trust.\n\n\n**FOSSA** is a rapidly growing series\\-B company with a truly distributed team. While our roots are in San Francisco, our growing team has members in several countries across many time zones. We're always working to find the perfect balance of effective approaches to distributed work, while maintaining the direct personal connections that help us work better together and love our jobs.\n\n\nAs **FOSSA** continues to grow, we're seeking a **GTM Engineer** to design and implement smarter systems that elevate how we market, sell, and support our customers. In this role, you'll combine technical expertise with go‑to‑market insight to apply automation and AI in ways that drive meaningful leverage across the organization. You'll collaborate closely with Sales, Marketing, and Customer Success teams to better serve our highly technical buyers in Engineering, Security, and Legal, building the next generation of AI\\-powered GTM systems.\n\n\n**Key Responsibilities:**\n\n\n* Evaluate and implement emerging AI tools to drive measurable GTM efficiency and effectiveness\n* Automate pre\\- and post\\-event workflows for marketing campaigns, lead capture, and content distribution\n* Enable intuitive knowledge discovery with intelligent, searchable internal systems for Sales and Customer Success teams\n* Orchestrate ABM campaigns across channels with dynamic personalization and closed\\-loop measurement\n* Enhance revenue forecasting with AI\\-assisted frameworks, automated performance tracking, and predictive analytics\n* Develop educational lead magnets, calculators, interactive tools, and other content to engage targeted micro\\-segments\n* Automate QBR decks, competitive briefs, and reporting from product usage, revenue, and account health signals\n* Generate AI\\-driven sales decks tailored to buyer role, industry, and deal stage, eliminating one\\-size\\-fits\\-all materials\n* Launch AI\\-driven re\\-engagement campaigns to revive closed\\-lost opportunities\n\n\n**Qualifications:**\n\n\n* 5\\+ years in GTM, RevOps, Sales, Marketing, Customer Success, consulting, or a high\\-growth SaaS environment\n* Self\\-starter who can own projects end\\-to\\-end in a distributed, remote\\-first environment\n* Hands\\-on experience leveraging AI/LLMs (e.g., ChatGPT, Claude, Gemini, Perplexity) to automate workflows, generate content, analyze data, or improve operational efficiency\n* Strong prompt\\-writing and iteration skills, able to refine AI output for clarity, accuracy, and business relevance\n* Analytical thinker who can translate business challenges into structured AI workflows and measurable outcomes\n* Comfortable with APIs, integrations, and basic SQL/data querying. Bonus points for familiarity with GTM tools (such as Salesforce, HubSpot, Pardot, and Marketo).\n* Experience supporting technical buyers (Engineering, Security, Legal) or working with technical workflows, DevOps, OSS, or compliance tooling\n* Clear and concise communicator, able to translate technical concepts into actionable business insights and manage requests from multiple internal stakeholders\n\n\n**Why you'll love working at FOSSA:**\n\n\n* A high\\-performing, supportive team with an exceptional culture where your work truly matters\n* Recognized nationally as a Best Startup to Work For by Built In (2024, 2025, 2026\\) and Forbes (2022\\)\n* Competitive compensation package including salary and meaningful equity ownership\n* Industry\\-leading benefits: 100% employer\\-paid medical premiums for employees and 75% coverage for dependents, plus dental and vision insurance, FSA, and 401(k)\n* Unlimited PTO so you can recharge and bring your best self to work\n\n  \n\n\n\nThe annual cash compensation range for this position is **$135,000 \\- $165,000 USD.** Final compensation will be determined based on experience and skills and may vary from the range listed.\n\n\n\nFOSSA is an equal\\-opportunity employer. All applicants will be considered for employment without attention to race, color, religion, sex, sexual orientation, gender identity, national origin, veteran or disability status.",
+      "description_snippet": "Modern software runs on open source — and managing the compliance, security, and regulatory complexity that comes with it is one of the biggest problems facing engineering and legal teams today. FOSSA is the platform they use to address these challenges. We help thousands of organizations automate license compliance, prioritize vulnerabilities, generate and operationalize SBOMs, and meet regulatory requirements. Whether it's scanning AI\\-generated code for IP risks or helping a company through M",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Salesforce Marketing Cloud",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "salesforce_marketing_cloud"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "abm",
+          "signal_value": "Abm"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer",
+      "company": "WorkOS",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-09",
+      "date_scraped": "2026-04-11",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=c1acb2ba68da9a1b",
+      "description": "**About WorkOS**\n\n\nWorkOS builds modern developer tools and APIs that make it easy for companies to become Enterprise Ready. Our platform powers authentication, identity, authorization, and other critical infrastructure that developers need to securely scale their products to large organizations.  \n\n  \n\nWe recently raised a $100M Series C, valuing the company at $2B, led by Meritech and Sapphire with participation from Greenoaks, Craft, Abstract, and Audacious. WorkOS powers enterprise features for many of the fastest\\-growing AI companies, including OpenAI, Cursor, and Perplexity, Vercel, and Plaid.  \n\n  \n\nAs AI reshapes software, WorkOS is at the frontier of Human and Agent Authentication, Identity, and Access Control—helping companies answer a new critical question: who are your agents, and what are they allowed to do? Our fast\\-growing customer base includes hundreds of modern software companies building the next generation of enterprise\\-ready products.\n\n**About the role**\n------------------\n\n\nWe're looking for a GTM Engineer to join our team. This is a hands\\-on engineering role embedded in our GTM org. You'll own the systems that power how we identify, enrich, score, and engage prospects at scale: a custom built enrichment pipelines leveraging Cargo, the campaign sync tooling that feeds our events and outbound plays, and the code that ties it all together.\n\n\nYou'll work at the intersection of GTM strategy and software engineering by writing production TypeScript/Python, shipping PRs, designing schemas, and building internal tools that the whole GTM team depends on daily. Think of it as being the engineer who makes the rest of the GTM team unreasonably effective.\n\n**What you'll work on**\n-----------------------\n\n**Enrichment infrastructure:** You'll maintain and improve our core enrichment pipeline: the workflows that take a new signup or a conference attendee list and return a fully enriched, scored, and Salesforce\\-upserted record. Today that involves Cargo, Clay, Snowflake, and a growing set of data providers (Apollo, Linkup, Exa). You'll own the reliability, fill rates, and schema consistency of these systems.\n\n**Account scoring:** You'll work on the fit scoring pipeline: the logic that evaluates every company flowing through our stack against our ICP and writes results to Snowflake and SFDC. This includes batching optimization, retry logic, logging and observability, and continuously improving the underlying signals.\n\n**Campaign and event tooling:** You'll build and maintain the systems that sync event attendee lists (Luma, conference CSVs) through enrichment and into Salesforce campaigns. When a BDR asks \"who came to our event last night?\", your tooling answers that question automatically and routes the right records to the right owners.\n\n**Custom Tooling integration:** You'll build and maintain enrichment tooling accessible via Wallaby, WorkOS's internal AI agent that the GTM team uses to look up prospects, run ad\\-hoc enrichments, and surface account intel on demand. You'll design the underlying tools so they're clean, effective, and composable.\n\n**GTM data infra:** You'll work closely with the data engineering team to keep our Snowflake schema in sync with the tools that consume it, track downstream pipeline impacts when schemas change, and ensure the data flowing into SFDC is accurate and up\\-to\\-date.\n\n**Code:** You'll ship real code. PRs go through review. You'll debug production incidents (Salesforce API rate limits, Cargo timeouts, enrichment failures). You'll instrument logging, add observability, and think carefully about batching, concurrency, and idempotency.\n\n**What we're looking for**\n--------------------------\n\n**Engineering foundation:** You're a capable software engineer. You write clean TypeScript or Python, understand async patterns, know how to design a database schema, and can debug a production incident from logs alone. You don't need to have worked at a software company, but you need to be able to write and ship code.\n\n**GTM domain knowledge:** You've worked with the tools: Salesforce, HubSpot, Clay, Cargo, Apollo, or equivalents. You understand how leads flow through a CRM, what enrichment providers actually return, and why data quality degrades over time. Ideally you've had a BDR or AE background that gives you intuition for what the sales team actually needs.\n\n**Systems thinking:** You think in pipelines, not one\\-off scripts. When you build something, you think about what happens at 10x volume, when an API goes down, or when the same company gets submitted five times simultaneously.\n\n**3\\+ years** of experience in GTM Engineering, Revenue Operations, or a closely adjacent technical role at a high\\-growth B2B SaaS company.\n\n**What good looks like**\n------------------------\n\n\nYou don't need to have done this exact job before. You need to care about the craft. The best GTM Engineers at WorkOS are the ones who spot a broken workflow in Slack at 11pm, open a PR the next morning, and ship the fix before the standup. They're the ones who, when the sales team complains about bad data, don't just route it to RevOps, they dig into the Snowflake schema and find the upstream issue. If that sounds like how you work, we want to talk.\n\n**Benefits** (**US Only)**\n\nAt WorkOS, we offer resources that emphasize personal and familial well\\-being. We offer healthcare coverage for you and your family, including medical, dental, and vision. We offer parental leave, paid\\-time off and fully remote working arrangements.\n\n  \n\nBenefits include:\n\n* Competitive pay\n* Substantial equity grants\n* Healthcare insurance (Medical, Dental and Vision) for you and your family\n* 401k matching\n* Wellness and fitness monthly allowances\n* PTO \\+ paid holidays \\+ unlimited sick leave\n* Autonomy and flexibility with remote work\n\n*Please inquire directly with our recruiting team for benefits available to those working outside the US.*\n\n **Equal Opportunity Employer**\n\n\nWorkOS is an equal opportunity employer, committed to diversity and inclusiveness. We will consider all qualified applicants without regard to race, color, nationality, gender, gender identity or expression, sexual orientation, religion, disability or age.\n\n*We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.*",
+      "description_snippet": "**About WorkOS**\n\n\nWorkOS builds modern developer tools and APIs that make it easy for companies to become Enterprise Ready. Our platform powers authentication, identity, authorization, and other critical infrastructure that developers need to securely scale their products to large organizations.  \n\n  \n\nWe recently raised a $100M Series C, valuing the company at $2B, led by Meritech and Sapphire with participation from Greenoaks, Craft, Abstract, and Audacious. WorkOS powers enterprise features ",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "enterprise",
+          "signal_value": "Enterprise"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer",
+      "company": "Teleport",
+      "location": "US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": 132000,
+      "max_amount": 165000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-09",
+      "date_scraped": "2026-04-11",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=fe0aa7548d8640f9",
+      "description": "**Unified Identity Securing Classic and AI Infrastructure**\n\n\nTeleport, the AI Infrastructure Identity Company, prepares organizations for an AI future by establishing a unified identity layer for infrastructure, with humans, machines, workloads, and AI agents secured cryptographically with a hardware root of trust rather than vulnerable credentials. By replacing fragmented identity and access management systems with Infrastructure Identity, Teleport scales zero trust across cloud and on\\-prem environments, eliminating the complexity and risk created by identity fragmentation and credential sprawl. Teleport protects infrastructure from identity attacks, accelerates engineering by reducing infrastructure complexity, and secures non\\-deterministic agentic workflows. Headquartered in Oakland, CA, Teleport operates globally, with industry\\-leading customers such as Nasdaq, IBM, Doordash, and Elastic.\n  \n\n  \n\n**Our Vision**\n\n\nToday's computing environments have too much complexity, too many network boundaries, and too little trust. Complexity slows engineers down and leads to human errors. Complex systems can’t be secure despite the red tape of bureaucracy. We make trusted computing simple. This gives engineers the freedom to move and build a better future.\n\n **Why Teleport**\n\n\nTeleport addresses the overlooked intersection between cybersecurity and infrastructure—an area companies have historically tried to manage through a fragmented mix of tools like PAM, network\\-centric controls, and fragmented secrets management. This approach was already inefficient, but it fundamentally breaks down in the era of AI.\n\n\nAI changes the landscape in three critical ways. First, non\\-human, machine, and AI identities now outnumber human ones, driving massive **secrets sprawl** while worsening anonymity. Second, anonymity is incompatible with AI workloads: these systems are inherently **non\\-deterministic**, operate across many services and environments, and therefore require strong identity, continuous trust, and end\\-to\\-end visibility to function safely and correctly. Third, the **non\\-deterministic** nature of AI makes reliability and scalability non\\-negotiable—systems must be resilient, observable, and with access control guardrails, because failures and unexpected behavior cannot be handled with static controls or manual intervention.\n\n\nSolving this problem requires a fundamentally different approach: a **unified identity layer** that spans machines, workloads, humans, and agents. Identity becomes the security control plane that replaces network location and long\\-lived secrets as the basis of trust. **Ephemeral privileges** are critical in this model—privileges must be granted just\\-in\\-time, limited to the task at hand, and automatically expire, dramatically reducing blast radius in systems where behavior cannot be fully predicted. Finally, **real\\-time intelligence** is essential: in fast\\-moving, AI\\-driven environments, access decisions must continuously adapt to context, behavior, and system state, rather than relying on static policies defined in advance.\n\n\nTeleport addresses the growing gap between today’s cyber and infrastructure security posture and what modern, AI\\-driven systems actually require. As AI systems proliferate, attack surfaces and pathways multiply, giving adversaries unprecedented leverage. The result is an inflection point: without re\\-anchoring security and infrastructure around identity, real\\-time trust, and ephemeral privileges, the volume and impact of security breaches will only accelerate.\n\n**The Role**\n------------\n\n\nWe’re hiring a GTM Engineer to join our Demand Generation team and help build the systems that generate pipeline. This role sits within our GTM Engineering function—a center of excellence embedded inside Demand Gen that helps every team member leverage AI and automation in their day\\-to\\-day work.\n\n\nThis is not a marketing operations role. It’s a pipeline generation role with an engineering mindset. You’ll spend most of your time building and optimizing digital advertising campaigns across LinkedIn, Meta, Reddit, X, and Google—using AI tools like Claude and Clay to orchestrate targeting, creative iteration, and performance optimization at a pace that manual workflows can’t match.\n\n\nYou’ll also build and maintain projects across the broader demand gen org: events, social media, content generation, and more. But your primary lens is always pipeline. Every system you build, every workflow you automate, every experiment you run should tie back to generating and accelerating qualified pipeline.\n\n\nEqually important: you’ll be a teacher and enabler. Our GTM Engineering model doesn’t hoard expertise—it distributes it. You’ll help teammates build and refine their own AI\\-powered projects, raise the technical floor across the team, and make sure every demand gen team member develops real GTM engineering skills. You report to the Manager of GTM Engineering.\n\n**What You’ll Do**\n------------------\n\n### **Digital Advertising (Primary Focus)**\n\n* Build, manage, and optimize paid campaigns across LinkedIn, Meta, Reddit, X, and Google Ads with a focus on pipeline outcomes—not vanity metrics\n* Use AI tooling (Claude, Clay) to automate audience building, creative variation, bid optimization, and performance analysis\n* Design and run structured experiments across channels, creatives, audiences, and landing pages—with clear hypotheses and measurable outcomes\n* Own reporting on ad spend efficiency, pipeline attribution, and conversion metrics; surface insights that change strategy, not just confirm it\n* Monitor platform changes, new ad formats, and algorithm shifts; adapt campaigns proactively rather than reactively\n\n### **Broader Demand Gen Projects**\n\n* Build AI\\-powered workflows that support events, content generation, social media, and nurture programs\n* Create systems that connect campaign data, enrichment signals, and CRM to improve targeting and personalization across channels\n* Automate repeatable processes across the demand gen function—eliminating manual work while maintaining quality and control\n* Collaborate with teammates across field marketing, content, partner marketing, and sales enablement to deliver projects that serve the full pipeline\n\n### **Teaching and Enablement**\n\n* Help demand gen teammates build, troubleshoot, and improve their own AI\\-powered projects—working alongside them, not just for them\n* Contribute reusable templates, prompts, and workflows that raise the team’s technical capabilities over time\n* Share what’s working (and what isn’t) openly; build a culture where the whole team gets better at GTM engineering, not just the GTM engineers\n\n**What We’re Looking For**\n--------------------------\n\n* 3–6 years in demand generation, growth marketing, or digital advertising in a B2B SaaS environment\n* Hands\\-on experience managing paid campaigns across at least two of: LinkedIn, Meta, Google, Reddit, or X—with a clear understanding of how each platform’s mechanics translate to pipeline\n* Demonstrated use of AI tools (Clay, Zapier, Claude Code, or similar) to automate marketing workflows—not just prompting, but building real systems\n* Comfort with APIs, webhooks, and data integration tools; you can connect systems without waiting for engineering\n* Strong analytical instincts: you can read a funnel, diagnose a conversion problem, and design an experiment to fix it\n* A marketing brain, not just a technical one. You understand why campaigns work, not just how to build them. You can reject a bad idea as effectively as you can implement a good one\n* Track record of contributing to pipeline—not just activity metrics. You think in terms of qualified opportunities, not clicks\n\n**What Sets You Apart**\n-----------------------\n\n* You’ve been the person on a marketing team who built the thing no one else knew how to build—and then showed others how to use it\n* You’ve managed meaningful ad budgets and made hard calls about where to cut spend and where to double down\n* You’re skeptical of tinkering for its own sake. You’ve seen the difference between building something clever and building something that moves pipeline\n* Experience with infrastructure, security, or developer\\-focused products is a strong plus—you’ll need to understand our buyer to market to them\n* Familiarity with tools in our stack: Salesforce, Marketo, Outreach, 6sense, Clay, Google Analytics\n* Experience with workflow automation platforms (n8n, Zapier, Make, or similar) to build multi\\-step integrations across marketing and sales tools without engineering support\n* Familiarity with ad reporting and BI tools like funnel.io or Looker to build and maintain cross\\-platform spend and performance dashboards\n\n**A Note on This Role**\n-----------------------\n\n\nWe’ve learned a lot about what makes a great GTM Engineer since we first created this role. The biggest lesson: marketing judgment matters more than technical novelty. There are plenty of people who like to tinker. We need someone who understands the marketing problem first and builds the right solution second—someone who can look at a request and say “we shouldn’t build that” as confidently as “here’s how we build that.”\n\n\nThis role is deeply integrated into existing team structures and processes. You won’t operate in a silo. You’ll succeed by understanding the people and workflows you’re building for—and by making the whole team more capable, not just more automated.\n\n**The Benefits**\n\n\nWhile many companies flaunt their benefits and perks to convince you to join their company, we believe your career is more important than that. That’s why we focus on making your day\\-to\\-day the best it can be while empowering you to achieve your goals and aspirations.\n\n\nWhat does that mean?\n\n* It means you’ll have the autonomy to make your own decisions and focus on what’s important to you and your role.\n* It means having access to a senior team that supports you and wants to see you succeed.\n* You’ll have a smart team you can learn from, collaborate with, and grow with.\n* It means being able to make an impact and have a voice in the future of the feature, product or company direction. We don’t just leave you to focus on a niche. We allow you to spread your wings and take advantage of opportunities, challenging projects and exciting problems.\n* It means removing the bureaucracy and red tape that stifles innovation while giving you access to all the information you need to build and take action more quickly.\n* It means allowing you to have the career you’ve always wanted today, rather than having to “earn your stripes” and wait for the right moment. If you’re good enough, you’re good enough.\n\n\nBut we don’t stop there.\n\n\nIn addition to the career opportunities at Teleport, we offer a whole range of benefits that help you to maximize your future, including:\n\n* Extensive health coverage\n* Annual expense budget\n* Rest \\& recovery policies that maximize leave and your ability to recharge\n* Investment in your future with retirement savings plans\n* Equity in a US $1\\.1\\-bn business\n* Professional development opportunities\n\n**Do you have what it takes?**\n\n\nGet to use (and know) Teleport through our unique interview process\n\n\nAt Teleport, we do things a bit differently. And when we say we only hire top talent, we actually mean it. Because of this, our interview process is different too \\- and we’re proud of it. We let your work do the talking. We don’t go in for six rounds of interviews, live whiteboard or live\\-coding. We don’t hire people that can talk a good game. We only want the best. And for that, we need to see what you can do, in your own time, in your own way. For real.\n\n\nBut interviews are a two\\-way street. Through the project, you’ll get a real taste of life at Teleport, including:\n\n* We’re flexible \\- you’ll have plenty of time to complete your project, if life gets in the way, that’s ok. We can \\- work around you.\n* We give you autonomy \\- you’ll have the space and freedom to figure things out, make decisions, and problem\\-solve.\n* We’re collaborative \\- Got questions?\n* We have answers. You’ll have support from your team \\- the one you’ll be working with day in day out if you’re successful in getting the role.\n* We progress careers \\- During the project, see how much you learn. That’s what working at Teleport is like. We like learning, on the job. All\\-the\\-time.\n* We can move fast (if you can) \\- two weeks sound like a long time? No problem? Early submissions are fine, and we’ll keep the process moving.\n\n\nThink you’ve got what it takes? We’d love to see it! Unconvinced? We can guarantee three things:\n\n* It’ll challenge you.\n* You'll learn a lot.\n* If you love the process, you'll love working at Teleport.\n\n\nTeleport is an equal opportunity employer and does not discriminate against any employee or applicant on the basis of age, color, disability, gender, national origin, race, religion, sexual orientation, veteran status, or any classifications protected by federal, state, or local law.\n\n\nCandidate Privacy Notice: For information about our collection and processing of job applicant personal data for this position, please see our Job Applicant Privacy Policy and Notice of Collection at https://goteleport.com/legal/apply/job\\-applicant/\n\n\nCompensation Range: $132K \\- $165K",
+      "description_snippet": "**Unified Identity Securing Classic and AI Infrastructure**\n\n\nTeleport, the AI Infrastructure Identity Company, prepares organizations for an AI future by establishing a unified identity layer for infrastructure, with humans, machines, workloads, and AI agents secured cryptographically with a hardware root of trust rather than vulnerable credentials. By replacing fragmented identity and access management systems with Infrastructure Identity, Teleport scales zero trust across cloud and on\\-prem e",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "6Sense",
+          "tool_category": "ABM_Platforms",
+          "tool_id": "6sense"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Looker",
+          "tool_category": "BI_Analytics",
+          "tool_id": "looker"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "reports_cro",
+          "signal_value": "Reports Cro"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "Developer Growth Engineer",
+      "company": "Arcade Food Theatre",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "engineering",
+      "date_posted": "2026-04-08",
+      "date_scraped": "2026-04-12",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=2779b9d84d5dbde5",
+      "description": "Everyone's talking about AI. But here's the truth: ChatGPT can't send your emails. It can't book your flights. It can't even order you lunch.\n\n\nWhy? Because AI is trapped in a chat box. It can't take real actions in the real world.\n\n\nWe are changing that forever. We're not just building another AI company \\- we're creating the infrastructure that will power every AI application you'll use in the future.\n\n**The Revolution Needs You**\n----------------------------\n\n\nEvery AI app needs agentic \"tools\" \\- special functions that let AI models take real actions. Without tools, AI can only chat. With tools, AI can actually do things. We're building the definitive tools catalog and tool\\-calling platform that will unlock AI's true potential. Think Zapier for AI Actions. Think Auth0 for AI. Think really big.\n\n**Why This Is The Opportunity of a Lifetime**\n---------------------------------------------\n\n* Founder\\-Market Fit : Our CEO previously founded Stormpath (acquired by Okta), where he created the first Authentication API for developers. He's done this before \\- and this time the market is 10x bigger. Our CTO led the vector database team at Redis, shipped 100\\+ LLM applications, and is a contributor to LangChain and LlamaIndex. He knows this space better than anyone.\n* Dream Team : We've assembled authentication, integrations, distributed systems, and AI experts from Okta, Redis, Microsoft, Splunk, Ngrok, Google, Airbyte, Disney, and HPE who've built and founded multiple successful developer platforms.\n* Perfect Timing : We're at the inflection point of AI adoption. The biggest problem isn't better models \\- it's connecting AI to real\\-world actions. That's us.\n* Massive Market : We're building critical infrastructure for the biggest technological shift of our generation. Every AI app will need what we're building.\n* Backed By The Best: Our investors have backed Databricks, Clickhouse, MongoDB, Perplexity, Cohere, ScaleAI, Confluent, Elastic, and Firebase. They see what we see \\- this is going to be huge.\n\n**The Role**\n------------\n\n\nYou'll stay close to the developer ecosystem, build things that get Arcade noticed, and ship them fast. The projects you build don't go through the product roadmap — they run alongside it. They're designed to capitalize on trends, demonstrate what's possible, and get developers to pay attention to Arcade.\n\n\nYour work falls into two modes: **engaging** and **building**.\n\n**Engaging** means showing up in the places developers already hang out — Reddit, Discord, Hacker News, GitHub discussions — and being genuinely helpful. Not pitching. Not dropping links. Answering real questions about MCP, AI agents, auth, tooling, and the messy problems people actually run into. You'll develop a feel for what developers care about, what's confusing them, and where the market is heading — and feed those signals back to product and marketing to influence roadmap and prioritization.\n\n**Building** means turning those signals into action. Every month you'll ship 2–4 projects, demos, or experiments designed to ride trends, demonstrate what's possible with Arcade, and earn attention across the market. Partner integrations are a key part of this — building the connectors and demos that embed Arcade into the modern AI stack wherever developers are building agents. Additionally, when big news breaks — a new model drop, a major API change, a shift in the ecosystem — you're the person who has something live within hours. You'll stay tight with product and marketing to align on key themes, upcoming launches, and product announcements — so the things you build amplify what Arcade is shipping and capitalize on what's trending.\n\n\nYou own the full loop: spot the opportunity, build the thing, ship it, and promote it back into the communities you came from — as an engineer talking to engineers. The insights you pick up along the way feed back to product and marketing to influence roadmap and prioritization.\n\n**What You’ll Do**\n------------------\n\n* Ship 2–4 external\\-facing projects or experiments per month that capitalize on market trends and raise awareness of Arcade\n* Engage daily in developer communities as a knowledgeable, helpful presence around MCP, AI agents, and developer tooling\n* Build and maintain partner integrations with key ecosystem players, ensuring Arcade is the default execution layer for agents\n* React fast to ecosystem news — new model releases, API changes, competitor moves, viral moments — with timely projects, posts, or takes that insert Arcade into the conversation\n* Surface community insights — user pain points, emerging trends, competitive signals, common misconceptions — and feed them back to product and marketing to influence roadmap prioritization\n* Own launch and distribution of every project back into dev communities\n\n**Required Skills**\n-------------------\n\n* 3\\+ years in DevRel, growth engineering, or a developer\\-facing role at a dev tools or infrastructure company\n* Proficient builder — can ship demos, integrations, and tools in Python and/or TypeScript\n* Deep knowledge of the AI agent ecosystem — MCP, frameworks, model providers, and the communities around them\n* Track record producing technical content developers actually engage with\n* Strong ecosystem instincts — knows which communities matter and how to show up in them\n* Experience with partner/ecosystem integrations\n* Prides themselves on being in the conversation — follows the space closely enough to react to news same\\-day\n\n**Join The Movement**\n---------------------\n\n\nWe're building the infrastructure that turns AI agents from demos into production systems. This is your chance to be the person who brings that story to the world.\n\n\nIf you want to look back in 5 years and say, \"I helped build that,\" we want to talk to you.\n\n\nReady to make AI agents actually work? Apply Now\n\n  \n\nCompensation:",
+      "description_snippet": "Everyone's talking about AI. But here's the truth: ChatGPT can't send your emails. It can't book your flights. It can't even order you lunch.\n\n\nWhy? Because AI is trapped in a chat box. It can't take real actions in the real world.\n\n\nWe are changing that forever. We're not just building another AI company \\- we're creating the infrastructure that will power every AI application you'll use in the future.\n\n**The Revolution Needs You**\n----------------------------\n\n\nEvery AI app needs agentic \"tool",
+      "tools": [
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "Airbyte",
+          "tool_category": "Reverse_ETL",
+          "tool_id": "airbyte"
+        },
+        {
+          "tool_name": "Arcade",
+          "tool_category": "Demo_Automation",
+          "tool_id": "arcade"
+        },
+        {
+          "tool_name": "Langchain",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "langchain"
+        },
+        {
+          "tool_name": "Llamaindex",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "llamaindex"
+        },
+        {
+          "tool_name": "Llama",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "llama"
+        },
+        {
+          "tool_name": "Cohere",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "cohere"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
     {
       "job_id": "indeed-https://www.",
       "title": "GTM Growth Engineer",

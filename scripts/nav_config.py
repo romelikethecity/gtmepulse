@@ -55,12 +55,12 @@ NAV_ITEMS = [
         "href": "/benchmarks/",
         "label": "Resources",
         "children": [
+            {"href": "/top-voices/", "label": "Top 25 Voices"},
             {"href": "/benchmarks/", "label": "Benchmarks"},
             {"href": "/comparisons/", "label": "Comparisons"},
             {"href": "/blog/", "label": "Blog"},
             {"href": "/insights/", "label": "Insights"},
             {"href": "/jobs/", "label": "Job Board"},
-            {"href": "/top-voices/", "label": "Top Voices"},
         ],
     },
 ]

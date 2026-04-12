@@ -12332,9 +12332,11 @@ INSIGHT_PAGES = [
     {"slug": "gtm-engineer-portfolio-examples", "title": "GTM Engineer Portfolio Examples: What to Showcase", "description": "Portfolio examples for GTM Engineers. Project types, metrics to highlight, and presentation formats that get interviews.", "category": "Guide"},
     {"slug": "gtm-engineer-freelance-proposal-template", "title": "GTM Engineer Freelance Proposal Template", "description": "Freelance proposal template for GTM Engineers. Scope definitions, pricing models, deliverables, and client communication frameworks.", "category": "Template"},
     {"slug": "clay-vs-manual-prospecting-roi", "title": "Clay vs Manual Prospecting: Quantifying Automation ROI", "description": "ROI analysis comparing Clay automation to manual prospecting. Time savings, cost per lead, accuracy, and break-even calculations.", "category": "Market Analysis"},
+    # Batch 7 — Content Bridge
+    {"slug": "gtm-engineer-vs-revops", "title": "GTM Engineer vs RevOps: Salary, Skills, and Career Paths", "description": "GTM Engineers earn $132K-$250K. RevOps professionals earn $95K-$185K. But the roles overlap more than you think. Here's how they compare.", "category": "Career Comparison"},
 ]
 
-BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template", "tech-stack-audit", "revenue-attribution", "remote-market-report", "clay-vs-apollo", "revenue-pipeline-from-scratch", "interview-questions-2026", "job-description-template", "gtme-vs-sales-ops", "apollo-vs-instantly", "how-to-get-hired", "portfolio-guide", "data-pipeline-architecture", "how-to-set-up-clay-enrichment-workflow", "how-to-build-email-warm-up-infrastructure", "how-to-create-outbound-sequence-templates", "how-to-set-up-webhook-automation-for-sales", "how-to-build-a-lead-scoring-model-without-code", "how-to-automate-linkedin-connection-requests-safely", "clay-templates-library", "outbound-sequence-templates-2026", "icp-definition-framework", "account-scoring-model-guide", "buying-signal-detection-guide", "data-enrichment-waterfall-architecture", "cold-email-deliverability-guide", "email-warm-up-strategy-2026", "email-infrastructure-setup-guide", "cold-email-compliance-guide", "gtm-engineer-portfolio-examples", "gtm-engineer-freelance-proposal-template", "clay-vs-manual-prospecting-roi"}
+BUILT_INSIGHT_SLUGS = {"job-market-2026", "salary-trends", "tool-adoption", "state-of-gtme-2026", "clay-ecosystem", "outbound-stack", "clay-playbook", "linkedin-outreach", "email-deliverability", "api-integration", "enrichment-waterfall", "hiring-guide", "freelance-rates", "gtme-vs-sdr-roi", "intent-data-guide", "crm-hygiene", "pulse-report-template", "tech-stack-audit", "revenue-attribution", "remote-market-report", "clay-vs-apollo", "revenue-pipeline-from-scratch", "interview-questions-2026", "job-description-template", "gtme-vs-sales-ops", "apollo-vs-instantly", "how-to-get-hired", "portfolio-guide", "data-pipeline-architecture", "how-to-set-up-clay-enrichment-workflow", "how-to-build-email-warm-up-infrastructure", "how-to-create-outbound-sequence-templates", "how-to-set-up-webhook-automation-for-sales", "how-to-build-a-lead-scoring-model-without-code", "how-to-automate-linkedin-connection-requests-safely", "clay-templates-library", "outbound-sequence-templates-2026", "icp-definition-framework", "account-scoring-model-guide", "buying-signal-detection-guide", "data-enrichment-waterfall-architecture", "cold-email-deliverability-guide", "email-warm-up-strategy-2026", "email-infrastructure-setup-guide", "cold-email-compliance-guide", "gtm-engineer-portfolio-examples", "gtm-engineer-freelance-proposal-template", "clay-vs-manual-prospecting-roi", "gtm-engineer-vs-revops"}
 
 
 def insight_related_links(current_slug):
@@ -17978,6 +17980,117 @@ def build_insight_clay_vs_manual_prospecting_roi():
     print(f"  Built: insights/clay-vs-manual-prospecting-roi/index.html")
 
 
+def build_insight_gtm_engineer_vs_revops():
+    """Content Bridge: GTM Engineer vs RevOps: Salary, Skills, and Career Paths."""
+    title = "GTM Engineer vs RevOps: Salary, Skills, and Career Paths"
+    description = pad_description(
+        "GTM Engineers earn $132K-$250K. RevOps professionals earn $95K-$185K. The roles overlap more than you think."
+    )
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("GTM Engineer vs RevOps", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="gtm-engineer-vs-revops", date_published="2026-04-12", word_count=1800)
+    faq_pairs = [
+        ("Is a GTM Engineer the same as RevOps?",
+         "No. GTM Engineers build automated outbound and pipeline systems using code, APIs, and tools like Clay. RevOps professionals optimize the full revenue funnel across sales, marketing, and customer success. GTM Engineers write automation. RevOps defines the processes that automation supports."),
+        ("Can I switch from RevOps to GTM Engineering?",
+         "Yes, and it is one of the most natural career transitions in B2B. RevOps professionals already understand CRM architecture, data flows, and pipeline metrics. Adding Clay proficiency, API integration skills, and outbound automation knowledge bridges the gap. According to RevOps Report career data, 23% of GTM Engineers previously held RevOps titles."),
+        ("Which role pays more, GTM Engineer or RevOps?",
+         "GTM Engineers earn more at every level. Median GTM Engineer compensation is $132K vs $125K for RevOps. At the senior level, the gap widens: Senior GTM Engineers earn $165K-$250K while Senior RevOps professionals earn $140K-$185K. The coding premium in GTM Engineering drives the difference."),
+        ("Do GTM Engineers need to know Python?",
+         "Not always, but it pays. 30% of GTM Engineer job postings require Python or SQL. Those postings offer $45K higher median compensation than non-coding roles. Python is not mandatory to start, but it is the single highest-ROI skill investment for GTM Engineers."),
+    ]
+    faq_schema = get_faq_schema(faq_pairs)
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Career Comparison</div>
+        <h1>GTM Engineer vs RevOps: Salary, Skills, and Career Paths</h1>
+        <p>Two of the fastest-growing roles in B2B. Different titles, overlapping skills, and very different comp structures.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">GTME Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$125K</span>
+        <span class="stat-label">RevOps Median</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">23%</span>
+        <span class="stat-label">GTMEs from RevOps</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">Need Clay</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | April 2026</p>
+
+    <h2>Two Roles, One Revenue Engine</h2>
+    <p>GTM Engineer and RevOps are the two roles B2B companies hire when they want to scale pipeline without scaling headcount. Both sit at the intersection of data, automation, and revenue. Both require technical chops that traditional sales teams don't have. And both are growing faster than nearly every other function in SaaS.</p>
+    <p>But they aren't the same job. The confusion is understandable because the Venn diagram overlap is significant. Clay, APIs, data enrichment, CRM architecture, pipeline analytics. These show up in both job descriptions. The differences become clear when you look at what each role actually builds day to day and how the market compensates them.</p>
+
+    <h2>Salary Comparison</h2>
+    <p>GTM Engineers out-earn RevOps professionals at every seniority level. The gap starts small and widens fast.</p>
+    <p><strong>Entry level:</strong> Junior GTM Engineers earn $85K-$110K. Junior RevOps analysts earn $65K-$85K. The $20K-$25K gap reflects the technical expectations. GTM Engineer postings at the junior level already ask for Clay experience and basic API knowledge. RevOps entry roles focus more on CRM administration and reporting.</p>
+    <p><strong>Mid level:</strong> GTM Engineers hit $120K-$155K. RevOps managers reach $100K-$135K. The coding premium kicks in here. GTM Engineers who write Python or SQL earn $45K more than those who don't. RevOps professionals rarely get a coding premium because the role doesn't require it.</p>
+    <p><strong>Senior level:</strong> Senior GTM Engineers command $165K-$250K. Senior RevOps directors earn $140K-$185K. The ceiling is meaningfully higher in GTM Engineering. Staff and Principal GTM Engineer titles are emerging at $200K-$250K+ at companies with mature GTM teams. RevOps comp plateaus earlier because the role maps to existing VP of Ops career ladders with established pay bands.</p>
+    <p>According to the <a href="https://therevopsreport.com/salaries/" target="_blank" rel="noopener">RevOps Report salary index</a>, RevOps professionals earn a median of $125K. That's $7K below the GTM Engineer median of $132K. Not a massive gap at the median. But the distribution tells a different story. The top quartile of GTM Engineers earns $180K+. The top quartile of RevOps earns $155K+. At the high end, GTM Engineering pays $25K-$65K more.</p>
+    <p>For the full GTM Engineer salary picture, see the <a href="/salary/">salary index</a> and <a href="/salary/by-seniority/">seniority breakdown</a>.</p>
+
+    <h2>Skills Overlap</h2>
+    <p>The shared skill set is real and it's why career switching between these roles happens so often.</p>
+    <p><strong>Both roles use:</strong> Clay or similar enrichment platforms. CRM systems (HubSpot, Salesforce) at an admin level, not just user level. Data analysis and pipeline reporting. Workflow automation tools (Make, n8n, Zapier). Basic understanding of APIs and webhooks. Familiarity with outbound sequencing tools (Instantly, Outreach, Salesloft).</p>
+    <p><strong>Both roles care about:</strong> Data quality and hygiene. Pipeline velocity metrics. Lead scoring and routing logic. Attribution and conversion tracking. Cross-functional alignment between sales, marketing, and CS.</p>
+    <p>This overlap is why 23% of current GTM Engineers came from RevOps backgrounds. The foundation transfers. A RevOps professional who has spent two years managing HubSpot, building reports, and configuring lead routing already understands the systems a GTM Engineer automates.</p>
+
+    <h2>Where They Diverge</h2>
+    <p>The divergence is about building vs. optimizing.</p>
+    <p><strong>GTM Engineers build outbound systems.</strong> They write Clay tables that enrich 5,000 contacts overnight. They configure multi-step outbound sequences with dynamic personalization. They connect APIs to move data between platforms without manual intervention. They build the machine that generates pipeline. Their output is automated systems that run with minimal human input.</p>
+    <p><strong>RevOps optimizes the full funnel.</strong> They design the lead lifecycle from first touch through closed-won. They build dashboards that show where deals stall. They configure territory assignments, quota models, and compensation plans. They standardize processes across sales, marketing, and customer success. Their output is operational efficiency across the entire revenue organization.</p>
+    <p>Put differently: a GTM Engineer builds a Clay enrichment waterfall that finds and scores 2,000 prospects per week. A RevOps professional designs the routing rules that determine which rep gets which prospect, the SLA for follow-up, the stage definitions in the CRM, and the reporting that tracks whether any of it works.</p>
+    <p>GTM Engineers tend to work on pre-pipeline problems. Getting more leads, enriching contact data, automating outbound. RevOps works across the entire pipeline. Lead generation through retention, forecasting, and comp planning. The scope difference explains why RevOps teams existed before GTM Engineers and why RevOps professionals often manage GTM Engineers organizationally.</p>
+
+    <h2>Career Switching: RevOps to GTM Engineer</h2>
+    <p>RevOps to GTM Engineer is one of the most natural career transitions in B2B right now. <a href="https://therevopsreport.com/career/" target="_blank" rel="noopener">RevOps Report career data</a> shows 23% of GTM Engineers previously held RevOps titles. That's the single largest feeder role.</p>
+    <p>The transition requires adding three skills to an existing RevOps toolkit:</p>
+    <p><strong>1. Clay proficiency.</strong> This is non-negotiable. 69% of GTM Engineer job postings mention Clay. Spend 40-60 hours building enrichment tables, waterfall configurations, and CRM integrations. The <a href="/insights/clay-playbook/">Clay playbook</a> covers the workflows that matter.</p>
+    <p><strong>2. API and webhook integration.</strong> RevOps professionals configure tools through their UIs. GTM Engineers connect tools through their APIs. Learn to read API documentation, send HTTP requests, parse JSON responses, and build webhook listeners. This doesn't require becoming a software engineer. It means understanding how data moves between systems at the API level.</p>
+    <p><strong>3. Outbound automation architecture.</strong> Understanding how to design multi-step outbound campaigns that run automatically. Email warm-up, domain rotation, deliverability monitoring, reply detection, and sequence branching. The <a href="/insights/outbound-stack/">outbound stack guide</a> covers the tools and patterns.</p>
+    <p>The transition typically takes 3-6 months of focused skill building. RevOps professionals who make the switch report a $15K-$30K compensation increase in their first GTM Engineer role. The investment pays back quickly.</p>
+
+    <h2>GTM Engineer to RevOps: Less Common, Still Viable</h2>
+    <p>Moving from GTM Engineering to RevOps is rarer but it happens. The typical trigger is a GTM Engineer who wants broader organizational impact. GTM Engineering is deep but narrow. You build outbound systems. RevOps is broad. You shape how the entire revenue organization operates.</p>
+    <p>GTM Engineers moving to RevOps need to develop skills in forecasting, territory design, compensation modeling, and cross-functional process design. These aren't technical gaps. They're strategic and organizational. The technical skills transfer easily. The strategic perspective takes time to build.</p>
+
+    <h2>Which Should You Choose?</h2>
+    <p>Choose GTM Engineering if you want to build automated systems, work with code and APIs, focus on outbound pipeline generation, and maximize your compensation ceiling. The role rewards technical depth and the market is paying a premium for it right now.</p>
+    <p>Choose RevOps if you want to shape how entire revenue organizations operate, work across sales, marketing, and CS, design processes and systems at an organizational level, and build toward a VP of Revenue Operations or CRO career path. The role rewards strategic breadth and cross-functional leadership.</p>
+    <p>Choose both. Seriously. The most valuable revenue professionals in 2026 combine GTM Engineering's technical execution with RevOps' strategic perspective. They can build the automation AND design the process it supports. If you can do both, your career ceiling is higher than either role alone.</p>
+    <p>For more on GTM Engineer career paths, see the <a href="/careers/how-to-become-gtm-engineer/">career guide</a> and <a href="/insights/job-market-2026/">job market analysis</a>.</p>
+
+{faq_html(faq_pairs)}
+
+{insight_related_links("gtm-engineer-vs-revops")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer salary data and career insights.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema + faq_schema
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/gtm-engineer-vs-revops/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/gtm-engineer-vs-revops/index.html", page)
+    print(f"  Built: insights/gtm-engineer-vs-revops/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -18980,6 +19093,7 @@ def main():
     build_insight_gtm_engineer_portfolio_examples()
     build_insight_gtm_engineer_freelance_proposal_template()
     build_insight_clay_vs_manual_prospecting_roi()
+    build_insight_gtm_engineer_vs_revops()
 
     # Register all pages for OG image generation
     print("\n  Registering OG pages...")

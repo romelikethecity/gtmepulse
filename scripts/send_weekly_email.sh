@@ -41,6 +41,10 @@ cd "$PROJECT_DIR"
 # Pull latest code (in case generators were updated)
 git pull --rebase --autostash 2>/dev/null || true
 
+# Generate LinkedIn carousel
+echo "[$(date)] Generating LinkedIn carousel..."
+$PYTHON scripts/generate_linkedin_carousel.py --pdf || true
+
 # Send the weekly email
 echo "[$(date)] Sending weekly email..."
 $PYTHON scripts/generate_weekly_email.py --send

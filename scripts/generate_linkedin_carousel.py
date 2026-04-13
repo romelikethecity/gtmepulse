@@ -678,6 +678,93 @@ def make_cta_slide(mi, signals, total_pages):
 
 
 # ---------------------------------------------------------------------------
+# LinkedIn post text generator
+# ---------------------------------------------------------------------------
+
+def generate_post_text(mi, ca, jobs, prev, date_str):
+    """Generate a LinkedIn post text file with rotating hooks."""
+    total_jobs = mi['total_jobs']
+    tools = mi.get('tools', {})
+    sorted_tools = sorted(tools.items(), key=lambda x: -x[1])
+    prev_tools = prev.get('tools', {}) if prev else {}
+    salary_stats = ca.get('salary_stats', {})
+    median = salary_stats.get('median', 0)
+    median_k = int(median / 1000) if median > 0 else 0
+    disclosure = ca.get('disclosure_rate', 0)
+
+    # Growth hire percentage from market intelligence
+    growth_pct = mi.get('growth_hire_pct', 0)
+    equity_pct = mi.get('equity_pct', 0)
+
+    # Top 3 tool display names
+    top_tools = []
+    for name, _ in sorted_tools[:3]:
+        top_tools.append(SKILL_DISPLAY.get(name, name))
+
+    # Build candidate hooks
+    candidates = []
+
+    # Salary change hook
+    if prev:
+        prev_salary = prev.get('salary_stats', {}).get('median', 0)
+        if prev_salary > 0 and median > 0 and prev_salary != median:
+            candidates.append(f"GTM Engineer median salary shifted to ${median_k}K")
+
+    # Biggest tool mover hook
+    if prev_tools:
+        biggest_increase = 0
+        biggest_tool = None
+        for name, count in tools.items():
+            pc = prev_tools.get(name, 0)
+            if pc > 0:
+                increase = count - pc
+                if increase > biggest_increase:
+                    biggest_increase = increase
+                    biggest_tool = name
+        if biggest_tool and biggest_increase > 0:
+            display = SKILL_DISPLAY.get(biggest_tool, biggest_tool)
+            candidates.append(f"{display} surged +{biggest_increase} mentions")
+
+    # Total jobs hook
+    candidates.append(f"{total_jobs:,} GTM Engineer roles tracked this week")
+
+    # Hiring signal hook
+    if growth_pct > 60:
+        candidates.append(f"{growth_pct}% of GTME openings are growth hires")
+
+    # Equity hook
+    if equity_pct > 50:
+        candidates.append(f"{equity_pct}% of GTM Engineer roles offer equity")
+
+    # Default hook (always present as fallback)
+    candidates.append(f"{total_jobs:,} active GTM Engineer roles this week")
+
+    # Rotate weekly
+    week_num = datetime.now().isocalendar()[1]
+    hook = candidates[week_num % len(candidates)]
+
+    # Build post body
+    tools_line = ", ".join(top_tools) if top_tools else "N/A"
+    post = f"""{hook}
+
+This week's GTME Pulse ({total_jobs:,} roles):
+
+\u2192 Median salary: ${median_k}K
+\u2192 Top tools: {tools_line}
+\u2192 {growth_pct}% growth hires
+\u2192 {disclosure}% disclose pay
+
+Swipe for the full breakdown \u2193
+
+#GTMEngineer #GoToMarket #B2BSales #SalesOps #CareerData"""
+
+    path = os.path.join(OUTPUT_DIR, 'post.txt')
+    with open(path, 'w') as f:
+        f.write(post)
+    print(f"  Post: {path}")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -715,6 +802,8 @@ def main():
         rgb_slides[0].save(pdf_path, 'PDF', save_all=True,
                            append_images=rgb_slides[1:], resolution=150)
         print(f"  PDF: {pdf_path}")
+
+    generate_post_text(mi, ca, jobs, prev, date_str)
 
     print(f"\n{len(slides)} carousel slides generated in {OUTPUT_DIR}/")
     if signals.get('cover_hook'):

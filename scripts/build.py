@@ -19070,7 +19070,7 @@ def build_top_voices():
 <section class="voices-share-cta">
     <h2>Made the List?</h2>
     <p>Share it. Tag us on LinkedIn. We will amplify your post.</p>
-    <p>Know someone who should be on next year's list? <a href="mailto:rome@getprovyx.com">Let us know</a>.</p>
+    <p>Know someone who should be on next year's list? <a href="mailto:insights@gtmepulse.com">Let us know</a>.</p>
 </section>
 '''
 

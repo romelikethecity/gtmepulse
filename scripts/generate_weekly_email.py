@@ -67,7 +67,8 @@ def load_current_data():
     """Load current market intelligence and comp analysis. Graceful if missing."""
     mi = load_json_safe(os.path.join(DATA_DIR, 'market_intelligence.json'))
     ca = load_json_safe(os.path.join(DATA_DIR, 'comp_analysis.json'))
-    jobs = load_json_safe(os.path.join(DATA_DIR, 'jobs.json')) or []
+    jobs_raw = load_json_safe(os.path.join(DATA_DIR, 'jobs.json')) or []
+    jobs = jobs_raw.get('jobs', jobs_raw) if isinstance(jobs_raw, dict) else jobs_raw
 
     # Defaults for missing data
     if mi is None:
@@ -147,17 +148,36 @@ def compute_diff(current_mi, current_ca, current_jobs, previous):
                 'count': curr.get('count', 0),
             }
 
-    # Tool trends
+    # Tool trends — filter to actual GTM stack products, not languages/techniques
+    # Build a set of non-tool names to exclude from the trends display
+    EXCLUDED_TOOLS = {
+        # Languages / general tech (skills, not products)
+        'Python', 'Rust', 'Javascript', 'Typescript', 'Sql', 'R',
+        # AI techniques (concepts, not products)
+        'Rag', 'Embeddings', 'Prompt Engineering', 'Fine Tuning',
+        # Infrastructure (too generic)
+        'Aws', 'Gcp', 'Azure',
+        # Vector DBs / frameworks (infra, not GTM tools)
+        'Pinecone', 'Weaviate', 'Pgvector', 'Langchain', 'Llamaindex',
+    }
     current_tools = current_mi.get('tools', {})
     prev_tools = previous.get('tools', {}) if previous else {}
     tool_changes = []
+    skill_changes = []
     for tool, count in current_tools.items():
         prev_count = prev_tools.get(tool, 0)
         change = count - prev_count
-        if abs(change) > 0 or count >= 5:
-            tool_changes.append({'name': tool, 'count': count, 'change': change})
+        entry = {'name': tool, 'count': count, 'change': change}
+        if tool in EXCLUDED_TOOLS:
+            if abs(change) > 0 or count >= 3:
+                skill_changes.append(entry)
+        else:
+            if abs(change) > 0 or count >= 5:
+                tool_changes.append(entry)
     tool_changes.sort(key=lambda x: -x['count'])
+    skill_changes.sort(key=lambda x: -x['count'])
     diff['tools'] = tool_changes[:10]
+    diff['skills'] = skill_changes[:5]
 
     # Top companies
     company_counts = Counter(j.get('company', '') for j in current_jobs if j.get('company'))
@@ -184,6 +204,42 @@ def compute_diff(current_mi, current_ca, current_jobs, previous):
 
     diff['signals'] = current_mi.get('hiring_signals', {})
     diff['disclosure_rate'] = current_ca.get('disclosure_rate', 0)
+
+    # Top paying roles (title-level salary data)
+    diff['top_paying_roles'] = current_ca.get('top_paying_roles', [])[:5]
+
+    # Location breakdown
+    location_counts = Counter()
+    for j in current_jobs:
+        loc = j.get('location', '')
+        if not loc:
+            continue
+        # Normalize to city-level
+        if j.get('is_remote'):
+            location_counts['Remote'] += 1
+        elif 'San Francisco' in loc or 'SF' in loc:
+            location_counts['San Francisco'] += 1
+        elif 'New York' in loc or 'NYC' in loc:
+            location_counts['New York'] += 1
+        elif 'Austin' in loc:
+            location_counts['Austin'] += 1
+        elif 'Boston' in loc:
+            location_counts['Boston'] += 1
+        elif 'Denver' in loc:
+            location_counts['Denver'] += 1
+        elif 'Los Angeles' in loc or 'LA' in loc:
+            location_counts['Los Angeles'] += 1
+        elif 'Chicago' in loc:
+            location_counts['Chicago'] += 1
+        elif 'Seattle' in loc:
+            location_counts['Seattle'] += 1
+        else:
+            location_counts['Other'] += 1
+    diff['locations'] = location_counts.most_common(6)
+
+    # Remote rate
+    remote_count = sum(1 for j in current_jobs if j.get('is_remote'))
+    diff['remote_pct'] = round(remote_count / len(current_jobs) * 100) if current_jobs else 0
 
     return diff
 
@@ -233,11 +289,13 @@ def generate_email_html(diff, date_str):
     <tr><td style="padding: 24px 24px 20px;">
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
-                <td width="36" valign="middle">
-                    <div style="width: 32px; height: 32px; background: {BRAND['accent']}; border-radius: 7px; text-align: center; line-height: 32px; font-size: 14px; color: #fff;">~</div>
+                <td width="44" valign="middle">
+                    <div style="width: 40px; height: 40px; display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="40" height="40"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 12,18 15,11 18,25 21,13 24,21 27,18 29,18" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                 </td>
-                <td valign="middle" style="padding-left: 10px;">
-                    <span style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['accent']};">Pulse</span></span>
+                <td valign="middle" style="padding-left: 12px;">
+                    <span style="font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['accent']};">Pulse</span></span>
                 </td>
             </tr>
         </table>
@@ -292,16 +350,72 @@ def generate_email_html(diff, date_str):
         remote_str = f"{co['remote']} remote" if co['remote'] > 0 else "on-site"
         company_rows += f'''
         <tr>
-            <td style="padding: 8px 12px; color: {BRAND['text']}; border-bottom: 1px solid {BRAND['border']};">{co['name']}</td>
+            <td style="padding: 8px 12px; border-bottom: 1px solid {BRAND['border']};">
+                <a href="{SITE_URL}/companies/{co['name'].lower().replace(' ', '-').replace('.', '')[:60]}/" style="color: {BRAND['accent_light']}; text-decoration: none;">{co['name']}</a>
+            </td>
             <td style="padding: 8px 12px; color: {BRAND['accent_light']}; font-weight: 600; border-bottom: 1px solid {BRAND['border']};">{co['count']}</td>
             <td style="padding: 8px 12px; color: {BRAND['muted']}; border-bottom: 1px solid {BRAND['border']};">{sal_str}</td>
             <td style="padding: 8px 12px; color: {BRAND['muted']}; border-bottom: 1px solid {BRAND['border']};">{remote_str}</td>
+        </tr>'''
+
+    # Top paying roles rows
+    top_roles_rows = ""
+    for role in diff.get('top_paying_roles', [])[:5]:
+        sal_min = role.get('salary_min', 0)
+        sal_max = role.get('salary_max', 0)
+        if sal_max > 0:
+            range_str = f"${int(sal_min/1000)}K-${int(sal_max/1000)}K"
+        else:
+            range_str = "-"
+        company = role.get('company', '') or 'Stealth'
+        title = role.get('title', '')
+        # Truncate long titles
+        if len(title) > 40:
+            title = title[:37] + '...'
+        top_roles_rows += f'''
+        <tr>
+            <td style="padding: 8px 12px; color: {BRAND['text']}; border-bottom: 1px solid {BRAND['border']}; font-size: 13px;">{title}</td>
+            <td style="padding: 8px 12px; color: {BRAND['muted']}; border-bottom: 1px solid {BRAND['border']}; font-size: 13px;">{company}</td>
+            <td style="padding: 8px 12px; color: {BRAND['accent_light']}; font-weight: 600; border-bottom: 1px solid {BRAND['border']}; font-size: 13px; white-space: nowrap;">{range_str}</td>
+        </tr>'''
+
+    # Skill/tech rows (languages, AI techniques — separate from GTM tools)
+    skill_rows = ""
+    SKILL_DISPLAY = {'Rag': 'RAG', 'Aws': 'AWS', 'Gcp': 'GCP', 'Openai': 'OpenAI', 'Langchain': 'LangChain', 'Llamaindex': 'LlamaIndex'}
+    for skill in diff.get('skills', [])[:5]:
+        s_pct = round(skill['count'] / diff['total_jobs'] * 100, 1) if diff['total_jobs'] > 0 else 0
+        s_name = SKILL_DISPLAY.get(skill['name'], skill['name'])
+        skill_rows += f'''
+        <tr>
+            <td style="padding: 6px 12px; color: {BRAND['text']}; border-bottom: 1px solid {BRAND['border']};">{s_name}</td>
+            <td style="padding: 6px 12px; color: {BRAND['accent_light']}; border-bottom: 1px solid {BRAND['border']};">{skill['count']:,} ({s_pct}%)</td>
+            <td style="padding: 6px 12px; border-bottom: 1px solid {BRAND['border']};">{trend_arrow(skill['change'])}</td>
+        </tr>'''
+
+    # Location rows
+    location_rows = ""
+    for loc_name, loc_count in diff.get('locations', []):
+        loc_pct = round(loc_count / diff['total_jobs'] * 100) if diff['total_jobs'] > 0 else 0
+        # Bar width as percentage of max
+        max_count = diff['locations'][0][1] if diff.get('locations') else 1
+        bar_width = round(loc_count / max_count * 100)
+        location_rows += f'''
+        <tr>
+            <td style="padding: 6px 12px; color: {BRAND['text']}; border-bottom: 1px solid {BRAND['border']};">{loc_name}</td>
+            <td style="padding: 6px 12px; border-bottom: 1px solid {BRAND['border']}; width: 50%;">
+                <div style="background: {BRAND['border']}; border-radius: 4px; height: 8px; width: 100%;">
+                    <div style="background: {BRAND['accent']}; border-radius: 4px; height: 8px; width: {bar_width}%;"></div>
+                </div>
+            </td>
+            <td style="padding: 6px 12px; color: {BRAND['muted']}; border-bottom: 1px solid {BRAND['border']}; white-space: nowrap;">{loc_count} ({loc_pct}%)</td>
         </tr>'''
 
     # Hiring signals
     growth = diff['signals'].get('Growth Hire', 0)
     turnaround = diff['signals'].get('Turnaround', 0)
     immediate = diff['signals'].get('Immediate', 0)
+    growth_pct = round(growth / diff['total_jobs'] * 100) if diff['total_jobs'] > 0 else 0
+    turnaround_pct = round(turnaround / diff['total_jobs'] * 100) if diff['total_jobs'] > 0 else 0
 
     html = f'''<!DOCTYPE html>
 <html>
@@ -317,11 +431,13 @@ def generate_email_html(diff, date_str):
     <tr><td style="padding: 24px 24px 20px;">
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
-                <td width="36" valign="middle">
-                    <div style="width: 32px; height: 32px; background: {BRAND['accent']}; border-radius: 7px; text-align: center; line-height: 32px; font-size: 14px; color: #fff;">~</div>
+                <td width="44" valign="middle">
+                    <div style="width: 40px; height: 40px; display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="40" height="40"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 12,18 15,11 18,25 21,13 24,21 27,18 29,18" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                 </td>
-                <td valign="middle" style="padding-left: 10px;">
-                    <span style="font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['accent']};">Pulse</span></span>
+                <td valign="middle" style="padding-left: 12px;">
+                    <span style="font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 600;"><span style="color: {BRAND['text']};">GTME</span><span style="color: {BRAND['accent']};">Pulse</span></span>
                 </td>
             </tr>
         </table>
@@ -329,7 +445,7 @@ def generate_email_html(diff, date_str):
 
     <!-- Title -->
     <tr><td style="padding: 0 24px 16px; border-bottom: 2px solid {BRAND['accent']};">
-        <h1 style="margin: 0 0 6px; font-size: 28px; font-weight: 700; color: {BRAND['text']}; font-family: 'Sora', sans-serif; letter-spacing: -0.5px;">GTM ENGINEER MARKET PULSE</h1>
+        <h1 style="margin: 0 0 6px; font-size: 32px; font-weight: 700; color: {BRAND['text']}; font-family: 'Sora', sans-serif; letter-spacing: -0.5px;">GTM ENGINEER MARKET PULSE</h1>
         <p style="margin: 0; font-size: 14px; color: {BRAND['muted']};">Week of {date_str} &middot; {diff['total_jobs']:,} active roles &middot; {diff['disclosure_rate']}% salary disclosure</p>
     </td></tr>
 
@@ -359,9 +475,31 @@ def generate_email_html(diff, date_str):
         </table>
     </td></tr>
 
+    <!-- Signal Strip -->
+    <tr><td style="padding: 0 24px 24px;">
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="33%" style="padding: 10px; background: {BRAND['surface']}; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: {BRAND['green']};">{growth_pct}%</div>
+                    <div style="font-size: 11px; color: {BRAND['muted']}; margin-top: 2px;">Growth Hires</div>
+                </td>
+                <td width="4"></td>
+                <td width="33%" style="padding: 10px; background: {BRAND['surface']}; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: {BRAND['accent']};">{turnaround_pct}%</div>
+                    <div style="font-size: 11px; color: {BRAND['muted']}; margin-top: 2px;">Turnaround</div>
+                </td>
+                <td width="4"></td>
+                <td width="33%" style="padding: 10px; background: {BRAND['surface']}; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: {BRAND['accent_light']};">{diff['remote_pct']}%</div>
+                    <div style="font-size: 11px; color: {BRAND['muted']}; margin-top: 2px;">Remote</div>
+                </td>
+            </tr>
+        </table>
+    </td></tr>
+
     <!-- Salary Snapshot -->
-    {f"""<tr><td style="padding: 12px 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Salary by Seniority</h2>
+    {f"""<tr><td style="padding: 0 24px 24px;">
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: {BRAND['accent']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Salary Snapshot</h2>
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
             <tr>
                 <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Level</th>
@@ -373,9 +511,25 @@ def generate_email_html(diff, date_str):
         </table>
     </td></tr>""" if seniority_rows else ""}
 
+    <!-- Top Paying Roles -->
+    {f"""<tr><td style="padding: 0 24px 24px;">
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: {BRAND['accent']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Top Paying Roles</h2>
+        <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
+            <tr>
+                <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Title</th>
+                <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Company</th>
+                <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Range</th>
+            </tr>
+            {top_roles_rows}
+        </table>
+        <p style="font-size: 12px; color: {BRAND['muted']}; margin: 8px 0 0;">
+            <a href="{SITE_URL}/salary/" style="color: {BRAND['accent']}; text-decoration: none;">Full salary benchmarks &rarr;</a>
+        </p>
+    </td></tr>""" if top_roles_rows else ""}
+
     <!-- Tool Trends -->
     {f"""<tr><td style="padding: 0 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Tool Trends</h2>
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: {BRAND['accent']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Tool Trends</h2>
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
             <tr>
                 <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Tool</th>
@@ -389,9 +543,22 @@ def generate_email_html(diff, date_str):
         </p>
     </td></tr>""" if tool_rows else ""}
 
+    <!-- Skills & Tech -->
+    {f"""<tr><td style="padding: 0 24px 24px;">
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: {BRAND['accent']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Skills &amp; Tech</h2>
+        <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
+            <tr>
+                <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Skill</th>
+                <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Mentions</th>
+                <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">vs Last</th>
+            </tr>
+            {skill_rows}
+        </table>
+    </td></tr>""" if skill_rows else ""}
+
     <!-- Top Companies -->
     {f"""<tr><td style="padding: 0 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Top Hiring Companies</h2>
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: {BRAND['accent']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Top Companies Hiring</h2>
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
             <tr>
                 <th style="padding: 10px 12px; text-align: left; font-size: 11px; color: {BRAND['muted']}; text-transform: uppercase;">Company</th>
@@ -403,21 +570,31 @@ def generate_email_html(diff, date_str):
         </table>
     </td></tr>""" if company_rows else ""}
 
-    <!-- Hiring Signals -->
+    <!-- Where the Jobs Are -->
     {f"""<tr><td style="padding: 0 24px 24px;">
-        <h2 style="margin: 0 0 12px; font-size: 14px; color: {BRAND['accent_dark']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Hiring Signals</h2>
-        <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px; padding: 16px;">
-            <tr><td style="padding: 12px 16px; color: {BRAND['text']}; font-size: 14px; line-height: 1.8;">
-                Growth hires: <strong style="color: {BRAND['accent']};">{growth:,}</strong> &middot;
-                Turnaround: <strong style="color: {BRAND['accent_dark']};">{turnaround:,}</strong> &middot;
-                Immediate fill: <strong>{immediate:,}</strong>
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: {BRAND['accent']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Where the Jobs Are</h2>
+        <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
+            {location_rows}
+        </table>
+    </td></tr>""" if location_rows else ""}
+
+    <!-- Signal Watch -->
+    <tr><td style="padding: 0 24px 24px;">
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: {BRAND['accent']}; text-transform: uppercase; letter-spacing: 1px; font-family: 'Sora', sans-serif;">Signal Watch</h2>
+        <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px;">
+            <tr><td style="padding: 12px 16px; color: {BRAND['text']}; font-size: 14px; line-height: 2.0;">
+                {f'<strong style="color: {BRAND["accent_light"]};">{growth:,}</strong> growth hires ({growth_pct}% of market) &middot; ' if growth else ''}
+                {f'<strong>{turnaround:,}</strong> turnaround roles &middot; ' if turnaround else ''}
+                {f'<strong>{immediate:,}</strong> immediate fill &middot; ' if immediate else ''}
+                <strong style="color: {BRAND['accent_light']};">{diff['disclosure_rate']}%</strong> disclose salary &middot;
+                <strong style="color: {BRAND['accent_light']};">{diff['remote_pct']}%</strong> offer remote
             </td></tr>
         </table>
-    </td></tr>""" if any([growth, turnaround, immediate]) else ""}
+    </td></tr>
 
     <!-- CTA -->
     <tr><td style="padding: 0 24px 24px; text-align: center;">
-        <a href="{SITE_URL}/salary/" style="display: inline-block; background: {BRAND['accent']}; color: {BRAND['bg']}; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; font-family: 'Sora', sans-serif;">See Full Salary Data</a>
+        <a href="{SITE_URL}/jobs/" style="display: inline-block; background: {BRAND['accent']}; color: #ffffff; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; font-family: 'Sora', sans-serif;">Browse All GTME Jobs</a>
         <p style="font-size: 13px; color: {BRAND['muted']}; margin: 14px 0 0;">
             <a href="{SITE_URL}/salary/" style="color: {BRAND['muted']}; text-decoration: underline;">Salary benchmarks</a> &middot;
             <a href="{SITE_URL}/tools/" style="color: {BRAND['muted']}; text-decoration: underline;">Tool reviews</a> &middot;
@@ -430,7 +607,7 @@ def generate_email_html(diff, date_str):
         <table width="100%" cellpadding="0" cellspacing="0" style="background: {BRAND['surface']}; border-radius: 8px; border: 1px solid {BRAND['border']};">
             <tr><td style="padding: 20px 24px; text-align: center;">
                 <p style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: {BRAND['text']}; font-family: 'Sora', sans-serif;">Know a GTM Engineer?</p>
-                <p style="margin: 0 0 16px; font-size: 14px; color: {BRAND['accent_dark']};">Forward this email to anyone building automated pipelines.</p>
+                <p style="margin: 0 0 16px; font-size: 14px; color: {BRAND['muted']};">Forward this email to anyone building automated pipelines.</p>
                 <p style="margin: 0; font-size: 13px; color: {BRAND['muted']};">
                     Not subscribed? <a href="{SITE_URL}/newsletter/" style="color: {BRAND['accent']}; text-decoration: underline; font-weight: 600;">Sign up here</a> - free, every Monday.
                 </p>
@@ -443,7 +620,9 @@ def generate_email_html(diff, date_str):
         <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
                 <td align="center" style="padding-bottom: 8px;">
-                    <div style="width: 24px; height: 24px; background: {BRAND['accent']}; border-radius: 5px; text-align: center; line-height: 24px; font-size: 11px; color: #fff; display: inline-block;">~</div>
+                    <div style="width: 28px; height: 28px; display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="28" height="28"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 12,18 15,11 18,25 21,13 24,21 27,18 29,18" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                 </td>
             </tr>
             <tr><td align="center">
@@ -542,6 +721,7 @@ def main():
     parser.add_argument('--add-subscriber', type=str, metavar='EMAIL', help='Add subscriber')
     parser.add_argument('--list-subscribers', action='store_true', help='List all subscribers')
     parser.add_argument('--resend-key', type=str, help='Resend API key (or set RESEND_API_KEY)')
+    parser.add_argument('--save-snapshot', action='store_true', help='Save current data as baseline for next diff')
     args = parser.parse_args()
 
     api_key = args.resend_key or os.environ.get('RESEND_API_KEY', '')
@@ -573,10 +753,15 @@ def main():
     # Generate email
     date_str = datetime.now().strftime('%B %d, %Y')
     if diff['total_jobs'] > 0 and diff['salary_median'] > 0:
-        subject = f"GTM Engineer Market Pulse - {diff['total_jobs']:,} roles, ${int(diff['salary_median']/1000)}K median"
+        subject = f"GTM Engineer Market Pulse: {diff['total_jobs']:,} roles, ${int(diff['salary_median']/1000)}K median"
     else:
         subject = "GTM Engineer Market Pulse - Weekly Update"
     html = generate_email_html(diff, date_str)
+
+    if args.save_snapshot:
+        save_current_as_snapshot(market_intel, comp_analysis, jobs)
+        print(f"Snapshot saved to {PREVIOUS_SNAPSHOT_FILE}")
+        return
 
     if args.preview:
         preview_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'email_preview.html')

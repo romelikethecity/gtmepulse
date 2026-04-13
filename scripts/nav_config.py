@@ -7,7 +7,7 @@ SITE_URL = "https://gtmepulse.com"
 SITE_TAGLINE = "Career intelligence for GTM Engineers"
 COPYRIGHT_YEAR = "2026"
 CURRENT_YEAR = 2026
-CSS_VERSION = "19"
+CSS_VERSION = "20"
 
 CTA_HREF = "/newsletter/"
 CTA_LABEL = "Get the Weekly Pulse"

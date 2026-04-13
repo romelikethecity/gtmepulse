@@ -646,16 +646,41 @@ def generate_email_html(diff, date_str):
 
 
 # ---------------------------------------------------------------------------
-# Subscriber management via Resend API
+# Subscriber management
 # ---------------------------------------------------------------------------
 
+D1_WORKER_URL = "https://newsletter-subscribe.rome-workers.workers.dev"
+D1_LIST_SLUG = "gtme-pulse"
+
+
+def load_subscribers_from_d1():
+    """Load active subscribers from D1 via the universal newsletter worker."""
+    import requests as req
+
+    api_secret = os.environ.get('NEWSLETTER_API_SECRET', '')
+    if not api_secret:
+        print("Warning: NEWSLETTER_API_SECRET not set, skipping D1")
+        return []
+
+    try:
+        resp = req.get(
+            f"{D1_WORKER_URL}/subscribers/{D1_LIST_SLUG}",
+            headers={"Authorization": f"Bearer {api_secret}"},
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        return [{"email": s["email"]} for s in data if isinstance(s, dict)]
+    except Exception as e:
+        print(f"Error fetching from D1: {e}")
+        return []
+
+
 def load_subscribers_from_resend(api_key):
-    """Load all subscribed contacts from Resend Audiences API."""
+    """Load all subscribed contacts from Resend Audiences API (fallback)."""
     import requests as req
 
     audience_id = os.environ.get('RESEND_AUDIENCE_ID', '')
     if not audience_id:
-        print("Error: RESEND_AUDIENCE_ID not set")
         return []
 
     contacts = []
@@ -668,7 +693,7 @@ def load_subscribers_from_resend(api_key):
             resp.raise_for_status()
             data = resp.json()
         except Exception as e:
-            print(f"Error fetching contacts: {e}")
+            print(f"Error fetching contacts from Resend: {e}")
             break
 
         for contact in data.get("data", []):
@@ -734,12 +759,16 @@ def main():
         return
 
     if args.list_subscribers:
-        if not api_key:
-            print("Error: Resend API key required. Use --resend-key or set RESEND_API_KEY")
-            sys.exit(1)
-        subs = load_subscribers_from_resend(api_key)
-        print(f"Subscribers ({len(subs)}):")
-        for s in subs:
+        d1_subs = load_subscribers_from_d1()
+        resend_subs = load_subscribers_from_resend(api_key) if api_key else []
+        seen = set()
+        all_subs = []
+        for s in d1_subs + resend_subs:
+            if s['email'] not in seen:
+                seen.add(s['email'])
+                all_subs.append(s)
+        print(f"Subscribers ({len(all_subs)}) [D1: {len(d1_subs)}, Resend: {len(resend_subs)}]:")
+        for s in all_subs:
             print(f"  {s['email']}")
         return
 
@@ -785,11 +814,22 @@ def main():
 
         resend.api_key = api_key
 
-        print("Fetching subscribers from Resend...")
-        subs = load_subscribers_from_resend(api_key)
+        # Load from D1 (primary) + Resend (fallback), dedupe
+        print("Fetching subscribers from D1...")
+        d1_subs = load_subscribers_from_d1()
+        print(f"  D1: {len(d1_subs)} subscribers")
+        resend_subs = load_subscribers_from_resend(api_key)
+        print(f"  Resend: {len(resend_subs)} subscribers")
+
+        seen = set()
+        subs = []
+        for s in d1_subs + resend_subs:
+            if s['email'] not in seen:
+                seen.add(s['email'])
+                subs.append(s)
 
         if not subs:
-            print("No subscribers in Resend audience. Sign up at gtmepulse.com/newsletter/")
+            print("No subscribers found. Sign up at gtmepulse.com/newsletter/")
             return
 
         print(f"Sending to {len(subs)} subscribers...")

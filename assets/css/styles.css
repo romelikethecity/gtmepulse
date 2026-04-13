@@ -220,7 +220,7 @@
     border-radius: var(--gtme-radius-md);
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.1);
-    color: var(--gtme-text-inverse);
+    color: #F0F0F0;
     font-family: var(--gtme-font-body);
     font-size: var(--gtme-text-sm);
 }
@@ -319,6 +319,11 @@
     font-family: var(--gtme-font-body);
     font-size: var(--gtme-text-base);
     background: var(--gtme-bg-surface);
+    color: var(--gtme-text-primary);
+}
+
+.hero-signup input::placeholder {
+    color: var(--gtme-text-tertiary);
 }
 
 .hero-signup input:focus {
@@ -883,6 +888,11 @@ body.page-home .main-content {
     font-family: var(--gtme-font-body);
     font-size: var(--gtme-text-base);
     background: var(--gtme-bg-surface);
+    color: var(--gtme-text-primary);
+}
+
+.email-gate-form input::placeholder {
+    color: var(--gtme-text-tertiary);
 }
 
 

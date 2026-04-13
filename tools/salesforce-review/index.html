@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Salesforce Review 2026: Enterprise CRM - GTME Pulse</title>
+    <meta name="description" content="Salesforce review for GTM Engineers. SOQL power, AppExchange ecosystem, admin overhead, and when HubSpot is the smarter choice. Updated weekly. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/salesforce-review/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/salesforce-review/">
+    <meta property="og:title" content="Salesforce Review 2026: Enterprise CRM - GTME Pulse">
+    <meta property="og:description" content="Salesforce review for GTM Engineers. SOQL power, AppExchange ecosystem, admin overhead, and when HubSpot is the smarter choice. Updated weekly. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/tools-salesforce-review.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salesforce Review 2026: Enterprise CRM - GTME Pulse">
+    <meta name="twitter:description" content="Salesforce review for GTM Engineers. SOQL power, AppExchange ecosystem, admin overhead, and when HubSpot is the smarter choice. Updated weekly. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/tools-salesforce-review.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Salesforce Review"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Salesforce", "description": "Salesforce review for GTM Engineers. SOQL power, AppExchange ecosystem, admin overhead, and when HubSpot is the smarter choice. Updated weekly. Independent.", "applicationCategory": "CRM", "operatingSystem": "Web", "url": "https://salesforce.com", "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "$25-$300/user/mo", "description": "$25-$300/user/mo"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Salesforce worth learning as a GTM Engineer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. SOQL, Flow Builder, and Salesforce admin skills are among the highest-value CRM skills in the market. Even if you use HubSpot day-to-day, Salesforce knowledge opens doors at enterprise companies where GTM Engineer salaries are highest."}}, {"@type": "Question", "name": "Salesforce vs HubSpot for a startup?", "acceptedAnswer": {"@type": "Answer", "text": "HubSpot. Lower cost, faster setup, better UX, no dedicated admin needed. Switch to Salesforce when you hit 100+ employees, need custom objects for complex data models, or your enterprise buyers require it."}}, {"@type": "Question", "name": "What does Salesforce cost in practice?", "acceptedAnswer": {"@type": "Answer", "text": "Plan for 2-3x the per-user license cost. A team of 20 on Enterprise ($165/user = $39,600/yr) will spend an additional $20K-$40K on implementation, AppExchange apps, admin headcount, and add-on products. Total first-year cost: $60K-$80K."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Salesforce Review</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">CRM</div>
+        <h1>Salesforce Review</h1>
+        <p>$25-$300/user/mo</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <h2>Overview</h2>
+    
+<p>Salesforce is the CRM that 72% of Fortune 500 companies use. For GTM Engineers at enterprise organizations, Salesforce is infrastructure that predates your tenure and will outlast it. The platform's strength is in its data model flexibility (custom objects, relationships, formula fields), the AppExchange ecosystem (5,000+ integrations), and SOQL (Salesforce Object Query Language) for data manipulation.</p>
+<p>GTM Engineers who master Salesforce internals (SOQL, Flow, Process Builder, Apex triggers) become high-value operators. Salesforce admin skills alone command $90K-$140K salaries. When you add GTM automation expertise on top of Salesforce knowledge, you're in the $150K-$200K range.</p>
+<p>Salesforce's AI push (Einstein GPT, Copilot) is adding generative features across the product, but adoption among GTM Engineers is still early. The practical applications today are AI-generated email drafts and opportunity scoring.</p>
+
+
+    <h2>GTM Engineer Use Cases</h2>
+    
+<ul>
+    <li><strong>Complex data modeling with custom objects.</strong> Build custom objects for any entity your GTM process needs: product usage events, partnership deals, competitive intelligence, customer health scores. Salesforce's object model is the most flexible of any CRM.</li>
+    <li><strong>SOQL for data analysis and extraction.</strong> Query Salesforce data directly using SOQL. Pull pipeline reports, activity metrics, and custom analytics that the standard report builder can't handle.</li>
+    <li><strong>Flow Builder for automation.</strong> Salesforce Flow is more powerful (and more complex) than HubSpot workflows. Record-triggered flows, screen flows, scheduled flows, and auto-launched flows cover any automation scenario.</li>
+    <li><strong>AppExchange integrations.</strong> 5,000+ apps integrate with Salesforce. Clay, Apollo, Outreach, Salesloft, 6sense, and every major GTM tool has a Salesforce connector. The ecosystem depth is unmatched.</li>
+    <li><strong>Enterprise reporting and dashboards.</strong> Cross-object reporting, joined reports, and Einstein Analytics provide the reporting depth that enterprise leadership expects.</li>
+</ul>
+
+
+    <h2>Pricing Breakdown</h2>
+    
+<table class="data-table">
+    <thead><tr><th>Edition</th><th>Price</th><th>Key Features</th></tr></thead>
+    <tbody>
+        <tr><td>Starter</td><td>$25/user/mo</td><td>Basic CRM, lead/account/contact management</td></tr>
+        <tr><td>Professional</td><td>$80/user/mo</td><td>Pipeline management, forecasting, quotes</td></tr>
+        <tr><td>Enterprise</td><td>$165/user/mo</td><td>Custom objects, Flow Builder, API access</td></tr>
+        <tr><td>Unlimited</td><td>$330/user/mo</td><td>Einstein AI, sandbox, premier support</td></tr>
+    </tbody>
+</table>
+<p>Salesforce pricing is per-user and adds up fast. A team of 20 reps on Enterprise ($165/user) costs $39,600/year before add-ons. CPQ, Einstein, Pardot, and other Salesforce products are separately priced. Total Salesforce spend at mid-market companies regularly passes $100K/year.</p>
+<p>The Starter plan ($25/user) is limited enough that most teams jump to Professional or Enterprise within months. API access, custom objects, and Flow Builder, the features GTM Engineers need, require Enterprise.</p>
+
+    
+
+    <h2>Honest Criticism</h2>
+    
+<p>Complexity is Salesforce's defining weakness. The admin overhead is real: field validation rules conflict with each other, Flow Builder errors are cryptic, page layout management is tedious, and the difference between Classic and Lightning UI still causes confusion. Companies with 50+ Salesforce users typically need a dedicated admin. Companies with 200+ need a Salesforce team. That's headcount cost on top of license cost.</p>
+<p>The UX hasn't kept pace with modern CRMs. Lightning was supposed to fix the Classic experience, but it's still clunky compared to HubSpot, Attio, or Close. Reps resist Salesforce adoption because the daily experience is friction-heavy. GTM Engineers spend time building workarounds (custom Lightning components, Chrome extensions, Slack integrations) to make Salesforce tolerable for end users.</p>
+<p>Pricing escalation is aggressive. Salesforce sales reps are excellent at expanding contracts year over year. Features that were included get unbundled into add-ons. Einstein AI, which sounds like a core feature, costs extra. API call limits on lower tiers force upgrades. The total cost of ownership is always higher than the initial quote suggests.</p>
+<p>Developer experience has improved but still carries technical debt from two decades of platform evolution. The transition from Classic to Lightning introduced parallel codebases that GTM Engineers need to understand. Apex triggers, Flow Builder, and Process Builder (now deprecated but still present in older orgs) create multiple automation paradigms within the same instance. New GTM Engineers inheriting a Salesforce org spend their first month just mapping the existing automation layer.</p>
+
+
+    <h2>Verdict</h2>
+    
+<p>Salesforce is the right CRM when your company has 100+ employees, complex data modeling needs, and the admin resources to manage it. The platform's flexibility, ecosystem, and enterprise credibility are unmatched. If your buyers expect to see Salesforce in your tech stack (common in enterprise B2B), that's a real consideration.</p>
+<p>For startups and teams under 50 people, HubSpot or Attio are better choices. The admin overhead, per-user cost, and implementation complexity of Salesforce don't pay off at small scale. Learn Salesforce skills (SOQL, Flow) because they're valuable on the market, but don't impose Salesforce on a team that doesn't need it yet. GTM Engineers who can write SOQL queries and build Flows earn 15-20% more than those who only know HubSpot.</p>
+
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Is Salesforce worth learning as a GTM Engineer?</h3>
+    <p class="faq-answer">Yes. SOQL, Flow Builder, and Salesforce admin skills are among the highest-value CRM skills in the market. Even if you use HubSpot day-to-day, Salesforce knowledge opens doors at enterprise companies where GTM Engineer salaries are highest.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Salesforce vs HubSpot for a startup?</h3>
+    <p class="faq-answer">HubSpot. Lower cost, faster setup, better UX, no dedicated admin needed. Switch to Salesforce when you hit 100+ employees, need custom objects for complex data models, or your enterprise buyers require it.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What does Salesforce cost in practice?</h3>
+    <p class="faq-answer">Plan for 2-3x the per-user license cost. A team of 20 on Enterprise ($165/user = $39,600/yr) will spend an additional $20K-$40K on implementation, AppExchange apps, admin headcount, and add-on products. Total first-year cost: $60K-$80K.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>More Tool Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/apollo-review/" class="related-link-card">Apollo.io Review</a>
+<a href="/tools/zoominfo-review/" class="related-link-card">ZoomInfo Review</a>
+<a href="/tools/clearbit-review/" class="related-link-card">Clearbit Review</a>
+<a href="/tools/fullenrich-review/" class="related-link-card">FullEnrich Review</a>
+<a href="/tools/lusha-review/" class="related-link-card">Lusha Review</a>
+<a href="/tools/cognism-review/" class="related-link-card">Cognism Review</a>
+<a href="/tools/leadiq-review/" class="related-link-card">LeadIQ Review</a>
+<a href="/tools/persana-review/" class="related-link-card">Persana AI Review</a>
+<a href="/tools/instantly-review/" class="related-link-card">Instantly Review</a>
+<a href="/tools/smartlead-review/" class="related-link-card">Smartlead Review</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly CRM tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

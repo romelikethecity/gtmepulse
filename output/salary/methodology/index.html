@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>GTM Engineer Salary Data Methodology (2026) - GTME Pulse</title>
+    <meta name="description" content="How GTME Pulse sources GTM Engineer salary data. State of GTME Report 2026 (n=228) survey plus 3,342 job postings. Methods, normalization, limitations.">
+    <link rel="canonical" href="https://gtmepulse.com/salary/methodology/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/salary/methodology/">
+    <meta property="og:title" content="GTM Engineer Salary Data Methodology (2026) - GTME Pulse">
+    <meta property="og:description" content="How GTME Pulse sources GTM Engineer salary data. State of GTME Report 2026 (n=228) survey plus 3,342 job postings. Methods, normalization, limitations.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/salary-methodology.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GTM Engineer Salary Data Methodology (2026) - GTME Pulse">
+    <meta name="twitter:description" content="How GTME Pulse sources GTM Engineer salary data. State of GTME Report 2026 (n=228) survey plus 3,342 job postings. Methods, normalization, limitations.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/salary-methodology.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Salary Data", "item": "https://gtmepulse.com/salary/"}, {"@type": "ListItem", "position": 3, "name": "Methodology"}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/" class="active">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/" class="active">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/salary/" class="breadcrumb-link">Salary Data</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Methodology</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Data Methodology</div>
+        <h1>GTM Engineer Salary Data Methodology (2026)</h1>
+        <p>How we collect, clean, and analyze GTM Engineer compensation data.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <h2>Data Sources</h2>
+    <p>Our salary data comes from two primary sources:</p>
+    <ul>
+        <li><strong>State of GTM Engineering Report 2026:</strong> A comprehensive survey of 228 GTM Engineers across 32 countries. This is our primary data source for compensation benchmarks, equity data, and career demographics.</li>
+        <li><strong>Job posting analysis:</strong> We scrape and analyze 3,342+ job listings from major boards (LinkedIn, Indeed, Greenhouse, Lever, Ashby) twice per week. Postings with disclosed salary ranges validate and supplement the survey data.</li>
+        <li><strong>Compensation databases:</strong> Cross-referenced with aggregated data from Glassdoor, Levels.fyi, and Pave where available for validation.</li>
+    </ul>
+
+    <h2>Collection Method</h2>
+    <p>Our automated pipeline runs twice weekly (Tuesday and Friday at 8 PM PST). For each scrape cycle:</p>
+    <ul>
+        <li>We search 21 job title variants (GTM Engineer, Go-to-Market Engineer, Revenue Engineer, Growth Engineer, and seniority/leadership variants)</li>
+        <li>Duplicate postings are detected via company + title + location matching and removed</li>
+        <li>Salary ranges are extracted from structured data fields when available, or parsed from description text</li>
+        <li>Postings without any salary information are excluded from compensation analysis but included in job market counts</li>
+    </ul>
+
+    <h2>Normalization</h2>
+    <p>Raw salary data requires normalization before analysis:</p>
+    <ul>
+        <li><strong>Annualization:</strong> Hourly or monthly rates converted to annual equivalents</li>
+        <li><strong>Base isolation:</strong> Where postings include OTE or total comp, we estimate base salary using role-specific base/variable ratios (typically 85/15 for GTM Engineers)</li>
+        <li><strong>Currency:</strong> All figures are in USD. Non-US postings are converted at a 30-day rolling average exchange rate</li>
+        <li><strong>Outlier removal:</strong> Postings with salaries below $50K or above $500K are flagged for manual review and typically excluded</li>
+    </ul>
+
+    <h2>Classification</h2>
+    <p>Each posting is classified across three dimensions:</p>
+    <ul>
+        <li><strong>Seniority:</strong> Junior/Associate, Mid-Level, Senior, Lead/Staff. Classified by title keywords and requirements section analysis.</li>
+        <li><strong>Location:</strong> Mapped to metro areas or "Remote" based on posting location data. Hybrid roles are classified by office location.</li>
+        <li><strong>Company stage:</strong> Seed, Series A, Series B, Growth (C/D), Enterprise (public/late-stage). Determined by Crunchbase funding data where available.</li>
+    </ul>
+
+    <h2>Sample Sizes</h2>
+    <p>Primary dataset: <strong>228 survey respondents</strong> from the State of GTM Engineering Report 2026, spanning 32 countries. Supplemented by <strong>3,342+ job postings</strong> collected since January 2025.</p>
+    <p>The US represents 58% of survey respondents (132 respondents). Location-specific salary data uses this US cohort as the primary sample, validated against job postings with disclosed compensation.</p>
+
+    <h2>Limitations</h2>
+    <p>This data has known limitations:</p>
+    <ul>
+        <li><strong>Selection bias:</strong> Companies that disclose salary ranges tend to be larger and based in states with pay transparency laws. Our data may underrepresent small companies and non-disclosure states.</li>
+        <li><strong>Role definition:</strong> "GTM Engineer" is a new and evolving title. Some relevant roles use different titles and may not appear in our searches. Conversely, some postings using "GTM" are traditional marketing or sales ops roles.</li>
+        <li><strong>Timing:</strong> Salary data reflects posting date, not hire date. Market conditions between posting and hiring can shift compensation.</li>
+        <li><strong>Total compensation:</strong> Base salary is more consistently reported than equity, bonuses, and benefits. Our total comp estimates use industry benchmarks for non-base components.</li>
+    </ul>
+
+    <h2>How We Use This Data</h2>
+    <p>The salary data collected through this methodology powers every compensation page on GTME Pulse. Here's how different page types use the data:</p>
+    <ul>
+        <li><strong>Location pages</strong> (e.g., <a href="/salary/san-francisco/">San Francisco</a>, <a href="/salary/new-york/">New York</a>): Use the US respondent subset (132) combined with location-tagged job postings. Metro area mapping uses a 50-mile radius from city center.</li>
+        <li><strong>Seniority pages</strong> (e.g., <a href="/salary/senior/">Senior</a>, <a href="/salary/lead-staff/">Lead/Staff</a>): Combine survey responses with seniority-classified job postings. Title-based classification uses a keyword hierarchy validated against job description requirements sections.</li>
+        <li><strong>Company stage pages</strong> (e.g., <a href="/salary/seed/">Seed</a>, <a href="/salary/enterprise/">Enterprise</a>): Map companies to funding stages using Crunchbase data. Self-reported survey stage data is cross-referenced for accuracy.</li>
+        <li><strong>Comparison pages</strong> (e.g., <a href="/salary/vs-revops/">GTM Engineer vs RevOps</a>): Use the same methodology applied to comparison roles. Where our primary survey data is limited for non-GTME roles, we supplement with Glassdoor and Levels.fyi aggregated data.</li>
+    </ul>
+
+    <h2>Analysis Deep Dives</h2>
+    <p>Beyond the core salary pages, we produce analysis articles that slice this data in specialized ways. The <a href="/salary/coding-premium/">coding premium analysis</a> isolates the salary impact of Python and SQL skills. The <a href="/salary/us-vs-global/">US vs global comparison</a> examines geographic pay disparities across 32 countries. The <a href="/salary/seed-vs-enterprise/">seed vs enterprise analysis</a> breaks down total comp differences when equity is included.</p>
+    <p>Each analysis page cites the specific sample sizes and subsets used. When sample sizes for a specific cut fall below 30, we note the limitation and supplement with job posting data where possible.</p>
+
+    <h2>Career and Job Market Data</h2>
+    <p>Our <a href="/careers/">career guides</a> and job market pages use the same underlying dataset. The <a href="/careers/job-growth/">job growth analysis</a> tracks month-over-month posting volumes. The <a href="/careers/top-skills-in-postings/">skills analysis</a> parses requirements sections from job postings to identify the most in-demand technical skills. The <a href="/careers/jobs-by-country/">country-level breakdown</a> uses geographic data from the 228-respondent survey combined with location tags from job postings.</p>
+    <p>Agency and freelance data comes from a subset of survey respondents who self-identified as agency operators or freelance GTM Engineers. This subset is smaller than the full sample, so we note sample sizes on all agency-specific pages.</p>
+
+    <h2>Tool and Benchmark Data</h2>
+    <p>Tool adoption rates, frustration rankings, and stack compositions come from the survey's tool usage section. Respondents selected from a curated list of 27 tools and could add unlisted tools. The <a href="/tools/tech-stack-benchmark/">tech stack benchmark</a> aggregates these responses. Tool spending data comes from survey responses about annual tool budgets, validated against published pricing for the most common stack configurations.</p>
+    <p>The <a href="/benchmarks/">benchmark pages</a> present cross-tabulated survey data across multiple dimensions. The <a href="/benchmarks/demographics/">demographics report</a> establishes the respondent profile. The <a href="/benchmarks/50-stats/">50 key statistics</a> report summarizes the most significant findings across all survey sections.</p>
+
+    <h2>Update Frequency</h2>
+    <p>Data is refreshed twice weekly. Published salary ranges are recalculated weekly (every Monday). Historical trends track month-over-month changes.</p>
+
+    <h2>Questions or Corrections</h2>
+    <p>If you spot an error or have data that could improve our analysis, reach out through the <a href="/about/">About page</a>. We take data accuracy seriously.</p>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly data updates.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

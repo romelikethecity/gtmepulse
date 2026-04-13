@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#FAFAFA"/>
+  <!-- Title -->
+  <text x="100" y="70" fill="#111111" font-family="system-ui,sans-serif" font-size="24" font-weight="700">GTM Engineer Career Trajectory</text>
+  <text x="100" y="100" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="15">Entry paths, growth milestones, and compensation progression</text>
+  <rect x="100" y="118" width="60" height="3" rx="1.5" fill="#FF4F1F"/>
+  <!-- Career ladder - stepped blocks -->
+  <!-- Entry level -->
+  <rect x="120" y="430" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1.5"/>
+  <text x="220" y="460" fill="#FF4F1F" font-family="system-ui,sans-serif" font-size="12" font-weight="600" text-anchor="middle">ENTRY</text>
+  <text x="220" y="482" fill="#111111" font-family="system-ui,sans-serif" font-size="15" font-weight="600" text-anchor="middle">SDR / Ops / Dev</text>
+  <text x="220" y="500" fill="#9B9B9B" font-family="system-ui,sans-serif" font-size="12" text-anchor="middle">53% self-taught</text>
+  <!-- Arrow -->
+  <path d="M330 470 L380 470" stroke="#FF4F1F" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Junior -->
+  <rect x="390" y="370" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="1.5"/>
+  <text x="490" y="400" fill="#FF4F1F" font-family="system-ui,sans-serif" font-size="12" font-weight="600" text-anchor="middle">JUNIOR</text>
+  <text x="490" y="422" fill="#111111" font-family="system-ui,sans-serif" font-size="15" font-weight="600" text-anchor="middle">GTM Engineer</text>
+  <text x="490" y="440" fill="#9B9B9B" font-family="system-ui,sans-serif" font-size="12" text-anchor="middle">$90K - $130K</text>
+  <!-- Arrow -->
+  <path d="M600 410 L650 410" stroke="#FF4F1F" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Senior -->
+  <rect x="660" y="300" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#FF4F1F" stroke-width="2"/>
+  <text x="760" y="330" fill="#FF4F1F" font-family="system-ui,sans-serif" font-size="12" font-weight="600" text-anchor="middle">SENIOR</text>
+  <text x="760" y="352" fill="#111111" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="middle">Sr. GTM Engineer</text>
+  <text x="760" y="370" fill="#9B9B9B" font-family="system-ui,sans-serif" font-size="12" text-anchor="middle">$150K - $200K</text>
+  <!-- Arrow -->
+  <path d="M870 340 L920 340" stroke="#FF4F1F" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Lead -->
+  <rect x="930" y="220" width="200" height="80" rx="8" fill="#FFF0EB" stroke="#FF4F1F" stroke-width="2"/>
+  <text x="1030" y="250" fill="#FF4F1F" font-family="system-ui,sans-serif" font-size="12" font-weight="600" text-anchor="middle">LEAD / STAFF</text>
+  <text x="1030" y="272" fill="#111111" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="middle">Lead GTM Engineer</text>
+  <text x="1030" y="290" fill="#9B9B9B" font-family="system-ui,sans-serif" font-size="12" text-anchor="middle">$180K - $250K</text>
+  <!-- Connecting gradient line -->
+  <line x1="220" y1="520" x2="1030" y2="310" stroke="#FF4F1F" stroke-width="1" opacity="0.15"/>
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#FF4F1F"/>
+    </marker>
+  </defs>
+  <!-- Stats row at bottom -->
+  <rect x="120" y="550" width="200" height="50" rx="6" fill="#FFFFFF" stroke="#F0F0F0" stroke-width="1"/>
+  <text x="220" y="572" fill="#FF4F1F" font-family="system-ui,sans-serif" font-size="18" font-weight="700" text-anchor="middle">5,205%</text>
+  <text x="220" y="590" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Job posting growth</text>
+  <rect x="500" y="550" width="200" height="50" rx="6" fill="#FFFFFF" stroke="#F0F0F0" stroke-width="1"/>
+  <text x="600" y="572" fill="#FF4F1F" font-family="system-ui,sans-serif" font-size="18" font-weight="700" text-anchor="middle">228</text>
+  <text x="600" y="590" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Practitioners surveyed</text>
+  <rect x="880" y="550" width="200" height="50" rx="6" fill="#FFFFFF" stroke="#F0F0F0" stroke-width="1"/>
+  <text x="980" y="572" fill="#FF4F1F" font-family="system-ui,sans-serif" font-size="18" font-weight="700" text-anchor="middle">$135K</text>
+  <text x="980" y="590" fill="#6B6B6B" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Median salary</text>
+</svg>

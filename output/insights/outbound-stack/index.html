@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>The Outbound Automation Stack for GTM Engineers - GTME Pulse</title>
+    <meta name="description" content="4-layer outbound stack breakdown: enrichment, sequencing, CRM, and analytics. Budget tiers from $500/mo to $5K+, with recommended tool combos. Updated weekly.">
+    <link rel="canonical" href="https://gtmepulse.com/insights/outbound-stack/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/insights/outbound-stack/">
+    <meta property="og:title" content="The Outbound Automation Stack for GTM Engineers - GTME Pulse">
+    <meta property="og:description" content="4-layer outbound stack breakdown: enrichment, sequencing, CRM, and analytics. Budget tiers from $500/mo to $5K+, with recommended tool combos. Updated weekly.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/insights-outbound-stack.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Outbound Automation Stack for GTM Engineers - GTME Pulse">
+    <meta name="twitter:description" content="4-layer outbound stack breakdown: enrichment, sequencing, CRM, and analytics. Budget tiers from $500/mo to $5K+, with recommended tool combos. Updated weekly.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/insights-outbound-stack.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://gtmepulse.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "Outbound Stack"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Outbound Automation Stack for GTM Engineers", "description": "4-layer outbound stack breakdown: enrichment, sequencing, CRM, and analytics. Budget tiers from $500/mo to $5K+, with recommended tool combos. Updated weekly.", "wordCount": 2300, "author": {"@type": "Person", "name": "Rome Thorndike", "url": "https://gtmepulse.com/about/"}, "publisher": {"@type": "Organization", "name": "GTME Pulse", "url": "https://gtmepulse.com"}, "datePublished": "2026-03-17", "dateModified": "2026-03-17", "url": "https://gtmepulse.com/insights/outbound-stack/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gtmepulse.com/insights/outbound-stack/"}}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/" class="active">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/insights/" class="breadcrumb-link">Insights</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Outbound Stack</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Playbook</div>
+        <h1>The Outbound Automation Stack for GTM Engineers</h1>
+        <p>The average GTM Engineer uses 5-8 tools. The best ones know which four layers matter, how to connect them, and where to spend based on budget. This is the architecture guide.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">4</span>
+        <span class="stat-label">Stack Layers</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5&#8209;8</span>
+        <span class="stat-label">Avg Tools Per GTME</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$500&#8209;$5K/mo</span>
+        <span class="stat-label">Typical Spend</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">Start with Clay</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
+
+    <h2>The 4-Layer Architecture</h2>
+    <p>Every outbound automation stack has four layers. Skip one and the whole system underperforms. Each layer has a specific job, and the tools you pick depend on budget, team size, and target market.</p>
+    <p><strong>Layer 1: Data Enrichment.</strong> This is where you build your target list and enrich it with contact data, firmographics, technographics, and intent signals. <a href="/insights/clay-ecosystem/">Clay</a> dominates this layer at 69% adoption. Apollo is the main alternative. The output of Layer 1 is a clean, enriched list of contacts with verified emails, company data, and ICP scores.</p>
+    <p><strong>Layer 2: Outbound Sequencing.</strong> This is where you send emails, manage follow-ups, and handle replies. <a href="/comparisons/instantly-vs-smartlead/">Instantly and Smartlead</a> own the startup and agency market. Outreach and Salesloft dominate enterprise. The output of Layer 2 is meetings booked from cold outbound.</p>
+    <p><strong>Layer 3: CRM.</strong> This is where deals live after the meeting is booked. <a href="/comparisons/hubspot-vs-salesforce/">HubSpot and Salesforce</a> are the two options for 90%+ of GTM teams. The CRM receives enriched contact data from Layer 1 and deal progression data from Layer 2. It's the system of record.</p>
+    <p><strong>Layer 4: Analytics.</strong> This is where you measure what's working. Reply rates, meeting rates, pipeline generated, revenue attributed. Most GTM Engineers cobble this together from CRM reports, sequencer dashboards, and spreadsheets. Dedicated analytics tools like Mixpanel or PostHog are rare in outbound stacks but growing.</p>
+
+    <h2>Stack by Budget: $500/mo Starter</h2>
+    <p>A solo GTM Engineer or early-stage startup can run effective outbound for $500/month. Here's the stack.</p>
+    <p><strong>Enrichment:</strong> Apollo ($99/mo). Apollo's built-in database gives you contact finding, email verification, and basic enrichment in one tool. You won't get waterfall enrichment or AI scoring, but for lists under 1,000 contacts/month, Apollo covers the basics. If you have more budget flexibility, Clay's Explorer plan ($149/mo) is worth the upgrade for the waterfall capability.</p>
+    <p><strong>Sequencing:</strong> Instantly ($37/mo). Instantly's Growth plan gives you unlimited email accounts, warmup, and basic A/B testing. Combined with 2-3 warmed-up Google Workspace accounts ($6/mo each), you have a functional sending infrastructure for under $60/month.</p>
+    <p><strong>CRM:</strong> HubSpot Free. HubSpot's free CRM handles contact management, deal tracking, and basic reporting. It's limited (no custom properties, minimal automation), but it works for teams under 5 people with fewer than 500 deals.</p>
+    <p><strong>Analytics:</strong> Google Sheets + HubSpot reports. At this budget, dedicated analytics tools aren't justified. Track your core metrics (emails sent, reply rate, meetings booked, pipeline value) in a weekly spreadsheet alongside HubSpot's built-in dashboards.</p>
+
+    <h2>Stack by Budget: $2K/mo Growth</h2>
+    <p>A funded startup with a dedicated GTM Engineer and real pipeline targets. This is where the stack gets powerful.</p>
+    <p><strong>Enrichment:</strong> Clay Pro ($349/mo) + one supplementary provider. Clay Pro gives you enough credits for 5,000-10,000 enrichments per month with waterfall flows across 3-4 providers. Add Hunter ($49/mo) or FullEnrich as a fallback source. The AI columns in Clay Pro let you score and personalize at scale.</p>
+    <p><strong>Sequencing:</strong> Instantly Growth ($97/mo) or Smartlead ($79/mo). At this tier, you need multi-sender rotation, advanced A/B testing, and deliverability analytics. Both tools handle it well. Instantly if you're running a single brand. <a href="/comparisons/instantly-vs-smartlead/">Smartlead if you're managing multiple brands</a> or client work.</p>
+    <p><strong>CRM:</strong> HubSpot Starter ($20/mo) or Salesforce Essentials ($25/user/mo). You need custom properties, basic workflow automation, and proper pipeline stages. HubSpot Starter is easier to configure. Salesforce gives you more flexibility and scales better past 10,000 contacts.</p>
+    <p><strong>Analytics:</strong> CRM reports + <a href="/tools/">tool-native dashboards</a>. Instantly and Smartlead both provide campaign analytics. HubSpot or Salesforce provide pipeline reporting. At $2K/mo, the gap is attribution: connecting which sequences generated which pipeline. Most GTM Engineers build this with custom CRM properties and a monthly analysis spreadsheet.</p>
+
+    <h2>Stack by Budget: $5K+/mo Enterprise</h2>
+    <p>A GTM team with 2-5 engineers, a full sales team, and enterprise compliance requirements.</p>
+    <p><strong>Enrichment:</strong> Clay Business ($800/mo) + ZoomInfo ($15K+/yr). Clay handles experimental workflows and waterfall enrichment. ZoomInfo provides the compliance-approved data source that procurement signed off on. Running both in parallel is common at this tier. ZoomInfo for approved outbound, Clay for everything else.</p>
+    <p><strong>Sequencing:</strong> Outreach or Salesloft ($100-150/user/mo). Enterprise sequencers offer manager dashboards, call integration, compliance recording, and CRM-native workflow triggers. They cost 3-5x more than Instantly but integrate with enterprise sales processes.</p>
+    <p><strong>CRM:</strong> Salesforce Professional ($80/user/mo) or HubSpot Professional ($800/mo). Full automation, custom objects, advanced reporting, and API access for custom integrations. At this budget, the CRM is the center of the GTM tech stack, not an afterthought.</p>
+    <p><strong>Analytics:</strong> Dedicated tooling. Mixpanel or Amplitude for product-led signals. Attribution tools like Dreamdata or HockeyStack for connecting outbound touches to revenue. At $5K+/mo, the analytics layer becomes its own competency.</p>
+
+    <h2>Clay + Instantly: The Default Stack Walkthrough</h2>
+    <p>The most common GTM Engineer stack is Clay + Instantly. Here's how they connect.</p>
+    <p><strong>Step 1: Build your list in Clay.</strong> Import target accounts from LinkedIn Sales Nav exports, CRM exports, or manual lists. Add enrichment columns: company size, industry, funding, technology stack, contact name, title, email.</p>
+    <p><strong>Step 2: Waterfall enrich.</strong> Add a waterfall enrichment column for email. Primary: Apollo. Fallback 1: Hunter. Fallback 2: FullEnrich. Run the table. Expect 70-85% email coverage depending on your target market (tech companies resolve higher than traditional industries).</p>
+    <p><strong>Step 3: Score and filter.</strong> Add an AI column to score each row against your ICP criteria. Filter to rows scoring above your threshold. A good ICP filter reduces your list by 30-50% but improves reply rates by 2-3x. Quality beats quantity in cold outbound.</p>
+    <p><strong>Step 4: Export to Instantly.</strong> Export the filtered list as CSV. Upload to Instantly. Map the columns (email, first name, company, custom variables). The custom variables power your personalization in email templates. For a step-by-step walkthrough, see our <a href="/insights/clay-playbook/">Clay playbook</a>.</p>
+    <p><strong>Step 5: Launch sequences.</strong> Build your multi-step sequence in Instantly. 3-5 emails over 14-21 days. Use the Clay-enriched variables for personalization (company name, industry, tech stack, recent news). Set up sender rotation across 3-5 email accounts to protect deliverability.</p>
+
+    <h2>Data Waterfall Strategy</h2>
+    <p>Waterfall enrichment is the single most impactful technique for outbound data quality. The concept is simple: try your best data source first, then fall back to the next if it misses.</p>
+    <p><strong>Primary source:</strong> Your highest-accuracy provider for the data point. For B2B emails, that's typically Apollo or Clearbit.</p>
+    <p><strong>Fallback 1:</strong> A different provider that covers gaps in your primary. Hunter finds emails through web scraping that database providers miss. FullEnrich aggregates 15+ sources.</p>
+    <p><strong>Fallback 2:</strong> A catch-all or manual research trigger. If two automated sources miss, flag for manual LinkedIn research or skip the contact entirely.</p>
+    <p><strong>Verification layer:</strong> Run all found emails through a verification service (ZeroBounce, NeverBounce, or MillionVerifier) before sending. Verification catches 5-10% of invalid emails that passed enrichment. Skipping verification destroys sender reputation.</p>
+    <p>This strategy typically recovers 15-30% more valid contacts than any single provider. At scale, that's hundreds of additional qualified prospects per month from the same target list. For more on <a href="/glossary/data-enrichment/">data enrichment concepts</a>, check the glossary.</p>
+
+    <h2>Deliverability Fundamentals</h2>
+    <p>The best enrichment and sequencing stack in the world means nothing if your emails land in spam. Deliverability is infrastructure, and GTM Engineers own it.</p>
+    <p><strong>Domain warmup:</strong> New sending domains need 2-4 weeks of gradual volume increase before hitting full capacity. Start with 5 emails/day per account, increase by 5/day each week. Use <a href="https://instantly.ai/blog/email-warmup" target="_blank" rel="noopener">Instantly's built-in warmup</a> or Smartlead's warmup pool.</p>
+    <p><strong>Domain rotation:</strong> Never send cold outbound from your primary company domain. Buy 3-5 lookalike domains (e.g., tryacme.com, getacme.io) and rotate sending across them. If one domain gets flagged, your primary domain stays clean.</p>
+    <p><strong>SPF, DKIM, DMARC:</strong> Three DNS records that authenticate your sending domains. SPF tells email servers which IPs can send from your domain. DKIM cryptographically signs your emails. DMARC tells receivers what to do with emails that fail SPF or DKIM checks. All three must be configured correctly. Missing any one of them drops inbox placement by 20-40%.</p>
+    <p>Deliverability is a topic deep enough for its own guide. See our <a href="/insights/email-deliverability/">email deliverability article</a> for the full technical breakdown.</p>
+
+    <h2>CRM Integration Patterns</h2>
+    <p>Getting enriched data into your CRM cleanly is harder than it sounds. The two dominant patterns depend on your CRM.</p>
+    <p><strong>HubSpot:</strong> Use Clay's native HubSpot integration or CSV import. Map enrichment fields to HubSpot contact properties. Create custom properties for data that HubSpot doesn't have natively (tech stack, ICP score, enrichment source). HubSpot's API is forgiving with data types and handles deduplication by email address automatically.</p>
+    <p><strong>Salesforce:</strong> More configuration required. Map Clay fields to Salesforce contact and account fields. Handle the contact-account relationship (Salesforce requires contacts to belong to accounts, which means you need to create or match accounts before importing contacts). Use <a href="https://www.smartlead.ai/blog/cold-email-outreach" target="_blank" rel="noopener">Salesforce Data Loader</a> or a middleware like Make/n8n for automated sync. Salesforce field validation rules can reject imports if data formats don't match exactly.</p>
+
+    <h2>Measuring Outbound Performance</h2>
+    <p>Three metrics matter. Everything else is vanity.</p>
+    <p><strong>Reply rate:</strong> The percentage of sent emails that receive a human reply (excluding auto-replies and bounces). Healthy cold outbound runs 3-8% reply rates. Below 2% means your list quality, messaging, or deliverability needs work. Above 10% is exceptional and usually signals strong ICP targeting.</p>
+    <p><strong>Meeting rate:</strong> The percentage of positive replies that convert to booked meetings. This measures your reply-to-meeting handoff. 40-60% is the benchmark. Lower numbers indicate slow follow-up (responding to interested replies within hours, not days, matters enormously) or weak qualification.</p>
+    <p><strong>Pipeline generated:</strong> The dollar value of opportunities created from outbound. This is the metric that justifies the entire stack. Track it monthly. Measure it against total stack cost. A healthy outbound operation generates 5-10x its tool cost in pipeline value. If your stack costs $2K/mo and generates less than $10K/mo in pipeline, something in the system is broken.</p>
+    <p>For the full tool directory, explore the <a href="/tools/">tools index</a>. For salary data on the people building these stacks, see the <a href="/salary/">salary index</a>.</p>
+
+<section class="related-links">
+    <h2>More Insights</h2>
+    <div class="related-links-grid">
+        <a href="/insights/" class="related-link-card">Insights Index</a>
+<a href="/insights/job-market-2026/" class="related-link-card">GTM Engineer Job Market: 2026 Analysis</a>
+<a href="/insights/salary-trends/" class="related-link-card">GTM Engineer Salary Trends: What the Data Shows</a>
+<a href="/insights/tool-adoption/" class="related-link-card">GTM Tool Adoption: Which Tools Are Winning</a>
+<a href="/insights/state-of-gtme-2026/" class="related-link-card">State of GTM Engineering 2026: Key Findings</a>
+<a href="/insights/clay-ecosystem/" class="related-link-card">The Clay Ecosystem: Who Builds What</a>
+<a href="/insights/clay-playbook/" class="related-link-card">Clay Playbook: Advanced Workflows That Work</a>
+<a href="/insights/linkedin-outreach/" class="related-link-card">LinkedIn Outreach for GTM Engineers: A Technical Guide</a>
+<a href="/insights/email-deliverability/" class="related-link-card">Email Deliverability for GTM Engineers</a>
+<a href="/insights/api-integration/" class="related-link-card">API Integration Patterns for GTM Engineers</a>
+<a href="/insights/enrichment-waterfall/" class="related-link-card">Data Enrichment Waterfall Strategy</a>
+<a href="/insights/hiring-guide/" class="related-link-card">GTM Engineer Hiring Guide for Managers</a>
+
+    </div>
+</section>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Weekly outbound stack insights and GTM tool recommendations.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

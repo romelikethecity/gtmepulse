@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Bombora Review 2026: Publisher Intent Data - GTME Pulse</title>
+    <meta name="description" content="Bombora review for GTM Engineers. Company Surge signals, topic taxonomy, integration options, signal noise, and how it compares to 6sense. Updated weekly.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/bombora-review/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/bombora-review/">
+    <meta property="og:title" content="Bombora Review 2026: Publisher Intent Data - GTME Pulse">
+    <meta property="og:description" content="Bombora review for GTM Engineers. Company Surge signals, topic taxonomy, integration options, signal noise, and how it compares to 6sense. Updated weekly.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/tools-bombora-review.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bombora Review 2026: Publisher Intent Data - GTME Pulse">
+    <meta name="twitter:description" content="Bombora review for GTM Engineers. Company Surge signals, topic taxonomy, integration options, signal noise, and how it compares to 6sense. Updated weekly.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/tools-bombora-review.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Bombora Review"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Bombora", "description": "Bombora review for GTM Engineers. Company Surge signals, topic taxonomy, integration options, signal noise, and how it compares to 6sense. Updated weekly.", "applicationCategory": "Intent Data", "operatingSystem": "Web", "url": "https://bombora.com", "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "Custom ($15K-$30K+/yr)", "description": "Custom ($15K-$30K+/yr)"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the difference between Bombora and 6sense?", "acceptedAnswer": {"@type": "Answer", "text": "Bombora is a data provider. You get topic-level intent signals and integrate them into your own tools. 6sense is a full platform that includes intent data, account identification, predictive scoring, and ABM orchestration. Bombora costs $15K-$30K/year for data. 6sense costs $25K-$100K+/year for the full platform. Many 6sense customers also use Bombora data within 6sense."}}, {"@type": "Question", "name": "Is Bombora data accurate?", "acceptedAnswer": {"@type": "Answer", "text": "At the company level, the surge signals are directionally useful. Bombora's data comes from 5,000+ publishers, which creates broad coverage. The accuracy question is about interpretation: 'surging on CRM' is a weak signal on its own. Combined with other signals (website visits, tech install data, hiring patterns), intent data becomes more actionable. Expect 20-30% of surging accounts to have genuine purchase intent."}}, {"@type": "Question", "name": "Do I need to buy Bombora directly?", "acceptedAnswer": {"@type": "Answer", "text": "Most GTM Engineers don't. If you use ZoomInfo, HubSpot (Enterprise), or Outreach, you likely have access to Bombora-powered intent data already. Check your existing tools before starting a direct Bombora sales conversation. Buy direct only if you need API access, the full topic taxonomy, or custom topic definitions."}}, {"@type": "Question", "name": "How do GTM Engineers use Bombora day-to-day?", "acceptedAnswer": {"@type": "Answer", "text": "The most common pattern: set up alerts for target accounts surging on 5-10 relevant topics, review surging accounts weekly, and prioritize outbound to the accounts showing the strongest signals. Some GTM Engineers build automated workflows in n8n or Make that pull Bombora data and auto-enroll surging accounts into outbound sequences."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Bombora Review</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Intent Data</div>
+        <h1>Bombora Review</h1>
+        <p>Custom ($15K-$30K+/yr)</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <h2>Overview</h2>
+    
+<p>Bombora is a B2B intent data provider that tracks topic-level content consumption across a cooperative network of 5,000+ publisher websites. When a company shows statistically significant interest in a topic (reading more articles about "CRM migration" than their baseline), Bombora flags it as a "Company Surge" signal. This data integrates with CRMs, marketing automation platforms, and sales engagement tools to help GTM teams prioritize accounts showing buying intent.</p>
+<p>Unlike 6sense (which is a full platform), Bombora is primarily a data layer. You access Bombora's intent signals through integrations with your existing tools. HubSpot, Salesforce, Outreach, 6sense, and dozens of other platforms have Bombora integrations. Some tools (like ZoomInfo and TrustRadius) bundle Bombora data into their own intent features. This means many GTM Engineers use Bombora-sourced intent data without realizing where it comes from.</p>
+<p>The product's value proposition is account prioritization. Instead of cold-calling a static list, your team focuses on companies actively researching topics related to your product. The data doesn't tell you who at the company is researching, only that the company as a whole is showing elevated interest in specific topics.</p>
+
+
+    <h2>GTM Engineer Use Cases</h2>
+    
+<ul>
+    <li><strong>Account prioritization based on topic surge signals.</strong> Filter your target account list by Bombora surge scores. Accounts surging on topics relevant to your product (e.g., "sales automation," "data enrichment," "CRM implementation") get outbound attention first.</li>
+    <li><strong>Trigger-based outbound sequences.</strong> Configure your sales engagement tool to auto-enroll accounts into outbound sequences when their Bombora surge score crosses a threshold. This turns static lists into dynamic, signal-driven outreach.</li>
+    <li><strong>Content personalization based on research topics.</strong> If Bombora shows a company is surging on "email deliverability," your outbound messaging to that account focuses on deliverability pain points. Topic-level data enables message-to-intent matching.</li>
+    <li><strong>Competitive intelligence at the account level.</strong> Bombora's topic taxonomy includes competitor brand names. Track which accounts are researching your competitors to trigger displacement campaigns or competitive battle card distribution to reps.</li>
+    <li><strong>Marketing campaign targeting.</strong> Build LinkedIn and display ad audiences from accounts showing intent. Coordinate ads (air cover) with outbound (ground game) for accounts in active research phases.</li>
+</ul>
+
+
+    <h2>Pricing Breakdown</h2>
+    
+<table class="data-table">
+    <thead><tr><th>Access Method</th><th>Price</th><th>Data</th><th>Notes</th></tr></thead>
+    <tbody>
+        <tr><td>Through partner tools</td><td>Varies</td><td>Filtered surge data</td><td>ZoomInfo, HubSpot, Outreach include Bombora data on certain plans</td></tr>
+        <tr><td>Direct (Bombora Surge)</td><td>~$15K-$30K/yr</td><td>Full topic taxonomy</td><td>Custom segments, API access, direct data feed</td></tr>
+        <tr><td>Data Co-op membership</td><td>Free (exchange)</td><td>Reciprocal</td><td>Contribute your content engagement data to receive intent data back</td></tr>
+    </tbody>
+</table>
+<p>Bombora's pricing is as opaque as 6sense's. Direct contracts start around $15K-$30K/year depending on the number of topics tracked, account volume, and integration requirements. Most GTM Engineers access Bombora data indirectly through tools that bundle it (ZoomInfo, HubSpot, TrustRadius), which means the cost is embedded in those tool subscriptions.</p>
+<p>The co-op model is worth understanding. Bombora's data comes from publishers who share their audience's content consumption patterns in exchange for receiving intent data back. This creates the network effect that makes Bombora's data valuable, but it also means the data quality depends on which publishers participate and how they tag content.</p>
+
+    
+
+    <h2>Honest Criticism</h2>
+    
+<p>Topic-level intent is inherently noisy. A company "surging" on "CRM" could mean their IT team is reading about CRM security, their intern is writing a college paper, or their VP of Sales is evaluating a switch. Bombora can't distinguish between a blog reader and a buying committee member. The signal tells you a company is consuming more content on a topic than usual. It doesn't tell you why, who, or whether a purchase is imminent.</p>
+<p>The topic taxonomy requires significant filtering to be actionable. Bombora tracks thousands of topics, and selecting the right ones for your use case requires experimentation. Too broad (e.g., "software") and every company surges. Too narrow (e.g., "Clay enrichment alternatives") and the signal volume drops to zero. Finding the right topic combination takes weeks of testing, and the optimal set changes as your market evolves.</p>
+<p>Attribution is difficult. Bombora will tell you that 40 accounts were surging before they entered your pipeline, but proving that the surge data caused your team to prioritize those accounts (rather than discovering them through other channels) is nearly impossible. The ROI calculation relies on correlation, not causation, which makes budget justification harder than tools with direct attribution like form fills or demo requests.</p>
+
+
+    <h2>Verdict</h2>
+    
+<p>Bombora provides useful signals for account prioritization, but it's a supporting data layer, not a standalone solution. The intent data works best when layered on top of direct engagement signals (website visits, content downloads, demo requests) to add context about what accounts are researching beyond your owned properties.</p>
+<p>Access Bombora through tools you already pay for (ZoomInfo, HubSpot, Outreach) before buying a direct contract. If your existing tools already include Bombora data, configure topic-based alerts and test whether the surge signals improve your outbound conversion rates. Only buy direct if you need the full topic taxonomy, custom segments, or API access for programmatic workflows.</p>
+
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">What's the difference between Bombora and 6sense?</h3>
+    <p class="faq-answer">Bombora is a data provider. You get topic-level intent signals and integrate them into your own tools. 6sense is a full platform that includes intent data, account identification, predictive scoring, and ABM orchestration. Bombora costs $15K-$30K/year for data. 6sense costs $25K-$100K+/year for the full platform. Many 6sense customers also use Bombora data within 6sense.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is Bombora data accurate?</h3>
+    <p class="faq-answer">At the company level, the surge signals are directionally useful. Bombora's data comes from 5,000+ publishers, which creates broad coverage. The accuracy question is about interpretation: 'surging on CRM' is a weak signal on its own. Combined with other signals (website visits, tech install data, hiring patterns), intent data becomes more actionable. Expect 20-30% of surging accounts to have genuine purchase intent.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Do I need to buy Bombora directly?</h3>
+    <p class="faq-answer">Most GTM Engineers don't. If you use ZoomInfo, HubSpot (Enterprise), or Outreach, you likely have access to Bombora-powered intent data already. Check your existing tools before starting a direct Bombora sales conversation. Buy direct only if you need API access, the full topic taxonomy, or custom topic definitions.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How do GTM Engineers use Bombora day-to-day?</h3>
+    <p class="faq-answer">The most common pattern: set up alerts for target accounts surging on 5-10 relevant topics, review surging accounts weekly, and prioritize outbound to the accounts showing the strongest signals. Some GTM Engineers build automated workflows in n8n or Make that pull Bombora data and auto-enroll surging accounts into outbound sequences.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>More Tool Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/apollo-review/" class="related-link-card">Apollo.io Review</a>
+<a href="/tools/zoominfo-review/" class="related-link-card">ZoomInfo Review</a>
+<a href="/tools/clearbit-review/" class="related-link-card">Clearbit Review</a>
+<a href="/tools/fullenrich-review/" class="related-link-card">FullEnrich Review</a>
+<a href="/tools/lusha-review/" class="related-link-card">Lusha Review</a>
+<a href="/tools/cognism-review/" class="related-link-card">Cognism Review</a>
+<a href="/tools/leadiq-review/" class="related-link-card">LeadIQ Review</a>
+<a href="/tools/persana-review/" class="related-link-card">Persana AI Review</a>
+<a href="/tools/instantly-review/" class="related-link-card">Instantly Review</a>
+<a href="/tools/smartlead-review/" class="related-link-card">Smartlead Review</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Intent Data tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

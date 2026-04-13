@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Make vs Zapier 2026: Power vs Simplicity - GTME Pulse</title>
+    <meta name="description" content="Make vs Zapier comparison for GTM Engineers. Workflow complexity, pricing at scale, and why technical users are leaving Zapier behind. Updated weekly.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/make-vs-zapier/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/make-vs-zapier/">
+    <meta property="og:title" content="Make vs Zapier 2026: Power vs Simplicity - GTME Pulse">
+    <meta property="og:description" content="Make vs Zapier comparison for GTM Engineers. Workflow complexity, pricing at scale, and why technical users are leaving Zapier behind. Updated weekly.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/tools-make-vs-zapier.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Make vs Zapier 2026: Power vs Simplicity - GTME Pulse">
+    <meta name="twitter:description" content="Make vs Zapier comparison for GTM Engineers. Workflow complexity, pricing at scale, and why technical users are leaving Zapier behind. Updated weekly.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/tools-make-vs-zapier.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Make vs Zapier"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I migrate my Zaps to Make?", "acceptedAnswer": {"@type": "Answer", "text": "There's no direct migration tool. You'll need to rebuild each Zap as a Make scenario. For simple Zaps (2-3 steps), this takes 10-15 minutes each. For complex multi-step Zaps, plan 30-60 minutes. Make has templates for common workflows that accelerate migration."}}, {"@type": "Question", "name": "Is Zapier ever the better choice for GTM Engineers?", "acceptedAnswer": {"@type": "Answer", "text": "Rarely. The main scenario: you need a niche integration that only Zapier supports and building a custom HTTP connection in Make isn't worth the effort. For everything else, Make is better for technical users."}}, {"@type": "Question", "name": "Which is better for connecting to Clay?", "acceptedAnswer": {"@type": "Answer", "text": "Both work. Clay has native integrations with both Make and Zapier. Make's integration is more flexible because Make handles complex data structures (nested JSON, arrays) better than Zapier. If your Clay workflow outputs complex data, Make processes it more cleanly."}}, {"@type": "Question", "name": "Does Zapier's AI workflow builder replace the need for Make?", "acceptedAnswer": {"@type": "Answer", "text": "No. Zapier's AI generates simple, linear workflows. It can't build the branching, looping, and error-handling logic that Make (or n8n) provides. The AI builder is a convenience for simple automations, not a replacement for visual workflow design."}}, {"@type": "Question", "name": "Why are GTM Engineers moving away from Zapier?", "acceptedAnswer": {"@type": "Answer", "text": "Three reasons: cost (Zapier is 3-5x more expensive at scale), capability (Zapier can't handle complex workflows), and control (no self-hosting, limited error handling). The trend toward n8n and Make reflects GTM Engineers' preference for tools that scale with their technical ambitions."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Make vs Zapier</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Workflow Automation</div>
+        <h1>Make vs Zapier</h1>
+        <p>Head-to-head comparison with feature tables, pricing, and a clear recommendation.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p>Make and Zapier are both cloud-hosted automation platforms, but they serve different user profiles. Zapier is the automation tool for non-technical users: simple triggers, actions, and if/then logic. Make is the automation tool for power users: complex workflows with data transformation, branching, iteration, and error handling. For GTM Engineers, Make replaced Zapier in most stacks because Zapier's simplicity becomes a limitation at scale.</p>
+<p>Zapier pioneered the automation category and remains the most widely known tool. Over 7,000 integrations make it the broadest connector in the market. But integration count isn't everything. When your workflow needs to loop through an array, transform JSON, handle errors gracefully, or execute conditional logic with more than two branches, Zapier starts breaking down.</p>
+<p>This comparison helps GTM Engineers decide whether Zapier's simplicity is enough or whether Make's power justifies the learning curve.</p>
+
+    <h2>Feature Comparison</h2>
+    <div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>Make (Integromat)</th><th>Zapier</th></tr>
+</thead>
+<tbody>
+<tr><td>Visual Builder</td><td>Flowchart-style (advanced)</td><td>Linear step-by-step</td></tr>
+<tr><td>Pricing Model</td><td>Per-operation ($9-$299/mo)</td><td>Per-task ($0-$599/mo)</td></tr>
+<tr><td>Free Tier</td><td>1,000 ops/month</td><td>100 tasks/month (5 Zaps)</td></tr>
+<tr><td>Integrations</td><td>1,800+</td><td>7,000+</td></tr>
+<tr><td>Branching Logic</td><td>Unlimited branches + routers</td><td>Paths (limited, paid feature)</td></tr>
+<tr><td>Loops/Iteration</td><td>Full array iteration</td><td>Limited (Looping add-on)</td></tr>
+<tr><td>Error Handling</td><td>Error routes + retry logic</td><td>Basic retry (no custom error routing)</td></tr>
+<tr><td>Data Transformation</td><td>Built-in functions + JSON manipulation</td><td>Formatter tool (basic)</td></tr>
+<tr><td>Code Steps</td><td>JavaScript</td><td>JavaScript + Python (Code by Zapier)</td></tr>
+<tr><td>Execution Speed</td><td>Real-time or scheduled</td><td>1-15 min polling (or instant for webhooks)</td></tr>
+<tr><td>Webhook Support</td><td>Native (instant triggers)</td><td>Webhooks by Zapier (addon)</td></tr>
+<tr><td>Best For</td><td>Complex multi-step automations</td><td>Simple point-to-point integrations</td></tr>
+</tbody>
+</table></div>
+
+    <h2>Where Make Wins</h2>
+<p>Workflow complexity is where Make pulls away. Make's flowchart builder supports routers (split one path into many), iterators (loop through arrays), aggregators (combine multiple results into one), and error handlers (catch failures and reroute). Zapier's linear step-by-step builder can't express this level of complexity. If your workflow has a single trigger and a single action, Zapier works fine. If it has conditional branches, loops, and error recovery, you need Make.</p>
+<p>Data transformation is built into Make's DNA. Every module includes a data mapping panel where you can apply functions (substring, math, date formatting, JSON parsing) inline. Zapier's Formatter tool handles basic transformations, but anything beyond simple text manipulation requires Code by Zapier steps, which are clunky and have execution limits.</p>
+<p>Real-time execution gives Make an edge for time-sensitive workflows. Make webhooks trigger instantly. Zapier's polling triggers check for new data every 1-15 minutes depending on your plan. When a lead fills out a form and you want to enrich and route them to a sales rep immediately, that 15-minute delay on Zapier's free tier is a dealbreaker.</p>
+<p>Cost per operation is lower. Make counts operations (each step in a workflow = 1 operation). Zapier counts tasks (each action = 1 task, but multi-step Zaps count each step). At equivalent complexity, Make's per-operation cost is typically 30-50% lower than Zapier's per-task cost. The gap widens with workflow complexity.</p>
+
+    <h2>Where Zapier Wins</h2>
+<p>Integration breadth is Zapier's moat. 7,000+ apps vs Make's 1,800+. If you need to connect a niche tool (a specific helpdesk, a regional CRM, a vertical SaaS product), Zapier is more likely to have a pre-built connector. For GTM Engineers, most critical tools (Clay, Apollo, HubSpot, Salesforce, Instantly, Slack) are available on both. But edge cases favor Zapier.</p>
+<p>Simplicity is a feature for teams where the GTM Engineer isn't the only person building automations. Zapier's "when this happens, do that" mental model is intuitive enough for sales reps, marketing managers, and founders to build their own Zaps. Make's flowchart builder requires more training. If you want your team to self-serve on simple automations, Zapier has a lower barrier to entry.</p>
+<p>Zapier's AI features (natural language workflow creation) are ahead of Make's. You can describe what you want in plain English, and Zapier generates a draft workflow. It's not perfect, but for simple Zaps, it reduces setup time. This matters for quick, throwaway automations that don't justify 30 minutes of manual configuration.</p>
+<p>Brand recognition and community size mean more templates, more tutorials, and more third-party guides. When you Google "how to connect [tool] to [tool]," Zapier results dominate. This unofficial documentation layer makes troubleshooting faster.</p>
+
+    <h2>Pricing Breakdown</h2>
+<p>Zapier pricing: Free (100 tasks/mo, 5 Zaps), Starter ($29.99/mo for 750 tasks), Professional ($73.50/mo for 2,000 tasks), Team ($103.50/mo for 2,000 tasks + team features), Enterprise (custom). Multi-step Zaps (more than 2 steps) require Starter or above. Paths (branching) require Professional. Extra tasks cost roughly $0.01-$0.05 each depending on plan.</p>
+<p>Make pricing: Free (1,000 ops/mo), Core ($9/mo for 10,000 ops), Pro ($16/mo for 10,000 ops + advanced features), Teams ($29/mo/user), Enterprise (custom). Make's free tier gives 10x the operations of Zapier's free tier. Make's Core plan ($9/mo) includes more operations than Zapier's Starter ($29.99/mo).</p>
+<p>The pricing gap is significant at every tier. For 10,000 operations/month, Make costs $9-$16. Zapier costs $73.50+ (Professional, needed for multi-step + paths). At 100,000 operations/month, Make costs $97. Zapier costs $500+. GTM Engineers running enrichment pipelines, CRM syncs, and notification workflows easily hit 50,000-100,000 operations per month. At those volumes, Zapier is 3-5x more expensive than Make for similar capabilities.</p>
+    
+
+    <h2>The Verdict</h2>
+<p>Use Make if you're a GTM Engineer building any automation more complex than a two-step workflow. Make's visual builder, data transformation capabilities, error handling, and pricing make it the clear choice for technical users. The learning curve over Zapier is a few hours at most, and the payoff is enormous in workflow power and cost savings.</p>
+<p>Use Zapier only if: (1) you need an integration that Make doesn't have, (2) non-technical team members need to build their own simple automations, or (3) you're building a one-off, two-step integration that doesn't justify learning a new tool. These scenarios exist, but they're increasingly rare as Make's integration library grows.</p>
+<p>For most GTM Engineers, the real comparison is Make vs n8n, not Make vs Zapier. Zapier has fallen behind for technical users. If you're still on Zapier, switching to Make saves money immediately and opens up workflow capabilities you didn't have before. If you're evaluating both, skip Zapier and compare Make vs n8n instead.</p>
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Can I migrate my Zaps to Make?</h3>
+    <p class="faq-answer">There's no direct migration tool. You'll need to rebuild each Zap as a Make scenario. For simple Zaps (2-3 steps), this takes 10-15 minutes each. For complex multi-step Zaps, plan 30-60 minutes. Make has templates for common workflows that accelerate migration.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is Zapier ever the better choice for GTM Engineers?</h3>
+    <p class="faq-answer">Rarely. The main scenario: you need a niche integration that only Zapier supports and building a custom HTTP connection in Make isn't worth the effort. For everything else, Make is better for technical users.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Which is better for connecting to Clay?</h3>
+    <p class="faq-answer">Both work. Clay has native integrations with both Make and Zapier. Make's integration is more flexible because Make handles complex data structures (nested JSON, arrays) better than Zapier. If your Clay workflow outputs complex data, Make processes it more cleanly.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Does Zapier's AI workflow builder replace the need for Make?</h3>
+    <p class="faq-answer">No. Zapier's AI generates simple, linear workflows. It can't build the branching, looping, and error-handling logic that Make (or n8n) provides. The AI builder is a convenience for simple automations, not a replacement for visual workflow design.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Why are GTM Engineers moving away from Zapier?</h3>
+    <p class="faq-answer">Three reasons: cost (Zapier is 3-5x more expensive at scale), capability (Zapier can't handle complex workflows), and control (no self-hosting, limited error handling). The trend toward n8n and Make reflects GTM Engineers' preference for tools that scale with their technical ambitions.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>Related Comparisons & Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/make-review/" class="related-link-card">Make Review</a>
+<a href="/tools/zapier-review/" class="related-link-card">Zapier Review</a>
+<a href="/tools/make-vs-n8n/" class="related-link-card">Make vs n8n</a>
+<a href="/tools/category/workflow-automation/" class="related-link-card">Workflow Automation</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Make vs Zapier updates and GTM tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>State of GTM Engineering 2026: Report Analysis - GTME Pulse</title>
+    <meta name="description" content="Editorial analysis of the State of GTM Engineering Report 2026. Key takeaways, surprises, methodology, and what the data means. Updated weekly. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/benchmarks/report-summary/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/benchmarks/report-summary/">
+    <meta property="og:title" content="State of GTM Engineering 2026: Report Analysis - GTME Pulse">
+    <meta property="og:description" content="Editorial analysis of the State of GTM Engineering Report 2026. Key takeaways, surprises, methodology, and what the data means. Updated weekly. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/benchmarks-report-summary.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="State of GTM Engineering 2026: Report Analysis - GTME Pulse">
+    <meta name="twitter:description" content="Editorial analysis of the State of GTM Engineering Report 2026. Key takeaways, surprises, methodology, and what the data means. Updated weekly. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/benchmarks-report-summary.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Benchmarks", "item": "https://gtmepulse.com/benchmarks/"}, {"@type": "ListItem", "position": 3, "name": "Report Summary"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the State of GTM Engineering Report?", "acceptedAnswer": {"@type": "Answer", "text": "The State of GTM Engineering Report 2026 is the first industry-wide survey of GTM Engineers, conducted by OneGTM (Garrett Wolfe, Alex Lindahl, Maja Voje). It surveyed 228 practitioners across 32 countries on salary, tools, career satisfaction, bottlenecks, and predictions for the role."}}, {"@type": "Question", "name": "Is this report vendor-neutral?", "acceptedAnswer": {"@type": "Answer", "text": "The original report was produced by OneGTM, not by any tool vendor. GTME Pulse analysis is independently written with no vendor funding or editorial influence. When we critique tools (Clay frustrations, Unify adoption questions), no vendor reviewed or approved our analysis."}}, {"@type": "Question", "name": "What were the biggest surprises in the report?", "acceptedAnswer": {"@type": "Answer", "text": "Three findings stood out: the bimodal coding distribution (practitioners either code daily or never code, with almost no middle ground), the 45% company understanding rate (more than half of employers don't understand the role they hired for), and the low RevOps convergence prediction (only 9.6% think the roles merge). Each challenges common assumptions about the field."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/" class="active">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/" class="active">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/benchmarks/" class="breadcrumb-link">Benchmarks</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Report Summary</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Industry Benchmarks</div>
+        <h1>State of GTM Engineering 2026: Analysis</h1>
+        <p>Our take on the first comprehensive survey of GTM Engineers. What the data says, what surprised us, and what it means for your career in 2026.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">228</span>
+        <span class="stat-label">Respondents</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$132K</span>
+        <span class="stat-label">Median Salary</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">84%</span>
+        <span class="stat-label">Clay Adoption</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">5,205%</span>
+        <span class="stat-label">Job Growth</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <h2>What the Report Confirms</h2>
+    <p>Some findings confirmed what practitioners already knew. Clay at 84% adoption isn't a surprise to anyone who's worked in GTM Engineering for six months. The $132K median salary matches the range visible in job postings. AI coding tools at 71% aligns with the visible explosion of Cursor and Claude Code adoption across tech.</p>
+    <p>The confirmation matters anyway. Anecdote becomes data at n=228. When a GTM Engineer negotiates salary, "I've seen people make around $130K" is weaker than "the median across 228 practitioners is $132K." The report gives practitioners specific numbers to cite in conversations with hiring managers and leadership.</p>
+    <p>CRM adoption at 92% also confirms something we expected: GTM Engineers work within CRM ecosystems, not outside them. The small minority without CRM access are either early-stage agencies or consultants whose clients own the CRM. As a career choice, learning HubSpot or Salesforce administration is nearly mandatory.</p>
+
+    <h2>What Surprised Us</h2>
+    <p>Three findings challenged our assumptions.</p>
+    <p><strong>The bimodal coding distribution.</strong> We expected a normal distribution: some people code a lot, most code a little, some don't code at all. Instead, the data shows two distinct peaks. About 40% code daily or weekly. About 45% never code. The middle barely exists. This suggests the role is already splitting into two tracks (operators and engineers) faster than we thought.</p>
+    <p><strong>45% company understanding.</strong> We expected somewhere around 60-65% of companies to understand the GTM Engineer role, especially given how much hiring activity we've tracked. 45% is lower than that. More than half of the practitioners building pipeline infrastructure are doing it at companies that can't define the role. This has real implications for career growth, budget allocation, and reporting structure.</p>
+    <p><strong>9.6% RevOps convergence.</strong> The hot take on LinkedIn is that GTM Engineering and RevOps will merge. Only 9.6% of practitioners think this happens. The rest see the roles as fundamentally different. GTM Engineers build systems; RevOps manages processes. The overlap is in tools and data, not in the work itself. We agree with the 90.4%.</p>
+
+    <h2>Our Interpretation</h2>
+    <p>This report captures a role in transition. GTM Engineering has moved past the "is this a real job?" phase (yes, $132K median and 5,205% job growth, it's real) and into the "what kind of job is it?" phase. The answer, based on this data, is that it's becoming two jobs.</p>
+    <p>Track one: the operator. Works primarily in no-code tools, manages existing workflows, focuses on execution. Earns around $110K, stays within established playbooks, excels at speed and consistency. This track is closer to traditional sales ops or RevOps.</p>
+    <p>Track two: the engineer. Writes Python, builds custom integrations, architects new systems. Earns around $155K, creates capabilities that didn't exist before, works at the intersection of engineering and go-to-market. This track is closer to a software engineering role with domain expertise.</p>
+    <p>Both tracks are valid. Both are well-compensated. But the $45K gap between them will drive more practitioners toward coding, especially as AI tools make Python accessible to non-developers. Over the next 2-3 years, expect the bimodal distribution to shift as more operators pick up coding skills through AI-assisted development.</p>
+
+    <h2>Methodology Assessment</h2>
+    <p>228 respondents is a meaningful sample for a role this new. For comparison, many established software engineering salary surveys (Levels.fyi, Stack Overflow) started with similar or smaller samples. The data is directionally accurate for aggregate patterns (median salary, tool adoption, demographic distribution) but should be interpreted with caution for small subgroups (salary by specific city, adoption rates for niche tools).</p>
+    <p>Self-selection bias is the main limitation. Respondents came from GTM Engineering communities on LinkedIn and Slack. Practitioners who are active in these communities may earn differently, use different tools, and hold different opinions than those who aren't. The median salary, for example, might be inflated by community-engaged practitioners who tend to be higher-performing.</p>
+    <p>Geographic bias is the second limitation. 58% US-based means the salary data skews toward US compensation levels. Global salary patterns (especially for emerging markets like India and Latin America) are based on smaller subsamples.</p>
+    <p>Credit to Garrett Wolfe, Alex Lindahl, and Maja Voje at OneGTM for designing and executing this survey. Before this report, every claim about GTM Engineering compensation, tool adoption, and career paths was anecdotal. Now we have a baseline.</p>
+
+    <h2>What's Missing</h2>
+    <p>The report doesn't cover everything. A few gaps we'd like to see addressed in future editions.</p>
+    <p>Longitudinal data. We need year-over-year comparisons. Is the $132K median going up or down? Is Clay adoption peaking or still climbing? One year of data establishes a baseline. Two years shows a trend.</p>
+    <p>Company-side data. We heard from practitioners but not from hiring managers. What do companies think they're paying for? How do they evaluate GTM Engineer performance? What's the ROI calculation that justifies a $175K hire?</p>
+    <p>Tool ROI data. We know what tools people use. We don't know which tools produce the best pipeline outcomes. Adoption rates measure popularity, not effectiveness. A future survey that connects tool usage to pipeline metrics would be valuable.</p>
+    <p>Detailed agency economics. The report touches on agency vs. in-house differences, but a deeper dive into agency business models, client acquisition costs, and revenue per employee would help the growing agency segment benchmark their operations.</p>
+    <p>For the raw numbers behind this analysis, see the <a href="/benchmarks/50-stats/">50 key statistics</a> page. For the demographic breakdown, see <a href="/benchmarks/demographics/">survey demographics</a>. For predictions about where this role goes next, see <a href="/benchmarks/future-predictions/">future predictions</a>.</p>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">What is the State of GTM Engineering Report?</h3>
+    <p class="faq-answer">The State of GTM Engineering Report 2026 is the first industry-wide survey of GTM Engineers, conducted by OneGTM (Garrett Wolfe, Alex Lindahl, Maja Voje). It surveyed 228 practitioners across 32 countries on salary, tools, career satisfaction, bottlenecks, and predictions for the role.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is this report vendor-neutral?</h3>
+    <p class="faq-answer">The original report was produced by OneGTM, not by any tool vendor. GTME Pulse analysis is independently written with no vendor funding or editorial influence. When we critique tools (Clay frustrations, Unify adoption questions), no vendor reviewed or approved our analysis.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What were the biggest surprises in the report?</h3>
+    <p class="faq-answer">Three findings stood out: the bimodal coding distribution (practitioners either code daily or never code, with almost no middle ground), the 45% company understanding rate (more than half of employers don't understand the role they hired for), and the low RevOps convergence prediction (only 9.6% think the roles merge). Each challenges common assumptions about the field.</p>
+</div>
+
+</section>
+<section class="related-links">
+    <h2>Related Benchmark Data</h2>
+    <div class="related-links-grid">
+        <a href="/benchmarks/" class="related-link-card">Benchmarks Index</a>
+<a href="/benchmarks/50-stats/" class="related-link-card">50 Key GTM Engineering Stats</a>
+<a href="/benchmarks/demographics/" class="related-link-card">Survey Demographics</a>
+<a href="/benchmarks/operator-vs-engineer/" class="related-link-card">Operator vs Engineer Divide</a>
+<a href="/benchmarks/bottlenecks/" class="related-link-card">GTM Engineering Bottlenecks</a>
+<a href="/benchmarks/company-understanding/" class="related-link-card">Company Understanding</a>
+<a href="/benchmarks/learning-resources/" class="related-link-card">Learning Resources</a>
+<a href="/benchmarks/headcount-trends/" class="related-link-card">Headcount Trends</a>
+<a href="/benchmarks/future-predictions/" class="related-link-card">Future Predictions</a>
+<a href="/salary/" class="related-link-card">Salary Data Index</a>
+<a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/careers/" class="related-link-card">Career Guides</a>
+
+    </div>
+</section>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get our analysis of GTM Engineering trends every week.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Email Infrastructure Setup: Domains, Inboxes, Rotation - GTME Pulse</title>
+    <meta name="description" content="Complete email infrastructure setup for cold outbound. Domain purchasing, mailbox provisioning, and inbox rotation patterns. Updated weekly. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/insights/email-infrastructure-setup-guide/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/insights/email-infrastructure-setup-guide/">
+    <meta property="og:title" content="Email Infrastructure Setup: Domains, Inboxes, Rotation - GTME Pulse">
+    <meta property="og:description" content="Complete email infrastructure setup for cold outbound. Domain purchasing, mailbox provisioning, and inbox rotation patterns. Updated weekly. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/insights-email-infrastructure-setup-guide.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Email Infrastructure Setup: Domains, Inboxes, Rotation - GTME Pulse">
+    <meta name="twitter:description" content="Complete email infrastructure setup for cold outbound. Domain purchasing, mailbox provisioning, and inbox rotation patterns. Updated weekly. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/insights-email-infrastructure-setup-guide.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://gtmepulse.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "Email Infrastructure Setup"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Email Infrastructure Setup: Domains, Inboxes, Rotation", "description": "Complete email infrastructure setup for cold outbound. Domain purchasing, mailbox provisioning, and inbox rotation patterns. Updated weekly. Independent.", "wordCount": 2300, "author": {"@type": "Person", "name": "Rome Thorndike", "url": "https://gtmepulse.com/about/"}, "publisher": {"@type": "Organization", "name": "GTME Pulse", "url": "https://gtmepulse.com"}, "datePublished": "2026-04-02", "dateModified": "2026-04-02", "url": "https://gtmepulse.com/insights/email-infrastructure-setup-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gtmepulse.com/insights/email-infrastructure-setup-guide/"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much per month?", "acceptedAnswer": {"@type": "Answer", "text": "5-domain setup: $4-5/month domains, $72/month Google Workspace (10 mailboxes), $30-97/month outbound tool. Total: $106-174/month for 500-750 emails/day."}}, {"@type": "Question", "name": "Google Workspace or Microsoft 365?", "acceptedAnswer": {"@type": "Answer", "text": "Google has slight edge: better Postmaster Tools, more outbound tool integrations. Microsoft fine for Outlook-heavy audiences."}}, {"@type": "Question", "name": "How many mailboxes?", "acceptedAnswer": {"@type": "Answer", "text": "Each handles 50-75 cold/day. For 300/day: 4-6 mailboxes. For 500/day: 7-10. Spread across domains."}}, {"@type": "Question", "name": "Single domain, many mailboxes?", "acceptedAnswer": {"@type": "Answer", "text": "Don't. One blacklist takes all mailboxes down. Multiple domains isolate risk. $9/year per domain buys significant resilience."}}, {"@type": "Question", "name": "When to add more?", "acceptedAnswer": {"@type": "Answer", "text": "When existing mailboxes run 80%+ capacity for 2+ weeks. Plan 4-6 weeks ahead for warm-up time."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/" class="active">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/insights/" class="breadcrumb-link">Insights</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Email Infrastructure Setup</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Guide</div>
+        <h1>Email Infrastructure Setup: Domains, Inboxes, Rotation</h1>
+        <p>The plumbing behind every cold outbound operation. Set it up right once and it runs for months.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | April 2026</p>
+
+    <h2>Infrastructure Before Copy</h2>
+    <p>Email infrastructure takes 3-4 weeks to set up properly. Copy takes 2-3 hours. Start infrastructure on Day 1 and write your sequences while domains warm up. Teams that skip infrastructure and launch campaigns on their primary domain learn this lesson the expensive way when their main business email gets flagged for spam.</p>
+    <p>The components: sending domains, mailboxes, DNS authentication, outbound tool, warm-up, and monitoring. Each one has specific requirements. Skip any component and the system breaks. See the <a href="/insights/cold-email-deliverability-guide/">deliverability guide</a> for DNS configuration and the <a href="/insights/email-warm-up-strategy-2026/">warm-up guide</a> for volume ramp schedules.</p>
+
+    <h2>Capacity Planning</h2>
+    <p>Your target daily volume determines everything else: how many domains, how many mailboxes, what outbound tool plan, and total monthly cost.</p>
+    <p><strong>200 emails/day:</strong> 3 domains, 6 mailboxes (2 per domain). This handles a single-rep outbound operation or a startup's first cold email campaign. Monthly cost: $27/month domains + $43/month mailboxes + $30-97/month outbound tool = $100-167 total.</p>
+    <p><strong>500 emails/day:</strong> 5 domains, 10 mailboxes. Standard for a 2-3 person GTM team. Monthly cost: $45/month domains + $72/month mailboxes + $97-177/month outbound tool = $214-294 total.</p>
+    <p><strong>1,000 emails/day:</strong> 8-10 domains, 16-30 mailboxes. Requires dedicated ops attention. Use <a href="/tools/instantly-review/">Instantly</a> Growth ($97/month) or <a href="/tools/smartlead-review/">Smartlead</a> Scale ($79/month). Monthly cost: $400-600 total.</p>
+    <p><strong>2,000+ emails/day:</strong> 15+ domains, 30+ mailboxes. Enterprise operation. Requires Instantly Hypergrowth ($197/month) or equivalent. Dedicated warm-up infrastructure. Monthly cost: $800-1,500. At this volume, consider splitting across two outbound tools to reduce platform risk.</p>
+    <p><strong>Buffer:</strong> Always provision 20-30% more capacity than you need. When a domain gets blacklisted or a mailbox hits reputation issues, you need instant failover without reducing campaign volume.</p>
+
+    <h2>Domain Purchasing</h2>
+    <p><strong>Naming strategy:</strong> Buy domains that look like natural brand extensions, not outbound infrastructure.</p>
+    <p><strong>Tier 1 (best):</strong> getacme.com, acmehq.com, tryacme.com, hiacme.com. These look like marketing landing pages. Recipients who notice the domain won't immediately think "cold email."</p>
+    <p><strong>Tier 2 (acceptable):</strong> acme.io, acme.co, acmeapp.com. Slightly less natural but still professional. .io works well for tech audiences.</p>
+    <p><strong>Avoid:</strong> acme-sales.com, acme-outreach.com, acme-team.com. These signal cold email to both spam filters and prospects. Also avoid .xyz, .info, .online, and other cheap TLDs that carry spam associations.</p>
+    <p><strong>Registrar:</strong> Cloudflare ($8.57/year for .com, at-cost pricing) or Namecheap ($9-12/year). Both include free WHOIS privacy. Register all domains under a single organizational account for easy management. You'll be managing 5-15 domains within 6 months.</p>
+    <p><strong>Domain aging:</strong> New domains need a minimum 72-hour aging period before any email activity. Some practitioners recommend 7-14 days. During this period, set up a simple landing page on each domain (company name, one-line description, contact link). This establishes the domain as a legitimate web property, not a throwaway email domain.</p>
+
+    <h2>Mailbox Provisioning</h2>
+    <p><strong>Google Workspace Business Starter ($7.20/user/month):</strong> The default choice for cold outbound. Excellent integration support with Instantly, Smartlead, Lemlist, and most other tools. Google Postmaster Tools provides the best deliverability monitoring. OAuth connection eliminates app password security issues.</p>
+    <p><strong>Microsoft 365 Business Basic ($6/user/month):</strong> Good alternative for Outlook-heavy audiences. Slightly better deliverability to corporate Outlook inboxes. Weaker Postmaster tooling compared to Google. Consider mixing: run 60% Google Workspace and 40% Microsoft 365 across your domains for provider diversification.</p>
+    <p><strong>Profile completion:</strong> Real first and last names. Job title matching your outbound persona. Company name. Profile photo (use a real headshot, not a stock photo). Bio/about section. Email signature with name, title, company, phone number, and website URL. Incomplete profiles look automated. Spam filters check profile completeness.</p>
+    <p><strong>Security:</strong> Enable 2FA on every mailbox. Use a password manager (1Password, Bitwarden) for all credentials. Never share passwords in Slack or email. Grant outbound tool access via OAuth, not app passwords. If a team member leaves, rotate credentials on all connected mailboxes immediately.</p>
+
+    <h2>Inbox Rotation</h2>
+    <p><strong>Instantly:</strong> Connect mailboxes via Google OAuth or Microsoft OAuth. Enable "Smart Sending" which distributes sends based on mailbox reputation, not just round-robin. Set per-mailbox daily limits (50-75 cold/day recommended). The system automatically routes around any mailbox approaching its limit.</p>
+    <p><strong>Smartlead:</strong> Connect via OAuth. Enable the "Auto-rotate" feature. Smartlead's rotation considers mailbox warm-up status and recent send volume. Set campaign-level limits and per-mailbox limits. Smartlead handles the distribution.</p>
+    <p><strong><a href="/tools/lemlist-review/">Lemlist</a>:</strong> Campaign-level rotation. Each campaign draws from a pool of connected mailboxes. Less granular than Instantly or Smartlead but sufficient for smaller operations (under 500/day).</p>
+    <p><strong>Round-robin works for most teams.</strong> Advanced rotation strategies (reputation-weighted, time-zone-based) add complexity without proportional benefit until you pass 1,000 emails/day. Start simple. Optimize later.</p>
+
+    <h2>DNS Configuration Step-by-Step</h2>
+    <p>For each sending domain, configure these four DNS records before connecting any outbound tool. Each record takes 24-48 hours to propagate, so do this immediately after domain purchase.</p>
+    <p><strong>SPF (TXT record):</strong> Create a single TXT record: <code>v=spf1 include:_spf.google.com include:spf.instantly.ai ~all</code>. Replace the includes with your actual email provider and outbound tool. Merge all services into one record. Multiple SPF records break authentication. Validate with MXToolbox's SPF lookup after propagation.</p>
+    <p><strong>DKIM (TXT record):</strong> Generate in Google Workspace Admin Console (Apps, Gmail, Authenticate email) or Microsoft 365 Defender. Add the generated TXT record to DNS. Return to the admin panel and activate signing. Validate with mail-tester.com.</p>
+    <p><strong>DMARC (TXT record):</strong> Start with: <code>v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com</code>. This monitors without affecting delivery. After 2-4 weeks of clean data, move to <code>p=quarantine</code>. See the <a href="/insights/cold-email-deliverability-guide/">deliverability guide</a> for the full DMARC progression.</p>
+    <p><strong>Custom tracking domain (CNAME record):</strong> Create a CNAME: <code>track.yourdomain.com</code> pointing to your outbound tool's tracking server. For Instantly: <code>custom.instantly.ai</code>. For Smartlead: <code>custom.smartlead.ai</code>. This isolates your tracking reputation from other senders on shared domains.</p>
+
+    <h2>Reply Handling</h2>
+    <p><strong>Centralized monitoring:</strong> All replies flow into your outbound tool's dashboard. Instantly and Smartlead both provide unified inboxes that aggregate replies across all mailboxes. This prevents replies from falling through cracks across 10+ mailboxes.</p>
+    <p><strong>CRM integration:</strong> Push positive replies (interested, meeting requests) to your CRM automatically. Native integrations: Instantly has HubSpot and Salesforce connectors. Smartlead integrates via webhook. For custom workflows, use <a href="/tools/make-review/">Make</a> or <a href="/tools/n8n-review/">n8n</a> to route replies based on content: interested replies create CRM deals, meeting requests trigger calendar booking links, objections enter a follow-up queue.</p>
+    <p><strong>Out-of-office handling:</strong> Your outbound tool should auto-detect out-of-office replies and pause the sequence until the person returns. Instantly and Smartlead both handle this natively. Without it, you waste sequence steps on empty inboxes.</p>
+    <p><strong>Bounce handling:</strong> Hard bounces (invalid email) get removed from all campaigns immediately. Soft bounces (full inbox, temporary issue) get retried 2-3 times over a week. If the soft bounce persists, remove the contact. Hard bounce rates above 1% indicate a data quality problem in your enrichment pipeline.</p>
+
+    <h2>Security and Documentation</h2>
+    <p><strong>Password management:</strong> Store all domain registrar, email, and outbound tool credentials in a team password manager. No passwords in spreadsheets, Slack messages, or email. One compromised credential can take down your entire sending infrastructure.</p>
+    <p><strong>Access control:</strong> OAuth over app passwords for all outbound tool connections. If a tool doesn't support OAuth, evaluate whether it's worth the security risk. Revoke OAuth access for any tool you stop using.</p>
+    <p><strong>Centralized registration:</strong> All domains under one organizational Cloudflare or Namecheap account. All mailboxes under one Google Workspace or Microsoft 365 organization. Scattered registration across personal accounts creates a management nightmare when you need to rotate domains or update DNS.</p>
+    <p><strong>Documentation:</strong> Create a spreadsheet listing every domain, its DNS configuration status, connected mailboxes, warm-up status, current daily volume, and performance metrics. Update weekly. When a team member needs to troubleshoot a deliverability issue at 10 PM, this document saves hours. Keep it in your password manager or a shared drive with restricted access.</p>
+
+    <h2>Outbound Tool Pricing Comparison</h2>
+    <p><strong>Instantly Growth ($30/month):</strong> 1,000 active contacts, 5,000 emails/month, unlimited email accounts. Built-in warm-up, basic analytics, and smart sending rotation. Best for single-rep operations or teams just starting cold outbound. The unlimited email accounts at this price point make Instantly hard to beat for small teams.</p>
+    <p><strong>Instantly Hypergrowth ($77.6/month):</strong> 25,000 active contacts, 100,000 emails/month. A/B testing, advanced analytics, and priority support. The sweet spot for most GTM teams running 200-500 emails/day across persona-segmented campaigns.</p>
+    <p><strong>Instantly Light Speed ($286.3/month):</strong> 500,000 emails/month, 100,000 contacts uploaded. For large-scale operations. API access and custom integrations. Only justified at 1,000+ emails/day across multiple product lines or client accounts.</p>
+    <p><strong>Smartlead Basic ($39/month):</strong> 2,000 active leads, unlimited email accounts. Better rotation logic than Instantly's lower tiers. Slightly weaker analytics but strong deliverability features. Auto-rotating mailbox assignment based on reputation scores.</p>
+    <p><strong>Smartlead Pro ($94/month):</strong> 30,000 active leads, global block list, webhooks, and API access. The webhook integration is Smartlead's strongest feature. Connect to Make or n8n for advanced routing without native CRM integrations.</p>
+    <p><strong>Lemlist Email Pro ($55/month per seat):</strong> 3 sending accounts per seat, unlimited contacts. Best personalization features in the market: custom images, dynamic landing pages, and LinkedIn touch integration. Higher per-seat cost limits scaling, but the personalization capabilities drive higher reply rates for Director and IC persona campaigns.</p>
+    <p><strong>Recommendation by team size:</strong> Solo GTM Engineer: Instantly Growth ($30/month). 2-3 person team: Instantly Hypergrowth ($77.6/month). 5+ person team or agency: Smartlead Pro ($94/month) + Lemlist for high-value persona campaigns.</p>
+
+    <h2>Common Infrastructure Mistakes</h2>
+    <p><strong>Using your primary domain for cold email.</strong> When your primary domain's reputation gets damaged by cold outbound (and it will if you send enough volume), your company's regular business email suffers. Every employee's emails start landing in spam. Use separate sending domains that look like brand extensions but isolate risk from your primary domain.</p>
+    <p><strong>One domain for all mailboxes.</strong> Five mailboxes on one domain means one blacklisting event takes down your entire operation. Spread mailboxes across 3-5 domains so a single domain issue only affects 20-30% of your capacity. The $9/year per additional domain is cheap insurance.</p>
+    <p><strong>No reserve domains.</strong> When an active domain gets blacklisted, you need a ready replacement within 24 hours. Without a reserve domain already warmed up, you lose 3-4 weeks of capacity while the new domain goes through warm-up. Keep 1-2 reserve domains in warm-up-only mode at all times.</p>
+    <p><strong>Skipping profile completion.</strong> Empty Google Workspace profiles (no photo, no title, no signature) trigger automated spam detection. Inbox providers check sender profile completeness. A mailbox with a name, title, company, photo, and full signature sends trust signals that incomplete profiles don't.</p>
+    <p><strong>Not planning for scale.</strong> Teams that start with 2 domains and 4 mailboxes and then need to triple their volume in 30 days can't. Warm-up takes 3-4 weeks. Plan infrastructure 4-6 weeks ahead of your projected sending needs. If you expect to scale from 200 to 500 emails/day in Q3, start warming additional domains in early Q2.</p>
+    <p><strong>Manual domain management.</strong> Without a centralized tracking document, teams lose track of which domains are active, which are warming, and which need DNS updates. By the time you're managing 8+ domains, the tracking spreadsheet is a critical operational document. Build it from Day 1.</p>
+
+    <h2>Infrastructure Setup Checklist</h2>
+    <p>Complete this before launching any cold outbound campaign:</p>
+    <p>1. Capacity plan defined: target daily volume, required domains, required mailboxes. 2. Domains purchased from Cloudflare or Namecheap (Tier 1 naming: getbrand.com, brandhq.com). 3. Domains aged for 72+ hours before any email activity. 4. DNS configured for every domain: SPF (merged single record), DKIM (2048-bit), DMARC (start with p=none). 5. Custom tracking domain CNAME set for each sending domain. 6. Mailboxes provisioned: 2-3 per domain, Google Workspace or Microsoft 365. 7. Profile completed on every mailbox: name, title, photo, signature. 8. Manual test emails confirmed landing in inbox at Gmail, Outlook, and Yahoo. 9. Warm-up connected and started at 5/day per mailbox (Week 1 schedule). 10. Outbound tool connected via OAuth with per-mailbox daily limits configured. 11. Reply handling set up: unified inbox, CRM integration, out-of-office detection. 12. Domain tracking spreadsheet created with DNS status, warm-up phase, daily volume, and performance for every domain.</p>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">How much per month?</h3>
+    <p class="faq-answer">5-domain setup: $4-5/month domains, $72/month Google Workspace (10 mailboxes), $30-97/month outbound tool. Total: $106-174/month for 500-750 emails/day.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Google Workspace or Microsoft 365?</h3>
+    <p class="faq-answer">Google has slight edge: better Postmaster Tools, more outbound tool integrations. Microsoft fine for Outlook-heavy audiences.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How many mailboxes?</h3>
+    <p class="faq-answer">Each handles 50-75 cold/day. For 300/day: 4-6 mailboxes. For 500/day: 7-10. Spread across domains.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Single domain, many mailboxes?</h3>
+    <p class="faq-answer">Don't. One blacklist takes all mailboxes down. Multiple domains isolate risk. $9/year per domain buys significant resilience.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">When to add more?</h3>
+    <p class="faq-answer">When existing mailboxes run 80%+ capacity for 2+ weeks. Plan 4-6 weeks ahead for warm-up time.</p>
+</div>
+
+</section>
+
+<section class="related-links">
+    <h2>More Insights</h2>
+    <div class="related-links-grid">
+        <a href="/insights/" class="related-link-card">Insights Index</a>
+<a href="/insights/job-market-2026/" class="related-link-card">GTM Engineer Job Market: 2026 Analysis</a>
+<a href="/insights/salary-trends/" class="related-link-card">GTM Engineer Salary Trends: What the Data Shows</a>
+<a href="/insights/tool-adoption/" class="related-link-card">GTM Tool Adoption: Which Tools Are Winning</a>
+<a href="/insights/state-of-gtme-2026/" class="related-link-card">State of GTM Engineering 2026: Key Findings</a>
+<a href="/insights/clay-ecosystem/" class="related-link-card">The Clay Ecosystem: Who Builds What</a>
+<a href="/insights/outbound-stack/" class="related-link-card">The 2026 Outbound Stack: What Top GTM Engineers Use</a>
+<a href="/insights/clay-playbook/" class="related-link-card">Clay Playbook: Advanced Workflows That Work</a>
+<a href="/insights/linkedin-outreach/" class="related-link-card">LinkedIn Outreach for GTM Engineers: A Technical Guide</a>
+<a href="/insights/email-deliverability/" class="related-link-card">Email Deliverability for GTM Engineers</a>
+<a href="/insights/api-integration/" class="related-link-card">API Integration Patterns for GTM Engineers</a>
+<a href="/insights/enrichment-waterfall/" class="related-link-card">Data Enrichment Waterfall Strategy</a>
+
+    </div>
+</section>
+</div>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Weekly email infrastructure tips and outbound automation insights.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

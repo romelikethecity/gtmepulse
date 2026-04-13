@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Clay vs Clearbit 2026: Data Enrichment - GTME Pulse</title>
+    <meta name="description" content="Clay vs Clearbit comparison for GTM Engineers. Multi-source waterfall vs free HubSpot enrichment, and when you need both. Updated weekly. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/clay-vs-clearbit/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/clay-vs-clearbit/">
+    <meta property="og:title" content="Clay vs Clearbit 2026: Data Enrichment - GTME Pulse">
+    <meta property="og:description" content="Clay vs Clearbit comparison for GTM Engineers. Multi-source waterfall vs free HubSpot enrichment, and when you need both. Updated weekly. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/tools-clay-vs-clearbit.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clay vs Clearbit 2026: Data Enrichment - GTME Pulse">
+    <meta name="twitter:description" content="Clay vs Clearbit comparison for GTM Engineers. Multi-source waterfall vs free HubSpot enrichment, and when you need both. Updated weekly. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/tools-clay-vs-clearbit.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Clay vs Clearbit"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Clearbit still available as a standalone product?", "acceptedAnswer": {"@type": "Answer", "text": "Clearbit's standalone API still technically exists, but all product development has shifted to HubSpot integration. New features are HubSpot-exclusive. If you're evaluating Clearbit standalone in 2026, you're buying a product on maintenance mode."}}, {"@type": "Question", "name": "Can I use Clearbit data inside Clay?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Clearbit is available as one of Clay's 75+ enrichment providers. You can use Clearbit as the first step in a waterfall, then fall back to other providers. This gives you the best of both worlds."}}, {"@type": "Question", "name": "Does Clearbit enrichment work on HubSpot's free tier?", "acceptedAnswer": {"@type": "Answer", "text": "Clearbit enrichment is included with all HubSpot plans, including free. Coverage and feature depth may vary by plan, but basic company and contact enrichment is available at every tier."}}, {"@type": "Question", "name": "How does Clearbit's data quality compare to Clay's waterfall?", "acceptedAnswer": {"@type": "Answer", "text": "For US company-level data (revenue, industry, tech stack), Clearbit is competitive with any single provider. For contact-level data (emails, phones), Clearbit covers roughly 60-70% of US B2B contacts. Clay's waterfall approach pushes that to 85-90% by chaining multiple sources."}}, {"@type": "Question", "name": "Should I cancel Clay if I switch to HubSpot?", "acceptedAnswer": {"@type": "Answer", "text": "Don't cancel Clay immediately. Run both for a month and measure Clearbit's coverage against your target market. If Clearbit hits 80%+ of your prospects with usable data, you can reduce Clay usage. Most GTM Engineers keep Clay for complex workflows and deep enrichment even after getting Clearbit through HubSpot."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Clay vs Clearbit</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Data Enrichment & Orchestration</div>
+        <h1>Clay vs Clearbit</h1>
+        <p>Head-to-head comparison with feature tables, pricing, and a clear recommendation.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    <p>Clay and Clearbit are both data tools, but the comparison has changed dramatically since HubSpot acquired Clearbit in late 2023. Clearbit is now free for HubSpot customers, bundled into the CRM as a native enrichment layer. Clay remains an independent orchestration platform that connects 75+ data sources. If you're on HubSpot, this comparison is about whether Clearbit's free enrichment is enough or whether you still need Clay's depth.</p>
+<p>Before the acquisition, Clearbit was a standalone enrichment API competing head-to-head with tools like Clay and ZoomInfo. Now it's a feature inside HubSpot. The data still exists, but the product direction has shifted toward CRM enrichment rather than standalone data orchestration.</p>
+<p>This comparison focuses on the practical question every HubSpot user faces: is free Clearbit sufficient for your GTM workflows, or does Clay's multi-source approach justify the additional cost?</p>
+
+    <h2>Feature Comparison</h2>
+    <div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>Clay</th><th>Clearbit (via HubSpot)</th></tr>
+</thead>
+<tbody>
+<tr><td>Data Sources</td><td>75+ integrated providers</td><td>Single source (Clearbit database)</td></tr>
+<tr><td>Pricing</td><td>$149-$800/mo (credit-based)</td><td>Free with HubSpot</td></tr>
+<tr><td>Enrichment Depth</td><td>Multi-provider waterfall</td><td>Single-pass enrichment</td></tr>
+<tr><td>Company Data</td><td>Via multiple providers</td><td>Strong (firmographic, technographic)</td></tr>
+<tr><td>Contact Data</td><td>Email, phone, social via waterfall</td><td>Email and basic profile data</td></tr>
+<tr><td>Workflow Builder</td><td>Visual table-based workflows</td><td>HubSpot workflows only</td></tr>
+<tr><td>AI/LLM Integration</td><td>Built-in prompt per row</td><td>None standalone</td></tr>
+<tr><td>CRM Integration</td><td>Push via workflow steps</td><td>Native (it IS the CRM)</td></tr>
+<tr><td>API Access</td><td>Full REST API</td><td>Via HubSpot API</td></tr>
+<tr><td>Real-time Enrichment</td><td>On-demand in workflows</td><td>Automatic on form submission</td></tr>
+<tr><td>Standalone Use</td><td>Yes (independent platform)</td><td>No (requires HubSpot)</td></tr>
+<tr><td>Best For</td><td>Complex enrichment pipelines</td><td>HubSpot-native CRM enrichment</td></tr>
+</tbody>
+</table></div>
+
+    <h2>Where Clay Wins</h2>
+<p>Clay's waterfall enrichment is the defining advantage. Clearbit gives you one shot at finding data. If Clearbit doesn't have the email, company revenue, or tech stack, you get nothing. Clay chains multiple providers: try Clearbit first, fall back to Apollo, then FullEnrich, then Hunter. This redundancy consistently yields 20-40% more enriched records than any single source.</p>
+<p>The workflow builder makes Clay a platform, not just a data source. You can build lead scoring, ICP classification, data cleaning, and CRM sync logic in visual workflows. Clearbit enriches a record and stops there. What you do with the enriched data is up to HubSpot's workflow engine, which is less flexible than Clay's purpose-built system.</p>
+<p>AI integration gives Clay another dimension. Running a Claude prompt on every enriched record to generate a personalized icebreaker, classify the company's stage, or extract insights from their website is trivial in Clay. Clearbit/HubSpot has no equivalent capability.</p>
+<p>Independence matters. Clay works with any CRM, any sequencing tool, and any tech stack. Clearbit only works within HubSpot. If you ever switch CRMs, your Clearbit enrichment goes away. Clay's data flows wherever you need it.</p>
+
+    <h2>Where Clearbit Wins</h2>
+<p>Price. Clearbit is free for HubSpot customers. That's the argument, and it's a strong one. If you're already paying for HubSpot ($0-$3,600+/mo depending on tier), your enrichment costs nothing extra. Clay adds $149-$800/month on top of whatever you're spending on CRM and other tools.</p>
+<p>Zero setup friction is Clearbit's second advantage. It enriches contacts automatically when they enter HubSpot through form submissions, API imports, or manual entry. No workflow building, no credit management, no configuration. Data just appears on the contact record.</p>
+<p>Company data quality is solid. Clearbit's firmographic data (revenue, employee count, industry, tech stack, funding) was best-in-class before the acquisition and hasn't degraded. For company-level enrichment specifically, Clearbit matches or beats most individual providers Clay connects to.</p>
+<p>For HubSpot-native teams that use HubSpot workflows for everything, Clearbit's integration is frictionless. Enriched data feeds directly into HubSpot lists, workflows, and lead scoring without any external tool. The enrichment just works as part of your CRM workflow.</p>
+
+    <h2>Pricing Breakdown</h2>
+<p>Clearbit: $0 if you have HubSpot. That's it. Before the acquisition, Clearbit cost $99-$999/month. Now it's included. The catch: you need HubSpot, which ranges from free to $3,600+/month depending on your tier and seats. But if you're already on HubSpot, Clearbit is pure upside.</p>
+<p>Clay: $149/month (Starter, 2,000 credits) to $800/month (Pro, 50,000 credits). Each enrichment call costs credits. A waterfall enrichment with 3 providers per lead costs 3+ credits per record. For 5,000 leads/month, you're looking at $349-$800/month depending on waterfall depth.</p>
+<p>The decision framework: If HubSpot is your CRM and Clearbit's single-source enrichment gives you 70%+ coverage for your target market, stop there. The marginal value of Clay's waterfall isn't worth $200-$800/month. But if Clearbit misses more than 30% of your targets (common with European prospects, startups, and niche industries), Clay's multi-source approach fills those gaps and pays for itself in additional pipeline.</p>
+    <p class="affiliate-disclosure" style="font-size: 0.85rem; color: var(--gtme-text-tertiary); margin-top: 0.5rem;"><em>This comparison contains affiliate links. We may earn a commission if you sign up through our links. This does not affect our editorial independence or recommendations.</em></p>
+
+    <h2>The Verdict</h2>
+<p>Use Clearbit (via HubSpot) as your baseline enrichment layer. It's free, automatic, and covers the majority of US B2B contacts with solid company data. Every HubSpot user should have this active. There's no reason to leave free enrichment on the table.</p>
+<p>Add Clay when Clearbit's coverage isn't enough. If you're targeting international markets, early-stage startups, niche industries, or you need phone numbers and verified emails that Clearbit doesn't provide, Clay's waterfall approach fills the gaps. Most serious GTM Engineers use both: Clearbit as the free baseline, Clay for deep enrichment on priority accounts.</p>
+<p>If you're not on HubSpot, Clearbit is irrelevant. The standalone Clearbit product effectively no longer exists. In that case, Clay is your primary enrichment platform, and you should evaluate it against Apollo and ZoomInfo instead.</p>
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Is Clearbit still available as a standalone product?</h3>
+    <p class="faq-answer">Clearbit's standalone API still technically exists, but all product development has shifted to HubSpot integration. New features are HubSpot-exclusive. If you're evaluating Clearbit standalone in 2026, you're buying a product on maintenance mode.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Can I use Clearbit data inside Clay?</h3>
+    <p class="faq-answer">Yes. Clearbit is available as one of Clay's 75+ enrichment providers. You can use Clearbit as the first step in a waterfall, then fall back to other providers. This gives you the best of both worlds.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Does Clearbit enrichment work on HubSpot's free tier?</h3>
+    <p class="faq-answer">Clearbit enrichment is included with all HubSpot plans, including free. Coverage and feature depth may vary by plan, but basic company and contact enrichment is available at every tier.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How does Clearbit's data quality compare to Clay's waterfall?</h3>
+    <p class="faq-answer">For US company-level data (revenue, industry, tech stack), Clearbit is competitive with any single provider. For contact-level data (emails, phones), Clearbit covers roughly 60-70% of US B2B contacts. Clay's waterfall approach pushes that to 85-90% by chaining multiple sources.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Should I cancel Clay if I switch to HubSpot?</h3>
+    <p class="faq-answer">Don't cancel Clay immediately. Run both for a month and measure Clearbit's coverage against your target market. If Clearbit hits 80%+ of your prospects with usable data, you can reduce Clay usage. Most GTM Engineers keep Clay for complex workflows and deep enrichment even after getting Clearbit through HubSpot.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>Related Comparisons & Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/clearbit-review/" class="related-link-card">Clearbit Review</a>
+<a href="/tools/clay-vs-apollo/" class="related-link-card">Clay vs Apollo.io</a>
+<a href="/tools/clay-vs-zoominfo/" class="related-link-card">Clay vs ZoomInfo</a>
+<a href="/tools/apollo-vs-zoominfo/" class="related-link-card">Apollo.io vs ZoomInfo</a>
+<a href="/tools/cognism-vs-zoominfo/" class="related-link-card">Cognism vs ZoomInfo</a>
+<a href="/tools/leadiq-vs-lusha/" class="related-link-card">LeadIQ vs Lusha</a>
+<a href="/tools/category/data-enrichment/" class="related-link-card">Data Enrichment & Orchestration</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Clay vs Clearbit updates and GTM tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h4>Salary Data</h4>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-seniority/">By Seniority</a></li>
+<li><a href="/salary/by-location/">By Location</a></li>
+<li><a href="/salary/by-company-stage/">By Stage</a></li>
+<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Resources</h4>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>Site</h4>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h4>GTM Tools & Resources</h4>
+    <ul>
+        <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h4>Stay in the loop</h4>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,58 +1,78 @@
 {
-  "generated_at": "2026-04-12T08:56:08.984176",
-  "total_records": 47,
-  "records_with_salary": 25,
-  "disclosure_rate": 53.2,
+  "generated_at": "2026-04-16T09:21:45.199775",
+  "total_records": 62,
+  "records_with_salary": 31,
+  "disclosure_rate": 50.0,
   "salary_stats": {
     "min": 48,
-    "max": 250000,
+    "max": 330000,
     "median": 120000,
-    "avg": 119369,
-    "count_with_salary": 25
+    "avg": 128511,
+    "count_with_salary": 31
   },
   "by_seniority": {
     "Unknown": {
-      "count": 21,
-      "min_base_avg": 112821,
-      "max_base_avg": 151507,
+      "count": 25,
+      "min_base_avg": 118753,
+      "max_base_avg": 155314,
       "median": 120000
     }
   },
   "by_metro": {
-    "Unknown": {
+    "Boston": {
+      "count": 3,
+      "min_base_avg": 118333,
+      "max_base_avg": 141666,
+      "median": 110000
+    },
+    "New York": {
+      "count": 11,
+      "min_base_avg": 131181,
+      "max_base_avg": 170454,
+      "median": 122000
+    },
+    "San Francisco": {
       "count": 5,
-      "min_base_avg": 100240,
-      "max_base_avg": 141320,
-      "median": 114000
+      "min_base_avg": 164000,
+      "max_base_avg": 228000,
+      "median": 140000
+    },
+    "Unknown": {
+      "count": 6,
+      "min_base_avg": 125133,
+      "max_base_avg": 166300,
+      "median": 132000
     },
     "Austin": {
       "count": 3,
       "min_base_avg": 98016,
       "max_base_avg": 130020,
       "median": 120000
-    },
-    "San Francisco": {
-      "count": 4,
-      "min_base_avg": 130000,
-      "max_base_avg": 202500,
-      "median": 140000
-    },
-    "New York": {
-      "count": 10,
-      "min_base_avg": 134300,
-      "max_base_avg": 170500,
-      "median": 135000
     }
   },
   "by_remote": {
     "onsite": {
-      "count": 25,
-      "min_base_avg": 119369,
-      "max_base_avg": 161746,
+      "count": 30,
+      "min_base_avg": 124474,
+      "max_base_avg": 165122,
       "median": 120000
     }
   },
   "top_paying_roles": [
+    {
+      "title": "Director GTM Engineering",
+      "company": "Airwallex",
+      "salary_min": 300000.0,
+      "salary_max": 330000.0,
+      "seniority": "Director"
+    },
+    {
+      "title": "| GTM Engineer",
+      "company": "Teal Health",
+      "salary_min": 249600.0,
+      "salary_max": 291200.0,
+      "seniority": ""
+    },
     {
       "title": "Director, GTM Automations & Data",
       "company": "Gong",
@@ -107,20 +127,6 @@
       "company": "gd resources",
       "salary_min": 135000.0,
       "salary_max": 185000.0,
-      "seniority": ""
-    },
-    {
-      "title": "Sr. Enterprise Growth Engineer",
-      "company": "Addepar",
-      "salary_min": 146000.0,
-      "salary_max": 182000.0,
-      "seniority": ""
-    },
-    {
-      "title": "GTM Engineer",
-      "company": "",
-      "salary_min": 140000.0,
-      "salary_max": 180000.0,
       "seniority": ""
     }
   ]

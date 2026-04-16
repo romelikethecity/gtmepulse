@@ -1,7 +1,1212 @@
 {
-  "last_updated": "2026-04-12",
-  "total_jobs": 47,
+  "last_updated": "2026-04-16",
+  "total_jobs": 62,
   "jobs": [
+    {
+      "job_id": "indeed-https://www.",
+      "title": "AI Go-to-Market Engineer",
+      "company": "Flosum",
+      "location": "US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-15",
+      "date_scraped": "2026-04-16",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=9b89bad89c7a9e4a",
+      "description": "Flosum is a Salesforce\\-native DevOps and data protection platform serving enterprise Salesforce teams across the Fortune 5000\\. We are in wartime. Pipeline generation, retention, and product velocity are our three highest\\-priority problems, and AI is the lever that accelerates all three. We are hiring our first AI Go\\-to\\-Market Engineer to architect, deploy, train, and continuously optimize AI agents and automation across the entire revenue engine — from first touch to closed\\-won to expansion.\n\n\nThis is not a \"prompt engineering\" role. This is a builder role. You will sit at the intersection of revenue operations, sales, marketing, and customer success, and your job is to make every human on the GTM team dramatically more productive by deploying AI systems that generate pipeline, accelerate deals, and reduce churn. You report directly to the CEO.\n\n\nWHAT THIS ROLE MUST DO TO CHANGE FLOSUM'S TRAJECTORY\n\n* Deploy and personally train at least one AI SDR agent within the first 30 days — focused on either inbound qualification from Qualified/Marketo or outbound prospecting via Outreach — and run weekly refinement cycles until it outperforms the bottom half of the human BDR bench.\n* Build an AI\\-powered inbound qualification system that captures, scores, and routes every website visitor and form fill in real time so no lead waits, no lead gets lost, and AEs only touch prospects that are ready to buy.\n* Increase revenue\\-generating time per AE from the current \\~25% to 50%\\+ by automating CRM hygiene, call summarization (via Gong), follow\\-up sequencing, proposal drafting, and pipeline updates — eliminating every minute of admin work that doesn't directly produce revenue.\n* Architect the AI layer across Flosum's GTM stack (Salesforce, Marketo, Outreach, Qualified, Gong) so that data flows between systems without manual intervention, every customer touchpoint is captured, and AI agents share learnings in a virtuous loop with Salesforce as the hub.\n* Build and maintain an AI\\-driven competitive intelligence engine that monitors our competition, pricing changes, and product launches — and feeds structured insights to sales and product weekly.\n* Create hyper\\-personalized outbound campaigns at 10x current volume without proportional headcount increase — using AI to research accounts, generate personalized messaging based on ICP signals (Salesforce team size, current DevOps tooling, compliance requirements like DORA), and sequence multi\\-channel touches across email, LinkedIn, and phone.\n* Instrument a closed\\-loop data feedback system between BDR activity, pipeline outcomes, and AI agent performance so that ICP targeting, messaging, and channel mix improve every week based on actual conversion data — not guesswork.\n* Deploy AI\\-assisted customer health scoring and churn prediction models that flag at\\-risk accounts before renewal, feeding Terry's CS team with actionable intervention triggers tied to usage data, support ticket patterns, and engagement signals.\n* Prototype AI\\-powered product\\-led growth touchpoints — including conversational qualification on the website, self\\-serve onboarding assistance, and automated nurture for trial users — supporting the PLG motion as it matures.\n* Evaluate, select, and deploy no more than two AI vendors per use case using a structured bakeoff methodology: reference checks via email, FDE conversations before contract, and 30\\-day dedicated training commitments — no lazy agency deployments.\n\n  \n\n**Requirements**  \n\nHands\\-on experience deploying and training AI SDR/BDR agents in a real B2B sales environment — not evaluating, not advising, actually deploying and iterating weekly for at least 90 days.\n\n\nDeep working knowledge of the modern B2B GTM stack — specifically Salesforce (as CRM and data hub), Marketo or equivalent MAP, Outreach or Salesloft, Gong or Chorus, and real\\-time chat/qualification tools like Qualified or Drift.\n\n\nAbility to write and maintain production integrations — Python, JavaScript, or equivalent — connecting AI agents to CRM, MAP, and sequencing tools via APIs. You don't need to be a software engineer, but you need to ship working code, not just configure no\\-code tools.\n\n\nUnderstanding of pipeline math and unit economics: you should be able to work backward from a revenue target to SQLs required, conversion rates by stage, and the specific AI interventions that move each number. If someone says \"we need 67 SQLs per quarter at 20% win rate and $75K ASD,\" you should immediately know where AI can compress that funnel.\n\n\nExperience with AI agent orchestration — managing multiple AI agents working different segments or functions simultaneously, resolving conflicts, preventing duplicate outreach, and maintaining data quality in the hub (Salesforce).\n\n\nDemonstrated ability to build prompt libraries, training datasets, and refinement workflows for AI agents — treating agent training as a discipline, not a one\\-time setup.\n\n\nComfort operating in a company doing \\~$4M ARR with a small, high\\-intensity team. You will not have a large support staff. You will do the work yourself and scale through automation, not delegation.\n\n\nStrong opinions on when AI should replace human effort versus augment it — and the judgment to know that bad AI automation destroys deals faster than no automation at all.\n\n\nFamiliarity with the Salesforce ecosystem — understanding of DevOps, CI/CD, data protection, and compliance workflows is a major advantage. You don't need to be a Salesforce admin, but you need to understand what our buyers care about and why\n\n **Benefits**  \n\nWhy Flosum\n\n* Category\\-defining opportunity: You will shape the future of how enterprises build on Salesforce. This is not incremental; it is transformational.\n* Direct CEO partnership: You will work shoulder\\-to\\-shoulder with a founder who is deeply technical, product\\-obsessed, and committed to building the best platform in the Salesforce ecosystem.\n* Fortune 100 customer base: Your product decisions will directly impact how the world's largest and most complex organizations operate.\n* AI inflection point: Agentforce and autonomous agents are rewriting the rules. Flosum is the first native platform to integrate these capabilities. You will define what comes next.\n* Missionary culture: We hire people who want to make a dent, not pad a resume. If you are looking for a place where your work matters and your ideas are heard, this is it.\n\n\nCompensation \\& Benefits\n\n* Competitive base salary \\+ performance bonus\n* Direct access to Salesforce ecosystem events, conferences (Dreamforce, TrailblazerDX), and customer engagement",
+      "description_snippet": "Flosum is a Salesforce\\-native DevOps and data protection platform serving enterprise Salesforce teams across the Fortune 5000\\. We are in wartime. Pipeline generation, retention, and product velocity are our three highest\\-priority problems, and AI is the lever that accelerates all three. We are hiring our first AI Go\\-to\\-Market Engineer to architect, deploy, train, and continuously optimize AI agents and automation across the entire revenue engine — from first touch to closed\\-won to expansio",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Salesloft",
+          "tool_category": "Sales_Engagement_Enterprise",
+          "tool_id": "salesloft"
+        },
+        {
+          "tool_name": "Gong",
+          "tool_category": "Revenue_Intelligence",
+          "tool_id": "gong"
+        },
+        {
+          "tool_name": "Chorus",
+          "tool_category": "Revenue_Intelligence",
+          "tool_id": "chorus"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "enterprise",
+          "signal_value": "Enterprise"
+        },
+        {
+          "signal_type": "segment",
+          "signal_id": "fortune_500",
+          "signal_value": "Fortune 500"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "channel",
+          "signal_value": "Channel"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "plg",
+          "signal_value": "Plg"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "sales_cycle",
+          "signal_id": "long",
+          "signal_value": "Long"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "reports_ceo",
+          "signal_value": "Reports Ceo"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "immediate",
+          "signal_value": "Immediate"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "turnaround",
+          "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "Manager, GTM Engineering",
+      "company": "Sifted",
+      "location": "Overland Park, KS, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "Mid",
+      "function_category": "sales",
+      "date_posted": "2026-04-14",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=df565127e1bd1ec6",
+      "description": "Description:\n\nSifted Logistics Intelligence (“Sifted”) is at the forefront of logistics optimization, providing a cutting\\-edge SaaS platform and predictive analytics tools designed to revolutionize the way parcel shippers manage their operations.\n\n\nOur platform goes beyond traditional consulting methods, empowering businesses to continuously calibrate, automate, and monitor their shipping spend, carriers, and contracts with unparalleled precision and insight.\n\n\nWe’re driving a transformative shift in the logistics industry, redefining what’s possible for our clients — and AI is at the core of that evolution.\n\n\nAt Sifted, we don’t just use AI — we depend on it. Our proprietary SiftedAI platform delivers predictive intelligence and automation that enable businesses to make smarter, faster, and more confident decisions. Internally, every employee is expected to leverage AI to optimize how they think, create, and deliver. We believe mastering AI is fundamental to our speed, excellence, and competitive edge.\n\n\nBe part of a company that created a category and is continuously building. If you get excited about defining market verticals and making an impact, Sifted is the place for you. Join us and be part of something extraordinary.\n\n\nThe Manager of GTM Engineering is responsible for owning the architecture, execution, and performance of Sifted’s go\\-to\\-market systems ecosystem. This role serves as the primary owner of GTM processes and platforms—including CRM, routing engines, scoring models, marketing automation, and pipeline development—ensuring reliability, scalability, and operational consistency across the revenue lifecycle.\n\n\nThis leader partners closely with Marketing, Sales, Product and CX to translate GTM strategy into well\\-engineered systems, workflows, and analytics. This Manager leads GTM Engineers and plays a critical role in evolving Sifted’s GTM infrastructure to support growth, automation, and AI\\-driven decision\\-making.\n\n\nThis role is designed for a high\\-performing GTM systems leader who is expected to progress into a Director\\-level position as the function continues to scale.\n\n**Responsibilities**\n\n* Own the technical configuration, performance, and reliability of core GTM platforms, including CRM, routing and scoring systems, marketing automation, enrichment, and sales engagement tools.\\*\n* Design, implement, and maintain scalable GTM system architectures that support end\\-to\\-end revenue workflows across Marketing, Sales, CX, and Operations.\\*\n* Ensure tight system alignment and clean data flow, proactively identifying integration risks, dependencies, and gaps.\n* Translate GTM strategy and operational priorities into a clear GTM Engineering roadmap and lead execution across initiatives.\n* Drive platform evolution through system modernization, tool optimization, consolidation, and automation\\*\n* Partner cross\\-functionally to intake requirements, scope solutions, and deliver high\\-quality system improvements on time.\n* Develop and maintain GTM data models supporting forecasting, performance reporting, and operational analytics.\\*\n* Oversee executive, finance, and board\\-level dashboards and reporting.\n* Lead deep cross\\-functional analysis to inform strategy, identify trends, and surface operational bottlenecks.\\*\n* Champion automation and AI adoption across the GTM ecosystem, leveraging predictive modeling, machine learning, and workflow automation to accelerate growth and efficiency.\\*\n* Lead, mentor, and develop the GTM Engineering team, providing clear priorities, technical guidance, and growth feedback.\n* Manage resourcing, workload prioritization, and execution against the GTM Engineering roadmap.\n* Drive strong cross\\-functional collaboration with Sales, Marketing, CX, Operations, Finance, and Product teams.\n\n\nRequirements:\n* 6\\+ years of experience in Revenue Operations, Sales Operations, GTM Systems, or related technical operations within a SaaS or technology\\-driven organization.\n* 1\\-3 years of people leadership experience, managing technical or operations teams.\n* Advanced hands\\-on expertise with Salesforce and integrated GTM systems (e.g., Outreach, MAPs, routing tools, enrichment platforms).\n* Proven experience designing and delivering complex GTM workflows, automations, and cross\\-system integrations.\n* Strong analytical and problem\\-solving skills with a deep understanding of GTM funnels and revenue cycles.\n* Ability to balance strategic thinking with hands\\-on system design and execution.\n* Excellent communication skills with the ability to translate technical concepts into business impact.\n* Demonstrated ability and willingness to embrace AI as a core tool for problem\\-solving and innovation\\*\n\n**Bonus Points for the following:**\n\n* Salesforce certifications (Admin, Advanced Admin, Platform App Builder, Architect) preferred.\n* Experience with BI tools (Looker, Tableau, Power BI, Sigma) and data modeling languages (SQL preferred).\n* Exposure to forecasting models or revenue analytics programs.\n* Experience implementing AI\\-driven automation or predictive GTM tools.\n* Familiarity with Agile, Lean, or similar project methodologies.\n* Denotes an essential function/qualification of the role.",
+      "description_snippet": "Description:\n\nSifted Logistics Intelligence (“Sifted”) is at the forefront of logistics optimization, providing a cutting\\-edge SaaS platform and predictive analytics tools designed to revolutionize the way parcel shippers manage their operations.\n\n\nOur platform goes beyond traditional consulting methods, empowering businesses to continuously calibrate, automate, and monitor their shipping spend, carriers, and contracts with unparalleled precision and insight.\n\n\nWe’re driving a transformative sh",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Tableau",
+          "tool_category": "BI_Analytics",
+          "tool_id": "tableau"
+        },
+        {
+          "tool_name": "Power Bi",
+          "tool_category": "BI_Analytics",
+          "tool_id": "power_bi"
+        },
+        {
+          "tool_name": "Looker",
+          "tool_category": "BI_Analytics",
+          "tool_id": "looker"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "turnaround",
+          "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer New",
+      "company": "InvoiceCloud",
+      "location": "Boston, MA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": 110000,
+      "max_amount": 130000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-14",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=71cc0677ab998764",
+      "description": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI maturity and responsible innovation. It’s an award\\-winning, purpose\\-driven environment where top talent thrives. To learn more, visit InvoiceCloud.com.\n\n**Role Overview:**\n\n\n\nWe are seeking a highly skilled and results\\-oriented GTM Engineer to support the Revenue Operations team. This role will play a key part in advancing InvoiceCloud’s mission to drive digital transformation for clients and enhance customer engagement.\n\n\n\nThe ideal candidate operates as a proactive, trusted partner—capable of managing complex responsibilities, collaborating across teams, and maintaining the high standards of professionalism and innovation that define InvoiceCloud’s culture.\n\n  \n\n\n***\\*\\*Candidate must be based in greater Boston, MA*** ***and be onsite in our Seaport Boston, MA office 2x per week \\*\\****\n\n  \n\n\n**Success Profile:**\n\n\n\nThis role is anchored in our company’s core competencies. These competencies reflect the mindsets and behaviors that define success in this role. Below is how each competency translates into meaningful impact and outcomes for this position.\n\n\n\n**Results\\-Driven**\n\n\n* Write SQL in Snowflake to build views, scoring models, and ad hoc analyses that support GTM decision\\-making  \n\n\t+ Maintain and improve pipeline and buying signal dashboards in Tableau\n\t+ Collaborate with SDRs, AEs, and Marketing to understand workflow pain points and translate them into engineering solutions\n\t+ Surface data quality issues and automation gaps proactively before they affect pipeline\n\n\n **Drives Efficiency**\n\n\n* Build tables, waterfalls, and enrichment workflows in Clay that power prospecting and lead scoring  \n\n\t+ Design and maintain data pipelines from Clay into Salesforce, ensuring clean field mapping, deduplication, and record integrity\n\t+ Connect and orchestrate data across the GTM stack: Clay, SFDC, Marketo, 6sense, and Snowflake\n\t+ Develop and deploy automations that reduce manual work across Sales, Marketing, and RevOps\n\n\n **Takes Ownership**\n\n\n* Own Clay as the primary GTM engineering platform and manage its ongoing optimization and scalability  \n\n\t+ Build AI\\-powered workflows using Claude, ChatGPT, and other LLMs to automate research, personalization, and signal processing at scale\n\t+ Use tools like Claude Code and Lovable to rapidly prototype internal tools and workflow applications\n\t+ Document data logic, workflow architecture, and process changes as you build\n\n  \n\n\n**Requirements**\n\n\n**Required:**\n\n\n* Bachelor’s degree in Computer Science, Software Engineering, or a related technical field\n* Strong SQL skills — comfortable writing complex queries, CTEs, and window functions\n* Hands\\-on experience with AI tools: LLM APIs (Claude, OpenAI), prompt engineering, and AI\\-assisted development (Claude Code, Cursor, or similar)\n* Experience with Clay or a strong desire to become an expert quickly — this is your primary tool\n* Familiarity with workflow automation platforms, ideally n8n or similar (Zapier, Make)\n* Experience with low\\-code/no\\-code app builders such as Lovable, Bolt, or v0\n* 1–3 years of professional experience; strong internship or project work welcome\n* Genuine interest in sales and marketing — you want to understand the GTM motion, not just build abstractions\n\n\n**Nice to Have:**\n\n\n* Experience with Salesforce data models and SFDC integrations\n* Familiarity with Snowflake, dbt, or other data warehouse tooling\n* Exposure to ABM platforms like 6sense or intent data concepts\n* Python skills for scripting, API integrations, or ML experimentation\n* Prior work in a RevOps, sales ops, or marketing ops context\n\n  \n\n\n**Benefits:**\n\n\n\nWe offer a competitive benefits program including:\n\n\n* Medical, dental, vision, life \\& disability insurance\n* 401(k) plan with company match\n* Flexible Time Off (FTO), wellbeing days, paid holidays, and summer Fridays\n* Mental health resources\n* Paid parental leave \\& Backup Care\n* Tuition reimbursement\n* Employee Resource Groups (ERGs)\n  \n\nBase salary is one component of total compensation. Employees may also be eligible for an annual bonus or commission. Some roles may also be eligible for overtime pay. The above represents the expected base compensation range for this job requisition. Ultimately, in determining your pay, we’ll consider many factors including, but not limited to, skills, experience, qualifications, geographic location, and other job\\-related factors.\n\n\nBase Compensation Range\n\n\n$110,000 \\- $130,000 USD\n\n\n\nInvoiceCloud is committed to providing equal employment opportunities to all employees and applicants. We do not tolerate discrimination or harassment of any kind based on race, color, religion, age, sex, nationality, disability, genetic information, veteran or military status, sexual orientation, gender identity or expression, or any other characteristic protected under applicable laws.\n\n\n\nThis commitment applies to all aspects of employment, including recruitment, hiring, placement, promotion, termination, layoff, recall, transfer, leave, compensation, and training.\n\n\n\nIf you require a disability\\-related or religious accommodation during the application or recruitment process, and wish to discuss possible adjustments, please contact jobs@invoicecloud.com.\n\n\n\nClick **here** to review InvoiceCloud’s Job Applicant Privacy Policy.\n\n\n**For recruitment agencies:** InvoiceCloud does not accept unsolicited resumes from agencies. Please do not forward resumes to our job aliases, employees, or any other company location. InvoiceCloud is not responsible for any fees associated with unsolicited submissions.",
+      "description_snippet": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI matu",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "6Sense",
+          "tool_category": "ABM_Platforms",
+          "tool_id": "6sense"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Tableau",
+          "tool_category": "BI_Analytics",
+          "tool_id": "tableau"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
+        },
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "abm",
+          "signal_value": "Abm"
+        },
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "north_america",
+          "signal_value": "North America"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "turnaround",
+          "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer / RevOps Lead",
+      "company": "",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "Senior",
+      "function_category": "sales",
+      "date_posted": "2026-04-14",
+      "date_scraped": "2026-04-16",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=c13e2aa42d39ebce",
+      "description": "### **Hilbert is** **building the growth infra for the next decade** **— a system built by operators, mathematicians, and engineers who lived the complexity of growth at scale, and decided to end it.**\n\n### **We work with the most forward\\-looking operators in the world — from Fortune 500 enterprises like Walmart to beloved consumer brands like FreshDirect and Blank Street Coffee, to the leading AI\\-native companies redefining how software gets built.**\n\n### **The Opportunity**\n\n### **Forget what RevOps looks like at a mature company. There is no pristine CRM. Hilbert is moving fast, selling into complex accounts, and the plumbing has to be engineered from the ground up — by someone who treats GTM systems as a product, not a back office.**\n\n### **We're building an** **agentic GTM organization** **— where GTM reps are expected to run research, prioritisation, forecasting, and follow\\-up with agents. You'll be the engine behind this sales motion and the architect every other GTM at the company relies on.**\n\n### **Your mission: combine data, automation, and intelligent tooling to put real qualified pipeline on the board — and build the** **GTM agentic process the rest of the team runs on****.**\n\n### **This is a zero\\-to\\-one seat. The window is now. We're at the exact inflection point where great infrastructure compounds. Everything you design needs to work at 3x, 5x, 10x the current size. You're not patching — you're architecting.**\n\n### **What You'll Do**\n\n* **Own the GTM stack end\\-to\\-end****. Current core: Clay, Granola, HubSpot, Dex, Claude, Gemini. You'll evaluate, implement, and continuously sharpen the ecosystem — adding, replacing, and cutting tools as the motion evolves.**\n* **Build and maintain the agentic infra** **every GTM at Hilbert runs on to move partners from signal to conversion: research, enrichment, prospecting, meeting prep, debriefs, etc.**\n\n### ***Integrate systems*** ***using APIs, webhooks, or whatever gets the job done. You'll vibe\\-code where needed and aren't afraid of a complex automation.***\n\n**Own Stack maintenance and reporting** **with intel that drive decisions, not static dashboards. Pipeline health, conversion signals, leading indicators, etc.**\n\n**Be AI\\-native by default**. If a task is being done manually, your instinct is to ask why — and then build the agent that does it. Every GTM at Hilbert is fluent in agentic operations; your job is to make sure the infrastructure underneath them is state of the art.\n\n### **Who You Are**\n\n\nWe care less about your title history and more about how you're wired. The right person is an architect, a builder, and a hacker — someone who sees a broken process and ships the fix before being asked. We are looking for **bright talent, hungry for a career\\-defining role.**\n\n**The non\\-negotiables:**\n\n* Proven curiosity in GTM Engineering, RevOps, Sales Ops, or adjacent technical GTM roles — at companies where you built the systems, not just managed them.\n* You enjoy pushing GTM limits with code. You've already replaced hours of manual work with intelligent systems.\n* Business acumen. You understand sales processes, marketing strategies, and pipeline management. You think in funnels, conversion rates, and leading indicators.\n* Architect mindset. You design for 5x in 18 months. You document, stress\\-test, and build things that outlast your tenure.\n* Problem\\-hacking mindset. Blockers show up daily. You navigate ambiguity, route around constraints, and ship.\n* High\\-agency. You don't wait for a ticket — you come back with a proposal.\n\n**Even better if:**\n\n* You've been employee \\#1–20 at a startup and know what it means to build the plane while flying it\n* You're fluent in: HubSpot, Clay, Apollo/SalesNav, Granola, Dex, Outreach or equivalents — and know when not to add another tool\n* You've agentic workflows in production — not demos and earned the trust of sales leadership.\n* Background in growth, analytics, or engineering before you moved into GTM — you speak both languages.\n\n### **Location: SF (****Remote opportunities available for the right candidate US/EU)**\n\n### **Compensation:** **Performance\\-based structure tied directly to revenue impact. Strong cash, meaningful equity, uncapped bonus tied to measurable outcomes. Details shared in the first conversation.**\n\n**The Hiring Journey**\n----------------------\n\n\nShort form Intro call Practical working session Team conversations Offer\n\n\nFast. Human. No bureaucratic loops.\n\n**How We're Different**\n-----------------------\n\n\nIf you've read this far, there's probably a fit — at least on paper. But you're likely asking the real questions: Are these good people? Is this worth betting on?\n\n\nFair. Here's what we can tell you.\n\n\nWe are genuinely passionate about solving the growth infra problem — not because it's a market opportunity, but because we lived it. Over a decade, across nine countries and hundreds of millions in budget, we ran growth systems in some of the most demanding B2C environments on earth. Data scattered, teams misaligned, insights stuck in dashboards, decisions always late. We built Hilbert because the infra didn't exist — and we were tired of working without it.\n\n\nMost growth tools tell you what happened. Hilbert tells you what to do next — and then does it. Built on deep learning, not prompts. What sets us apart isn't the technology alone — it's that we've sat on the other side of the table. We know what \"messy data\" really means. We know what a CDO needs on a Monday morning.\n\n  \n\nWe want to be in this adventure with long\\-term, good people. We believe this is a generational company, and the road has to be uncomfortably exciting. We want captains, not passengers. People who are as passionate about the problem as they are about the ride.\n\n### **If that sounds like you — let's talk.**",
+      "description_snippet": "### **Hilbert is** **building the growth infra for the next decade** **— a system built by operators, mathematicians, and engineers who lived the complexity of growth at scale, and decided to end it.**\n\n### **We work with the most forward\\-looking operators in the world — from Fortune 500 enterprises like Walmart to beloved consumer brands like FreshDirect and Blank Street Coffee, to the leading AI\\-native companies redefining how software gets built.**\n\n### **The Opportunity**\n\n### **Forget wha",
+      "tools": [
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "fortune_500",
+          "signal_value": "Fortune 500"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "first_hire",
+          "signal_value": "First Hire"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "uncapped",
+          "signal_value": "Uncapped"
+        }
+      ],
+      "data_quality_score": 60,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineering Intern (Customer Success & Agentic AI)",
+      "company": "Equinix",
+      "location": "Washington, DC, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-14",
+      "date_scraped": "2026-04-16",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=56a7bbed8e31e611",
+      "description": "### **GTM Engineering Intern (Customer Success \\& Agentic AI)**\n\n\n* JR\\-160091\n* Hybrid\n* Redwood City\n* Washington\n* Dallas\n\nShow More\n * General Management\n* Full time\n\n**Who are we?**\n\n\n\nEquinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet.\n\n  \n\n\nA place where bold ideas are welcomed, human connection is valued, and everyone has the opportunity to shape their future.\n\n\n\nA career at Equinix means being at the center of shaping what comes next and amplifying customer value through innovation and impact. You’ll work across teams, influence key decisions, and help shape the path forward. You’ll find belonging, purpose, and a team that welcomes you—because when you feel valued, you’re empowered to do your best work.\n**Role Overview**\n\n\n\nThe **GTM Engineering Intern** will occupy a specialized technical role dedicated to bridging the gap between Customer Success strategy and autonomous execution. This position focuses on the design and deployment of **Agentic AI**—systems capable of reasoning, utilizing tools, and executing multi\\-step workflows with minimal human intervention.\n\n\n\nYou will be responsible for moving the organization beyond simple chatbots toward \"Autonomous Success Agents\" that drive renewals and expansions and operational scale through sophisticated automation and the **Microsoft Copilot** ecosystem.\n\n\n\n**Core Responsibilities**\n\n\n**1\\. Agentic AI \\& Autonomous System Development**\n\n\n* **Agentic Development:** Design and implement multi\\-agent systems using **Microsoft Copilot Studio** and **Microsoft Power Automate** that can autonomously research customer health, reason through complex account signals, and initiate corrective actions.\n\n* **Tool\\-Use \\& Function Calling:** Develop and configure \"skills\" or \"plugins\" that allow AI agents to interact directly with internal APIs, databases, and GTM tools (e.g., Clay, Salesforce, Slack) to perform tasks such as updating account plans or triggering renewal sequences.\n\n* **Reasoning Loops:** Build and refine agentic reasoning loops (e.g., Chain\\-of\\-Thought or ReAct patterns) to ensure AI\\-driven automations provide high\\-accuracy outputs in complex, non\\-linear Customer Success scenarios.\n\n**2\\. Workflow Engineering \\& Orchestration**\n\n\n* **End\\-to\\-End Automation:** Identify manual bottlenecks in the customer lifecycle and architect end\\-to\\-end automated solutions that integrate disparate data sources (Product, CRM, Support) into a unified execution layer.\n\n* **Data Grounding:** Ensure all agentic workflows are grounded in \"live\" customer data, utilizing Retrieval\\-Augmented Generation (RAG) and data orchestration platforms like **Clay** to maintain context and relevance.\n\n* **System Resilience:** Implement monitoring and \"Human\\-in\\-the\\-loop\" (HITL) checkpoints to ensure autonomous agents operate within defined guardrails and align with brand sentiment.\n\n**3\\. Commercial Impact \\& Strategy**\n\n\n* **Revenue Engineering:** Align automation projects with commercial outcomes, specifically focusing on increasing CSM \"books of business\" capacity and identifying expansion opportunities through automated intent signals.\n\n\n* **Strategic Prototyping:** Rapidly prototype customer\\-facing agents that can autonomously assist in technical onboarding or product adoption milestones, reducing the time\\-to\\-value for the end\\-user.\n\n  \n\n\n\n**Why Join Equinix?**\n\n\n\nWe pride ourselves on our **Global Internship Program**, an immersive experience designed to kick\\-start your career and set you up for long\\-term success.\n\n\n\nYou will:\n\n\n* **Work on real business challenges**  \n\nContribute to projects that directly support Equinix’s global operations and technology platforms.\n\n* **Be supported throughout your journey**  \n\nReceive mentorship from your manager, UX subject matter experts, an assigned buddy, and a formal intern mentor.\n\n* **Participate in curated learning experiences**  \n\nEngage with senior leaders, participate in professional workshops, and build global connections.\n\n* **Gain global recognition**  \n\nPresent your work through Equinix’s Global Ideas Competition (“Shark Tank”) to a worldwide audience.\n\n\n**Required Qualifications**\n\n\n* Currently pursuing a BS or MS in Computer Science, Artificial Intelligence, Robotics, or a related quantitative field in their penultimate year of study(graduating between December 2026\\-May 2027\\)\n\n* Strong proficiency in **Python** and experience with AI orchestration frameworks (e.g., LangChain, Semantic Kernel, or AutoGen).\n\n\n* Demonstrated understanding of **Agentic AI concepts**, including tool\\-augmented generation, autonomous planning, and multi\\-agent collaboration.\n\n* Experience working with RESTful APIs and modern data structures (JSON, SQL, NoSQL).\n* Available to work onsight from June 1st\\- August 17th in office (locations posted)\n\n**Preferred Qualifications**\n\n\n* Experience with **Microsoft Copilot Studio** or the broader **Power Platform** ecosystem.\n\n* Familiarity with GTM data orchestration tools (e.g., Clay) and their application in automated prospecting or account management.\n\n* Knowledge of the SaaS \"Land and Expand\" model and the technical metrics associated with Customer Success (Churn, NRR, LTV).\n\n\n**How to Apply**\n\n\n\nPlease submit the following:\n\n\n* An up\\-to\\-date resume that includes:\n\n* Internship availability (start and end dates)\n\n* Expected graduation date\n\n\nPlease apply only if you are available to work **full\\-time for the entire duration** of the internship program in the location posted.\n\n  \n\n\n\nEquinix is committed to ensuring that our employment process is open to all individuals, including those with a disability. If you are a qualified candidate and need assistance or an accommodation, please let us know by completing form.\n\n\nEquinix is an Equal Employment Opportunity and, in the U.S., an Affirmative Action employer. All qualified applicants will receive consideration for employment without regard to unlawful consideration of race, color, religion, creed, national or ethnic origin, ancestry, place of birth, citizenship, sex, pregnancy / childbirth or related medical conditions, sexual orientation, gender identity or expression, marital or domestic partnership status, age, veteran or military status, physical or mental disability, medical condition, genetic information, political / organizational affiliation, status as a victim or family member of a victim of crime or abuse, or any other status protected by applicable law.\n\n**We use artificial intelligence in our hiring process. Learn more** **here****.**",
+      "description_snippet": "### **GTM Engineering Intern (Customer Success \\& Agentic AI)**\n\n\n* JR\\-160091\n* Hybrid\n* Redwood City\n* Washington\n* Dallas\n\nShow More\n * General Management\n* Full time\n\n**Who are we?**\n\n\n\nEquinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet.\n\n  \n\n\nA place where bold ideas are welcomed, human connection is valued, and everyone has the opportunity to shape their future.\n\n\n\nA career at Equinix m",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Langchain",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "langchain"
+        },
+        {
+          "tool_name": "Semantic Kernel",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "semantic_kernel"
+        },
+        {
+          "tool_name": "Autogen",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "autogen"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "global",
+          "signal_value": "Global"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "Sr. GTM Engineer",
+      "company": "Fort Robotics",
+      "location": "Philadelphia, PA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": 130000,
+      "max_amount": 150000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-14",
+      "date_scraped": "2026-04-16",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=04bfdc6dfab7c52b",
+      "description": "In today's dynamic worksites, seamless collaboration between people and machines is essential. FORT's platform ensures safe, secure, and dynamic control that surpasses legacy systems and next\\-generation AI capabilities.\n\n\n\nWhile autonomous machines offer significant advantages, they also introduce new safety challenges. FORT addresses these concerns by providing solutions such as the Wireless E\\-Stop, which allows operators to instantly stop any machine from a safe distance, enhancing safety during emergencies.\n\n\n\nAdditionally, FORT's Safe Remote Control enables operators to manage heavy machinery remotely, reducing the risk of accidents and improving visibility.\n\n\n\nBy ensuring communications integrity across any network, FORT empowers customers to protect their most valuable assets—people, data, and machines—ensuring they remain safe and secure.\n\n\n\nThe GTM Engineer is responsible for using AI, data, and GTM process knowledge to modernize FORT's go\\-to\\-market operations. This role is critical for building the operational foundation upon which FORT can scale. As a force multiplier across the entire revenue organization, the GTM Engineer will have high visibility and direct impact on FORT's growth trajectory.\n\n\n**Key Responsibilities**\n\n\n* Leverage AI solutions such as Claude to analyze, augment, and develop GTM processes that drive efficiency and revenue growth\n* Own and manage FORT's Salesforce.com environment as the GTM system of record, ensuring data integrity and process alignment\n* Track and report on core GTM KPIs, including revenue, conversion rates, sales velocity, and pipeline coverage across multiple business segments\n* Maintain a holistic ICP target account list and develop structured approaches to measure and improve account penetration\n* Design and deploy AI agents to automate GTM processes, reducing manual workload and increasing speed across the revenue team\n\n\n**Required Qualifications**\n\n\n* 4–7 years of experience in a revenue operations function within a B2B environment\n* Active Salesforce.com Administrator certification\n* Demonstrated proficiency with modern GTM systems, including Gong, Clay, ZoomInfo, and HubSpot\n* 1\\+ year of experience integrating AI systems such as Claude with GTM business tools\n* 1\\+ year of experience deploying AI agents to automate GTM workflows and processes\n\n\n**Preferred Qualifications**\n\n\n* Proven track record of building apps or dashboards powered by AI systems such as Claude\n* Experience in sales enablement and LMS solutions\n\n\n**Compensation \\& Benefits**\n\n\n\nThe base salary for this position ranges from $130,000 to $150,000, based on qualifications, experience, and the level at which the candidate is hired. Total compensation may also include additional incentives and benefits.",
+      "description_snippet": "In today's dynamic worksites, seamless collaboration between people and machines is essential. FORT's platform ensures safe, secure, and dynamic control that surpasses legacy systems and next\\-generation AI capabilities.\n\n\n\nWhile autonomous machines offer significant advantages, they also introduce new safety challenges. FORT addresses these concerns by providing solutions such as the Wireless E\\-Stop, which allows operators to instantly stop any machine from a safe distance, enhancing safety du",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Instantly",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "instantly"
+        },
+        {
+          "tool_name": "Gong",
+          "tool_category": "Revenue_Intelligence",
+          "tool_id": "gong"
+        },
+        {
+          "tool_name": "Zoominfo",
+          "tool_category": "Data_Providers",
+          "tool_id": "zoominfo"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "team_structure",
+          "signal_id": "reports_cro",
+          "signal_value": "Reports Cro"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "HubSpot Marketing Operations Specialist or GTM Engineer",
+      "company": "Clockwork",
+      "location": "Palo Alto, CA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "Entry",
+      "function_category": "sales",
+      "date_posted": "2026-04-14",
+      "date_scraped": "2026-04-16",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=16638d0f5a33c3a8",
+      "description": "#### **About Clockwork Systems**\n\n\n**Clockwork.io – Software Driven Fabrics to increase GPU cluster utilization**\n\n\n\nClockwork Systems was founded by Stanford researchers and veteran systems engineers who share a vision for redefining the foundations of distributed computing. As AI workloads grow increasingly complex, traditional infrastructure struggles to meet the demands of performance, reliability, and precise coordination. Clockwork is pioneering a software\\-driven approach to AI fabrics by delivering **cross\\-stack observability** to catch and quickly resolve problems, **workload fault tolerance** to keep jobs running through failures, and **performance acceleration** that dynamically routes and paces traffic to avoid congestion.\n\n\n#### **To learn more, visit** **www.clockwork.io****.**\n\n**About the Role**\n\n\n\nWe are looking for a highly hands\\-on **HubSpot Marketing Operations Specialist** **or GTM Engineer** to own our HubSpot ecosystem end\\-to\\-end. This person will architect, configure, and scale our full marketing in HubSpot and ensure it works well with the sales stages already configured in Salesforce — from lifecycle stages, lead routing, scoring, segmentation, and ABM workflows to campaign execution, analytics, reports/dashboards and Salesforce integration.\n\n\n**This role also includes managing and optimizing the HubSpot**  **Clay sync**, ensuring ABM lists, intelligent enrichment signals, and automated campaign triggers flow seamlessly into HubSpot to power targeting, scoring, segmentation, and activation.*If you have working knowledge of Clay, that is a bonus, otherwise we will accelerate your learning with paid coaching which is an added bonus as this is a highly prized skillset in the market.*\n\n\n\nIf you're the type who can build systems from scratch, scale them for mature marketing programs, and enjoy being the \"go\\-to expert\" across the organization, this role is for you. We are a tech\\-forward company with a very flat org structure so this role is highly respected with regular coaching and readouts with executives who proactively support your learning and career acceleration.\n\n\n**What You'll Do**\n\n\n* Build and maintain the full HubSpot lead lifecycle (MQL SQL Opportunity Closed\\-Won).\n* Configure multi\\-channel HubSpot campaigns: events, webinars, paid/organic ads, email nurture, social campaigns, and ABM sequences with Hubspot CRM and Content Hub.\n* Build reports and dashboards that track full\\-funnel performance, campaign attribution, and revenue metrics.\n* Create workflows, scoring models, segmentation logic, custom fields, and data\\-quality processes.\n* Manage the HubSpot Salesforce sync: mappings, lifecycle logic, campaign influence, and data hygiene.\n* Partner closely with marketing, sales to translate business requirements into system configuration\n* Document systems, train users, and ensure operational excellence across marketing and sales motions.\n  \n\n\n**What We're Looking For**\n\n\n* **2\\+ years of hands\\-on HubSpot power\\-user or admin experience** — building and scaling systems (not just using them).\n* Expertise in lead lifecycle configuration, scoring, workflow automation, and campaign setup.\n* Strong experience building dashboards and reports for funnel metrics and campaign ROI.\n* Good working knowledge of **Salesforce CRM** and HubSpot Salesforce integrations, and how HubSpot and SFDC integrate for full funnel lifecycle and opportunity management. SFDC is already configured with a mature implementation but ensuring Hubspot and SFDC stay synchronized on data and field mappings will be important.\n* Experience supporting ABM motions (We use Clay ABM lists that integrate with Hubspot).\n* AI\\-forward experimentation mindset with a love of learning new ways of doing things\n* Excellent communicator who can collaborate cross\\-functionally and act as the internal HubSpot SME.\n\n### **Why Join Us?**\n\n\n* You'll own a mission\\-critical system powering the entire revenue engine.\n* You'll get autonomy and influence — the ability to architect the system the right way from the start.\n* You'll work closely with sales, marketing, and leadership in a highly collaborative, very flat org structure with direct exposure to seasoned executives and a high\\-growth environment where we are landing the world's top AI partners \\& customers\n* Hybrid flexible culture — **work onsite in Palo Alto 2\\+ days/week** with a strong local team with strong coaching support.\n\n\n**Enjoy**\n\n\n* Challenging projects.\n* A friendly and inclusive workplace culture.\n* Competitive compensation.\n* A great benefits package.\n* Catered lunch.\n\n**Clockwork Systems is an equal opportunity employer.** We are committed to building world\\-class teams by welcoming bright, passionate individuals from all backgrounds. All qualified applicants will receive consideration for employment without regard to race, color, ancestry, religion, age, sex, sexual orientation, gender identity or expression, national origin, disability, or protected veteran status. We believe diversity drives innovation, and we grow stronger together.",
+      "description_snippet": "#### **About Clockwork Systems**\n\n\n**Clockwork.io – Software Driven Fabrics to increase GPU cluster utilization**\n\n\n\nClockwork Systems was founded by Stanford researchers and veteran systems engineers who share a vision for redefining the foundations of distributed computing. As AI workloads grow increasingly complex, traditional infrastructure struggles to meet the demands of performance, reliability, and precise coordination. Clockwork is pioneering a software\\-driven approach to AI fabrics by",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Hubspot Marketing",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "hubspot_marketing"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "channel",
+          "signal_value": "Channel"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "abm",
+          "signal_value": "Abm"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer Lead",
+      "company": "Blossom Health",
+      "location": "New York, NY, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": 100000,
+      "max_amount": 170000,
+      "seniority": "Senior",
+      "function_category": "sales",
+      "date_posted": "2026-04-13",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=c84afd1506d2265e",
+      "description": "Blossom Health exists to **solve the mental health epidemic** in America by partnering with psychiatrists to expand access toaffordable, timely, clinically\\-effective mental healthcare. Our **AI\\-native care platform** is loved by hundreds of clinicians and thousands of patients.\n\n\nWe’re a **Series A** company with **$20M\\+ raised** from Headline, Village Global, and the founders of General Catalyst, Flatiron Health, Sword Health, Grow Therapy, Fay, Elemy, Zip, Blank Street, Assured, Bridge, Birches Health, and Enzo Health.\n\n**The role:**\n=============\n\n\nWe are looking to hire a **GTM Engineer Lead** to own and define success in our field\\-sales motion. You will be closely partnered with the founder, the field GTM team, and the product \\& bizops teams. You will build out our commission \\& quota plans, territory management, hiring and performance tracking, CRM infrastructure, data enrichment, and more.\n\n**Why You Should Work Here:**\n=============================\n\n* **Be early in a hyper\\-growth startup:** You'll be part of the foundational early\\-team of a hyper\\-scaling startup, with direct exposure to every aspect of the business\n* **High trust and autonomy:** You’ll have ownership over meaningful projects from day one, with the freedom to shape key decisions and influence company direction. We trust our colleagues to figure out the best path forward \\- without micromanagement\n* **Talent\\-dense team:** Work with a top\\-percentile team built on mutual respect and admiration, with shared goals, motivations, and vision for the future\n* **We move with speed and purpose:** Everyday your work will translate into creating a 10x experience for millions of patients in dire need of care and hundreds of thousands of physicians frustrated with modern\\-day healthcare technology\n\n**What we're looking for:**\n===========================\n\n* **Highly motivated, ambitious, and capable** \\- looking to tackle a large, meaningful problem area\n* **Ownership mindset** \\- thinking for the long\\-term and placing the business and our customers first\n* **High velocity and high excellence** \\- have a real sense of urgency to move quickly and take pride in the quality of your work\n* **An explorer** \\- comfortable with ambiguity and autonomy, seeking to answer questions previously unasked, to leap into the unknown\n* **An optimist** \\- you believe in a tomorrow better than today\n* **A builder** \\- you take joy in bringing new creation to the world, in leveraging technology to make useful things\n* **Humble** \\- you use your gifts in the service of others and understand that success is an output, not an input\n\n**What you'll do:**\n===================\n\n* Operate at the intersection of GTM, ops, product, and strategy to scale the field\\-sales motion\n* Own projects end\\-to\\-end, from ideation through execution\n* Define new processes \\& technologies to solve previously un\\-encountered, first\\-pass problems\n* Work hand\\-in\\-hand with the Founder and other business leaders day\\-in day\\-out\n\n**You'll be a good fit if:**\n============================\n\n* Bachelor's degree or equivalent experience\n* A strong bias for action \\- you don't wait to be told, you go ahead and do\n* 2\\+ years of professional working experience in a GTM strategy \\& ops role, ideally for a field\\-sales motion, at a startup or other high\\-growth tech\\-first organization\n* Authorized to work in the United States\n* Excited to be in\\-person in New York City 5 days a week\n\n**Benefits:**\n=============\n\n* Competitive salary, equity, growth opportunities\n* Beautiful sunshine and snack\\-filled office in the heart of Manhattan\n* Health, dental, and vision insurance\n* A focus on outcomes, not hours\n* Team outings, offsites, and unlimited PTO\n\nCompensation Range: $100K \\- $170K",
+      "description_snippet": "Blossom Health exists to **solve the mental health epidemic** in America by partnering with psychiatrists to expand access toaffordable, timely, clinically\\-effective mental healthcare. Our **AI\\-native care platform** is loved by hundreds of clinicians and thousands of patients.\n\n\nWe’re a **Series A** company with **$20M\\+ raised** from Headline, Village Global, and the founders of General Catalyst, Flatiron Health, Sword Health, Grow Therapy, Fay, Elemy, Zip, Blank Street, Assured, Bridge, Bir",
+      "tools": [
+        {
+          "tool_name": "Catalyst",
+          "tool_category": "Customer_Success",
+          "tool_id": "catalyst"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "deal_size",
+          "signal_id": "transactional",
+          "signal_value": "Transactional"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "north_america",
+          "signal_value": "North America"
+        },
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "global",
+          "signal_value": "Global"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer & Operations",
+      "company": "Plaud",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-13",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=1ff1e2ca5251c8c8",
+      "description": "**About Plaud Inc.**\n\n\nPlaud is building the world's most trusted AI work companion for professionals to elevate productivity and performance through note\\-taking solutions, loved by over 1,500,000 users worldwide since 2023\\. With a mission to amplify human intelligence, Plaud is building the next\\-generation intelligence infrastructure and interfaces to capture, extract, and utilize what you say, hear, see, and think.\n\n\nPlaud Inc. is a Delaware\\-incorporated, San Francisco\\-based company pushing the boundary of human–AI intelligence through a hardware–software combination. With ISO 27001, ISO 27701, GDPR, SOC 2, HIPAA, and EN 18031 compliance, Plaud is committed to the highest standards of data security and privacy protection.\n\n\nTo learn more about Plaud, please visit https://www.plaud.ai and follow along on Instagram, X, Facebook, LinkedIn, and YouTube\n\n**Why You Should Join Us**\n\n\nPlaud is building the next generation intelligence infrastructure and interfaces to capture, extract, and utilize intelligence from what people say, hear, see, and think.\n\n* Plaud is a bootstrapped, skyrocketing, profitable company with a $250M revenue run rate achieved in just three years.\n* Define the next\\-gen paradigm for human\\-AI interaction.\n* Gain exposure to cutting\\-edge AI for Pro tools and play a direct role in our global expansion.\n* Work with passionate teammates who value innovation, collaboration, and customer success.\n* Grow your career in a culture that champions continuous learning and fast career development.\n* Market\\-competitive compensation, global exposure, and a vibrant, creativity\\-fueled work atmosphere.\n\n**What you will do**\n\n* *Set up, optimize, and maintain the full B2B GTM stack and all integrations between tools (ie. HubSpot CRM, Clay, platform backend, support ticketing system) for both Plaud Team and the Developer Platform.*\n* *Implement AI\\-driven lead routing and qualification systems \\- score inbound signups and automatically route to sales or self\\-serve based on fit signals.*\n* *Build AI inbound sales agents to handle and respond to prospect inquiries at scale, in collaboration with the B2B Sales Lead.*\n* *Set up developer platform support infrastructure (support ticketing system and knowledge base) and deploy AI\\-driven Tier 1 support to deflect common developer questions.*\n* *Build dashboards and funnel reports tracking the developer lead, acquisition, and conversion funnel in collaboration with the data analytics team.*\n\n**Skills, qualifications and experience we look for**\n\n* *5–7 years experience building GTM automation, integrations, and building/working across pre\\-sales, customer success, and support using 3rd\\-party SaaS/AI tools (HubSpot, Clay, Zapier, n8n, or custom API/webhook work)*\n* *Hands\\-on experience building production\\-ready AI agents for GTM use cases (inbound sales qualification, Tier 1 support, (nice to have) outbound sequencing);*\n* *Experience replacing workflows using AI to streamline operations across the GTM organization*\n* *Data fluency: able to independently build dashboards and funnel reports (SQL, Metabase, Looker, or equivalent); comfortable defining metrics and interpreting anomalies.*\n* *Technical enough to collaborate with engineering and improve AI agent responses: comfortable debugging logs, API errors, and more.*\n\n**What we offer**\n\n* **Meaningful Ownership** An Employee Stock Ownership Plan (ESOP) that gives a real stake in Plaud’s long\\-term success.\n* **High\\-Impact Environment** Work in a fast\\-moving, product\\-driven environment where your ideas directly shape the future of AI productivity.\n* **Comprehensive Health \\& Retirement Benefits** Top\\-tier medical, dental, and vision insurance for employees and dependents, supported by a generous employer subsidy, plus a 401(k) retirement plan with company matching for full\\-time employees.\n* **Time Off \\& Workplace Benefits** Unlimited PTO, plus 13 paid holidays, 12 weeks of fully paid parental leave for all parents, a hybrid work model with a minimum of three in\\-office days per week, and access to high\\-quality office snacks, drinks, and equipment.\n* **Cutting\\-Edge AI Tools for Productivity** Access to best\\-in\\-class AI tools, including Cursor, GPT models, Gemini, Claude, and other frontier AI systems to maximize engineering and execution efficiency.\n* **Best\\-in\\-Class Equipment** Choice of top\\-spec laptops, high\\-performance workstation setups, and cutting\\-edge Plaud devices for all new hires.\n* **Team \\& Culture** Annual company offsites, team events, and a culture that values craftsmanship, ownership, and velocity.",
+      "description_snippet": "**About Plaud Inc.**\n\n\nPlaud is building the world's most trusted AI work companion for professionals to elevate productivity and performance through note\\-taking solutions, loved by over 1,500,000 users worldwide since 2023\\. With a mission to amplify human intelligence, Plaud is building the next\\-generation intelligence infrastructure and interfaces to capture, extract, and utilize what you say, hear, see, and think.\n\n\nPlaud Inc. is a Delaware\\-incorporated, San Francisco\\-based company pushi",
+      "tools": [
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Looker",
+          "tool_category": "BI_Analytics",
+          "tool_id": "looker"
+        },
+        {
+          "tool_name": "Metabase",
+          "tool_category": "BI_Analytics",
+          "tool_id": "metabase"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "inbound",
+          "signal_value": "Inbound"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "global",
+          "signal_value": "Global"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer",
+      "company": "Lorikeet",
+      "location": "US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-12",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=4f9c647da2620787",
+      "description": "**About Us**\n------------\n\n  \n\nLorikeet is redefining what customer support looks like — and we're just getting started.\n\n  \n\nWe build AI that handles complex, high\\-volume support for fintechs, healthtechs, marketplaces, and delivery services. Not chatbot\\-tier AI. The kind that actually resolves tickets, gives support teams their time back, and raises the bar for what software can do.\n\n  \n\nWe're backed by over $50M USD from QED, Blackbird, and Square Peg, with backing from operators like Claire Hughes Johnson (ex\\-Stripe COO) and Cristina Cordova (Linear COO), plus founders of Canva, Atlassian, and Airwallex. We're the first company since Canva to be funded at early stage by all three of Australia's top VC funds — which tells you something about the calibre of people who've looked closely at what we're building and said yes.\n\n  \n\nOur customers include some of the largest telehealth, fintech, and marketplace companies in the US and Australia — many handling over a million support tickets a year. The problems are real, the scale is real, and the work matters.\n\n  \n\nIf you want to build something that genuinely changes how businesses and customers interact — this is the place.\n\n**About the role**\n------------------\n\n\nWe're looking for a GTM Engineer to own the systems that generate pipeline — someone who thinks like an engineer but executes like a marketer. You'll build AI\\-powered marketing infrastructure, run signal\\-based prospecting at scale, and drive growth loops across organic, paid, and lifecycle marketing.\n\n\nThis isn't a traditional demand gen role. You'll use Claude Code, Clay, and modern AI tooling to build things that would have required a team of five a few years ago. You'll own experimentation velocity, not just campaign execution.\n\n\nYou'll report to the Head of Marketing and work cross\\-functionally with sales, product, and forward\\-deployed engineering.\n\n**What you'll do**\n------------------\n\n*Build AI\\-powered marketing infrastructure*\n\n* Design and operate AI agents that run marketing workflows autonomously — including lead enrichment, campaign personalisation, content production, and signal monitoring\n* Build experimentation infrastructure that tests messaging, channels, and sequences faster than traditional marketing teams thought possible\n* Create self\\-improving systems with evals, feedback loops, and guardrails that get better without constant supervision\n\n *Run signal\\-based prospecting*\n\n* Build and optimise outbound engines using Clay, Apollo, RB2B, Unify, Instantly, and similar tools\n* Surface buying signals (hiring, funding, competitor moves, contract renewals) and route them to sales with full context\n* Design enrichment workflows that prioritise accounts automatically and identify warm intro paths\n\n *Drive growth loops*\n\n* Own lifecycle marketing: nurture sequences, re\\-engagement campaigns, and credit consumption alerts that drive expansion\n* Run 1:many ABM campaigns targeting industry marketing account lists\n* Build and iterate on paid campaigns (LinkedIn, Google, Reddit) with rapid A/B testing\n* Connect organic content (Steve's LinkedIn, SEO/GEO) to conversion infrastructure\n\n *Own experimentation velocity*\n\n* Run 4–6 marketing experiments per month with clear hypotheses, metrics, and iteration cycles\n* Document what works and systematise successful experiments into repeatable playbooks\n* Track pipeline influence, reply rates, meetings booked, and cost per meeting across all channels\n\n**What we're looking for**\n--------------------------\n\n* 3–6 years in growth marketing, marketing ops, revenue ops, or a hybrid sales/marketing role at a B2B SaaS company\n* Genuine fluency with AI tools — building with Claude Code, Cursor, or similar, not waiting for someone else to build for you\n* Experience with the modern GTM stack: Clay, Apollo, HubSpot, Unify, or similar (or demonstrated ability to learn fast)\n* Quantitative mindset: you think in funnels, conversion rates, cohort analysis, and attribution models\n* Comfort with ambiguity: we're building the playbook, not executing an existing one\n* Consulting or product background is a plus — as is experience in growth or as an SDR/BDR\n* Strong communication skills: you'll work across sales, product, and marketing",
+      "description_snippet": "**About Us**\n------------\n\n  \n\nLorikeet is redefining what customer support looks like — and we're just getting started.\n\n  \n\nWe build AI that handles complex, high\\-volume support for fintechs, healthtechs, marketplaces, and delivery services. Not chatbot\\-tier AI. The kind that actually resolves tickets, gives support teams their time back, and raises the bar for what software can do.\n\n  \n\nWe're backed by over $50M USD from QED, Blackbird, and Square Peg, with backing from operators like Clair",
+      "tools": [
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Instantly",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "instantly"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Rb2B",
+          "tool_category": "Visitor_Identification",
+          "tool_id": "rb2b"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "abm",
+          "signal_value": "Abm"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "apac",
+          "signal_value": "Apac"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "reports_cro",
+          "signal_value": "Reports Cro"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Systems Engineer I",
+      "company": "ConstructConnect",
+      "location": "Atlanta, GA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-12",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=573d60c5137197d2",
+      "description": "Overview:\n**The Opportunity**\n\n\nAs a GTM Systems Engineer, you will be a key technical contributor helping to design, build, and operate the Salesforce\\-centered AI\\-powered GTM systems ecosystem at ConstructConnect, with a specific focus on AI\\-assisted development, Salesforce APIs, and modern CI/CD practices.\n\n\nYou will work closely with the GTM Systems Team and Sr. GTM Systems Engineer to implement scalable, resilient solutions that support our GTM organizations (Sales, Customer Success, Support, Marketing, Finance). You will use AI tools to accelerate discovery, solution design, configuration, and testing, while maintaining a high bar for quality, security, and maintainability across our environments.\n\n\nThis role is ideal for someone who is passionate about Salesforce engineering, APIs and integrations, and AI\\-driven productivity, and who enjoys working in a fast\\-moving, collaborative environment with clear growth into a senior engineering path.\n\n\nResponsibilities:\n**What You’ll Be Doing**\n\n* Build solutions within the GTM Systems team, partnering closely with the ager, GTM Systems Engineering to execute on the GTM systems roadmap and AI\\-first architecture.\n* Design, configure, and maintain Salesforce as the core GTM platform—objects, fields, automations (Flow \\& AI), validation rules, page layouts, record types, profiles vs permission sets, and integrations.\n* Understand the system schema across HubSpot, Zuora, Planhat, BigQuery, and DBAmp ensuring clean data flows and consistent business logic across the GTM stack.\n* Translate business requirements from Sales, Marketing, Customer Success, Support, Product, and Finance into robust technical designs, implementation plans, and clear acceptance criteria.\n* Own and improve critical GTM workflows such as lead lifecycle, routing, opportunity and account structures, renewals, and customer health signals.\n* Build and optimize automations that reduce manual work for GTM teams while maintaining data quality and governance.\n* Partner with the Manager, GTM Systems Engineering to embed AI into GTM workflows—helping design, prototype, and implement AI\\-powered use cases (e.g., agents in Salesforce, next\\-best actions, workflow copilots).\n* Implement and maintain integrations with AI using APIs (e.g., Glean Agent calls, Claude messaging), including data contracts, triggers, and guardrails.\n* Contribute to engineering rigor and Agile best practices and ceremonies within the GTM Systems team\n* Use sandboxing, automated testing, and peer review for configuration and code.\n* Participate in CI/CD and release management practices to ensure safe, predictable deployments.\n* Help define and maintain documentation for configurations, integrations, and architecture decisions.\n* This job description in no way implies that the duties listed here are the only ones that team members can be required to perform.\n\n\nQualifications: **What You Bring to the Team*** 3\\+ years of experience in GTM / revenue / business systems roles with deep, hands\\-on Salesforce administration and architecture experience.\n* Practical additional experience with at least two of: HubSpot, Marketo, Zuora, Salesforce CPQ, DealHub, Planhat, Totango Gainsight, Gong, Dialpad or similar GTM platforms.\n* Proven ability to design and implement complex GTM workflows (lead lifecycle, routing, opportunity pipelines, account structures, renewals, customer health, quote\\-to\\-cash).\n* Strong integration experience (APIs, middleware, or iPaaS) connecting Salesforce and adjacent GTM tools; comfort debugging data sync and mapping issues.\n* Experience building and maintaining automations at scale while preserving governance and data quality.\n* Demonstrated ability to translate business requirements into system designs with autonomy; you ask sharp questions and propose options with marked tradeoffs.\n* Exposure to AI\\-enabled workflows in GTM systems (e.g., copilots, agents, intelligent routing, recommendations) or strong interest and aptitude to ramp quickly.\n* Familiarity with Agile/Kanban ways of working and collaborating within a product operating model.\n* Capable communication skills—concise in documentation, clear in design reviews, and comfortable collaborating with both technical and non\\-technical stakeholders.\n* Bachelor’s degree in Computer Science, Information Systems, Business, or related field—or equivalent practical experience.\n\n**Physical Demands and Work Environment:**\n\n* The physical activities of this position include frequent sitting, telephone communication, and working on a computer for extended periods. Visual acuity is required to perform activities close to the eyes.\n* Team members are expected to maintain a dedicated and ergonomically appropriate remote workspace.\n* Team members who live within commuting distance of one of our office locations (Greater Cincinnati/Northern Kentucky or Atlanta, Georgia) are expected to work in a hybrid capacity, with regular in\\-office presence as determined by the team or department.\n* All team members must reside and perform their work within the United States.\n\n**E\\-Verify Statement**  \n\nConstructConnect utilizes the E\\-Verify program with every potential new hire. This makes it possible for us to make certain that every employee who works for ConstructConnect is eligible to work in the United States. To learn more about E\\-Verify you can call 1\\-800\\-255\\-7688 or visit their website. E\\-Verify® is a registered trademark of the United States Department of Homeland Security.\nPrivacy Notice",
+      "description_snippet": "Overview:\n**The Opportunity**\n\n\nAs a GTM Systems Engineer, you will be a key technical contributor helping to design, build, and operate the Salesforce\\-centered AI\\-powered GTM systems ecosystem at ConstructConnect, with a specific focus on AI\\-assisted development, Salesforce APIs, and modern CI/CD practices.\n\n\nYou will work closely with the GTM Systems Team and Sr. GTM Systems Engineer to implement scalable, resilient solutions that support our GTM organizations (Sales, Customer Success, Supp",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Gong",
+          "tool_category": "Revenue_Intelligence",
+          "tool_id": "gong"
+        },
+        {
+          "tool_name": "Salesforce Cpq",
+          "tool_category": "CPQ",
+          "tool_id": "salesforce_cpq"
+        },
+        {
+          "tool_name": "Dealhub Cpq",
+          "tool_category": "CPQ",
+          "tool_id": "dealhub_cpq"
+        },
+        {
+          "tool_name": "Zuora Cpq",
+          "tool_category": "CPQ",
+          "tool_id": "zuora_cpq"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Gainsight",
+          "tool_category": "Customer_Success",
+          "tool_id": "gainsight"
+        },
+        {
+          "tool_name": "Totango",
+          "tool_category": "Customer_Success",
+          "tool_id": "totango"
+        },
+        {
+          "tool_name": "Planhat",
+          "tool_category": "Customer_Success",
+          "tool_id": "planhat"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "north_america",
+          "signal_value": "North America"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer",
+      "company": "InvoiceCloud",
+      "location": "Boston, MA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": 110000,
+      "max_amount": 130000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-12",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=e592443b1efad79e",
+      "description": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI maturity and responsible innovation. It's an award\\-winning, purpose\\-driven environment where top talent thrives. To learn more, visit InvoiceCloud.com.\n\n**Role Overview:**\n\n\n\nWe are seeking a highly skilled and results\\-oriented GTM Engineer to support the Revenue Operations team. This role will play a key part in advancing InvoiceCloud's mission to drive digital transformation for clients and enhance customer engagement.\n\n\n\nThe ideal candidate operates as a proactive, trusted partner—capable of managing complex responsibilities, collaborating across teams, and maintaining the high standards of professionalism and innovation that define InvoiceCloud's culture.\n\n  \n\n\n***\\*\\*Candidate must be based in greater Boston, MA*** ***and be onsite in our Seaport Boston, MA office 2x per week \\*\\****\n\n  \n\n\n**Success Profile:**\n\n\n\nThis role is anchored in our company's core competencies. These competencies reflect the mindsets and behaviors that define success in this role. Below is how each competency translates into meaningful impact and outcomes for this position.\n\n\n\n**Results\\-Driven**\n\n\n* Write SQL in Snowflake to build views, scoring models, and ad hoc analyses that support GTM decision\\-making  \n\n\t+ Maintain and improve pipeline and buying signal dashboards in Tableau\n\t+ Collaborate with SDRs, AEs, and Marketing to understand workflow pain points and translate them into engineering solutions\n\t+ Surface data quality issues and automation gaps proactively before they affect pipeline\n\n\n **Drives Efficiency**\n\n\n* Build tables, waterfalls, and enrichment workflows in Clay that power prospecting and lead scoring  \n\n\t+ Design and maintain data pipelines from Clay into Salesforce, ensuring clean field mapping, deduplication, and record integrity\n\t+ Connect and orchestrate data across the GTM stack: Clay, SFDC, Marketo, 6sense, and Snowflake\n\t+ Develop and deploy automations that reduce manual work across Sales, Marketing, and RevOps\n\n\n **Takes Ownership**\n\n\n* Own Clay as the primary GTM engineering platform and manage its ongoing optimization and scalability  \n\n\t+ Build AI\\-powered workflows using Claude, ChatGPT, and other LLMs to automate research, personalization, and signal processing at scale\n\t+ Use tools like Claude Code and Lovable to rapidly prototype internal tools and workflow applications\n\t+ Document data logic, workflow architecture, and process changes as you build\n\n  \n\n\n**Requirements**\n\n\n**Required:**\n\n\n* Bachelor's degree in Computer Science, Software Engineering, or a related technical field\n* Strong SQL skills — comfortable writing complex queries, CTEs, and window functions\n* Hands\\-on experience with AI tools: LLM APIs (Claude, OpenAI), prompt engineering, and AI\\-assisted development (Claude Code, Cursor, or similar)\n* Experience with Clay or a strong desire to become an expert quickly — this is your primary tool\n* Familiarity with workflow automation platforms, ideally n8n or similar (Zapier, Make)\n* Experience with low\\-code/no\\-code app builders such as Lovable, Bolt, or v0\n* 1–3 years of professional experience; strong internship or project work welcome\n* Genuine interest in sales and marketing — you want to understand the GTM motion, not just build abstractions\n\n\n**Nice to Have:**\n\n\n* Experience with Salesforce data models and SFDC integrations\n* Familiarity with Snowflake, dbt, or other data warehouse tooling\n* Exposure to ABM platforms like 6sense or intent data concepts\n* Python skills for scripting, API integrations, or ML experimentation\n* Prior work in a RevOps, sales ops, or marketing ops context\n\n  \n\n\n**Benefits:**\n\n\n\nWe offer a competitive benefits program including:\n\n\n* Medical, dental, vision, life \\& disability insurance\n* 401(k) plan with company match\n* Flexible Time Off (FTO), wellbeing days, paid holidays, and summer Fridays\n* Mental health resources\n* Paid parental leave \\& Backup Care\n* Tuition reimbursement\n* Employee Resource Groups (ERGs)\n\n  \n\n\nInvoiceCloud is committed to providing equal employment opportunities to all employees and applicants. We do not tolerate discrimination or harassment of any kind based on race, color, religion, age, sex, nationality, disability, genetic information, veteran or military status, sexual orientation, gender identity or expression, or any other characteristic protected under applicable laws.\n\n\n\nThis commitment applies to all aspects of employment, including recruitment, hiring, placement, promotion, termination, layoff, recall, transfer, leave, compensation, and training.\n\n\n\nIf you require a disability\\-related or religious accommodation during the application or recruitment process, and wish to discuss possible adjustments, please contact jobs@invoicecloud.com.\n\n\n\nClick **here** to review InvoiceCloud's Job Applicant Privacy Policy.\n\n\n**For recruitment agencies:** InvoiceCloud does not accept unsolicited resumes from agencies. Please do not forward resumes to our job aliases, employees, or any other company location. InvoiceCloud is not responsible for any fees associated with unsolicited submissions.",
+      "description_snippet": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI matu",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "6Sense",
+          "tool_category": "ABM_Platforms",
+          "tool_id": "6sense"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Tableau",
+          "tool_category": "BI_Analytics",
+          "tool_id": "tableau"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
+        },
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "abm",
+          "signal_value": "Abm"
+        },
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "north_america",
+          "signal_value": "North America"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "turnaround",
+          "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "Founding GTM Engineer",
+      "company": "HOBBES",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-12",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=337dfbb63e73f7fe",
+      "description": "Our conversion event isn't a booked demo. It's someone having a real conversation with our agent. That makes the work here a little different: every experiment gets measured at the conversation level, and most of growth at Hobbes looks more like product than marketing. The next chapter is yours to design.\n\n**About Hobbes**\n----------------\n\n\nIt should not be this hard to give a business your money. Hobbes runs product demos today. But that's the wedge. The real bet is an agentic layer that runs the parts of a business the way Cursor and Claude Code run engineering orgs. Every conversation a prospect has with the agent is logged, measured, and fed back into the product. We closed our $6M seed a few weeks ago and have tripled since February, entirely on inbound. That's why this role exists. One of our early customers has already 2x'd their revenue since deploying Hobbes.\n\n**What you'll do**\n------------------\n\n* Build the growth engine from zero. Top of funnel, ABM, outbound, paid, whichever channels actually work.\n* Run rapid experiments. Log what lands, cut what doesn't, move on.\n* Own every surface that drives a prospect into a conversation with the agent.\n* Work closely with product. What a prospect says to the agent on Monday should shape what the agent says back on Wednesday.\n* Help define the 200\\-account target list and the motion that goes after it.\n\n**What we're looking for**\n--------------------------\n\n* You've owned a number from zero and can name a metric you moved.\n* You've pushed for a product change because the data made it obvious, and you were right.\n* You think of growth as a product problem, not a channel problem.\n\n**Comp**\n--------\n\n* **Base:** $145\\-185K\n* **Equity:** Founding\\-caliber\n* **Location:** In\\-person, San Francisco\n\n**Process**\n-----------\n\n\n4 rounds: Chirag, Arjun, async case study, paid 3\\-day work trial in the office. About 2 weeks from first conversation to offer.",
+      "description_snippet": "Our conversion event isn't a booked demo. It's someone having a real conversation with our agent. That makes the work here a little different: every experiment gets measured at the conversation level, and most of growth at Hobbes looks more like product than marketing. The next chapter is yours to design.\n\n**About Hobbes**\n----------------\n\n\nIt should not be this hard to give a business your money. Hobbes runs product demos today. But that's the wedge. The real bet is an agentic layer that runs ",
+      "tools": [
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "channel",
+          "signal_value": "Channel"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "abm",
+          "signal_value": "Abm"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "first_hire",
+          "signal_value": "First Hire"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "Director GTM Engineering",
+      "company": "Airwallex",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": 300000,
+      "max_amount": 330000,
+      "seniority": "Director",
+      "function_category": "sales",
+      "date_posted": "2026-04-12",
+      "date_scraped": "2026-04-15",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=a4793debfe3c3c36",
+      "description": "**About Airwallex**\n-------------------\n\n\nAirwallex is the only unified payments and financial platform for global businesses. Powered by our unique combination of proprietary infrastructure and software, we empower over 200,000 businesses worldwide – including Brex, Rippling, Navan, Qantas, SHEIN and many more – with fully integrated solutions to manage everything from business accounts, payments, spend management and treasury, to embedded finance at a global scale.\n\n\nProudly founded in Melbourne, we have a team of over 2,000 of the brightest and most innovative people in tech across 26 offices around the globe. Valued at US$8 billion and backed by world\\-leading investors including T. Rowe Price, Visa, Mastercard, Robinhood Ventures, Sequoia, Salesforce Ventures, DST Global, and Lone Pine Capital, Airwallex is leading the charge in building the global payments and financial platform of the future. If you’re ready to do the most ambitious work of your career, join us.\n\n**Attributes We Value**\n-----------------------\n\n\nWe hire successful builders with founder\\-like energy who want real impact, accelerated learning, and true ownership. You bring strong role\\-related expertise and sharp thinking, and you’re motivated by our mission and operating principles. You move fast with good judgment, dig deep with curiosity, and make decisions from first principles, balancing speed and rigor.\n\n\nYou're humble and collaborative; turn zero‑to‑one ideas into real products, and you “get stuff done” end\\-to\\-end. You use AI to work smarter and solve problems faster. Here, you’ll tackle complex, high‑visibility problems with exceptional teammates and grow your career as we build the future of global banking. If that sounds like you, let’s build what’s next.\n\n\nWe're hiring a Director of GTM Engineering leader to own and transform the technology backbone of our go\\-to\\-market engine. This role sits at the intersection of our Data \\& AI, Revenue, and Growth teams.\n\n\nYour mandate: evolve our stack from high\\-performing to best\\-in\\-class — more automated, easier to monitor, and tightly connected to our Data \\& AI platform.\n\n**What You'll Do**\n------------------\n\n**Own the GTM architecture end\\-to\\-end**\n\n* Take technical ownership of Salesforce (revenue and CRM), Marketo, and connected tools including Demandbase, data enrichment, the data warehouse, analytics, and sales engagement platforms.\n* Define and maintain a clear target architecture for how ads, web, marketing technology, CRM, data, and AI systems work together.\n\n**Make the stack AI\\- and experiment\\-ready**\n\n* Streamline how signals and events flow from ad platforms through Marketo and Salesforce into reporting — standardizing integrations and patterns along the way.\n* Design the foundations for AI\\-powered growth: reliable event streams, data contracts, and APIs that support AI agents and analytics.\n\n**Build and lead the team**\n\n* Hire and lead a small, high\\-caliber engineering pod focused on revenue and marketing systems.\n* Own a roadmap that balances quick wins (smoother automation, cleaner lead flows, clearer attribution) with longer\\-term platform investments.\n\n**Partner deeply with GTM stakeholders**\n\n* Work with Growth Product, Growth Marketing, Revenue Systems, and regional Revenue Operations to turn GTM strategies into scalable systems and data flows.\n* Improve lead routing, experimentation frameworks, ideal customer profiling, and lifecycle management across the funnel.\n\n**Raise the bar on quality and reusability**\n\n* Set standards for data governance, tracking, attribution, retention, and privacy/deletion workflows across tools.\n* Implement monitoring, alerting, and QA so the health of GTM systems is transparent and issues surface early.\n* Shift from one\\-off campaign builds to reusable templates, components, and integration patterns.\n\n**Who You Are**\n---------------\n\n* **GTM systems engineering leader.** 15\\+ years in software or data engineering with experience owning or building GTM, revenue, or marketing systems for high\\-growth B2B SaaS, fintech, or similar environments.\n* **Hands\\-on architect who ships.** Comfortable with APIs, data models, workflow engines, and code. You can design systems, run reviews, and still contribute production\\-quality work.\n* **Salesforce and marketing automation expert.** You've built or significantly improved lead routing, attribution, lifecycle funnels, and data enrichment in Salesforce, and integrated Marketo (or equivalent) with CRM and downstream data systems.\n* **Data\\- and experimentation\\-native.** You partner well with Data teams on metrics, attribution, and experimentation, designing GTM tooling around feedback loops and continuous learning.\n* **Cross\\-functional leader.** You translate executive\\-level goals into clear roadmaps and milestones, earning trust with senior leaders, Revenue Operations, and individual contributors across Engineering, Marketing, and Sales.\n\n**Minimum Qualifications**\n--------------------------\n\n* 10\\+ years in software and/or data engineering, including 5\\+ years owning or building GTM, revenue, or marketing systems.\n* Proven technical ownership across Salesforce, marketing automation (Marketo or similar), and data/analytics platforms.\n* Strong system design skills and hands\\-on experience with APIs, data pipelines, and workflow engines.\n* Demonstrated ability to lead small, high\\-impact engineering teams and deliver complex GTM system improvements.\n* Excellent communication and stakeholder management with senior business and technical partners.\n\n**Preferred Qualifications**\n----------------------------\n\n* Experience in fintech, payments, or financial infrastructure — ideally with regulatory and data\\-localization exposure.\n* Prior work with AI/ML\\-driven GTM (e.g., AI agents for analytics, lead scoring, or workflow automation).\n* Experience standing up a new function or team (e.g., Revenue Systems Engineering, Marketing Tech Engineering) from an early stage.\n* Background in high\\-growth, experimentation\\-driven environments with tight feedback loops between Product, Data, and GTM.\n\n**Applicant Safety Policy: Fraud and Third\\-Party Recruiters**\n--------------------------------------------------------------\n\n*To protect you from recruitment scams, please be aware that Airwallex will not ask for bank details, sensitive ID numbers (i.e. passport), or any form of payment during the application or interview process. All official communication will come from an @**airwallex.com* *email address. Please apply only through* *careers.airwallex.com* *or our official LinkedIn page.*\n\n*Airwallex does not accept unsolicited resumes from search firms/recruiters. Airwallex will not pay any fees to search firms/recruiters if a candidate is submitted by a search firm/recruiter unless an agreement has been entered into with respect to specific open position(s). Search firms/recruiters submitting resumes to Airwallex on an unsolicited basis shall be deemed to accept this condition, regardless of any other provision to the contrary.*\n\n**Equal opportunity**\n---------------------\n\n\nAirwallex is proud to be an equal opportunity employer. We value diversity and anyone seeking employment at Airwallex is considered based on merit, qualifications, competence and talent. We don’t regard color, religion, race, national origin, sexual orientation, ancestry, citizenship, sex, marital or family status, disability, gender, or any other legally protected status when making our hiring decisions. If you have a disability or special need that requires accommodation, please let us know.\n\n\nCompensation Range: $300K \\- $330K",
+      "description_snippet": "**About Airwallex**\n-------------------\n\n\nAirwallex is the only unified payments and financial platform for global businesses. Powered by our unique combination of proprietary infrastructure and software, we empower over 200,000 businesses worldwide – including Brex, Rippling, Navan, Qantas, SHEIN and many more – with fully integrated solutions to manage everything from business accounts, payments, spend management and treasury, to embedded finance at a global scale.\n\n\nProudly founded in Melbour",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Demandbase",
+          "tool_category": "ABM_Platforms",
+          "tool_id": "demandbase"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "global",
+          "signal_value": "Global"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "turnaround",
+          "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
     {
       "job_id": "indeed-https://www.",
       "title": "GTM Engineer",
@@ -4063,6 +5268,29 @@
       "data_quality_score": 75,
       "has_salary": false,
       "has_description": true
+    },
+    {
+      "job_id": "fractionaljobs-https://www.",
+      "title": "| GTM Engineer",
+      "company": "Teal Health",
+      "location": "",
+      "location_type": "unknown",
+      "is_remote": true,
+      "min_amount": 249600,
+      "max_amount": 291200,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": null,
+      "date_scraped": "2026-04-16",
+      "source": "fractionaljobs",
+      "source_url": "https://www.fractionaljobs.io/jobs/gtm-engineer-at-teal-health",
+      "description": "",
+      "description_snippet": "",
+      "tools": [],
+      "signals": [],
+      "data_quality_score": 40,
+      "has_salary": true,
+      "has_description": false
     }
   ]
 }

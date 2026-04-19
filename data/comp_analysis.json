@@ -1,24 +1,36 @@
 {
-  "generated_at": "2026-04-16T09:21:45.199775",
-  "total_records": 62,
-  "records_with_salary": 31,
-  "disclosure_rate": 50.0,
+  "generated_at": "2026-04-19T09:09:40.736667",
+  "total_records": 73,
+  "records_with_salary": 36,
+  "disclosure_rate": 49.3,
   "salary_stats": {
     "min": 48,
     "max": 330000,
-    "median": 120000,
-    "avg": 128511,
-    "count_with_salary": 31
+    "median": 130000,
+    "avg": 130523,
+    "count_with_salary": 36
   },
   "by_seniority": {
     "Unknown": {
-      "count": 25,
-      "min_base_avg": 118753,
-      "max_base_avg": 155314,
-      "median": 120000
+      "count": 30,
+      "min_base_avg": 122794,
+      "max_base_avg": 159328,
+      "median": 122000
     }
   },
   "by_metro": {
+    "Unknown": {
+      "count": 8,
+      "min_base_avg": 126350,
+      "max_base_avg": 161600,
+      "median": 132000
+    },
+    "San Francisco": {
+      "count": 8,
+      "min_base_avg": 159375,
+      "max_base_avg": 217750,
+      "median": 145000
+    },
     "Boston": {
       "count": 3,
       "min_base_avg": 118333,
@@ -31,18 +43,6 @@
       "max_base_avg": 170454,
       "median": 122000
     },
-    "San Francisco": {
-      "count": 5,
-      "min_base_avg": 164000,
-      "max_base_avg": 228000,
-      "median": 140000
-    },
-    "Unknown": {
-      "count": 6,
-      "min_base_avg": 125133,
-      "max_base_avg": 166300,
-      "median": 132000
-    },
     "Austin": {
       "count": 3,
       "min_base_avg": 98016,
@@ -52,10 +52,10 @@
   },
   "by_remote": {
     "onsite": {
-      "count": 30,
-      "min_base_avg": 124474,
-      "max_base_avg": 165122,
-      "median": 120000
+      "count": 34,
+      "min_base_avg": 126448,
+      "max_base_avg": 166931,
+      "median": 122000
     }
   },
   "top_paying_roles": [
@@ -96,6 +96,20 @@
     },
     {
       "title": "GTM Engineer",
+      "company": "",
+      "salary_min": 140000.0,
+      "salary_max": 220000.0,
+      "seniority": ""
+    },
+    {
+      "title": "GTM Engineer",
+      "company": "GAMMA",
+      "salary_min": 170000.0,
+      "salary_max": 215000.0,
+      "seniority": ""
+    },
+    {
+      "title": "GTM Engineer",
       "company": "Playground",
       "salary_min": 160000.0,
       "salary_max": 210000.0,
@@ -113,20 +127,6 @@
       "company": "",
       "salary_min": 120000.0,
       "salary_max": 200000.0,
-      "seniority": ""
-    },
-    {
-      "title": "GTM Engineer",
-      "company": "Hebbia",
-      "salary_min": 140000.0,
-      "salary_max": 190000.0,
-      "seniority": ""
-    },
-    {
-      "title": "Marketing: GTM Engineer - onsite - New York, NY",
-      "company": "gd resources",
-      "salary_min": 135000.0,
-      "salary_max": 185000.0,
       "seniority": ""
     }
   ]

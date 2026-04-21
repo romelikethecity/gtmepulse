@@ -88,7 +88,7 @@ def content_figure_html(page_type):
         return ""
     filename, caption = CONTENT_FIGURES[page_type]
     return f'''<figure class="content-figure">
-    <img src="/assets/images/content/{filename}" alt="{caption}" width="1200" height="630" loading="lazy">
+    <img src="/assets/images/content/{filename}" alt="{caption}" width="1200" height="630" loading="eager">
     <figcaption>{caption}</figcaption>
 </figure>'''
 

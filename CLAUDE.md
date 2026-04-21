@@ -373,7 +373,7 @@ Clay vs Apollo, Clay vs ZoomInfo, Instantly vs Smartlead, Outreach vs Salesloft,
 6. Sends to each subscriber via `resend.Emails.send()`
 7. Saves current data as new snapshot for next week's diff
 
-**Server cron:** `0 18 * * 1` (18:00 UTC = 10:00 AM PST every Monday)
+**Server cron:** `30 7 * * 1` (7:30 AM PT every Monday — server TZ is America/Los_Angeles)
 
 ### Key files to build
 | File | Purpose |

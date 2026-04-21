@@ -1,9 +1,9 @@
 #!/bin/bash
-# Weekly email send script - run via cron every Monday at 10 AM PST
+# Weekly email send script - run via cron every Monday at 7 AM PT
 #
 # Server cron entry (add with: crontab -e):
-#   0 18 * * 1 /bin/bash /home/rome/gtmepulse/scripts/send_weekly_email.sh >> /home/rome/logs/gtme_email.log 2>&1
-#   (18:00 UTC = 10:00 AM PST)
+#   30 7 * * 1 /bin/bash /home/rome/gtmepulse/scripts/send_weekly_email.sh >> /home/rome/logs/gtme_email.log 2>&1
+#   (Server TZ is America/Los_Angeles — cron runs in local time)
 #
 # Prerequisites:
 #   - .env with RESEND_API_KEY and RESEND_AUDIENCE_ID

@@ -1,35 +1,47 @@
 {
-  "generated_at": "2026-04-19T09:09:40.736667",
-  "total_records": 73,
-  "records_with_salary": 36,
-  "disclosure_rate": 49.3,
+  "generated_at": "2026-04-23T09:55:37.796160",
+  "total_records": 85,
+  "records_with_salary": 44,
+  "disclosure_rate": 51.8,
   "salary_stats": {
     "min": 48,
     "max": 330000,
-    "median": 130000,
-    "avg": 130523,
-    "count_with_salary": 36
+    "median": 125000,
+    "avg": 132076,
+    "count_with_salary": 44
   },
   "by_seniority": {
+    "Director": {
+      "count": 3,
+      "min_base_avg": 241333,
+      "max_base_avg": 293333,
+      "median": 250000
+    },
     "Unknown": {
-      "count": 30,
-      "min_base_avg": 122794,
-      "max_base_avg": 159328,
-      "median": 122000
+      "count": 36,
+      "min_base_avg": 121704,
+      "max_base_avg": 162755,
+      "median": 120000
+    },
+    "Senior": {
+      "count": 3,
+      "min_base_avg": 151666,
+      "max_base_avg": 198333,
+      "median": 165000
     }
   },
   "by_metro": {
-    "Unknown": {
-      "count": 8,
-      "min_base_avg": 126350,
-      "max_base_avg": 161600,
-      "median": 132000
-    },
     "San Francisco": {
-      "count": 8,
-      "min_base_avg": 159375,
-      "max_base_avg": 217750,
+      "count": 13,
+      "min_base_avg": 159423,
+      "max_base_avg": 215103,
       "median": 145000
+    },
+    "Unknown": {
+      "count": 11,
+      "min_base_avg": 120527,
+      "max_base_avg": 163436,
+      "median": 115000
     },
     "Boston": {
       "count": 3,
@@ -52,10 +64,16 @@
   },
   "by_remote": {
     "onsite": {
-      "count": 34,
-      "min_base_avg": 126448,
-      "max_base_avg": 166931,
-      "median": 122000
+      "count": 39,
+      "min_base_avg": 130685,
+      "max_base_avg": 172564,
+      "median": 125000
+    },
+    "remote": {
+      "count": 4,
+      "min_base_avg": 116250,
+      "max_base_avg": 170000,
+      "median": 120000
     }
   },
   "top_paying_roles": [
@@ -67,10 +85,24 @@
       "seniority": "Director"
     },
     {
+      "title": "Director, GTM Engineering",
+      "company": "ALTRUIST",
+      "salary_min": 250000.0,
+      "salary_max": 300000.0,
+      "seniority": "Director"
+    },
+    {
       "title": "| GTM Engineer",
       "company": "Teal Health",
       "salary_min": 249600.0,
       "salary_max": 291200.0,
+      "seniority": ""
+    },
+    {
+      "title": "AI GTM Engineer",
+      "company": "DocuSign",
+      "salary_min": 157500.0,
+      "salary_max": 254350.0,
       "seniority": ""
     },
     {
@@ -113,20 +145,6 @@
       "company": "Playground",
       "salary_min": 160000.0,
       "salary_max": 210000.0,
-      "seniority": ""
-    },
-    {
-      "title": "Growth Engineer",
-      "company": "Dust",
-      "salary_min": 100000.0,
-      "salary_max": 200000.0,
-      "seniority": ""
-    },
-    {
-      "title": "Founding Growth Marketer / GTM Engineer",
-      "company": "",
-      "salary_min": 120000.0,
-      "salary_max": 200000.0,
       "seniority": ""
     }
   ]

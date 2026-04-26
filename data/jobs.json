@@ -1,7 +1,337 @@
 {
-  "last_updated": "2026-04-23",
-  "total_jobs": 85,
+  "last_updated": "2026-04-26",
+  "total_jobs": 94,
   "jobs": [
+    {
+      "job_id": "indeed-https://www.",
+      "title": "Outbound GTM Engineer",
+      "company": "Consolidated Consulting, Inc",
+      "location": "Remote, US",
+      "location_type": "remote",
+      "is_remote": true,
+      "min_amount": 65000,
+      "max_amount": 100000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-25",
+      "date_scraped": "2026-04-26",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=e10ccf3db8b6120d",
+      "description": "**About Us**\n\nClick Theory Capital is a high\\-growth AI\\-native private equity and venture studio. We've grown to 150 people in 5 years, totally bootstrapped, and we're still going at 200% per year.\n\nOne of our core portfolio companies is **OSP**, an outsourced SDR and lead generation company that helps B2B companies generate qualified sales conversations. OSP will be the primary operating environment for this role, but the systems you build may also support Click Theory Capital and other portfolio companies.\n\nWe are hiring an **Outbound GTM Engineer** to build the outbound engine that helps our SDR teams know exactly who to chase, why they should chase them, what to say, and when to say it.\n\n**About the Role**\n\nYour mission is simple:\n\nBuild a scalable system to generate high\\-quality sales conversations.\n\nThat means owning the full stack of outbound lead generation before the SDR ever picks up the phone or sends the email.\n\nYou will identify target accounts, find buying signals, build lead lists, enrich data, write outbound copy, create AI workflows, automate research, test campaign angles, measure performance, and continuously improve the system.\n\nThis is not a traditional engineering role.\n\nWe do not care if you write beautiful code. We care if you can build scrappy, AI\\-powered, revenue\\-generating systems that create qualified sales calls.\n\n**What You’ll Own**\n\nYou will own the outbound systems layer across OSP, clients, and other Click Theory Capital portfolio companies.\n\nThis includes:\n\n* Building targeting systems that identify the highest\\-probability prospects for our clients and portfolio companies\n* Creating lead generation workflows using tools like Clay, Smartlead, HubSpot, Salesforce, Seamless, Zapier, Make, AI tools, enrichment platforms, scraping tools, and whatever else gets the job done\n* Finding creative buying signals that tell us who is likely to need our service right now\n* Creating enrichment pipelines that turn messy prospect data into usable, actionable SDR intelligence\n* Writing cold outbound copy that actually gets responses\n* Testing outbound angles, offers, segments, triggers, and messaging\n* Building dashboards or feedback loops that show what is working and what is not\n* Building scrappy internal tools, AI agents, workflows, automations, and data systems that generate a pipeline\n\n**Who You Are**\n\nYou are a sales\\-first builder.\n\nYou probably describe yourself as one of these:\n\n* GTM operator who can build\n* Ex\\-founder\n* Outbound hacker\n* Growth operator\n* Sales automation builder\n* Pipeline generation specialist\n\nYou are technical enough to build systems, but sales\\-minded enough to know what systems are worth building. We’re not looking for pure developers here.\n\nWe want someone who can use AI tools, no\\-code tools, low\\-code tools, APIs, scrappy scripts, enrichment platforms, CRMs, and automation tools to create revenue.\n\n**What We’re Looking For**\n\nYears of experience matter less than proof that you can build systems that generate a pipeline.\n\nYou may be a fit if you have:\n\n* Built outbound systems that created meetings, pipeline, or revenue\n* Used tools like Clay, Smartlead, HubSpot, Salesforce, Seamless, Zapier, Make, Instantly, Apollo, OpenAI, Anthropic, scraping tools, enrichment tools, or similar platforms\n* Written cold email or outbound copy that produced real responses\n* Built lead scoring, enrichment, account research, or signal\\-based targeting workflows\n* Worked in SDR, sales, growth, RevOps, agency, founder, or lead generation environments\n* Used AI to automate research, personalization, segmentation, copywriting, or workflow execution\n* Taken messy GTM ideas and turned them into working outbound campaigns\n* Tested, measured, and improved campaigns based on actual conversion data\n\n**The best candidates will have receipts:** workflows, campaigns, systems, screenshots, Looms, case studies, or examples of things they have built.\n\nBe expected to figure things out, move quickly, and build systems that work.\n\nThis is an intense environment. It is fast\\-moving, ambitious, and high\\-accountability. For the right person, that is the opportunity.\n\n**Remote \\| $65,000–$100,000 base \\+ performance upside**\n\nPay: $65,000\\.00 \\- $100,000\\.00 per year\n\nBenefits:\n\n* 401(k)\n* 401(k) matching\n* Dental insurance\n* Health insurance\n* Paid time off\n* Parental leave\n* Vision insurance\n\nApplication Question(s):\n\n* Describe the most effective outbound or lead generation system you’ve personally built. What did it do, what tools did you use, and what measurable result did it produce?\n* Which outbound, enrichment, AI, CRM, automation, or data tools have you used hands\\-on? For each, briefly describe what you built or owned.\n\nWork Location: Remote",
+      "description_snippet": "**About Us**\n\nClick Theory Capital is a high\\-growth AI\\-native private equity and venture studio. We've grown to 150 people in 5 years, totally bootstrapped, and we're still going at 200% per year.\n\nOne of our core portfolio companies is **OSP**, an outsourced SDR and lead generation company that helps B2B companies generate qualified sales conversations. OSP will be the primary operating environment for this role, but the systems you build may also support Click Theory Capital and other portfo",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Smartlead",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "smartlead"
+        },
+        {
+          "tool_name": "Instantly",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "instantly"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Anthropic",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "anthropic"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer",
+      "company": "HUD",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-23",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=8be4fa9b599de5b1",
+      "description": "**About HUD**\n-------------\n\n\nHUD is building infrastructure to create RL training data and evals for frontier AI agents, as well as a marketplace to sell these to frontier labs through the HUD marketplace. Our platform is used by frontier labs, Fortune 500 companies, and startups. We’ve raised $15M from top VCs and were YC W25\\.\n\n**About the role**\n------------------\n\n\nHUD's product sells itself to the right person. Your challenge is finding and selling to them at scale.\n\n\nThe buyers of HUD’s data are ML engineers, AI researchers, and engineering leaders at frontier labs and enterprises. They respond not to traditional SaaS outreach, but to someone who understands what they're building, why their current eval pipeline is broken, and how HUD fixes it.\n\n\nThat’s why we’re looking for a GTM engineer who can both carry technical conversations and close \\- and do so at scale. We’re looking for systems builders, not just salespeople.\n\n**Responsibilities**\n--------------------\n\n* Own HUD's outbound pipeline end\\-to\\-end \\- targeting, enrichment, outreach, follow\\-up, and meeting booking\n* Build and maintain GTM workflows (e.g., outbound email sequencing, CRM automation, lead scoring, custom tooling, inbound lead qualification)\n* Use AI tools aggressively to 10x your output (e.g., vibe code scrapers, automate workflows, build internal tools)\n* Develop and iterate on messaging that resonates with technical buyers, including ML engineers, AI researchers, and engineering leaders\n* Quickly learn new prospect businesses / industries and understand their pain points, workflows, and why HUD matters to them\n* Track pipeline metrics and optimize conversion at every stage\n* Work closely with founders to develop and refine our GTM playbook as we scale\n\n**Experience**\n--------------\n\n**You may be a good fit if you have:**\n\n* Demonstrated ability to build and run a GTM motion with real, measurable results\n* A strong track record of closing deals\n* A CS or engineering background, or you vibe\\-code extensively on the side\n* Deep familiarity with GTM tooling\n* Strong written communication that technical people actually respond to\n* Startup experience in early\\-stage technology companies with ability to work independently in fast\\-paced environments\n\n**Strong candidates may also have:**\n\n* Experience selling developer tools, infrastructure, or ML/AI products\n* History of building outbound systems using tools like Clay, Apollo, or custom automation\n* Familiarity with the AI/ML ecosystem, e.g., you know what evals are, what RL is, and why researchers care\n* Evidence of creative, high\\-leverage approaches to pipeline generation\n\n*We prioritize technical aptitude and learning potential over years of experience. Motivated candidates are encouraged to apply even if they don't meet all criteria.*\n\n**Team \\& company details**\n---------------------------\n\n* **Team Size**: \\~15 people currently, mostly full\\-time in\\-person, but some remote.\n* **Our team:** Our team includes 4 International Olympiad medalists (IOI, ILO, IPhO), serial AI startup founders, and researchers with publications at ICLR, NeurIPS, etc.\n* **Company stage:** We have 8 figures in funding and high revenue growth. We’re scaling profitably and quickly to meet very strong demand.\n\n**Logistics**\n-------------\n\n* **Employment**: Full\\-time.\n* **Location**: On\\-site in the San Francisco Bay Area.\n* **Visa Sponsorship**: We provide support for relocation and visas for strong full\\-time candidates to the US.\n* **Timeline**: Applications are rolling. The process is 2 technical interviews and a 1\\-week work trial.\n\n**What we offer**\n-----------------\n\n* Competitive compensation\n* 100% covered top\\-of\\-the\\-line medical, dental, and vision from Blue Shield of CA\n* Lunch and dinner when you’re in the office\n* Company\\-wide holiday break (Christmas Eve to New Year’s Day) on top of PTO and paid holidays\n* Other perks including an Equinox membership, 401k, and commuter benefits\n* Unlimited\\* access to tokens for ChatGPT, Claude Code, Cursor, etc. \\**By unlimited, we mean no one on our token usage leaderboard has ever hit a limit. So we have no idea what the limit is.*\n\n\nDue to high volume, we may not actively respond to every application, but feel free to contact us at recruiting@hud.so or elsewhere if we missed your application!",
+      "description_snippet": "**About HUD**\n-------------\n\n\nHUD is building infrastructure to create RL training data and evals for frontier AI agents, as well as a marketplace to sell these to frontier labs through the HUD marketplace. Our platform is used by frontier labs, Fortune 500 companies, and startups. We’ve raised $15M from top VCs and were YC W25\\.\n\n**About the role**\n------------------\n\n\nHUD's product sells itself to the right person. Your challenge is finding and selling to them at scale.\n\n\nThe buyers of HUD’s d",
+      "tools": [
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "fortune_500",
+          "signal_value": "Fortune 500"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "geo_focus",
+          "signal_id": "global",
+          "signal_value": "Global"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer, Healthcare",
+      "company": "",
+      "location": "McLean, VA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": 130000,
+      "max_amount": 150000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-23",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=a4b97ad42dad04fa",
+      "description": "### **About Us**\n\n\n\nCo\\-founded in 2023 by Joe Laws and Grant Verstandig, Trase Systems is AI, Uncomplicated. Trase empowers enterprise leaders to harness the full potential of AI without the associated complexity and risks. We are an end\\-to\\-end solution for deploying, managing, and optimizing AI in the enterprise. Our platform specializes in bridging the \"last mile\" of AI adoption, unlocking AI's full potential while driving efficiency and significant cost savings. Trase is at the forefront of *AI Agent* innovation, topping the Hugging Face GAIA Leaderboard for Generalized AI Assistants, ahead of industry giants such as Google, Meta, Microsoft, and OpenAI. We are leveraging our cutting\\-edge technologies to develop mission\\-critical agentic applications in complex industries such as Healthcare, Oil \\& Gas, and National Security.\n\n**The Role:**\n\n\n\nTrase is an agentic AI platform in production at Duke Health, where our agents save over 5,490 hours of clinical labor annually in a single department. We've raised $10\\.5M from Red Cell Partners. Now we're building the go\\-to\\-market engine to scale.\n\n\n\nWe're hiring a GTM Engineer—not a traditional SDR. One person who builds and operates the entire top\\-of\\-funnel system using AI tools, data enrichment, and automated workflows. You'll be measured on pipeline and meetings booked. But the way you get there is by engineering systems, not grinding through call lists.\n\n\n#### **What You'll Do:**\n\n\n* Build and operate Clay workflows that research, enrich, and score 121\\+ target hospital accounts automatically.\n* Configure intent signals (Unify) and respond to buying triggers—new CMIO hires, AI strategy announcements, RFPs—within 4 hours with AI\\-personalized outreach.\n* Design and optimize Apollo outreach sequences; A/B test messaging; track conversion rates by tier and channel.\n* Build the pre\\-conference outreach machine for ASTRO, HIMSS, and ACRO—scheduling 15–25 meetings before each event.\n* Generate AI\\-powered meeting prep briefs and post\\-call follow\\-ups so senior sellers stay focused on closing.\n* Maintain Salesforce as the source of truth and report weekly on what's working, what's not, and what's changing.\n* Document everything you build so this function can scale.\n\n\n**About You:**\n\n\n* 2–4 years in B2B sales, sales ops, rev ops, or growth—and you were the person who built the systems, not just used them.\n* Hands\\-on with Clay, Apollo, Salesforce, or similar GTM tooling. You've configured workflows, not just run someone else's sequences.\n* Systems thinker. You see a manual process and immediately design how to automate it.\n* Strong writer. Your outreach reads like a human did two hours of research—because an AI did, and you shaped the message.\n* Comfortable working independently at an early\\-stage company. You won't be closely managed.\n\n#### **Bonus:**\n\n\n* Healthcare or health\\-tech experience—you know what a CMIO is and how health system procurement works.\n* Technical depth beyond no\\-code: SQL, Python, or API experience for custom data pipelines.\n* You've built a GTM system from scratch, not just operated one that was already running.\n\n#### **Not What We're Looking For:**\n\n\n\nHigh\\-volume dialers, tool administrators who don't think about outcomes, or anyone who needs a playbook handed to them. You're building the playbook.\n\n\n#### **Why Trase:**\n\n\n* Deployed product with real clinical outcomes, not a pitch deck.\n* Every health system in the country is figuring out AI—you'll be in those conversations from day one.\n* True ownership: you're building the territory, the tooling, and the outbound playbook.\n* AI\\-native environment—you'll use AI tools every day, not just talk about them.\n* Red Cell Partners–backed, leadership team that has operated at scale (President: former VP AI/ML at AWS).\n\n\n**Compensation:** Base salary of$130,000\\-$150,000 plus bonus. This represents the typical salary range for this position based on experience, skills, and other factors.\n\n**Our Trase Benefits:**\n\n\n\nFor full\\-time roles only\n\n\n* Career track opportunity with potential for rapid advancement with strong performance as the firm grows\n* 100% employer paid, comprehensive health care including medical, dental, and vision for you and your family.\n* Paid maternity and paternity for 14 weeks at employees' normal pay.\n* Unlimited PTO, with management approval.\n* Opportunities for professional development and continued learning.\n* Optional 401K, FSA, and equity incentives available.\n* Mental health benefits are available through Tara Mind.\n\n\nWe're an Equal Opportunity Employer: You'll receive consideration for employment without regard to race, sex, color, religion, sexual orientation, gender identity, national origin, protected veteran status, or on the basis of disability.\n\n  \n\n\n***Applicant Data Disclosure***\n\n\n*By submitting an application, you acknowledge that Red Cell Partners, LLC (\"Red Cell\") uses third\\-party service providers to facilitate its recruitment and hiring processes. These providers include applicant tracking systems, candidate verification platforms, and fraud detection tools (collectively, \"Hiring Platforms\"). Your application materials, including your résumé, cover letter, work samples, responses to application questions, and any other information you submit, may be transmitted to and processed by these Hiring Platforms for the following purposes:*\n\n\n* *Managing and administering your application throughout the hiring process;*\n* *Verifying the accuracy and authenticity of application materials, including by cross\\-referencing information you provide against publicly available sources and proprietary databases;*\n* *Identifying indicators of potentially fraudulent, fabricated, or materially misleading application content, including but not limited to discrepancies between submitted materials and publicly available professional profiles, geographic anomalies, and fabricated work histories.*\n\n\n*Applications that are flagged through this process as containing indicators of fraud or material misrepresentation may be declined from further consideration. If you have questions about the status of your application or the evaluation process, please contact* *talent**@redcellpartners.com**.*\n\n\n*Red Cell requires its Hiring Platform providers to process your information solely for the purposes described above and in accordance with applicable law. Your information will be retained only for as long as necessary to fulfill these purposes and any applicable legal obligations, after which it will be deleted in accordance with Red Cell's data retention policies.*\n\n\n*For more information about how your data is used, please refer to our Privacy Policy and* *Applicant Privacy Notice**.*",
+      "description_snippet": "### **About Us**\n\n\n\nCo\\-founded in 2023 by Joe Laws and Grant Verstandig, Trase Systems is AI, Uncomplicated. Trase empowers enterprise leaders to harness the full potential of AI without the associated complexity and risks. We are an end\\-to\\-end solution for deploying, managing, and optimizing AI in the enterprise. Our platform specializes in bridging the \"last mile\" of AI adoption, unlocking AI's full potential while driving efficiency and significant cost savings. Trase is at the forefront o",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Hugging Face",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "hugging_face"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "enterprise",
+          "signal_value": "Enterprise"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "channel",
+          "signal_value": "Channel"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "immediate",
+          "signal_value": "Immediate"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 85,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer, Healthcare",
+      "company": "Red Cell Partners",
+      "location": "McLean, VA, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": 130000,
+      "max_amount": 150000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-23",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=a77bad5cf965f9c2",
+      "description": "### **About Us**\n\n\n\nRed Cell Partners is an incubation firm building and investing in rapidly scalable technology\\-led companies that are bringing revolutionary advancements to market in three distinct practice areas: healthcare, cyber, and national security. United by a shared sense of duty and deep belief in the power of innovation, Red Cell is developing powerful tools and solutions to address our Nation's most pressing problems.\n\n**About Trase:**\n\n\n\nCo\\-founded in 2023 by Joe Laws and Grant Verstandig, Trase Systems is AI, Uncomplicated. Trase empowers enterprise leaders to harness the full potential of AI without the associated complexity and risks. We are an end\\-to\\-end solution for deploying, managing, and optimizing AI in the enterprise. Our platform specializes in bridging the \"last mile\" of AI adoption, unlocking AI's full potential while driving efficiency and significant cost savings. Trase is at the forefront of *AI Agent* innovation, topping the Hugging Face GAIA Leaderboard for Generalized AI Assistants, ahead of industry giants such as Google, Meta, Microsoft, and OpenAI. We are leveraging our cutting\\-edge technologies to develop mission\\-critical agentic applications in complex industries such as Healthcare, Oil \\& Gas, and National Security.\n\n\n**The Role:**\n\n\n\nTrase is an agentic AI platform in production at Duke Health, where our agents save over 5,490 hours of clinical labor annually in a single department. We've raised $10\\.5M from Red Cell Partners. Now we're building the go\\-to\\-market engine to scale.\n\n\n\nWe're hiring a GTM Engineer—not a traditional SDR. One person who builds and operates the entire top\\-of\\-funnel system using AI tools, data enrichment, and automated workflows. You'll be measured on pipeline and meetings booked. But the way you get there is by engineering systems, not grinding through call lists.\n\n\n#### **What You'll Do:**\n\n\n* Build and operate Clay workflows that research, enrich, and score 121\\+ target hospital accounts automatically.\n* Configure intent signals (Unify) and respond to buying triggers—new CMIO hires, AI strategy announcements, RFPs—within 4 hours with AI\\-personalized outreach.\n* Design and optimize Apollo outreach sequences; A/B test messaging; track conversion rates by tier and channel.\n* Build the pre\\-conference outreach machine for ASTRO, HIMSS, and ACRO—scheduling 15–25 meetings before each event.\n* Generate AI\\-powered meeting prep briefs and post\\-call follow\\-ups so senior sellers stay focused on closing.\n* Maintain Salesforce as the source of truth and report weekly on what's working, what's not, and what's changing.\n* Document everything you build so this function can scale.\n\n\n**About You:**\n\n\n* 2–4 years in B2B sales, sales ops, rev ops, or growth—and you were the person who built the systems, not just used them.\n* Hands\\-on with Clay, Apollo, Salesforce, or similar GTM tooling. You've configured workflows, not just run someone else's sequences.\n* Systems thinker. You see a manual process and immediately design how to automate it.\n* Strong writer. Your outreach reads like a human did two hours of research—because an AI did, and you shaped the message.\n* Comfortable working independently at an early\\-stage company. You won't be closely managed.\n\n#### **Bonus:**\n\n\n* Healthcare or health\\-tech experience—you know what a CMIO is and how health system procurement works.\n* Technical depth beyond no\\-code: SQL, Python, or API experience for custom data pipelines.\n* You've built a GTM system from scratch, not just operated one that was already running.\n\n#### **Not What We're Looking For:**\n\n\n\nHigh\\-volume dialers, tool administrators who don't think about outcomes, or anyone who needs a playbook handed to them. You're building the playbook.\n\n\n#### **Why Trase:**\n\n\n* Deployed product with real clinical outcomes, not a pitch deck.\n* Every health system in the country is figuring out AI—you'll be in those conversations from day one.\n* True ownership: you're building the territory, the tooling, and the outbound playbook.\n* AI\\-native environment—you'll use AI tools every day, not just talk about them.\n* Red Cell Partners–backed, leadership team that has operated at scale (President: former VP AI/ML at AWS).\n\n\n**Compensation:** Base salary of$130,000\\-$150,000 plus bonus. This represents the typical salary range for this position based on experience, skills, and other factors.\n\n**Our Red Cell Partners Benefits:**\n\n\n\nFor full\\-time roles\n\n\n* Career track opportunity with potential for rapid advancement with strong performance as the firm grows\n* 100% employer paid, comprehensive health care including medical, dental, and vision for you and your family.\n* Paid maternity and paternity for 14 weeks at employees' normal pay.\n* Unlimited PTO, with management approval.\n* Opportunities for professional development and continued learning.\n* Optional 401K, FSA, and equity incentives available.\n* Mental health benefits are available through Tara Mind.\n* Cost effective GLP\\-1 solutions available through Crux.\n\n\nWe're an Equal Opportunity Employer: You'll receive consideration for employment without regard to race, sex, color, religion, sexual orientation, gender identity, national origin, protected veteran status, or on the basis of disability.\n\n  \n\n\n***Applicant Data Disclosure***\n\n\n*By submitting an application, you acknowledge that Red Cell Partners, LLC (\"Red Cell\") uses third\\-party service providers to facilitate its recruitment and hiring processes. These providers include applicant tracking systems, candidate verification platforms, and fraud detection tools (collectively, \"Hiring Platforms\"). Your application materials, including your résumé, cover letter, work samples, responses to application questions, and any other information you submit, may be transmitted to and processed by these Hiring Platforms for the following purposes:*\n\n\n* *Managing and administering your application throughout the hiring process;*\n* *Verifying the accuracy and authenticity of application materials, including by cross\\-referencing information you provide against publicly available sources and proprietary databases;*\n* *Identifying indicators of potentially fraudulent, fabricated, or materially misleading application content, including but not limited to discrepancies between submitted materials and publicly available professional profiles, geographic anomalies, and fabricated work histories.*\n\n\n*Applications that are flagged through this process as containing indicators of fraud or material misrepresentation may be declined from further consideration. If you have questions about the status of your application or the evaluation process, please contact* *talent**@redcellpartners.com**.*\n\n\n*Red Cell requires its Hiring Platform providers to process your information solely for the purposes described above and in accordance with applicable law. Your information will be retained only for as long as necessary to fulfill these purposes and any applicable legal obligations, after which it will be deleted in accordance with Red Cell's data retention policies.*\n\n\n*For more information about how your data is used, please refer to our Privacy Policy and* *Applicant Privacy Notice**.*",
+      "description_snippet": "### **About Us**\n\n\n\nRed Cell Partners is an incubation firm building and investing in rapidly scalable technology\\-led companies that are bringing revolutionary advancements to market in three distinct practice areas: healthcare, cyber, and national security. United by a shared sense of duty and deep belief in the power of innovation, Red Cell is developing powerful tools and solutions to address our Nation's most pressing problems.\n\n**About Trase:**\n\n\n\nCo\\-founded in 2023 by Joe Laws and Grant ",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Hugging Face",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "hugging_face"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "enterprise",
+          "signal_value": "Enterprise"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "channel",
+          "signal_value": "Channel"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "immediate",
+          "signal_value": "Immediate"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
     {
       "job_id": "indeed-https://www.",
       "title": "Director, GTM Engineering",
@@ -18,6 +348,231 @@
       "source": "indeed",
       "source_url": "https://www.indeed.com/viewjob?jk=441bb31e83ed6b48",
       "description": "**About Altruist**\n\n\n\nAltruist is transforming the multi\\-trillion dollar wealth management industry by building an AI platform for wealth professionals. We partner with financial advisors nationwide, empowering them to grow, optimize time and resources, and deliver superior outcomes for their clients.\n\n\n\nWe're looking for exceptional talent to help us achieve our mission of making financial advice better, more affordable, and accessible to all. If you're passionate about challenging the status quo and want to do the most important work of your life, we'd love to meet you!\n\n\n**But first, our values**\n\n\n**Kindness** \\- Kindness doesn't *just* equal niceness. We listen to understand. We embrace, and encourage healthy debate and diverse perspectives. We approach conflict openly, honestly, and respectfully.  \n\n  \n\n**Brilliance** \\- Humility is the skill we're most proud of and possessing a growth mindset is always top of mind. We take ownership in everything we touch; regularly using our unique superpowers to reach a common goal as a team. We succeed and fail as one.  \n\n  \n\n**Grit** \\- When challenges arise, we stay laser focused on achieving our mission and finding a way forward, even when it's hard. We are nimble and maintain a sense of urgency, swiftly adapting to change and overcoming obstacles.\n\n**About Hazel**\n\n\n\nHazel is building the AI engine for wealth management that helps unlock 10x growth, efficiency and value for financial advisors and their clients in a regulated industry. Since its launch last September, Hazel has organically and rapidly grown its user base.\n\n\n\nHazel is a part of Altruist's broader mission to make financial advice better, more affordable, and accessible to all.\n\n\n**This role is hybrid, with four in\\-office days per week at our San Francisco FiDi location.**\n\n\n**The opportunity**\n\n\n\nYou'll be the first technical hire on Hazel's revenue team that requires you to be hands on and lead the revenue infrastructure for Hazel from the ground up. You'll define what a 0 to 1 AI native revenue operations stack looks like: laying the technical and data foundations, owning pipeline visibility, and partnering with our VP of Revenue to make sure sales capacity is working to their fullest. You're the person who makes the revenue team faster, sharper, and more accountable, and you have the technical depth to build what doesn't exist yet.\n\n\n\nIf you've led RevOps or GTM Engineering at a high\\-growth company, understand the full revenue lifecycle, and want to architect something from scratch inside one of the most exciting AI companies in fintech, this is the role.\n\n\n**What you'll do**\n\n\n* Design and build Hazel's full revenue tech stack (CRM, marketing automation, enrichment, sequencing, attribution) with a clear point of view on what we should build, buy, or integrate.\n* Deploy LLM\\-powered workflows for lead qualification, outbound personalization, and rep productivity; evaluate and implement tools like Clay, Apollo, and emerging GTM AI platforms with a clear ROI lens.\n* Build and manage the revenue data warehouse – Own our Snowflake layer for GTM data; write or oversee the SQL and pipeline logic that powers forecasting, dashboards and board\\-level reporting.\n* Evaluate vendor contracts, own integrations, and where needed, write or direct the Python/TypeScript code that connects systems and closes gaps off\\-the\\-shelf tools can't fill.\n* Design lead routing, lifecycle stages, SLAs, and handoff logic between marketing, SDRs and AEs; ensure the system enforces the motion, not just documents it.\n\n\n**What you'll bring**\n\n\n* 8\\+ years in Revenue Operations, GTM Engineering, or Sales Operations, including direct experience where you were the one who actually built the GTM stack.\n* Proven track amplifying a sales team's output, not just maintained tooling, but architected systems that changed how the team goes to market.\n* Strong technical fluency: comfortable with APIs, Webhooks, SQL and a revenue data warehouse (Snowflake, BigQuery, or Databricks), experienced with CRM platforms (HubSpot or Salesforce) at an admin/architect level, and the ability to write Python/Javascript code.\n* Experience designing and deploying AI\\-powered GTM workflows, whether through LLM APIs, Clay, or custom\\-built tooling, with a bias toward automation that removes friction from the revenue motion.\n* A foundational understanding of pipeline economics, forecasting methodology, and how GTM systems decisions ripple into revenue outcomes.\n* Comfort building in ambiguity. You make decisions with incomplete information, move fast, and clean up as you scale.\n\n\n**Bonus points**\n\n\n* Experience scaling GTM at a company that sold an AI\\-native or technically complex product, where the buyer education motion was non\\-standard.\n* Background in analytics engineering (dbt, Fivetran, Segment) or data infrastructure.\n* Prior experience as the founding or first RevOps hire at an early\\-stage company. You know what it means to set up a function from scratch.\n* Familiarity with LLM APIs (Anthropic, OpenAI) used to build GTM workflows. You can build AI native lead qualification agents, call summarization, email personalization, products etc.\n\n\n**Leveling \\& compensation**\n\n\n\nCompetitive base \\+ equity. This is a foundational hire; we expect to pay for proven capability. This role has a target compensation range of $250,000\\-$300,000\\. Final level and compensation is individualized and will be determined based on overall experience, qualifications, and interview performance.\n\n**What we bring**\n\n\n\nAttracting and retaining top\\-tier talent is a priority. We are proud of the culture we've built and are cognizant of the ever\\-changing professional landscape. Our dynamic offering of perks and benefits are tailored for you to feel your best while doing your best.\n\n\n* A hybrid work schedule for most positions to promote strong, in\\-person collaboration.\n* Stunning, amenity\\-filled office spaces in Culver City, CA, San Francisco, CA, and Dallas, TX. Our offices are intentionally designed for comfort, collaboration, and productivity.\n* Competitive pay and equity for eligible positions.\n* Premium healthcare, dental, and vision insurance plans (HMO and PPO).\n* 401k savings plan with a 4% match and immediate vesting.\n* 16 week paid parental leave after one year of employment.\n* Professional growth and development opportunities including an employee mobility program and an annual L\\&D budget allocation for each employee.\n* Company perks program (includes discounts on pet insurance, fitness, cell phone plans, and travel, etc.).\n* Financial guidance program (includes counseling on navigating debt, tracking personal spend, saving and planning goals, home\\-purchasing preparedness, etc.).\n* One month work from anywhere policy (with the exception of a few countries).\n\n\n*Total compensation includes a competitive benefits package, along with equity in the form of Stock Options (ISOs) for eligible roles. For salaried positions, a salary offer will be determined by a number of factors including experience, skill level, internal pay equity, geographic location, and other relevant business considerations. We review all employee pay and compensation programs regularly to ensure* *fair, equitable, and competitive pay. At Altruist, we are committed to providing fair, equitable, and competitive compensation by leveraging market data to inform our pay bands. Base salaries will be reviewed at regular intervals throughout the year, typically in conjunction with performance review cycles. By evaluating compensation on a regular basis, we are able to reward high performance and ensure all employees have opportunities for growth.*\n\n\n*Don't meet every single requirement? Studies have shown that women and people of color are less likely to apply to jobs unless they meet every single qualification. At Altruist we are dedicated to building a diverse, inclusive, and authentic workplace, so if you're excited about this role, but your past experience doesn't align perfectly with every qualification in the job description, we encourage you to apply anyways. You may be just the right candidate for this or other roles.*",
+      "description_snippet": "**About Altruist**\n\n\n\nAltruist is transforming the multi\\-trillion dollar wealth management industry by building an AI platform for wealth professionals. We partner with financial advisors nationwide, empowering them to grow, optimize time and resources, and deliver superior outcomes for their clients.\n\n\n\nWe're looking for exceptional talent to help us achieve our mission of making financial advice better, more affordable, and accessible to all. If you're passionate about challenging the status ",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Apollo",
+          "tool_category": "Sales_Engagement_Growth",
+          "tool_id": "apollo"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Fivetran",
+          "tool_category": "Reverse_ETL",
+          "tool_id": "fivetran"
+        },
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Anthropic",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "anthropic"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "team_structure",
+          "signal_id": "first_hire",
+          "signal_value": "First Hire"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "immediate",
+          "signal_value": "Immediate"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "turnaround",
+          "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer (NYC)",
+      "company": "Revin",
+      "location": "New York, NY, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": 160000,
+      "max_amount": 190000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-22",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=8a663e78d8180a88",
+      "description": "**GTM Engineer (NYC)**\n======================\n\n**Location:** New York, NY  \n\n**Compensation:** Target Base Salary: $160,000–$190,000  \n\n**Employment:** Full\\-time, On\\-site\n  \n\n**Department:** GTM\n\n**About Revin**\n\n\nAt Revin, our mission is to bring superintelligence to the built world. Millions of operators across Home Services, Construction, and Remodeling have been overlooked by the last wave of technology. We believe AI is the most transformational platform change in history, but the hard work lies in thoughtful, context\\-aware applications of this technology to the real world.\n\n\nRevin provides operators with an end\\-to\\-end system of intelligence to automate and scale revenue. Our modular suite of products includes Scheduling, Appointment Management, Membership Management, Inside Sales, Revenue Capture, Marketing, and Funnel Optimization.\n\n\nOver $2\\.3B in revenue runs on Revin, making us the number one AI partner for enterprise operators. Our customers include Sears Home Services ($800M), Astara Capital ($700M), Del Air ($150M), Long Home Remodeling ($150M), ImproveIt Remodeling ($100M), Sage Home ($80M), and more. We have raised $10M from top investors including Stellation Capital, 1Sharpe, Gokul Rajaram, Russ Heddleston, Michael Werner, Tandem, Max Branzburg, and Marc Bhargava.\n\n**About the Role**\n------------------\n\n\nThis is a true 0 1 role where you’ll design the systems, workflows, and automations that directly generate pipeline and drive revenue. This is a hands\\-on, commercially driven role that blends technical execution with real business impact—where revenue judgment matters as much as technical depth. You will design and own the infrastructure, workflows, and automations that generate pipeline, accelerate enterprise sales cycles, and drive expansion across our customer base, while making AI tools truly usable for operators.\n  \n\n  \n\nSitting at the intersection of Sales, Marketing, Product, and Data, you will turn AI and automation into measurable revenue outcomes. This is a true 0 1 build—there is no existing playbook—so you will play a key role in creating, optimizing, and scaling the systems from the ground up. You will directly influence pipeline generation, deal velocity, and revenue outcomes from day one.\n\n**Key Responsibilities:**\n\n* Architect and own GTM systems powering Sales, Marketing, and Customer Success\n* Maintain high\\-quality target account and contact data across key industries\n* Design and build signal\\-based prospecting workflows that drive email, call, and LinkedIn engagement\n* Own CRM architecture, pipeline stages, forecasting logic, and reporting integrity\n* Develop outbound and expansion systems from first principles\n* Implement AI\\-native automations and integrations across tools like Clay, Zapier, and CRM platforms (enrichment, routing, scoring, follow\\-up)\n* Ensure clean, trustworthy data through strong QA, validation, and governance\n* Partner with GTM leadership to define operating rhythms (pipeline reviews, account planning, forecasting)\n* Build dashboards and reporting layers that provide clear visibility into funnel performance, revenue drivers, and customer engagement\n* Translate product and operational signals into structured scoring, expansion, and proactive outreach workflows\n* Identify and eliminate bottlenecks in enterprise deal cycles in close partnership with Sales\n* Continuously test, refine, and optimize GTM systems, workflows, and experiments to improve pipeline velocity and conversion\n* Recommend and implement new tools, platforms, and processes to increase throughput and efficiency\n* Ensure everything built performs in real\\-world operating environments and drives measurable revenue impact\n\n### **Who You Are**\n\n* 3\\-6 years experience in GTM, Growth, RevOps, Sales Ops, Sales Engineering, or similar revenue\\-driving roles.\n* Deep understanding of enterprise revenue mechanics and sales cycles.\n* Builder mentality: You ship systems, not slide decks.\n* Hands\\-on experience with Salesforce or HubSpot.\n* Familiarity with Clay.com, enrichment platforms, sequencing tools, and workflow automations.\n* Comfortable leveraging AI solutions to increase output and automate processes.\n* Highly autonomous and comfortable operating in ambiguity.\n* Commercially minded: You understand revenue drivers and where deals get stuck.\n* Strong collaborator: You can communicate clearly across GTM, Product, and Data teams.\n* Execution\\-driven: You ship fast, iterate constantly, and solve problems proactively.\n\n **Nice\\-to\\-have:**\n\n* SQL, Python, or JavaScript experience for workflow scripting.\n* Previous exposure to reverse ETL or AI\\-powered automation.\n* Admin\\-level experience in Salesforce, HubSpot, Gong, or Outreach.\n\n**Don’t Work Here If**\n----------------------\n\n* You wait for instructions instead of taking initiative.\n* You want a safe, predictable 9\\-5; expect 50\\+ hour work weeks.\n* You are not excited about being part of a team applying AI into the built world.\n* We are looking for fanatics who do not turn off. We are constantly chasing excellence; if that is not your goal, please do not apply. There will be no playbook; if you want a well\\-trodden path, this is not the role for you.\n\n**Compensation and Benefits**\n-----------------------------\n\n### **Compensation:**\n\n* Base salary: $160,000–$190,000\n* Equity: Competitive equity package\n* Full\\-time, on\\-site role in New York City\n* Significant upside through early ownership and career growth\n\n### **Benefits**\n\n* Unlimited PTO\n* $0 cost medical\n* 401(k) matching\n* Lunch and dinner in office\n* Gym membership stipend\n* Clear Travel Pass\n* Tech equipment\n* Mentorship pairing with a Revin advisor/investor to help you grow\n* Relocation assistance\n\n\nCompensation Range: $160K \\- $190K",
+      "description_snippet": "**GTM Engineer (NYC)**\n======================\n\n**Location:** New York, NY  \n\n**Compensation:** Target Base Salary: $160,000–$190,000  \n\n**Employment:** Full\\-time, On\\-site\n  \n\n**Department:** GTM\n\n**About Revin**\n\n\nAt Revin, our mission is to bring superintelligence to the built world. Millions of operators across Home Services, Construction, and Remodeling have been overlooked by the last wave of technology. We believe AI is the most transformational platform change in history, but the hard wo",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Gong",
+          "tool_category": "Revenue_Intelligence",
+          "tool_id": "gong"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "enterprise",
+          "signal_value": "Enterprise"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "inside",
+          "signal_value": "Inside"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "enterprise_deal",
+          "signal_value": "Enterprise Deal"
+        },
+        {
+          "signal_type": "deal_size",
+          "signal_id": "seven_figure",
+          "signal_value": "Seven Figure"
+        },
+        {
+          "signal_type": "sales_cycle",
+          "signal_id": "long",
+          "signal_value": "Long"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "first_hire",
+          "signal_value": "First Hire"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "turnaround",
+          "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "Director, GTM Engineering, Hazel AI",
+      "company": "ALTRUIST",
+      "location": "San Francisco, CA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": 250000,
+      "max_amount": 300000,
+      "seniority": "Director",
+      "function_category": "sales",
+      "date_posted": "2026-04-22",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=f5b0c2469a1a37ad",
+      "description": "**About Altruist**\n\n\n\nAltruist is transforming the multi\\-trillion dollar wealth management industry by building an AI platform for wealth professionals. We partner with financial advisors nationwide, empowering them to grow, optimize time and resources, and deliver superior outcomes for their clients.\n\n\n\nWe're looking for exceptional talent to help us achieve our mission of making financial advice better, more affordable, and accessible to all. If you're passionate about challenging the status quo and want to do the most important work of your life, we'd love to meet you!\n\n\n**But first, our values**\n\n\n**Kindness** \\- Kindness doesn’t *just* equal niceness. We listen to understand. We embrace, and encourage healthy debate and diverse perspectives. We approach conflict openly, honestly, and respectfully.  \n\n  \n\n**Brilliance** \\- Humility is the skill we’re most proud of and possessing a growth mindset is always top of mind. We take ownership in everything we touch; regularly using our unique superpowers to reach a common goal as a team. We succeed and fail as one.  \n\n  \n\n**Grit** \\- When challenges arise, we stay laser focused on achieving our mission and finding a way forward, even when it’s hard. We are nimble and maintain a sense of urgency, swiftly adapting to change and overcoming obstacles.\n\n**About Hazel**\n\n\n\nHazel is building the AI engine for wealth management that helps unlock 10x growth, efficiency and value for financial advisors and their clients in a regulated industry. Since its launch last September, Hazel has organically and rapidly grown its user base.\n\n\n\nHazel is a part of Altruist’s broader mission to make financial advice better, more affordable, and accessible to all.\n\n\n**This role is hybrid, with four in\\-office days per week at our San Francisco FiDi location.**\n\n\n**The opportunity**\n\n\n\nYou’ll be the first technical hire on Hazel’s revenue team that requires you to be hands on and lead the revenue infrastructure for Hazel from the ground up. You'll define what a 0 to 1 AI native revenue operations stack looks like: laying the technical and data foundations, owning pipeline visibility, and partnering with our VP of Revenue to make sure sales capacity is working to their fullest. You're the person who makes the revenue team faster, sharper, and more accountable, and you have the technical depth to build what doesn't exist yet.\n\n\n\nIf you've led RevOps or GTM Engineering at a high\\-growth company, understand the full revenue lifecycle, and want to architect something from scratch inside one of the most exciting AI companies in fintech, this is the role.\n\n\n**What you'll do**\n\n\n* Design and build Hazel's full revenue tech stack (CRM, marketing automation, enrichment, sequencing, attribution) with a clear point of view on what we should build, buy, or integrate.\n* Deploy LLM\\-powered workflows for lead qualification, outbound personalization, and rep productivity; evaluate and implement tools like Clay, Apollo, and emerging GTM AI platforms with a clear ROI lens.\n* Build and manage the revenue data warehouse – Own our Snowflake layer for GTM data; write or oversee the SQL and pipeline logic that powers forecasting, dashboards and board\\-level reporting.\n* Evaluate vendor contracts, own integrations, and where needed, write or direct the Python/TypeScript code that connects systems and closes gaps off\\-the\\-shelf tools can't fill.\n* Design lead routing, lifecycle stages, SLAs, and handoff logic between marketing, SDRs and AEs; ensure the system enforces the motion, not just documents it.\n\n\n**What you'll bring**\n\n\n* 8\\+ years in Revenue Operations, GTM Engineering, or Sales Operations, including direct experience where you were the one who actually built the GTM stack.\n* Proven track amplifying a sales team's output, not just maintained tooling, but architected systems that changed how the team goes to market.\n* Strong technical fluency: comfortable with APIs, Webhooks, SQL and a revenue data warehouse (Snowflake, BigQuery, or Databricks), experienced with CRM platforms (HubSpot or Salesforce) at an admin/architect level, and the ability to write Python/Javascript code.\n* Experience designing and deploying AI\\-powered GTM workflows, whether through LLM APIs, Clay, or custom\\-built tooling, with a bias toward automation that removes friction from the revenue motion.\n* A foundational understanding of pipeline economics, forecasting methodology, and how GTM systems decisions ripple into revenue outcomes.\n* Comfort building in ambiguity. You make decisions with incomplete information, move fast, and clean up as you scale.\n\n\n**Bonus points**\n\n\n* Experience scaling GTM at a company that sold an AI\\-native or technically complex product, where the buyer education motion was non\\-standard.\n* Background in analytics engineering (dbt, Fivetran, Segment) or data infrastructure.\n* Prior experience as the founding or first RevOps hire at an early\\-stage company. You know what it means to set up a function from scratch.\n* Familiarity with LLM APIs (Anthropic, OpenAI) used to build GTM workflows. You can build AI native lead qualification agents, call summarization, email personalization, products etc.\n\n\n**Leveling \\& compensation**\n\n\n\nCompetitive base \\+ equity. This is a foundational hire; we expect to pay for proven capability. This role has a target compensation range of $250,000\\-$300,000\\. Final level and compensation is individualized and will be determined based on overall experience, qualifications, and interview performance.\n\n**What we bring**\n\n\n\nAttracting and retaining top\\-tier talent is a priority. We are proud of the culture we’ve built and are cognizant of the ever\\-changing professional landscape. Our dynamic offering of perks and benefits are tailored for you to feel your best while doing your best.\n\n\n* A hybrid work schedule for most positions to promote strong, in\\-person collaboration.\n* Stunning, amenity\\-filled office spaces in Culver City, CA, San Francisco, CA, and Dallas, TX. Our offices are intentionally designed for comfort, collaboration, and productivity.\n* Competitive pay and equity for eligible positions.\n* Premium healthcare, dental, and vision insurance plans (HMO and PPO).\n* 401k savings plan with a 4% match and immediate vesting.\n* 16 week paid parental leave after one year of employment.\n* Professional growth and development opportunities including an employee mobility program and an annual L\\&D budget allocation for each employee.\n* Company perks program (includes discounts on pet insurance, fitness, cell phone plans, and travel, etc.).\n* Financial guidance program (includes counseling on navigating debt, tracking personal spend, saving and planning goals, home\\-purchasing preparedness, etc.).\n* One month work from anywhere policy (with the exception of a few countries).\n\n\n*Total compensation includes a competitive benefits package, along with equity in the form of Stock Options (ISOs) for eligible roles. For salaried positions, a salary offer will be determined by a number of factors including experience, skill level, internal pay equity, geographic location, and other relevant business considerations. We review all employee pay and compensation programs regularly to ensure* *fair, equitable, and competitive pay. At Altruist, we are committed to providing fair, equitable, and competitive compensation by leveraging market data to inform our pay bands. Base salaries will be reviewed at regular intervals throughout the year, typically in conjunction with performance review cycles. By evaluating compensation on a regular basis, we are able to reward high performance and ensure all employees have opportunities for growth.*\n\n\n*Don’t meet every single requirement? Studies have shown that women and people of color are less likely to apply to jobs unless they meet every single qualification. At Altruist we are dedicated to building a diverse, inclusive, and authentic workplace, so if you’re excited about this role, but your past experience doesn’t align perfectly with every qualification in the job description, we encourage you to apply anyways. You may be just the right candidate for this or other roles.*",
       "description_snippet": "**About Altruist**\n\n\n\nAltruist is transforming the multi\\-trillion dollar wealth management industry by building an AI platform for wealth professionals. We partner with financial advisors nationwide, empowering them to grow, optimize time and resources, and deliver superior outcomes for their clients.\n\n\n\nWe're looking for exceptional talent to help us achieve our mission of making financial advice better, more affordable, and accessible to all. If you're passionate about challenging the status ",
       "tools": [
         {
@@ -579,6 +1134,116 @@
     },
     {
       "job_id": "indeed-https://www.",
+      "title": "GTM Engineering Consultant / Solutions Architect Consultant",
+      "company": "Etumos",
+      "location": "Remote, US",
+      "location_type": "remote",
+      "is_remote": true,
+      "min_amount": null,
+      "max_amount": null,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-21",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=5cd3e4014880f002",
+      "description": "**The Role**\n------------\n\n\nWe are seeking an experienced GTM Solutions Architect to join our team. In this highly cross\\-functional role, you will serve as the technical and strategic GTM partner for our clients, designing scalable system architectures, building platform integrations, and translating complex business requirements into blueprints and live systems.\n\n\nThis is a position designed for someone who thrives at the intersection of technology, process design, and business strategy. You’ll play a key role in shaping how our clients’ marketing, sales, and customer success systems work together—building scalable solutions that enable data\\-driven decision\\-making and seamless customer journeys.\n\n\nYou will be successful in this role if you:\n\n\n* Are a self\\-starter thriving in autonomous mode\n* Care deeply about the outcome for clients\n* Are naturally curious\n* Can work with engineers as well as business stakeholders\n\n**Who You Are**\n---------------\n\n\nThis role is perfect for candidates who’ve spent time in a combination of sales, marketing, and engineering. Someone who loves connecting data flows, automations, with an eye on the customer experience and business impact. You’re someone who enjoys solving problems with both logic and creativity—balancing architecture with execution. And you can communicate your solutions back to the clients’ needs at a systems and business level. You consider yourself a \"forward deployed engineer” in the current lingo.\n### **What You Can Expect to Do**\n\n\n* Analyze and improve existing GTM processes across marketing, sales, and customer success for a variety of clients.\n* Design, implement, and maintain integrations between systems such as CRM, Marketing Automation, and Data Warehouses.\n* Collaborate with teams to build workflows, optimize data management, and ensure accuracy across reporting and analytics.\n* Develop and maintain data models and schemas supporting campaign measurement and pipeline tracking.\n* Partner with stakeholders to translate business requirements into technical solutions and architecture diagrams.\n* Design and build business workflows from Lead and Account Lifecycles to Attribution Data infrastructure.\n* Serve as a trusted advisor on GTM technology, helping teams select tools and implement best practices.\n\n### **Qualifications**\n\n\n* 5\\-7 years of experience in GTM Operations, System Analysis, Engineering, or GTM Architecture.\n* Strong technical foundation in data architecture, integration design, and system configuration.\n* Process oriented.\n* Familiarity with tools from Claude Code to Workato and n8n.\n* Familiar with using APIs to link systems for maximum benefit.\n* Hands\\-on experience with CRMs (Salesforce preferred), Marketing Automation tools (Marketo, HubSpot, Pardot or similar), and/or analytics platforms.\n* Experience with CDPs or Datawarehouses\n* Strong understanding of GTM concepts—lead routing, scoring models, attribution, campaign ops, and funnel analysis.\n* Ability to see both the big picture and the technical details—translating business objectives into repeatable, scalable processes.\n* Excellent communication skills; can explain complex systems to non\\-technical stakeholders.\n* Thinks like a product manager.\n* Experience in an agile environment, managing projects via Jira, Asana, or similar tools.\n* Background in a B2B SaaS, technology, or enterprise marketing environment.\n* One or more certifications in any of the platforms mentioned above.\n\n### **Preferred / Bonus Points**\n\n\n* Comfortable writing queries, debugging integrations, or building automation scripts.\n* Familiar with SQL, py, or similar programming languages.\n* Familiarity with Customer Data Platforms (Segment, Treasure Data, Adobe Real\\-Time CDP) and data warehouse environments (Snowflake, BigQuery).\n* Exposure to SQL for data analysis and validation across integrated systems.\n* SFDC Administrator or Developer\n* SFDC Account Engagement (Pardot) Experience or Certification\n* SFDC Exact Target Experience\n* Tableau, Power BI, and/or Looker experience\n\n**Who We Are**\n--------------\n\n\nAt Etumos, our team works hard to enable marketers to focus on activities that create revenue by helping them build a thoughtful, data\\-informed framework to optimize and measure engagement throughout the customer journey.\n* We are a team of highly skilled and ridiculously passionate professionals. We are each the best at what we do to support Etumos and each other.\n* We are highly collaborative and because of that, we are able to consistently deliver the best service in the industry.\n* We know that our client’s success is our success and we take ownership of optimizing their current processes as well as our own.\n* We are result\\-oriented problem\\-solvers supported by a team that believes in each other and what we do.\n* We are a team with excellence at the forefront of our minds. Anything worth doing is worth doing well.\n* We are focused on innovation and know that there is always room for improvement in everything we do.\n* We are wicked smart, obsessed with personal and professional growth and learning, and have zero ego – we are all here to teach, learn from and support each other and our clients.\n* We are passionate about what we do and actively seek to expand our knowledge base and new ways of doing things.\n\n### **Why Work Here?**\n\n\nWe pride ourselves on treating our employees well. Here at Etumos, work/life balance is not a perk or a buzzword, it’s the core of how we operate. We’re serious about taking care of our people (and their families).\n\n\n* Remote and flexible work environment\n* Medical/ Dental/Vision covered at 100% for employee’s premium costs and 50% for their dependents\n* 401k with 100% matching on up to the first 4% you contribute with immediate vesting\n* Unlimited PTO, which we will encourage and remind you to take advantage of\n* 10 paid holidays \\+ Winter Break holiday (December 24th through the first working day after January 1st)\n\n\nEtumos is fully committed to being an equal opportunity employer who does not and will not tolerate discrimination or harassment of any kind. All employment at Etumos is based on merit, qualifications, and the needs of our growing business. Nothing more, nothing less.\n\n\n**Join Us!**\n============",
+      "description_snippet": "**The Role**\n------------\n\n\nWe are seeking an experienced GTM Solutions Architect to join our team. In this highly cross\\-functional role, you will serve as the technical and strategic GTM partner for our clients, designing scalable system architectures, building platform integrations, and translating complex business requirements into blueprints and live systems.\n\n\nThis is a position designed for someone who thrives at the intersection of technology, process design, and business strategy. You’l",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "Salesforce Marketing Cloud",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "salesforce_marketing_cloud"
+        },
+        {
+          "tool_name": "Tableau",
+          "tool_category": "BI_Analytics",
+          "tool_id": "tableau"
+        },
+        {
+          "tool_name": "Power Bi",
+          "tool_category": "BI_Analytics",
+          "tool_id": "power_bi"
+        },
+        {
+          "tool_name": "Looker",
+          "tool_category": "BI_Analytics",
+          "tool_id": "looker"
+        },
+        {
+          "tool_name": "Workato",
+          "tool_category": "Lead_Routing",
+          "tool_id": "workato"
+        },
+        {
+          "tool_name": "Workato Ipaas",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "workato_ipaas"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "segment",
+          "signal_id": "enterprise",
+          "signal_value": "Enterprise"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "immediate",
+          "signal_value": "Immediate"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 75,
+      "has_salary": false,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
       "title": "GTM Systems Engineer (AI & Automation)",
       "company": "Evertrue",
       "location": "Remote, US",
@@ -836,6 +1501,76 @@
           "signal_type": "hiring_signals",
           "signal_id": "turnaround",
           "signal_value": "Turnaround"
+        },
+        {
+          "signal_type": "comp_signals",
+          "signal_id": "equity",
+          "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Systems Engineer (AI & Automation)",
+      "company": "Evertrue",
+      "location": "Indianapolis, IN, US",
+      "location_type": "onsite",
+      "is_remote": true,
+      "min_amount": 120000,
+      "max_amount": 130000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-04-20",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=f9dcd2b1e215f961",
+      "description": "**Who we are:**\n\n\n\nEverTrue is the leading **advancement intelligence and donor engagement platform**, empowering educational institutions and non\\-profit organizations to build stronger relationships and achieve outstanding fundraising results. Our platform continuously evolves, integrating innovative solutions to help advancement professionals effectively identify, prioritize, and manage prospects, engage supporters, and track progress. Hundreds of organizations rely on EverTrue to grow giving. We are a fun, smart, **mission\\-driven team** passionate about the work we do.\n\n\n\nWhat truly drives us? It's our **mission**: to equip fundraising teams with the insights and tools to turn every donor interaction into a lasting relationship—leading to stronger connections and greater giving. And our **vision**? It's to create a world where every fundraiser has the tools to engage, retain, and grow generosity at every level, ensuring no donor is overlooked. When you join EverTrue, you're not just taking a job; you're becoming part of a movement to empower fundraisers and make a real difference in the world.\n\n\n**We believe in your potential.** We know that no candidate perfectly matches every qualification. If you're excited about this role and meet most of our requirements, please apply! We're eager to support your growth and development within our team.\n\n\n\nEverTrue is an equal opportunity employer. We're deeply committed to building a workplace that celebrates diversity, equity, and inclusion for all, ensuring every applicant and employee is treated fairly. We embrace DEI because we know it enhances engagement, satisfaction, and partnerships, making us all stronger together.\n\n\n**Who you are:**\n\n\n* **(Required)** You have 4\\+ years of experience working within GTM systems, Revenue Operations, Sales Operations, or automation\\-focused roles supporting go\\-to\\-market teams.\n* **(Required)** You bring a strong understanding of Salesforce architecture, objects, and data modeling, and are comfortable working across the Salesforce ecosystem to support integrations and downstream systems.\n* **(Required)** You have experience designing automation or AI\\-driven workflows using tools such as Clay, Claude, Zapier, Make, or similar platforms.\n* You have experience working with GTM platforms such as Gong, enrichment tools, marketing automation platforms, or sales engagement systems.\n* You are a systems thinker who enjoys connecting tools, data, and workflows to improve how teams operate.\n* You have experience identifying operational friction and translating business challenges into scalable automation and workflow solutions.\n* You are energized by experimenting with AI\\-enabled processes that improve productivity, insight generation, and execution velocity.\n* You are comfortable partnering with stakeholders across Sales, Marketing, Partnerships, Customer Success, and Revenue Operations to improve systems and workflows.\n* You bring strong documentation and process design skills and believe clear systems documentation is critical to long\\-term scalability.\n* You are curious about emerging GTM and AI technologies and enjoy evaluating new tools that can enhance team productivity.\n\n\n**What you'll do:**\n\n\n* Own the ongoing optimization of EverTrue's GTM technology ecosystem through process design, automation, and AI\\-driven workflow development.\n* Design and deploy automation across tools such as Clay, Gong, ChurnZero, Claude, and other GTM platforms to improve productivity and insight generation.\n* Build repeatable AI\\-powered workflows that support research, enrichment, summarization, pipeline intelligence, and customer insights.\n* Identify friction across systems and workflows and develop scalable solutions that improve usability, data flow, and execution velocity.\n* Maintain a strong understanding of Salesforce architecture and data structures to support integrations and downstream system alignment.\n* Partner with Revenue Operations, Sales, Marketing, Partnerships, and Customer Success teams to gather requirements and design workflow improvements.\n* Document system relationships, automation logic, and workflow design to support long\\-term scalability and institutional knowledge.\n* Evaluate emerging AI and GTM technologies and pilot high\\-impact use cases.\n\n\n**How you'll contribute to the team:**\n\n\n* Serve as a connector across EverTrue's GTM technology ecosystem, ensuring systems work together seamlessly and teams can rely on consistent, actionable data.\n* Partner closely with Revenue Operations and GTM leaders to design workflows and automation that improve how teams execute day to day.\n* Reduce manual work across Sales, Marketing, Partnerships, and Customer Success by introducing scalable AI\\-powered workflows and automation.\n* Unlock new insights for GTM teams by improving data flow, enrichment processes, and system connectivity.\n* Support adoption of new tools and workflows through documentation, guidance, and enablement.\n* Help EverTrue continuously evolve its GTM systems strategy by identifying new technologies and automation opportunities that drive productivity and insight.\n\n\n**Why you'll love to join our team:**\n\n\n\nWe offer a comprehensive package designed to support your success, growth, and well\\-being.\n\n\n* **Compensation and Core Benefits:**\n* + A base salary range of **$120K \\- $130K**.\n\t+ A **2\\.5% bonus plan** based on company performance.\n* We also provide robust benefits to keep you healthy and secure:\n* + We cover **80% of your premium** for medical, dental, and vision insurance.\n\t+ We offer a **401k match of up to 3%** to support your financial future.\n\n**Happiness \\& Well\\-Being:**\n\n\n\nOur comprehensive employee benefits and perks program provides:\n\n\n* A **remote\\-first environment** for flexible work.\n* **Generous paid time off** throughout the year.\n* Investment in **your professional growth and development**.\n* **Opportunities to connect** with colleagues both in\\-person and virtually.\n* The unique chance to **contribute to the non\\-profits** and educational institutions you care about, aligning your work with your passions.",
+      "description_snippet": "**Who we are:**\n\n\n\nEverTrue is the leading **advancement intelligence and donor engagement platform**, empowering educational institutions and non\\-profit organizations to build stronger relationships and achieve outstanding fundraising results. Our platform continuously evolves, integrating innovative solutions to help advancement professionals effectively identify, prioritize, and manage prospects, engage supporters, and track progress. Hundreds of organizations rely on EverTrue to grow giving",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Gong",
+          "tool_category": "Revenue_Intelligence",
+          "tool_id": "gong"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Churnzero",
+          "tool_category": "Customer_Success",
+          "tool_id": "churnzero"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
         },
         {
           "signal_type": "comp_signals",
@@ -4744,6 +5479,91 @@
           "signal_type": "comp_signals",
           "signal_id": "equity",
           "signal_value": "Equity"
+        }
+      ],
+      "data_quality_score": 100,
+      "has_salary": true,
+      "has_description": true
+    },
+    {
+      "job_id": "indeed-https://www.",
+      "title": "GTM Engineer - Demand Generation",
+      "company": "HackerRank Careers",
+      "location": "Santa Clara, CA, US",
+      "location_type": "onsite",
+      "is_remote": false,
+      "min_amount": 120000,
+      "max_amount": 150000,
+      "seniority": "",
+      "function_category": "sales",
+      "date_posted": "2026-03-31",
+      "date_scraped": "2026-04-25",
+      "source": "indeed",
+      "source_url": "https://www.indeed.com/viewjob?jk=eeb24a4117c22b25",
+      "description": "HackerRank helps companies like NVIDIA, Amazon, and Microsoft hire and upskill the next generation of developers based on skills, not pedigree. Our platform is trusted by over 2,500 of the world's most innovative companies to build strong engineering teams ready for what's next.  \n\n  \n\nSoftware has entered an era where humans and AI build side by side. As this shift accelerates, the definition of strong technical talent is changing. We give companies better ways to identify and invest in next\\-generation skills.  \n\n  \n\nPeople at HackerRank care deeply about the impact of their work and sweat the small details so our customers can be wildly successful with products they genuinely love to use. We move with urgency and believe great outcomes come from high standards\n\n#### **About the team**\n\n\n\nOur marketing team is the engine behind pipeline acceleration at HackerRank. We operate at the intersection of creativity, analytics, and automation\\- managing paid channels, orchestrating ABM plays, and optimizing every touchpoint that turns interest into opportunity. As the team responsible for bringing in qualified leads and nurturing them across the funnel, we directly impact revenue and go\\-to\\-market success.\n\n\n#### **About the Role**\n\n\n\nReady to turn marketing plans into pipeline? As our Demand Generation Engineer, you'll be the force of nature that converts strategy to campaigns, shepherding projects from brief to \"closed‑won.\" You'll own the day‑to‑day execution of multi‑channel demand programs, think ABM plays, paid social, email nurture and direct mail \\- while keeping budgets, creative assets, and stakeholders in lockstep. Your reporting and analytical abilities will be deployed to optimise ad creative, messaging and conversion rate. You will be comfortable presenting insights and analysis of campaigns while possessing the technical rigor to iterate, adapt and scale efforts.\n\n\n\nIf juggling timelines, audience lists, and bid strategies sounds like your wheelhouse, we'd love to see how you can help us hit the next level of growth at HackerRank.\n\n\n#### **Why does this role exist**\n\n\n* **Scale Execution** across channels to improve coverage.\n* **Institutionalize ABM discipline** (from 1:Many to 1:Few to 1:1\\) with campaign optimization.\n* **Optimize and refine** ongoing campaigns to ensure we are squeezing efficacy out of every touchpoint.\n\n#### **What you'll do**\n\n\n* Execute and optimize full\\-funnel demand generation programs across paid media and owned channels.\n* Lead the day\\-to\\-day management of paid media, audience targeting, creative rotation, pacing, and bid strategies.\n* Drive ABM campaigns (1:Many, 1:Few, and 1:1\\), collaborating with SDRs, design, and content to engage key accounts.\n* Run diagnostics across the funnel, report campaign performance, and implement A/B and multivariate tests.\n* Streamline campaign operations with documented playbooks and automation to reduce manual effort and increase speed.\n\n#### **You will thrive in this role if**\n\n\n* You excel at connecting strategy with hands\\-on execution across channels and tools.\n* You are passionate about data, testing, and finding the signal in the noise.\n* You have a track record of driving pipeline growth through high\\-performing ABM programs.\n* You bring a rare combination of technical fluency, cross\\-functional collaboration, and campaign hustle.\n\n#### **You you bring**\n\n\n* 5\\+ years of experience in B2B demand generation or growth marketing (agency or SaaS side).\n* Hands\\-on expertise managing LinkedIn Ads and at least one other paid platform (Meta, Reddit, etc.).\n* Proven experience running 1:Many, 1:Few, and 1:1 ABM campaigns with measurable results.\n* Fluency with CRM and marketing automation platforms (e.g. Salesforce, HubSpot).\n* Strong skills in reporting, attribution modeling, and funnel diagnostics (pivot tables, UTM tracking, etc.).\n* Experience setting up conversion tracking and syncing audience segments between tools (Tag Manager, Analytics events etc).\n* Familiarity with low\\-code automation tools like Make, N8N or Zapier.\n\n#### **Bonus Skills**\n\n\n* Experience with APIs, webhooks, dashboarding, ETL, light creative tools (Figma/Canva), or LLM automation.\n* Copywriting chops to iterate messaging and enhance campaign performance.\n\n#### **Want to stand out?**\n\n\n* Send your \"name\", LinkedIn\" and \"message\" in json to the following endpoint: https://hook.eu2\\.make.com/swxvg5yiu1c5fmiag2ccmfs3fu3em92k\n\n#### **Compensation**\n\n\n\nThis role is eligible for incentive\\-based pay, with an annual total potential earnings range of $120,000 – $150,000, including base salary and incentive\\-based compensation (based on quota attainment).\n\n**Want to learn more about HackerRank?** Check out HackerRank.com to explore our products, solutions and resources, and dive into our story and mission here.\n\n\n\nHackerRank is a proud equal employment opportunity and affirmative action employer. We provide equal opportunity to everyone for employment based on individual performance and qualification. We never discriminate based on race, religion, national origin, gender identity or expression, sexual orientation, age, marital, veteran, or disability status. All your information will be kept confidential according to EEO guidelines.\n\n\n\nLinkedin \\| X \\| Blog \\| Instagram \\| Life@HackerRank\n\n\n*Notice to prospective HackerRank job applicants:*\n\n\n* *Our Recruiters use @hackerrank.com email addresses.*\n* *We never ask for payment or credit check information to apply, interview, or work here.*",
+      "description_snippet": "HackerRank helps companies like NVIDIA, Amazon, and Microsoft hire and upskill the next generation of developers based on skills, not pedigree. Our platform is trusted by over 2,500 of the world's most innovative companies to build strong engineering teams ready for what's next.  \n\n  \n\nSoftware has entered an era where humans and AI build side by side. As this shift accelerates, the definition of strong technical talent is changing. We give companies better ways to identify and invest in next\\-g",
+      "tools": [
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Linkedin Marketing",
+          "tool_category": "ABM_Advertising",
+          "tool_id": "linkedin_marketing"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "Make",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "make"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
+        },
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Rust",
+          "tool_category": "AI_languages",
+          "tool_id": "rust"
+        }
+      ],
+      "signals": [
+        {
+          "signal_type": "motion",
+          "signal_id": "channel",
+          "signal_value": "Channel"
+        },
+        {
+          "signal_type": "motion",
+          "signal_id": "abm",
+          "signal_value": "Abm"
+        },
+        {
+          "signal_type": "team_structure",
+          "signal_id": "build_team",
+          "signal_value": "Build Team"
+        },
+        {
+          "signal_type": "hiring_signals",
+          "signal_id": "growth_hire",
+          "signal_value": "Growth Hire"
         }
       ],
       "data_quality_score": 100,

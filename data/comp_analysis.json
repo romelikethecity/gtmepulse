@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-04-23T09:55:37.796160",
-  "total_records": 85,
-  "records_with_salary": 44,
-  "disclosure_rate": 51.8,
+  "generated_at": "2026-04-26T10:59:30.279122",
+  "total_records": 94,
+  "records_with_salary": 51,
+  "disclosure_rate": 54.3,
   "salary_stats": {
     "min": 48,
     "max": 330000,
     "median": 125000,
-    "avg": 132076,
-    "count_with_salary": 44
+    "avg": 133065,
+    "count_with_salary": 51
   },
   "by_seniority": {
-    "Director": {
-      "count": 3,
-      "min_base_avg": 241333,
-      "max_base_avg": 293333,
-      "median": 250000
-    },
     "Unknown": {
-      "count": 36,
-      "min_base_avg": 121704,
-      "max_base_avg": 162755,
+      "count": 42,
+      "min_base_avg": 121579,
+      "max_base_avg": 160219,
       "median": 120000
+    },
+    "Director": {
+      "count": 4,
+      "min_base_avg": 243500,
+      "max_base_avg": 295000,
+      "median": 250000
     },
     "Senior": {
       "count": 3,
@@ -31,17 +31,23 @@
     }
   },
   "by_metro": {
-    "San Francisco": {
-      "count": 13,
-      "min_base_avg": 159423,
-      "max_base_avg": 215103,
-      "median": 145000
-    },
     "Unknown": {
-      "count": 11,
-      "min_base_avg": 120527,
-      "max_base_avg": 163436,
-      "median": 115000
+      "count": 15,
+      "min_base_avg": 118053,
+      "max_base_avg": 155186,
+      "median": 120000
+    },
+    "San Francisco": {
+      "count": 14,
+      "min_base_avg": 165892,
+      "max_base_avg": 221167,
+      "median": 157500
+    },
+    "New York": {
+      "count": 12,
+      "min_base_avg": 133583,
+      "max_base_avg": 172083,
+      "median": 135000
     },
     "Boston": {
       "count": 3,
@@ -49,11 +55,11 @@
       "max_base_avg": 141666,
       "median": 110000
     },
-    "New York": {
-      "count": 11,
-      "min_base_avg": 131181,
-      "max_base_avg": 170454,
-      "median": 122000
+    "Los Angeles": {
+      "count": 3,
+      "min_base_avg": 113666,
+      "max_base_avg": 145666,
+      "median": 120000
     },
     "Austin": {
       "count": 3,
@@ -63,17 +69,17 @@
     }
   },
   "by_remote": {
-    "onsite": {
-      "count": 39,
-      "min_base_avg": 130685,
-      "max_base_avg": 172564,
-      "median": 125000
-    },
     "remote": {
-      "count": 4,
-      "min_base_avg": 116250,
-      "max_base_avg": 170000,
-      "median": 120000
+      "count": 5,
+      "min_base_avg": 106000,
+      "max_base_avg": 156000,
+      "median": 115000
+    },
+    "onsite": {
+      "count": 45,
+      "min_base_avg": 133483,
+      "max_base_avg": 173333,
+      "median": 130000
     }
   },
   "top_paying_roles": [
@@ -86,6 +92,13 @@
     },
     {
       "title": "Director, GTM Engineering",
+      "company": "ALTRUIST",
+      "salary_min": 250000.0,
+      "salary_max": 300000.0,
+      "seniority": "Director"
+    },
+    {
+      "title": "Director, GTM Engineering, Hazel AI",
       "company": "ALTRUIST",
       "salary_min": 250000.0,
       "salary_max": 300000.0,
@@ -138,13 +151,6 @@
       "company": "GAMMA",
       "salary_min": 170000.0,
       "salary_max": 215000.0,
-      "seniority": ""
-    },
-    {
-      "title": "GTM Engineer",
-      "company": "Playground",
-      "salary_min": 160000.0,
-      "salary_max": 210000.0,
       "seniority": ""
     }
   ]

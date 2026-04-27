@@ -49,6 +49,26 @@ $PYTHON scripts/generate_linkedin_carousel.py --pdf || true
 echo "[$(date)] Sending weekly email..."
 $PYTHON scripts/generate_weekly_email.py --send
 
+# Email carousel PDF to Rome
+CAROUSEL_PDF="$PROJECT_DIR/carousel/gtme-pulse-carousel.pdf"
+if [ -f "$CAROUSEL_PDF" ] && [ -n "$RESEND_API_KEY" ]; then
+    echo "[$(date)] Emailing carousel PDF to rome@veruminc.com..."
+    PDF_B64=$(base64 -w 0 "$CAROUSEL_PDF" 2>/dev/null || base64 "$CAROUSEL_PDF" | tr -d '\n')
+    curl -s -X POST "https://api.resend.com/emails" \
+        -H "Authorization: Bearer $RESEND_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d "{
+            \"from\": \"GTME Pulse <insights@gtmepulse.com>\",
+            \"to\": [\"rome@veruminc.com\"],
+            \"subject\": \"GTME Pulse Carousel - $DATE\",
+            \"text\": \"This week's LinkedIn carousel is attached.\",
+            \"attachments\": [{
+                \"filename\": \"gtme-pulse-carousel-$DATE.pdf\",
+                \"content\": \"$PDF_B64\"
+            }]
+        }" > /dev/null && echo "[$(date)] PDF emailed." || echo "[$(date)] PDF email failed."
+fi
+
 # Push updated snapshot so git reset --hard doesn't lose it
 if [ -f "data/previous_market_snapshot.json" ]; then
     git add data/previous_market_snapshot.json

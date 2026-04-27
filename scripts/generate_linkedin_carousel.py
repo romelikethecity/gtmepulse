@@ -54,8 +54,15 @@ SITE_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'site',
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'carousel')
 PREVIOUS_SNAPSHOT_FILE = os.path.join(DATA_DIR, 'previous_market_snapshot.json')
 
+# Tools to exclude from carousel slides and post text (generic tech, not GTM tools)
+EXCLUDED_TOOLS = {
+    'Rag', 'Rust', 'Aws', 'Gcp', 'Azure', 'Kubernetes',
+    'Javascript', 'Typescript', 'Python', 'Prompt Engineering',
+    'Gemini', 'Claude', 'Openai', 'Anthropic', 'Cohere',
+}
+
 SKILL_DISPLAY = {
-    'Rag': 'RAG', 'Aws': 'AWS', 'Gcp': 'GCP',
+    'Aws': 'AWS', 'Gcp': 'GCP',
     'Power Bi': 'Power BI', 'Hubspot': 'HubSpot', 'Salesforce': 'Salesforce',
     'Clay': 'Clay', 'Openai': 'OpenAI', 'Zoominfo': 'ZoomInfo',
     'Salesloft': 'SalesLoft', 'Docusign': 'DocuSign',
@@ -177,8 +184,8 @@ def generate_carousel_signals(mi, ca, prev):
     }
 
     total_jobs = mi['total_jobs']
-    tools = mi.get('tools', {})
-    prev_tools = prev.get('tools', {}) if prev else {}
+    tools = {k: v for k, v in mi.get('tools', {}).items() if k not in EXCLUDED_TOOLS}
+    prev_tools = {k: v for k, v in (prev.get('tools', {}) if prev else {}).items() if k not in EXCLUDED_TOOLS}
     has_previous = bool(prev_tools)
     signals['has_previous'] = has_previous
 
@@ -311,8 +318,8 @@ def make_tools_slide(mi, prev, total_pages):
     font_count = get_font(22)
     font_change = get_font(18)
 
-    tools = mi.get('tools', {})
-    prev_tools = prev.get('tools', {}) if prev else {}
+    tools = {k: v for k, v in mi.get('tools', {}).items() if k not in EXCLUDED_TOOLS}
+    prev_tools = {k: v for k, v in (prev.get('tools', {}) if prev else {}).items() if k not in EXCLUDED_TOOLS}
     has_previous = bool(prev_tools)
     sorted_tools = sorted(tools.items(), key=lambda x: -x[1])[:10]
     max_count = sorted_tools[0][1] if sorted_tools else 1
@@ -440,8 +447,8 @@ def make_insight_slide(mi, ca, prev, signals, total_pages):
         font_change = get_font(24)
         font_detail = get_font(20)
 
-        tools = mi.get('tools', {})
-        prev_tools = prev.get('tools', {}) if prev else {}
+        tools = {k: v for k, v in mi.get('tools', {}).items() if k not in EXCLUDED_TOOLS}
+        prev_tools = {k: v for k, v in (prev.get('tools', {}) if prev else {}).items() if k not in EXCLUDED_TOOLS}
 
         growth = []
         for name, count in tools.items():
@@ -454,20 +461,45 @@ def make_insight_slide(mi, ca, prev, signals, total_pages):
 
         growth.sort(key=lambda x: -x['pct'])
 
-        for item in growth[:8]:
-            display_name = SKILL_DISPLAY.get(item['name'], item['name'])
+        if growth:
+            for item in growth[:8]:
+                display_name = SKILL_DISPLAY.get(item['name'], item['name'])
 
-            draw_rounded_rect(draw, (60, y, W - 60, y + 100), fill=CARD)
-            draw.text((80, y + 12), display_name, fill=WHITE, font=font_tool)
+                draw_rounded_rect(draw, (60, y, W - 60, y + 100), fill=CARD)
+                draw.text((80, y + 12), display_name, fill=WHITE, font=font_tool)
 
-            change_text = f"+{item['change']:,} mentions (+{item['pct']:.0f}%)"
-            draw.text((80, y + 52), change_text, fill=GREEN, font=font_change)
+                change_text = f"+{item['change']:,} mentions (+{item['pct']:.0f}%)"
+                draw.text((80, y + 52), change_text, fill=GREEN, font=font_change)
 
-            now_text = f"Now: {item['count']:,}"
-            bbox = draw.textbbox((0, 0), now_text, font=font_detail)
-            draw.text((W - 80 - (bbox[2] - bbox[0]), y + 38), now_text, fill=GRAY_400, font=font_detail)
+                now_text = f"Now: {item['count']:,}"
+                bbox = draw.textbbox((0, 0), now_text, font=font_detail)
+                draw.text((W - 80 - (bbox[2] - bbox[0]), y + 38), now_text, fill=GRAY_400, font=font_detail)
 
-            y += 115
+                y += 115
+        else:
+            # Fallback: show top tools by absolute count when no week-over-week growth
+            img = Image.new('RGB', (W, H), NAVY)
+            draw = ImageDraw.Draw(img)
+            y = slide_header(draw, "Most In-Demand Tools", "Top tools by job posting mentions this week")
+
+            total_jobs = mi.get('total_jobs', 1)
+            sorted_tools = sorted(tools.items(), key=lambda x: -x[1])[:8]
+            max_count = sorted_tools[0][1] if sorted_tools else 1
+
+            for i, (name, count) in enumerate(sorted_tools):
+                display_name = SKILL_DISPLAY.get(name, name)
+                pct = round(count / total_jobs * 100, 1)
+
+                draw_rounded_rect(draw, (60, y, W - 60, y + 100), fill=CARD)
+                draw.text((80, y + 12), f"#{i+1}  {display_name}", fill=WHITE, font=font_tool)
+
+                count_text = f"{count:,} mentions ({pct}%)"
+                draw.text((80, y + 52), count_text, fill=ACCENT, font=font_change)
+
+                bar_w = int(count / max_count * (W - 200))
+                draw_bar(draw, 80, y + 82, bar_w, 6, ACCENT)
+
+                y += 115
 
     else:
         # Remote vs Onsite salary comparison
@@ -646,7 +678,7 @@ def make_cta_slide(mi, signals, total_pages):
 
     # Dynamic bullets from data
     total_jobs = mi['total_jobs']
-    tools = mi.get('tools', {})
+    tools = {k: v for k, v in mi.get('tools', {}).items() if k not in EXCLUDED_TOOLS}
     sorted_tools = sorted(tools.items(), key=lambda x: -x[1])
     top_tool_name = SKILL_DISPLAY.get(sorted_tools[0][0], sorted_tools[0][0]) if sorted_tools else "HubSpot"
     top_tool_pct = round(sorted_tools[0][1] / total_jobs * 100, 1) if sorted_tools else 0
@@ -684,9 +716,9 @@ def make_cta_slide(mi, signals, total_pages):
 def generate_post_text(mi, ca, jobs, prev, date_str):
     """Generate a LinkedIn post text file with rotating hooks."""
     total_jobs = mi['total_jobs']
-    tools = mi.get('tools', {})
+    tools = {k: v for k, v in mi.get('tools', {}).items() if k not in EXCLUDED_TOOLS}
     sorted_tools = sorted(tools.items(), key=lambda x: -x[1])
-    prev_tools = prev.get('tools', {}) if prev else {}
+    prev_tools = {k: v for k, v in (prev.get('tools', {}) if prev else {}).items() if k not in EXCLUDED_TOOLS}
     salary_stats = ca.get('salary_stats', {})
     median = salary_stats.get('median', 0)
     median_k = int(median / 1000) if median > 0 else 0

@@ -1,0 +1,59 @@
+# GTME Pulse
+
+> Independent data hub for GTM Engineers. Salary benchmarks, tool reviews, career guides, and market analysis based on the State of GTME Report 2026 (n=228).
+
+## About
+
+GTME Pulse is an independent, vendor-neutral resource for Go-To-Market Engineers — the technical professionals who build revenue infrastructure using tools like Clay, Apollo, and n8n. The site publishes original salary data, tool comparisons, career guides, and weekly market analysis. All data comes from the annual State of GTME Report survey.
+
+## Author
+
+Rome Thorndike — founder and sole author. Background in data engineering and B2B sales infrastructure.
+
+## Key Pages
+
+### Salary Data
+- GTM Engineer Salary Index: https://gtmepulse.com/salary/
+- Salary by Experience Level: https://gtmepulse.com/salary/by-experience/
+- Coding Premium ($45K gap): https://gtmepulse.com/salary/coding-premium/
+- Equity Analysis: https://gtmepulse.com/salary/equity/
+- Salary Calculator: https://gtmepulse.com/salary/calculator/
+- GTM Engineer vs SDR Salary: https://gtmepulse.com/salary/vs-sdr/
+- GTM Engineer vs RevOps Salary: https://gtmepulse.com/salary/vs-revops/
+
+### Tool Reviews & Comparisons
+- Tool Index: https://gtmepulse.com/tools/
+- Clay Review: https://gtmepulse.com/tools/clay-review/
+- HubSpot vs Salesforce: https://gtmepulse.com/tools/hubspot-vs-salesforce/
+- Instantly vs Smartlead: https://gtmepulse.com/tools/instantly-vs-smartlead/
+- Clay vs Apollo: https://gtmepulse.com/tools/clay-vs-apollo/
+- Best Data Enrichment Tools: https://gtmepulse.com/tools/best-data-enrichment-tools/
+- Tech Stack Benchmark: https://gtmepulse.com/tools/tech-stack-benchmark/
+
+### Career Guides
+- Career Index: https://gtmepulse.com/careers/
+- How to Become a GTM Engineer: https://gtmepulse.com/careers/how-to-become-gtm-engineer/
+- Do You Need to Code?: https://gtmepulse.com/careers/do-you-need-to-code/
+- Start a GTM Engineering Agency: https://gtmepulse.com/careers/start-gtm-engineering-agency/
+- Job Market Analysis: https://gtmepulse.com/careers/job-market-analysis/
+
+### Insights & Research
+- Insights Index: https://gtmepulse.com/insights/
+- State of GTME 2026: https://gtmepulse.com/insights/state-of-gtme-2026/
+- Clay Ecosystem Analysis: https://gtmepulse.com/insights/clay-ecosystem/
+- Cold Email Deliverability Guide: https://gtmepulse.com/insights/cold-email-deliverability-guide/
+- Data Pipeline Architecture: https://gtmepulse.com/insights/data-pipeline-architecture/
+
+### Glossary
+- Glossary Index: https://gtmepulse.com/glossary/
+- What is a GTM Engineer: https://gtmepulse.com/glossary/gtm-engineer/
+- Waterfall Enrichment: https://gtmepulse.com/glossary/waterfall-enrichment/
+- Data Orchestration: https://gtmepulse.com/glossary/data-orchestration/
+
+## Data Sources
+
+All salary and tool adoption data comes from the State of GTME Report 2026, an annual survey of 228 GTM Engineering professionals conducted in late 2025. The survey covers compensation, tool usage, career paths, and market trends.
+
+## Contact
+
+Rome Thorndike — rome@getprovyx.com

@@ -18,7 +18,7 @@ SKIP_OG = False
 # HTML Head
 # ---------------------------------------------------------------------------
 
-def get_html_head(title, description, canonical_path, extra_head="", og_image=""):
+def get_html_head(title, description, canonical_path, extra_head="", og_image="", robots_meta=""):
     """Generate complete <head> section."""
     canonical = f"{SITE_URL}{canonical_path}"
     full_title = f"{title} - {SITE_NAME}" if title != SITE_NAME else SITE_NAME
@@ -34,6 +34,9 @@ def get_html_head(title, description, canonical_path, extra_head="", og_image=""
     <meta property="og:image:height" content="630">"""
     twitter_image_tag = f'\n    <meta name="twitter:image" content="{og_image_url}">'
 
+    robots = robots_meta or "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    canonical_tag = "" if robots_meta == "noindex, nofollow" else f'\n    <link rel="canonical" href="{canonical}">'
+
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +44,8 @@ def get_html_head(title, description, canonical_path, extra_head="", og_image=""
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FF4F1F">
     <title>{full_title}</title>
-    <meta name="description" content="{description}">
-    <link rel="canonical" href="{canonical}">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="description" content="{description}">{canonical_tag}
+    <meta name="robots" content="{robots}">
 {"" if not GOOGLE_SITE_VERIFICATION_META else f'    <meta name="google-site-verification" content="{GOOGLE_SITE_VERIFICATION_META}">'}
 
     <!-- Open Graph -->
@@ -181,7 +183,7 @@ def get_footer_html():
 # ---------------------------------------------------------------------------
 
 def get_page_wrapper(title, description, canonical_path, body_content,
-                     active_path="", extra_head="", body_class=""):
+                     active_path="", extra_head="", body_class="", robots_meta=""):
     """Assemble a full HTML document."""
     bc = f' class="{body_class}"' if body_class else ""
 
@@ -193,7 +195,7 @@ def get_page_wrapper(title, description, canonical_path, body_content,
             og_stem = og_stem[:-5]
         og_image = f"/assets/og/{og_stem}.png" if og_stem else "/assets/og/index.png"
 
-    head = get_html_head(title, description, canonical_path, extra_head, og_image=og_image)
+    head = get_html_head(title, description, canonical_path, extra_head, og_image=og_image, robots_meta=robots_meta)
     nav = get_nav_html(active_path)
     footer = get_footer_html()
 
@@ -395,9 +397,9 @@ def get_software_application_schema(tool_data):
     return f'    <script type="application/ld+json">{json.dumps(schema)}</script>\n'
 
 
-def get_article_schema(title, description, slug, date_published, word_count):
-    """Generate Article JSON-LD for insight articles."""
-    url = f"{SITE_URL}/insights/{slug}/"
+def get_article_schema(title, description, slug, date_published, word_count, section="insights"):
+    """Generate Article JSON-LD for insight/blog articles."""
+    url = f"{SITE_URL}/{section}/{slug}/"
     schema = {
         "@context": "https://schema.org",
         "@type": "Article",

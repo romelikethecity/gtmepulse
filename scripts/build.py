@@ -882,6 +882,7 @@ def build_404_page():
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/404.html",
         body_content=body, body_class="page-inner",
+        robots_meta="noindex, nofollow",
     )
     write_page("404.html", page)
     print(f"  Built: 404.html")
@@ -2817,6 +2818,72 @@ def build_robots():
     with open(os.path.join(OUTPUT_DIR, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(content)
     print(f"  Built: robots.txt")
+
+
+def build_llms_txt():
+    content = """# GTME Pulse
+
+> Independent data hub for GTM Engineers. Salary benchmarks, tool reviews, career guides, and market analysis based on the State of GTME Report 2026 (n=228).
+
+## About
+
+GTME Pulse is an independent, vendor-neutral resource for Go-To-Market Engineers — the technical professionals who build revenue infrastructure using tools like Clay, Apollo, and n8n. The site publishes original salary data, tool comparisons, career guides, and weekly market analysis. All data comes from the annual State of GTME Report survey.
+
+## Author
+
+Rome Thorndike — founder and sole author. Background in data engineering and B2B sales infrastructure.
+
+## Key Pages
+
+### Salary Data
+- GTM Engineer Salary Index: https://gtmepulse.com/salary/
+- Salary by Experience Level: https://gtmepulse.com/salary/by-experience/
+- Coding Premium ($45K gap): https://gtmepulse.com/salary/coding-premium/
+- Equity Analysis: https://gtmepulse.com/salary/equity/
+- Salary Calculator: https://gtmepulse.com/salary/calculator/
+- GTM Engineer vs SDR Salary: https://gtmepulse.com/salary/vs-sdr/
+- GTM Engineer vs RevOps Salary: https://gtmepulse.com/salary/vs-revops/
+
+### Tool Reviews & Comparisons
+- Tool Index: https://gtmepulse.com/tools/
+- Clay Review: https://gtmepulse.com/tools/clay-review/
+- HubSpot vs Salesforce: https://gtmepulse.com/tools/hubspot-vs-salesforce/
+- Instantly vs Smartlead: https://gtmepulse.com/tools/instantly-vs-smartlead/
+- Clay vs Apollo: https://gtmepulse.com/tools/clay-vs-apollo/
+- Best Data Enrichment Tools: https://gtmepulse.com/tools/best-data-enrichment-tools/
+- Tech Stack Benchmark: https://gtmepulse.com/tools/tech-stack-benchmark/
+
+### Career Guides
+- Career Index: https://gtmepulse.com/careers/
+- How to Become a GTM Engineer: https://gtmepulse.com/careers/how-to-become-gtm-engineer/
+- Do You Need to Code?: https://gtmepulse.com/careers/do-you-need-to-code/
+- Start a GTM Engineering Agency: https://gtmepulse.com/careers/start-gtm-engineering-agency/
+- Job Market Analysis: https://gtmepulse.com/careers/job-market-analysis/
+
+### Insights & Research
+- Insights Index: https://gtmepulse.com/insights/
+- State of GTME 2026: https://gtmepulse.com/insights/state-of-gtme-2026/
+- Clay Ecosystem Analysis: https://gtmepulse.com/insights/clay-ecosystem/
+- Cold Email Deliverability Guide: https://gtmepulse.com/insights/cold-email-deliverability-guide/
+- Data Pipeline Architecture: https://gtmepulse.com/insights/data-pipeline-architecture/
+
+### Glossary
+- Glossary Index: https://gtmepulse.com/glossary/
+- What is a GTM Engineer: https://gtmepulse.com/glossary/gtm-engineer/
+- Waterfall Enrichment: https://gtmepulse.com/glossary/waterfall-enrichment/
+- Data Orchestration: https://gtmepulse.com/glossary/data-orchestration/
+
+## Data Sources
+
+All salary and tool adoption data comes from the State of GTME Report 2026, an annual survey of 228 GTM Engineering professionals conducted in late 2025. The survey covers compensation, tool usage, career paths, and market trends.
+
+## Contact
+
+Rome Thorndike — rome@getprovyx.com
+"""
+    with open(os.path.join(OUTPUT_DIR, "llms.txt"), "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"  Built: llms.txt")
 
 
 # ---------------------------------------------------------------------------
@@ -10964,7 +11031,7 @@ def build_blog_equity_gap():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineer compensation data and career strategy.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="equity-gap", date_published="2026-04-01", word_count=1800, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/equity-gap/",
@@ -11076,7 +11143,7 @@ def build_blog_coding_premium():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly salary data and career strategy for GTM Engineers.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="coding-premium", date_published="2026-04-01", word_count=1800, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/coding-premium/",
@@ -11182,7 +11249,7 @@ def build_blog_work_hours():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineering insights on careers, salaries, and tools.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="work-hours", date_published="2026-04-01", word_count=1700, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/work-hours/",
@@ -11286,7 +11353,7 @@ def build_blog_gen_z_function():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineering career and market data.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="gen-z-function", date_published="2026-04-01", word_count=1700, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/gen-z-function/",
@@ -11385,7 +11452,7 @@ def build_blog_clay_love_hate():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM tool intel, honest reviews, and stack analysis.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="clay-love-hate", date_published="2026-04-01", word_count=1600, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/clay-love-hate/",
@@ -11484,7 +11551,7 @@ def build_blog_latam_apac_agency():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Global GTM Engineering market data and agency intel. Weekly.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="latam-apac-agency", date_published="2026-04-01", word_count=1700, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/latam-apac-agency/",
@@ -11586,7 +11653,7 @@ def build_blog_title_dilution():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineering career data and market intel.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="title-dilution", date_published="2026-04-01", word_count=1700, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/title-dilution/",
@@ -11680,7 +11747,7 @@ def build_blog_pre_seed_equity():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineer compensation data and equity insights.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="pre-seed-equity", date_published="2026-04-01", word_count=1600, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/pre-seed-equity/",
@@ -11777,7 +11844,7 @@ def build_blog_self_taught():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineer career insights and learning resources.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="self-taught", date_published="2026-04-01", word_count=1600, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/self-taught/",
@@ -11876,7 +11943,7 @@ def build_blog_lead_gen_myth():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineer data, tools, and career intelligence.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="lead-gen-myth", date_published="2026-04-01", word_count=1700, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/lead-gen-myth/",
@@ -11977,7 +12044,7 @@ def build_blog_all_in_one_tool():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM tool intelligence and stack optimization tips.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="all-in-one-tool", date_published="2026-04-01", word_count=1700, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/all-in-one-tool/",
@@ -12075,7 +12142,7 @@ def build_blog_bonus_data():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineer compensation data and negotiation insights.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="bonus-data", date_published="2026-04-01", word_count=1600, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/bonus-data/",
@@ -12175,7 +12242,7 @@ def build_blog_december_explosion():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineer job market data and hiring trends.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="december-explosion", date_published="2026-04-01", word_count=1700, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/december-explosion/",
@@ -12269,7 +12336,7 @@ def build_blog_mid_size_pay():
 '''
     body += source_citation_html()
     body += newsletter_cta_html("Weekly GTM Engineer salary data and career strategy.")
-    extra_head = get_breadcrumb_schema(crumbs)
+    extra_head = get_breadcrumb_schema(crumbs) + get_article_schema(title=title, description=description, slug="mid-size-pay", date_published="2026-04-01", word_count=1600, section="blog")
 
     page = get_page_wrapper(
         title=title, description=description, canonical_path="/blog/mid-size-pay/",
@@ -19334,6 +19401,7 @@ def main():
     print("\n  Building meta files...")
     build_sitemap()
     build_robots()
+    build_llms_txt()
 
     with open(os.path.join(OUTPUT_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("gtmepulse.com\n")

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-26",
+  "last_updated": "2026-04-28",
   "total_jobs": 94,
   "jobs": [
     {
@@ -20,6 +20,16 @@
       "description": "**About Us**\n\nClick Theory Capital is a high\\-growth AI\\-native private equity and venture studio. We've grown to 150 people in 5 years, totally bootstrapped, and we're still going at 200% per year.\n\nOne of our core portfolio companies is **OSP**, an outsourced SDR and lead generation company that helps B2B companies generate qualified sales conversations. OSP will be the primary operating environment for this role, but the systems you build may also support Click Theory Capital and other portfolio companies.\n\nWe are hiring an **Outbound GTM Engineer** to build the outbound engine that helps our SDR teams know exactly who to chase, why they should chase them, what to say, and when to say it.\n\n**About the Role**\n\nYour mission is simple:\n\nBuild a scalable system to generate high\\-quality sales conversations.\n\nThat means owning the full stack of outbound lead generation before the SDR ever picks up the phone or sends the email.\n\nYou will identify target accounts, find buying signals, build lead lists, enrich data, write outbound copy, create AI workflows, automate research, test campaign angles, measure performance, and continuously improve the system.\n\nThis is not a traditional engineering role.\n\nWe do not care if you write beautiful code. We care if you can build scrappy, AI\\-powered, revenue\\-generating systems that create qualified sales calls.\n\n**What You’ll Own**\n\nYou will own the outbound systems layer across OSP, clients, and other Click Theory Capital portfolio companies.\n\nThis includes:\n\n* Building targeting systems that identify the highest\\-probability prospects for our clients and portfolio companies\n* Creating lead generation workflows using tools like Clay, Smartlead, HubSpot, Salesforce, Seamless, Zapier, Make, AI tools, enrichment platforms, scraping tools, and whatever else gets the job done\n* Finding creative buying signals that tell us who is likely to need our service right now\n* Creating enrichment pipelines that turn messy prospect data into usable, actionable SDR intelligence\n* Writing cold outbound copy that actually gets responses\n* Testing outbound angles, offers, segments, triggers, and messaging\n* Building dashboards or feedback loops that show what is working and what is not\n* Building scrappy internal tools, AI agents, workflows, automations, and data systems that generate a pipeline\n\n**Who You Are**\n\nYou are a sales\\-first builder.\n\nYou probably describe yourself as one of these:\n\n* GTM operator who can build\n* Ex\\-founder\n* Outbound hacker\n* Growth operator\n* Sales automation builder\n* Pipeline generation specialist\n\nYou are technical enough to build systems, but sales\\-minded enough to know what systems are worth building. We’re not looking for pure developers here.\n\nWe want someone who can use AI tools, no\\-code tools, low\\-code tools, APIs, scrappy scripts, enrichment platforms, CRMs, and automation tools to create revenue.\n\n**What We’re Looking For**\n\nYears of experience matter less than proof that you can build systems that generate a pipeline.\n\nYou may be a fit if you have:\n\n* Built outbound systems that created meetings, pipeline, or revenue\n* Used tools like Clay, Smartlead, HubSpot, Salesforce, Seamless, Zapier, Make, Instantly, Apollo, OpenAI, Anthropic, scraping tools, enrichment tools, or similar platforms\n* Written cold email or outbound copy that produced real responses\n* Built lead scoring, enrichment, account research, or signal\\-based targeting workflows\n* Worked in SDR, sales, growth, RevOps, agency, founder, or lead generation environments\n* Used AI to automate research, personalization, segmentation, copywriting, or workflow execution\n* Taken messy GTM ideas and turned them into working outbound campaigns\n* Tested, measured, and improved campaigns based on actual conversion data\n\n**The best candidates will have receipts:** workflows, campaigns, systems, screenshots, Looms, case studies, or examples of things they have built.\n\nBe expected to figure things out, move quickly, and build systems that work.\n\nThis is an intense environment. It is fast\\-moving, ambitious, and high\\-accountability. For the right person, that is the opportunity.\n\n**Remote \\| $65,000–$100,000 base \\+ performance upside**\n\nPay: $65,000\\.00 \\- $100,000\\.00 per year\n\nBenefits:\n\n* 401(k)\n* 401(k) matching\n* Dental insurance\n* Health insurance\n* Paid time off\n* Parental leave\n* Vision insurance\n\nApplication Question(s):\n\n* Describe the most effective outbound or lead generation system you’ve personally built. What did it do, what tools did you use, and what measurable result did it produce?\n* Which outbound, enrichment, AI, CRM, automation, or data tools have you used hands\\-on? For each, briefly describe what you built or owned.\n\nWork Location: Remote",
       "description_snippet": "**About Us**\n\nClick Theory Capital is a high\\-growth AI\\-native private equity and venture studio. We've grown to 150 people in 5 years, totally bootstrapped, and we're still going at 200% per year.\n\nOne of our core portfolio companies is **OSP**, an outsourced SDR and lead generation company that helps B2B companies generate qualified sales conversations. OSP will be the primary operating environment for this role, but the systems you build may also support Click Theory Capital and other portfo",
       "tools": [
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Anthropic",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "anthropic"
+        },
         {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
@@ -54,16 +64,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Anthropic",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "anthropic"
         }
       ],
       "signals": [
@@ -106,6 +106,11 @@
       "description_snippet": "**About HUD**\n-------------\n\n\nHUD is building infrastructure to create RL training data and evals for frontier AI agents, as well as a marketplace to sell these to frontier labs through the HUD marketplace. Our platform is used by frontier labs, Fortune 500 companies, and startups. We’ve raised $15M from top VCs and were YC W25\\.\n\n**About the role**\n------------------\n\n\nHUD's product sells itself to the right person. Your challenge is finding and selling to them at scale.\n\n\nThe buyers of HUD’s d",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Apollo",
           "tool_category": "Sales_Engagement_Growth",
           "tool_id": "apollo"
@@ -114,16 +119,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -171,6 +166,26 @@
       "description_snippet": "### **About Us**\n\n\n\nCo\\-founded in 2023 by Joe Laws and Grant Verstandig, Trase Systems is AI, Uncomplicated. Trase empowers enterprise leaders to harness the full potential of AI without the associated complexity and risks. We are an end\\-to\\-end solution for deploying, managing, and optimizing AI in the enterprise. Our platform specializes in bridging the \"last mile\" of AI adoption, unlocking AI's full potential while driving efficiency and significant cost savings. Trase is at the forefront o",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Hugging Face",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "hugging_face"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -184,31 +199,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Hugging Face",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "hugging_face"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -261,6 +251,26 @@
       "description_snippet": "### **About Us**\n\n\n\nRed Cell Partners is an incubation firm building and investing in rapidly scalable technology\\-led companies that are bringing revolutionary advancements to market in three distinct practice areas: healthcare, cyber, and national security. United by a shared sense of duty and deep belief in the power of innovation, Red Cell is developing powerful tools and solutions to address our Nation's most pressing problems.\n\n**About Trase:**\n\n\n\nCo\\-founded in 2023 by Joe Laws and Grant ",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Hugging Face",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "hugging_face"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -274,31 +284,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Hugging Face",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "hugging_face"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -351,6 +336,31 @@
       "description_snippet": "**About Altruist**\n\n\n\nAltruist is transforming the multi\\-trillion dollar wealth management industry by building an AI platform for wealth professionals. We partner with financial advisors nationwide, empowering them to grow, optimize time and resources, and deliver superior outcomes for their clients.\n\n\n\nWe're looking for exceptional talent to help us achieve our mission of making financial advice better, more affordable, and accessible to all. If you're passionate about challenging the status ",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Anthropic",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "anthropic"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -374,36 +384,6 @@
           "tool_name": "Fivetran",
           "tool_category": "Reverse_ETL",
           "tool_id": "fivetran"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Anthropic",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "anthropic"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Typescript",
-          "tool_category": "AI_languages",
-          "tool_id": "typescript"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
         }
       ],
       "signals": [
@@ -461,6 +441,16 @@
       "description_snippet": "**GTM Engineer (NYC)**\n======================\n\n**Location:** New York, NY  \n\n**Compensation:** Target Base Salary: $160,000–$190,000  \n\n**Employment:** Full\\-time, On\\-site\n  \n\n**Department:** GTM\n\n**About Revin**\n\n\nAt Revin, our mission is to bring superintelligence to the built world. Millions of operators across Home Services, Construction, and Remodeling have been overlooked by the last wave of technology. We believe AI is the most transformational platform change in history, but the hard wo",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -484,26 +474,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -576,6 +546,31 @@
       "description_snippet": "**About Altruist**\n\n\n\nAltruist is transforming the multi\\-trillion dollar wealth management industry by building an AI platform for wealth professionals. We partner with financial advisors nationwide, empowering them to grow, optimize time and resources, and deliver superior outcomes for their clients.\n\n\n\nWe're looking for exceptional talent to help us achieve our mission of making financial advice better, more affordable, and accessible to all. If you're passionate about challenging the status ",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Anthropic",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "anthropic"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -599,36 +594,6 @@
           "tool_name": "Fivetran",
           "tool_category": "Reverse_ETL",
           "tool_id": "fivetran"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Anthropic",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "anthropic"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Typescript",
-          "tool_category": "AI_languages",
-          "tool_id": "typescript"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
         }
       ],
       "signals": [
@@ -686,6 +651,11 @@
       "description_snippet": "Stratus, is the leading cloud\\-based platform for MEP contractors. We’re on a mission to revolutionize the construction industry by providing innovative data driven solutions that seamlessly layer across a contractor’s entire workflow from design, to fabrication, to installation. Join the team digitizing the MEP industry.\n\n **About the Role:**\n\n\nWe're hiring our first GTM Engineer to build and own the systems that drive revenue across Stratus's entire go\\-to\\-market motion — sales, marketing, an",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -704,21 +674,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Cohere",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "cohere"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -751,6 +706,16 @@
       "description_snippet": "#### **About Clockwork Systems**\n\n\n**Clockwork.io – Software Driven Fabrics to increase GPU cluster utilization**\n\n\n\nClockwork Systems was founded by Stanford researchers and veteran systems engineers who share a vision for redefining the foundations of distributed computing. As AI workloads grow increasingly complex, traditional infrastructure struggles to meet the demands of performance, reliability, and precise coordination. Clockwork is pioneering a software\\-driven approach to AI fabrics by",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -769,21 +734,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
         }
       ],
       "signals": [
@@ -869,11 +819,6 @@
           "tool_name": "Salesforce Marketing Cloud",
           "tool_category": "Marketing_Automation_Enterprise",
           "tool_id": "salesforce_marketing_cloud"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -949,11 +894,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -1019,11 +959,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -1089,11 +1024,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -1151,6 +1081,11 @@
       "description_snippet": "**The Role**\n------------\n\n\nWe are seeking an experienced GTM Solutions Architect to join our team. In this highly cross\\-functional role, you will serve as the technical and strategic GTM partner for our clients, designing scalable system architectures, building platform integrations, and translating complex business requirements into blueprints and live systems.\n\n\nThis is a position designed for someone who thrives at the intersection of technology, process design, and business strategy. You’l",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -1199,21 +1134,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -1261,6 +1181,11 @@
       "description_snippet": "**Who we are:**\n\n\n\nEverTrue is the leading **advancement intelligence and donor engagement platform**, empowering educational institutions and non\\-profit organizations to build stronger relationships and achieve outstanding fundraising results. Our platform continuously evolves, integrating innovative solutions to help advancement professionals effectively identify, prioritize, and manage prospects, engage supporters, and track progress. Hundreds of organizations rely on EverTrue to grow giving",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -1284,11 +1209,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
         }
       ],
       "signals": [
@@ -1331,6 +1251,36 @@
       "description_snippet": "**Company Overview**\n--------------------\n\n  \n\nDocusign brings agreements to life. Over 1\\.5 million customers and more than a billion people in over 180 countries use Docusign solutions to accelerate the process of doing business and simplify people’s lives. With intelligent agreement management, Docusign unleashes business\\-critical data that is trapped inside of documents. Until now, these were disconnected from business systems of record, costing businesses time, money, and opportunity. Usin",
       "tools": [
         {
+          "tool_name": "Autogen",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "autogen"
+        },
+        {
+          "tool_name": "Crewai",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "crewai"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
+          "tool_name": "Azure",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "azure"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -1349,46 +1299,6 @@
           "tool_name": "Hightouch",
           "tool_category": "Reverse_ETL",
           "tool_id": "hightouch"
-        },
-        {
-          "tool_name": "Autogen",
-          "tool_category": "AI_llm_frameworks",
-          "tool_id": "autogen"
-        },
-        {
-          "tool_name": "Crewai",
-          "tool_category": "AI_llm_frameworks",
-          "tool_id": "crewai"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Typescript",
-          "tool_category": "AI_languages",
-          "tool_id": "typescript"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        },
-        {
-          "tool_name": "Azure",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "azure"
         }
       ],
       "signals": [
@@ -1464,16 +1374,6 @@
           "tool_name": "Airbyte",
           "tool_category": "Reverse_ETL",
           "tool_id": "airbyte"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -1531,6 +1431,11 @@
       "description_snippet": "**Who we are:**\n\n\n\nEverTrue is the leading **advancement intelligence and donor engagement platform**, empowering educational institutions and non\\-profit organizations to build stronger relationships and achieve outstanding fundraising results. Our platform continuously evolves, integrating innovative solutions to help advancement professionals effectively identify, prioritize, and manage prospects, engage supporters, and track progress. Hundreds of organizations rely on EverTrue to grow giving",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -1554,11 +1459,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
         }
       ],
       "signals": [
@@ -1601,21 +1501,6 @@
       "description_snippet": "**Who is Serotonin**  \n\nSerotonin is the top go\\-to\\-market firm for transformative technologies, specializing in marketing, strategy, recruiting, and legal services. With a global team of 90 across 15 countries, Serotonin has supported over 300 clients in consumer tech, web3 infrastructure, digital assets, venture capital, and AI since its launch in 2020\\. Delivering end\\-to\\-end go\\-to\\-market solutions across all major marketing channels \\- including public relations, growth marketing, on\\-ch",
       "tools": [
         {
-          "tool_name": "Hubspot",
-          "tool_category": "CRM_MidMarket",
-          "tool_id": "hubspot"
-        },
-        {
-          "tool_name": "Zapier",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "zapier"
-        },
-        {
-          "tool_name": "N8N",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "n8n"
-        },
-        {
           "tool_name": "Claude",
           "tool_category": "AI_llm_providers",
           "tool_id": "claude"
@@ -1631,9 +1516,19 @@
           "tool_id": "prompt_engineering"
         },
         {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
         }
       ],
       "signals": [
@@ -1717,16 +1612,6 @@
           "tool_name": "Apollo",
           "tool_category": "Sales_Engagement_Growth",
           "tool_id": "apollo"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -1794,6 +1679,26 @@
       "description_snippet": "**About demandDrive:**  \n\ndemandDrive is a growth\\-focused go\\-to\\-market agency that helps B2B organizations accelerate pipeline and revenue through integrated sales, marketing, and revenue operations solutions. We partner with companies ranging from emerging businesses to enterprise brands to design and execute customized programs that align strategy, technology, and execution across the full customer journey. Our services include sales development, demand generation, digital marketing, websit",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
+          "tool_name": "Bedrock",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "bedrock"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -1842,36 +1747,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        },
-        {
-          "tool_name": "Bedrock",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "bedrock"
         }
       ],
       "signals": [
@@ -1913,6 +1788,11 @@
       "description": "Location\n\n\nSan Francisco\nAddress\n\n\nSan Francisco, California\nEmployment Type\n\n\nFull time\nLocation Type\n\n\nHybrid\nDepartment\n\n\nMarketing \\& Strategy\nCompensation\n\n\nBase Salary Range: $145K – $167K • Offers Equity • Offers Bonus\n\n\n\nThe base salary range represents the minimum and maximum of the salary range for this position based at our San Francisco headquarters. The actual base salary offered for this position will depend on numerous factors, including individual proficiency, anticipated performance, and the location of the selected candidate. Our base salary is just one component of Ironclad’s competitive total rewards package, which also includes equity awards (a new hire grant, along with opportunities for additional awards throughout your tenure), competitive health and wellness benefits, and a commitment to career growth and development.\n  \nIronclad is the leading AI contracting platform that transforms agreements into assets. Contracts move faster, insights surface instantly, and agents push work forward, all with you in control. Whether you’re buying or selling, Ironclad unifies the entire process on one intelligent platform, providing leaders with the visibility they need to stay one step ahead. That’s why the world’s most transformative organizations, from Rivian to the World Health Organization and the Associated Press, trust Ironclad to accelerate their business.  \n\nWe’re consistently recognized as a leader in the industry: a Leader in the Forrester Wave and Gartner Magic Quadrant for Contract Lifecycle Management, a Fortune Great Place to Work, and one of Fast Company’s Most Innovative Workplaces. Ironclad has also been named to Forbes’ AI 50 and Business Insider’s list of Companies to Bet Your Career On. We’re backed by leading investors including Accel, Y Combinator, Sequoia, BOND, and Franklin Templeton. For more information, visit www.ironcladapp.com or follow us on LinkedIn.\n\n  \n\nIronclad is looking for an AI\\-native builder to join the GTM AI \\& Systems team as a dedicated partner to Marketing \\& Strategy. This role exists for one reason: to replace manual marketing work with intelligent, autonomous systems that directly accelerate pipeline, revenue, and company growth. You'll design and deploy AI agents that run marketing workflows end\\-to\\-end, from content development and campaign launches to audience targeting and competitive intelligence. You won't just be configuring tools; you'll be architecting the agentic infrastructure that lets Ironclad's marketing team operate faster, smarter, and at greater scale. If you are plugged into the frontier of what AI can do, this role was built for you.\n\n**What You’ll Do**\n\n* Build AI agents from scratch that autonomously execute marketing workflows, including content generation, campaign development and launches, audience segmentation, creative testing, paid channel performance optimization, competitive intelligence gathering, win/loss analysis, and sales enablement content production.\n* Integrate AI APIs, LLMs, and automation platforms (Actively, Glean, Workato, Zapier, Clay, and others) alongside existing point solutions in our tech stack to create scalable, production\\-grade solutions across Ironclad's marketing motion.\n* Break down marketing workflows into the components agents need: skills, tools, memory, guardrails, evals, and feedback loops. Getting this architecture right is the job.\n* Design self\\-improving systems where agents monitor outputs, learn from outcomes, and compound in quality over time without manual babysitting.\n* Partner with Marketing and Strategy teams to deeply understand their needs, ruthlessly prioritize the highest\\-impact work, and move quickly from problem to working solution.\n* Own the full lifecycle, from identifying which workflows to automate, to prototyping, to production deployment, to monitoring and iteration.\n* Pilot and evaluate emerging AI tools and agentic frameworks; bring what you learn into production fast and help build the case for scaling what works.\n* Build reusable agent infrastructure and documentation so the marketing team can operate, trust, and self\\-serve on what you've built.\n* Collaborate cross\\-functionally with GTM Systems, Revenue Operations, and BizTech to develop a deep understanding of Ironclad's full tech stack and select the right AI tools and platforms for each use case.\n\n**Qualifications**\n\n* You've built multi\\-agent systems with orchestration layers and inter\\-agent communication.\n* 3\\+ years of experience in Marketing Operations, GTM Operations, Growth Engineering, Growth Marketing, or a closely related role with demonstrated, production\\-level AI or automation work.\n* Ability to translate ambiguous business problems into clear technical AI solutions\n* Proven track record building and shipping AI agents or automated workflows in production environments, with measurable impact on revenue growth or operational efficiency.\n* Hands\\-on experience integrating AI APIs, LLMs, and automation platforms (e.g., Workato, Zapier, Clay, n8n, or similar).\n* Strong understanding of agentic AI concepts: tool use, RAG, evals, observability, structured outputs, orchestration, and error handling.\n* Familiarity with core GTM and marketing platforms (Salesforce, Marketo, intent platforms, etc.) and how they connect to AI layers.\n* Experimental mindset: you build and validate fast and iterate constantly.\n* Communicates clearly, owns work end\\-to\\-end, and doesn't wait to be told what to build next.\n* Preferred: Experience with multi\\-agent orchestration, MCP servers, or building internal tools adopted by non\\-technical teams.\n\n **Base Salary Range: $145,000\\.00 \\- $167,000\\.00**\n\n\nThe base salary range represents the minimum and maximum of the salary range for this position based at our San Francisco headquarters. The actual base salary offered for this position will depend on numerous factors, including individual proficiency, anticipated performance, and the location of the selected candidate. Our base salary is just one component of Ironclad’s competitive total rewards package, which also includes equity awards (a new hire grant, along with opportunities for additional awards throughout your tenure), competitive health and wellness benefits, and a commitment to career growth and development.\n\n **US Full\\-Time Employee Benefits at Ironclad:**\n\n* 100% health coverage for employees (medical, dental, and vision), and 75% coverage for dependents with buy\\-up plan options available\n* Market\\-leading leave policies, including gender\\-neutral parental leave and compassionate leave\n* Family forming support through Maven for you and your partner\n* Paid time off \\- take the time you need, when you need it\n* Monthly stipends for wellbeing, hybrid work, and (if applicable) cell phone use\n* Mental health support through Modern Health, including therapy, coaching, and digital tools\n* Pre\\-tax commuter benefits (US Employees)\n* 401(k) plan with Fidelity with employer match (US Employees)\n* Regular team events to connect, recharge, and have fun\n* And most importantly: the opportunity to help build the company you want to work at\n\n\n\\*\\*UK Employee\\-specific benefits are included on our UK job postings\n\n\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.",
       "description_snippet": "Location\n\n\nSan Francisco\nAddress\n\n\nSan Francisco, California\nEmployment Type\n\n\nFull time\nLocation Type\n\n\nHybrid\nDepartment\n\n\nMarketing \\& Strategy\nCompensation\n\n\nBase Salary Range: $145K – $167K • Offers Equity • Offers Bonus\n\n\n\nThe base salary range represents the minimum and maximum of the salary range for this position based at our San Francisco headquarters. The actual base salary offered for this position will depend on numerous factors, including individual proficiency, anticipated perform",
       "tools": [
+        {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
         {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
@@ -1957,16 +1837,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -2024,6 +1894,26 @@
       "description_snippet": "Global restaurant brands run their operation on the Crunchtime platform. Delivering a consistent guest experience across every location and managing food and labor costs are at the core of how Crunchtime’s software is used today in over 150,000 locations across 100\\+ countries by the world’s top restaurant and foodservice operators. Customers including Chipotle, Culver’s, Domino’s, Dunkin’, Five Guys and P.F. Chang’s rely on our top\\-ranked platform which now includes Zenput to manage inventory,",
       "tools": [
         {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Vertex Ai",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "vertex_ai"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -2052,36 +1942,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Gemini",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "gemini"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
-        },
-        {
-          "tool_name": "Vertex Ai",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "vertex_ai"
         }
       ],
       "signals": [
@@ -2142,11 +2002,6 @@
           "tool_name": "Crewai",
           "tool_category": "AI_llm_frameworks",
           "tool_id": "crewai"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -2179,6 +2034,21 @@
       "description_snippet": "Flosum is a Salesforce\\-native DevOps and data protection platform serving enterprise Salesforce teams across the Fortune 5000\\. We are in wartime. Pipeline generation, retention, and product velocity are our three highest\\-priority problems, and AI is the lever that accelerates all three. We are hiring our first AI Go\\-to\\-Market Engineer to architect, deploy, train, and continuously optimize AI agents and automation across the entire revenue engine — from first touch to closed\\-won to expansio",
       "tools": [
         {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -2202,21 +2072,6 @@
           "tool_name": "Marketo",
           "tool_category": "Marketing_Automation_Enterprise",
           "tool_id": "marketo"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
         }
       ],
       "signals": [
@@ -2307,11 +2162,6 @@
           "tool_name": "Openai",
           "tool_category": "AI_llm_providers",
           "tool_id": "openai"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -2359,6 +2209,11 @@
       "description_snippet": "**About the role**\n==================\n\n\nYou'll build the AI\\-native GTM systems and data infrastructure that turn product usage signals into enterprise sales opportunities. Gamma's PLG flywheel generates enormous engagement data across millions of users. Your job is to create the systems that identify which accounts should talk to sales, when they're ready, and why.\n\n\nThis is a 0\\-to\\-1 role at the intersection of data, product, and revenue. You'll build Product Qualified Lead identification sys",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -2392,16 +2247,6 @@
           "tool_name": "Hightouch",
           "tool_category": "Reverse_ETL",
           "tool_id": "hightouch"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
         }
       ],
       "signals": [
@@ -2464,6 +2309,11 @@
       "description_snippet": "**About the Role**\n\n\nWe're looking for a Marketing / GTM Engineer who sits at the intersection of marketing strategy and technical execution. You'll own the systems, automations, and campaigns that drive pipeline — from first touch to closed deal. This is a hands\\-on role for someone who's equally comfortable building email sequences, launching paid social campaigns, and wiring up the operational infrastructure that makes it all work.\n\n**What You'll Do**\n\n*Email Marketing \\& Lifecycle* Design, b",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -2487,11 +2337,6 @@
           "tool_name": "Customer Io",
           "tool_category": "Marketing_Automation_Growth",
           "tool_id": "customer_io"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
         }
       ],
       "signals": [
@@ -2542,11 +2387,6 @@
           "tool_name": "Looker",
           "tool_category": "BI_Analytics",
           "tool_id": "looker"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -2589,6 +2429,26 @@
       "description_snippet": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI matu",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -2622,36 +2482,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -2699,6 +2529,16 @@
       "description_snippet": "### **Hilbert is** **building the growth infra for the next decade** **— a system built by operators, mathematicians, and engineers who lived the complexity of growth at scale, and decided to end it.**\n\n### **We work with the most forward\\-looking operators in the world — from Fortune 500 enterprises like Walmart to beloved consumer brands like FreshDirect and Blank Street Coffee, to the leading AI\\-native companies redefining how software gets built.**\n\n### **The Opportunity**\n\n### **Forget wha",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
           "tool_id": "hubspot"
@@ -2712,21 +2552,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Gemini",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "gemini"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -2784,16 +2609,6 @@
       "description_snippet": "### **GTM Engineering Intern (Customer Success \\& Agentic AI)**\n\n\n* JR\\-160091\n* Hybrid\n* Redwood City\n* Washington\n* Dallas\n\nShow More\n * General Management\n* Full time\n\n**Who are we?**\n\n\n\nEquinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet.\n\n  \n\n\nA place where bold ideas are welcomed, human connection is valued, and everyone has the opportunity to shape their future.\n\n\n\nA career at Equinix m",
       "tools": [
         {
-          "tool_name": "Salesforce",
-          "tool_category": "CRM_Enterprise",
-          "tool_id": "salesforce"
-        },
-        {
-          "tool_name": "Clay",
-          "tool_category": "Data_Enrichment",
-          "tool_id": "clay"
-        },
-        {
           "tool_name": "Langchain",
           "tool_category": "AI_llm_frameworks",
           "tool_id": "langchain"
@@ -2817,6 +2632,16 @@
           "tool_name": "Python",
           "tool_category": "AI_languages",
           "tool_id": "python"
+        },
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
         }
       ],
       "signals": [
@@ -2859,6 +2684,11 @@
       "description_snippet": "In today's dynamic worksites, seamless collaboration between people and machines is essential. FORT's platform ensures safe, secure, and dynamic control that surpasses legacy systems and next\\-generation AI capabilities.\n\n\n\nWhile autonomous machines offer significant advantages, they also introduce new safety challenges. FORT addresses these concerns by providing solutions such as the Wireless E\\-Stop, which allows operators to instantly stop any machine from a safe distance, enhancing safety du",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -2887,16 +2717,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -2999,6 +2819,16 @@
       "description_snippet": "**About Simple**\n================\n\n\nSimple AI is building state of the art voice AI agents for enterprise. Our realistic agents help iconic businesses like Doordash, xAI, and Omaha Steaks handle all kinds of phone operations, from customer support to order intake to lead qualifications. We’re growing revenue like crazy and looking for our first **Account Executive** to help accelerate our sales motion and close high\\-impact deals.\n\n\nSimple AI raised $14M from world\\-class investors and operators",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -3012,16 +2842,6 @@
           "tool_name": "Hubspot Marketing",
           "tool_category": "Marketing_Automation_Enterprise",
           "tool_id": "hubspot_marketing"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
         }
       ],
       "signals": [
@@ -3077,16 +2897,6 @@
           "tool_name": "Catalyst",
           "tool_category": "Customer_Success",
           "tool_id": "catalyst"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -3149,6 +2959,16 @@
       "description_snippet": "**About Plaud Inc.**\n\n\nPlaud is building the world's most trusted AI work companion for professionals to elevate productivity and performance through note\\-taking solutions, loved by over 1,500,000 users worldwide since 2023\\. With a mission to amplify human intelligence, Plaud is building the next\\-generation intelligence infrastructure and interfaces to capture, extract, and utilize what you say, hear, see, and think.\n\n\nPlaud Inc. is a Delaware\\-incorporated, San Francisco\\-based company pushi",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
           "tool_id": "hubspot"
@@ -3177,21 +2997,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Gemini",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "gemini"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -3249,6 +3054,11 @@
       "description_snippet": "**About Us**\n------------\n\n  \n\nLorikeet is redefining what customer support looks like — and we're just getting started.\n\n  \n\nWe build AI that handles complex, high\\-volume support for fintechs, healthtechs, marketplaces, and delivery services. Not chatbot\\-tier AI. The kind that actually resolves tickets, gives support teams their time back, and raises the bar for what software can do.\n\n  \n\nWe're backed by over $50M USD from QED, Blackbird, and Square Peg, with backing from operators like Clair",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
           "tool_id": "hubspot"
@@ -3272,11 +3082,6 @@
           "tool_name": "Rb2B",
           "tool_category": "Visitor_Identification",
           "tool_id": "rb2b"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
         }
       ],
       "signals": [
@@ -3334,6 +3139,11 @@
       "description_snippet": "Overview:\n**The Opportunity**\n\n\nAs a GTM Systems Engineer, you will be a key technical contributor helping to design, build, and operate the Salesforce\\-centered AI\\-powered GTM systems ecosystem at ConstructConnect, with a specific focus on AI\\-assisted development, Salesforce APIs, and modern CI/CD practices.\n\n\nYou will work closely with the GTM Systems Team and Sr. GTM Systems Engineer to implement scalable, resilient solutions that support our GTM organizations (Sales, Customer Success, Supp",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -3382,11 +3192,6 @@
           "tool_name": "Planhat",
           "tool_category": "Customer_Success",
           "tool_id": "planhat"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
         }
       ],
       "signals": [
@@ -3434,6 +3239,26 @@
       "description_snippet": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI matu",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -3467,36 +3292,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -3547,11 +3342,6 @@
           "tool_name": "Claude",
           "tool_category": "AI_llm_providers",
           "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -3622,11 +3412,6 @@
           "tool_name": "Marketo",
           "tool_category": "Marketing_Automation_Enterprise",
           "tool_id": "marketo"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -3679,6 +3464,16 @@
       "description_snippet": "Modern software runs on open source — and managing the compliance, security, and regulatory complexity that comes with it is one of the biggest problems facing engineering and legal teams today. FOSSA is the platform they use to address these challenges. We help thousands of organizations automate license compliance, prioritize vulnerabilities, generate and operationalize SBOMs, and meet regulatory requirements. Whether it's scanning AI\\-generated code for IP risks or helping a company through M",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -3697,26 +3492,6 @@
           "tool_name": "Salesforce Marketing Cloud",
           "tool_category": "Marketing_Automation_Enterprise",
           "tool_id": "salesforce_marketing_cloud"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Gemini",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "gemini"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -3764,6 +3539,21 @@
       "description_snippet": "**About WorkOS**\n\n\nWorkOS builds modern developer tools and APIs that make it easy for companies to become Enterprise Ready. Our platform powers authentication, identity, authorization, and other critical infrastructure that developers need to securely scale their products to large organizations.  \n\n  \n\nWe recently raised a $100M Series C, valuing the company at $2B, led by Meritech and Sapphire with participation from Greenoaks, Craft, Abstract, and Audacious. WorkOS powers enterprise features ",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -3782,26 +3572,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Typescript",
-          "tool_category": "AI_languages",
-          "tool_id": "typescript"
         }
       ],
       "signals": [
@@ -3854,6 +3624,11 @@
       "description_snippet": "**Unified Identity Securing Classic and AI Infrastructure**\n\n\nTeleport, the AI Infrastructure Identity Company, prepares organizations for an AI future by establishing a unified identity layer for infrastructure, with humans, machines, workloads, and AI agents secured cryptographically with a hardware root of trust rather than vulnerable credentials. By replacing fragmented identity and access management systems with Infrastructure Identity, Teleport scales zero trust across cloud and on\\-prem e",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -3887,21 +3662,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -3949,21 +3709,6 @@
       "description_snippet": "Everyone's talking about AI. But here's the truth: ChatGPT can't send your emails. It can't book your flights. It can't even order you lunch.\n\n\nWhy? Because AI is trapped in a chat box. It can't take real actions in the real world.\n\n\nWe are changing that forever. We're not just building another AI company \\- we're creating the infrastructure that will power every AI application you'll use in the future.\n\n**The Revolution Needs You**\n----------------------------\n\n\nEvery AI app needs agentic \"tool",
       "tools": [
         {
-          "tool_name": "Zapier",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Airbyte",
-          "tool_category": "Reverse_ETL",
-          "tool_id": "airbyte"
-        },
-        {
-          "tool_name": "Arcade",
-          "tool_category": "Demo_Automation",
-          "tool_id": "arcade"
-        },
-        {
           "tool_name": "Langchain",
           "tool_category": "AI_llm_frameworks",
           "tool_id": "langchain"
@@ -3972,11 +3717,6 @@
           "tool_name": "Llamaindex",
           "tool_category": "AI_llm_frameworks",
           "tool_id": "llamaindex"
-        },
-        {
-          "tool_name": "Llama",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "llama"
         },
         {
           "tool_name": "Cohere",
@@ -3992,6 +3732,21 @@
           "tool_name": "Typescript",
           "tool_category": "AI_languages",
           "tool_id": "typescript"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "Airbyte",
+          "tool_category": "Reverse_ETL",
+          "tool_id": "airbyte"
+        },
+        {
+          "tool_name": "Arcade",
+          "tool_category": "Demo_Automation",
+          "tool_id": "arcade"
         }
       ],
       "signals": [
@@ -4029,6 +3784,26 @@
       "description_snippet": "**About the company**\n\n\nAsseti is the category\\-defining platform for asset intelligence and operations, used by some of the world’s largest real estate owners to understand their assets, optimize portfolio performance, and make smarter operational, maintenance, and capital decisions.\n\n\nWe turn complex, fragmented asset information into a single source of truth \\- combining real\\-time condition insights with the operational context needed to prioritize work, manage risk, and drive efficient acti",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        },
+        {
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
           "tool_id": "hubspot"
@@ -4062,31 +3837,6 @@
           "tool_name": "Pendo Plg",
           "tool_category": "PLG_Tools",
           "tool_id": "pendo_plg"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Typescript",
-          "tool_category": "AI_languages",
-          "tool_id": "typescript"
         }
       ],
       "signals": [
@@ -4147,18 +3897,7 @@
       "source_url": "https://www.indeed.com/viewjob?jk=41ddf6fd2046ab07",
       "description": "**Who we are**\n\n\n\nOver 600 employees strong, Asure sees Human Capital Management (HCM) through the lens of entrepreneurs and executives with an owner’s mentality. We help businesses develop their “Human Capital” to get to the next level, stay compliant, and allocate their time, money and technology toward growth. Our HCM platform empowers more than 100,000 clients to build great teams and better manage their people while staying compliant in an ever\\-changing HR legislative landscape. Asure’s HCM offering includes Payroll \\& Tax, HR, and Time \\& Attendance software and HR Services ranging from online compliance tools to a fully outsourced HR department.\n\n **How you will contribute**\n\n\n\nWe are seeking a highly motivated and strategic Go\\-To\\-Market (GTM) Engineer to support and accelerate our revenue growth initiatives. This role operates at the intersection of Sales, Marketing, and Revenue Operations, partnering closely with customer\\-facing teams to design, implement, and optimize scalable go\\-to\\-market strategies. The GTM Engineer will help to define and track success around AI\\- driven strategy and initiatives.\n\n  \n\nThe ideal candidate brings a unique blend of commercial acumen, technical proficiency, and operational rigor, with a passion for building systems that drive pipeline generation, improve conversion, and enhance the customer experience.\n\n **AI Orchestration**\n\n\n* Design, deploy, and optimize AI\\-driven workflows that enhance sales and marketing execution (e.g., lead qualification, outbound personalization, proposal generation), ensuring seamless integration with CRM and HCM data systems\n* Partner cross\\-functionally with Sales, Marketing, RevOps, and Product teams to identify high\\-impact AI use cases, translating business needs into scalable solutions and driving adoption through training and enablement\n* Develop and refine prompt strategies and AI configurations tailored to HCM buyer personas, sales stages, and messaging frameworks to improve output quality, relevance, and consistency\n* Serve as an AI champion and subject matter expert (SME) for the sales organization by training teams, demonstrating the value of AI\\-driven workflows, and driving consistent, effective adoption of AI tools across the GTM function\n* Define success metrics and track performance of AI initiatives, measuring impact on pipeline generation, conversion rates, and sales productivity, and iterating based on insights\n* Evaluate and manage AI tools and vendor ecosystems, ensuring alignment with GTM strategy, interoperability across the tech stack, and effective scaling of AI capabilities\n\n  \n\n\n**Go\\-To\\-Market Strategy \\& Execution**\n\n\n* Partner with Sales and Marketing leadership to design and operationalize go\\-to\\-market strategies across target segments\n* Develop and refine ideal customer profiles (ICPs), segmentation models, and territory strategies\n* Identify opportunities to improve pipeline generation, sales efficiency, and revenue performance\n\n  \n\n\n**Systems \\& Workflow Development**\n\n\n* Design and implement scalable workflows to support prospecting, lead routing, data enrichment, and outreach automation\n* Optimize the sales technology stack to ensure seamless data flow and actionable insights\n* Build repeatable processes that enhance productivity across the revenue organization\n\n  \n\n\n**Sales Enablement \\& Support**\n\n\n* Collaborate with Sales teams to develop tailored outreach strategies and messaging frameworks\n* Support strategic deals by delivering insights, data analysis, and solution\\-oriented recommendations\n* Enable frontline teams with tools, dashboards, and best practices to improve execution\n\n  \n\n\n**Data \\& Performance Optimization**\n\n\n* Analyze funnel performance and campaign effectiveness to identify trends and areas for improvement\n* Establish reporting frameworks and KPIs to measure success across go\\-to\\-market initiatives\n* Lead continuous testing and experimentation to refine strategies and drive measurable outcomes\n\n  \n\n\n**Cross\\-Functional Collaboration**\n\n\n* Act as a liaison between Sales, Marketing, Product, and Customer Success teams\n* Develop and execute strategies to increase customer adoption of Asure’s products and services\n* Provide structured feedback to inform product enhancements and new feature development\n* Contribute to a culture of innovation, accountability, and continuous improvement\n\n  \n\n\n**Qualifications**\n\n  \n\n* 5\\+ years of experience in Sales, Revenue Operations, Growth, or a related go\\-to\\-market function within a SaaS environment\n* Bachelor’s degree preferred. A combination of relevant of training, certifications, and/or experience, may also be considered\n* Proven results championing AI strategy and initiatives\n* Experience supporting or selling HCM, HR technology, payroll, or adjacent solutions preferred\n* Strong understanding of modern sales and marketing technology stacks (CRM, sequencing tools, data enrichment platforms, etc.)\n* Demonstrated ability to design and implement scalable processes and workflows\n* Analytical mindset with proficiency in data analysis and performance optimization\n* Excellent communication and stakeholder management skills, with the ability to translate complex concepts into actionable insights\n\n  \n\n\n**Preferred Experience:**\n\n  \n\n* Experience in high\\-growth or scaling SaaS environments\n* Builder mentality with a proactive, solution\\-oriented approach\n* Ability to balance strategic thinking with hands\\-on execution\n* Strong collaboration skills and a customer\\-first mindset\n\n  \n\n\n**Compensation**\n\n\n\nThe base salary range for this position is $120,000 \\- $140,000, based on relevant experience, skills, and industry knowledge. Asure Software offers a variety of employee benefits. Salary information is determined by market location and is provided in accordance with state and local pay\\-transparency laws. Applicants should apply via www.asuresoftware.com/careers.\n\n **Benefits**\n\n\n* Medical, Dental, Vision, HSA, FSA\\- All effective on day 1!\n* Company paid Basic Life Insurance, A\\+D, Long\\-Term Disability, and Short\\-Term Disability\n* 401K Program with 3% safe harbor contribution\n* Employee Stock Purchase Program\n* Fitness Reimbursement Program\n* Self\\-Managed PTO\n\n  \n\n\n**Our Mission**\n\n\n\nTo provide Human Capital Management (HCM) software and services that help companies grow, while nurturing a culture of growth around us.\n\n\n* Helping customers grow by getting the most from their human capital.\n* Helping our employees grow personally and professionally.\n* Growing relationships in our communities that inspire goodness.\n* Grow shareholder value\n\n  \n\n\n**Our Vision**\n\n\n\nBe the most trusted Human Capital Management resource to entrepreneurs everywhere.\n\n **Our Values**\n\n\n\nReflect who we are and what we stand for as a company.\n\n\n* Embrace Change\n* Lead with Integrity\n* Own the Outcome\n* Deliver Awesome\n* Be a Good Human\n\n  \n\n\n*We are an equal opportunity employer.*\n\n  \n\nNO AGENCIES PLEASE:\n\n\n*Any unsolicited resumes sent to Asure Software from a third party, such as an Agency, including unsolicited resumes sent to Asure’s mailing address, fax machine or email address, directly to employees or hiring managers will be considered Asure property. Asure will not pay a fee for any placement resulting from the receipt of an unsolicited resume.*",
       "description_snippet": "**Who we are**\n\n\n\nOver 600 employees strong, Asure sees Human Capital Management (HCM) through the lens of entrepreneurs and executives with an owner’s mentality. We help businesses develop their “Human Capital” to get to the next level, stay compliant, and allocate their time, money and technology toward growth. Our HCM platform empowers more than 100,000 clients to build great teams and better manage their people while staying compliant in an ever\\-changing HR legislative landscape. Asure’s HC",
-      "tools": [
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
-        }
-      ],
+      "tools": [],
       "signals": [
         {
           "signal_type": "team_structure",
@@ -4204,26 +3943,6 @@
       "description_snippet": "At SIFT, we’re redefining how modern machines are built, tested, and operated. Our platform gives engineers real\\-time observability over high\\-frequency telemetry—eliminating bottlenecks and enabling faster, more reliable development.\n\n\nSIFT was born from our work at SpaceX on Dragon, Falcon, Starlink, and Starship—where scaling telemetry, debugging flight systems, and ensuring mission reliability demanded new infrastructure. Founded by a team from SpaceX, Google, and Palantir, SIFT is built fo",
       "tools": [
         {
-          "tool_name": "Hubspot",
-          "tool_category": "CRM_MidMarket",
-          "tool_id": "hubspot"
-        },
-        {
-          "tool_name": "Clay",
-          "tool_category": "Data_Enrichment",
-          "tool_id": "clay"
-        },
-        {
-          "tool_name": "Hubspot Marketing",
-          "tool_category": "Marketing_Automation_Enterprise",
-          "tool_id": "hubspot_marketing"
-        },
-        {
-          "tool_name": "Zapier",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "zapier"
-        },
-        {
           "tool_name": "Rag",
           "tool_category": "AI_techniques",
           "tool_id": "rag"
@@ -4259,9 +3978,24 @@
           "tool_id": "python"
         },
         {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Hubspot Marketing",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "hubspot_marketing"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
         }
       ],
       "signals": [
@@ -4304,26 +4038,6 @@
       "description_snippet": "At SIFT, we’re redefining how modern machines are built, tested, and operated. Our platform gives engineers real\\-time observability over high\\-frequency telemetry—eliminating bottlenecks and enabling faster, more reliable development.\n\n\nSIFT was born from our work at SpaceX on Dragon, Falcon, Starlink, and Starship—where scaling telemetry, debugging flight systems, and ensuring mission reliability demanded new infrastructure. Founded by a team from SpaceX, Google, and Palantir, SIFT is built fo",
       "tools": [
         {
-          "tool_name": "Hubspot",
-          "tool_category": "CRM_MidMarket",
-          "tool_id": "hubspot"
-        },
-        {
-          "tool_name": "Clay",
-          "tool_category": "Data_Enrichment",
-          "tool_id": "clay"
-        },
-        {
-          "tool_name": "Hubspot Marketing",
-          "tool_category": "Marketing_Automation_Enterprise",
-          "tool_id": "hubspot_marketing"
-        },
-        {
-          "tool_name": "Zapier",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "zapier"
-        },
-        {
           "tool_name": "Rag",
           "tool_category": "AI_techniques",
           "tool_id": "rag"
@@ -4359,9 +4073,24 @@
           "tool_id": "python"
         },
         {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
+        },
+        {
+          "tool_name": "Clay",
+          "tool_category": "Data_Enrichment",
+          "tool_id": "clay"
+        },
+        {
+          "tool_name": "Hubspot Marketing",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "hubspot_marketing"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
         }
       ],
       "signals": [
@@ -4403,6 +4132,16 @@
       "description": "**The Role**\n------------\n\n\nAshby is looking for a GTM Engineering Manager to lead our GTM Systems \\& Tools team within our Revenue Operations department. To scale beyond $100M ARR, our internal infrastructure must be as elegant and high\\-performing as the product we sell.\n\n\nYou will own our entire revenue tech stack, ensuring Marketing, Sales, and Customer Success have the data, automation, and tooling to operate effectively. You will build the AI intelligence layer on top of that foundation: LLM\\-powered enrichment, predictive scoring, and automated workflows that replace manual audience assembly, sequence selection, and outreach across the full customer lifecycle.\n\n**Current State**\n-----------------\n\n\nYou won't be starting from zero. Ashby has a complete GTM pipeline: CRM, enrichment, signal detection, orchestration, and delivery all connected and running. What we haven't built is the AI intelligence layer on top of it, or the team to own it.\n\n**Tech Stack**\n--------------\n\n\nOur current toolkit includes HubSpot (CRM and sequencing), Gong, LinkedIn Sales Nav, Accord, Slab, Chilipiper, LeadIQ, Clay, Cargo, Keyplay, Snowflake, Instantly, and Omni. While we don't require mastery of every tool, we need a \"tinkerer’s mindset\". You should be comfortable using these as raw materials to build sophisticated, AI\\-driven automation.\n\n**What You'll Do**\n------------------\n\n**Team Leadership.** Build and lead a high\\-impact team. You will define the roles, hire the people, and organize the function to deliver on its responsibilities.\n\n**Growth Architecture \\& Strategy.** Operate as an internal product team for the GTM org. Define the roadmap, write specs, ship prototypes, and scale winning tactics to shrink iteration cycles from months to hours. Evaluate, procure, and sunset tools as the stack evolves.\n\n**The GTM Hierarchy of Needs.** Own the full stack of revenue engineering:\n\n* **Data Foundation:** Build and maintain the system infrastructure.\n\n\n\t+ Own and evolve the core revenue technology stack (CRM, marketing automation, data warehouse). Ensure data quality, governance, and seamless integration across systems.\n\t+ Design scalable data architecture that supports every layer above it. You don't just add fields, you build systems.\n* **Data Modeling:** Identify and collect unique data points (signals) that predict purchase, expansion, or churn.\n* **Data Activation:** Deploy those signals into automated outreach, meeting prep, and expansion nudges.\n* **Agent Development:** Design, deploy, and orchestrate AI agents that automate decision\\-making and execution across Marketing, Sales, Customer Success, and RevOps.\n\n**GTM Agent Strategy.** Define how Ashby uses AI agents across the full customer lifecycle. Identify where agents replace manual decision\\-making, where they augment human judgment, and where humans stay in the loop. Own the roadmap from first deployment to full orchestration.\n\n**Cross\\-Functional Engineering.** Partner with Engineering and Data teams to harden winning experiments into production\\-grade systems.\n\n**Who You Are**\n---------------\n\n**The Empathetic Leader.** You build teams that ship and grow. You coach your people, not just manage them. You've spent enough time with sellers and CSMs to understand their workflows from the inside, and you use that knowledge to build systems they actually adopt. You can't automate what you don't understand.\n\n**The Systems Thinker.** You don't just see a single tool; you see an ecosystem. You understand how a change in a marketing automation trigger ripples down to a Customer Success renewal health score.\n\n**The Hybrid Builder.** You are either a commercially minded engineer or a deeply technical operator. You are comfortable writing Python and SQL, designing system integrations, configuring LLM\\-powered workflows, and evaluating AI agent platforms. You care more about revenue impact than code quality. You have hands\\-on experience with Clay or similar GTM workflow platforms.\n\n**The Scaling Veteran.** You've built GTM infrastructure at a fast\\-growing SaaS company (ideally $100M to $300M ARR). You know that every system you build today will need to support new products, new motions, and significantly more volume within a year. You've done this before and know where it breaks.\n\n**The AI Practitioner.** You've designed and deployed AI agents that moved revenue metrics, not just experimented with ChatGPT. You understand prompt engineering, agent orchestration, and the difference between a workflow that runs and a system of agents that thinks. You know where AI replaces human judgment and where it shouldn't.\n\n**This Role May Not Be a Fit If**\n---------------------------------\n\n* You've managed revenue systems but haven't built with AI. We need someone who builds new automated systems, not someone who optimizes what's already there.\n* You've operated in environments where the systems and processes were already established. At Ashby, you will inherit a small team and need to personally prototype solutions in ambiguous situations as you build the function.\n* You're exceptional at outbound but haven't owned the full customer lifecycle. The biggest opportunities in this role span inbound, expansion, and retention.\n\n**Interview Process**\n---------------------\n\n\nOur interview process is thorough. We aim to ensure each person joining the team is the right fit for Ashby, and to provide you with enough information to assess if Ashby is the right fit for you.\n\n* **Recruiter Screen** with Talent Acquisition Team, 30 minutes\n* **Hiring Manager Interview**, 60 minutes\n* **GTM Challenge Interview**, 45 minutes\n* **Virtual Onsite**, 75 minutes\n\n**Benefits**\n------------\n\n* 10\\-year exercise window for stock options. You shouldn't feel pressure to purchase stock options if you leave Ashby. Do it when you feel financially comfortable.\n* Unlimited PTO with four weeks recommended per year. Expect \"Vacation?\" in our one\\-on\\-one agenda until you start taking it.\n* Twelve weeks of fully paid family leave in the US. We plan to expand this to employees in other countries as situations arise.\n* Generous equipment, software, and office furniture budget. Get what you need to be happy and productive!\n* $100/month education budget with more expensive items (like conferences) covered with manager approval.\n* If you're in the US, top\\-notch health insurance for you and your dependents, with all premiums covered by us.\n\n\nAshby's success hinges on hiring great people and creating an environment where we can be happy, feel challenged, and do our best work. We're being deliberate about building that environment from the ground up. I hope that excites you enough to apply.\n\n*Ashby provides equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, religion, sex, national origin, age, disability, genetics, sexual orientation, gender identity, or gender expression. We are committed to a diverse and inclusive workforce and welcome people from all backgrounds, experiences, perspectives, and abilities.*\n\n\nCompensation Range: $160K \\- $230K",
       "description_snippet": "**The Role**\n------------\n\n\nAshby is looking for a GTM Engineering Manager to lead our GTM Systems \\& Tools team within our Revenue Operations department. To scale beyond $100M ARR, our internal infrastructure must be as elegant and high\\-performing as the product we sell.\n\n\nYou will own our entire revenue tech stack, ensuring Marketing, Sales, and Customer Success have the data, automation, and tooling to operate effectively. You will build the AI intelligence layer on top of that foundation: L",
       "tools": [
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
         {
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
@@ -4447,16 +4186,6 @@
           "tool_name": "Chili Piper Routing",
           "tool_category": "Lead_Routing",
           "tool_id": "chili_piper_routing"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
         }
       ],
       "signals": [
@@ -4509,11 +4238,6 @@
       "description_snippet": "**The Role**\n\n\nWe’re looking for a technical, deeply curious GTM Engineer who thrives at the intersection of go\\-to\\-market strategy, systems, automation, and Agentic AI. This role is for someone who doesn’t just use tools—they build, connect, evolve and ensure adoption on them. You have a passion for understanding how modern AI (especially agents) can fundamentally transform GTM workflows, and you actively experiment with and deploy these capabilities in real\\-world environments.\n\n\nAt ThoughtSp",
       "tools": [
         {
-          "tool_name": "Thoughtspot",
-          "tool_category": "BI_Analytics",
-          "tool_id": "thoughtspot"
-        },
-        {
           "tool_name": "Openai",
           "tool_category": "AI_llm_providers",
           "tool_id": "openai"
@@ -4524,14 +4248,9 @@
           "tool_id": "claude"
         },
         {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
+          "tool_name": "Thoughtspot",
+          "tool_category": "BI_Analytics",
+          "tool_id": "thoughtspot"
         }
       ],
       "signals": [
@@ -4599,6 +4318,16 @@
       "description_snippet": "The Mission\nA sales rep at a building material manufacturer gets a set of blueprints on Monday. By Friday, they've spent 30 hours parsing specs, cross\\-referencing product data, and waiting on technical services to answer an architect's question. The bid deadline passed on Wednesday.\n\n\nThis is how a trillion\\-dollar industry operates. It's insane.\n\n\nParq built Hazel — an AI agent that gives every sales rep an always\\-on technical expert trained on their products, their competitors, and their wor",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Apollo",
           "tool_category": "Sales_Engagement_Growth",
           "tool_id": "apollo"
@@ -4617,21 +4346,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
         }
       ],
       "signals": [
@@ -4689,19 +4403,14 @@
       "description_snippet": "**About Telnyx**\n\n\n*Telnyx is an industry leader that's not just imagining the future of global connectivity—we're building it. From architecting and amplifying the reach of a* *private, global, multi\\-cloud IP network**, to bringing* *hyperlocal edge* *technology right to your fingertips through intuitive APIs, we're shaping a new era of seamless interconnection between people, devices, and applications.*\n\n\n*We're driven by a desire to transform and modernize what's antiquated, automate the man",
       "tools": [
         {
-          "tool_name": "Salesforce",
-          "tool_category": "CRM_Enterprise",
-          "tool_id": "salesforce"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
           "tool_name": "Python",
           "tool_category": "AI_languages",
           "tool_id": "python"
+        },
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
         }
       ],
       "signals": [
@@ -4754,6 +4463,16 @@
       "description_snippet": "**About Pearl**\n---------------\n\n\nPearl is the global leader in dental AI. Our FDA\\-cleared computer vision platform helps dental practices detect disease more accurately, treatment plan more effectively, and build patient trust through transparent AI\\-assisted diagnostics. We serve thousands of dental practices ranging from solo practitioners to the largest DSOs in North America. Our products include Second Opinion (real\\-time radiograph analysis), Practice Intelligence (clinical analytics), an",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
           "tool_id": "hubspot"
@@ -4802,26 +4521,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -4879,26 +4578,6 @@
       "description_snippet": "**THE MISSION**\n\n\nNolla is building an ecosystem of care for everyone. AI\\-driven healthcare that gives every person access to the kind of medicine that used to require a doctor in the family. We make this real through a consumer app that handles diagnosis, prescription, and treatment tracking end to end, with general primary care launching this summer. We're at the forefront of medical AI research and targeting peer\\-reviewed clinical publication. We raised a $4\\.5M seed from General Catalyst.\n",
       "tools": [
         {
-          "tool_name": "Catalyst",
-          "tool_category": "Customer_Success",
-          "tool_id": "catalyst"
-        },
-        {
-          "tool_name": "Amplitude",
-          "tool_category": "Product_Analytics",
-          "tool_id": "amplitude"
-        },
-        {
-          "tool_name": "Mixpanel",
-          "tool_category": "Product_Analytics",
-          "tool_id": "mixpanel"
-        },
-        {
-          "tool_name": "Posthog",
-          "tool_category": "Product_Analytics",
-          "tool_id": "posthog"
-        },
-        {
           "tool_name": "Python",
           "tool_category": "AI_languages",
           "tool_id": "python"
@@ -4917,6 +4596,26 @@
           "tool_name": "Aws",
           "tool_category": "AI_infrastructure",
           "tool_id": "aws"
+        },
+        {
+          "tool_name": "Catalyst",
+          "tool_category": "Customer_Success",
+          "tool_id": "catalyst"
+        },
+        {
+          "tool_name": "Amplitude",
+          "tool_category": "Product_Analytics",
+          "tool_id": "amplitude"
+        },
+        {
+          "tool_name": "Mixpanel",
+          "tool_category": "Product_Analytics",
+          "tool_id": "mixpanel"
+        },
+        {
+          "tool_name": "Posthog",
+          "tool_category": "Product_Analytics",
+          "tool_id": "posthog"
         }
       ],
       "signals": [
@@ -4969,6 +4668,21 @@
       "description_snippet": "**About Dust**\n==============\n\n**We're creating a** **new AI operating system that has the potential to change the way companies operate**. Our mission at Dust is to **transform how work gets done** by letting any team and employee shape the exact agents they need to accelerate their work.\n\n\nWith 70%\\+ weekly active users, people stick with Dust as much as they do with Slack and Notion. We already are a core part of their jobs.\n\n**We're at an exciting stage of our journey and growing fast.** We'",
       "tools": [
         {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Typescript",
+          "tool_category": "AI_languages",
+          "tool_id": "typescript"
+        },
+        {
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
           "tool_id": "hubspot"
@@ -4992,31 +4706,6 @@
           "tool_name": "Metabase",
           "tool_category": "BI_Analytics",
           "tool_id": "metabase"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Cohere",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "cohere"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Typescript",
-          "tool_category": "AI_languages",
-          "tool_id": "typescript"
         }
       ],
       "signals": [
@@ -5069,21 +4758,6 @@
       "description_snippet": "Beacon Biosignals is on a mission to revolutionize precision medicine for the brain. We are the leading at\\-home EEG platform supporting clinical development of novel therapeutics for neurological, psychiatric, and sleep disorders. Our FDA 510(k)\\-cleared Waveband EEG headband and AI algorithms enable quantitative biomarker discovery and implementation. Beacon's Clinico\\-EEG database contains EEG data from nearly 100,000 patients, and our cloud\\-native analytics platform powers large\\-scale RWD/",
       "tools": [
         {
-          "tool_name": "Salesforce",
-          "tool_category": "CRM_Enterprise",
-          "tool_id": "salesforce"
-        },
-        {
-          "tool_name": "Hubspot",
-          "tool_category": "CRM_MidMarket",
-          "tool_id": "hubspot"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
           "tool_name": "Prompt Engineering",
           "tool_category": "AI_techniques",
           "tool_id": "prompt_engineering"
@@ -5092,6 +4766,16 @@
           "tool_name": "Python",
           "tool_category": "AI_languages",
           "tool_id": "python"
+        },
+        {
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Hubspot",
+          "tool_category": "CRM_MidMarket",
+          "tool_id": "hubspot"
         }
       ],
       "signals": [
@@ -5134,16 +4818,6 @@
       "description_snippet": "**Mission**: Build automations and lightweight tools that make creators money and make our team faster. You’ll wire Claude Code, Apify, Zapier, Make, GHL, and custom scripts into clean systems that cut manual work, spin up micro‑apps, and keep our funnels, DMs, and reporting humming.\n\n**Outcomes in your first 90 days:** ship a ManyChat\\-to\\-Stripe DM sprint funnel with full tagging and CAPI; automate call routing and no‑show recovery in GHL; build a client onboarding autopilot that provisions as",
       "tools": [
         {
-          "tool_name": "Zapier",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Loom",
-          "tool_category": "Video_Prospecting",
-          "tool_id": "loom"
-        },
-        {
           "tool_name": "Claude",
           "tool_category": "AI_llm_providers",
           "tool_id": "claude"
@@ -5157,6 +4831,16 @@
           "tool_name": "Javascript",
           "tool_category": "AI_languages",
           "tool_id": "javascript"
+        },
+        {
+          "tool_name": "Zapier",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "zapier"
+        },
+        {
+          "tool_name": "Loom",
+          "tool_category": "Video_Prospecting",
+          "tool_id": "loom"
         }
       ],
       "signals": [
@@ -5188,6 +4872,11 @@
       "description": "**About AppGate:**  \n\nAppGate is a leading cybersecurity company and pioneer in the Zero Trust Network Access (ZTNA) market focused on providing cutting\\-edge solutions that protect organizations from evolving threats. Our innovative solutions empower enterprises to secure their digital environments and enable secure access for users, devices, and workloads \\- anywhere, anytime.\n\n\nOur mission is to support the warfighter, the national security community, and critical infrastructure by providing trusted access that ensures mission success. AppGate’s differentiated approach has made us the preferred solution for large enterprises across key verticals, the US Department of Defense (DoD), and other sophisticated buyers that have no\\-fail requirements to deliver ZTNA in degraded and contested environments.\n\n\n**About the Position**\n\n* We are seeking a GTM Engineer to help shape and execute intelligent go\\-to\\-market workflows across Marketing and Sales. This role sits within the GTM team and works closely with Sales, Marketing and IT Systems to design, build, and scale automation and AI\\-powered processes across the GTM ecosystem to improve efficiency and accelerate revenue growth. As a GTM Engineer, you will build and optimize systems that enhance sales, customer success and marketing operations, focusing on automating workflows and improving the productivity of revenue teams\n\n\n  \n\nThis individual will partner with GTM leadership to translate strategy into practical, scalable systems, owning and deploying workflows, optimized processes, and automation in collaboration with Sales Systems and IT. Success in this role requires a strong understanding of the buying lifecycle and go\\-to\\-market processes, automation and integration experience, technical fluency, and comfort working in development, test and production environments while balancing speed, impactful outcomes, robust governance, and cross\\-functional partnership with all stakeholders.  \n\n\n\n**Responsibilities**\n\n* Identify high\\-impact automation opportunities across Sales, Marketing and Customer Ops, recommending solutions based on feasibility, availability, security, cost, and business impact\n* Identify and implement use cases that enhance sales rep productivity, generate qualified pipeline and accelerate growth\n* Design and implement end\\-to\\-end workflows so the right insight or action happens at the right moment, without manual intervention.\n* Build, and maintain GTM automations and workflows, including AI\\-powered workflows and decisioning, to reduce manual effort and improve reliability within systems including SFDC, Churn Zero, ZoomInfo Copilot, Outreach, Chorus, LinkedIn Sales Navigator, Auto\\-Dialer, and MEDDPICC forecasting software.\n* Collaborate with Sales, Marketing and Rev Ops to support lead and account scoring, attribution, segmentation infrastructure, and lifecycle management.\n* Support account\\-based GTM strategies through account hierarchies, enrichment, scoring, and targeting logic.\n* Drive adoption and effective usage of owned GTM tools through enablement, documentation, and stakeholder partnership\n\n  \n\n**Experience and Qualifications:**\n\n* 5\\+ years of experience in Business Systems, GTM Engineering, Revenue Operations, Sales Operations, or similar roles at a high\\-growth SaaS company.\n* Automation Expertise: You have a proven track record of building and deploying automations, with significant experience using platforms like n8n.\n* Passion for Technology: You can evaluate emerging AI and automation technologies and determine where they create real business leverage versus noise.\n* Systems Architecture: You understand how data moves across complex systems and can design solutions that maintain data integrity and system performance.\n* Problem\\-Solving: You are adept at identifying inefficiencies and developing creative, scalable solutions.\n* Experience in a global B2B SaaS or enterprise technology environment\n* Deep hands\\-on experience with Salesforce architecture, including complex object relationships and automation (flows, validation rules).\n* Experience integrating Salesforce with marketing automation platforms (e.g., Pardot), web analytics platforms, and other GTM tooling.\n* Comfortable working with webhooks, workflow automation tools, AI services, and code\\-like logic, even if you are not a traditional software engineer.\n* Strong cross\\-functional collaboration skills and clear communication with technical and non\\-technical stakeholders.\n* Hands\\-on experience with Clay, Apollo, Outreach, or similar sales automation tools\n* Familiarity with AI/LLM\\-based personalization (GPT, Claude)\n* You’ve built workflows, automations, or integrations in Salesforce, Tableau, PowerBi, n8n, Zapier, Make, or through direct API work\n\n  \n\n\n\n*Appgate is An Equal Opportunity/Affirmative Action Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or veteran status, age or any other federally protected class. In furtherance of Appgate's policy regarding affirmative action and equal employment opportunity, Appgate has developed a written affirmative action program. This program is available for review upon request by any applicant or employee during normal business hours by contacting the company's EEO Coordinator.*",
       "description_snippet": "**About AppGate:**  \n\nAppGate is a leading cybersecurity company and pioneer in the Zero Trust Network Access (ZTNA) market focused on providing cutting\\-edge solutions that protect organizations from evolving threats. Our innovative solutions empower enterprises to secure their digital environments and enable secure access for users, devices, and workloads \\- anywhere, anytime.\n\n\nOur mission is to support the warfighter, the national security community, and critical infrastructure by providing ",
       "tools": [
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
         {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
@@ -5242,21 +4931,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -5314,6 +4988,16 @@
       "description_snippet": "At FloQast, we’re on a mission to empower accounting and finance teams to work more intelligently, efficiently, and strategically. As part of the GTM Engineering function, you’ll join a high\\-impact team that builds the technical foundation for our go\\-to\\-market operations \\- automation, workflow optimization, tooling, and analytics.\n\nIn this role, you’ll use Clay and other AI tools to design, build, and maintain automations that streamline our GTM workflows and drive operational excellence. Yo",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -5362,21 +5046,6 @@
           "tool_name": "G2",
           "tool_category": "Review_Platforms",
           "tool_id": "g2"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -5447,16 +5116,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -5532,16 +5191,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -5632,11 +5281,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -5674,6 +5318,16 @@
       "description_snippet": "### **About Hebbia**\n\n\n\nThe AI platform for investors and bankers that generates alpha and drives upside.\n\n\n\nFounded in 2020 by George Sivulka and backed by Andreessen Horowitz, Hebbia powers investment decisions for BlackRock, KKR, Carlyle, Centerview, and 40% of the world's largest asset managers. Our flagship product, Matrix, delivers industry\\-leading accuracy, speed, and transparency in AI\\-driven analysis. It is trusted to help manage over $30 trillion in assets globally.\n\n\n\nWe deliver the",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -5692,26 +5346,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -5767,11 +5401,6 @@
           "tool_name": "Javascript",
           "tool_category": "AI_languages",
           "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -5822,11 +5451,6 @@
           "tool_name": "Hubspot",
           "tool_category": "CRM_MidMarket",
           "tool_id": "hubspot"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -5873,6 +5497,16 @@
       "description": "Harmonic Security lets teams adopt AI tools safely by protecting sensitive data in real time with minimal effort. It gives enterprises full control and stops leaks so that their teams can innovate confidently.\n\n\nWe are led by cybersecurity experts and backed by top investors including N47, Ten Eleven Ventures, and In\\-Q\\-Tel.\n\n\nWe have achieved early traction and product\\-market fit, and we are now entering the phase where operational excellence, technical infrastructure, and data integrity will define how efficiently we scale. This role is the person who builds and owns that infrastructure, from how deals are quoted to how data flows, systems integrate, and everything gets automated.\n\n**About the Team**\n==================\n\n\nYou will report to the VP GTM Strategy and Operations and work closely with sales leadership, customer success, tech ops, and finance. This is a highly cross\\-functional role where you will sit at the intersection of revenue operations and systems engineering. You will build clean, automated, scalable infrastructure that our reps, leaders, and board depend on. You will not just configure tools. You will architect them, integrate them, and write the code that makes them work together.\n\n**About the Role**\n==================\n\n\nWe are looking for a technical builder who also deeply understands sales operations. You know how to write SQL to interrogate a messy pipeline. You have built HubSpot workflows from the object model up, not just clicked through settings. You can wire Clay into Tines into HubSpot via API and troubleshoot when the webhook stops firing. And you understand the commercial lifecycle well enough to design systems that actually reflect how revenue works: CPQ, renewals, sales KPIs, customer telemetry. This is not a reports\\-to\\-sales\\-ops role. You will own the GTM tech stack and be accountable for the revenue data the company runs on.\n\n**What You Will Do**\n====================\n\n**Systems Architecture and HubSpot Administration**\n---------------------------------------------------\n\n* Serve as primary HubSpot administrator and architect: own the data model, custom objects, associations, lifecycle stages, deal pipelines, user permissions, and the full integration layer\n* Design and build integrations across the GTM stack using APIs, webhooks, and iPaaS tools, ensuring clean, reliable data flows between HubSpot, Gong, ZoomInfo, Clay, Octav, Revenue Hero, Instantly, and Notion\n* Write custom scripts (python is a plus) to automate data transforms, enrichment pipelines, CRM hygiene routines, and reporting workflows that cannot be handled by no\\-code tools alone\n* Build and own a real\\-time analytics layer covering funnel conversion, pipeline coverage, win rates, deal velocity, rep productivity, and attainment, surfaced in dashboards for leadership and board reporting\n* Evaluate new tooling rigorously: build a business case, run a structured pilot, instrument impact measurement, and deprecate what does not earn its place in the stack\n\n**Outbound Automation and AI\\-Powered Workflows**\n-------------------------------------------------\n\n* Build and maintain signal\\-based outbound systems in Clay and Instantly: enrollment triggers, enrichment pipelines, and sequence logic that run without manual intervention\n* Design AI\\-powered workflows that surface deal context, buying signals, renewal alerts, and next\\-best actions to reps automatically\n* Apply LLMs to tasks like account research, QBR prep, deal briefings, onboarding documentation, and data normalization, wherever reliable automation can replace manual effort\n* Run structured experiments: define the hypothesis, instrument the measurement, ship the test, and scale what moves pipeline\n\n**Cross\\-Functional Partnership**\n---------------------------------\n\n* Partner with Sales leadership to operationalize targets, territory assignments, quota setting, and coverage planning\n* Collaborate with Finance on ARR reporting, revenue recognition inputs, and commercial data integrity\n* Work with CS to build and track leading indicators for churn risk and expansion readiness\n* Serve as the primary systems and data interface for sales, work closely with tech ops and be the person other functions come to when they need to understand what the numbers actually say\n\n**Our GTM Stack**\n=================\n\n\nYou will own, administer, and integrate these tools. Deep hands\\-on experience with CRM and enrichment tools is required; familiarity with the others is a plus.\n\n* CRM and Core: HubSpot (primary admin)\n* Enrichment and Prospecting: Clay, ZoomInfo, LinkedIn Navigator, Octav\n* Automation: Tines\n* Conversation Intelligence: Gong\n* Outbound and Sequencing: Instantly, Revenue Hero\n* Productivity and Docs: Notion, Google Workspace, Slack\n* POV and Enablement: Opine, GTM Buddy\n* Analytics and BI: HubSpot reporting, Looker or Tableau (a plus)\n\n**What Success Looks Like**\n===========================\n\n* CPQ and renewal workflow: Fully deployed in HubSpot within the first 90 days\n* Reporting efficiency: 70% or greater reduction in manual reporting time for leadership\n* Automation throughput: At least 3 manual GTM workflows replaced with automated systems in the first 6 months\n* Data trust: CRM data quality that eliminates manual reconciliation for board reporting\n\n**What You Bring**\n==================\n\n* 4 to 7 or more years in Sales Operations, Revenue Operations, GTM Systems, or Growth Engineering in B2B SaaS, with direct ownership of pipeline management, CPQ, and renewals\n* Deep HubSpot expertise as an administrator and architect: custom objects, data model design, lifecycle workflows, deal pipeline logic, and integration architecture (Salesforce experience also valued)\n* SQL fluency: you write queries regularly to interrogate pipeline data, validate CRM hygiene, and build reporting inputs; you do not need a data analyst to pull your own numbers\n* Hands\\-on API integration experience: you have built and maintained webhook\\-based integrations between GTM tools and know how to debug when they break\n* Clay expertise: you have built enrichment tables, waterfall enrichment pipelines, and outbound enrollment workflows, not just used it as a prospecting tool\n* Strong command of automation platforms (Tines, Make, Zapier, or equivalent) for multi\\-step, cross\\-system workflows\n* Proven ability to design and operate commercial systems: quoting, contracting, renewal execution, and onboarding handoffs\n* Strong analytical instincts: you turn messy CRM data into clean, trusted reporting for executives and boards\n* Comfortable with the ambiguity and pace of an early\\-stage, high\\-growth startup\n\n**Nice to Have**\n----------------\n\n* Experience with ABM or intent platforms: 6sense, Demandbase, Koala, or similar\n* Familiarity with BI tools: Looker, Tableau, or Metabase for reporting beyond native CRM dashboards\n* Experience with LLM orchestration frameworks (LangChain, Tines AI nodes) applied to GTM automation\n* Prior experience at an early\\-stage or high\\-growth AI or cybersecurity company\n\n**You Might Be a Fit If**\n=========================\n\n* You have built a CPQ or renewal workflow in HubSpot and lived through the edge cases\n* You write SQL before opening a spreadsheet when someone asks what the pipeline looks like\n* You have integrated two GTM tools via API and know what to check when the sync breaks\n* You have built something in Clay that genuinely saved reps 3 or more hours a week and you measured it\n* You get frustrated watching people do manually what a workflow could handle\n* You are the person other teams come to when they need to understand what the data actually says\n* You thrive where the playbook does not exist yet, because building it is the job\n\n**Why Join Us**\n===============\n\n\nThis is not just a job. It is an opportunity to be part of a team that is redefining cybersecurity and AI safety. We believe today's talent is tomorrow's success, and we are committed to creating an environment where you can do the best work of your life.\n\n* Competitive compensation and meaningful equity with a direct stake in Harmonic's success\n* Comprehensive benefits including health, dental, vision, and 401k matching\n* A small, passionate team that values transparency, creativity, and learning\n* Thoughtful leadership that cares deeply about growth, impact, and people\n* Annual global offsites\n* The chance to directly shape the revenue engine and culture of a category\\-defining company\n\n**Harmonic's Core Values**\n--------------------------\n\n\nFlourish in the Unknown\n\n\nWe embrace new, unfamiliar situations that require initiative and rapid decision\\-making. We orient ourselves quickly and deliver results with minimal guidance.\n\n\nNever Full\n\n\nWe raise our hands, take on challenges, and assist others whenever possible. We hunger for opportunities to learn and do more.\n\n\nPerfect Harmony\n\n\nWe support one another to create cohesion and unity. We collaborate openly, share feedback honestly, and help everyone produce their best work",
       "description_snippet": "Harmonic Security lets teams adopt AI tools safely by protecting sensitive data in real time with minimal effort. It gives enterprises full control and stops leaks so that their teams can innovate confidently.\n\n\nWe are led by cybersecurity experts and backed by top investors including N47, Ten Eleven Ventures, and In\\-Q\\-Tel.\n\n\nWe have achieved early traction and product\\-market fit, and we are now entering the phase where operational excellence, technical infrastructure, and data integrity will",
       "tools": [
+        {
+          "tool_name": "Langchain",
+          "tool_category": "AI_llm_frameworks",
+          "tool_id": "langchain"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
         {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
@@ -5942,26 +5576,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Langchain",
-          "tool_category": "AI_llm_frameworks",
-          "tool_id": "langchain"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -6142,6 +5756,16 @@
       "description_snippet": "**About Playground**\n--------------------\n\n\nPlayground is working to make excellent child care accessible to all. Playground has built best\\-in\\-class software that helps child care providers manage their entire business — billing, enrollment, communication, attendance, payroll, and more — all in one platform trusted by thousands of providers across the country.\n\n\nPlayground is at an inflection point — and poised to grow extremely fast. We recently raised millions of dollars from top investors a",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -6180,26 +5804,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -6242,6 +5846,16 @@
       "description_snippet": "**Role Overview**\n-----------------\n\n\nWe’re hiring a GTM Engineer to support and extend our go\\-to\\-market systems, reporting into the Head of RevOps \\- working hand\\-in\\-hand with our business operations stakeholders, sales team, and key collaborators across the organization. This role is hands\\-on and execution\\-focused: you’ll help implement, customize, and scale Salesforce and the broader GTM tech stack \\- Outreach, ZoomInfo, Clay and more, while also building custom tooling and AI\\-powered ",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -6265,21 +5879,6 @@
           "tool_name": "Customer Io",
           "tool_category": "Marketing_Automation_Growth",
           "tool_id": "customer_io"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -6327,29 +5926,9 @@
       "description_snippet": "**Who we are**\n\n\nWe're Redis. We built the product that runs the fast apps our world runs on. (If you checked the weather, used your credit card, or looked at your flight status online today, you’re welcome.) At Redis, you’ll work with the fastest, simplest technology in the business—whether you’re building it, telling its story, or selling it to our 10,000\\+ worldwide customers. We’re creating a faster world with simpler experiences. You in?\n\n**About the team**\n==================\n\n\nWe’re a smal",
       "tools": [
         {
-          "tool_name": "Salesforce",
-          "tool_category": "CRM_Enterprise",
-          "tool_id": "salesforce"
-        },
-        {
-          "tool_name": "Marketo",
-          "tool_category": "Marketing_Automation_Enterprise",
-          "tool_id": "marketo"
-        },
-        {
-          "tool_name": "N8N",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "n8n"
-        },
-        {
           "tool_name": "Openai",
           "tool_category": "AI_llm_providers",
           "tool_id": "openai"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         },
         {
           "tool_name": "Python",
@@ -6367,9 +5946,19 @@
           "tool_id": "javascript"
         },
         {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
         }
       ],
       "signals": [
@@ -6417,29 +6006,9 @@
       "description_snippet": "**Who we are**\n\n\nWe're Redis. We built the product that runs the fast apps our world runs on. (If you checked the weather, used your credit card, or looked at your flight status online today, you’re welcome.) At Redis, you’ll work with the fastest, simplest technology in the business—whether you’re building it, telling its story, or selling it to our 10,000\\+ worldwide customers. We’re creating a faster world with simpler experiences. You in?\n\n **About the Team**\n\n\nWe’re a small and fast\\-moving",
       "tools": [
         {
-          "tool_name": "Salesforce",
-          "tool_category": "CRM_Enterprise",
-          "tool_id": "salesforce"
-        },
-        {
-          "tool_name": "Marketo",
-          "tool_category": "Marketing_Automation_Enterprise",
-          "tool_id": "marketo"
-        },
-        {
-          "tool_name": "N8N",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "n8n"
-        },
-        {
           "tool_name": "Openai",
           "tool_category": "AI_llm_providers",
           "tool_id": "openai"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         },
         {
           "tool_name": "Python",
@@ -6457,9 +6026,19 @@
           "tool_id": "javascript"
         },
         {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
+          "tool_name": "Salesforce",
+          "tool_category": "CRM_Enterprise",
+          "tool_id": "salesforce"
+        },
+        {
+          "tool_name": "Marketo",
+          "tool_category": "Marketing_Automation_Enterprise",
+          "tool_id": "marketo"
+        },
+        {
+          "tool_name": "N8N",
+          "tool_category": "Integration_iPaaS",
+          "tool_id": "n8n"
         }
       ],
       "signals": [
@@ -6535,11 +6114,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -6605,11 +6179,6 @@
           "tool_name": "Planhat",
           "tool_category": "Customer_Success",
           "tool_id": "planhat"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -6652,6 +6221,16 @@
       "description_snippet": "Marketing · Full\\-time · San Francisco, New York\n\n  \n\nOur mission is to automate coding. The first step in our journey is to build the best tool for professional programmers, using a combination of inventive research, design, and engineering. Our organization is very flat, and our team is small and talent dense. We particularly like people who are truth\\-seeking, passionate, and creative. We enjoy spirited debate, crazy ideas, and shipping code.\n\n### **What you’ll do**\n\n* Architect and build pro",
       "tools": [
         {
+          "tool_name": "Rag",
+          "tool_category": "AI_techniques",
+          "tool_id": "rag"
+        },
+        {
+          "tool_name": "Prompt Engineering",
+          "tool_category": "AI_techniques",
+          "tool_id": "prompt_engineering"
+        },
+        {
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
@@ -6680,16 +6259,6 @@
           "tool_name": "Hightouch",
           "tool_category": "Reverse_ETL",
           "tool_id": "hightouch"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
         }
       ],
       "signals": [
@@ -6730,18 +6299,7 @@
       "source_url": "https://www.indeed.com/viewjob?jk=a5dbe6051b7a7dcc",
       "description": "In this role, you will work closely with experienced engineers and technicians to operate crystal growth equipment, analyze process data, improve process performance, and support the transfer of new technologies from research and development into manufacturing.\n\n\nThis position offers a hands\\-on opportunity to work with high\\-temperature crystal growth systems while developing expertise in process control, equipment operation, and manufacturing improvement within a collaborative environment.\n\n\nResponsibilities:\n\n\nSupport the execution and continuous improvement of existing crystal growth processes while working closely with technicians and operations staff.\n  \n\n* Participate in the development of scaled\\-up processes while working closely with engineering leads.\n* Assist with the construction, operation, and troubleshooting of high\\-temperature crystal growth equipment.\n* Perform data analysis to support Lean manufacturing initiatives, including updating work instructions and identifying opportunities for process improvement.\n* Participate in the transfer of new crystal growth processes from R\\&D into production.\n* Apply statistical process control (SPC) tools to monitor and improve manufacturing processes.\n* Develop a working knowledge of material quality metrics to support routine production troubleshooting, including failure analysis, root cause determination, and implementation of corrective actions.\n* Identify and track process deviations to understand their impact on yield, reliability, and product quality.\n**Qualifications**\n\n* Bachelor’s degree in Materials Science, Physics, Chemistry, Chemical Engineering, or a related scientific or engineering discipline with\n* 2 years professional experience or accredited college internships with direclty related expereince in crystal growth\n  \n\n\t+ Hands\\-on experience with bulk crystal growth processes.\n\t+ Experience operating or troubleshooting high\\-temperature processing equipment.\n\t+ Familiarity with raw material batching and preparation for crystal growth processes.\n\t+ Ability to work independently as well as collaboratively in a team environment.\n\t+ Strong analytical and problem\\-solving skills.\n\t+ Excellent written and verbal communication skills.\n\t+ High attention to detail.\n\n**Safety Requirements**\n\nAll employees are required to follow the site EHS procedures and Coherent Corp. Corporate EHS standards.\n\n\n**Quality and Environmental Responsibilities**\n\nDepending on location, this position may be responsible for the execution and maintenance of the ISO 9000, 9001, 14001 and/or other applicable standards that may apply to the relevant roles and responsibilities within the Quality Management System and Environmental Management System.\n\n\n**Culture Commitment**\n\nEnsure adherence to company’s values (ICARE) in all aspects of your position at Coherent Corp.:\n\n\n**I** ntegrity – Create an Environment of Trust\n\n\n**C** ollaboration – Innovate Through the Sharing of Ideas\n\n\n**A** ccountability – Own the Process and the Outcome\n\n\n**R** espect – Recognize the Value in Everyone\n\n\n**E** nthusiasm – Find a Sense of Purpose in Work  \n\n\n\n  \n\n*Coherent Corp. is an equal opportunity/affirmative action employer. All qualified applicants will receive consideration for employment without regard to sex, gender identity, sexual orientation, race, color, religion, national origin, disability, protected Veteran status, age, or any other characteristic protected by law.*\n\n  \n\n*If you need assistance or an accommodation due to a disability, you may contact us at* *talentacquisition@coherent.com* *.*\n\n\n  \nABOUT US\n  \nCoherent is a global leader in lasers, engineered materials and networking components. We are a vertically integrated manufacturing company that develops innovative products for diversified applications in the industrial, optical communications, military, life sciences, semiconductor equipment, and consumer markets. Coherent provides a comprehensive career development platform within an environment that challenges employees to perform at their best, while rewarding excellence and hard\\-work through a competitive compensation program. It's an exciting opportunity to work for a company that offers stability, longevity and growth. Come Join Us!\n  \n\n  \n\n**Note to recruiters and employment agencies:** We will not pay for unsolicited resumes from recruiters and employment agencies unless we have a signed agreement and have required assistance, in writing, for a specific opening.",
       "description_snippet": "In this role, you will work closely with experienced engineers and technicians to operate crystal growth equipment, analyze process data, improve process performance, and support the transfer of new technologies from research and development into manufacturing.\n\n\nThis position offers a hands\\-on opportunity to work with high\\-temperature crystal growth systems while developing expertise in process control, equipment operation, and manufacturing improvement within a collaborative environment.\n\n\nR",
-      "tools": [
-        {
-          "tool_name": "Cohere",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "cohere"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        }
-      ],
+      "tools": [],
       "signals": [
         {
           "signal_type": "geo_focus",
@@ -6805,11 +6363,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -6900,11 +6453,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -6941,6 +6489,26 @@
       "description": "**GTM Engineer \\- GTM Engineer \\- DockMaster**\n\n**About Dockmaster.com**\n\nDockmaster.com is the leading marina management platform serving entertainment attractions and venues across the waterfront industry. Our software powers dock operations, reservations, billing, and guest experiences for marinas nationwide.\n\n\nWe’re building a modern revenue engine to match our ambitions — and this role is at the center of that transformation.\n\n\nThe GTM Engineer is a hybrid builder–operator who designs and maintains the technical infrastructure that powers Dockmaster’s revenue engine. Rather than manually running sales and marketing operations, you’ll build systems that automate, scale, and optimize them. You’ll sit at the intersection of engineering, data, and go\\-to\\-market strategy — turning workflows that take hours into systems that run in seconds. In short: you don’t just run the playbook — you build the machine that runs it.\n\n\nWorking cross\\-functionally with Sales, Marketing, Product, and Professional Services. You’ll be embedded within the revenue team but operate with significant autonomy — think of yourself as the engineering arm of the go\\-to\\-market organization.\n\n\nCollaborates With Sales (SDRs, AEs), Marketing, Product, Data, Professional Services, Product Manager, Sales, Marketing Lead.\n\n\n**Why Dockmaster**\n\n* Ground\\-floor opportunity to build the entire GTM technical infrastructure from scratch\n* Direct impact on revenue — your systems will power every dollar of new business\n* Work alongside a leadership team that values speed, experimentation, and automation\\-first thinking\n* Category\\-defining SaaS platform in a vertical with massive, untapped potential\n* Autonomy to choose your tools, design your systems, and own the outcomes\n\n**The successful candidate will be based anywhere in the US, working in a remote work model!**\n\n**What your day will look like****:**\n\n**Sales Automation and Productivity**\n\n* Build and maintain tools that dramatically increase SDR and AE productivity across the full sales cycle\n* Design automated lead enrichment pipelines that append firmographic, technographic, and intent data to inbound and outbound leads in real time\n* Build prospecting automation workflows that surface high\\-fit accounts based on ICP criteria and buying signals\n* Architect CRM workflow automations in HubSpot to enforce pipeline hygiene, automate stage progression, and trigger internal notifications\n* Develop AI\\-driven outbound messaging sequences that personalize at scale using prospect\\-specific context\n* Create meeting booking automation to reduce scheduling friction and increase connect rates\n\n**Growth, Infrastructure and Pipeline Generation**\n\n* Create the systems that generate and nurture a pipeline without constant manual intervention\n* Build automated outbound campaign engines that execute multi\\-channel sequences (email, LinkedIn, phone) on a defined cadence\n* Develop AI\\-generated personalized outreach at scale, adapting messaging to prospective industry, role, and stage\n* Implement data scraping and lead sourcing workflows to build targeted prospect lists from public data sources\n* Create trigger\\-based prospecting systems (e.g., a marina raises funding or announces expansion AI detects personalized outreach generated SDR notified)\n* Support product\\-led growth workflows that convert trial users into qualified pipeline\n\n**AI\\-Powered GTM Leverage**\n\n* AI across the revenue stack to give Dockmaster an outsized competitive advantage in speed and personalization\n* Build and manage AI SDR assistants that handle initial prospect engagement, qualification, and handoff\n* Develop AI\\-generated demo environments and personalized demo prep packets\n* Create AI proposal and SOW generation tools that reduce deal cycle time\n* Implement AI call summary and coaching workflows that feed insights back into the sales process\n* Build AI\\-based prospective research tools that deliver actionable account briefs before every call\n\n**Data and Revenue Analytics**\n\n* Build the dashboards and models that give leadership real\\-time visibility into revenue performance\n* Design pipeline analytics dashboards that track stage velocity, conversion rates, and bottlenecks\n* Build and refine lead scoring models that prioritize the highest\\-value opportunities for sales\n* Implement end\\-to\\-end conversion tracking across marketing and sales touchpoints\n* Create experimentation analysis frameworks to measure the impact of GTM tests\n* Develop attribution systems that connect marketing spending to closed revenue\n\n**Experimentation and Rapid Growth Testing**\n\n\n* Run a high\\-velocity experimentation program that continuously improves GTM performance\n* Target: 10–20 experiments per month\n* Test different ICP segments to identify under\\-penetrated verticals within the marina and entertainment industry\n* A/B test outreach messaging across channels, personas, and value propositions\n* Run pricing and packaging experiments in collaboration with product and finance\n* Optimize the demo POC close conversion funnel with structured tests and measurement\n* Document findings in a shared experiment log to build institutional knowledge\n\n**Tech Stack and Tools:**\n\n**You’ll be expected to work fluently across the following (or equivalent) tools:**\n\n* Category Tools CRM and Sales Engagement HubSpot (primary), Salesforce familiarity a plus\n* Enrichment and Prospecting ZoomInfo\n* AI and LLMs OpenAI APIs, Claude, custom AI workflows\n* Data and Analytics SQL, Looker / Metabase / HubSpot reporting, Google Sheets\n* Outreach and Sequencing HubSpot Sequences, Outreach, or equivalent\n* Dev and Scripting Python, JavaScript/Node.js, REST APIs\n\n**About You****:**\n\n* 3\\+ years of experience in revenue operations, sales engineering, growth engineering, or a technical GTM role\n* Hands\\-on proficiency building automations in CRM platforms (HubSpot strongly preferred)\n* Working knowledge of APIs, webhooks, and integration platforms (Zapier, Make, or custom code)\n* Experience implementing AI/LLM\\-powered workflows in a business context\n* Strong analytical skills with the ability to build dashboards and interpret pipeline data\n* Bias toward action: you ship fast, measure results, and iterate\n* Excellent cross\\-functional communication — able to translate between sales, marketing, and engineering\n* Experience in B2B SaaS, ideally selling into niche or vertical markets\n* Background in the marina, attractions, hospitality, or venue management space\n* Proficiency in Python or JavaScript for building custom tools and scripts\n* Familiarity with Clay, Apollo, or similar enrichment and prospecting platforms\n* Track record of running structured growth experiments with measurable outcomes\n* Fluent in English, both written and verbal, is essential\n* Legally authorized to work in the US\n\n\nFor information about **DockMaster**, please visit our website at www.dockmaster.com\n\n**We thank all applicants for their interest; however, only those candidates selected for an interview will be contacted.**\n\n**\\#Dockmaster**",
       "description_snippet": "**GTM Engineer \\- GTM Engineer \\- DockMaster**\n\n**About Dockmaster.com**\n\nDockmaster.com is the leading marina management platform serving entertainment attractions and venues across the waterfront industry. Our software powers dock operations, reservations, billing, and guest experiences for marinas nationwide.\n\n\nWe’re building a modern revenue engine to match our ambitions — and this role is at the center of that transformation.\n\n\nThe GTM Engineer is a hybrid builder–operator who designs and m",
       "tools": [
+        {
+          "tool_name": "Openai",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "openai"
+        },
+        {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
         {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
@@ -6980,31 +6548,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
         }
       ],
       "signals": [
@@ -7046,6 +6589,11 @@
       "description": "**New York Office****Engineering – 13001 \\- Engineering /****Permanent Full Time Employee /****Hybrid**\n\n\n\n\n\nAircall is a unicorn, AI\\-powered customer communications platform used by 22,000\\+ companies worldwide to drive revenue, resolve issues faster, and scale customer\\-facing teams. We’re redefining customer communications by bringing voice, SMS, WhatsApp, and AI together into one seamless workspace.  \n\nOur momentum comes from a simple idea: help teams work smarter, not harder. Aircall’s AI Voice Agent automates routine calls, AI Assist streamlines post\\-call work, and AI Assist Pro delivers real\\-time guidance so people can do their best work. The result is higher revenue, faster resolutions, and teams that scale with confidence.  \n\nAircall is headquartered in Paris, our European HQ, with a strong North American presence anchored in Seattle, our North American HQ, and teams across Madrid, London, Berlin, San Francisco, New York City, Sydney, and Mexico City. We’ve built a product customers love and a business that’s scaling quickly, backed by world\\-class investors and driven by rapid AI innovation across multiple product lines.\nAt Aircall, you’ll join a company in motion. We’re ambitious, product\\-driven, and execution\\-focused, with visible impact, fast decisions, and real growth. **How we work at Aircall:** We’re customer\\-obsessed, data\\-driven, and focused on delivering meaningful outcomes. We value ownership, continuous learning, and thoughtful speed. If you thrive in a collaborative, fast\\-moving environment where trust and impact matter, you’ll feel at home here.  \n\nWe are seeking an experienced Senior Manager to lead the Go\\-to\\-Market (GTM) Engineering team and drive business transformation. In this role, you will work cross\\-functionally with key stakeholders across Sales, Marketing, Customer Success, and Revenue Operations to design and implement scalable solutions that enhance operational efficiency and support revenue growth.\n  \n\nAs the Senior Manager of the team, you will provide thought leadership, influence business strategies, and leverage your expertise in business process automation, system integrations, and data analytics to solve complex challenges. This is an opportunity to shape the future of our GTM technology landscape by leveraging your management skills and understanding of CRM and analytics tools.### **Key Responsibilities:**\n\n* Act as a trusted advisor to executive leadership, collaborate with the team’s Principal Business Systems Engineer to evangelize your vision of a north\\-star GTMS architecture and provide strategic insights and recommendations to optimize GTM processes and systems.\n* Lead complex, cross\\-functional initiatives to enhance business capabilities across the entire customer lifecycle from lead generation to revenue recognition.\n* Define and implement best practices for business process automation, system integrations, and data governance.\n* Collaborate closely with Sales, Marketing, Partnerships and Customer Success teams to identify opportunities for operational efficiencies and revenue growth.\n* Translate high\\-level business objectives into actionable roadmaps, partnering with technical teams to implement scalable solutions.\n* Evaluate Buy Vs Build options with an inclination to build in\\-house tooling when technically advantageous and cost\\-effective in the long run.\n* Drive the adoption of low\\-code/no\\-code solutions (Salesforce Flows, Hubspot Workflows, Zapier, N8N, etc.) to enhance productivity and streamline operations.\n* Oversee the design and execution of Salesforce and CPQ configurations, Hubspot configurations, reporting frameworks, and data enrichment strategies.\n* Evaluate new technologies and trends, providing recommendations to enhance the GTM tech stack.\n* Develop and present business cases for investments in technology and process improvements.\n* Mentor and coach your team, fostering a culture of continuous learning and excellence.\n### **Qualifications:**\n\n* 6\\+ years of experience in a Business Systems role with GTM focus, preferably in a SaaS or high\\-growth environment.\n* 4\\+ years of experience being people manager of a team of business systems engineers and/or full stack software engineers.\n* Expertise in Salesforce CRM, CPQ solutions, and Hubspot CRM .\n* Strong technical knowledge of system integrations, API\\-driven workflows, and low\\-code automation tools in the GTM space.\n* Development experience with Salesforce (APEX), HubSpot (Workflows with Python/JS), declarative automation, and workflow configuration.\n* Deep understanding of business processes across Sales, Marketing, and Customer Success.\n* Demonstrated ability to lead enterprise\\-wide projects with a focus on process optimization and efficiency.\n* Proven track record in business process re\\-engineering and cross\\-functional stakeholder management.\n* Strong analytical skills, with experience in creating data\\-driven reports and dashboards to support business decision\\-making.\n* Excellent communication and leadership skills, with the ability to influence stakeholders at all levels of the organization.\n* Experience working in Agile environments and applying project management methodologies such as Scrum or Kanban.\n### **Preferred Skills:**\n\n* Experience with business process modeling, data analysis, and translating complex business needs into technical solutions.\n* Salesforce developer/administrator certifications and Hubspot certifications.\n* Familiarity with the broader GTM tech stack including sales engagement tools (Optreach, ZoomInfo, Lusha) and marketing automation tools.\n* Strong analytical skills and familiarity with reporting tools such as Tableau, Power BI, Looker, Hex and SQL skills.\n* Understanding of revenue operations strategies and their impact on business growth.\n\nExperience with change management frameworks to support business transformation initiatives.  \n* \n### **Tools \\& Technologies You'll Work With:**\n\n* Salesforce (CRM, Apex, CPQ), HubspotMarketo, Impartner, Chili Piper.\n* Low\\-code platforms for business automation and optimization.\n* System integrations and API workflows to connect key business platforms.\n* Reporting and analytics tools for data visualization and insights.\n$190,000 \\- $245,000 a year\nThis is not including equity and other benefits. The actual salary offered will carefully consider a wide range of factors, including your skills, qualifications, and experience.**Why join us?**  \n\n Key moment to join Aircall in terms of growth and opportunities* ️ Our people matter, work\\-life balance is important at Aircall\n\n\n Fast\\-learning environment, entrepreneurial and strong team spirit\n 45\\+ Nationalities: cosmopolite \\& multi\\-cultural mindset\n Competitive salary package \\& equity\n Medical, dental, and vision insurance is 100% covered\n 401k plan with company matching!\n✈️ Unlimited PTO — take the time you need to come to work feeling great!* ️ Wellness, commuter, and childcare reimbursements\n\n\n Generous parental leave policy  \n\nDE\\&I Statement:\nAt Aircall, we believe diversity, equity and inclusion – irrespective of origins, identity, background and orientations – are core to our journey.  \n\nWe pride ourselves on promoting active inclusion within our business to foster a strong sense of belonging for all. We’re working to create a place filled with diverse people who can enrich and learn from one another. We’re committed to ensuring that everyone not only has a seat at the table but is valued and respected at it by providing equal opportunities to develop and thrive.  \n\nWe will constantly challenge ourselves to make sure that we live up to our ambitions around diversity, equity and inclusion, and keep this conversation open. Above all else, we understand and acknowledge that we have work to do and much to learn.  \n\nWant to know more about candidate privacy? Find our Candidate Privacy Notice here.*We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.*",
       "description_snippet": "**New York Office****Engineering – 13001 \\- Engineering /****Permanent Full Time Employee /****Hybrid**\n\n\n\n\n\nAircall is a unicorn, AI\\-powered customer communications platform used by 22,000\\+ companies worldwide to drive revenue, resolve issues faster, and scale customer\\-facing teams. We’re redefining customer communications by bringing voice, SMS, WhatsApp, and AI together into one seamless workspace.  \n\nOur momentum comes from a simple idea: help teams work smarter, not harder. Aircall’s AI ",
       "tools": [
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
         {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
@@ -7105,21 +6653,6 @@
           "tool_name": "Impartner",
           "tool_category": "Partner_Channel",
           "tool_id": "impartner"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -7192,6 +6725,16 @@
       "description_snippet": "**Zyphra** **is an artificial intelligence company based in San Francisco, California.**\n----------------------------------------------------------------------------------------\n\n**The Role:**\n-------------\n\n\nAs a **GTM Engineer**, you will be a core builder on Zyphra's GTM team, responsible for designing, deploying, and continuously improving the AI\\-driven systems that power our go\\-to\\-market engine. This is not a traditional sales, sales ops or RevOps role. You will bring direct GTM domain e",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -7220,21 +6763,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
         }
       ],
       "signals": [
@@ -7280,11 +6808,6 @@
           "tool_name": "Clay",
           "tool_category": "Data_Enrichment",
           "tool_id": "clay"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
         }
       ],
       "signals": [
@@ -7327,6 +6850,26 @@
       "description_snippet": "**Why Socure?**\n---------------\n\n\nSocure is building the identity trust infrastructure for the digital economy — verifying 100% of good identities in real time and stopping fraud before it starts. The mission is big, the problems are complex, and the impact is felt by businesses, governments, and millions of people every day.\n\n\nWe hire people who want that level of responsibility. People who move fast, think critically, act like owners, and care deeply about solving customer problems with precis",
       "tools": [
         {
+          "tool_name": "Claude",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "claude"
+        },
+        {
+          "tool_name": "Embeddings",
+          "tool_category": "AI_techniques",
+          "tool_id": "embeddings"
+        },
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Javascript",
+          "tool_category": "AI_languages",
+          "tool_id": "javascript"
+        },
+        {
           "tool_name": "Apollo",
           "tool_category": "Sales_Engagement_Growth",
           "tool_id": "apollo"
@@ -7350,36 +6893,6 @@
           "tool_name": "Zapier",
           "tool_category": "Integration_iPaaS",
           "tool_id": "zapier"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Embeddings",
-          "tool_category": "AI_techniques",
-          "tool_id": "embeddings"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Javascript",
-          "tool_category": "AI_languages",
-          "tool_id": "javascript"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [
@@ -7422,6 +6935,16 @@
       "description_snippet": "**POSITION:** **Marketing Automation Engineer**\n\n**LOCATION:** New York, NY\n\n**HOURS:** Full\\-Time, non\\-union. 40hrs/week\n\n**COMPENSATION:** $110k \\- $125k (Commensurate with Experience)\n\n**ABOUT THE POSITION**\n\n\nAs a Marketing Automation Engineer within our CRM and Data team, you will bridge marketing technology and data engineering to enhance how we automate, personalize, and measure customer engagement. You’ll work across our key platforms — including Iterable, Snowflake, and Power BI — to d",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        },
+        {
           "tool_name": "Iterable",
           "tool_category": "Marketing_Automation_Growth",
           "tool_id": "iterable"
@@ -7440,16 +6963,6 @@
           "tool_name": "Looker",
           "tool_category": "BI_Analytics",
           "tool_id": "looker"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -7502,6 +7015,16 @@
       "description_snippet": "* #### **Salary**\n\n\n$110,000\\- $125,000\n* #### **Hours**\n\n\nVarious\n* #### **Type**\n\n\nFull Time\n* #### **Location**\n\n\n630 9th Avenue  \n\nNew York  \n\nNew York  \n\n10036\n* + No Files\n**POSITION:** **Marketing Automation Engineer**\n\n**LOCATION:** New York, NY\n\n**HOURS:** Full\\-Time, non\\-union. 40hrs/week\n\n**COMPENSATION:** $110k \\- $125k (Commensurate with Experience)\n\n**ABOUT THE POSITION**\n\n\nAs a Marketing Automation Engineer within our CRM and Data team, you will bridge marketing technology and da",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
+          "tool_name": "Aws",
+          "tool_category": "AI_infrastructure",
+          "tool_id": "aws"
+        },
+        {
           "tool_name": "Iterable",
           "tool_category": "Marketing_Automation_Growth",
           "tool_id": "iterable"
@@ -7520,16 +7043,6 @@
           "tool_name": "Looker",
           "tool_category": "BI_Analytics",
           "tool_id": "looker"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -7582,6 +7095,11 @@
       "description_snippet": "Akeneo is the Product Experience (PX) company and global leader in Product Information Management (PIM), creating a world where every product interaction is an experience that guides consumers and professionals to the best purchase, anytime, anywhere.\n\n\nWe're all about experience \\- from the best\\-in\\-class product we build to the inspiring environment we create for our employees. You'll grow in a dynamic environment where your ideas and expertise will make an impact from day one. Our flexible w",
       "tools": [
         {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -7610,16 +7128,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
         }
       ],
       "signals": [
@@ -7731,6 +7239,11 @@
       "description_snippet": "DISQO’s mission is to build the world’s most trusted ad measurement platform that fuels brand growth.\nThe world’s largest brands, agencies, and media companies trust DISQO for expert insight and AI\\-driven intelligence about their advertising performance across all platforms. We capture people’s sentiments and journeys, connecting them with the brands they value and the media they consume. With this identity\\-based approach, brands gain more accurate and authentic insight so they can create more",
       "tools": [
         {
+          "tool_name": "Gemini",
+          "tool_category": "AI_llm_providers",
+          "tool_id": "gemini"
+        },
+        {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
           "tool_id": "salesforce"
@@ -7754,26 +7267,6 @@
           "tool_name": "N8N",
           "tool_category": "Integration_iPaaS",
           "tool_id": "n8n"
-        },
-        {
-          "tool_name": "Gemini",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "gemini"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -7829,21 +7322,6 @@
           "tool_name": "Salesforce Marketing Cloud",
           "tool_category": "Marketing_Automation_Enterprise",
           "tool_id": "salesforce_marketing_cloud"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
-        },
-        {
-          "tool_name": "Aws",
-          "tool_category": "AI_infrastructure",
-          "tool_id": "aws"
         }
       ],
       "signals": [
@@ -7890,6 +7368,11 @@
       "description": "CaptivateIQ is transforming the way companies plan, manage, and optimize sales performance. We started by revolutionizing incentive compensation management, and now we're expanding our platform to solve broader sales planning challenges. Recognized by industry analysts like Forrester and G2 and backed by top\\-tier investors, including Sequoia, ICONIQ, Accel, and Sapphire Ventures, we empower high\\-growth companies like Netflix, Figma, and Stripe with the flexibility and insights needed to drive revenue performance.\n\nJoin a talented, fast\\-growing team committed to solving some of the most complex and impactful problems in sales performance management.\n\n**About the Role**\nThis role exists to make our go\\-to\\-market engine faster, cleaner, and more scalable by turning manual GTM work into reliable systems and AI\\-powered workflows. The goal is simple: reduce the time teams spend on busywork, improve targeting and follow\\-through, and give leadership trustworthy visibility into what’s working across campaigns, channels, and the full customer lifecycle.\n\nYou’ll operate as a builder at the center of our GTM stack, partnering across RevOps, Sales, Marketing, and CS to spot bottlenecks and design practical solutions. Sometimes that’s an AI copilot that helps reps act on signals. Sometimes it’s a data pipeline that finally makes attribution and lifecycle reporting consistent. Sometimes it’s automation that quietly removes 20 steps from a process no one has time to fix.\n\n### **Responsibilities**\n\n* Map GTM bottlenecks: Partner with RevOps, Sales, Marketing, and CS to identify where AI can reduce manual effort, increase speed, or improve targeting.\n* Create AI\\-powered automations, copilots, and agents to support GTM Teams.\n* Design and maintain scalable data pipelines that unify data across Hubspot, Salesforce, Outreach, Gong, ChurnZero, etc).\n* Implement systems that measure campaign, channel, and program effectiveness.\n* Identify and design automated workflows to support our team’s internal operations.\n* Innovate and experiment. Pilot new tools, integrations, and AI workflows.\n\n### **Requirements**\n\n* 5\\+ years as a Marketing Analyst or technical role in Marketing Operations/RevOps\n* You are comfortable with writing code (Python/SQL) and working with APIs. Bonus if you have a background in data engineering or ETL tools.\n* Deep knowledge of Salesforce Architecture\n* Fluency in other GTM tools (Clay, HubSpot/Marketo, Outreach / Apollo, Gong, Nooks Dialier/Orum, 6sense, Usergems, etc), APIs, and automation platforms (Zapier, Workato).\n* Curious, scrappy builder with a love for experimentation who thrives in ambiguity, enjoys automating manual work, and owns projects end\\-to\\-end.\n* The ability to translate business problems into elegant, maintainable system solutions\n* Strong attention to detail and high standards for data quality and process consistency\n* Proven ability to design and scale processes across global marketing teams.\n* Self\\-starter who thrives in fast\\-paced, collaborative, and remote environments.\n\n### **Benefits**\n\n* Comprehensive Healthcare: 100% coverage for medical, dental, and vision for all FTEs, with roughly 75% coverage for dependents.\n* Flexible Time Off: Flexible vacation days plus quarterly mental health days to ensure you have the space to recharge.\n* Annual Stipends: Dedicated funds for your professional development and caretaking needs.\n* Work Anniversary Bonuses: Annual bonuses to celebrate your milestones and contributions to the CaptivateIQ team that grow as your tenure does.\n* Retirement Savings (US\\-Only): A 401(k) plan to help you invest in and secure your future.\n* Premium Tools: The latest Apple hardware to empower you to do your best work.\n* Inclusive Community: Active Employee Resource Groups (ERGs) that celebrate shared identities and support our DEI goals by fostering an environment where diverse talent thrives.\n\n### **Notice for Prospective Candidates**\n\n* Only emails from @captivateiq.com should be trusted.\n\nWe are aware of active recruitment scams using the CaptivateIQ name, in which individuals pose as our recruiters and post fake remote job openings and make fake job offers on the Internet. Please note, we will never do the following:\n* Attempt to correspond with a candidate using a free web\\-based account, such as an email address that ends in @gmail.com, @yahoo.com, @hotmail.com, etc.\n* Make an offer of employment without conducting multiple rounds of interviews face\\-to\\-face using secure video\\-conferencing technology.\n* Ask candidates to cash checks to buy equipment on behalf of CaptivateIQ.\n* Ask candidates to make a payment in order to be considered for a position.\n* Make early requests for candidates' personal information such as date of birth, passport details, credit card numbers, bank details and social security number, etc.\n* Please note that we’ll only ask for more sensitive personal information in connection with background checks after an offer is made.\n\nThe OTE range represents the minimum and maximum for this position across North America. For candidates in Canada, the range is $155,000–$185,000 CAD. The OTE offered for this position will depend on numerous factors, including individual proficiency, anticipated performance, and the location of the selected candidate. Our OTE is just one component of CaptivateIQ's competitive total rewards package.*CaptivateIQ participates in E\\-Verify, web\\-based system that allows enrolled employers to confirm the eligibility of their employees to work in the United States*\n\nWe may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.",
       "description_snippet": "CaptivateIQ is transforming the way companies plan, manage, and optimize sales performance. We started by revolutionizing incentive compensation management, and now we're expanding our platform to solve broader sales planning challenges. Recognized by industry analysts like Forrester and G2 and backed by top\\-tier investors, including Sequoia, ICONIQ, Accel, and Sapphire Ventures, we empower high\\-growth companies like Netflix, Figma, and Stripe with the flexibility and insights needed to drive ",
       "tools": [
+        {
+          "tool_name": "Python",
+          "tool_category": "AI_languages",
+          "tool_id": "python"
+        },
         {
           "tool_name": "Salesforce",
           "tool_category": "CRM_Enterprise",
@@ -7969,21 +7452,6 @@
           "tool_name": "G2",
           "tool_category": "Review_Platforms",
           "tool_id": "g2"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Rust",
-          "tool_category": "AI_languages",
-          "tool_id": "rust"
         }
       ],
       "signals": [

@@ -1,13 +1,11 @@
 {
-  "date": "April 26, 2026",
+  "date": "April 28, 2026",
   "total_jobs": 94,
   "tools": {
-    "Rag": 59,
     "Salesforce": 54,
     "Clay": 50,
     "Hubspot": 43,
     "Python": 42,
-    "Rust": 39,
     "Zapier": 35,
     "N8N": 28,
     "Claude": 28,
@@ -15,7 +13,6 @@
     "Javascript": 19,
     "Openai": 15,
     "Gong": 15,
-    "Aws": 14,
     "Marketo": 12,
     "Instantly": 11,
     "Zoominfo": 11,
@@ -29,11 +26,12 @@
     "Workato": 6,
     "Workato Ipaas": 6,
     "Salesforce Marketing Cloud": 5,
+    "Aws": 5,
+    "Rag": 5,
     "6Sense": 5,
     "Chili Piper": 4,
     "Chili Piper Routing": 4,
     "Metabase": 4,
-    "Cohere": 4,
     "Salesloft": 3,
     "Embeddings": 3,
     "Iterable": 3,
@@ -51,7 +49,9 @@
     "Lemlist": 2,
     "Planhat": 2,
     "Dealhub Cpq": 2,
-    "Customer Io": 2
+    "Customer Io": 2,
+    "Chorus": 2,
+    "Demandbase": 2
   },
   "segment": {
     "Enterprise": 26,

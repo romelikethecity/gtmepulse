@@ -2795,6 +2795,8 @@ def build_salary_seed_vs_enterprise():
 def build_sitemap():
     urls = ""
     for page_path in ALL_PAGES:
+        if page_path == "404.html":
+            continue
         clean = page_path.replace("index.html", "")
         if not clean.startswith("/"):
             clean = "/" + clean

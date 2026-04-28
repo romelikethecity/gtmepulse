@@ -146,6 +146,8 @@
 <p>Two scoring dimensions: fit (does this person match your ICP?) and behavior (are they showing buying signals?). Fit scoring uses firmographic data: industry, company size, job title, geography. A Director at a 200-person SaaS company might score +30 for fit. Behavior scoring uses engagement data: pricing page visit (+10), demo video watched (+15), email opened 3+ times (+5). Combine both for a total score.</p>
 <p>Implementation: HubSpot and Salesforce both support native lead scoring. You set rules (if title contains "VP" or "Director", add 20 points) and the CRM auto-calculates scores. For more sophisticated scoring, GTM Engineers build custom models that incorporate product usage data, intent signals, and enrichment data from external sources.</p>
 <p>The common mistake is scoring on activity instead of intent. Someone who opens every email but never visits the pricing page is curious, not buying. Someone who visits the pricing page once and compares plans is showing purchase intent. Weight your scoring toward intent signals (pricing page, competitor comparison pages, integration documentation) over vanity signals (email opens, social follows).</p>
+<p>Score decay prevents zombie leads from clogging your pipeline. A lead who scored 80 points six months ago but hasn't engaged since is not a hot prospect anymore. Implement time-based score decay that reduces the behavioral component by 10-20% per month of inactivity. HubSpot supports property-based decay rules. Salesforce requires custom Apex code or a scheduled flow. Without decay, your top-scored leads list fills with stale records, and sales teams lose trust in the scoring system entirely.</p>
+<p>Lead scoring calibration requires reviewing actual conversion data quarterly. Pull your closed-won deals from the past 90 days and check: what was their lead score when they entered the pipeline? If your best deals consistently scored below your threshold, your scoring model is wrong. Adjust the weights. If high-scoring leads rarely convert, you're scoring on the wrong signals. The goal is alignment: leads that score high should convert at 2-3x the rate of leads that score low. If that spread doesn't exist in your data, the scoring model needs rework.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -186,7 +188,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -199,7 +201,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -223,7 +225,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -232,7 +234,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -245,7 +247,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

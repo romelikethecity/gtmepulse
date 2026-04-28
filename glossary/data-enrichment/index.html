@@ -146,6 +146,9 @@
 <p>Most GTM Engineers run enrichment through Clay, which waterfalls across 75+ data providers in a single table. The waterfall approach tries Apollo first, then falls back to ZoomInfo, Clearbit, FullEnrich, and others until it gets a match. This consistently outperforms any single provider on coverage and accuracy.</p>
 <p>A practical example: you scrape 500 companies from a LinkedIn Sales Navigator search. You drop them into Clay with a waterfall that checks Apollo for emails, Clearbit for firmographics, and FullEnrich for phone numbers. In 10 minutes you have complete profiles for 85-90% of them. Without enrichment, you'd be manually searching each company on LinkedIn and guessing at email formats.</p>
 <p>The enrichment market is moving toward orchestration. Instead of picking one database and living with its gaps, you layer multiple sources. Credit-based pricing (Clay, FullEnrich) makes this economical because you only pay for successful lookups.</p>
+<p>Data freshness is the hidden variable most teams underestimate. B2B contact data decays at roughly 30% per year. People change jobs, companies merge, phone numbers get reassigned. An enrichment pipeline that ran perfectly in January will have noticeably worse results by June if you don't re-verify. The best GTM Engineers schedule quarterly re-enrichment runs on their core target accounts, catching stale records before they turn into bounced emails and wasted sequences.</p>
+<p>Enrichment also feeds downstream systems beyond outbound. Enriched firmographic data improves CRM segmentation for marketing campaigns. Verified phone numbers enable parallel calling campaigns. Tech stack data identifies cross-sell opportunities inside existing accounts. The enrichment step sits at the top of the funnel, and every system below it inherits either the quality or the gaps of that initial data pull.</p>
+<p>Cost tracking per enrichment provider is a habit worth building early. Log every API call with the provider name, credit cost, and whether the lookup returned useful data. After a month, you can see exactly which providers deliver the highest match rate per dollar spent and adjust your waterfall order accordingly. Some GTM Engineers build a simple dashboard that shows cost-per-enriched-record by provider, updated daily, which makes budget conversations with leadership concrete instead of abstract.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -190,7 +193,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -203,7 +206,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -227,7 +230,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -236,7 +239,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -249,7 +252,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

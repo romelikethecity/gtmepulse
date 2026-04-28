@@ -146,6 +146,9 @@
 <p>About 20-30% of B2B domains are catch-all. That's a significant chunk of any prospecting list. If you skip them entirely, you lose a quarter of your addressable market. If you send to all of them blindly, some will bounce and hurt your sender reputation.</p>
 <p>The practical approach most GTM Engineers use: separate catch-all contacts into their own sending pool. Send to them at lower volume (50-100/day instead of 200-300). Monitor bounce rates closely for the first few sends. If a catch-all address bounces, remove it immediately and suppress the address. Some tools like Smartlead let you set different sending rules for catch-all vs verified contacts.</p>
 <p>Clay and FullEnrich flag catch-all domains during enrichment so you can route them differently in your workflow. This is a small detail that separates experienced GTM Engineers from beginners: knowing that "verified" doesn't always mean "safe to send."</p>
+<p>Some industries have catch-all rates far above the 20-30% average. Law firms, government agencies, and educational institutions frequently run catch-all configurations. If your ICP includes these sectors, plan for 40-50% of your list being catch-all. Adjust your inbox infrastructure to handle the extra volume needed for separate catch-all sending pools, and set a stricter per-domain bounce threshold (remove any catch-all address that bounces on first send).</p>
+<p>An advanced technique for catch-all domains: use pattern validation before sending. If you can confirm the company uses a standard email format (firstname.lastname@company.com) through other verified contacts at the same domain, you can have higher confidence that your target address exists even though the server won't confirm it. Clay can automate this by cross-referencing multiple contacts at the same domain and identifying the dominant email pattern. This doesn't eliminate the risk, but it reduces the bounce rate on catch-all sends from 15-20% down to 5-8%.</p>
+<p>Tracking catch-all bounce rates separately from verified-address bounce rates gives you an accurate picture of domain health. If your verified emails bounce at 1% but your catch-all emails bounce at 12%, your blended rate of 4% looks acceptable but masks a problem. Segment your sending reports by verification status. If catch-all bounces are dragging your overall domain reputation down, reduce catch-all volume or tighten your pattern validation criteria until bounce rates come under control.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

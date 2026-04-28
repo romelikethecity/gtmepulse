@@ -146,6 +146,9 @@
 <p>Every major data provider has one. Apollo's API handles person and company lookups with generous free-tier limits. ZoomInfo's API requires an enterprise contract. Clearbit's API (now part of HubSpot) covers company enrichment. FullEnrich exposes a batch API for high-volume waterfall enrichment.</p>
 <p>For GTM Engineers who build custom pipelines in Python or Node.js, enrichment APIs are the building blocks. A typical script: read a CSV of target companies, loop through each one, call the Apollo API for contacts, call a verification API to check emails, write results to a new CSV or push to the CRM via its API.</p>
 <p>API quality varies significantly. Good APIs have clear documentation, consistent response schemas, reasonable rate limits, and proper error codes. Bad APIs return inconsistent data structures, throttle aggressively, and charge you for failed lookups. When evaluating a data provider, test their API before committing. Response time, data completeness, and error handling tell you more than the sales demo.</p>
+<p>Rate limiting is the most common production issue with enrichment APIs. Apollo's free tier allows 5 requests per minute. FullEnrich batch endpoints have concurrency limits. ZoomInfo enforces daily credit caps. When you're processing 10,000 records through a waterfall, these limits determine your total processing time. Build rate-limit handling into your scripts from day one: exponential backoff, queue-based processing, and progress checkpointing so you can resume after interruptions without re-processing already-completed records.</p>
+<p>Authentication patterns vary across providers. Apollo uses a simple API key in the header. Salesforce requires an OAuth flow with token refresh. Some providers use webhook-based async patterns where you submit a batch and poll for results. Understanding these patterns matters because mixing authentication approaches in a single pipeline creates fragile code. Standardize your auth handling with a wrapper function that manages tokens, retries, and credential rotation across all providers in your stack.</p>
+<p>API versioning catches GTM Engineers off guard when providers deprecate old endpoints. Salesforce releases three API versions per year and eventually sunsets old ones. HubSpot migrated from v1 to v3 APIs with breaking changes in response formats. Pin your integrations to specific API versions and subscribe to provider changelogs so you know when a migration is coming. An API deprecation that breaks your enrichment pipeline on a Friday afternoon ruins the weekend. Monitoring provider status pages and changelog feeds costs nothing and prevents that scenario.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

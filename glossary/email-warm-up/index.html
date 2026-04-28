@@ -146,6 +146,9 @@
 <p>The warm-up process takes 2-3 weeks. During this time, warm-up tools send 20-40 emails per day from your new inbox to other warm-up participants. Those participants open your emails, reply to them, and mark them as "not spam" if they land in junk folders. This signals to email providers that your account is legitimate.</p>
 <p>Instantly includes warm-up as a core feature. You connect your inboxes, enable warm-up, and it runs in the background forever. Smartlead does the same. Standalone warm-up tools like Warmbox and Mailreach exist for teams using sequencing tools that don't include warm-up.</p>
 <p>GTM Engineers typically maintain 5-10 sending inboxes per campaign. Each inbox warms up independently and handles 30-50 cold emails per day on top of its warm-up volume. The math: 10 inboxes at 40 emails/day = 400 cold emails daily, which is a solid volume for most campaigns without triggering spam filters.</p>
+<p>Warm-up doesn't stop when you start sending cold emails. Most GTM Engineers keep warm-up running at 20-30 emails per day alongside their cold outreach volume. This ongoing warm-up activity maintains your sender reputation by ensuring a healthy ratio of engaged emails (warm-up replies and opens) to cold outreach. If you turn off warm-up and only send cold emails, your engagement metrics drop and deliverability follows within 1-2 weeks.</p>
+<p>Google's 2024 sender requirements raised the bar for warm-up. Senders must maintain bounce rates under 0.3%, include one-click unsubscribe headers, and authenticate with SPF, DKIM, and DMARC. These requirements apply to anyone sending more than 5,000 emails per day to Gmail addresses. For GTM Engineers, this means warm-up infrastructure is mandatory, not optional. Skipping it or cutting corners on DNS configuration will land your entire domain in spam folders, and recovery takes weeks of reduced volume and re-warming.</p>
+<p>Warm-up tool selection depends on your sending infrastructure. If you use Instantly or Smartlead, their built-in warm-up networks are sufficient for most use cases. If you use a standalone sequencing tool (Outreach, Salesloft, Woodpecker) that doesn't include warm-up, you need a separate service like Warmbox, MailReach, or Lemwarm. Each warm-up tool has its own network of participating inboxes, and larger networks produce faster reputation building. Compare network sizes and check that the tool supports the email providers you use (Google Workspace, Outlook 365, or custom SMTP) before committing.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

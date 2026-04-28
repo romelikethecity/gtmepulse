@@ -146,6 +146,8 @@
 <p>The formula: (Qualified Opportunities x Average Deal Value x Win Rate) / Average Sales Cycle Days. Example: 50 opportunities x $30K ACV x 20% win rate / 45 days = $6,667 pipeline velocity per day. To increase velocity, you either add more opportunities (outbound volume), increase deal size (upmarket motion), improve win rates (better qualification), or shorten the cycle (faster sales process).</p>
 <p>GTM Engineers directly impact three of the four variables. Automated enrichment and outbound increase the number of qualified opportunities. Better lead scoring improves win rates by filtering out bad-fit prospects. Faster handoff processes (instant CRM updates, real-time AE notifications) reduce cycle time.</p>
 <p>Track pipeline velocity weekly. Sudden drops signal a problem: lead quality declined, a competitor entered the market, or the sales process broke somewhere. It's the most actionable metric for revenue teams because each of its four components is independently optimizable.</p>
+<p>Pipeline velocity benchmarks vary dramatically by company stage and deal size. A PLG startup selling $5K/year subscriptions might see 15-day average sales cycles and $2,000 daily pipeline velocity. An enterprise company selling $200K/year contracts might see 90-day cycles with $15,000 daily velocity. Comparing your velocity to companies with different deal sizes is meaningless. Compare your velocity to your own historical performance, and track whether it's trending up or down quarter over quarter.</p>
+<p>GTM Engineers can build pipeline velocity dashboards that update in real time by pulling deal data from the CRM API. A simple Python script that queries HubSpot's deals endpoint every morning, calculates velocity by segment (enterprise vs mid-market, inbound vs outbound, by AE), and posts the results to a Slack channel gives the revenue team daily visibility into pipeline health. Most CRM reports show pipeline velocity as a snapshot. A daily trend line reveals patterns (velocity drops on Fridays, picks up after marketing events) that static reports miss entirely.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -186,7 +188,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -199,7 +201,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -223,7 +225,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -232,7 +234,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -245,7 +247,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

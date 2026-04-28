@@ -146,6 +146,9 @@
 <p>Common naming patterns: getcompany.com, trycompany.com, company.io, usecompany.com. Buy 3-5 of these, set up proper DNS records (SPF, DKIM, DMARC), create 2-3 email accounts on each (john@getcompany.com, john@trycompany.com), and warm them all up. If one domain gets flagged, you rotate to the others while it recovers.</p>
 <p>DNS configuration matters. SPF records tell receiving servers which IP addresses can send from your domain. DKIM adds a cryptographic signature to prove the email wasn't modified in transit. DMARC defines what happens when authentication fails. All three must be configured correctly or you'll land in spam regardless of your email content.</p>
 <p>Budget for $10-$15 per domain per year from Google Domains, Namecheap, or Cloudflare. Google Workspace or Outlook 365 accounts cost $6-$12/user/month. For a 10-inbox setup across 3 domains, you're looking at $60-$120/month in infrastructure costs. That's trivial compared to the pipeline it generates.</p>
+<p>Domain age affects deliverability. A brand-new domain has zero reputation, which means email providers treat it with suspicion. Buying domains 30-60 days before you need them and running warm-up during that window gives you a head start. Some GTM Engineers maintain a rolling inventory of 5-10 warmed domains at all times, so they can spin up new campaigns immediately without the 2-3 week warm-up delay.</p>
+<p>Sending domain strategy also includes a retirement plan. When a domain's deliverability degrades (spam placement above 15%, bounce rates climbing), retire it from cold outreach and let it cool down for 60-90 days. During cooldown, run warm-up only at low volume. After the cooling period, you can reintroduce it to active campaigns. Tracking deliverability per domain in a spreadsheet or dashboard, updated weekly, prevents you from running a burned domain past its useful life and tainting your entire outbound program.</p>
+<p>Forwarding from sending domains to your primary domain is important for replies and credibility. Set up email forwarding so that replies to john@getcompany.com reach john@company.com. Also redirect the sending domain's website to your primary domain (getcompany.com redirects to company.com) so that curious prospects who type the domain into their browser land on your real website rather than a blank page. A bare domain with no website raises spam suspicions for both email providers and human recipients.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

@@ -146,6 +146,8 @@
 <p>Hard bounces mean the email address doesn't exist. The person left the company, the domain expired, or the enrichment data was wrong. These are permanent failures. Soft bounces mean the mailbox exists but can't receive mail right now: full inbox, server down, or message too large. Soft bounces are temporary and usually resolve themselves.</p>
 <p>GTM Engineers control bounce rate through two mechanisms: verification before sending (run every list through NeverBounce or a similar service) and list hygiene over time (remove addresses that bounce on first send, suppress known bad domains). Some sequencing tools like Instantly handle verification automatically, but it's safer to verify independently.</p>
 <p>Watch for catch-all domains. These accept all emails regardless of whether the specific address exists. A catch-all domain will pass verification but still bounce in practice because the actual mailbox doesn't exist. FullEnrich and Clay flag catch-all domains so you can handle them separately, usually by sending to them in smaller batches and monitoring results.</p>
+<p>Monitoring bounce rate by campaign segment reveals patterns that aggregate rates hide. Your overall bounce rate might be 2.5%, which looks safe. But if you break it down, your verified list from Apollo bounces at 0.8% while the list you scraped from a conference attendee page bounces at 7%. That second segment is dragging your domain reputation down. Segmenting bounce data by source, by list age, and by provider helps you identify which data inputs need tighter verification.</p>
+<p>Recovery from a bounce rate spike depends on speed. If one campaign pushes your domain bounce rate above 5%, stop sending from that domain immediately. Reduce volume to warm-up levels only (20-40 emails/day) for 7-14 days while your sender score recovers. During recovery, switch your active campaigns to backup sending domains. Having 3-5 warmed domains at all times gives you this flexibility. Treating bounce rate as a system health metric, checked daily rather than weekly, prevents small problems from becoming domain-killing disasters.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

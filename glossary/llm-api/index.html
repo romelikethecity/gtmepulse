@@ -146,6 +146,8 @@
 <p>The two main providers: OpenAI (GPT-4, GPT-3.5) and Anthropic (Claude). Both charge per token (roughly per word). GPT-4 costs $0.03-$0.06 per 1K tokens. Claude 3 Opus costs similar. Cheaper models (GPT-3.5, Claude Haiku) cost 10-20x less and work fine for simpler tasks like email personalization and data categorization.</p>
 <p>In a GTM workflow: n8n calls the OpenAI API to classify leads by industry based on their company description. Clay calls Claude's API to generate personalized email opening lines. A Python script calls GPT-4 to summarize a prospect's LinkedIn profile into 3 bullet points for the AE's pre-call prep. Each of these is an API call with a prompt, input data, and a structured response.</p>
 <p>Practical tips: use the cheapest model that produces acceptable output (GPT-3.5 for classification, GPT-4 for writing). Set temperature to 0.3-0.5 for consistent output (higher temperature = more creative but less predictable). Include examples in your prompt (few-shot prompting) for better results. Parse the response programmatically (ask for JSON output) instead of trying to extract data from freeform text.</p>
+<p>Error handling in LLM API calls requires special attention because failure modes differ from traditional APIs. Rate limits hit during batch processing, models occasionally return empty or malformed responses, and content safety filters sometimes block legitimate business prompts. Build retry logic that handles each case: exponential backoff for rate limits, re-prompt with simpler input for empty responses, and alternative phrasing for safety filter triggers. Logging every API call with input, output, cost, and latency creates an audit trail that helps debug quality issues and track spending.</p>
+<p>Cost management for LLM APIs at GTM scale means tracking per-record costs and setting budget limits. A Clay table with 10,000 rows running a GPT-4 column can cost $200-$500 per run if your prompts are long. Set up spending alerts in your OpenAI or Anthropic dashboard. Use token counting libraries (tiktoken for OpenAI) to estimate costs before running large batches. Some GTM Engineers build a cost-estimation column in their Clay tables that calculates expected API spend before the LLM column runs, preventing surprise bills from long prompts or unexpectedly large datasets.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -185,7 +187,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -198,7 +200,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -222,7 +224,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -231,7 +233,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -244,7 +246,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

@@ -146,6 +146,8 @@
 <p>Common formula patterns: concatenating first name and company into a personalization variable. Extracting domain from email address. Classifying leads by parsing company descriptions with keywords. Generating personalized email openers by feeding prospect data into an LLM prompt. Each of these runs automatically for every row in your table.</p>
 <p>Clay formulas use a JavaScript-like syntax with Clay-specific functions. You reference other columns as variables: /First Name, /Company, /LinkedIn Bio. You can nest functions: IF(/Employee Count > 500, "Enterprise", IF(/Employee Count > 50, "Mid-Market", "SMB")). For LLM operations, you write a prompt that references columns and Clay sends it to GPT-4 or Claude.</p>
 <p>The skill of writing effective Clay formulas overlaps with prompt engineering and basic programming. GTM Engineers who can write complex formulas (multi-step data transformation, conditional enrichment logic, LLM-powered classification) build more sophisticated workflows and command higher rates. Clay's community shares formula libraries, but the best formulas are custom-built for your specific ICP and use case.</p>
+<p>Debugging Clay formulas follows a pattern. When a formula returns unexpected results, check: Is the referenced column empty for some rows (add null handling)? Is the data type wrong (a number stored as text won't compare correctly)? Is the LLM prompt returning inconsistent formats (add output format constraints)? Clay shows formula results per row, so testing against 5-10 rows with different data profiles catches most edge cases. Building a test row with deliberately bad data (missing fields, unusual characters, very long text) reveals how your formulas handle real-world messiness.</p>
+<p>Performance optimization matters for large Clay tables. Formula columns that call LLM APIs or external enrichment providers consume credits per row. Running a 20-column table on 5,000 rows can burn through hundreds of dollars in credits if every column runs for every row. Use conditional formulas to skip expensive operations when they're unnecessary: don't run email verification on rows where no email was found, don't run LLM personalization on leads that fail ICP fit scoring. These conditional skips reduce credit consumption by 30-50% on typical enrichment workflows.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -185,7 +187,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -198,7 +200,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -222,7 +224,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -231,7 +233,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -244,7 +246,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

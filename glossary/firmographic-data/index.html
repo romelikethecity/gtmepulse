@@ -146,6 +146,8 @@
 <p>The core firmographic data points: employee count (is this a 10-person startup or a 5,000-person enterprise?), revenue (can they afford your product?), industry (SaaS, healthcare, fintech?), location (is your sales team set up to sell into EMEA?), and funding stage (Seed companies have different budgets than Series C).</p>
 <p>Clearbit (now part of HubSpot) is the default firmographic enrichment source for many teams. It auto-populates company records in your CRM with industry classification, employee ranges, and tech stack data. Apollo and ZoomInfo also provide firmographics alongside contact data.</p>
 <p>In a Clay workflow, you typically enrich with firmographics first, then filter. Grab 1,000 companies from a LinkedIn search, enrich with Clearbit for employee count and industry, filter down to SaaS companies with 50-500 employees, then look up contacts at the surviving companies. This front-loading saves enrichment credits because you don't waste contact lookups on companies that don't fit your ICP.</p>
+<p>Firmographic data quality varies by source and company type. Public companies have accurate revenue data because they file with the SEC. Private companies, especially those under 200 employees, often have estimated revenue ranges that can be off by 50% or more. Employee count data from LinkedIn tends to run high because it includes past employees who haven't updated their profiles. Cross-referencing firmographics from two providers (Clearbit plus Apollo, for example) catches these discrepancies and gives you higher confidence in your filtering.</p>
+<p>Technographic data is the firmographic data point gaining the most traction. Tools like BuiltWith and Wappalyzer detect which technologies a company uses by scanning their website and job postings. If your product integrates with Salesforce, filtering for Salesforce users before outreach eliminates companies that can't use your product. Clay includes technographic enrichment columns that pull this data automatically. Combining firmographics (right size, right industry) with technographics (right tech stack) produces target lists with 3-4x higher conversion rates than firmographics alone.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -190,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -203,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -227,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -236,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -249,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

@@ -146,6 +146,8 @@
 <p>Common models: first-touch (blog post gets 100% credit), last-touch (demo request gets 100% credit), linear (each touchpoint gets equal credit), time-decay (recent touchpoints get more credit), and W-shaped (first touch, lead creation, and opportunity creation each get 30%, with 10% distributed across everything else).</p>
 <p>For GTM Engineers, attribution data determines budget allocation. If cold email drives 40% of pipeline but only gets 10% of the budget, the data makes the case for more investment in outbound. If a webinar series consistently appears in the conversion path but gets cut from the budget, attribution data saves it.</p>
 <p>The hard truth: perfect attribution doesn't exist. Dark social (someone recommends your product in a Slack channel) is invisible to tracking. Self-reported attribution ("How did you hear about us?") contradicts click-based attribution 30-50% of the time. GTM Engineers build the best attribution system they can while acknowledging its limits. Use it for directional decisions, not precise accounting.</p>
+<p>Multi-touch attribution requires clean data across systems. Your marketing automation tool tracks ad clicks and content downloads. Your sequencing tool tracks email engagement. Your CRM tracks meetings and deals. Your product analytics tracks signups and usage. If these systems don't share a consistent identifier (usually email address or company domain), you can't stitch the journey together. Segment and HubSpot handle cross-system identity resolution, but they only work if every downstream tool sends data back with the same identifiers. Getting identity resolution right is a prerequisite for any attribution model more sophisticated than first-touch or last-touch.</p>
+<p>For GTM Engineers running outbound campaigns, the most practical attribution approach is to tag every outbound lead with the campaign, sequence, and source that generated the meeting. When the deal closes, you can trace it back to the specific campaign that sourced it. Store these tags as CRM custom fields: "Source Campaign," "Source Sequence," and "First Touch Date." This outbound-specific attribution is simpler than full-funnel multi-touch models and directly answers the question that matters: which campaigns are generating revenue?</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +190,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +203,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +227,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +236,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +249,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

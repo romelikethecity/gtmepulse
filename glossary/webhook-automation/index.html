@@ -146,6 +146,8 @@
 <p>The basic mechanics: System A registers a URL (the webhook endpoint) with System B. When an event happens in System B, it sends a JSON payload to that URL. System A processes the payload and takes action. No polling, no scheduled batch jobs, no manual data transfers. Events flow in real time.</p>
 <p>GTM Engineers use webhooks constantly. Clay accepts incoming webhooks to trigger table runs. n8n and Make use webhook nodes as workflow triggers. HubSpot and Salesforce fire webhooks on record changes. Instantly sends webhooks on email opens, replies, and bounces. Connecting these systems via webhooks creates an event-driven architecture where actions cascade automatically.</p>
 <p>Common pitfalls: webhook endpoints go down and events are lost (use a queue like Hookdeck or n8n's built-in retry logic). Payload formats change without notice (validate incoming data before processing). Rate limits cause backlogs during high-volume campaigns (implement exponential backoff). Building reliable webhook automation requires handling these failure modes, not just the happy path.</p>
+<p>Testing webhook automations before production deployment requires simulating events without triggering real downstream actions. Tools like Webhook.site and RequestBin let you inspect webhook payloads without processing them. n8n's test execution mode runs a workflow with sample data without firing real API calls to your CRM or sequencing tools. Build your webhook automation in test mode first, verify the data transformations are correct, then switch to production mode. Skipping this step risks sending malformed data to your CRM or triggering outbound sequences to test contacts who aren't actually prospects.</p>
+<p>Webhook automation at scale requires idempotency: the ability to process the same event twice without creating duplicate records or triggering duplicate actions. Network hiccups cause webhooks to fire twice. Retry logic deliberately re-sends events after failures. Your receiving workflow needs to check whether it has already processed a given event (using a unique event ID) before taking action. Without idempotency, a single webhook retry can create duplicate CRM contacts, send duplicate emails, or generate duplicate Slack alerts. Add deduplication logic at the webhook receiver level, not downstream, to catch duplicates before they propagate through your entire pipeline.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

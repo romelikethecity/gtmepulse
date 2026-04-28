@@ -146,6 +146,9 @@
 <p>The data comes from multiple sources: web scraping, user contributions (Apollo's Chrome extension users contribute data back), business registrations, social profiles, and partnerships with email verification services. Quality varies dramatically. Apollo claims 275M+ contacts. ZoomInfo says 100M+. But "contacts" includes stale records, people who changed jobs last year, and generic role-based emails.</p>
 <p>For GTM Engineers, the key differentiators between providers are: accuracy rate (what percentage of emails reach inboxes?), freshness (how often do they update records?), coverage by region (Cognism dominates Europe, Apollo is strongest in North America), and pricing model (per-seat, per-credit, or annual contract).</p>
 <p>The trend is away from single-provider dependency. Clay's waterfall enrichment lets you query multiple providers in sequence, and FullEnrich does something similar with 15+ underlying sources. The standalone provider model still works for companies that need a single subscription with a simple UI, but power users are stacking providers for better coverage.</p>
+<p>Evaluating a new contact data provider requires testing against your actual target list, not the provider's demo data. Pull 200 contacts from your ICP and run them through the provider's trial. Measure three things: match rate (what percentage returned results?), accuracy (do the returned emails actually verify?), and freshness (are these current job titles or six months stale?). A provider with a 70% match rate and 95% accuracy beats one with 90% match rate and 60% accuracy every time.</p>
+<p>Regional coverage is another factor that only shows up in testing. Apollo is strongest in the US market with deep coverage of tech companies. Cognism dominates Europe, particularly UK and DACH regions, with GDPR-compliant mobile numbers. Lusha performs well in Israel and parts of EMEA. If you sell internationally, you will likely need at least two providers to cover your full territory map. Running separate waterfalls per region, with region-appropriate providers ordered first, produces the best results.</p>
+<p>Contract structure affects your total cost of ownership. Some providers lock you into annual contracts with minimum commitments ($15K+ for ZoomInfo, $30K+ for 6sense). Others offer monthly credit-based pricing (Apollo, FullEnrich, Lusha) that scales with usage. For GTM Engineers evaluating providers, calculate the cost per usable contact (credits spent divided by contacts that pass verification) rather than the headline per-credit price. A provider charging $0.05/credit with a 60% match rate costs $0.083 per usable contact, while a provider at $0.08/credit with a 90% match rate costs $0.089 per usable contact. The cheaper credit price doesn't always mean cheaper results.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -190,7 +193,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -203,7 +206,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -227,7 +230,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -236,7 +239,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -249,7 +252,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

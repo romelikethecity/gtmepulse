@@ -146,6 +146,9 @@
 <p>Verification tools check several things: Does the domain exist? Does the mail server respond? Does the specific mailbox exist? Is the address a known spam trap? Is it a catch-all domain (accepts all emails regardless of address)? The result is a status: valid, invalid, risky, or unknown.</p>
 <p>Most GTM Engineers run verification as a step in their Clay waterfall or as a standalone batch process. NeverBounce, ZeroBounce, and MillionVerifier are popular standalone services. Clay and FullEnrich include verification in their enrichment workflows.</p>
 <p>The economics are simple. Verification costs $0.003-$0.01 per email. A bounced email costs you sender reputation that takes weeks to rebuild. Run verification on every list, every time. Even if the emails are "verified" by the provider. Providers often verify at collection time but addresses go stale fast. Someone changes jobs, and their old email bounces within 90 days.</p>
+<p>Batch verification vs real-time verification serves different purposes. Batch verification runs your entire list through a service before loading it into your sequencing tool. This catches the obvious invalids upfront. Real-time verification checks each email right before sending, catching addresses that went bad between your batch check and the send date. Services like ZeroBounce and NeverBounce offer both modes. For campaigns that run over several weeks, real-time verification prevents the decay problem where a batch-verified list loses 2-3% validity per month.</p>
+<p>Verification results include nuance that many teams ignore. Beyond "valid" and "invalid," most tools return categories like "risky," "accept-all," "disposable," and "role-based." Role-based addresses (info@, support@, sales@) rarely convert in cold outreach because they go to shared inboxes. Disposable addresses (Mailinator, Guerrilla Mail) indicate someone who doesn't want to hear from you. Filtering these categories out before sending, in addition to removing invalids, produces cleaner campaigns with higher engagement rates.</p>
+<p>Building verification into your automation pipeline as a mandatory step, rather than an optional one, prevents the most common deliverability failures. In Clay, add a verification column after your email enrichment column and a filter that blocks unverified emails from reaching the CRM push or sequence enrollment step. In n8n, add a verification API node between enrichment and output. This structural enforcement means no unverified email ever reaches your sending tool, regardless of who runs the workflow or how rushed the timeline is.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

@@ -146,6 +146,8 @@
 <p>The routing logic lives in your CRM, your automation platform, or both. HubSpot and Salesforce have built-in lead assignment rules. But GTM Engineers typically build more sophisticated routing using Clay or n8n because the native CRM rules can't handle multi-step enrichment before routing. You need to enrich the lead with firmographics, score it against your ICP, check for duplicates, and then route it, all before the sales team sees it.</p>
 <p>A production routing workflow: incoming lead triggers a webhook to Clay. Clay enriches the domain with Clearbit (employee count, industry, tech stack). If the company has 50-500 employees and uses HubSpot, it gets routed to the mid-market team. If 500+, enterprise team. If under 50, automated nurture sequence. If the company already exists in the CRM, the lead gets matched to the existing account and assigned to the owning rep. All of this runs without human intervention.</p>
 <p>Bad lead routing kills pipeline. Leads that sit unrouted for 24 hours convert at half the rate of leads contacted within 5 minutes. The speed advantage of automated routing is the entire value proposition. Every minute a qualified lead waits is money left on the table.</p>
+<p>Round-robin routing, where leads distribute equally among reps, is the default but often the wrong choice. Leads from different channels convert at different rates and require different skill sets. An inbound demo request from an enterprise company should go to your best closer, not to whoever is next in the rotation. Build tiered routing: high-value leads go to senior reps, geographic leads go to territory-specific reps, and lower-priority leads go to the general rotation. Most CRMs support assignment rules that implement this tiered logic natively.</p>
+<p>Routing edge cases cause more pipeline loss than people realize. What happens when the assigned rep is on vacation? What happens when a lead's company already exists in the CRM under a different domain? What happens when the same person submits a form twice? Building routing rules for these edge cases (vacation backup assignments, account matching by domain and name, deduplication before routing) catches the 5-10% of leads that would otherwise fall through the cracks. Those edge cases, compounded over months, represent a significant number of lost meetings.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -187,7 +189,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -200,7 +202,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -224,7 +226,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -233,7 +235,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -246,7 +248,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

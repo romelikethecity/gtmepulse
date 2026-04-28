@@ -146,6 +146,8 @@
 <p>6sense, Clearbit Reveal, and Leadfeeder are the main tools in this space. 6sense matches IPs at the account level and layers on intent data. Clearbit Reveal identifies companies and enriches with firmographic data. Leadfeeder focuses specifically on website visitor identification.</p>
 <p>The practical value for GTM Engineers: turn anonymous web traffic into outbound targets. If a company visits your pricing page twice in a week, that's a strong buying signal. You look up decision-makers at that company via Apollo or Clay, and send a targeted cold email referencing the problem your pricing page addresses (without mentioning you know they visited).</p>
 <p>Limitations are real. Remote work broke this partially because home IP addresses don't map to companies. VPNs mask corporate IPs. Small companies rarely have static IP ranges. Match rates typically run 15-30% of total traffic. It's a useful signal source, not a comprehensive visitor identification solution. Combine it with other intent signals for the fullest picture.</p>
+<p>The data you get from reverse IP lookup becomes more valuable when combined with page-level tracking. Knowing that "Microsoft visited your website" is moderately useful. Knowing that "Microsoft visited your pricing page, then your integration docs, then your case studies" tells a story of active evaluation. Most reverse IP tools report which pages the identified company visited and how many times. Routing only the high-intent visitors (pricing page, demo page, documentation) to your outbound pipeline filters out the noise of casual browsing.</p>
+<p>Setting up reverse IP lookup typically involves adding a JavaScript snippet to your website (similar to Google Analytics) or installing a server-side integration. Clearbit Reveal returns results via API, which lets you build real-time routing: detect a high-value company on your pricing page, immediately look up decision-makers via Apollo, and trigger an outbound sequence within minutes. The technical implementation is straightforward. The value comes from the speed of your response. Companies that respond to identified visitors within 1 hour see 7x higher conversion rates than those that batch-process visitor data weekly.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +190,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +203,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +227,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +236,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +249,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

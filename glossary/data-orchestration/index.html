@@ -146,6 +146,9 @@
 <p>A typical orchestration workflow: Start with a list of companies. Enrich with Clearbit for firmographics. Filter by employee count (50-500) and industry (SaaS). Find VP-level contacts via Apollo. Verify emails through FullEnrich. Score leads using an LLM prompt that reads their LinkedIn bio and recent company news. Push qualified leads to HubSpot. Enroll in an Instantly sequence. All of this runs without manual intervention.</p>
 <p>Before Clay, GTM Engineers built this logic in n8n, Make, or custom Python scripts. Those approaches still work and give you more flexibility, but they require more engineering skill. Clay made orchestration visual and accessible to non-engineers.</p>
 <p>The key distinction from simple enrichment: orchestration includes logic. If-then branching, score thresholds, provider fallbacks, data transformation, and output routing. It's the difference between looking up a phone number and building an entire pipeline from prospect identification to sequence enrollment.</p>
+<p>Error handling separates amateur orchestration from production-grade systems. API calls fail, rate limits hit, providers return garbage data. A good orchestration pipeline catches these failures, retries with backoff, falls through to alternate providers, and logs what happened. Bad pipelines silently drop records when an API returns a 429 error, and you lose 15% of your leads without knowing it. Clay handles some of this automatically. Custom n8n or Python pipelines need explicit error handling at every step.</p>
+<p>The economics of orchestration favor specialization. A generalist Clay table that tries to do everything (find companies, enrich firmographics, find contacts, verify emails, personalize, push to CRM) in one workflow gets unwieldy past 10 columns. Experienced GTM Engineers split orchestration into stages: a qualification table, an enrichment table, and an activation table. Each stage runs independently, with clean handoffs between them. This modular approach makes debugging faster and lets you reuse individual stages across campaigns.</p>
+<p>Orchestration documentation pays dividends when things break at 2 AM or when you onboard a new team member. For each workflow, write a one-page doc covering: what triggers it, what data it processes, which APIs it calls, where the output goes, and what to do when it fails. Store these docs next to the workflows themselves (in Clay table descriptions, n8n workflow notes, or a shared Notion page). When a critical pipeline stops producing leads on a Monday morning, the person debugging needs to understand the system in minutes, not hours.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -190,7 +193,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -203,7 +206,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -227,7 +230,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -236,7 +239,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -249,7 +252,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

@@ -146,6 +146,8 @@
 <p>In Clay, AI personalization is a column formula. You reference other columns (company_description, prospect_title, recent_funding) in a prompt: "Write a 2-sentence opening line for a cold email to {prospect_name}, {title} at {company}. Reference their {recent_news} and connect it to how our product helps with {pain_point}." Clay runs this against an LLM API for every row in your table.</p>
 <p>Quality varies. GPT-4 produces polished but sometimes generic output. Claude tends toward more natural phrasing. Both require good prompt engineering to avoid sounding robotic. The best prompts are specific about voice, length, and what not to include ("don't mention our product name in the first sentence, don't start with 'I noticed that'").</p>
 <p>The ROI is clear: personalized emails get 2-3x higher reply rates than templates. At $0.01-$0.05 per AI-generated message, the cost is trivial compared to the pipeline impact. The bottleneck is input data quality. Give the LLM rich context (company description, recent news, tech stack, pain points) and it produces strong personalization. Give it just a name and title, and you get generic output.</p>
+<p>AI-generated personalization has a detection problem. Recipients are getting better at spotting AI-written emails because the phrasing patterns are recognizable: "I was impressed by your company's approach to..." or "I noticed that {company} recently..." sounds algorithmic after you've read 50 of them. The counter-measure is prompt engineering that produces output indistinguishable from human writing. Specify a conversational tone, ban generic openers, require specific details from the enrichment data, and add deliberate imperfections (sentence fragments, informal language) that humans naturally produce but AI tends to avoid.</p>
+<p>Batch processing AI personalization at scale requires cost management. Running Claude or GPT-4 on 5,000 prospects per campaign costs $50-$250 depending on prompt length and model choice. Using cheaper models (GPT-3.5 Turbo, Claude Haiku) for initial drafts and reserving expensive models for top-tier prospects reduces costs by 70-80% with minimal quality loss on the cheaper tier. Caching is another optimization: if 200 prospects are at companies in the same industry, generate one industry-specific angle and reuse it with name and company swaps rather than calling the LLM 200 times for the same type of output.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -185,7 +187,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -198,7 +200,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -222,7 +224,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -231,7 +233,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -244,7 +246,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

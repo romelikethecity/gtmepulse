@@ -169,7 +169,7 @@
     gap: var(--gtme-space-8);
 }
 
-.footer-column h4 {
+.footer-column h3 {
     font-family: var(--gtme-font-heading);
     font-size: var(--gtme-text-sm);
     color: #9B9B9B;

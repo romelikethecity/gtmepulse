@@ -146,6 +146,8 @@
 <p>Common trigger types in GTM: webhook triggers (receive data from an external tool), schedule triggers (run every hour, every day, every Monday), CRM triggers (new deal created, deal stage changed), email triggers (prospect replied, email bounced), and form triggers (someone submitted a landing page form).</p>
 <p>A practical example: your trigger is "HubSpot deal moves to 'Demo Scheduled' stage." The workflow that follows: pull the contact's LinkedIn URL from HubSpot, enrich with Clay for recent company news, generate a personalized pre-demo briefing using Claude's API, and send it to the AE's inbox. The trigger is simple. The downstream value is high.</p>
 <p>GTM Engineers chain triggers across tools. An email reply triggers an Instantly webhook, which triggers an n8n workflow, which updates HubSpot, which triggers a HubSpot workflow that notifies the AE. Each tool's trigger becomes the next tool's input. Understanding this chain is critical for building reliable pipelines that don't drop data between steps.</p>
+<p>Trigger reliability varies by platform. Schedule-based triggers (run every hour) are the most reliable because they don't depend on external events. Webhook triggers are fast but can miss events if your receiving server is down when the webhook fires. Polling triggers (check for new records every 5 minutes) create slight delays but are more resilient than webhooks because they catch up on missed events automatically. For critical workflows like lead routing, running both a webhook trigger (for speed) and a polling trigger (as backup) ensures no leads get lost.</p>
+<p>Trigger storms are a failure mode that catches teams off guard. A bulk CRM import of 5,000 records can fire 5,000 trigger events simultaneously, overwhelming your downstream workflows with concurrent executions. n8n and Make have execution queue limits that drop events when the queue is full. Protect against trigger storms by adding debounce logic (wait 30 seconds after the last trigger before executing, so batch operations consolidate into one run) or by setting concurrency limits on your workflow execution.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +190,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +203,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +227,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +236,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +249,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

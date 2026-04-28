@@ -146,6 +146,8 @@
 <p>There are two ways to build integrations. Native integrations are built-in connections between tools: Clay has a HubSpot integration, Instantly connects to Salesforce, Apollo pushes to dozens of CRMs. These are point-and-click. Custom integrations use API calls through automation platforms (n8n, Make) or code (Python, JavaScript) to build connections that don't exist natively.</p>
 <p>For GTM Engineers, understanding APIs is a career multiplier. The $45K coding premium in salary data connects directly to this skill. You don't need to be a software engineer, but you need to read API documentation, make HTTP requests, handle authentication (API keys, OAuth), and parse JSON responses.</p>
 <p>Common API patterns in GTM: REST APIs (most common, use HTTP methods like GET and POST), GraphQL (used by some modern tools for flexible queries), and webhook-based APIs (push data when events happen). Rate limits are the practical constraint: most APIs restrict how many calls you can make per minute or hour. Working within rate limits while processing thousands of records is a core GTM engineering skill.</p>
+<p>Error handling in API integrations follows a hierarchy. 4xx errors (400 Bad Request, 401 Unauthorized, 404 Not Found) are your problem: bad input, expired credentials, or wrong endpoint. Fix the code. 5xx errors (500 Internal Server Error, 503 Service Unavailable) are the provider's problem: retry with exponential backoff (wait 1 second, then 2, then 4). 429 Too Many Requests means you're hitting rate limits: queue your remaining requests and resume after the rate limit window resets. Logging every API response (status code, response time, key fields) into a database or log file creates an audit trail that makes debugging production issues fast instead of guesswork.</p>
+<p>Pagination is the API integration detail that catches people off guard. When you request "all contacts" from Apollo or HubSpot, the API returns 100 records and a cursor token pointing to the next page. Your script needs to loop through pages until the cursor is empty, collecting results as it goes. Forgetting pagination means your workflow only processes the first 100 records and silently ignores the rest. Every API-consuming script should handle pagination from day one, even if your current dataset is small, because production volumes always grow past single-page responses.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

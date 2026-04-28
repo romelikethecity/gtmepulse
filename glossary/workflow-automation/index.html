@@ -146,6 +146,8 @@
 <p>For GTM Engineers, automation is the core skill. The 2026 survey shows n8n at 54% adoption, Make at 47%, and Zapier at 43% among GTM Engineers. These platforms let you build complex workflows visually: drag nodes onto a canvas, connect them, configure triggers and actions, and deploy.</p>
 <p>A real-world example: a prospect replies "interested" to a cold email. Instantly's webhook fires, triggering an n8n workflow. The workflow enriches the contact with Clay, creates a HubSpot deal, assigns the account executive based on territory, sends a Slack notification, and generates a personalized follow-up email using Claude's API. All automated. The AE's first interaction with this prospect is a warm handoff with full context.</p>
 <p>The line between workflow automation and programming is blurring. n8n includes a code node where you write JavaScript. Make has a filter module with regex support. Clay has formula columns that are essentially Python expressions. GTM Engineers who can work at both levels, visual and code, command the highest salaries.</p>
+<p>Monitoring and alerting for automated workflows is often an afterthought, but it should be built in from the start. A workflow that silently fails at 2 AM on a Saturday means leads sit unprocessed until Monday. Set up Slack notifications for workflow failures, daily summary reports of records processed, and threshold alerts when error rates exceed 5%. n8n has built-in error workflows that catch failures and route them to a notification channel. Make offers similar error handling through its error-handler modules.</p>
+<p>Version control for workflows presents a challenge that code-based approaches handle better. When you change a Make scenario, the previous version is gone unless you manually exported it first. n8n supports workflow versioning if you self-host and connect it to Git. Clay tables have no version history at all. GTM Engineers working on production workflows should export and save configurations before making changes, the same way a developer commits code before refactoring. Losing a working workflow to an untested edit is a painful lesson most people only need to learn once.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

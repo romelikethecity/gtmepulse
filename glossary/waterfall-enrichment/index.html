@@ -146,6 +146,9 @@
 <p>Here's how it works in practice. You need an email for the VP of Sales at a target company. Step 1: check Apollo (free credits). No match. Step 2: check Clearbit. Got a generic company email but no personal one. Step 3: check FullEnrich. Got a verified personal email. You paid for one credit on FullEnrich instead of buying all three subscriptions at full price.</p>
 <p>Clay popularized this pattern by letting you build waterfall logic visually. You set up columns that try Provider A, then B, then C, using conditional logic to skip steps when you already have the data point. n8n and Make can do the same thing with API calls, but Clay made it accessible without code.</p>
 <p>The economics matter. A ZoomInfo subscription runs $15K-$40K/year for unlimited lookups within your contract. A waterfall through Clay costs $0.02-$0.10 per enriched record depending on how many providers you hit. At volumes under 50,000 records/month, the waterfall approach is almost always cheaper.</p>
+<p>Provider ordering in your waterfall matters more than most people realize. Put your cheapest or free-tier providers first (Apollo free credits, Clearbit HubSpot integration) and expensive ones last (FullEnrich, ZoomInfo). This way, you only spend on premium sources for records that cheaper providers missed. A well-ordered waterfall can cut per-record costs by 40-60% compared to a poorly ordered one with the same providers.</p>
+<p>Waterfall logic also applies beyond email lookups. You can waterfall phone numbers (Cognism first, then Lusha, then FullEnrich), company data (Clearbit first, then Apollo), and even LinkedIn profiles (Sales Navigator first, then Prospeo). The pattern works for any data point where multiple providers have partial coverage. Building provider-specific waterfalls for each data type is what separates a basic enrichment setup from a production-grade pipeline.</p>
+<p>Monitoring waterfall performance over time catches provider degradation before it hurts your pipeline. Track match rates per provider monthly. If Apollo's email match rate drops from 45% to 30% over a quarter, it means their data for your ICP segment is getting stale or their coverage shifted. Swap provider ordering, test new providers, or escalate with your account manager. A waterfall is only as good as the providers feeding it, and provider quality fluctuates more than most teams realize.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

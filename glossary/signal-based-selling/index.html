@@ -146,6 +146,8 @@
 <p>The technical infrastructure requires three layers. First, a signal ingestion layer that monitors sources: job change alerts from LinkedIn Sales Navigator, funding data from Crunchbase or PitchBook, technographic changes from BuiltWith or Wappalyzer, and first-party intent from your website and product. Second, a scoring layer that prioritizes which signals matter most for your ICP. Third, an activation layer that routes high-priority signals into outbound sequences automatically.</p>
 <p>GTM Engineers build these pipelines in Clay, n8n, or custom Python scripts. A common setup: Clay monitors a list of target accounts, enriches new signals daily, scores them against your ICP, and pushes qualified signals into Instantly or Outreach sequences within hours of the event. The timing advantage is the whole point. Reaching a new VP of Sales in week one of their role converts at 3-5x the rate of reaching them six months later.</p>
 <p>The shift from volume-based outbound to signal-based selling is the core reason GTM Engineers exist. Automated signal detection and routing replaces what previously required a team of SDRs manually monitoring LinkedIn and trigger event databases.</p>
+<p>Signal fatigue is a real risk as more companies adopt this approach. When every competitor sends a congratulatory email within 48 hours of a funding announcement, the signal loses its differentiation value. The counter-strategy is to focus on less obvious signals that fewer teams are monitoring: a company removing a competitor's technology from their stack (detected via BuiltWith), a new job posting that reveals a specific pain point, or a LinkedIn post where a decision-maker asks for vendor recommendations. These second-order signals require more sophisticated detection but face less outreach competition.</p>
+<p>Building a signal-based selling system requires continuous tuning. Start by tracking which signals correlate with positive reply rates and closed deals. After 90 days of data, you'll find that some signals you thought were valuable (like generic website visits) produce low conversion, while signals you underweighted (like a target account viewing your competitor comparison page) produce high conversion. Re-weight your scoring based on this data every quarter. The system gets smarter over time, but only if you feed it outcome data from the sales team.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

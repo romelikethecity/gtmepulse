@@ -146,6 +146,8 @@
 <p>Example: you set up a webhook in Instantly that fires when a prospect replies. The webhook URL points to an n8n workflow. n8n receives the reply data (contact info, email content, timestamp), runs enrichment, creates a CRM record, and notifies the sales team. The entire chain executes in seconds.</p>
 <p>Most modern SaaS tools support outgoing webhooks. HubSpot, Salesforce, Instantly, Smartlead, Slack, Stripe, and dozens more. The receiving end is typically an automation platform (n8n, Make, Zapier) or a custom endpoint you build.</p>
 <p>Webhooks fail sometimes. The receiving server is down, the payload format changes, or rate limits kick in. Good webhook implementations include retry logic (try again in 30 seconds, then 2 minutes, then 5 minutes), payload logging (so you can replay missed events), and alerting (Slack notification when a webhook fails 3 times). n8n handles retries natively. Custom endpoints need you to build this yourself.</p>
+<p>Security is a real concern with webhooks that many GTM setups ignore. A webhook endpoint is a publicly accessible URL that accepts data. Without verification, anyone who discovers that URL can send fake events to your pipeline. Most webhook providers include a signing mechanism: they hash the payload with a shared secret and include the hash in a header. Your receiving endpoint verifies the hash before processing. HubSpot, Stripe, and Slack all use HMAC signatures. Skipping verification means a bad actor could inject fake leads into your CRM or trigger automated emails to arbitrary contacts.</p>
+<p>Webhook debugging is one of the most time-consuming parts of building GTM automation. When data flows through 3-4 webhook-connected systems and something breaks, finding the failure point requires checking logs at each step. Tools like Hookdeck and Svix sit between your webhook sender and receiver, logging every payload, showing delivery status, and allowing you to replay failed deliveries. Adding a webhook management layer to your stack saves hours of debugging per month, especially when you're running 10+ webhook-connected workflows across your entire pipeline.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +190,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +203,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +227,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +236,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +249,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

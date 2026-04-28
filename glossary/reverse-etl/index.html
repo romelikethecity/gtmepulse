@@ -146,6 +146,9 @@
 <p>Why does this matter for GTM Engineers? Because your data warehouse often has the best version of the truth. Product usage data from Segment, billing data from Stripe, support ticket counts from Zendesk, all joined together in BigQuery. A reverse ETL pipeline can push "users who hit the pricing page 3+ times this week" directly into HubSpot as a hot lead segment.</p>
 <p>A concrete example: your data team builds a lead scoring model in the warehouse that combines product usage, firmographic data, and intent signals. Without reverse ETL, that score lives in a dashboard nobody checks. With Hightouch or Census, the score syncs to Salesforce every hour, and your sequencing tool auto-enrolls high-scoring accounts into outreach cadences.</p>
 <p>The alternative to reverse ETL is writing custom API integrations for every sync. That works at small scale but breaks down when you have 10+ data sources feeding 5+ operational tools. Reverse ETL platforms handle the scheduling, deduplication, and error handling so you don't build it from scratch.</p>
+<p>The setup cost for reverse ETL is front-loaded. You need a data warehouse with clean, modeled data before Hightouch or Census can do anything useful. That means your data team has already built dbt models, defined metrics, and maintains a reliable ELT pipeline from source systems. If your data warehouse is a mess of raw tables, reverse ETL just syncs the mess into your CRM faster. Fix the warehouse first.</p>
+<p>Sync frequency is a practical consideration that affects both cost and value. Real-time syncs (every 5 minutes) cost more in compute and API calls but give sales teams fresh data. Hourly or daily syncs work for most use cases like lead scoring and account segmentation. Reserve real-time syncs for high-impact triggers: a PQL score crossing a threshold or a target account visiting the pricing page. Batch everything else.</p>
+<p>Reverse ETL is gaining traction among GTM Engineers who already have a data warehouse because it eliminates the "two sources of truth" problem. Without reverse ETL, lead scores exist in the warehouse's scoring model AND in HubSpot's native scoring, and they often disagree. With reverse ETL, the warehouse model is the single source of truth, and HubSpot simply displays the score that Hightouch or Census synced over. This single-source pattern extends to ICP grades, account health scores, churn risk indicators, and any other computed metric that needs to be visible in operational tools.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

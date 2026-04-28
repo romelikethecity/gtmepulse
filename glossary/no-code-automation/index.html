@@ -146,6 +146,8 @@
 <p>For GTM Engineers, "no-code" is slightly misleading. The tools are visual, but building effective automations still requires understanding APIs, data structures, conditional logic, and error handling. It's closer to "low-code" or "visual programming" in practice. The Clay formulas that power enrichment waterfalls are essentially code written in a spreadsheet-like syntax.</p>
 <p>The advantages are speed and accessibility. You can build a lead routing workflow in Make in 30 minutes that would take a developer a day to code from scratch. You can modify it without a deploy cycle. Non-technical teammates can understand what the workflow does by looking at the visual canvas.</p>
 <p>The disadvantages: performance limits (some no-code tools choke on large datasets), debugging difficulty (following data through 20 visual nodes is harder than reading a script), and vendor lock-in (your workflows are trapped inside the platform). GTM Engineers who can work in both no-code and code environments have the most flexibility.</p>
+<p>No-code platforms have practical ceilings that become apparent at scale. Zapier's task limits cap your volume. Make scenarios time out at 40 minutes by default, which means large data processing jobs need to be split across multiple scheduled runs. Clay tables slow down noticeably past 5,000 rows. When you hit these ceilings, you either pay significantly more for higher-tier plans or migrate the workflow to code. Knowing where these ceilings are before you build prevents expensive mid-project migrations.</p>
+<p>The migration path from no-code to code is increasingly common in GTM Engineering careers. Most people start by automating simple tasks in Zapier, graduate to more complex workflows in Make or n8n, and eventually write Python scripts for use cases where visual tools are too slow or too limited. Each step builds on the previous one. The logic you learned building Make scenarios (triggers, filters, iterations, error handling) translates directly to programming concepts. Think of no-code as training wheels for automation thinking. You'll probably outgrow some of the tools, but the patterns you learn stay with you.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

@@ -146,6 +146,8 @@
 <p>For GTM Engineers, TAM matters at the operational level. Your enrichment workflow needs to produce a list of companies that fit the ICP. The size of that list relative to your TAM determines whether you need to cast a wide net (large TAM, aggressive outbound) or focus narrowly (small TAM, account-based approach).</p>
 <p>Calculating TAM: start with a market definition (e.g., "B2B SaaS companies with 50-500 employees in North America"). Count the companies (you can get this from Apollo, ZoomInfo, or LinkedIn Sales Navigator searches). Multiply by your average contract value. If there are 15,000 companies in your ICP and your ACV is $30K, your TAM is $450M.</p>
 <p>Related metrics: SAM (Serviceable Addressable Market, the portion you can realistically reach) and SOM (Serviceable Obtainable Market, what you can win given competition). VCs care about TAM. GTM Engineers care about SAM and SOM because those numbers determine outbound volume, territory sizing, and pipeline targets.</p>
+<p>GTM Engineers build TAM lists programmatically. Instead of buying a static list from a data provider, you define your ICP criteria (industry, employee count, revenue range, tech stack, geography) and query Apollo, LinkedIn Sales Navigator, or ZoomInfo for matching companies. The resulting list is your working TAM. Refresh it monthly because new companies form, existing ones grow into your ICP range, and others pivot out of it. A dynamic TAM list that updates automatically via Clay or a Python script always outperforms a static spreadsheet from last quarter.</p>
+<p>TAM saturation tracking tells you when to expand your market definition. If you've contacted 60-70% of the companies in your ICP list and reply rates are declining, your remaining addressable market is shrinking. This is the signal to either expand geographically (add new regions), expand vertically (add adjacent industries), move upmarket or downmarket (change company size criteria), or build a new product motion that addresses a different buyer persona within existing accounts. TAM saturation is a leading indicator that your current outbound approach is running out of runway, and catching it early gives you time to adjust before pipeline dries up.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

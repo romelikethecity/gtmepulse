@@ -146,6 +146,9 @@
 <p>Email providers detect identical emails sent at volume and flag them as spam. Spintax prevents this by ensuring no two emails have the same text. Combined with personalization variables ({first_name}, {company_name}), spintax makes each email structurally unique.</p>
 <p>Instantly and Smartlead support spintax natively. You write it directly in the email editor and preview random variations before sending. Most GTM Engineers use spintax for greetings, subject lines, and calls to action, while keeping the core value proposition consistent.</p>
 <p>The practical limit: don't go overboard. Spintax in every sentence produces Frankenstein emails that don't read naturally. Use it for 3-5 variations in the greeting, opening line, and CTA. Let your enrichment-powered personalization (company name, recent news, job title) do the heavy lifting for uniqueness.</p>
+<p>Testing spintax variations reveals surprising winners. A subject line variant you thought was weak might outperform your favorite by 30%. Run your spintax combinations for 200-300 sends before drawing conclusions. Instantly shows performance per variant so you can identify and kill underperformers. Some teams use this as a lightweight A/B testing mechanism: rotate three subject line variants via spintax, check results after a week, then hardcode the winner for the remaining sends.</p>
+<p>Spintax also helps with deliverability at scale. If you're sending 500+ emails per day, email providers can detect patterns in identical content even across different inboxes and domains. Spintax breaks these patterns by ensuring every email has a unique text fingerprint. Combine spintax with personalization variables, and each email becomes structurally unique. This is why experienced GTM Engineers always use at least basic spintax ({Hi|Hey|Hello} {first_name}) even when their personalization engine is generating unique opening lines for every prospect.</p>
+<p>Maintaining readability across all spintax combinations requires careful testing. Write out every possible combination and read them aloud. If any combination produces an awkward sentence ("Hey, Curious about the process at Acme?"), fix the surrounding text or remove that variant. Instantly's preview feature lets you cycle through random combinations before launching a campaign. Five minutes of preview testing catches problems that would otherwise reach hundreds of inboxes and undermine the professionalism of your outreach.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

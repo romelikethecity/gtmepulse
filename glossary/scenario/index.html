@@ -146,6 +146,8 @@
 <p>Make's strength over Zapier is its visual branching. You can split a workflow into multiple paths using routers (if industry = SaaS, go Path A; if industry = Healthcare, go Path B). Error handlers let you catch failures and route them to a notification or retry logic. Iterators process arrays item by item without manual looping.</p>
 <p>For GTM Engineers, Make scenarios handle mid-complexity workflows well. Enrichment pipelines that query 2-3 APIs, transform data, filter by criteria, and push to a CRM. The HTTP module lets you call any API, even ones without native Make integrations. At $9/month for 10,000 operations, it's the best value in the automation market.</p>
 <p>The trade-off vs n8n: Make is hosted (no server management) but has operation limits. n8n is self-hosted (no operation limits) but requires a server. Most GTM Engineers pick one based on whether they're comfortable managing infrastructure. If you are, n8n wins on economics. If you're not, Make wins on simplicity.</p>
+<p>Make's operation counting can be confusing. Each module execution counts as one operation. A scenario with 5 modules that runs once uses 5 operations. If that scenario triggers 100 times per day, that's 500 operations daily, or roughly 15,000 per month. The $9/month plan includes 10,000 operations. The $16/month plan includes 10,000 but allows scheduling down to every minute. Forecasting your operation usage before committing to a plan prevents surprise overages. A trick: use filters early in your scenario to skip unnecessary downstream processing, reducing operation counts by 30-50% on workflows that don't process every trigger.</p>
+<p>Make scenarios support data stores, which are built-in key-value databases that persist information between executions. You can store processed record IDs to prevent duplicate processing, maintain running counts for daily volume limits, or cache API responses to avoid redundant lookups. Data stores eliminate the need for an external database in many GTM workflows. For deduplication alone, they're invaluable: check the data store for a contact's email before processing, skip if found, add the email to the store after successful processing.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

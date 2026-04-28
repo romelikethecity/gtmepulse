@@ -146,6 +146,8 @@
 <p>For GTM Engineers, CRM quality is about API quality. Can you programmatically create contacts, update deal stages, trigger workflows, and pull reports? HubSpot's API is well-documented and generous on free tier limits. Salesforce's API (SOQL/SOSL) is powerful but requires more technical depth. Both integrate with Clay, n8n, Make, and every major outbound tool.</p>
 <p>The CRM as system of record means everything syncs here. Enrichment data from Clay updates contact fields. Email engagement from Instantly updates activity timelines. Meeting notes from Gong attach to deal records. Product usage from Segment updates custom properties. If data doesn't make it to the CRM, it doesn't exist for the sales team.</p>
 <p>CRM hygiene is an ongoing battle. Duplicate contacts, stale deals, inconsistent field values, and incomplete records degrade everything downstream: reports, routing rules, automation triggers, and forecasting. GTM Engineers spend 10-20% of their time maintaining data quality, either through automated deduplication rules or periodic cleanup workflows.</p>
+<p>CRM selection for GTM Engineering teams comes down to API flexibility and ecosystem size. HubSpot's free CRM tier is generous enough for startups under 20 people: 1,000,000 contacts, basic automation, and a solid API. Salesforce starts at $25/user/month and scales to handle enterprise complexity (custom objects, advanced permissions, Apex triggers). Attio is gaining traction among GTM Engineers who want a modern API-first CRM without Salesforce's configuration overhead. Close CRM serves inside sales teams that want built-in calling and email tracking. Pipedrive focuses on visual pipeline management for smaller deal volumes.</p>
+<p>Custom CRM fields for GTM Engineers typically include: enrichment source (which provider supplied the data), enrichment date (when was this record last updated), lead score (calculated externally and synced in), ICP fit grade (A/B/C/D based on firmographic match), outbound sequence status (active, completed, paused), and source campaign (which outbound campaign generated this lead). These fields transform the CRM from a generic contact database into a GTM-specific operating system that your automation workflows can read from and write to with precision.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -187,7 +189,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -200,7 +202,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -224,7 +226,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -233,7 +235,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -246,7 +248,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

@@ -146,6 +146,8 @@
 <p>Four factors control deliverability. Sender reputation: email providers score your domain and IP based on bounce rates, spam complaints, and engagement. Authentication: SPF, DKIM, and DMARC records prove you're authorized to send from that domain. Content: spam trigger words, excessive links, and image-heavy emails get filtered. Sending patterns: sudden volume spikes, sending at 3 AM, and identical messages to hundreds of recipients all trigger spam filters.</p>
 <p>GTM Engineers manage deliverability through domain warm-up, inbox rotation, volume throttling, and monitoring. Tools like Instantly and Smartlead track deliverability metrics per inbox. If one inbox's placement drops, you reduce its volume or take it offline for re-warming.</p>
 <p>The most overlooked factor: engagement. When recipients open, reply to, and click links in your emails, it boosts your sender score. When they ignore or delete them, it hurts. This creates a positive feedback loop: better targeting leads to better engagement leads to better deliverability leads to more replies.</p>
+<p>Deliverability monitoring requires daily attention during active campaigns. Check inbox placement rates using tools like GlockApps or MailReach's deliverability tests. These services send your email to seed addresses across Gmail, Outlook, and Yahoo, then report where each one landed (primary inbox, promotions tab, spam, or not delivered). A drop from 90% to 70% inbox placement is invisible in your sending tool's metrics but devastates campaign performance. Catching it early gives you time to reduce volume and investigate before your domain reputation craters.</p>
+<p>Content-based spam filtering is getting smarter. Words like "guaranteed," "act now," and "limited time" have always triggered spam filters. But modern AI-based filters also detect patterns like excessive capitalization, too many exclamation marks, HTML-heavy emails with minimal text, and emails that look like they came from a template. Writing cold emails in plain text (no HTML formatting, no images, no logos) consistently outperforms formatted emails on deliverability. Your email should look like a real person typed it in Gmail, because that's what spam filters are trained to expect from legitimate messages.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

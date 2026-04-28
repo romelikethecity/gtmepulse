@@ -146,6 +146,8 @@
 <p>A typical Clay table structure: Column A is the company domain (your input). Column B enriches with Clearbit for firmographics. Column C filters by employee count. Column D finds the VP of Sales via Apollo. Column E verifies their email through FullEnrich. Column F generates a personalized email opener using Claude. Column G pushes the complete record to HubSpot. Each column executes in sequence, left to right, for every row.</p>
 <p>Tables support conditional logic. You can skip expensive enrichment steps for records that already have the data you need. You can branch based on company size, routing enterprise accounts to one sequence and mid-market to another. You can set up error handling so that failed API calls retry or fall through to a backup provider.</p>
 <p>GTM Engineers build table templates for repeatable workflows: ICP qualification tables, contact enrichment tables, account research tables, and lead scoring tables. Experienced engineers maintain libraries of 10-20 templates they customize for each client or campaign. The table is the fundamental unit of work in Clay, the same way a workflow is the fundamental unit in n8n or Make.</p>
+<p>Table performance degrades with complexity. A table with 30+ columns running on 10,000 rows will process slowly and consume credits rapidly. The practical approach is to split large workflows into chained tables. Table 1 handles company qualification (firmographic enrichment and ICP filtering). Its output feeds Table 2, which handles contact finding and email verification. Table 2's output feeds Table 3, which runs AI personalization and pushes to the CRM. This chain reduces per-table complexity, makes debugging easier, and lets you re-run individual stages without reprocessing the entire pipeline.</p>
+<p>Clay table collaboration features matter for teams. Multiple team members working in the same table can overwrite each other's changes. Clay's workspace permissions let you control who can edit columns versus who can only view results. For production tables that feed live outbound campaigns, restricting edit access to the GTM Engineer who built them prevents accidental changes that break downstream processes. Keep development tables separate from production tables, the same way software teams use staging and production environments.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -190,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -203,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -227,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -236,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -249,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

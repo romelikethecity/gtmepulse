@@ -146,6 +146,8 @@
 <p>Categories of buyer signals: Digital signals (pricing page visits, demo request form abandonment, competitor comparison page views). Organizational signals (new VP of Sales hired, company raised a funding round, competitor contract expiring). Technology signals (started using a complementary tool, removed a competitor from their tech stack). Social signals (engaged with your LinkedIn content, mentioned your category in a post).</p>
 <p>The GTM Engineering challenge is aggregating signals from multiple sources into a unified score. Product usage data from PostHog or Segment, CRM engagement from HubSpot, intent data from Bombora, and job posting data from LinkedIn all contain signals. Clay can pull many of these together. Custom Python scripts handle the rest.</p>
 <p>The most effective signal-based outreach references the signal directly: "I noticed your team posted a GTM Engineer role last week. We help companies like yours build the enrichment infrastructure that new GTM hires need on day one." Specific, timely, relevant. That's a 3x better email than a generic pitch.</p>
+<p>Scoring buyer signals requires weighting by recency and strength. A pricing page visit from today is worth 10 points. The same visit from 30 days ago is worth 2 points. A new VP hire is worth 15 points at announcement time and decays to 5 points after 90 days (the new exec's evaluation window closes). Build time-decay into your scoring models so that stale signals don't crowd out fresh ones. Most CRM scoring systems support time-based decay rules natively.</p>
+<p>Combining multiple weak signals creates a strong composite signal. One LinkedIn post about CRM migration means nothing on its own. But that post, combined with a job posting for a Salesforce admin, a visit to your pricing page, and a G2 comparison that includes your product, creates a composite signal that's as strong as any single high-intent action. GTM Engineers who build composite signal detection catch buying intent that single-signal systems miss entirely.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +190,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +203,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +227,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +236,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +249,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

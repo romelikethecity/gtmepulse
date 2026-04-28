@@ -146,6 +146,8 @@
 <p>A basic event tracking implementation: track sign-up, onboarding completion, core feature usage, upgrade page views, and churn signals (14 days of inactivity). Each event fires to Segment, which routes it to PostHog for analytics and HubSpot for CRM context. When a user activates 3+ features, the PQL score crosses a threshold, and the AE gets notified.</p>
 <p>GTM Engineers care about event tracking because it feeds the signals they use for outbound. Product usage data is the highest-quality intent signal you have. Third-party intent from Bombora tells you a company is researching your category. Product events tell you a specific person is actively using your tool and approaching a buying decision.</p>
 <p>The implementation reality: getting clean event tracking requires coordination with the product engineering team. Events need consistent naming (snake_case, past tense: "feature_activated" not "Feature Activation"), relevant properties (plan, user_role, company_size), and reliable delivery. Bad event tracking produces bad signals, which produce bad outreach targeting.</p>
+<p>An event tracking plan document should exist before any code is written. List every event you plan to track, its name, the properties attached to it, and which downstream system consumes it. Tools like Avo and Amplitude's Govern feature enforce this plan, preventing engineers from shipping events with wrong names or missing properties. Without a plan, event tracking sprawls into hundreds of inconsistently named events that nobody can interpret. A 30-event tracking plan that's clean is worth more than a 300-event mess.</p>
+<p>Server-side event tracking is replacing client-side tracking for GTM-critical events. Browser-based tracking (JavaScript snippets) gets blocked by ad blockers (affecting 25-40% of B2B users), fails when pages don't fully load, and can be tampered with. Server-side tracking captures events at the application level before they reach the browser, ensuring 100% capture rates for important actions like signups, feature activations, and upgrade requests. Segment, PostHog, and Rudderstack all support server-side SDKs. For events that feed your PQL scoring and outbound triggers, server-side tracking eliminates the data loss that makes client-side tracking unreliable.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -188,7 +190,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -201,7 +203,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -225,7 +227,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -234,7 +236,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -247,7 +249,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

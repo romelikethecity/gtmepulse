@@ -146,6 +146,8 @@
 <p>In practice, revenue orchestration looks like this. A prospect visits your pricing page (product signal). That event fires a webhook to Clay, which enriches the visitor's company data. If the company matches your ICP (50-500 employees, SaaS, Series A+), Clay pushes the contact to HubSpot as a qualified lead and enrolls them in an Instantly outbound sequence. When the prospect replies, the sequence pauses automatically and a Slack notification alerts the AE. After the deal closes, the customer data flows to the CS team's tooling for onboarding triggers.</p>
 <p>The tools that power orchestration: Clay or n8n for data workflows, HubSpot or Salesforce for CRM, Instantly or Outreach for sequencing, Segment or Hightouch for product data, and webhooks connecting everything. The GTM Engineer designs, builds, and maintains the connections between these systems.</p>
 <p>Revenue orchestration is sometimes confused with revenue operations (RevOps). The difference: RevOps focuses on process design, reporting, and strategic alignment across go-to-market teams. Revenue orchestration is the technical implementation layer. It's the difference between drawing the blueprint and wiring the building.</p>
+<p>Measuring orchestration effectiveness requires tracking end-to-end metrics, not just individual step performance. Your enrichment might be 95% accurate, your sequences might have a 5% reply rate, and your CRM might be clean, but if the handoff between enrichment and sequencing drops 10% of records due to a misconfigured webhook, your pipeline has a hidden leak. Build monitoring dashboards that track record counts at each stage of the orchestration pipeline. If 1,000 records enter enrichment but only 850 enter the sequence, find where the 150 went. These stage-by-stage audits reveal systemic leaks that component-level metrics can't show.</p>
+<p>Orchestration complexity has a maintenance cost. Every tool you add, every API connection you create, and every conditional branch you build increases the surface area for failures. A 3-tool orchestration (Clay, Instantly, HubSpot) is manageable for one person. A 10-tool orchestration spanning enrichment, sequencing, CRM, analytics, Slack, billing, and customer success requires dedicated maintenance time. Budget 4-8 hours per week for monitoring, debugging, and updating your orchestration infrastructure. Neglecting maintenance leads to silent failures that accumulate until your pipeline stops producing meetings and nobody can explain why.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -190,7 +192,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -203,7 +205,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -227,7 +229,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -236,7 +238,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -249,7 +251,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

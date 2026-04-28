@@ -146,6 +146,8 @@
 <p>Classic PQL signals: user hit their free tier limits, invited 3+ team members, activated an advanced feature, logged in 10+ times in a week, or exported data (indicating they're building a workflow around your product). Each product defines its own PQL criteria based on which behaviors correlate with conversion.</p>
 <p>For GTM Engineers, PQLs are the highest-converting outreach targets. The prospect already uses your product and likes it enough to keep coming back. Your job is to detect the PQL signal, enrich the contact with company data, route them to the right AE, and provide context about what they've done in the product.</p>
 <p>Building a PQL system requires product analytics (PostHog, Segment, Mixpanel), a scoring model (which behaviors predict conversion?), and a trigger mechanism (when the score crosses a threshold, create a CRM opportunity and notify the AE). This is a natural fit for n8n or Make workflows that listen for product events and orchestrate the downstream actions.</p>
+<p>Defining PQL criteria requires collaboration between the GTM Engineer and the data team. Start by analyzing 50-100 accounts that converted from free to paid over the past 6 months. What features did they activate before converting? How many team members did they invite? How many days elapsed between signup and payment? The patterns you find become your PQL scoring rules. Revisit these criteria quarterly because product changes, new features, and shifting ICP definitions will make old PQL rules stale.</p>
+<p>Negative PQL signals matter as much as positive ones. A user who signed up 60 days ago, used the product twice, and hasn't logged in for 3 weeks is not a PQL even if their company firmographics are perfect. Building "anti-PQL" rules that exclude disengaged users prevents your AEs from wasting calls on people who tried the product and didn't find value. The combination of positive signals (active usage, team invites, feature activation) and negative filters (inactivity, no invites, never activated core features) produces PQL lists that convert at 3-5x the rate of unfiltered MQL lists.</p>
 
     <section class="related-links" style="margin-top: 2rem;">
     <h2>Learn More</h2>
@@ -189,7 +191,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="footer-column">
-    <h4>Salary Data</h4>
+    <h3>Salary Data</h3>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
 <li><a href="/salary/by-experience/">By Seniority</a></li>
@@ -202,7 +204,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Resources</h4>
+    <h3>Resources</h3>
     <ul>
         <li><a href="/tools/">GTM Tools</a></li>
 <li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
@@ -226,7 +228,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>Site</h4>
+    <h3>Site</h3>
     <ul>
         <li><a href="/privacy/">Privacy Policy</a></li>
 <li><a href="/terms/">Terms of Service</a></li>
@@ -235,7 +237,7 @@
     </ul>
 </div>
 <div class="footer-column">
-    <h4>GTM Tools & Resources</h4>
+    <h3>GTM Tools & Resources</h3>
     <ul>
         <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
 <li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
@@ -248,7 +250,7 @@
 </div>
 
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

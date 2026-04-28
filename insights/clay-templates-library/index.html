@@ -72,10 +72,10 @@
     </button>
     <ul class="nav-dropdown">
         <li><a href="/salary/">Salary Index</a></li>
-<li><a href="/salary/by-seniority/">By Seniority</a></li>
-<li><a href="/salary/by-location/">By Location</a></li>
-<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
-<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Company Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
 <li><a href="/salary/calculator/">Salary Calculator</a></li>
 
     </ul>
@@ -191,7 +191,7 @@
     <p>Takes names and companies, resolves verified LinkedIn profiles through a waterfall: Clay lookup, Apollo people search, then <a href="/tools/phantombuster-review/">PhantomBuster</a> Google scraper. Validation checks company domain match, not just name.</p>
     <p><strong>Why validation matters:</strong> Name matching alone produces 15-25% false positives. "John Smith at Acme" might match 8 LinkedIn profiles. The validation column checks that the LinkedIn profile's listed company matches your target domain (or a known subsidiary). This drops false positives below 3%.</p>
     <p><strong>Column structure:</strong> Full name, company domain, Clay LinkedIn lookup, Apollo LinkedIn lookup, PhantomBuster Google search (query: "[name] [company] site:linkedin.com/in/"), validated URL (COALESCE of verified results), confidence score (high/medium/low based on source and match quality). The PhantomBuster step costs $0.01-0.02 per lookup and catches 8-12% of contacts that Clay and Apollo miss.</p>
-    <p><strong>Use case:</strong> LinkedIn profile URLs are required for <a href="/tools/heyreach-review/">HeyReach</a>, <a href="/tools/expandi-review/">Expandi</a>, and other LinkedIn automation tools. Without verified URLs, connection requests go to the wrong person. This template is a prerequisite for any LinkedIn outreach campaign.</p>
+    <p><strong>Use case:</strong> LinkedIn profile URLs are required for <a href="/tools/heyreach-review/">HeyReach</a>, <a href="/tools/heyreach-vs-expandi/">Expandi</a>, and other LinkedIn automation tools. Without verified URLs, connection requests go to the wrong person. This template is a prerequisite for any LinkedIn outreach campaign.</p>
 
     <h2>Template 7: CRM Data Hygiene</h2>
     <p>Title standardization, email re-verification (90+ day contacts), firmographic refresh, stale contact flagging. Push cleaned records back via Clay's native CRM integration. Run monthly to keep decay below 3%. See the <a href="/insights/crm-hygiene/">CRM hygiene playbook</a>.</p>
@@ -295,10 +295,10 @@
     <h4>Salary Data</h4>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
-<li><a href="/salary/by-seniority/">By Seniority</a></li>
-<li><a href="/salary/by-location/">By Location</a></li>
-<li><a href="/salary/by-company-stage/">By Stage</a></li>
-<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
 <li><a href="/salary/coding-premium/">Coding Premium</a></li>
 <li><a href="/salary/equity/">Equity Data</a></li>
 

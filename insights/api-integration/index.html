@@ -71,10 +71,10 @@
     </button>
     <ul class="nav-dropdown">
         <li><a href="/salary/">Salary Index</a></li>
-<li><a href="/salary/by-seniority/">By Seniority</a></li>
-<li><a href="/salary/by-location/">By Location</a></li>
-<li><a href="/salary/by-company-stage/">By Company Stage</a></li>
-<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Company Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
 <li><a href="/salary/calculator/">Salary Calculator</a></li>
 
     </ul>
@@ -215,7 +215,7 @@ def enrich_contact(email):
         return None</code></pre>
     <p><strong>Rate limiting.</strong> Every API has limits. Apollo: 50 requests/minute on the free tier. HubSpot: 100/10 seconds. Clearbit: varies by plan. Your script needs to respect these limits. The simplest approach: add a <code>time.sleep()</code> between requests. Better approach: track your request count and pause when you approach the limit. Best approach: use exponential backoff (wait 1 second after first 429, 2 seconds after second, 4 after third).</p>
     <p><strong>Error handling.</strong> API calls fail. Networks time out. Services go down. Auth tokens expire. Your script should handle all of these gracefully. Wrap every API call in try/except. Log failures with enough context to debug (which record, what error code, what message). Save partial results to disk after every batch of 50-100 records. If your script crashes at record 3,000 of 5,000, you want to resume from 3,000, not start over.</p>
-    <p><strong>Data persistence.</strong> Write results to disk immediately after each API call. Don't hold thousands of enrichment results in memory and write once at the end. If the script crashes, you lose everything. Write to a JSON Lines file (one JSON object per line) or a SQLite database. Both handle appends well and don't require external services. For <a href="/careers/skills/python/">Python skill development</a>, this persistence pattern is foundational.</p>
+    <p><strong>Data persistence.</strong> Write results to disk immediately after each API call. Don't hold thousands of enrichment results in memory and write once at the end. If the script crashes, you lose everything. Write to a JSON Lines file (one JSON object per line) or a SQLite database. Both handle appends well and don't require external services. For <a href="/tools/python/">Python skill development</a>, this persistence pattern is foundational.</p>
 
     <h2>n8n and Make Workflow Patterns</h2>
     <p><a href="/tools/category/workflow-automation/">Workflow automation tools</a> sit between no-code simplicity and full-code flexibility. They're visual, but they support HTTP nodes, JavaScript/Python code steps, and complex branching logic.</p>
@@ -283,10 +283,10 @@ def enrich_contact(email):
     <h4>Salary Data</h4>
     <ul>
         <li><a href="/salary/">Salary Index</a></li>
-<li><a href="/salary/by-seniority/">By Seniority</a></li>
-<li><a href="/salary/by-location/">By Location</a></li>
-<li><a href="/salary/by-company-stage/">By Stage</a></li>
-<li><a href="/salary/comparisons/">Comparisons</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
 <li><a href="/salary/coding-premium/">Coding Premium</a></li>
 <li><a href="/salary/equity/">Equity Data</a></li>
 

@@ -263,6 +263,8 @@ Use periods, commas, or restructure.
 
 ## SEO Standards
 
+**READ FIRST:** `/Users/rome/Documents/websites/SEO_BEST_PRACTICES.md` for cross-site standards (1,200 word minimum, anti-AI detection, stale page handling). The targets below are page-type-specific and enforced by `validate_pages()` in build.py.
+
 ### Meta Tags (every page)
 - `<title>`: 50-60 chars, keyword-first, hyphens not pipes
 - `<meta name="description">`: 150-158 chars, action-oriented, unique per page

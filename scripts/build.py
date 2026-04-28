@@ -18178,7 +18178,7 @@ def validate_pages():
     SKIP_BREADCRUMB = {"index.html", "privacy/index.html", "terms/index.html", "404.html", "newsletter/index.html"}
     SKIP_INTERNAL_LINKS = {"index.html", "privacy/index.html", "terms/index.html", "404.html", "newsletter/index.html"}
     # Data page directories (must have source citations, word count checks)
-    DATA_DIRS = ("salary/", "careers/", "tools/", "benchmarks/", "comparisons/", "blog/", "insights/")
+    DATA_DIRS = ("salary/", "careers/", "tools/", "benchmarks/", "comparisons/", "blog/", "insights/", "glossary/")
 
     # Category index pages are listing pages (tool cards), not data pages.
     # Exempt from word count and source citation checks.
@@ -18334,19 +18334,37 @@ def validate_pages():
                 text_only = re.sub(r'<[^>]+>', ' ', text_only)
                 text_only = re.sub(r'\s+', ' ', text_only).strip()
                 word_count = len(text_only.split())
-                if rel.startswith("blog/"):
-                    if word_count < 1300:
-                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1300+ for blog)")
-                elif rel.startswith("insights/"):
-                    if word_count < 1300:
-                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1300+ for insights)")
+                # Word count thresholds per CLAUDE.md Content Length Targets
+                if rel.startswith("glossary/"):
+                    if word_count < 300:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 300+ for glossary)")
                 elif rel.startswith("salary/calculator"):
-                    # Calculator is interactive (JS-driven), word count threshold is lower
                     if word_count < 500:
                         warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 500+ for calculator)")
+                elif "tools/" in rel and "-vs-" in rel:
+                    if word_count < 3000:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 3000+ for tool comparison)")
+                elif re.match(r"tools/[^/]+-review/", rel):
+                    if word_count < 1500:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1500+ for tool review)")
+                elif rel.startswith("blog/"):
+                    if word_count < 1500:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1500+ for blog)")
+                elif rel.startswith("insights/"):
+                    if word_count < 1500:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1500+ for insights)")
+                elif rel.startswith("careers/"):
+                    if word_count < 2000:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 2000+ for career guide)")
+                elif rel.startswith("salary/"):
+                    if word_count < 1200:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1200+ for salary page)")
+                elif rel.startswith("comparisons/"):
+                    if word_count < 1200:
+                        warnings.append(f"QUAL2-05: {rel}: word count {word_count} (want 1200+ for comparison)")
                 else:
-                    if word_count < 1000:
-                        warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 1000+ for data page)")
+                    if word_count < 1200:
+                        warnings.append(f"QUAL2-04: {rel}: word count {word_count} (want 1200+ for content page)")
 
             # --- QUAL3-01: SoftwareApplication schema on tool review pages ---
             if re.match(r"tools/[^/]+-review/index\.html$", rel):

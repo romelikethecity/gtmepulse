@@ -155,6 +155,377 @@
     </div>
 </section>
 
+<!-- Newsletter Preview Mockup -->
+<style>
+.gtme-preview-section {
+    padding: 4rem 1.5rem;
+    background: #0a0a0a;
+}
+.gtme-preview-section h2 {
+    text-align: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gtme-text, #F0F0F0);
+    margin-bottom: 0.5rem;
+}
+.gtme-preview-section .gtme-preview-subtitle {
+    text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #999;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+.gtme-preview-window {
+    max-width: 680px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    background: #111111;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    position: relative;
+}
+.gtme-preview-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+}
+.gtme-preview-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.gtme-preview-dot--red { background: #ff5f57; }
+.gtme-preview-dot--yellow { background: #febc2e; }
+.gtme-preview-dot--green { background: #28c840; }
+.gtme-preview-toolbar-label {
+    margin-left: 12px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.8rem;
+    color: #666;
+}
+.gtme-preview-body {
+    padding: 1.5rem;
+    position: relative;
+}
+.gtme-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #2a2a2a;
+}
+.gtme-preview-nl-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FF4F1F;
+}
+.gtme-preview-nl-date {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.75rem;
+    color: #666;
+}
+.gtme-preview-headline {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #F0F0F0;
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
+}
+.gtme-preview-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+.gtme-preview-stat-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 1rem;
+}
+.gtme-preview-stat-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #F0F0F0;
+    display: block;
+}
+.gtme-preview-stat-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+    display: block;
+    margin-top: 2px;
+}
+.gtme-preview-stat-trend {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.7rem;
+    color: #28c840;
+    display: block;
+    margin-top: 4px;
+}
+.gtme-preview-signals {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+.gtme-preview-signal {
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    border-right: 1px solid #2a2a2a;
+}
+.gtme-preview-signal:last-child { border-right: none; }
+.gtme-preview-signal-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #FF4F1F;
+    display: block;
+}
+.gtme-preview-signal-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.65rem;
+    color: #888;
+    display: block;
+    margin-top: 2px;
+}
+.gtme-preview-table {
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+.gtme-preview-table-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #F0F0F0;
+    margin-bottom: 0.5rem;
+}
+.gtme-preview-row {
+    display: flex;
+    align-items: center;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #1a1a1a;
+}
+.gtme-preview-row-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #ccc;
+    width: 140px;
+    flex-shrink: 0;
+}
+.gtme-preview-row-bar-wrap {
+    flex: 1;
+    height: 18px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 0.75rem;
+}
+.gtme-preview-row-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #FF4F1F, #ff7a4f);
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+.gtme-preview-row-value {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.75rem;
+    color: #999;
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+}
+.gtme-preview-divider {
+    border: none;
+    border-top: 1px solid #2a2a2a;
+    margin: 1rem 0;
+}
+.gtme-preview-salary-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #F0F0F0;
+    margin-bottom: 0.5rem;
+}
+.gtme-preview-salary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #1a1a1a;
+}
+.gtme-preview-salary-role {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+.gtme-preview-salary-amount {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #F0F0F0;
+}
+.gtme-preview-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, transparent, #111111 85%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    pointer-events: none;
+}
+.gtme-preview-fade a {
+    pointer-events: auto;
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: #FF4F1F;
+    padding: 0.65rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.gtme-preview-fade a:hover { background: #e0431a; }
+.gtme-preview-body-inner {
+    padding-bottom: 80px;
+}
+@media (max-width: 600px) {
+    .gtme-preview-section { padding: 2.5rem 1rem; }
+    .gtme-preview-section h2 { font-size: 1.5rem; }
+    .gtme-preview-stats { grid-template-columns: 1fr; }
+    .gtme-preview-signals { grid-template-columns: 1fr; }
+    .gtme-preview-signal { border-right: none; border-bottom: 1px solid #2a2a2a; }
+    .gtme-preview-signal:last-child { border-bottom: none; }
+    .gtme-preview-headline { font-size: 1rem; }
+    .gtme-preview-row-label { width: 110px; font-size: 0.72rem; }
+    .gtme-preview-stat-value { font-size: 1.15rem; }
+}
+</style>
+
+<section class="gtme-preview-section">
+    <h2>Here's What Monday Morning Looks Like</h2>
+    <p class="gtme-preview-subtitle">Every week, data that keeps you ahead of the market.</p>
+    <div class="gtme-preview-window">
+        <div class="gtme-preview-toolbar">
+            <span class="gtme-preview-dot gtme-preview-dot--red"></span>
+            <span class="gtme-preview-dot gtme-preview-dot--yellow"></span>
+            <span class="gtme-preview-dot gtme-preview-dot--green"></span>
+            <span class="gtme-preview-toolbar-label">Inbox | The Weekly Pulse</span>
+        </div>
+        <div class="gtme-preview-body">
+            <div class="gtme-preview-body-inner">
+                <div class="gtme-preview-header">
+                    <span class="gtme-preview-nl-name">The Weekly Pulse</span>
+                    <span class="gtme-preview-nl-date">Apr 28, 2026</span>
+                </div>
+
+                <div class="gtme-preview-headline">
+                    Clay sits at the center for 84% of practitioners. AI coding tools hit 71%.
+                </div>
+
+                <div class="gtme-preview-stats">
+                    <div class="gtme-preview-stat-card">
+                        <span class="gtme-preview-stat-value">3,342</span>
+                        <span class="gtme-preview-stat-label">Job Postings Tracked</span>
+                        <span class="gtme-preview-stat-trend">+5,205% growth since 2020</span>
+                    </div>
+                    <div class="gtme-preview-stat-card">
+                        <span class="gtme-preview-stat-value">$135K</span>
+                        <span class="gtme-preview-stat-label">Median Salary</span>
+                        <span class="gtme-preview-stat-trend">Range: $60K - $250K</span>
+                    </div>
+                </div>
+
+                <div class="gtme-preview-signals">
+                    <div class="gtme-preview-signal">
+                        <span class="gtme-preview-signal-value">228</span>
+                        <span class="gtme-preview-signal-label">Survey Respondents</span>
+                    </div>
+                    <div class="gtme-preview-signal">
+                        <span class="gtme-preview-signal-value">71%</span>
+                        <span class="gtme-preview-signal-label">Use AI Coding Tools</span>
+                    </div>
+                    <div class="gtme-preview-signal">
+                        <span class="gtme-preview-signal-value">84%</span>
+                        <span class="gtme-preview-signal-label">Use Clay</span>
+                    </div>
+                </div>
+
+                <div class="gtme-preview-table">
+                    <div class="gtme-preview-table-title">Top GTM Tools by Adoption</div>
+                    <div class="gtme-preview-row">
+                        <span class="gtme-preview-row-label">CRM Systems</span>
+                        <div class="gtme-preview-row-bar-wrap"><div class="gtme-preview-row-bar" style="width:92%"></div></div>
+                        <span class="gtme-preview-row-value">92%</span>
+                    </div>
+                    <div class="gtme-preview-row">
+                        <span class="gtme-preview-row-label">Clay</span>
+                        <div class="gtme-preview-row-bar-wrap"><div class="gtme-preview-row-bar" style="width:84%"></div></div>
+                        <span class="gtme-preview-row-value">84%</span>
+                    </div>
+                    <div class="gtme-preview-row">
+                        <span class="gtme-preview-row-label">AI Coding Tools</span>
+                        <div class="gtme-preview-row-bar-wrap"><div class="gtme-preview-row-bar" style="width:71%"></div></div>
+                        <span class="gtme-preview-row-value">71%</span>
+                    </div>
+                    <div class="gtme-preview-row">
+                        <span class="gtme-preview-row-label">Outreach Tools</span>
+                        <div class="gtme-preview-row-bar-wrap"><div class="gtme-preview-row-bar" style="width:67%"></div></div>
+                        <span class="gtme-preview-row-value">67%</span>
+                    </div>
+                    <div class="gtme-preview-row">
+                        <span class="gtme-preview-row-label">Data Enrichment</span>
+                        <div class="gtme-preview-row-bar-wrap"><div class="gtme-preview-row-bar" style="width:58%"></div></div>
+                        <span class="gtme-preview-row-value">58%</span>
+                    </div>
+                </div>
+
+                <hr class="gtme-preview-divider">
+
+                <div class="gtme-preview-salary-title">Salary by Role</div>
+                <div class="gtme-preview-salary-row">
+                    <span class="gtme-preview-salary-role">GTM Engineer IC</span>
+                    <span class="gtme-preview-salary-amount">$120K</span>
+                </div>
+                <div class="gtme-preview-salary-row">
+                    <span class="gtme-preview-salary-role">Senior GTM Engineer</span>
+                    <span class="gtme-preview-salary-amount">$145K</span>
+                </div>
+                <div class="gtme-preview-salary-row">
+                    <span class="gtme-preview-salary-role">Lead GTM Engineer</span>
+                    <span class="gtme-preview-salary-amount">$165K</span>
+                </div>
+                <div class="gtme-preview-salary-row">
+                    <span class="gtme-preview-salary-role">Head of GTM Eng</span>
+                    <span class="gtme-preview-salary-amount">$185K</span>
+                </div>
+            </div>
+            <div class="gtme-preview-fade">
+                <a href="/newsletter/">Get the Weekly Pulse</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="logo-bar">
     <p class="logo-bar-label">Tracking hiring data from companies like</p>
     <div class="logo-bar-row">

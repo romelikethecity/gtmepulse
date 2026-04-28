@@ -150,7 +150,7 @@ def get_footer_html():
             ext_attrs = ' target="_blank" rel="noopener"' if link.get("external") else ""
             links_html += f'<li><a href="{link["href"]}"{ext_attrs}>{link["label"]}</a></li>\n'
         columns_html += f'''<div class="footer-column">
-    <h4>{col_name}</h4>
+    <h3>{col_name}</h3>
     <ul>
         {links_html}
     </ul>
@@ -162,7 +162,7 @@ def get_footer_html():
         <div class="footer-grid">
             {columns_html}
             <div class="footer-column footer-newsletter">
-                <h4>Stay in the loop</h4>
+                <h3>Stay in the loop</h3>
                 <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
                 <form class="footer-newsletter-form" onsubmit="return false;">
                     <input type="email" placeholder="Your email" aria-label="Email address" required>

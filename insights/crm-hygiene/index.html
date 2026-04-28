@@ -53,7 +53,7 @@
       gtag('config', 'G-KFWVZ2V6YL');
     </script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://gtmepulse.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "CRM Hygiene"}]}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CRM Hygiene Automation Playbook for GTM Teams", "description": "Automated dedup, lifecycle management, and dead lead detection for HubSpot and Salesforce. Stop losing deals to dirty data. Updated weekly. Independent.", "wordCount": 2200, "author": {"@type": "Person", "name": "Rome Thorndike", "url": "https://www.linkedin.com/in/romethorndike/"}, "publisher": {"@type": "Organization", "name": "GTME Pulse", "url": "https://gtmepulse.com"}, "datePublished": "2026-03-18", "dateModified": "2026-03-18", "url": "https://gtmepulse.com/insights/crm-hygiene/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gtmepulse.com/insights/crm-hygiene/"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CRM Hygiene Automation Playbook for GTM Teams", "description": "Automated dedup, lifecycle management, and dead lead detection for HubSpot and Salesforce. Stop losing deals to dirty data. Updated weekly. Independent.", "wordCount": 2200, "author": {"@type": "Person", "name": "Rome Thorndike", "url": "https://gtmepulse.com/about/"}, "publisher": {"@type": "Organization", "name": "GTME Pulse", "url": "https://gtmepulse.com"}, "datePublished": "2026-03-18", "dateModified": "2026-03-18", "url": "https://gtmepulse.com/insights/crm-hygiene/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gtmepulse.com/insights/crm-hygiene/"}}</script>
 
 </head>
 <body class="page-inner">
@@ -159,7 +159,7 @@
 </div>
 
 <div class="salary-content">
-    <p class="byline"><strong>By <a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a></strong> | March 2026</p>
+    <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
 
     <h2>The Real Cost of Dirty CRM Data</h2>
     <p>Pipeline velocity drops when reps waste time on duplicate records. A sales rep calls a prospect, has a great conversation, logs notes to one contact record. Next week, a different rep calls the same person from a duplicate record, asks the same questions, and looks unprofessional. The prospect questions whether your team communicates internally. That deal just got harder.</p>
@@ -169,7 +169,7 @@
     <h2>Automated Deduplication</h2>
     <p>Dedup is the highest-ROI hygiene automation. A typical B2B CRM with 50,000 records has 5-15% duplicates. That's 2,500 to 7,500 records that cause confusion, split activity history, and inflate pipeline reports.</p>
     <p><strong>Fuzzy matching on company name + domain.</strong> Exact-match dedup catches the easy ones: two records for "Acme Inc." with the same email. Fuzzy matching catches the rest: "Acme" vs "Acme, Inc." vs "ACME Corp" vs "acme.io." Build your matching logic on two fields: company domain (normalize to root domain, strip www/subdomains) and company name (lowercase, strip legal suffixes like Inc/LLC/Corp, compare using Levenshtein distance with a 0.85+ similarity threshold).</p>
-    <p><strong>Merge strategy.</strong> When you find duplicates, don't just delete one. Merge them. Keep the record with the most recent activity. Preserve all email addresses and phone numbers (move extras to secondary fields). Combine activity history from both records. Transfer all deal associations to the surviving record. In <a href="/comparisons/hubspot-vs-salesforce/">HubSpot</a>, the merge API handles most of this automatically. In Salesforce, you'll need Apex code or a tool like Duplicate Check to handle the merge logic.</p>
+    <p><strong>Merge strategy.</strong> When you find duplicates, don't just delete one. Merge them. Keep the record with the most recent activity. Preserve all email addresses and phone numbers (move extras to secondary fields). Combine activity history from both records. Transfer all deal associations to the surviving record. In <a href="/tools/hubspot-vs-salesforce/">HubSpot</a>, the merge API handles most of this automatically. In Salesforce, you'll need Apex code or a tool like Duplicate Check to handle the merge logic.</p>
     <p><strong>Prevention over cleanup.</strong> Dedup automation should run at two points: on record creation (block or flag duplicates before they enter the CRM) and on a scheduled sweep (weekly scan for duplicates that slipped through). The creation-time check is more valuable because it prevents the problem rather than fixing it after damage is done.</p>
 
     <h2>Lifecycle Stage Automation</h2>

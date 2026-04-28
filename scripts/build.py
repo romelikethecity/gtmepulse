@@ -1111,8 +1111,8 @@ def build_salary_seniority_pages():
     <p>The <a href="/tools/tech-stack-benchmark/">tool stack</a> expected at the {label.lower()} level includes Clay (69% adoption), a CRM (HubSpot or Salesforce, 92% adoption), and at least one automation platform (Make, n8n, or Zapier). Proficiency with these tools is table stakes. The differentiator is depth: custom Clay actions, API integrations, and multi-source data enrichment pipelines. Check the <a href="/benchmarks/50-stats/">50 key statistics</a> for a complete picture of what the industry looks like at every level.</p>
 
     <h2>Total Compensation at the {label} Level</h2>
-    <p>Base salary is one component of total comp for {label.lower()} GTM Engineers. Expect additional compensation from bonuses (typically 10-20% of base, tied to pipeline metrics), equity grants (varying widely by company stage), and benefits. The <a href="/salary/bonus-structure/">bonus structure analysis</a> shows how bonus amounts scale with seniority.</p>
-    <p>Equity is the wildcard. At <a href="/salary/seed/">seed-stage companies</a>, equity grants for {label.lower()} engineers range from 0.1% to 1.0%, with significant upside potential. At <a href="/salary/enterprise/">enterprise companies</a>, equity is smaller in percentage terms but more predictable in value. The <a href="/salary/equity-and-stock/">equity analysis</a> provides detailed breakdowns by seniority and company stage.</p>
+    <p>Base salary is one component of total comp for {label.lower()} GTM Engineers. Expect additional compensation from bonuses (typically 10-20% of base, tied to pipeline metrics), equity grants (varying widely by company stage), and benefits. The <a href="/salary/bonus/">bonus structure analysis</a> shows how bonus amounts scale with seniority.</p>
+    <p>Equity is the wildcard. At <a href="/salary/seed/">seed-stage companies</a>, equity grants for {label.lower()} engineers range from 0.1% to 1.0%, with significant upside potential. At <a href="/salary/enterprise/">enterprise companies</a>, equity is smaller in percentage terms but more predictable in value. The <a href="/salary/equity/">equity analysis</a> provides detailed breakdowns by seniority and company stage.</p>
     <p>Benefits at the {label.lower()} level vary by company stage and region. Common differentiators include remote work flexibility (offered in 65% of GTM Engineer postings), professional development budgets, and tool stipends. Some companies provide dedicated budgets for attending conferences and industry events. The <a href="/careers/work-life-balance/">work-life balance data</a> covers typical working hours and flexibility expectations at each seniority level.</p>
 
 {faq_html(faq_pairs)}
@@ -1191,7 +1191,7 @@ def build_salary_location_pages():
 
     <h2>Beyond Base: Total Comp in {label}</h2>
     <p>Base salary tells part of the story. GTM Engineers in {label} can expect 10-30% additional compensation from equity, bonuses, and benefits. Growth-stage companies offer the strongest total packages, with equity grants that can meaningfully increase total comp over a 4-year vesting period.</p>
-    <p>Bonus structures for GTM Engineers in {label} typically tie to pipeline contribution metrics. Common bonus triggers include pipeline generated, meetings booked, and revenue influenced. <a href="/salary/bonus-structure/">Our bonus structure analysis</a> breaks down median bonus amounts by company stage. Engineers at growth-stage companies in {label} report the highest total comp when bonus and equity are included.</p>
+    <p>Bonus structures for GTM Engineers in {label} typically tie to pipeline contribution metrics. Common bonus triggers include pipeline generated, meetings booked, and revenue influenced. <a href="/salary/bonus/">Our bonus structure analysis</a> breaks down median bonus amounts by company stage. Engineers at growth-stage companies in {label} report the highest total comp when bonus and equity are included.</p>
 
     <h2>Skills That Command Premium Pay in {label}</h2>
     <p>The {label} market rewards specific technical skills with measurable salary premiums. <a href="/salary/coding-premium/">Engineers who code</a> earn 15-25% more than those who rely on no-code tools alone. Python and SQL fluency are the biggest differentiators, followed by API integration experience and data pipeline architecture.</p>
@@ -1288,7 +1288,7 @@ def build_salary_stage_pages():
     </ul>
 
     <h2>Total Compensation Breakdown</h2>
-    <p>Base salary at {label.lower()} companies is only part of the picture. <a href="/salary/bonus-structure/">Bonus structures</a> vary by stage: earlier companies tend to offer performance-based bonuses tied directly to pipeline and revenue outcomes, while later-stage companies offer more structured bonus plans with quarterly or annual payouts.</p>
+    <p>Base salary at {label.lower()} companies is only part of the picture. <a href="/salary/bonus/">Bonus structures</a> vary by stage: earlier companies tend to offer performance-based bonuses tied directly to pipeline and revenue outcomes, while later-stage companies offer more structured bonus plans with quarterly or annual payouts.</p>
     <p>Equity value depends heavily on the company's trajectory. At {label.lower()} companies, the typical {data["equity"]} grant means your total compensation is significantly influenced by the company's next funding round or exit. Engineers should evaluate the strike price relative to the most recent preferred price, the company's revenue growth rate, and the remaining option pool percentage.</p>
 
     <h2>Skills and Career Growth at {label} Companies</h2>
@@ -1504,7 +1504,7 @@ def build_salary_calculator():
     <p><strong>Coding ability:</strong> <a href="/salary/coding-premium/">Python and SQL proficiency</a> is the single largest salary differentiator for GTM Engineers. Engineers who can write code, build API integrations, and create custom Clay actions earn at the top of every range this calculator produces.</p>
     <p><strong>Company stage trade-offs:</strong> <a href="/salary/seed-vs-enterprise/">Seed-stage companies</a> offer lower base salaries but larger equity grants. Enterprise companies pay the highest base salaries with smaller equity. Growth-stage companies often offer the best total compensation when you factor in both base and equity.</p>
     <p><strong>Location adjustments:</strong> Remote roles have narrowed the geographic salary gap, but in-office roles in SF and NYC still pay 15-25% premiums. Our <a href="/salary/us-vs-global/">US vs global comparison</a> shows US-based engineers earn significantly more than international counterparts.</p>
-    <p><strong>Bonus structure:</strong> Most GTM Engineers receive performance bonuses tied to pipeline metrics. <a href="/salary/bonus-structure/">Bonus data</a> shows bonuses typically add 10-20% on top of base salary, with variation by company stage.</p>
+    <p><strong>Bonus structure:</strong> Most GTM Engineers receive performance bonuses tied to pipeline metrics. <a href="/salary/bonus/">Bonus data</a> shows bonuses typically add 10-20% on top of base salary, with variation by company stage.</p>
 
     <h2>Negotiation Tips Based on Your Estimate</h2>
     <p>When you have your range, use it as a starting point in negotiations. Lead with your pipeline impact: contacts enriched, meetings booked, revenue influenced. Hiring managers respond to concrete ROI numbers. Check the <a href="/careers/how-to-become-gtm-engineer/">career guide</a> for more negotiation strategies tailored to your seniority level.</p>
@@ -3816,7 +3816,7 @@ def build_career_vs_revops():
     <h2>Salary Comparison</h2>
     <p>GTM Engineers report a median salary of $135K, with the range spanning $90K at the junior level to $250K+ for senior technical practitioners. The distribution is bimodal, clustering around $110K (operator path) and $155K (engineer path), with the gap driven by coding ability.</p>
     <p>RevOps individual contributors at comparable experience levels typically earn $100K-$180K, with the median sitting around $120K-$140K depending on company size and location. Senior RevOps leaders (VP/Director level) can earn $200K+, but these are management-track roles, not IC roles.</p>
-    <p>The GTM Engineering salary premium at the IC level reflects market dynamics: the technical skills are scarcer, the role is newer (less established salary benchmarking), and the direct pipeline impact is easier to measure and attribute. For a deeper breakdown, see our <a href="/salary/comparisons/">salary comparison pages</a>.</p>
+    <p>The GTM Engineering salary premium at the IC level reflects market dynamics: the technical skills are scarcer, the role is newer (less established salary benchmarking), and the direct pipeline impact is easier to measure and attribute. For a deeper breakdown, see our <a href="/salary/">salary comparison pages</a>.</p>
 
     <h2>Future Trajectory</h2>
     <p>The 90.4% who don't predict convergence aren't being stubborn. They're reading the trend lines correctly. As AI tools make automation building more accessible, you might expect the roles to merge. But the opposite is happening: the ceiling for what GTM Engineers can build is rising faster than the floor.</p>
@@ -3998,7 +3998,7 @@ def build_career_reporting_structure():
     <h2>The CEO Direct Report Pattern</h2>
     <p>At startups (Seed through Series A), GTM Engineers frequently report directly to the CEO or founder. The company is small enough that the CEO manages the revenue function personally, and the GTM Engineer is the first technical hire dedicated to automating that motion.</p>
     <p>This structure has advantages. You get executive visibility, fast decision-making, and direct access to budget. When the CEO sees the enrichment pipeline you built generate 50 qualified meetings in a month, you don't need three layers of management to approve a tool upgrade.</p>
-    <p>The disadvantage: founders are busy, feedback can be inconsistent, and you may lack a technical mentor who understands your work. For salary implications of working at early-stage companies, see our <a href="/salary/by-company-stage/">compensation by company stage</a> breakdown.</p>
+    <p>The disadvantage: founders are busy, feedback can be inconsistent, and you may lack a technical mentor who understands your work. For salary implications of working at early-stage companies, see our <a href="/salary/funding-stage/">compensation by company stage</a> breakdown.</p>
 
     <h2>The Emerging GTM/RevOps Team Structure</h2>
     <p>Growth-stage and enterprise companies are starting to build dedicated GTM Engineering teams that sit alongside or within Revenue Operations. This is the most mature organizational model: a GTM Engineering function with its own team lead reporting to a VP of Revenue Operations or a Chief Revenue Officer.</p>
@@ -5581,7 +5581,7 @@ def build_jobmkt_monthly_trends():
     <p><strong>October-December:</strong> Highest volume means the most options. Competition is also higher, but the sheer number of openings works in your favor. Companies hiring in Q4 often move quickly, with 2-3 week interview cycles. The downside: some December postings go dormant over the holidays and don't resume until January.</p>
     <p><strong>January-March:</strong> Fresh budgets activate. Companies that posted in December schedule interviews in January. Q1 hiring tends to be more deliberate (less urgency than Q4) but the roles are fully funded and decision-making is faster because budgets are new and approvals are fresh.</p>
     <p><strong>Avoid: July.</strong> Lowest posting volume, slowest interview cycles, decision-makers unavailable. If you must search in summer, start in June to get ahead of the August recovery.</p>
-    <p>For the broader growth story behind these monthly numbers, see our <a href="/careers/job-growth/">5,205% job growth analysis</a>. For salary expectations by seniority level, check the <a href="/salary/by-seniority/">salary by seniority data</a>.</p>
+    <p>For the broader growth story behind these monthly numbers, see our <a href="/careers/job-growth/">5,205% job growth analysis</a>. For salary expectations by seniority level, check the <a href="/salary/by-experience/">salary by seniority data</a>.</p>
 
 {faq_html(faq_pairs)}
 {jobmkt_related_links("monthly-hiring-trends")}
@@ -5668,7 +5668,7 @@ def build_jobmkt_salary_bands():
     <h2>How Bands Compare to Reported Salaries</h2>
     <p>Across all locations, posted salary bands run 10-15% above what practitioners report earning. This gap is consistent (see our <a href="/careers/posted-vs-actual-salary/">posted vs actual salary analysis</a>) and predictable. Use the posted band as a ceiling for negotiation, not an expected midpoint.</p>
     <p>The largest posted-to-actual gaps appear in SF and NYC, where competitive posting inflates ranges the most. The smallest gaps are in international markets, where salary transparency norms are different and companies post closer to actual compensation levels.</p>
-    <p>For the full location-by-location salary breakdown from our survey data (not just job postings), see the <a href="/salary/by-location/">salary by location</a> analysis. For how location interacts with the <a href="/salary/us-vs-global/">US vs global comparison</a>, see our dedicated page.</p>
+    <p>For the full location-by-location salary breakdown from our survey data (not just job postings), see the <a href="/salary/">salary by location</a> analysis. For how location interacts with the <a href="/salary/us-vs-global/">US vs global comparison</a>, see our dedicated page.</p>
 
 {faq_html(faq_pairs)}
 {jobmkt_related_links("salary-bands-by-location")}
@@ -8233,7 +8233,7 @@ def build_tool_annual_spend():
     <p>Agency GTM Engineers spend more on tools because they have to. Their margins depend on tool efficiency. An agency operator charging clients $5,000-$15,000 per month for GTM services needs a stack that can handle multiple clients simultaneously. Skimping on tools means slower delivery, worse data quality, and lower client satisfaction.</p>
     <p>In-house GTM Engineers often don't control their own tool budget. The company selects and pays for tools through procurement. This means lower personal spend but also less flexibility. An in-house GTM Engineer who wants to test a new enrichment tool needs IT approval. An agency operator signs up with a credit card and starts testing in ten minutes.</p>
     <p>The tool count difference reinforces this pattern. Agencies average 6-8 active tools per operator because breadth creates flexibility across client engagements. In-house teams average 4-5, constrained by procurement processes and the standardization that large organizations prefer.</p>
-    <p>For more on the agency vs in-house compensation dynamics, see the <a href="/salary/agency-fees/">agency fees data</a> and <a href="/salary/agency-fees/regional/">regional agency fee analysis</a>.</p>
+    <p>For more on the agency vs in-house compensation dynamics, see the <a href="/salary/agency-fees/">agency fees data</a> and <a href="/salary/agency-fees-by-region/">regional agency fee analysis</a>.</p>
 
     <h2>US vs Non-US Spending</h2>
     <p>US-based GTM Engineers report higher annual tool budgets. Three factors drive this.</p>
@@ -9178,23 +9178,23 @@ def build_bench_50_stats():
     <p><strong>32. 96% of agencies use Clay.</strong> Near-universal adoption compared to 84% overall. <a href="/tools/clay/">Clay data</a>.</p>
     <p><strong>33. 6-8 tools per agency operator.</strong> Compared to 4-5 for in-house teams. Agencies need breadth. <a href="/tools/tech-stack-benchmark/">Tech stack</a>.</p>
     <p><strong>34. Freelance GTM Engineers charge $75-$200/hr.</strong> Rates vary by specialization and client size. <a href="/careers/agency-vs-freelance/">Freelance data</a>.</p>
-    <p><strong>35. Client retention is the top agency challenge.</strong> Keeping clients is harder than finding them. <a href="/careers/agency-retention/">Retention data</a>.</p>
-    <p><strong>36. 3-7 clients is the typical agency load.</strong> Per operator, managed simultaneously. <a href="/careers/agency-client-count/">Client count</a>.</p>
-    <p><strong>37. Retainer pricing dominates.</strong> Monthly retainers are more common than per-project or per-lead pricing. <a href="/careers/agency-pricing-models/">Pricing models</a>.</p>
-    <p><strong>38. Deliverability expertise is a differentiator.</strong> Agencies that solve email deliverability command premium rates. <a href="/careers/agency-deliverability/">Deliverability</a>.</p>
-    <p><strong>39. Regional fee variation is significant.</strong> US agencies charge 2-3x more than LATAM or SEA-based agencies. <a href="/salary/agency-fees-region/">Regional fees</a>.</p>
-    <p><strong>40. Starting an agency requires minimal capital.</strong> Tool subscriptions and a laptop. The barrier is skill, not money. <a href="/careers/how-to-start-agency/">Starting an agency</a>.</p>
+    <p><strong>35. Client retention is the top agency challenge.</strong> Keeping clients is harder than finding them. <a href="/careers/client-retention/">Retention data</a>.</p>
+    <p><strong>36. 3-7 clients is the typical agency load.</strong> Per operator, managed simultaneously. <a href="/careers/client-count/">Client count</a>.</p>
+    <p><strong>37. Retainer pricing dominates.</strong> Monthly retainers are more common than per-project or per-lead pricing. <a href="/careers/pricing-models/">Pricing models</a>.</p>
+    <p><strong>38. Deliverability expertise is a differentiator.</strong> Agencies that solve email deliverability command premium rates. <a href="/careers/deliverability-practices/">Deliverability</a>.</p>
+    <p><strong>39. Regional fee variation is significant.</strong> US agencies charge 2-3x more than LATAM or SEA-based agencies. <a href="/salary/agency-fees-by-region/">Regional fees</a>.</p>
+    <p><strong>40. Starting an agency requires minimal capital.</strong> Tool subscriptions and a laptop. The barrier is skill, not money. <a href="/careers/start-gtm-engineering-agency/">Starting an agency</a>.</p>
 
     <h2>Job Market Statistics (41-50)</h2>
     <p><strong>41. 5,205% job posting growth (2019-2025).</strong> From near-zero to thousands of open roles. <a href="/careers/job-growth/">Job growth data</a>.</p>
-    <p><strong>42. 3,342 job postings analyzed.</strong> Our data set covers postings from January 2024 through February 2026. <a href="/careers/job-market/">Job market overview</a>.</p>
-    <p><strong>43. ~100 new listings per month.</strong> Consistent demand signal across 2025 and into 2026. <a href="/careers/monthly-trends/">Monthly trends</a>.</p>
+    <p><strong>42. 3,342 job postings analyzed.</strong> Our data set covers postings from January 2024 through February 2026. <a href="/careers/job-market-analysis/">Job market overview</a>.</p>
+    <p><strong>43. ~100 new listings per month.</strong> Consistent demand signal across 2025 and into 2026. <a href="/careers/monthly-hiring-trends/">Monthly trends</a>.</p>
     <p><strong>44. Remote roles account for ~40% of postings.</strong> A higher remote rate than most comparable roles. <a href="/salary/remote/">Remote salary data</a>.</p>
     <p><strong>45. Clay appears in 69% of job postings.</strong> The most-requested tool in GTM Engineer job descriptions. <a href="/tools/clay/">Clay data</a>.</p>
     <p><strong>46. Python appears in ~30% of job postings.</strong> The most-requested coding language for the role. <a href="/tools/python/">Python data</a>.</p>
-    <p><strong>47. India is the fastest-growing non-US market.</strong> Significant growth in GTM Engineer postings from Indian companies. <a href="/careers/india/">India data</a>.</p>
+    <p><strong>47. India is the fastest-growing non-US market.</strong> Significant growth in GTM Engineer postings from Indian companies. <a href="/careers/india-gtm-engineering/">India data</a>.</p>
     <p><strong>48. Majority of companies plan to grow GTM teams.</strong> Headcount intent signals sustained demand through 2026. <a href="/benchmarks/headcount-trends/">Headcount trends</a>.</p>
-    <p><strong>49. Most hiring companies are Series B or later.</strong> Early-stage companies hire GTM Engineers, but growth-stage companies hire more of them. <a href="/salary/by-company-stage/">Company stage data</a>.</p>
+    <p><strong>49. Most hiring companies are Series B or later.</strong> Early-stage companies hire GTM Engineers, but growth-stage companies hire more of them. <a href="/salary/funding-stage/">Company stage data</a>.</p>
     <p><strong>50. Top skills gap: Python, API integration, data modeling.</strong> What hiring managers want and can't find. <a href="/careers/skills-gap/">Skills gap</a>.</p>
 
     <h2>What These Numbers Mean</h2>
@@ -9276,7 +9276,7 @@ def build_bench_demographics():
 
     <h2>Geographic Distribution</h2>
     <p>32 countries are represented. The United States accounts for 58% of respondents (132 people), which matches the role's origin story: Clay launched in the US, the GTM Engineering title spread through US-based SaaS companies, and the first wave of practitioners was heavily American.</p>
-    <p>Europe is the second-largest region, with notable clusters in the UK, Germany, and the Netherlands. India shows up as a growing market, consistent with our <a href="/careers/india/">India job market data</a> showing rapid growth in GTM Engineer postings from Indian companies.</p>
+    <p>Europe is the second-largest region, with notable clusters in the UK, Germany, and the Netherlands. India shows up as a growing market, consistent with our <a href="/careers/india-gtm-engineering/">India job market data</a> showing rapid growth in GTM Engineer postings from Indian companies.</p>
     <p>The geographic skew means US salary data (132 respondents) is more statistically reliable than non-US salary data. We use the full 228 for aggregate and role-level analysis, and the US subset for location-specific salary benchmarks. See our <a href="/salary/methodology/">methodology page</a> for the full breakdown.</p>
     <p>Remote work complicates geographic analysis. A GTM Engineer in Austin working for a San Francisco company reports Austin as their location but earns closer to SF rates. We capture both the practitioner's location and their company's headquarters where possible.</p>
 
@@ -9709,7 +9709,7 @@ def build_bench_company_understanding():
     <p>If you're at a company that doesn't get it, you're also the person best positioned to fix it. Here are approaches that practitioners report working.</p>
     <p><strong>Lead with business impact.</strong> Don't explain what Clay does. Explain that automated enrichment reduced cost-per-qualified-lead by 40% last quarter. Leaders understand revenue metrics. They don't understand tool configurations.</p>
     <p><strong>Benchmark against the market.</strong> Share this data. Show that GTM Engineers at peer companies earn $132K median, that 5,205% job growth proves this is a real career, and that 84% of practitioners use the specific tools you're requesting budget for. External data has more credibility than internal advocacy.</p>
-    <p><strong>Propose structure.</strong> Don't wait for your company to build a career ladder. Draft one based on <a href="/salary/by-seniority/">seniority salary data</a> and propose it. Draft a reporting structure recommendation. Companies with no GTM Engineering framework will often adopt whatever the GTM Engineer proposes, because nobody else knows better.</p>
+    <p><strong>Propose structure.</strong> Don't wait for your company to build a career ladder. Draft one based on <a href="/salary/by-experience/">seniority salary data</a> and propose it. Draft a reporting structure recommendation. Companies with no GTM Engineering framework will often adopt whatever the GTM Engineer proposes, because nobody else knows better.</p>
     <p><strong>Connect to peers.</strong> Introduce your leadership to other companies' GTM Engineering leaders. Peer validation accelerates understanding faster than internal advocacy alone.</p>
     <p>For the bottleneck data that connects to buy-in challenges, see <a href="/benchmarks/bottlenecks/">GTM Engineering bottlenecks</a>. For career implications, see the <a href="/careers/">career guides index</a>.</p>
 
@@ -10332,7 +10332,7 @@ def build_comp_in_house_vs_agency():
     <p><strong>In-house path:</strong> GTM Engineer, Senior GTM Engineer, Lead/Staff GTM Engineer, Head of GTM Engineering, VP RevOps or VP Growth. Salary grows steadily. Equity accumulates if you pick the right companies. The ceiling is a leadership role at $200K-$300K+.</p>
     <p><strong>Agency path:</strong> Solo freelancer, agency founder, agency owner with 2-5 employees, consulting firm. Revenue grows with client count and pricing power. The ceiling is a boutique agency doing $1M+ in annual revenue with a small team. Some agency founders exit to vendor roles (Clay, Apollo, etc.) at premium compensation.</p>
     <p>Switching between paths is common and carries low friction. In-house experience gives you client credibility. Agency experience gives you breadth that hiring managers value. Many practitioners alternate between the two throughout their careers.</p>
-    <p>For agency pricing data, see the <a href="/salary/agency-fees/">agency fee guide</a>. For in-house salary benchmarks, see the <a href="/salary/">salary data index</a>. For starting an agency, see <a href="/careers/how-to-start-agency/">how to start a GTM agency</a>.</p>
+    <p>For agency pricing data, see the <a href="/salary/agency-fees/">agency fee guide</a>. For in-house salary benchmarks, see the <a href="/salary/">salary data index</a>. For starting an agency, see <a href="/careers/start-gtm-engineering-agency/">how to start a GTM agency</a>.</p>
 
 {faq_html(faq_pairs)}
 {comparison_related_links("in-house-vs-agency")}
@@ -10512,7 +10512,7 @@ def build_comp_us_vs_europe_vs_apac():
     <h2>Agency Fee Differentials</h2>
     <p>Agency pricing follows regional salary patterns but with compressed gaps. US agencies charge $5K-$8K per client per month. That's 2-3x what LATAM agencies charge ($1.5K-$3K). Europe sits in the middle at $3K-$6K. APAC ranges from $2K-$4K. MEA agencies cluster around $4K.</p>
     <p>These differentials create arbitrage opportunities. A US-based company can hire a European GTM agency at 60% of US rates and get comparable quality. Some agencies exploit this explicitly, building teams in lower-cost regions while selling to US clients at near-US rates. The margin difference is significant.</p>
-    <p>For detailed fee breakdowns, see the <a href="/salary/agency-fees/">agency fee guide</a> and <a href="/salary/agency-fees-region/">regional fee comparison</a>.</p>
+    <p>For detailed fee breakdowns, see the <a href="/salary/agency-fees/">agency fee guide</a> and <a href="/salary/agency-fees-by-region/">regional fee comparison</a>.</p>
 
     <h2>Cost of Living Context</h2>
     <p>Raw salary numbers are misleading without purchasing power context. A $135K salary in San Francisco (where median rent is $3,500/month for a one-bedroom) has different purchasing power than a $75K salary in Bangalore (median rent $400/month) or $90K in Barcelona ($1,200/month).</p>
@@ -10624,7 +10624,7 @@ def build_comp_seed_vs_series_b():
     <p>Early career: Series A or B. You want competitive cash, structured learning, and a team to work with. Equity upside is a secondary consideration when you're building skills.</p>
     <p>Mid career: Seed or Series B. If you're confident in your skills and want maximum equity upside, seed stage with a strong founding team. If you want to maximize cash while still having some equity potential, Series B.</p>
     <p>Senior/Staff level: Depends on your financial goals. Enterprise pays the most predictable comp. Seed pays the least but offers the most ownership. Many senior GTM Engineers alternate between stages throughout their careers.</p>
-    <p>For stage-specific salary data, see <a href="/salary/by-company-stage/">salary by company stage</a> and <a href="/salary/seed-vs-enterprise/">seed vs enterprise comparison</a>.</p>
+    <p>For stage-specific salary data, see <a href="/salary/funding-stage/">salary by company stage</a> and <a href="/salary/seed-vs-enterprise/">seed vs enterprise comparison</a>.</p>
 
 {faq_html(faq_pairs)}
 {comparison_related_links("seed-vs-series-b")}
@@ -11277,7 +11277,7 @@ def build_blog_gen_z_function():
     <p>Every profession that starts young eventually matures. The first generation of web developers in the late 1990s were mostly in their 20s. By 2010, web development had established career ladders, salary bands, and seniority frameworks. The same trajectory will play out in GTM Engineering, but faster because the current generation operates at compressed timescales.</p>
     <p>By 2028-2029, the first cohort of GTM Engineers will be 28-30. They'll have 4-6 years of experience. They'll want senior titles, team leadership roles, and compensation that reflects their expertise. The companies that prepared for this by building GTM Engineering teams (not just solo practitioners) will retain talent. The ones that still treat GTM Engineering as a single-person function will lose their best people to companies that offer growth paths.</p>
     <p>The generational component also means that the next wave of GTM Engineers (Gen Alpha entering the workforce around 2030) will grow up with AI as a native tool, not an adopted one. They won't learn Python to write API calls from scratch. They'll learn to orchestrate AI agents that write the code for them. The skills bar will shift again, and today's 25-year-olds will face the same adaptation pressure that today's 35-year-old sales ops professionals face with GTM Engineering. The cycle accelerates.</p>
-    <p>For more on the demographic breakdown, see the <a href="/careers/demographics/">demographics overview</a> and <a href="/benchmarks/demographics/">demographics benchmarks</a>. For career entry paths, see <a href="/careers/how-to-become/">how to become a GTM Engineer</a>.</p>
+    <p>For more on the demographic breakdown, see the <a href="/careers/demographics/">demographics overview</a> and <a href="/benchmarks/demographics/">demographics benchmarks</a>. For career entry paths, see <a href="/careers/how-to-become-gtm-engineer/">how to become a GTM Engineer</a>.</p>
 
 {blog_related_links("gen-z-function")}
 </div>
@@ -11475,7 +11475,7 @@ def build_blog_latam_apac_agency():
     <p>The agency-dominant model in LATAM and APAC is a phase, not an end state. As local B2B markets in Brazil, India, and Southeast Asia mature, in-house demand for GTM Engineers will grow. These markets are adopting outbound-first sales motions later than the US, but the trajectory is clear. When Indian SaaS companies start hiring GTM Engineers to target Indian enterprises (not just US clients), the regional market dynamics will shift from agency-export to in-house-local.</p>
     <p>Until then, the arbitrage window is open. International practitioners who can serve US clients at competitive rates while building their technical skills have a strong economic position. The key is investing in Python and SQL skills (which are geographically portable) rather than relying solely on Clay expertise (which is tool-dependent and facing credit cost pressure).</p>
     <p>The practitioners who build technical depth now will be positioned for both paths: serving US clients at premium rates (because they can deliver engineering-grade work) and serving local clients when domestic demand materializes. The ones who stay at the operator level will face increasing fee compression as more non-technical practitioners enter the agency market and compete on price alone. In a market where the only differentiator is cost, the cheapest provider wins. In a market where technical capability matters, the best provider wins regardless of geography.</p>
-    <p>For regional fee breakdowns, see the <a href="/careers/agency-regional-fees/">agency regional fees analysis</a>. For the full US vs international comparison, see <a href="/comparisons/us-vs-europe-vs-apac/">US vs Europe vs APAC</a>. For agency fee data by region, see <a href="/salary/agency-fees-region/">agency fees by region</a>.</p>
+    <p>For regional fee breakdowns, see the <a href="/careers/agency-fees-by-region-guide/">agency regional fees analysis</a>. For the full US vs international comparison, see <a href="/comparisons/us-vs-europe-vs-apac/">US vs Europe vs APAC</a>. For agency fee data by region, see <a href="/salary/agency-fees-by-region/">agency fees by region</a>.</p>
 
 {blog_related_links("latam-apac-agency")}
 </div>
@@ -11768,7 +11768,7 @@ def build_blog_self_taught():
     <p><strong>Month 2: Automation layer.</strong> Connect Clay, your sequencer, and a CRM using Make or n8n. Build a workflow that runs automatically: new lead enters Clay, gets enriched, gets sequenced, response logs in CRM. You've now built a basic GTM automation pipeline.</p>
     <p><strong>Month 3+: Technical depth.</strong> Learn Python basics (free courses on YouTube, Codecademy, or freeCodeCamp). Write a script that calls an API. Parse JSON. Clean data. Deploy a simple scheduled script. This is where the $45K coding premium starts.</p>
     <p>The entire ramp takes 2-3 months of focused effort, maybe 10-15 hours per week. By month three, you have a working portfolio of GTM automation systems. By month six, you're employable. By year one, you're dangerous.</p>
-    <p>For more on the self-taught path, see <a href="/careers/how-to-become-gtm-engineer/">how to become a GTM Engineer</a>. For learning resource data, see <a href="/benchmarks/learning-resources/">learning resources benchmark</a>. For career entry stories, see <a href="/careers/how-got-jobs/">how GTM Engineers got their jobs</a>.</p>
+    <p>For more on the self-taught path, see <a href="/careers/how-to-become-gtm-engineer/">how to become a GTM Engineer</a>. For learning resource data, see <a href="/benchmarks/learning-resources/">learning resources benchmark</a>. For career entry stories, see <a href="/careers/how-gtm-engineers-got-jobs/">how GTM Engineers got their jobs</a>.</p>
 
 {blog_related_links("self-taught")}
 </div>
@@ -11968,7 +11968,7 @@ def build_blog_all_in_one_tool():
     <p>The all-in-one tool isn't coming in 2026. Probably not in 2027 either. The fragmented stack is the reality for the foreseeable future, and GTM Engineers who excel at managing it will continue to command premium salaries.</p>
     <p>Two practical recommendations: First, invest in integration skills. Learn APIs, webhooks, Make/n8n, and basic scripting. The GTM Engineers who can build reliable cross-tool automations are the ones earning $130K+. Second, document your integrations. Build runbooks for every cross-tool workflow. When (not if) an API changes and breaks your pipeline, you want to debug it in minutes, not hours.</p>
     <p>The tools will eventually consolidate. The role will eventually evolve. But for the next 2-3 years, the most valuable skill in GTM Engineering is the ability to make 5-8 tools work together like they're one platform. That's the job. Own it.</p>
-    <p>For the full tool wishlist data, see <a href="/tools/wishlist/">GTM tool wishlist</a>. For Unify's position in the market, see <a href="/tools/unify/">Unify review</a>. For current tool frustrations, see <a href="/tools/frustrations/">tool frustrations</a>.</p>
+    <p>For the full tool wishlist data, see <a href="/tools/tool-wishlist/">GTM tool wishlist</a>. For Unify's position in the market, see <a href="/tools/unify-analysis/">Unify review</a>. For current tool frustrations, see <a href="/tools/frustrations/">tool frustrations</a>.</p>
 
 {blog_related_links("all-in-one-tool")}
 </div>
@@ -12166,7 +12166,7 @@ def build_blog_december_explosion():
     <h2>December as a Signal</h2>
     <p>One month doesn't define a profession. But 624 postings in historically the slowest hiring month of the year is a signal that's hard to ignore. GTM Engineering has crossed the threshold from "emerging role" to "established function." Companies aren't experimenting anymore. They're building teams.</p>
     <p>The practitioners who entered the field in 2023-2024 are in a strong position. They have 1-2 years of experience in a role that most companies are hiring for the first time. They've debugged the integrations, built the pipelines, and learned the edge cases that new hires will spend months discovering. That experience premium is real, and it shows up in the salary data.</p>
-    <p>For monthly trend data, see <a href="/careers/job-market-monthly-trends/">job market monthly trends</a>. For the annual growth story, see <a href="/careers/job-growth/">GTM Engineer job growth</a>. For headcount planning data, see <a href="/benchmarks/headcount-trends/">headcount trends</a>.</p>
+    <p>For monthly trend data, see <a href="/careers/monthly-hiring-trends/">job market monthly trends</a>. For the annual growth story, see <a href="/careers/job-growth/">GTM Engineer job growth</a>. For headcount planning data, see <a href="/benchmarks/headcount-trends/">headcount trends</a>.</p>
 
 {{blog_related_links("december-explosion")}}
 </div>
@@ -12492,7 +12492,7 @@ def build_insight_job_market():
     <h2>Where the Jobs Are</h2>
     <p>San Francisco, New York, and Austin dominate. These three metros account for roughly 45% of all GTM Engineer postings. SF leads by a wide margin, driven by Clay's San Francisco headquarters and the concentration of Series A through Series C SaaS companies that adopted the role earliest.</p>
     <p>But the geographic spread is widening. Denver, Seattle, and Boston each show 50+ active postings. Even smaller tech hubs like Salt Lake City and Raleigh are posting GTM Engineer roles for the first time. The role migrated outward from its SF origin point, following the same pattern as DevOps engineering a decade earlier.</p>
-    <p>Remote work accounts for approximately 40% of postings. That's higher than the general tech average of 28% (<a href="/salary/by-location/">see our location breakdown</a> for salary comparisons across metros). Remote GTM Engineer roles tend to pay 5-12% less than their SF counterparts, but the cost-of-living arbitrage makes remote positions financially competitive for engineers outside major metros.</p>
+    <p>Remote work accounts for approximately 40% of postings. That's higher than the general tech average of 28% (<a href="/salary/">see our location breakdown</a> for salary comparisons across metros). Remote GTM Engineer roles tend to pay 5-12% less than their SF counterparts, but the cost-of-living arbitrage makes remote positions financially competitive for engineers outside major metros.</p>
 
     <h2>Clay Is the Center of Gravity</h2>
     <p>69% of GTM Engineer job postings mention Clay. That's a staggering number for a single tool. No other platform comes close. Apollo appears in roughly 40% of postings, HubSpot in 35%, and Instantly or Smartlead in about 25%.</p>
@@ -12502,7 +12502,7 @@ def build_insight_job_market():
     <h2>Seniority Distribution</h2>
     <p>The seniority breakdown reveals a young, flat market. Roughly 55% of postings are for mid-level roles (2-5 years experience). Junior roles (0-2 years) make up about 20%. Senior and Lead/Staff positions account for the remaining 25%.</p>
     <p>This distribution tells a story. Companies want experienced GTM Engineers but can't find them, because the role is only three years old. A "senior" GTM Engineer in 2026 might have two years of GTM-specific experience plus prior RevOps or sales engineering background. The seniority labels are borrowed from software engineering, but the career ladder is still being built.</p>
-    <p>Lead and Staff GTM Engineer titles are emerging at companies with mature GTM teams (five or more engineers). These roles pay $180K-$250K+ and involve architecture, team leadership, and cross-functional coordination. For salary data by seniority level, see the <a href="/salary/by-seniority/">seniority breakdown</a>.</p>
+    <p>Lead and Staff GTM Engineer titles are emerging at companies with mature GTM teams (five or more engineers). These roles pay $180K-$250K+ and involve architecture, team leadership, and cross-functional coordination. For salary data by seniority level, see the <a href="/salary/by-experience/">seniority breakdown</a>.</p>
 
     <h2>Who's Hiring</h2>
     <p>Three categories of companies dominate GTM Engineer hiring.</p>
@@ -12594,7 +12594,7 @@ def build_insight_salary_trends():
     <h2>The Median and What It Hides</h2>
     <p>$132K. That's the median total compensation for a US-based GTM Engineer in 2026, drawn from the State of GTM Engineering Report (n=228). For context, the <a href="https://www.bls.gov/ooh/computer-and-information-technology/" target="_blank" rel="noopener">Bureau of Labor Statistics</a> reports a $104K median for computer occupations broadly, putting GTM Engineers well above the national tech baseline. It's a useful anchor, but it hides enormous variance. The 25th percentile sits at $85K. The 75th percentile hits $175K. And Lead/Staff GTM Engineers at well-funded startups clear $250K+.</p>
     <p>This range reflects a role that's still defining itself. A "GTM Engineer" at a seed-stage startup configuring Clay tables earns differently than a "GTM Engineer" at a Series C company writing Python scripts to orchestrate multi-channel outbound across Clay, Apollo, and custom APIs. Same title, different jobs, different pay.</p>
-    <p>For the full distribution by seniority, see the <a href="/salary/by-seniority/">seniority salary breakdown</a>.</p>
+    <p>For the full distribution by seniority, see the <a href="/salary/by-experience/">seniority salary breakdown</a>.</p>
 
     <h2>The Seniority Ladder</h2>
     <p>Seniority is the single biggest predictor of GTM Engineer compensation. The jumps are steep.</p>
@@ -12614,7 +12614,7 @@ def build_insight_salary_trends():
     <p>Geography creates predictable salary bands. San Francisco leads at $155K median. New York follows at $145K. Austin, the fastest-growing GTM hub, sits at $135K. Remote roles (US-based) pay a median of $125K.</p>
     <p>The SF premium is partly real (higher cost of living, proximity to Clay HQ and VC-backed startups) and partly structural (SF companies compete for the same small talent pool and bid up salaries). A GTM Engineer in Denver earning $130K might have higher disposable income than one earning $155K in SF, depending on housing costs.</p>
     <p>International salaries vary dramatically. UK-based GTM Engineers report $80K-$110K median. LATAM-based engineers working for US companies earn $40K-$70K. APAC ranges from $30K-$60K for local companies, though remote roles for US companies pay closer to the US remote median.</p>
-    <p>The arbitrage opportunity is clear: remote work for US companies from lower-cost locations. A GTM Engineer in Austin or Denver, earning $130K+ while paying half the housing costs of SF, captures more value than their SF counterpart. See the <a href="/salary/by-location/">location salary breakdown</a> for detailed comparisons across 15 metros.</p>
+    <p>The arbitrage opportunity is clear: remote work for US companies from lower-cost locations. A GTM Engineer in Austin or Denver, earning $130K+ while paying half the housing costs of SF, captures more value than their SF counterpart. See the <a href="/salary/">location salary breakdown</a> for detailed comparisons across 15 metros.</p>
 
     <h2>The Equity Problem</h2>
     <p>68% of GTM Engineers report no meaningful equity. This is the single most alarming finding in the compensation data.</p>
@@ -12634,7 +12634,7 @@ def build_insight_salary_trends():
     <h2>How GTM Engineers Compare</h2>
     <p>Against adjacent roles, GTM Engineers hold their own. The $132K median exceeds RevOps Managers ($115K median), Sales Operations Managers ($108K), and SDR/BDR team leads ($95K). It trails Software Engineers ($145K median) and Solutions Engineers ($140K) per <a href="https://www.levels.fyi/t/software-engineer/levels/senior" target="_blank" rel="noopener">Levels.fyi compensation data</a>, but the gap is closing as the coding premium pushes technical GTM Engineers into overlapping territory.</p>
     <p>The comparison matters for career planning. An SDR earning $65K can triple their compensation by transitioning to GTM Engineering over 3-5 years. A RevOps Manager can gain $15K-$20K by rebranding into the GTM Engineer title, provided they add technical skills.</p>
-    <p>For the complete salary picture, start at the <a href="/salary/">salary index</a>. For data on how salaries compare to adjacent roles, see the <a href="/salary/comparisons/">salary comparisons</a> section.</p>
+    <p>For the complete salary picture, start at the <a href="/salary/">salary index</a>. For data on how salaries compare to adjacent roles, see the <a href="/salary/">salary comparisons</a> section.</p>
 
 {insight_related_links("salary-trends")}
 </div>
@@ -12811,7 +12811,7 @@ def build_insight_state_of_gtme():
 
     <h2>Compensation: High Ceiling, Wide Variance</h2>
     <p>$132K median total compensation (US-based). But that number hides a $160K spread between the 25th percentile ($85K) and the top earners ($250K+). The variance is driven by three factors: seniority, coding ability, and geography.</p>
-    <p>The seniority premium is steep. Junior GTM Engineers earn $75K-$95K. Mid-level earns $110K-$140K. Senior hits $150K-$190K. Lead/Staff clears $200K-$250K+. Each rung adds $40K-$60K. The full seniority breakdown lives at <a href="/salary/by-seniority/">salary by seniority</a>.</p>
+    <p>The seniority premium is steep. Junior GTM Engineers earn $75K-$95K. Mid-level earns $110K-$140K. Senior hits $150K-$190K. Lead/Staff clears $200K-$250K+. Each rung adds $40K-$60K. The full seniority breakdown lives at <a href="/salary/by-experience/">salary by seniority</a>.</p>
     <p>The coding premium ($45K gap between coding and non-coding GTM Engineers) is the most actionable finding. Learning Python and SQL doesn't just make you more effective. It makes you $45K richer. The bimodal distribution suggests two distinct sub-roles within GTM Engineering: technical builders and tool operators. Both are valid career paths, but they pay differently.</p>
     <p>68% of respondents report no meaningful equity. This is the single biggest compensation gap relative to comparable engineering roles. The classification problem (GTM maps to go-to-market comp bands, not engineering comp bands) costs practitioners tens of thousands of dollars in equity value over a four-year vesting period. See the <a href="/salary/equity/">equity page</a> for the data.</p>
     <p>51% receive a bonus. Bonus sizes range from $5K at early-stage companies to $25K+ at enterprise. The other 49% rely entirely on base salary. Combined with the equity gap, this means nearly half of GTM Engineers have total comp that equals their base pay, with no upside beyond annual raises.</p>
@@ -13423,7 +13423,7 @@ def build_insight_email_deliverability():
     <p><strong>Scaling example:</strong> 5 domains, 3 mailboxes each, 75 emails per mailbox = 1,125 emails/day = ~22,500 emails/month. This requires more infrastructure investment (domains, Google Workspace or Outlook seats, warmup for each mailbox) but supports mid-market sales teams running multiple campaigns simultaneously.</p>
     <p><strong>Cost per mailbox.</strong> Google Workspace: $7.20/mo per mailbox. Domain: $10-15/year. Warmup tool: $3-9/mo per mailbox. Total per mailbox: $12-20/mo. For the conservative setup (9 mailboxes): $108-180/mo in infrastructure before your sequencer subscription. For the scaled setup (15 mailboxes): $180-300/mo.</p>
     <p><strong>The conversion funnel.</strong> 9,000 emails/month at 50% inbox rate = 4,500 delivered. At 3% reply rate = 135 replies. At 30% meeting conversion = 40 meetings/month. At 25% close rate = 10 new customers/month. These are realistic benchmarks for well-targeted B2B outbound. Improving deliverability from 50% to 85% (via proper setup) nearly doubles your meetings without adding a single new prospect to your list.</p>
-    <p>For the LinkedIn side of your multi-channel strategy, see the <a href="/insights/linkedin-outreach/">LinkedIn outreach playbook</a>. And check <a href="/glossary/email-deliverability/">the glossary entry</a> for quick-reference definitions of key deliverability terms.</p>
+    <p>For the LinkedIn side of your multi-channel strategy, see the <a href="/insights/linkedin-outreach/">LinkedIn outreach playbook</a>. And check <a href="/glossary/deliverability/">the glossary entry</a> for quick-reference definitions of key deliverability terms.</p>
 
 {insight_related_links("email-deliverability")}
 </div>
@@ -13539,7 +13539,7 @@ def enrich_contact(email):
         return None</code></pre>
     <p><strong>Rate limiting.</strong> Every API has limits. Apollo: 50 requests/minute on the free tier. HubSpot: 100/10 seconds. Clearbit: varies by plan. Your script needs to respect these limits. The simplest approach: add a <code>time.sleep()</code> between requests. Better approach: track your request count and pause when you approach the limit. Best approach: use exponential backoff (wait 1 second after first 429, 2 seconds after second, 4 after third).</p>
     <p><strong>Error handling.</strong> API calls fail. Networks time out. Services go down. Auth tokens expire. Your script should handle all of these gracefully. Wrap every API call in try/except. Log failures with enough context to debug (which record, what error code, what message). Save partial results to disk after every batch of 50-100 records. If your script crashes at record 3,000 of 5,000, you want to resume from 3,000, not start over.</p>
-    <p><strong>Data persistence.</strong> Write results to disk immediately after each API call. Don't hold thousands of enrichment results in memory and write once at the end. If the script crashes, you lose everything. Write to a JSON Lines file (one JSON object per line) or a SQLite database. Both handle appends well and don't require external services. For <a href="/careers/skills/python/">Python skill development</a>, this persistence pattern is foundational.</p>
+    <p><strong>Data persistence.</strong> Write results to disk immediately after each API call. Don't hold thousands of enrichment results in memory and write once at the end. If the script crashes, you lose everything. Write to a JSON Lines file (one JSON object per line) or a SQLite database. Both handle appends well and don't require external services. For <a href="/tools/python/">Python skill development</a>, this persistence pattern is foundational.</p>
 
     <h2>n8n and Make Workflow Patterns</h2>
     <p><a href="/tools/category/workflow-automation/">Workflow automation tools</a> sit between no-code simplicity and full-code flexibility. They're visual, but they support HTTP nodes, JavaScript/Python code steps, and complex branching logic.</p>
@@ -13734,7 +13734,7 @@ def build_insight_hiring_guide():
 
     <h2>What You're Hiring For</h2>
     <p>A GTM Engineer builds automated outbound and revenue systems. They sit between sales, marketing, and engineering, writing code, configuring tools, and building data pipelines that generate qualified meetings. The role requires a rare combination: enough technical skill to write Python scripts and work with APIs, enough sales acumen to understand ICP targeting and pipeline metrics, and enough operational discipline to maintain systems that run 24/7.</p>
-    <p>Most hiring managers make one of two mistakes. They either hire a developer who doesn't understand sales workflows, or they hire a sales ops person who can't code. Both fail. The <a href="/careers/what-is-gtm-engineer/">full role breakdown</a> covers what GTM Engineers do day-to-day, but the short version: you need someone who can build a complete prospect enrichment and outbound pipeline from scratch, maintain it, and improve it based on conversion data.</p>
+    <p>Most hiring managers make one of two mistakes. They either hire a developer who doesn't understand sales workflows, or they hire a sales ops person who can't code. Both fail. The <a href="/careers/is-gtm-engineering-real-career/">full role breakdown</a> covers what GTM Engineers do day-to-day, but the short version: you need someone who can build a complete prospect enrichment and outbound pipeline from scratch, maintain it, and improve it based on conversion data.</p>
     <p>Before writing the job description, answer three questions. What tools does your current stack include? (Clay, HubSpot, Instantly, and what else?) What pipeline volume do you need? (500 prospects/month vs 5,000 has different skill requirements.) And is this person building from zero or inheriting an existing system? Building from zero requires more architecture skills. Inheriting a system requires more debugging and optimization ability.</p>
 
     <h2>What to Look for in Candidates</h2>
@@ -13754,7 +13754,7 @@ def build_insight_hiring_guide():
     <p><strong>Junior (0-2 years GTM experience):</strong> $85K-$110K base. These candidates likely come from SDR, sales ops, or junior development roles. They know one or two tools well and have built basic automations. Expect a 3-6 month ramp to full productivity. Good fit for companies that have an existing senior GTM Engineer who can mentor.</p>
     <p><strong>Mid-level (2-4 years):</strong> $120K-$155K base. The sweet spot for most companies making their first GTM Engineer hire. These candidates have built and maintained production pipelines, managed multiple enrichment vendors, and can demonstrate measurable pipeline impact. They can operate independently from week one.</p>
     <p><strong>Senior (4+ years):</strong> $155K-$200K base. These candidates have architected GTM systems across multiple companies, managed vendor relationships, and likely led a team or mentored junior engineers. They bring opinionated frameworks about tool selection, pipeline design, and measurement. Worth the premium if you need someone to build the function from scratch.</p>
-    <p><strong>Lead/Staff (rare):</strong> $180K-$250K+ base. These roles exist at companies with five or more GTM Engineers. Responsibilities include system architecture, team leadership, cross-functional strategy, and vendor evaluation. Equity packages at this level should match what your engineering leads receive. For the <a href="/careers/gtm-engineer-interview-questions/">full interview question bank</a>, see our dedicated interview prep guide.</p>
+    <p><strong>Lead/Staff (rare):</strong> $180K-$250K+ base. These roles exist at companies with five or more GTM Engineers. Responsibilities include system architecture, team leadership, cross-functional strategy, and vendor evaluation. Equity packages at this level should match what your engineering leads receive. For the <a href="/careers/how-gtm-engineers-got-jobs/">full interview question bank</a>, see our dedicated interview prep guide.</p>
 
     <h2>Red Flags in Candidates</h2>
     <p><strong>Can't show results with numbers.</strong> "I improved our outbound" tells you nothing. "I increased qualified meeting bookings from 12/month to 47/month while reducing cost per meeting from $85 to $31" tells you everything. GTM Engineers who can't quantify their impact either haven't measured it or haven't had meaningful impact.</p>
@@ -13839,7 +13839,7 @@ def build_insight_freelance_rates():
     <p><strong>Full pipeline architecture: $200-350/hr.</strong> Designing and building a complete outbound system from data sourcing through enrichment, scoring, sequencing, and CRM sync. This involves tool selection, vendor evaluation, integration architecture, and workflow design. These projects run 40-80 hours over 4-8 weeks. Total project cost: $8,000-28,000. Clients paying at this level expect a documented, maintainable system that their team can operate after handoff.</p>
     <p><strong>Outbound sequence setup: $100-175/hr.</strong> Configuring Instantly, Smartlead, or Outreach campaigns: email copy, sending schedules, warm-up configuration, domain rotation, and deliverability monitoring. Lower hourly rate because the work is more templated. A typical engagement: 10-15 hours to set up 3-5 sequences with A/B variants. Total: $1,000-2,625.</p>
     <p><strong>CRM integration and automation: $125-225/hr.</strong> Connecting external tools to HubSpot or Salesforce via APIs, webhooks, or middleware (Make/n8n). Building automated workflows for lead routing, deal stage updates, and activity logging. Project scope varies widely: a simple webhook integration might take 4 hours ($500-900), while a full CRM automation suite runs 30-50 hours ($3,750-11,250).</p>
-    <p><strong>Ongoing automation management: $5,000-15,000/month retainer.</strong> Monitoring pipeline health, troubleshooting failures, optimizing enrichment match rates, updating email copy based on performance data, and expanding to new segments. This is the recurring revenue play for freelancers. A typical engagement: 15-25 hours/month of active work plus on-call availability for urgent issues. The <a href="/careers/freelance-consulting/">freelance consulting guide</a> covers client acquisition strategies for landing these retainers.</p>
+    <p><strong>Ongoing automation management: $5,000-15,000/month retainer.</strong> Monitoring pipeline health, troubleshooting failures, optimizing enrichment match rates, updating email copy based on performance data, and expanding to new segments. This is the recurring revenue play for freelancers. A typical engagement: 15-25 hours/month of active work plus on-call availability for urgent issues. The <a href="/careers/agency-vs-freelance/">freelance consulting guide</a> covers client acquisition strategies for landing these retainers.</p>
 
     <h2>Pricing by Experience Level</h2>
     <p><strong>Entry-level (0-1 year freelancing, 1-2 years GTM experience): $75-125/hr.</strong> You've built Clay tables and outbound sequences, probably for one or two employers. Your portfolio has 2-3 projects. You're competing on price because you can't yet compete on reputation. At this level, your hourly rate maps closely to the full-time equivalent: a $100K/year GTM Engineer works out to roughly $48/hr, so $75-125/hr represents a reasonable freelance premium for project-based work.</p>
@@ -13948,7 +13948,7 @@ def build_insight_gtme_vs_sdr_roi():
     <h2>Ramp Time</h2>
     <p>SDR ramp time is well-documented: 3-4 months to full productivity. During ramp, an SDR operates at roughly 40-60% of their eventual output. For a 3-person SDR team hired simultaneously, you're paying full salary for 3-4 months before seeing full pipeline contribution.</p>
     <p>GTM Engineer ramp time varies more widely. An experienced GTM Engineer who inherits an existing stack can reach full productivity in 4-6 weeks. One building a system from scratch needs 8-12 weeks: 2-3 weeks for stack audit and tool setup, 3-4 weeks for pipeline construction and testing, 2-4 weeks for optimization and scaling. The ramp cost is lower in absolute terms (one salary vs three) but the time-to-impact can be longer if the infrastructure doesn't exist yet.</p>
-    <p>For the salary comparison at each seniority level, see the <a href="/salary/gtm-engineer-vs-sdr/">GTM Engineer vs SDR salary page</a>.</p>
+    <p>For the salary comparison at each seniority level, see the <a href="/salary/vs-sdr/">GTM Engineer vs SDR salary page</a>.</p>
 
     <h2>Where SDR Teams Still Win</h2>
     <p>The GTM Engineer model has blind spots. Intellectual honesty requires acknowledging them.</p>
@@ -14034,7 +14034,7 @@ def build_insight_intent_data():
 
     <h2>Vendor Comparison</h2>
     <p>Four vendors dominate the B2B intent data market. Each has a different data methodology, coverage footprint, and integration approach.</p>
-    <p><strong><a href="/tools/category/intent-signal-data/">6sense</a> Surge Data.</strong> 6sense combines third-party content consumption signals with proprietary AI models that predict buying stage. Their "Revenue AI" platform assigns accounts to buying stages (awareness, consideration, decision, purchase) based on signal patterns. Strongest for enterprise accounts with 500+ employees. Pricing starts around $60K/year for the platform, with intent data as a core module. Best integration path: direct CRM sync with stage-based alerts. The AI predictions add genuine value when you have enough historical data to train the model. For smaller companies with thin CRM history, the predictions are less reliable.</p>
+    <p><strong><a href="/tools/category/intent-data/">6sense</a> Surge Data.</strong> 6sense combines third-party content consumption signals with proprietary AI models that predict buying stage. Their "Revenue AI" platform assigns accounts to buying stages (awareness, consideration, decision, purchase) based on signal patterns. Strongest for enterprise accounts with 500+ employees. Pricing starts around $60K/year for the platform, with intent data as a core module. Best integration path: direct CRM sync with stage-based alerts. The AI predictions add genuine value when you have enough historical data to train the model. For smaller companies with thin CRM history, the predictions are less reliable.</p>
     <p><strong><a href="https://bombora.com/company-surge/" target="_blank" rel="noopener">Bombora Company Surge</a>.</strong> Bombora operates the largest B2B intent data co-op, aggregating content consumption from 5,000+ publisher websites. Their "Company Surge" score measures when a company's research volume on a topic exceeds their normal baseline. Strongest for topic-level intent across broad market segments. Pricing runs $24K-$72K/year depending on topic count and account volume. Best integration path: Bombora feeds into most major platforms (6sense, Demandbase, HubSpot, Salesforce) as a data layer. The pure data approach (no AI predictions) means you control the interpretation, which GTM Engineers often prefer.</p>
     <p><strong>G2 Buyer Intent.</strong> G2 captures intent from its 80M+ annual software review visitors. When someone from a target account views product profiles, reads reviews, or compares vendors on G2, that activity generates an intent signal. The signal quality is high because G2 visitors have strong purchase intent by definition. Pricing is bundled with G2 marketing solutions (typically $30K-$60K/year). Best integration path: webhook alerts to Slack or CRM. The limitation: coverage is narrow. G2 only captures intent for companies evaluating software categories listed on their platform.</p>
     <p><strong>TrustRadius Buyer Intent.</strong> Similar model to G2 but with deeper enterprise buyer coverage. TrustRadius intent signals come from product research, review reading, and comparison activity on their platform. Their buyer intent data integrates with most marketing automation platforms. Pricing is comparable to G2. The differentiator: TrustRadius skews toward larger enterprise buyers, so if your target market is mid-market to enterprise, their signal coverage may be stronger than G2's.</p>
@@ -14417,7 +14417,7 @@ def build_insight_tech_stack_audit():
 
     <h3>Layer 5: Analytics and Signals</h3>
     <p><strong>What it does:</strong> Tracks product usage, website behavior, and buying signals that inform outbound timing and prioritization.</p>
-    <p><strong>Audit questions:</strong> Can you trace a closed-won deal back to the first touchpoint? How many analytics tools feed into your CRM? Do you have a single source of truth for pipeline attribution? Check the <a href="/tools/category/analytics-product-signals/">analytics tools category</a> for platform comparisons.</p>
+    <p><strong>Audit questions:</strong> Can you trace a closed-won deal back to the first touchpoint? How many analytics tools feed into your CRM? Do you have a single source of truth for pipeline attribution? Check the <a href="/tools/category/analytics/">analytics tools category</a> for platform comparisons.</p>
     <p><strong>Common bloat pattern:</strong> Paying for Mixpanel, Amplitude, AND Segment when Segment feeding into one analytics platform would cover everything. Product analytics tools are particularly prone to redundancy because marketing, product, and sales teams each pick their own.</p>
 
     <h3>Layer 6: Intent Data</h3>
@@ -14564,7 +14564,7 @@ def build_insight_revenue_attribution():
     <p><strong>Row 2: Funnel conversion.</strong> A horizontal funnel chart showing: Sequences sent > Replies > Positive replies > Meetings booked > Opportunities created > Closed-won. Label each stage with both count and conversion rate. This visualization immediately reveals where your funnel leaks.</p>
     <p><strong>Row 3: Sequence performance table.</strong> List your top 10 active sequences with columns for: send volume, reply rate, meeting rate, pipeline generated, and cost per meeting. Sort by pipeline generated. This tells you which sequences to scale and which to retire.</p>
     <p><strong>Row 4: Attribution breakdown.</strong> Pie or bar chart showing pipeline by source (outbound, inbound, referral, partner, organic). If outbound represents less than 15% of pipeline, either the sequences need improvement or the tracking needs fixing. If outbound represents more than 50%, document it loudly. That's your job security.</p>
-    <p>Build this dashboard in your CRM's native reporting tool first. Move to a BI tool (Looker, Metabase, Mode) only if CRM reporting can't handle the joins. Our <a href="/tools/category/analytics-product-signals/">analytics tools section</a> covers the major platforms.</p>
+    <p>Build this dashboard in your CRM's native reporting tool first. Move to a BI tool (Looker, Metabase, Mode) only if CRM reporting can't handle the joins. Our <a href="/tools/category/analytics/">analytics tools section</a> covers the major platforms.</p>
 
     <h2>UTM Parameters and CRM Field Strategy</h2>
     <p>Clean attribution starts with consistent UTM tagging and CRM field hygiene. Without these, you're guessing at source data.</p>
@@ -14645,10 +14645,10 @@ def build_insight_remote_market():
 
     <h2>Salary Differentials by Location</h2>
     <p>Location still affects GTM Engineer compensation, even for remote roles. Three tiers of pay exist across the market.</p>
-    <p><strong>Tier 1: Premium markets ($155K-$250K).</strong> <a href="/salary/by-location/san-francisco/">San Francisco</a>, New York, and Seattle anchor the top tier. Companies headquartered in these cities pay premium salaries to all employees, including remote workers. A senior GTM Engineer at a Series B startup headquartered in SF earns $175K-$220K regardless of where they live. The SF premium persists because these companies compete for talent against FAANG-adjacent roles that set the compensation floor.</p>
-    <p><strong>Tier 2: Growth markets ($130K-$175K).</strong> <a href="/salary/by-location/austin/">Austin</a>, Denver, Boston, Chicago, and Atlanta set the middle tier. Companies headquartered in these cities pay 15-25% less than SF for equivalent roles. A senior GTM Engineer in Austin earns $140K-$170K. The cost-of-living differential partially explains the gap, but not entirely. Austin's cost of living is 70% of SF's, yet salaries are 80-85% of SF levels. The gap has been narrowing as Austin's tech market heats up.</p>
+    <p><strong>Tier 1: Premium markets ($155K-$250K).</strong> <a href="/salary/san-francisco/">San Francisco</a>, New York, and Seattle anchor the top tier. Companies headquartered in these cities pay premium salaries to all employees, including remote workers. A senior GTM Engineer at a Series B startup headquartered in SF earns $175K-$220K regardless of where they live. The SF premium persists because these companies compete for talent against FAANG-adjacent roles that set the compensation floor.</p>
+    <p><strong>Tier 2: Growth markets ($130K-$175K).</strong> <a href="/salary/austin/">Austin</a>, Denver, Boston, Chicago, and Atlanta set the middle tier. Companies headquartered in these cities pay 15-25% less than SF for equivalent roles. A senior GTM Engineer in Austin earns $140K-$170K. The cost-of-living differential partially explains the gap, but not entirely. Austin's cost of living is 70% of SF's, yet salaries are 80-85% of SF levels. The gap has been narrowing as Austin's tech market heats up.</p>
     <p><strong>Tier 3: Remote-first ($120K-$155K).</strong> Companies that hire nationally without a headquarters premium anchor the lower tier. Distributed companies like GitLab, Zapier, and Buffer publish transparent pay bands indexed to a base location (typically Denver or median US cost of living). A senior GTM Engineer at a remote-first company earns $130K-$155K. The tradeoff: lower nominal salary, but often better equity packages and zero commute costs.</p>
-    <p>The cost-of-living arbitrage strategy: get hired by a Tier 1 company (SF pay) while living in a Tier 2 or Tier 3 city. Your $180K SF salary goes 40% further in Austin and 60% further in Nashville. Not every company allows this. Some (Stripe, Reddit, GitLab) adjust pay based on where you live. Others (Coinbase, Airbnb's pre-layoff policy) pay the same regardless of location. Ask during the interview process. See our <a href="/salary/by-location/remote/">remote salary breakdown</a> for detailed data.</p>
+    <p>The cost-of-living arbitrage strategy: get hired by a Tier 1 company (SF pay) while living in a Tier 2 or Tier 3 city. Your $180K SF salary goes 40% further in Austin and 60% further in Nashville. Not every company allows this. Some (Stripe, Reddit, GitLab) adjust pay based on where you live. Others (Coinbase, Airbnb's pre-layoff policy) pay the same regardless of location. Ask during the interview process. See our <a href="/salary/remote/">remote salary breakdown</a> for detailed data.</p>
 
     <h2>Which Companies Hire Remote GTM Engineers</h2>
     <p>Three categories of employers dominate remote GTM Engineering hiring.</p>
@@ -14673,7 +14673,7 @@ def build_insight_remote_market():
     <p><strong>Document everything publicly.</strong> Write weekly updates in a shared channel (Slack, Notion, or whatever your team uses) covering: sequences launched, pipeline generated, experiments run, and results. Make your output visible to people who would otherwise never see it. The <a href="/insights/revenue-attribution/">revenue attribution guide</a> covers how to measure and present your impact.</p>
     <p><strong>Own a metric.</strong> Attach your name to a pipeline number. "Rome is responsible for outbound-sourced pipeline" is a clearer value proposition than "Rome manages automation." When budget conversations happen, the person attached to a revenue metric is the last to get cut. Check the <a href="/insights/salary-trends/">salary trends data</a> for how pipeline ownership correlates with compensation.</p>
     <p><strong>Build your external brand.</strong> Remote workers benefit disproportionately from public visibility. Write about your work on LinkedIn. Share Clay templates. Publish your outbound results (anonymized). The GTM Engineering community is small enough that consistent, specific content gets noticed fast. External visibility creates inbound job opportunities, which gives you negotiating power even at your current company.</p>
-    <p>The remote GTM Engineering market is expanding. Companies that resisted remote work in 2023-2024 are hiring remote GTM Engineers in 2026 because the talent pool is too small to restrict by geography. For practitioners, the calculus is clear: build measurable, documented output. Remote work gives you lifestyle flexibility, but only if your results are undeniable. The <a href="/salary/by-location/remote/">remote salary page</a> tracks compensation trends for distributed GTM roles.</p>
+    <p>The remote GTM Engineering market is expanding. Companies that resisted remote work in 2023-2024 are hiring remote GTM Engineers in 2026 because the talent pool is too small to restrict by geography. For practitioners, the calculus is clear: build measurable, documented output. Remote work gives you lifestyle flexibility, but only if your results are undeniable. The <a href="/salary/remote/">remote salary page</a> tracks compensation trends for distributed GTM roles.</p>
 
 {insight_related_links("remote-market-report")}
 </div>
@@ -16468,7 +16468,7 @@ def build_insight_clay_templates_library():
     <p>Takes names and companies, resolves verified LinkedIn profiles through a waterfall: Clay lookup, Apollo people search, then <a href="/tools/phantombuster-review/">PhantomBuster</a> Google scraper. Validation checks company domain match, not just name.</p>
     <p><strong>Why validation matters:</strong> Name matching alone produces 15-25% false positives. "John Smith at Acme" might match 8 LinkedIn profiles. The validation column checks that the LinkedIn profile's listed company matches your target domain (or a known subsidiary). This drops false positives below 3%.</p>
     <p><strong>Column structure:</strong> Full name, company domain, Clay LinkedIn lookup, Apollo LinkedIn lookup, PhantomBuster Google search (query: "[name] [company] site:linkedin.com/in/"), validated URL (COALESCE of verified results), confidence score (high/medium/low based on source and match quality). The PhantomBuster step costs $0.01-0.02 per lookup and catches 8-12% of contacts that Clay and Apollo miss.</p>
-    <p><strong>Use case:</strong> LinkedIn profile URLs are required for <a href="/tools/heyreach-review/">HeyReach</a>, <a href="/tools/expandi-review/">Expandi</a>, and other LinkedIn automation tools. Without verified URLs, connection requests go to the wrong person. This template is a prerequisite for any LinkedIn outreach campaign.</p>
+    <p><strong>Use case:</strong> LinkedIn profile URLs are required for <a href="/tools/heyreach-review/">HeyReach</a>, <a href="/tools/heyreach-vs-expandi/">Expandi</a>, and other LinkedIn automation tools. Without verified URLs, connection requests go to the wrong person. This template is a prerequisite for any LinkedIn outreach campaign.</p>
 
     <h2>Template 7: CRM Data Hygiene</h2>
     <p>Title standardization, email re-verification (90+ day contacts), firmographic refresh, stale contact flagging. Push cleaned records back via Clay's native CRM integration. Run monthly to keep decay below 3%. See the <a href="/insights/crm-hygiene/">CRM hygiene playbook</a>.</p>
@@ -18045,7 +18045,7 @@ def build_insight_gtm_engineer_vs_revops():
     <p><strong>Mid level:</strong> GTM Engineers hit $120K-$155K. RevOps managers reach $100K-$135K. The coding premium kicks in here. GTM Engineers who write Python or SQL earn $45K more than those who don't. RevOps professionals rarely get a coding premium because the role doesn't require it.</p>
     <p><strong>Senior level:</strong> Senior GTM Engineers command $165K-$250K. Senior RevOps directors earn $140K-$185K. The ceiling is meaningfully higher in GTM Engineering. Staff and Principal GTM Engineer titles are emerging at $200K-$250K+ at companies with mature GTM teams. RevOps comp plateaus earlier because the role maps to existing VP of Ops career ladders with established pay bands.</p>
     <p>According to the <a href="https://therevopsreport.com/salaries/" target="_blank" rel="noopener">RevOps Report salary index</a>, RevOps professionals earn a median of $125K. That's $7K below the GTM Engineer median of $132K. Not a massive gap at the median. But the distribution tells a different story. The top quartile of GTM Engineers earns $180K+. The top quartile of RevOps earns $155K+. At the high end, GTM Engineering pays $25K-$65K more.</p>
-    <p>For the full GTM Engineer salary picture, see the <a href="/salary/">salary index</a> and <a href="/salary/by-seniority/">seniority breakdown</a>.</p>
+    <p>For the full GTM Engineer salary picture, see the <a href="/salary/">salary index</a> and <a href="/salary/by-experience/">seniority breakdown</a>.</p>
 
     <h2>Skills Overlap</h2>
     <p>The shared skill set is real and it's why career switching between these roles happens so often.</p>
@@ -18513,7 +18513,7 @@ def build_job_board():
 {content_figure_html("jobs")}
 <div class="salary-content">
     <p>No current postings. Check back soon or subscribe to the newsletter for job alerts.</p>
-    <p>While you wait, explore <a href="/salary/">GTM Engineer salary data</a>, learn <a href="/careers/what-is-a-gtm-engineer/">what a GTM Engineer does</a>, browse our <a href="/tools/">tool reviews</a>, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
+    <p>While you wait, explore <a href="/salary/">GTM Engineer salary data</a>, learn <a href="/careers/is-gtm-engineering-real-career/">what a GTM Engineer does</a>, browse our <a href="/tools/">tool reviews</a>, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
 </div>
 '''
         body += newsletter_cta_html("Get GTM Engineer job alerts and salary data delivered weekly.")
@@ -18683,7 +18683,7 @@ function filterJobs() {
 {content_figure_html("jobs")}
 
 <div class="salary-content">
-    <p style="margin-bottom: 1.5rem;">Explore <a href="/salary/">GTM Engineer salary data</a> to benchmark compensation, read <a href="/careers/what-is-a-gtm-engineer/">what a GTM Engineer does</a> for role context, browse our <a href="/tools/">tool reviews</a> to build your stack, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
+    <p style="margin-bottom: 1.5rem;">Explore <a href="/salary/">GTM Engineer salary data</a> to benchmark compensation, read <a href="/careers/is-gtm-engineering-real-career/">what a GTM Engineer does</a> for role context, browse our <a href="/tools/">tool reviews</a> to build your stack, or check the <a href="/glossary/">glossary</a> for industry terms.</p>
 
     {filter_html}
 

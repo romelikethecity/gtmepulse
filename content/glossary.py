@@ -555,7 +555,7 @@ GLOSSARY_TERMS = {
 <p>Salary comparison: RevOps professionals earn $120K-$170K at the mid-level. GTM Engineers earn $130K-$200K. The premium reflects the more technical skill set (coding, API work, automation building vs process design and tool administration). Many RevOps professionals are moving into GTM Engineering roles to access higher compensation.</p>
 <p>In practice, the boundary between RevOps and GTM Engineering depends on the company. At some startups, one person does both. At enterprise companies, they're separate teams with different reporting lines. The GTM Engineer builds the pipeline automation. RevOps ensures the CRM data is clean, the reports are accurate, and the handoff processes work.</p>""",
         "related_links": [
-            ("/salary/comparisons/gtm-engineer-vs-revops/", "GTM Engineer vs RevOps Salary"),
+            ("/salary/vs-revops/", "GTM Engineer vs RevOps Salary"),
             ("/careers/how-to-become-gtm-engineer/", "How to Become a GTM Engineer"),
             ("/salary/", "Salary Data"),
         ],
@@ -570,7 +570,7 @@ GLOSSARY_TERMS = {
 <p>SDR compensation typically runs $50K-$80K base plus variable compensation tied to meetings booked. Total comp reaches $70K-$110K for top performers. Compare that to GTM Engineer salaries of $130K-$200K, and you see why many SDRs are learning Clay, Python, and automation tools to transition into GTM Engineering.</p>
 <p>The SDR-to-GTM-Engineer career path is one of the most well-trodden. You already understand the outbound workflow, buyer personas, and sales processes. Adding technical skills (Clay workflows, API integrations, basic Python) on top of that domain knowledge creates a powerful combination. Many companies actively encourage this transition.</p>""",
         "related_links": [
-            ("/salary/comparisons/gtm-engineer-vs-sdr/", "GTM Engineer vs SDR Salary"),
+            ("/salary/vs-sdr/", "GTM Engineer vs SDR Salary"),
             ("/careers/how-to-become-gtm-engineer/", "How to Become a GTM Engineer"),
             ("/salary/", "Salary Data"),
         ],
@@ -585,7 +585,7 @@ GLOSSARY_TERMS = {
 <p>The relationship between GTM Engineers and AEs matters. Smart AEs give GTM Engineers feedback on lead quality: "The last batch from the Clay workflow had great company fit but wrong personas." That feedback loop improves targeting. GTM Engineers who regularly talk to AEs build better pipelines than those who optimize in isolation.</p>
 <p>Compensation: enterprise AEs earn $130K-$180K base with OTE (on-target earnings) of $250K-$400K+ at major SaaS companies. The variable component is much higher than GTM Engineers (who earn mostly base salary). AEs who understand automation and can self-source pipeline using GTM tools command premium comp packages.</p>""",
         "related_links": [
-            ("/salary/comparisons/gtm-engineer-vs-ae/", "GTM Engineer vs AE Salary"),
+            ("/salary/vs-account-executive/", "GTM Engineer vs AE Salary"),
             ("/careers/how-to-become-gtm-engineer/", "How to Become a GTM Engineer"),
             ("/salary/", "Salary Data"),
         ],

@@ -713,9 +713,13 @@ def build_about_page():
         <li><strong><a href="/careers/">Career guides</a></strong> for breaking into and advancing in GTM Engineering</li>
         <li><strong><a href="/benchmarks/">Industry benchmarks</a></strong> from the State of GTM Engineering Report 2026</li>
     </ul>
-    <p>Built by <strong>Rome Thorndike</strong>.</p>
+    <h2>Who Runs GTME Pulse</h2>
+    <p>Rome Thorndike is the founder of GTME Pulse and VP of Revenue at Firmograph.ai, where he builds AI agents that analyze go-to-market data for revenue leaders. He has spent 15+ years building and leading GTM teams across Salesforce, Microsoft, Snapdocs (Sequoia-backed), and Datajoy (acquired by Databricks). At Firmograph, Rome leads the full GTM function, from demand generation through customer success. He holds an MBA from UC Berkeley's Haas School of Business where he studied statistical analysis and machine learning.</p>
+    <p><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Connect with Rome on LinkedIn</a></p>
 </div>
 '''
+
+    person_schema = '    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Rome Thorndike","url":"https://www.linkedin.com/in/romethorndike/","jobTitle":"VP of Revenue","worksFor":{"@type":"Organization","name":"Firmograph.ai"},"alumniOf":{"@type":"EducationalOrganization","name":"UC Berkeley Haas School of Business"}}</script>\n'
 
     page = get_page_wrapper(
         title=title,
@@ -723,7 +727,7 @@ def build_about_page():
         canonical_path="/about/",
         body_content=body,
         active_path="/about/",
-        extra_head=get_breadcrumb_schema(crumbs),
+        extra_head=get_breadcrumb_schema(crumbs) + person_schema,
         body_class="page-inner",
     )
     write_page("about/index.html", page)

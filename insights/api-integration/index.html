@@ -16,7 +16,7 @@
     <meta property="og:title" content="API Integration Patterns for GTM Engineers - GTME Pulse">
     <meta property="og:description" content="CRM APIs, webhook pipelines, Python scripts, and no-code workflows. The technical integration guide for GTM automation at scale. Updated weekly. Independent.">
     <meta property="og:site_name" content="GTME Pulse">
-    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/insights-api-integration.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="API Integration Patterns for GTM Engineers - GTME Pulse">
     <meta name="twitter:description" content="CRM APIs, webhook pipelines, Python scripts, and no-code workflows. The technical integration guide for GTM automation at scale. Updated weekly. Independent.">
-    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/insights-api-integration.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -105,6 +105,7 @@
     </ul>
 </li>
 <li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/about/">About</a></li>
 <li class="nav-item nav-item--dropdown">
     <a href="/benchmarks/">Resources</a>
     <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
@@ -161,11 +162,6 @@
     <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
 
     <h2>APIs GTM Engineers Use Most</h2>
-<figure class="content-figure">
-    <img src="/assets/images/content/insights-analysis.svg" alt="API Integration Patterns for GTM Engineers - Job market growth, salary trends, and market intelligence" width="1200" height="630" loading="eager">
-    <figcaption>Job market growth, salary trends, and market intelligence</figcaption>
-</figure>
-
     <p>The average GTM Engineer's stack includes 5-8 tools. Each tool has an API. The job is connecting them so data flows without manual intervention. Here are the API categories that show up in almost every GTM workflow.</p>
     <p><strong>CRM APIs (HubSpot, Salesforce).</strong> Your CRM is the system of record. API integrations create contacts, update deal stages, log activities, and trigger workflows based on pipeline changes. HubSpot's API is REST-based with clear documentation and generous rate limits (100 requests per 10 seconds on free tier, 150 on paid). Salesforce's API is more powerful but more complex: SOQL queries, bulk API for large datasets, and OAuth authentication that requires more setup. Most GTM Engineers start with HubSpot because the learning curve is gentler.</p>
     <p><strong>Enrichment APIs (Clay, Apollo, Clearbit, FullEnrich).</strong> These return firmographic and contact data from a domain, email, or LinkedIn URL. The typical pattern: send a company domain, get back employee count, industry, funding stage, tech stack, and decision-maker contacts. Clay wraps many enrichment providers into a single interface, but calling enrichment APIs directly gives you more control over caching, retry logic, and cost management. See the <a href="/insights/clay-ecosystem/">Clay ecosystem breakdown</a> for how these providers interconnect.</p>

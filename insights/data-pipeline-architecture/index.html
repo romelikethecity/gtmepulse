@@ -16,7 +16,7 @@
     <meta property="og:title" content="Sales Data Pipeline Architecture for GTM Teams - GTME Pulse">
     <meta property="og:description" content="How to architect a sales data pipeline from source systems through transformation to CRM delivery. Patterns, tools, and failure modes. Updated weekly.">
     <meta property="og:site_name" content="GTME Pulse">
-    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image" content="https://gtmepulse.com/assets/og/insights-data-pipeline-architecture.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sales Data Pipeline Architecture for GTM Teams - GTME Pulse">
     <meta name="twitter:description" content="How to architect a sales data pipeline from source systems through transformation to CRM delivery. Patterns, tools, and failure modes. Updated weekly.">
-    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/insights-data-pipeline-architecture.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -106,6 +106,7 @@
     </ul>
 </li>
 <li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/about/">About</a></li>
 <li class="nav-item nav-item--dropdown">
     <a href="/benchmarks/">Resources</a>
     <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
@@ -162,11 +163,6 @@
     <p class="byline"><strong>By Rome Thorndike</strong> | March 2026</p>
 
     <h2>The Four-Layer Architecture</h2>
-<figure class="content-figure">
-    <img src="/assets/images/content/insights-analysis.svg" alt="Sales Data Pipeline Architecture for GTM Teams - Job market growth, salary trends, and market intelligence" width="1200" height="630" loading="eager">
-    <figcaption>Job market growth, salary trends, and market intelligence</figcaption>
-</figure>
-
     <p>Sales data pipelines have four layers. Source, Transform, Validate, Deliver. Each layer has a specific job. Skip one and you'll spend your Fridays cleaning up data problems instead of optimizing campaigns.</p>
     <p><strong>Layer 1: Source.</strong> Where the data comes from. Enrichment providers (Apollo, Clearbit, FullEnrich), web scrapers, CRM exports, product analytics, intent data platforms, LinkedIn, and manual research. The number of sources determines your coverage ceiling. Single-source pipelines cap at 60-70% email coverage. Multi-source waterfall pipelines reach 80-90%.</p>
     <p><strong>Layer 2: Transform.</strong> Where raw data becomes usable data. Title normalization ("VP Sales" and "Vice President of Sales" and "VP, Sales" become one value). Company name deduplication. Field mapping between source formats and destination schemas. ICP scoring. Personalization generation. This layer is where most GTM Engineers underinvest, and it's where data quality is won or lost.</p>

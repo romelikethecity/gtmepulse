@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1128 191" width="1128" height="191">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&amp;family=Plus+Jakarta+Sans:wght@500&amp;display=swap');
+    </style>
+  </defs>
+  <rect width="1128" height="191" fill="#111111"/>
+  <!-- Subtle grid pattern -->
+  <line x1="0" y1="48" x2="1128" y2="48" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="0" y1="96" x2="1128" y2="96" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="0" y1="144" x2="1128" y2="144" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <!-- Accent stripe top -->
+  <rect x="0" y="0" width="1128" height="3" fill="#FF4F1F"/>
+  <!-- Icon -->
+  <rect x="280" y="56" width="80" height="80" rx="18" fill="#FF4F1F"/>
+  <polyline points="296,96 304,96 312,78 320,114 328,84 336,104 344,96 348,96" fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark -->
+  <text x="384" y="108" font-family="Sora, sans-serif" font-weight="700" font-size="42" letter-spacing="-1" fill="#F0F0F0">GTME</text>
+  <text x="530" y="108" font-family="Sora, sans-serif" font-weight="700" font-size="42" letter-spacing="-1" fill="#FF4F1F">Pulse</text>
+  <!-- Tagline -->
+  <text x="384" y="134" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="16" fill="rgba(255,255,255,0.5)">Salary Data  |  Tool Reviews  |  Career Intelligence for GTM Engineers</text>
+  <!-- Decorative pulse line right side -->
+  <polyline points="700,96 740,96 770,60 810,132 850,72 890,120 920,96 1050,96" fill="none" stroke="rgba(255,79,31,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

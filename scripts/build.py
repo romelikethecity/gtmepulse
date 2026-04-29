@@ -11,6 +11,7 @@ import json
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
 from nav_config import *
 import templates
 from templates import (get_page_wrapper, write_page, get_homepage_schema,
@@ -18,6 +19,7 @@ from templates import (get_page_wrapper, write_page, get_homepage_schema,
                        get_software_application_schema, get_article_schema,
                        breadcrumb_html, newsletter_cta_html, faq_html, ALL_PAGES)
 from generate_og_images import generate_og_images, og_filename_from_path, og_template_for_path
+from shared.image_generator import generate_content_image, get_image_filename
 
 # OG image generation state
 OG_PAGES = []
@@ -91,6 +93,154 @@ def content_figure_html(page_type):
     <img src="/assets/images/content/{filename}" alt="{caption}" width="1200" height="630" loading="eager">
     <figcaption>{caption}</figcaption>
 </figure>'''
+
+
+# ---------------------------------------------------------------------------
+# Unique SVG Image Generator (per-page)
+# ---------------------------------------------------------------------------
+
+GTME_COLORS = {"accent": "#FF4F1F", "bg": "#FAFAFA", "text": "#111111", "muted": "#6B6B6B", "border": "#E5E5E5"}
+
+
+def generate_page_image(page_type, title, slug, stats=None):
+    """Generate SVG, save to output, return HTML figure element."""
+    svg = generate_content_image(
+        page_type=page_type, title=title, stats=stats or [],
+        colors=GTME_COLORS, font_heading="Sora", font_body="Plus Jakarta Sans",
+    )
+    filename = get_image_filename(page_type, slug)
+    img_dir = os.path.join(OUTPUT_DIR, "assets", "images", "content")
+    os.makedirs(img_dir, exist_ok=True)
+    filepath = os.path.join(img_dir, filename)
+    with open(filepath, "w") as f:
+        f.write(svg)
+    alt = title
+    return f'''<figure class="content-figure content-figure--unique">
+    <img src="/assets/images/content/{filename}" alt="{alt}" width="1200" height="630" loading="lazy">
+    <figcaption>{alt}</figcaption>
+</figure>'''
+
+
+def inject_content_images():
+    """Post-process built HTML to inject generated SVG images into each content page."""
+    import re as _re
+
+    # Map path prefixes to page types
+    TYPE_MAP = {
+        "salary/vs-": "comparison",
+        "salary/": "salary",
+        "tools/best-": "tool_roundup",
+        "comparisons/": "comparison",
+        "careers/": "career",
+        "glossary/": "glossary",
+        "insights/": "insight",
+        "blog/": "blog",
+        "benchmarks/": "benchmark",
+    }
+
+    SKIP = {
+        "index.html", "404.html", "about/index.html", "privacy/index.html",
+        "terms/index.html", "newsletter/index.html", "jobs/index.html",
+        "top-voices/index.html",
+    }
+    SECTION_INDEXES = {
+        "salary/index.html", "tools/index.html", "careers/index.html",
+        "glossary/index.html", "insights/index.html", "blog/index.html",
+        "benchmarks/index.html", "comparisons/index.html",
+        "best-gtm-engineer-resources/index.html",
+    }
+
+    count = 0
+    for rel_path in ALL_PAGES:
+        if rel_path in SKIP or rel_path in SECTION_INDEXES:
+            continue
+        if "tools/category/" in rel_path:
+            continue
+
+        filepath = os.path.join(OUTPUT_DIR, rel_path)
+        if not os.path.exists(filepath):
+            continue
+        with open(filepath, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        # Skip if already has a unique content figure
+        if 'class="content-figure content-figure--unique"' in html:
+            continue
+
+        # Determine page type
+        page_type = None
+        if rel_path.startswith("tools/") and "-vs-" in rel_path:
+            page_type = "comparison"
+        elif rel_path.startswith("tools/") and "-review/" in rel_path:
+            page_type = "tool_review"
+        elif rel_path.startswith("tools/") and rel_path.startswith("tools/best-"):
+            page_type = "tool_roundup"
+        elif rel_path.startswith("tools/") and "-alternatives/" in rel_path:
+            page_type = "tool_roundup"
+        else:
+            for prefix, ptype in TYPE_MAP.items():
+                if rel_path.startswith(prefix) and ptype:
+                    page_type = ptype
+                    break
+
+        if not page_type:
+            if rel_path.startswith("tools/"):
+                page_type = "tool_review"
+            else:
+                continue
+
+        # Extract title from h1
+        h1_match = _re.search(r'<h1[^>]*>(.*?)</h1>', html, _re.DOTALL)
+        if not h1_match:
+            continue
+        title = _re.sub(r'<[^>]+>', '', h1_match.group(1)).strip()
+
+        # Extract stats from stat-value spans
+        stats = []
+        stat_matches = _re.findall(r'<span class="stat-value">(.*?)</span>\s*<span class="stat-label">(.*?)</span>', html)
+        for val, label in stat_matches[:5]:
+            val_clean = _re.sub(r'<[^>]+>', '', val).strip()
+            label_clean = _re.sub(r'<[^>]+>', '', label).strip()
+            if val_clean:
+                stats.append((val_clean, label_clean))
+
+        # Generate slug from rel_path
+        slug = rel_path.replace("/index.html", "").replace("/", "-").strip("-")
+
+        # Generate the image
+        figure_html = generate_page_image(page_type, title, slug, stats)
+
+        # Inject after the first content container or section end
+        injection_patterns = [
+            (r'(</section>\s*<div[^>]*class="[^"]*content[^"]*"[^>]*>\s*)', r'\1\n' + figure_html + '\n'),
+            (r'(<div class="salary-content">\s*)', r'\1\n' + figure_html + '\n'),
+            (r'(<div class="content-body">\s*)', r'\1\n' + figure_html + '\n'),
+        ]
+
+        injected = False
+        for pattern, replacement in injection_patterns:
+            new_html, n = _re.subn(pattern, replacement, html, count=1)
+            if n > 0:
+                html = new_html
+                injected = True
+                break
+
+        if not injected:
+            # Fallback: inject after the first </section> tag
+            section_end = html.find('</section>')
+            if section_end > 0:
+                insert_pos = section_end + len('</section>')
+                html = html[:insert_pos] + '\n' + figure_html + '\n' + html[insert_pos:]
+                injected = True
+
+        if not injected:
+            continue
+
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(html)
+        count += 1
+
+    print(f"  Injected unique content images into {count} pages")
 
 
 # ---------------------------------------------------------------------------
@@ -19431,6 +19581,9 @@ def main():
         with open(verification_path, "w", encoding="utf-8") as f:
             f.write(f"google-site-verification: {GOOGLE_SITE_VERIFICATION}")
         print(f"  Generated {GOOGLE_SITE_VERIFICATION}")
+
+    print("\n  Injecting content images...")
+    inject_content_images()
 
     validate_pages()
 

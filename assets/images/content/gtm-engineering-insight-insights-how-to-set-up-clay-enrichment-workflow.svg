@@ -1,9 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
+</pattern>
+</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
-<text x="600" y="56" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">How to Set Up a Clay Enrichment Workflow</text>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
+<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">How to Set Up a Clay Enrichment Workflow</text>
 
 
-<rect x="540" y="250" width="120" height="3" rx="1.5" fill="#FF4F1F" opacity="0.3"/>
+<rect x="-276.0" y="348" width="176" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="-188.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">What You Will Build</text>
+<rect x="-84.0" y="348" width="128" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="-20.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Prerequisites</text>
+<rect x="60.0" y="348" width="272" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="196.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 1: Define Your IC</text>
+<rect x="348.0" y="348" width="400" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="548.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 2: Create the Tab</text>
+<rect x="764.0" y="348" width="304" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="916.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 3: Add Firmograph</text>
+<rect x="1084.0" y="348" width="392" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="1280.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 4: Build the Cont</text>
 
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
 </svg>

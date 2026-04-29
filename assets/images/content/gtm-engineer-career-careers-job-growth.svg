@@ -1,23 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
+</pattern>
+</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
-<text x="600" y="52" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">GTM Engineer Job Growth: 5,205% Surge</text>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
+<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">GTM Engineer Job Growth: 5,205% Surge</text>
+<rect x="140.0" y="126" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<circle cx="168.0" cy="125" r="18" fill="#FF4F1F" opacity="0.9299999999999999"/>
+<text x="168.0" y="132" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">1</text>
+<text x="160.0" y="174" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">5,205%</text>
+<text x="160.0" y="198" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Posting Growth</text>
+<line x1="425.0" y1="186" x2="455.0" y2="186" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
+<polygon points="455.0,181 463.0,186 455.0,191" fill="#FF4F1F" opacity="0.3"/>
+<rect x="460.0" y="126" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<circle cx="488.0" cy="125" r="18" fill="#FF4F1F" opacity="0.86"/>
+<text x="488.0" y="132" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">2</text>
+<text x="480.0" y="174" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">3,342</text>
+<text x="480.0" y="198" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Active Postings</text>
+<line x1="745.0" y1="186" x2="775.0" y2="186" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
+<polygon points="775.0,181 783.0,186 775.0,191" fill="#FF4F1F" opacity="0.3"/>
+<rect x="780.0" y="126" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<circle cx="808.0" cy="125" r="18" fill="#FF4F1F" opacity="0.79"/>
+<text x="808.0" y="132" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">3</text>
+<text x="800.0" y="174" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">32</text>
+<text x="800.0" y="198" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Countries Hiring</text>
+<line x1="600" y1="246" x2="600" y2="286" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
+<polygon points="595,284 600,292 605,284" fill="#FF4F1F" opacity="0.3"/>
+<rect x="140.0" y="306" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<circle cx="168.0" cy="305" r="18" fill="#FF4F1F" opacity="0.72"/>
+<text x="168.0" y="312" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">4</text>
+<text x="160.0" y="354" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">The Numbers: 63 to 3,342</text>
+<line x1="425.0" y1="366" x2="455.0" y2="366" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
+<polygon points="455.0,361 463.0,366 455.0,371" fill="#FF4F1F" opacity="0.3"/>
+<rect x="460.0" y="306" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<circle cx="488.0" cy="305" r="18" fill="#FF4F1F" opacity="0.6499999999999999"/>
+<text x="488.0" y="312" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">5</text>
+<text x="480.0" y="354" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">What Is Driving This Growth</text>
+<line x1="745.0" y1="366" x2="775.0" y2="366" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
+<polygon points="775.0,361 783.0,366 775.0,371" fill="#FF4F1F" opacity="0.3"/>
+<rect x="780.0" y="306" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<circle cx="808.0" cy="305" r="18" fill="#FF4F1F" opacity="0.6"/>
+<text x="808.0" y="312" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">6</text>
+<text x="800.0" y="354" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">Comparison to Other Emerging</text>
+<text x="800.0" y="374" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">Roles</text>
 
-<circle cx="420.0" cy="204" r="36" fill="#FF4F1F" opacity="0.9"/>
-<text x="420.0" y="211" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="white">1</text>
-<text x="420.0" y="260" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="600" fill="#111111">5,205%</text>
-<text x="420.0" y="284" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Posting Growth</text>
-<line x1="460.0" y1="204" x2="480.0" y2="204" stroke="#FF4F1F" stroke-width="2" opacity="0.4"/>
-<polygon points="480.0,199 490.0,204 480.0,209" fill="#FF4F1F" opacity="0.4"/>
-<circle cx="600.0" cy="204" r="36" fill="#FF4F1F" opacity="0.8200000000000001"/>
-<text x="600.0" y="211" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="white">2</text>
-<text x="600.0" y="260" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="600" fill="#111111">3,342</text>
-<text x="600.0" y="284" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Active Postings</text>
-<line x1="640.0" y1="204" x2="660.0" y2="204" stroke="#FF4F1F" stroke-width="2" opacity="0.4"/>
-<polygon points="660.0,199 670.0,204 660.0,209" fill="#FF4F1F" opacity="0.4"/>
-<circle cx="780.0" cy="204" r="36" fill="#FF4F1F" opacity="0.74"/>
-<text x="780.0" y="211" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="white">3</text>
-<text x="780.0" y="260" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="600" fill="#111111">32</text>
-<text x="780.0" y="284" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Countries Hiring</text>
-<rect x="100" y="520" width="1000" height="3" rx="1.5" fill="#FF4F1F" opacity="0.15"/>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
 </svg>

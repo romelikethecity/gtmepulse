@@ -1,20 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
+</pattern>
+</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
-<text x="600" y="56" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">GTM Engineering Is a Gen Z Function</text>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
+<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">GTM Engineering Is a Gen Z Function</text>
+<text x="600" y="168" text-anchor="middle" font-family="Sora, sans-serif" font-size="80" font-weight="700" fill="#FF4F1F">25</text>
+<text x="600" y="198" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#6B6B6B">Median Age</text>
+<rect x="560" y="213" width="80" height="3" rx="1.5" fill="#FF4F1F" opacity="0.25"/>
 
-<text x="600" y="200" text-anchor="middle" font-family="Sora, sans-serif" font-size="96" font-weight="700" fill="#FF4F1F">25</text>
-<text x="600" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" fill="#6B6B6B">Median Age</text>
+<rect x="280.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="380.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">53%</text>
+<text x="380.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Self-Taught</text>
+<rect x="500.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="600.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">5,205%</text>
+<text x="600.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Posting Growth</text>
+<rect x="720.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="820.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">71%</text>
+<text x="820.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Use AI Coding</text>
 
-<rect x="540" y="250" width="120" height="3" rx="1.5" fill="#FF4F1F" opacity="0.3"/>
-<rect x="306.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="396.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">53%</text>
-<text x="396.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Self-Taught</text>
-<rect x="510.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">5,205%</text>
-<text x="600.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Posting Growth</text>
-<rect x="714.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="804.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">71%</text>
-<text x="804.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Use AI Coding</text>
+<rect x="-76.0" y="348" width="248" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="48.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">A Role Built by 25-Yea</text>
+<rect x="188.0" y="348" width="96" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="236.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Why Gen Z</text>
+<rect x="300.0" y="348" width="216" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="408.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">The Self-Taught Majori</text>
+<rect x="532.0" y="348" width="168" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="616.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Speed of Evolution</text>
+<rect x="716.0" y="348" width="280" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="856.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Implications for Hirin</text>
+<rect x="1012.0" y="348" width="264" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="1144.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Implications for Tool </text>
 
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
 </svg>

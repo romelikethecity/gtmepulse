@@ -1,24 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
+</pattern>
+</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
-<text x="600" y="56" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">What is Prompt Engineering?</text>
-<line x1="600" y1="280" x2="600.0" y2="80.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.2"/>
-<circle cx="600.0" cy="80.0" r="45" fill="white" stroke="#FF4F1F" stroke-width="2" opacity="0.8"/>
-<text x="600.0" y="76.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="600" fill="#111111">Related</text>
-<text x="600.0" y="94.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B">Concept 1</text>
-<line x1="600" y1="280" x2="800.0" y2="280.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.2"/>
-<circle cx="800.0" cy="280.0" r="45" fill="white" stroke="#FF4F1F" stroke-width="2" opacity="0.8"/>
-<text x="800.0" y="276.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="600" fill="#111111">Related</text>
-<text x="800.0" y="294.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B">Concept 2</text>
-<line x1="600" y1="280" x2="600.0" y2="480.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.2"/>
-<circle cx="600.0" cy="480.0" r="45" fill="white" stroke="#FF4F1F" stroke-width="2" opacity="0.8"/>
-<text x="600.0" y="476.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="600" fill="#111111">Related</text>
-<text x="600.0" y="494.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B">Concept 3</text>
-<line x1="600" y1="280" x2="400.0" y2="280.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.2"/>
-<circle cx="400.0" cy="280.0" r="45" fill="white" stroke="#FF4F1F" stroke-width="2" opacity="0.8"/>
-<text x="400.0" y="276.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="600" fill="#111111">Related</text>
-<text x="400.0" y="294.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B">Concept 4</text>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
+<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">What is Prompt Engineering?</text>
+<line x1="600" y1="310" x2="600.0" y2="130.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
+<rect x="550.0" y="112.0" width="100" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
+<text x="600.0" y="135.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Learn More</text>
+<line x1="600" y1="310" x2="755.884572681199" y2="220.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
+<rect x="675.884572681199" y="202.0" width="160" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
+<text x="755.884572681199" y="225.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Related Glossary Ter</text>
+<line x1="600" y1="310" x2="755.884572681199" y2="400.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
+<rect x="675.884572681199" y="382.0" width="160" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
+<text x="755.884572681199" y="405.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Get the Weekly Pulse</text>
+<line x1="600" y1="310" x2="600.0" y2="490.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
+<rect x="550.0" y="472.0" width="100" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
+<text x="600.0" y="495.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Clay Review</text>
+<line x1="600" y1="310" x2="444.11542731880104" y2="400.00000000000006" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
+<rect x="372.11542731880104" y="382.00000000000006" width="144" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
+<text x="444.11542731880104" y="405.00000000000006" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">AI &amp; LLM Tools</text>
+<line x1="600" y1="310" x2="444.11542731880104" y2="220.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
+<rect x="364.11542731880104" y="202.0" width="160" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
+<text x="444.11542731880104" y="225.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">How to Become a GTM </text>
 
-<circle cx="600" cy="280" r="75" fill="#FF4F1F" opacity="0.9"/>
-<text x="600" y="275.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="17" font-weight="600" fill="white">Prompt Engineering</text>
+<circle cx="600" cy="310" r="70" fill="#FF4F1F" opacity="0.9"/>
+<text x="600" y="316.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="15" font-weight="600" fill="white">Prompt Engineering</text>
+
 </svg>

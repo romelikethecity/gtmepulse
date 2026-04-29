@@ -1,20 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
+</pattern>
+</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
-<text x="600" y="56" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">Enrichment Waterfall Strategy for GTM Teams</text>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
+<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">Enrichment Waterfall Strategy for GTM Teams</text>
+<text x="600" y="168" text-anchor="middle" font-family="Sora, sans-serif" font-size="80" font-weight="700" fill="#FF4F1F">40‑60%</text>
+<text x="600" y="198" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#6B6B6B">Single-Vendor Match</text>
+<rect x="560" y="213" width="80" height="3" rx="1.5" fill="#FF4F1F" opacity="0.25"/>
 
-<text x="600" y="200" text-anchor="middle" font-family="Sora, sans-serif" font-size="96" font-weight="700" fill="#FF4F1F">40&amp;#8209;60%</text>
-<text x="600" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" fill="#6B6B6B">Single-Vendor Match</text>
+<rect x="280.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="380.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">85%+</text>
+<text x="380.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Waterfall Match Rate</text>
+<rect x="500.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="600.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">3‑4</text>
+<text x="600.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Providers Needed</text>
+<rect x="720.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="820.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">30‑50%</text>
+<text x="820.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Cost Savings</text>
 
-<rect x="540" y="250" width="120" height="3" rx="1.5" fill="#FF4F1F" opacity="0.3"/>
-<rect x="306.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="396.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">85%+</text>
-<text x="396.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Waterfall Match Rate</text>
-<rect x="510.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">3&amp;#8209;4</text>
-<text x="600.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Providers Needed</text>
-<rect x="714.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="804.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">30&amp;#8209;50%</text>
-<text x="804.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Cost Savings</text>
+<rect x="-144.0" y="348" width="296" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="4.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Why Single-Vendor Enri</text>
+<rect x="168.0" y="348" width="200" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="268.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Waterfall Architecture</text>
+<rect x="384.0" y="348" width="248" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="508.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Cost Optimization Stra</text>
+<rect x="648.0" y="348" width="176" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="736.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Accuracy Benchmarks</text>
+<rect x="840.0" y="348" width="216" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="948.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Implementation with Cl</text>
+<rect x="1072.0" y="348" width="272" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="1208.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Measuring Waterfall Pe</text>
 
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
 </svg>

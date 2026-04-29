@@ -1,20 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
+</pattern>
+</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
-<text x="600" y="56" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">State of GTM Engineering 2026: Key Findings</text>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
+<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">State of GTM Engineering 2026: Key Findings</text>
+<text x="600" y="168" text-anchor="middle" font-family="Sora, sans-serif" font-size="80" font-weight="700" fill="#FF4F1F">228</text>
+<text x="600" y="198" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#6B6B6B">Respondents</text>
+<rect x="560" y="213" width="80" height="3" rx="1.5" fill="#FF4F1F" opacity="0.25"/>
 
-<text x="600" y="200" text-anchor="middle" font-family="Sora, sans-serif" font-size="96" font-weight="700" fill="#FF4F1F">228</text>
-<text x="600" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" fill="#6B6B6B">Respondents</text>
+<rect x="280.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="380.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">25</text>
+<text x="380.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Median Age</text>
+<rect x="500.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="600.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">53%</text>
+<text x="600.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Self-Taught</text>
+<rect x="720.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="820.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">$132K</text>
+<text x="820.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Median Salary</text>
 
-<rect x="540" y="250" width="120" height="3" rx="1.5" fill="#FF4F1F" opacity="0.3"/>
-<rect x="306.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="396.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">25</text>
-<text x="396.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Median Age</text>
-<rect x="510.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">53%</text>
-<text x="600.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Self-Taught</text>
-<rect x="714.0" y="300" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="804.0" y="334" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">$132K</text>
-<text x="804.0" y="356" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Median Salary</text>
+<rect x="-372.0" y="348" width="152" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="-296.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">About the Survey</text>
+<rect x="-204.0" y="348" width="400" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="-4.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Demographics: Young, S</text>
+<rect x="212.0" y="348" width="352" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="388.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Compensation: High Cei</text>
+<rect x="580.0" y="348" width="328" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="744.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Tools: Clay Dominates,</text>
+<rect x="924.0" y="348" width="376" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="1112.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Work Patterns: Busy, A</text>
+<rect x="1316.0" y="348" width="256" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
+<text x="1444.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Career Paths: No Playb</text>
 
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
 </svg>

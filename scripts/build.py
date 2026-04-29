@@ -102,10 +102,11 @@ def content_figure_html(page_type):
 GTME_COLORS = {"accent": "#FF4F1F", "bg": "#FAFAFA", "text": "#111111", "muted": "#6B6B6B", "border": "#E5E5E5"}
 
 
-def generate_page_image(page_type, title, slug, stats=None):
+def generate_page_image(page_type, title, slug, stats=None, headings=None):
     """Generate SVG, save to output, return HTML figure element."""
     svg = generate_content_image(
         page_type=page_type, title=title, stats=stats or [],
+        headings=headings or [],
         colors=GTME_COLORS, font_heading="Sora", font_body="Plus Jakarta Sans",
     )
     filename = get_image_filename(page_type, slug)
@@ -204,11 +205,32 @@ def inject_content_images():
             if val_clean:
                 stats.append((val_clean, label_clean))
 
+        # Extract H2 headings from content body (between header and footer)
+        headings = []
+        footer_pos = html.find('<footer')
+        content_html = html[:footer_pos] if footer_pos > 0 else html
+        h2_matches = _re.findall(r'<h2[^>]*>(.*?)</h2>', content_html, _re.DOTALL)
+        for h2 in h2_matches[:8]:
+            h2_clean = _re.sub(r'<[^>]+>', '', h2).strip()
+            # Skip generic headings
+            if h2_clean and h2_clean not in ("FAQ", "Related", "Newsletter", "Sources", "Source"):
+                headings.append(h2_clean)
+
+        # For glossary pages, also extract related link labels
+        if page_type == "glossary":
+            related_matches = _re.findall(r'<a[^>]*class="[^"]*related[^"]*"[^>]*>(.*?)</a>', html)
+            if not related_matches:
+                related_matches = _re.findall(r'related-links.*?<a[^>]*>(.*?)</a>', html, _re.DOTALL)
+            for rm in related_matches[:6]:
+                rm_clean = _re.sub(r'<[^>]+>', '', rm).strip()
+                if rm_clean and rm_clean not in headings:
+                    headings.append(rm_clean)
+
         # Generate slug from rel_path
         slug = rel_path.replace("/index.html", "").replace("/", "-").strip("-")
 
         # Generate the image
-        figure_html = generate_page_image(page_type, title, slug, stats)
+        figure_html = generate_page_image(page_type, title, slug, stats, headings)
 
         # Inject after the first content container or section end
         injection_patterns = [

@@ -1,39 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">Most GTM Engineers Are Self-Taught</text>
-<text x="600" y="168" text-anchor="middle" font-family="Sora, sans-serif" font-size="80" font-weight="700" fill="#FF4F1F">53%</text>
-<text x="600" y="198" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#6B6B6B">Self-Taught</text>
-<rect x="560" y="213" width="80" height="3" rx="1.5" fill="#FF4F1F" opacity="0.25"/>
-
-<rect x="280.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="380.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">121/228</text>
-<text x="380.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Learned on Own</text>
-<rect x="500.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">LinkedIn</text>
-<text x="600.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Top Resource (174)</text>
-<rect x="720.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="820.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">Age 25</text>
-<text x="820.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Median Age</text>
-
-<rect x="-196.0" y="348" width="112" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="-140.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">The Numbers</text>
-<rect x="-68.0" y="348" width="352" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="108.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">What &quot;Self-Taught&quot; Loo</text>
-<rect x="300.0" y="348" width="256" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="428.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Where Self-Taught GTME</text>
-<rect x="572.0" y="348" width="264" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="704.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">No Formal Training Pat</text>
-<rect x="852.0" y="348" width="224" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="964.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">The Self-Taught Advant</text>
-<rect x="1092.0" y="348" width="304" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="1244.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Where to Start If You </text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1060" y="24" width="100" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1110.0" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">ANALYSIS</text>
+<text x="60" y="80" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Most GTM Engineers Are Self-Taught</text>
+<rect x="60" y="126" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="189.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">53%</text>
+<text x="189.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Self-Taught</text>
+<rect x="334.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="463.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">121/228</text>
+<text x="463.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Learned on Own</text>
+<rect x="608.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="737.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">LinkedIn</text>
+<text x="737.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Top Resource (174)</text>
+<rect x="882.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="1011.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">Age 25</text>
+<text x="1011.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Median Age</text>
+<rect x="60" y="270" width="110.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="115.25" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Numbers</text>
+<rect x="182.5" y="270" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="301.5" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Where Self-Taught GTMEs Lear</text>
+<rect x="432.5" y="270" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="551.5" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">No Formal Training Path Exis</text>
+<rect x="682.5" y="270" width="215.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="790.25" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Self-Taught Advantage</text>
+<rect x="60" y="312" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Where to Start If You Want t</text>
+<rect x="310.0" y="312" width="163.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="391.5" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">More from the Blog</text>
+<rect x="485.0" y="312" width="178.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="574.0" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Get the Weekly Pulse</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

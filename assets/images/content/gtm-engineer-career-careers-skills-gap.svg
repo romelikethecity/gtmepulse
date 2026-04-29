@@ -1,51 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">GTM Engineer Skills Gap: What Postings Want</text>
-<rect x="140.0" y="126" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<circle cx="168.0" cy="125" r="18" fill="#FF4F1F" opacity="0.9299999999999999"/>
-<text x="168.0" y="132" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">1</text>
-<text x="160.0" y="174" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">84%</text>
-<text x="160.0" y="198" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Clay in Postings</text>
-<line x1="425.0" y1="186" x2="455.0" y2="186" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
-<polygon points="455.0,181 463.0,186 455.0,191" fill="#FF4F1F" opacity="0.3"/>
-<rect x="460.0" y="126" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<circle cx="488.0" cy="125" r="18" fill="#FF4F1F" opacity="0.86"/>
-<text x="488.0" y="132" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">2</text>
-<text x="480.0" y="174" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">92%</text>
-<text x="480.0" y="198" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">CRM Required</text>
-<line x1="745.0" y1="186" x2="775.0" y2="186" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
-<polygon points="775.0,181 783.0,186 775.0,191" fill="#FF4F1F" opacity="0.3"/>
-<rect x="780.0" y="126" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<circle cx="808.0" cy="125" r="18" fill="#FF4F1F" opacity="0.79"/>
-<text x="808.0" y="132" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">3</text>
-<text x="800.0" y="174" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">71%</text>
-<text x="800.0" y="198" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Use AI Coding Tools</text>
-<line x1="600" y1="246" x2="600" y2="286" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
-<polygon points="595,284 600,292 605,284" fill="#FF4F1F" opacity="0.3"/>
-<rect x="140.0" y="306" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<circle cx="168.0" cy="305" r="18" fill="#FF4F1F" opacity="0.72"/>
-<text x="168.0" y="312" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">4</text>
-<text x="160.0" y="354" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">The Top Skills by Demand</text>
-<line x1="425.0" y1="366" x2="455.0" y2="366" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
-<polygon points="455.0,361 463.0,366 455.0,371" fill="#FF4F1F" opacity="0.3"/>
-<rect x="460.0" y="306" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<circle cx="488.0" cy="305" r="18" fill="#FF4F1F" opacity="0.6499999999999999"/>
-<text x="488.0" y="312" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">5</text>
-<text x="480.0" y="354" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">The Emerging Skills</text>
-<line x1="745.0" y1="366" x2="775.0" y2="366" stroke="#FF4F1F" stroke-width="2" opacity="0.3"/>
-<polygon points="775.0,361 783.0,366 775.0,371" fill="#FF4F1F" opacity="0.3"/>
-<rect x="780.0" y="306" width="280" height="120" rx="12" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<circle cx="808.0" cy="305" r="18" fill="#FF4F1F" opacity="0.6"/>
-<text x="808.0" y="312" text-anchor="middle" font-family="Sora, sans-serif" font-size="14" font-weight="700" fill="white">6</text>
-<text x="800.0" y="354" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">Where Postings and Practice</text>
-<text x="800.0" y="374" font-family="Sora, sans-serif" font-size="14" font-weight="500" fill="#111111">Diverge</text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1024" y="24" width="136" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1092.0" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">CAREER GUIDE</text>
+<text x="60" y="80" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">GTM Engineer Skills Gap: What Postings</text>
+<text x="60" y="118" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Want</text>
+<rect x="60" y="164" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60.0" y="190" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="234.66666666666666" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">84%</text>
+<text x="234.66666666666666" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Clay in Postings</text>
+<rect x="425.3333333333333" y="190" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="600.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">92%</text>
+<text x="600.0" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">CRM Required</text>
+<rect x="790.6666666666666" y="190" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="965.3333333333333" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">71%</text>
+<text x="965.3333333333333" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Use AI Coding Tools</text>
+<rect x="60" y="308" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="164.0" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Top Skills by Demand</text>
+<rect x="280.0" y="308" width="170.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="365.25" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Emerging Skills</text>
+<rect x="462.5" y="308" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="581.5" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Where Postings and Practice </text>
+<rect x="712.5" y="308" width="163.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="794.0" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Priority Stack</text>
+<rect x="887.5" y="308" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="999.0" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Frequently Asked Questions</text>
+<rect x="60" y="350" width="185.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="152.75" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Related Career Guides</text>
+<rect x="257.5" y="350" width="178.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="346.5" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Get the Weekly Pulse</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

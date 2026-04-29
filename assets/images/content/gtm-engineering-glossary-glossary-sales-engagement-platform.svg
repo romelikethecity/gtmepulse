@@ -1,34 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">What is Sales Engagement Platform?</text>
-<line x1="600" y1="310" x2="600.0" y2="130.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
-<rect x="550.0" y="112.0" width="100" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
-<text x="600.0" y="135.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Learn More</text>
-<line x1="600" y1="310" x2="755.884572681199" y2="220.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
-<rect x="675.884572681199" y="202.0" width="160" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
-<text x="755.884572681199" y="225.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Related Glossary Ter</text>
-<line x1="600" y1="310" x2="755.884572681199" y2="400.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
-<rect x="675.884572681199" y="382.0" width="160" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
-<text x="755.884572681199" y="405.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Get the Weekly Pulse</text>
-<line x1="600" y1="310" x2="600.0" y2="490.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
-<rect x="540.0" y="472.0" width="120" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
-<text x="600.0" y="495.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Outreach Review</text>
-<line x1="600" y1="310" x2="444.11542731880104" y2="400.00000000000006" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
-<rect x="380.11542731880104" y="382.00000000000006" width="128" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
-<text x="444.11542731880104" y="405.00000000000006" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Salesloft Review</text>
-<line x1="600" y1="310" x2="444.11542731880104" y2="220.0" stroke="#FF4F1F" stroke-width="1.5" opacity="0.15"/>
-<rect x="364.11542731880104" y="202.0" width="160" height="36" rx="18" fill="white" stroke="#FF4F1F" stroke-width="1.5" opacity="0.85"/>
-<text x="444.11542731880104" y="225.0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#111111">Outreach vs Saleslof</text>
-
-<circle cx="600" cy="310" r="70" fill="#FF4F1F" opacity="0.9"/>
-<text x="600" y="305.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="15" font-weight="600" fill="white">Sales Engagement</text>
-<text x="600" y="327.0" text-anchor="middle" font-family="Sora, sans-serif" font-size="15" font-weight="600" fill="white">Platform</text>
-
+<rect x="1060" y="24" width="100" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1110.0" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">GLOSSARY</text>
+<text x="60" y="100" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">What is Sales Engagement Platform?</text>
+<rect x="60" y="146" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60" y="172" width="103.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="111.5" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Learn More</text>
+<rect x="175.0" y="172" width="193.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="271.5" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Related Glossary Terms</text>
+<rect x="380.0" y="172" width="178.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="469.0" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Get the Weekly Pulse</text>
+<rect x="570.0" y="172" width="140.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="640.25" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Outreach Review</text>
+<rect x="722.5" y="172" width="148.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="796.5" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Salesloft Review</text>
+<rect x="882.5" y="172" width="185.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="975.25" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Outreach vs Salesloft</text>
+<rect x="60" y="214" width="215.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="167.75" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Outbound Sequencing Tools</text>
+<rect x="287.5" y="214" width="133.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="354.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Glossary Index</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

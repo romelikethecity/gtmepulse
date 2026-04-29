@@ -1,39 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">Email Deliverability for GTM Engineers</text>
-<text x="600" y="168" text-anchor="middle" font-family="Sora, sans-serif" font-size="80" font-weight="700" fill="#FF4F1F">3‑5</text>
-<text x="600" y="198" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#6B6B6B">Domains Minimum</text>
-<rect x="560" y="213" width="80" height="3" rx="1.5" fill="#FF4F1F" opacity="0.25"/>
-
-<rect x="280.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="380.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">14‑day</text>
-<text x="380.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Warmup Period</text>
-<rect x="500.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">50‑100</text>
-<text x="600.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Emails/Domain/Day</text>
-<rect x="720.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="820.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">&lt;2%</text>
-<text x="820.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Bounce Rate Target</text>
-
-<rect x="-228.0" y="348" width="400" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="-28.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Why Deliverability Is </text>
-<rect x="188.0" y="348" width="248" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="312.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Domain Setup: The Foun</text>
-<rect x="452.0" y="348" width="144" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="524.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Warmup Strategy</text>
-<rect x="612.0" y="348" width="192" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="708.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Reputation Management</text>
-<rect x="820.0" y="348" width="264" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="952.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Content That Reaches t</text>
-<rect x="1100.0" y="348" width="328" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="1264.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Infrastructure: Instan</text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1069" y="24" width="91" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1114.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">INSIGHT</text>
+<text x="60" y="80" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Email Deliverability for GTM Engineers</text>
+<rect x="60" y="126" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="189.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">3‑5</text>
+<text x="189.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Domains Minimum</text>
+<rect x="334.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="463.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">14‑day</text>
+<text x="463.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Warmup Period</text>
+<rect x="608.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="737.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">50‑100</text>
+<text x="737.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Emails/Domain/Day</text>
+<rect x="882.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="1011.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">&lt;2%</text>
+<text x="1011.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Bounce Rate Target</text>
+<rect x="60" y="270" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Domain Setup: The Foundation</text>
+<rect x="310.0" y="270" width="140.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="380.25" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Warmup Strategy</text>
+<rect x="462.5" y="270" width="185.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="555.25" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Reputation Management</text>
+<rect x="660.0" y="270" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="779.0" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Content That Reaches the Inb</text>
+<rect x="60" y="312" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Infrastructure: Instantly vs</text>
+<rect x="310.0" y="312" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="414.0" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Domain Rotation Strategy</text>
+<rect x="530.0" y="312" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="649.0" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Monitoring and Troubleshooti</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

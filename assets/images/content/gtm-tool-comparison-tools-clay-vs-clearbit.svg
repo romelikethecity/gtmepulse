@@ -1,55 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">Clay vs Clearbit</text>
-<rect x="60" y="72" width="480" height="48" rx="8" fill="#FF4F1F" opacity="0.1"/>
-<text x="300" y="102" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="600" fill="#FF4F1F">Clay</text>
-<rect x="660" y="72" width="480" height="48" rx="8" fill="#d8431a" opacity="0.1"/>
-<text x="900" y="102" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="600" fill="#d8431a">Clearbit</text>
-<circle cx="600" cy="96" r="22" fill="#FF4F1F"/>
-<text x="600" y="102" text-anchor="middle" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="white">VS</text>
-<rect x="60" y="140" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="175" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Feature Comparison</text>
-<rect x="388.0" y="158" width="132.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="158" width="166.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="150" x2="600" y2="186" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="231" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Where Clay Wins</text>
-<rect x="336.0" y="214" width="184.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="214" width="182.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="206" x2="600" y2="242" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="60" y="252" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="287" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Where Clearbit Wins</text>
-<rect x="396.0" y="270" width="124.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="270" width="166.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="262" x2="600" y2="298" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="343" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Pricing Breakdown</text>
-<rect x="428.0" y="326" width="92.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="326" width="176.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="318" x2="600" y2="354" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="60" y="364" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="399" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">The Verdict</text>
-<rect x="360.0" y="382" width="160.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="382" width="162.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="374" x2="600" y2="410" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="455" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Frequently Asked Questio</text>
-<rect x="430.0" y="438" width="90.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="438" width="102.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="430" x2="600" y2="466" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="60" y="476" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="511" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Related Comparisons &amp; Re</text>
-<rect x="336.0" y="494" width="184.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="494" width="182.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="486" x2="600" y2="522" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="567" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Get the Weekly Pulse</text>
-<rect x="356.0" y="550" width="164.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="550" width="112.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="542" x2="600" y2="578" stroke="#E5E5E5" stroke-width="1"/>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1042" y="24" width="118" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1101.0" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">COMPARISON</text>
+<text x="60" y="100" font-family="Sora, sans-serif" font-size="36" font-weight="700" fill="#111111">Clay vs Clearbit</text>
+<rect x="60" y="152" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60" y="178" width="163.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="141.5" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Feature Comparison</text>
+<rect x="235.0" y="178" width="140.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="305.25" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Where Clay Wins</text>
+<rect x="387.5" y="178" width="170.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="472.75" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Where Clearbit Wins</text>
+<rect x="570.0" y="178" width="155.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="647.75" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Pricing Breakdown</text>
+<rect x="737.5" y="178" width="110.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="792.75" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Verdict</text>
+<rect x="860.0" y="178" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="971.5" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Frequently Asked Questions</text>
+<rect x="60" y="220" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="241" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Related Comparisons &amp; Review</text>
+<rect x="310.0" y="220" width="178.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="399.0" y="241" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Get the Weekly Pulse</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

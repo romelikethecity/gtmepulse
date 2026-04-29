@@ -1,37 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="60" y="48" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">Instantly Alternatives</text>
-<rect x="68.0" y="92" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="68.0" y="92" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="92.0" y="144.0" font-size="20" fill="#FF4F1F" opacity="0.6">◈</text>
-<text x="120.0" y="147.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">1. Smartlead [Read Full Review]</text>
-<rect x="612.0" y="92" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="612.0" y="92" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="636.0" y="144.0" font-size="20" fill="#FF4F1F" opacity="0.6">◇</text>
-<text x="664.0" y="147.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">2. Lemlist [Read Full Review]</text>
-<rect x="68.0" y="208" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="68.0" y="208" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="92.0" y="260.0" font-size="20" fill="#FF4F1F" opacity="0.6">△</text>
-<text x="120.0" y="263.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">3. Outreach [Read Full Review]</text>
-<rect x="612.0" y="208" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="612.0" y="208" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="636.0" y="260.0" font-size="20" fill="#FF4F1F" opacity="0.6">□</text>
-<text x="664.0" y="263.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">4. Woodpecker [Read Full Review]</text>
-<rect x="68.0" y="324" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="68.0" y="324" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="92.0" y="376.0" font-size="20" fill="#FF4F1F" opacity="0.6">○</text>
-<text x="120.0" y="379.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">5. HeyReach [Read Full Review]</text>
-<rect x="612.0" y="324" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="612.0" y="324" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="636.0" y="376.0" font-size="20" fill="#FF4F1F" opacity="0.6">☆</text>
-<text x="664.0" y="379.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">6. Apollo.io [Read Full Review]</text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1069" y="24" width="91" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1114.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">ROUNDUP</text>
+<text x="60" y="100" font-family="Sora, sans-serif" font-size="36" font-weight="700" fill="#111111">Instantly Alternatives</text>
+<rect x="60" y="152" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60" y="178" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">1. Smartlead [Read Full Revi</text>
+<rect x="310.0" y="178" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="429.0" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">2. Lemlist [Read Full Review</text>
+<rect x="560.0" y="178" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="679.0" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">3. Outreach [Read Full Revie</text>
+<rect x="810.0" y="178" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="929.0" y="199" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">4. Woodpecker [Read Full Rev</text>
+<rect x="60" y="220" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="241" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">5. HeyReach [Read Full Revie</text>
+<rect x="310.0" y="220" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="429.0" y="241" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">6. Apollo.io [Read Full Revi</text>
+<rect x="560.0" y="220" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="671.5" y="241" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Frequently Asked Questions</text>
+<rect x="795.0" y="220" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="914.0" y="241" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Related Alternatives &amp; Revie</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

@@ -1,27 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">How to Build Email Warm-Up Infrastructure</text>
-
-
-<rect x="-176.0" y="348" width="168" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="-92.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Why Warm-Up Exists</text>
-<rect x="8.0" y="348" width="280" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="148.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 1: Register Sendi</text>
-<rect x="304.0" y="348" width="256" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="432.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 2: Configure DNS </text>
-<rect x="576.0" y="348" width="216" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="684.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 3: Create Mailbox</text>
-<rect x="808.0" y="348" width="256" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="936.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 4: Run Automated </text>
-<rect x="1080.0" y="348" width="296" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="1228.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 5: Ramp Cold Volu</text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1069" y="24" width="91" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1114.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">INSIGHT</text>
+<text x="60" y="100" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">How to Build Email Warm-Up Infrastructure</text>
+<rect x="60" y="146" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60" y="172" width="163.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="141.5" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Why Warm-Up Exists</text>
+<rect x="235.0" y="172" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="354.0" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 1: Register Sending Dom</text>
+<rect x="485.0" y="172" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="604.0" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 2: Configure DNS Record</text>
+<rect x="735.0" y="172" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="839.0" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 3: Create Mailboxes</text>
+<rect x="60" y="214" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 4: Run Automated Warm-U</text>
+<rect x="310.0" y="214" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="429.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 5: Ramp Cold Volume Gra</text>
+<rect x="560.0" y="214" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="679.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 6: Monitor and Maintain</text>
+<rect x="810.0" y="214" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="914.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Infrastructure Checklist</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

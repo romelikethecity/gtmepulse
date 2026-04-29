@@ -1,39 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">GTM Engineer vs SDR Team: Full ROI Analysis</text>
-<text x="600" y="168" text-anchor="middle" font-family="Sora, sans-serif" font-size="80" font-weight="700" fill="#FF4F1F">$150K</text>
-<text x="600" y="198" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#6B6B6B">1 GTM Engineer</text>
-<rect x="560" y="213" width="80" height="3" rx="1.5" fill="#FF4F1F" opacity="0.25"/>
-
-<rect x="280.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="380.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">$220K+</text>
-<text x="380.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">3 SDRs + Mgmt</text>
-<rect x="500.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">3‑5x</text>
-<text x="600.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Pipeline Volume</text>
-<rect x="720.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="820.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">60‑75%</text>
-<text x="820.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Lower Cost/Meeting</text>
-
-<rect x="8.0" y="348" width="216" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="116.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">The Full Cost Comparis</text>
-<rect x="240.0" y="348" width="304" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="392.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Pipeline Output: Volum</text>
-<rect x="560.0" y="348" width="152" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="636.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Cost Per Meeting</text>
-<rect x="728.0" y="348" width="112" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="784.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Scalability</text>
-<rect x="856.0" y="348" width="96" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="904.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Ramp Time</text>
-<rect x="968.0" y="348" width="224" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="1080.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Where SDR Teams Still </text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1069" y="24" width="91" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1114.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">INSIGHT</text>
+<text x="60" y="80" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">GTM Engineer vs SDR Team: Full ROI</text>
+<text x="60" y="118" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Analysis</text>
+<rect x="60" y="164" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60.0" y="190" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="189.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">$150K</text>
+<text x="189.0" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">1 GTM Engineer</text>
+<rect x="334.0" y="190" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="463.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">$220K+</text>
+<text x="463.0" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">3 SDRs + Mgmt</text>
+<rect x="608.0" y="190" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="737.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">3‑5x</text>
+<text x="737.0" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Pipeline Volume</text>
+<rect x="882.0" y="190" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="1011.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">60‑75%</text>
+<text x="1011.0" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Lower Cost/Meeting</text>
+<rect x="60" y="308" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="164.0" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Full Cost Comparison</text>
+<rect x="280.0" y="308" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="399.0" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Pipeline Output: Volume and </text>
+<rect x="530.0" y="308" width="148.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="604.0" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Cost Per Meeting</text>
+<rect x="690.0" y="308" width="110.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="745.25" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Scalability</text>
+<rect x="812.5" y="308" width="95.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="860.25" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Ramp Time</text>
+<rect x="920.0" y="308" width="215.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="1027.75" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Where SDR Teams Still Win</text>
+<rect x="60" y="350" width="148.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="134.0" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Hybrid Model</text>
+<rect x="220.0" y="350" width="125.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="282.75" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">More Insights</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

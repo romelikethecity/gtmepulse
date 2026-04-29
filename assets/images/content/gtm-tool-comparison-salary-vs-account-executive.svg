@@ -1,55 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">GTM Engineer vs Account Executive Salary Comparison</text>
-<rect x="60" y="72" width="480" height="48" rx="8" fill="#FF4F1F" opacity="0.1"/>
-<text x="300" y="102" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="600" fill="#FF4F1F">GTM Engineer</text>
-<rect x="660" y="72" width="480" height="48" rx="8" fill="#d8431a" opacity="0.1"/>
-<text x="900" y="102" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="600" fill="#d8431a">Account</text>
-<circle cx="600" cy="96" r="22" fill="#FF4F1F"/>
-<text x="600" y="102" text-anchor="middle" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="white">VS</text>
-<rect x="60" y="140" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="175" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">How the Roles Compare</text>
-<rect x="366.0" y="158" width="154.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="158" width="150.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="150" x2="600" y2="186" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="231" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Salary Ranges Side-by-Si</text>
-<rect x="334.0" y="214" width="186.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="214" width="158.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="206" x2="600" y2="242" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="60" y="252" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="287" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Key Differences Between </text>
-<rect x="420.0" y="270" width="100.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="270" width="128.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="262" x2="600" y2="298" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="343" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Career Path Consideratio</text>
-<rect x="424.0" y="326" width="96.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="326" width="184.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="318" x2="600" y2="354" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="60" y="364" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="399" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Tool Stack Differences</text>
-<rect x="342.0" y="382" width="178.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="382" width="176.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="374" x2="600" y2="410" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="455" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Market Demand Comparison</text>
-<rect x="360.0" y="438" width="160.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="438" width="130.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="430" x2="600" y2="466" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="60" y="476" width="1080" height="56" rx="4" fill="white" opacity="0.5"/>
-<text x="600" y="511" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Day-to-Day Responsibilit</text>
-<rect x="398.0" y="494" width="122.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="494" width="98.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="486" x2="600" y2="522" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600" y="567" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#6B6B6B">Frequently Asked Questio</text>
-<rect x="334.0" y="550" width="186.0" height="20" rx="4" fill="#FF4F1F" opacity="0.8"/>
-<rect x="680" y="550" width="132.0" height="20" rx="4" fill="#d8431a" opacity="0.65"/>
-<line x1="600" y1="542" x2="600" y2="578" stroke="#E5E5E5" stroke-width="1"/>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1042" y="24" width="118" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1101.0" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">COMPARISON</text>
+<text x="60" y="80" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">GTM Engineer vs Account Executive Salary</text>
+<text x="60" y="114" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">Comparison</text>
+<rect x="60" y="156" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60.0" y="182" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="234.66666666666666" y="220" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">$135K</text>
+<text x="234.66666666666666" y="244" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">GTM Engineer Median</text>
+<rect x="425.3333333333333" y="182" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="600.0" y="220" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">$145K</text>
+<text x="600.0" y="244" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Account Executive Median</text>
+<rect x="790.6666666666666" y="182" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="965.3333333333333" y="220" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">$60K-$250K+</text>
+<text x="965.3333333333333" y="244" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">GTM Engineer Range</text>
+<rect x="60" y="300" width="185.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="152.75" y="321" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">How the Roles Compare</text>
+<rect x="257.5" y="300" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="369.0" y="321" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Salary Ranges Side-by-Side</text>
+<rect x="492.5" y="300" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="611.5" y="321" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Key Differences Between the </text>
+<rect x="742.5" y="300" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="854.0" y="321" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Career Path Considerations</text>
+<rect x="60" y="342" width="193.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="156.5" y="363" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Tool Stack Differences</text>
+<rect x="265.0" y="342" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="369.0" y="363" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Market Demand Comparison</text>
+<rect x="485.0" y="342" width="230.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="600.25" y="363" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Day-to-Day Responsibilities</text>
+<rect x="727.5" y="342" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="839.0" y="363" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Frequently Asked Questions</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

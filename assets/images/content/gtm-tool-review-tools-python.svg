@@ -1,40 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="60" y="48" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">Python for GTM Engineers: Skills and Salary</text>
-<rect x="68.0" y="92" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="68.0" y="92" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="92.0" y="144.0" font-size="20" fill="#FF4F1F" opacity="0.6">◈</text>
-<text x="120.0" y="130" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">$45K</text>
-<text x="120.0" y="152" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Coding Premium</text>
-<rect x="612.0" y="92" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="612.0" y="92" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="636.0" y="144.0" font-size="20" fill="#FF4F1F" opacity="0.6">◇</text>
-<text x="664.0" y="130" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">~30%</text>
-<text x="664.0" y="152" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Job Posting Frequency</text>
-<rect x="68.0" y="208" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="68.0" y="208" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="92.0" y="260.0" font-size="20" fill="#FF4F1F" opacity="0.6">△</text>
-<text x="120.0" y="246" font-family="Sora, sans-serif" font-size="16" font-weight="600" fill="#111111">71%</text>
-<text x="120.0" y="268" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">AI Coding Tool Adoption</text>
-<rect x="612.0" y="208" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="612.0" y="208" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="636.0" y="260.0" font-size="20" fill="#FF4F1F" opacity="0.6">□</text>
-<text x="664.0" y="263.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">The $45K Question</text>
-<rect x="68.0" y="324" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="68.0" y="324" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="92.0" y="376.0" font-size="20" fill="#FF4F1F" opacity="0.6">○</text>
-<text x="120.0" y="379.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">How GTM Engineers Use Python</text>
-<rect x="612.0" y="324" width="520" height="100" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<rect x="612.0" y="324" width="4" height="100" rx="2" fill="#FF4F1F" opacity="0.7"/>
-<text x="636.0" y="376.0" font-size="20" fill="#FF4F1F" opacity="0.6">☆</text>
-<text x="664.0" y="379.0" font-family="Sora, sans-serif" font-size="15" font-weight="500" fill="#111111">The Bimodal Distribution</text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1033" y="24" width="127" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1096.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">TOOL REVIEW</text>
+<text x="60" y="80" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Python for GTM Engineers: Skills and</text>
+<text x="60" y="118" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Salary</text>
+<rect x="60" y="164" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60.0" y="190" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="234.66666666666666" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">$45K</text>
+<text x="234.66666666666666" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Coding Premium</text>
+<rect x="425.3333333333333" y="190" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="600.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">~30%</text>
+<text x="600.0" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Job Posting Frequency</text>
+<rect x="790.6666666666666" y="190" width="349.3333333333333" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="965.3333333333333" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">71%</text>
+<text x="965.3333333333333" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">AI Coding Tool Adoption</text>
+<rect x="60" y="308" width="155.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="137.75" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The $45K Question</text>
+<rect x="227.5" y="308" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="346.5" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">How GTM Engineers Use Python</text>
+<rect x="477.5" y="308" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="581.5" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Bimodal Distribution</text>
+<rect x="697.5" y="308" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="816.5" y="329" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Python vs No-Code for Common</text>
+<rect x="60" y="350" width="215.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="167.75" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The AI Coding Accelerator</text>
+<rect x="287.5" y="350" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="406.5" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Learning Path for GTM Engine</text>
+<rect x="537.5" y="350" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="649.0" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Frequently Asked Questions</text>
+<rect x="772.5" y="350" width="155.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="850.25" y="371" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Related Tool Data</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

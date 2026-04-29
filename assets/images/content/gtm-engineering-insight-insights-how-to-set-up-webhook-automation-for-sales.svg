@@ -1,27 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">How to Set Up Webhook Automation for Sales</text>
-
-
-<rect x="-328.0" y="348" width="200" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="-228.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Why Webhooks for Sales</text>
-<rect x="-112.0" y="348" width="304" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="40.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 1: Map Your Event</text>
-<rect x="208.0" y="348" width="312" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="364.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 2: Choose Your We</text>
-<rect x="536.0" y="348" width="328" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="700.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 3: Configure the </text>
-<rect x="880.0" y="348" width="336" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="1048.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 4: Parse and Tran</text>
-<rect x="1232.0" y="348" width="296" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="1380.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Step 5: Add Enrichment</text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1069" y="24" width="91" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1114.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">INSIGHT</text>
+<text x="60" y="100" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">How to Set Up Webhook Automation for Sales</text>
+<rect x="60" y="146" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60" y="172" width="193.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="156.5" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Why Webhooks for Sales</text>
+<rect x="265.0" y="172" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="384.0" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 1: Map Your Event-Actio</text>
+<rect x="515.0" y="172" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="634.0" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 2: Choose Your Webhook </text>
+<rect x="765.0" y="172" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="884.0" y="193" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 3: Configure the Webhoo</text>
+<rect x="60" y="214" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 4: Parse and Transform </text>
+<rect x="310.0" y="214" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="429.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 5: Add Enrichment and S</text>
+<rect x="560.0" y="214" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="679.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 6: Route Actions Based </text>
+<rect x="810.0" y="214" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="929.0" y="235" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Step 7: Handle Errors and Fa</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

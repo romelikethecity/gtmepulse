@@ -1,39 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-<defs>
-<pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-<circle cx="20" cy="20" r="1.2" fill="#FF4F1F" opacity="0.06"/>
-</pattern>
-</defs>
 <rect width="1200" height="630" fill="#FAFAFA"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
 <rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
-<text x="600" y="48" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">Revenue Attribution for GTM Engineers</text>
-<text x="600" y="168" text-anchor="middle" font-family="Sora, sans-serif" font-size="80" font-weight="700" fill="#FF4F1F">3‑7x</text>
-<text x="600" y="198" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#6B6B6B">Pipeline ROI Target</text>
-<rect x="560" y="213" width="80" height="3" rx="1.5" fill="#FF4F1F" opacity="0.25"/>
-
-<rect x="280.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="380.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">4</text>
-<text x="380.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Attribution Models</text>
-<rect x="500.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="600.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">$132K</text>
-<text x="600.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Median GTME Salary</text>
-<rect x="720.0" y="248" width="200" height="72" rx="8" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="820.0" y="278" text-anchor="middle" font-family="Sora, sans-serif" font-size="20" font-weight="700" fill="#111111">6‑8</text>
-<text x="820.0" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#6B6B6B">Touches Before Close</text>
-
-<rect x="-284.0" y="348" width="288" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="-140.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Why Attribution Is a C</text>
-<rect x="20.0" y="348" width="264" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="152.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Multi-Touch Attributio</text>
-<rect x="300.0" y="348" width="128" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="364.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">What to Track</text>
-<rect x="444.0" y="348" width="384" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="636.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Building Attribution i</text>
-<rect x="844.0" y="348" width="304" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="996.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">Dashboard Design for W</text>
-<rect x="1164.0" y="348" width="320" height="32" rx="16" fill="#ffe9e4" stroke="#FF4F1F" stroke-width="0.5" opacity="0.6"/>
-<text x="1324.0" y="369" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FF4F1F">UTM Parameters and CRM</text>
-
-<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.4">Source: State of GTME Report 2026 (n=228)</text>
+<rect x="1069" y="24" width="91" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1114.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">INSIGHT</text>
+<text x="60" y="80" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Revenue Attribution for GTM Engineers</text>
+<rect x="60" y="126" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="189.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">3‑7x</text>
+<text x="189.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Pipeline ROI Target</text>
+<rect x="334.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="463.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">4</text>
+<text x="463.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Attribution Models</text>
+<rect x="608.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="737.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">$132K</text>
+<text x="737.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Median GTME Salary</text>
+<rect x="882.0" y="152" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="1011.0" y="190" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">6‑8</text>
+<text x="1011.0" y="214" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Touches Before Close</text>
+<rect x="60" y="270" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Why Attribution Is a Career </text>
+<rect x="310.0" y="270" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="429.0" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Multi-Touch Attribution Mode</text>
+<rect x="560.0" y="270" width="125.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="622.75" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">What to Track</text>
+<rect x="697.5" y="270" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="816.5" y="291" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Dashboard Design for Weekly </text>
+<rect x="60" y="312" width="238.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="179.0" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">UTM Parameters and CRM Field</text>
+<rect x="310.0" y="312" width="230.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="425.25" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Common Attribution Mistakes</text>
+<rect x="552.5" y="312" width="125.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="615.25" y="333" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">More Insights</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
 </svg>

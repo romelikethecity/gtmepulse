@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<rect width="1200" height="630" fill="#FAFAFA"/>
+<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
+<text x="600" y="56" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">Cold Email Deliverability: DNS, SPF, DKIM,</text>
+<text x="600" y="90" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">DMARC</text>
+
+
+<rect x="540" y="284" width="120" height="3" rx="1.5" fill="#FF4F1F" opacity="0.3"/>
+
+</svg>

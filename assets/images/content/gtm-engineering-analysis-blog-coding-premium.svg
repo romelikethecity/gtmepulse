@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<rect width="1200" height="630" fill="#FAFAFA"/>
+<rect x="0" y="0" width="1200" height="6" fill="#FF4F1F"/>
+<text x="600" y="56" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">The $45K Coding Premium: What It Means for</text>
+<text x="600" y="90" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#111111">Your Career</text>
+
+<text x="600" y="234" text-anchor="middle" font-family="Sora, sans-serif" font-size="96" font-weight="700" fill="#FF4F1F">$45K</text>
+<text x="600" y="269" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" fill="#6B6B6B">Coding Premium</text>
+
+<rect x="540" y="284" width="120" height="3" rx="1.5" fill="#FF4F1F" opacity="0.3"/>
+<rect x="306.0" y="334" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="396.0" y="368" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">~$155K</text>
+<text x="396.0" y="390" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Technical Median</text>
+<rect x="510.0" y="334" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="600.0" y="368" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">~$110K</text>
+<text x="600.0" y="390" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Low-Code Median</text>
+<rect x="714.0" y="334" width="180" height="80" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
+<text x="804.0" y="368" text-anchor="middle" font-family="Sora, sans-serif" font-size="22" font-weight="700" fill="#111111">121/228</text>
+<text x="804.0" y="390" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Self-Taught</text>
+
+</svg>

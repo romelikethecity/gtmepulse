@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-04-28T23:09:45.840445",
-  "total_records": 94,
-  "records_with_salary": 51,
-  "disclosure_rate": 54.3,
+  "generated_at": "2026-04-30T00:39:36.837992",
+  "total_records": 99,
+  "records_with_salary": 53,
+  "disclosure_rate": 53.5,
   "salary_stats": {
     "min": 48,
     "max": 330000,
     "median": 125000,
-    "avg": 133065,
-    "count_with_salary": 51
+    "avg": 132503,
+    "count_with_salary": 53
   },
   "by_seniority": {
     "Unknown": {
-      "count": 42,
-      "min_base_avg": 121579,
-      "max_base_avg": 160219,
+      "count": 44,
+      "min_base_avg": 121424,
+      "max_base_avg": 159845,
       "median": 120000
     },
     "Director": {
@@ -32,10 +32,16 @@
   },
   "by_metro": {
     "Unknown": {
-      "count": 15,
-      "min_base_avg": 118053,
-      "max_base_avg": 155186,
+      "count": 16,
+      "min_base_avg": 116070,
+      "max_base_avg": 151985,
       "median": 120000
+    },
+    "New York": {
+      "count": 13,
+      "min_base_avg": 134846,
+      "max_base_avg": 174230,
+      "median": 135000
     },
     "San Francisco": {
       "count": 14,
@@ -43,23 +49,17 @@
       "max_base_avg": 221167,
       "median": 157500
     },
-    "New York": {
-      "count": 12,
-      "min_base_avg": 133583,
-      "max_base_avg": 172083,
-      "median": 135000
+    "Los Angeles": {
+      "count": 3,
+      "min_base_avg": 113666,
+      "max_base_avg": 145666,
+      "median": 120000
     },
     "Boston": {
       "count": 3,
       "min_base_avg": 118333,
       "max_base_avg": 141666,
       "median": 110000
-    },
-    "Los Angeles": {
-      "count": 3,
-      "min_base_avg": 113666,
-      "max_base_avg": 145666,
-      "median": 120000
     },
     "Austin": {
       "count": 3,
@@ -70,15 +70,15 @@
   },
   "by_remote": {
     "remote": {
-      "count": 5,
-      "min_base_avg": 106000,
-      "max_base_avg": 156000,
+      "count": 6,
+      "min_base_avg": 102722,
+      "max_base_avg": 147328,
       "median": 115000
     },
     "onsite": {
-      "count": 45,
-      "min_base_avg": 133483,
-      "max_base_avg": 173333,
+      "count": 46,
+      "min_base_avg": 133842,
+      "max_base_avg": 173913,
       "median": 130000
     }
   },

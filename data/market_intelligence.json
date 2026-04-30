@@ -1,21 +1,21 @@
 {
-  "date": "April 28, 2026",
-  "total_jobs": 94,
+  "date": "April 30, 2026",
+  "total_jobs": 99,
   "tools": {
-    "Salesforce": 54,
-    "Clay": 50,
-    "Hubspot": 43,
-    "Python": 42,
-    "Zapier": 35,
-    "N8N": 28,
-    "Claude": 28,
-    "Apollo": 24,
-    "Javascript": 19,
+    "Salesforce": 56,
+    "Clay": 51,
+    "Hubspot": 44,
+    "Python": 43,
+    "Zapier": 37,
+    "Claude": 30,
+    "N8N": 29,
+    "Apollo": 25,
+    "Javascript": 20,
+    "Gong": 16,
     "Openai": 15,
-    "Gong": 15,
+    "Zoominfo": 13,
     "Marketo": 12,
     "Instantly": 11,
-    "Zoominfo": 11,
     "Prompt Engineering": 11,
     "Typescript": 11,
     "Tableau": 10,
@@ -32,19 +32,19 @@
     "Chili Piper": 4,
     "Chili Piper Routing": 4,
     "Metabase": 4,
+    "Smartlead": 4,
+    "Linkedin Sales Navigator": 4,
+    "Anthropic": 4,
     "Salesloft": 3,
     "Embeddings": 3,
+    "Clearbit": 3,
     "Iterable": 3,
-    "Smartlead": 3,
     "Gainsight": 3,
     "Hightouch": 3,
-    "Linkedin Sales Navigator": 3,
     "Langchain": 3,
     "Fivetran": 3,
     "Churnzero": 3,
     "Klaviyo": 3,
-    "Anthropic": 3,
-    "Clearbit": 2,
     "Pipedrive": 2,
     "Lemlist": 2,
     "Planhat": 2,
@@ -60,23 +60,23 @@
     "Mid Market": 1
   },
   "hiring_signals": {
-    "Growth Hire": 81,
-    "Turnaround": 33,
+    "Growth Hire": 83,
+    "Turnaround": 34,
     "Immediate": 8
   },
   "comp_signals": {
-    "Equity": 68,
+    "Equity": 72,
     "Ote Mentioned": 2,
     "Uncapped": 1
   },
   "deal_size": {
-    "Seven Figure": 15,
-    "Enterprise Deal": 4,
+    "Seven Figure": 16,
+    "Enterprise Deal": 5,
     "Transactional": 4
   },
   "team_structure": {
-    "Build Team": 61,
-    "First Hire": 14,
+    "Build Team": 64,
+    "First Hire": 16,
     "Reports Cro": 8,
     "Reports Ceo": 1
   },
@@ -88,7 +88,7 @@
     "Apac": 1
   },
   "motion": {
-    "Channel": 18,
+    "Channel": 19,
     "Abm": 12,
     "Plg": 5,
     "Direct": 1,
@@ -96,7 +96,7 @@
     "Inside": 1
   },
   "sales_cycle": {
-    "Long": 8,
+    "Long": 9,
     "Short": 3
   },
   "methodology": {

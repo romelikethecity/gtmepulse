@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-04-30T03:13:50.885967",
-  "total_records": 58,
-  "records_with_salary": 32,
-  "disclosure_rate": 55.2,
+  "generated_at": "2026-04-30T05:54:01.054724",
+  "total_records": 56,
+  "records_with_salary": 31,
+  "disclosure_rate": 55.4,
   "salary_stats": {
     "min": 48,
     "max": 330000,
     "median": 130000,
-    "avg": 139546,
-    "count_with_salary": 32
+    "avg": 140499,
+    "count_with_salary": 31
   },
   "by_seniority": {
     "Unknown": {
-      "count": 26,
-      "min_base_avg": 124633,
-      "max_base_avg": 161214,
+      "count": 25,
+      "min_base_avg": 125219,
+      "max_base_avg": 162463,
       "median": 130000
     },
     "Director": {
@@ -42,12 +42,6 @@
       "min_base_avg": 178409,
       "max_base_avg": 228759,
       "median": 160000
-    },
-    "Boston": {
-      "count": 3,
-      "min_base_avg": 118333,
-      "max_base_avg": 141666,
-      "median": 110000
     }
   },
   "by_remote": {
@@ -58,9 +52,9 @@
       "median": 86332
     },
     "onsite": {
-      "count": 26,
-      "min_base_avg": 143059,
-      "max_base_avg": 179092,
+      "count": 25,
+      "min_base_avg": 144381,
+      "max_base_avg": 181056,
       "median": 132000
     }
   },

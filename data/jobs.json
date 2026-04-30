@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-04-30",
-  "total_jobs": 58,
+  "total_jobs": 56,
   "jobs": [
     {
       "job_id": "indeed-https://www.",
@@ -2707,81 +2707,6 @@
     },
     {
       "job_id": "indeed-https://www.",
-      "title": "GTM Engineering Intern (Customer Success & Agentic AI)",
-      "company": "Equinix",
-      "location": "Washington, DC, US",
-      "location_type": "onsite",
-      "is_remote": false,
-      "min_amount": null,
-      "max_amount": null,
-      "seniority": "",
-      "function_category": "sales",
-      "date_posted": "2026-04-14",
-      "date_scraped": "2026-04-16",
-      "source": "indeed",
-      "source_url": "https://www.indeed.com/viewjob?jk=56a7bbed8e31e611",
-      "description": "### **GTM Engineering Intern (Customer Success \\& Agentic AI)**\n\n\n* JR\\-160091\n* Hybrid\n* Redwood City\n* Washington\n* Dallas\n\nShow More\n * General Management\n* Full time\n\n**Who are we?**\n\n\n\nEquinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet.\n\n  \n\n\nA place where bold ideas are welcomed, human connection is valued, and everyone has the opportunity to shape their future.\n\n\n\nA career at Equinix means being at the center of shaping what comes next and amplifying customer value through innovation and impact. You’ll work across teams, influence key decisions, and help shape the path forward. You’ll find belonging, purpose, and a team that welcomes you—because when you feel valued, you’re empowered to do your best work.\n**Role Overview**\n\n\n\nThe **GTM Engineering Intern** will occupy a specialized technical role dedicated to bridging the gap between Customer Success strategy and autonomous execution. This position focuses on the design and deployment of **Agentic AI**—systems capable of reasoning, utilizing tools, and executing multi\\-step workflows with minimal human intervention.\n\n\n\nYou will be responsible for moving the organization beyond simple chatbots toward \"Autonomous Success Agents\" that drive renewals and expansions and operational scale through sophisticated automation and the **Microsoft Copilot** ecosystem.\n\n\n\n**Core Responsibilities**\n\n\n**1\\. Agentic AI \\& Autonomous System Development**\n\n\n* **Agentic Development:** Design and implement multi\\-agent systems using **Microsoft Copilot Studio** and **Microsoft Power Automate** that can autonomously research customer health, reason through complex account signals, and initiate corrective actions.\n\n* **Tool\\-Use \\& Function Calling:** Develop and configure \"skills\" or \"plugins\" that allow AI agents to interact directly with internal APIs, databases, and GTM tools (e.g., Clay, Salesforce, Slack) to perform tasks such as updating account plans or triggering renewal sequences.\n\n* **Reasoning Loops:** Build and refine agentic reasoning loops (e.g., Chain\\-of\\-Thought or ReAct patterns) to ensure AI\\-driven automations provide high\\-accuracy outputs in complex, non\\-linear Customer Success scenarios.\n\n**2\\. Workflow Engineering \\& Orchestration**\n\n\n* **End\\-to\\-End Automation:** Identify manual bottlenecks in the customer lifecycle and architect end\\-to\\-end automated solutions that integrate disparate data sources (Product, CRM, Support) into a unified execution layer.\n\n* **Data Grounding:** Ensure all agentic workflows are grounded in \"live\" customer data, utilizing Retrieval\\-Augmented Generation (RAG) and data orchestration platforms like **Clay** to maintain context and relevance.\n\n* **System Resilience:** Implement monitoring and \"Human\\-in\\-the\\-loop\" (HITL) checkpoints to ensure autonomous agents operate within defined guardrails and align with brand sentiment.\n\n**3\\. Commercial Impact \\& Strategy**\n\n\n* **Revenue Engineering:** Align automation projects with commercial outcomes, specifically focusing on increasing CSM \"books of business\" capacity and identifying expansion opportunities through automated intent signals.\n\n\n* **Strategic Prototyping:** Rapidly prototype customer\\-facing agents that can autonomously assist in technical onboarding or product adoption milestones, reducing the time\\-to\\-value for the end\\-user.\n\n  \n\n\n\n**Why Join Equinix?**\n\n\n\nWe pride ourselves on our **Global Internship Program**, an immersive experience designed to kick\\-start your career and set you up for long\\-term success.\n\n\n\nYou will:\n\n\n* **Work on real business challenges**  \n\nContribute to projects that directly support Equinix’s global operations and technology platforms.\n\n* **Be supported throughout your journey**  \n\nReceive mentorship from your manager, UX subject matter experts, an assigned buddy, and a formal intern mentor.\n\n* **Participate in curated learning experiences**  \n\nEngage with senior leaders, participate in professional workshops, and build global connections.\n\n* **Gain global recognition**  \n\nPresent your work through Equinix’s Global Ideas Competition (“Shark Tank”) to a worldwide audience.\n\n\n**Required Qualifications**\n\n\n* Currently pursuing a BS or MS in Computer Science, Artificial Intelligence, Robotics, or a related quantitative field in their penultimate year of study(graduating between December 2026\\-May 2027\\)\n\n* Strong proficiency in **Python** and experience with AI orchestration frameworks (e.g., LangChain, Semantic Kernel, or AutoGen).\n\n\n* Demonstrated understanding of **Agentic AI concepts**, including tool\\-augmented generation, autonomous planning, and multi\\-agent collaboration.\n\n* Experience working with RESTful APIs and modern data structures (JSON, SQL, NoSQL).\n* Available to work onsight from June 1st\\- August 17th in office (locations posted)\n\n**Preferred Qualifications**\n\n\n* Experience with **Microsoft Copilot Studio** or the broader **Power Platform** ecosystem.\n\n* Familiarity with GTM data orchestration tools (e.g., Clay) and their application in automated prospecting or account management.\n\n* Knowledge of the SaaS \"Land and Expand\" model and the technical metrics associated with Customer Success (Churn, NRR, LTV).\n\n\n**How to Apply**\n\n\n\nPlease submit the following:\n\n\n* An up\\-to\\-date resume that includes:\n\n* Internship availability (start and end dates)\n\n* Expected graduation date\n\n\nPlease apply only if you are available to work **full\\-time for the entire duration** of the internship program in the location posted.\n\n  \n\n\n\nEquinix is committed to ensuring that our employment process is open to all individuals, including those with a disability. If you are a qualified candidate and need assistance or an accommodation, please let us know by completing form.\n\n\nEquinix is an Equal Employment Opportunity and, in the U.S., an Affirmative Action employer. All qualified applicants will receive consideration for employment without regard to unlawful consideration of race, color, religion, creed, national or ethnic origin, ancestry, place of birth, citizenship, sex, pregnancy / childbirth or related medical conditions, sexual orientation, gender identity or expression, marital or domestic partnership status, age, veteran or military status, physical or mental disability, medical condition, genetic information, political / organizational affiliation, status as a victim or family member of a victim of crime or abuse, or any other status protected by applicable law.\n\n**We use artificial intelligence in our hiring process. Learn more** **here****.**",
-      "description_snippet": "### **GTM Engineering Intern (Customer Success \\& Agentic AI)**\n\n\n* JR\\-160091\n* Hybrid\n* Redwood City\n* Washington\n* Dallas\n\nShow More\n * General Management\n* Full time\n\n**Who are we?**\n\n\n\nEquinix is the world’s digital infrastructure company®, shortening the path to connectivity to enable the innovations that enrich our work, life and planet.\n\n  \n\n\nA place where bold ideas are welcomed, human connection is valued, and everyone has the opportunity to shape their future.\n\n\n\nA career at Equinix m",
-      "tools": [
-        {
-          "tool_name": "Langchain",
-          "tool_category": "AI_llm_frameworks",
-          "tool_id": "langchain"
-        },
-        {
-          "tool_name": "Semantic Kernel",
-          "tool_category": "AI_llm_frameworks",
-          "tool_id": "semantic_kernel"
-        },
-        {
-          "tool_name": "Autogen",
-          "tool_category": "AI_llm_frameworks",
-          "tool_id": "autogen"
-        },
-        {
-          "tool_name": "Rag",
-          "tool_category": "AI_techniques",
-          "tool_id": "rag"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Salesforce",
-          "tool_category": "CRM_Enterprise",
-          "tool_id": "salesforce"
-        },
-        {
-          "tool_name": "Clay",
-          "tool_category": "Data_Enrichment",
-          "tool_id": "clay"
-        }
-      ],
-      "signals": [
-        {
-          "signal_type": "geo_focus",
-          "signal_id": "global",
-          "signal_value": "Global"
-        },
-        {
-          "signal_type": "hiring_signals",
-          "signal_id": "growth_hire",
-          "signal_value": "Growth Hire"
-        },
-        {
-          "signal_type": "comp_signals",
-          "signal_id": "equity",
-          "signal_value": "Equity"
-        }
-      ],
-      "data_quality_score": 75,
-      "has_salary": false,
-      "has_description": true
-    },
-    {
-      "job_id": "indeed-https://www.",
       "title": "HubSpot Marketing Operations Specialist or GTM Engineer",
       "company": "Clockwork",
       "location": "Palo Alto, CA, US",
@@ -2903,106 +2828,6 @@
       ],
       "data_quality_score": 75,
       "has_salary": false,
-      "has_description": true
-    },
-    {
-      "job_id": "indeed-https://www.",
-      "title": "GTM Engineer New",
-      "company": "InvoiceCloud",
-      "location": "Boston, MA, US",
-      "location_type": "onsite",
-      "is_remote": false,
-      "min_amount": 110000,
-      "max_amount": 130000,
-      "seniority": "",
-      "function_category": "sales",
-      "date_posted": "2026-04-14",
-      "date_scraped": "2026-04-15",
-      "source": "indeed",
-      "source_url": "https://www.indeed.com/viewjob?jk=71cc0677ab998764",
-      "description": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI maturity and responsible innovation. It’s an award\\-winning, purpose\\-driven environment where top talent thrives. To learn more, visit InvoiceCloud.com.\n\n**Role Overview:**\n\n\n\nWe are seeking a highly skilled and results\\-oriented GTM Engineer to support the Revenue Operations team. This role will play a key part in advancing InvoiceCloud’s mission to drive digital transformation for clients and enhance customer engagement.\n\n\n\nThe ideal candidate operates as a proactive, trusted partner—capable of managing complex responsibilities, collaborating across teams, and maintaining the high standards of professionalism and innovation that define InvoiceCloud’s culture.\n\n  \n\n\n***\\*\\*Candidate must be based in greater Boston, MA*** ***and be onsite in our Seaport Boston, MA office 2x per week \\*\\****\n\n  \n\n\n**Success Profile:**\n\n\n\nThis role is anchored in our company’s core competencies. These competencies reflect the mindsets and behaviors that define success in this role. Below is how each competency translates into meaningful impact and outcomes for this position.\n\n\n\n**Results\\-Driven**\n\n\n* Write SQL in Snowflake to build views, scoring models, and ad hoc analyses that support GTM decision\\-making  \n\n\t+ Maintain and improve pipeline and buying signal dashboards in Tableau\n\t+ Collaborate with SDRs, AEs, and Marketing to understand workflow pain points and translate them into engineering solutions\n\t+ Surface data quality issues and automation gaps proactively before they affect pipeline\n\n\n **Drives Efficiency**\n\n\n* Build tables, waterfalls, and enrichment workflows in Clay that power prospecting and lead scoring  \n\n\t+ Design and maintain data pipelines from Clay into Salesforce, ensuring clean field mapping, deduplication, and record integrity\n\t+ Connect and orchestrate data across the GTM stack: Clay, SFDC, Marketo, 6sense, and Snowflake\n\t+ Develop and deploy automations that reduce manual work across Sales, Marketing, and RevOps\n\n\n **Takes Ownership**\n\n\n* Own Clay as the primary GTM engineering platform and manage its ongoing optimization and scalability  \n\n\t+ Build AI\\-powered workflows using Claude, ChatGPT, and other LLMs to automate research, personalization, and signal processing at scale\n\t+ Use tools like Claude Code and Lovable to rapidly prototype internal tools and workflow applications\n\t+ Document data logic, workflow architecture, and process changes as you build\n\n  \n\n\n**Requirements**\n\n\n**Required:**\n\n\n* Bachelor’s degree in Computer Science, Software Engineering, or a related technical field\n* Strong SQL skills — comfortable writing complex queries, CTEs, and window functions\n* Hands\\-on experience with AI tools: LLM APIs (Claude, OpenAI), prompt engineering, and AI\\-assisted development (Claude Code, Cursor, or similar)\n* Experience with Clay or a strong desire to become an expert quickly — this is your primary tool\n* Familiarity with workflow automation platforms, ideally n8n or similar (Zapier, Make)\n* Experience with low\\-code/no\\-code app builders such as Lovable, Bolt, or v0\n* 1–3 years of professional experience; strong internship or project work welcome\n* Genuine interest in sales and marketing — you want to understand the GTM motion, not just build abstractions\n\n\n**Nice to Have:**\n\n\n* Experience with Salesforce data models and SFDC integrations\n* Familiarity with Snowflake, dbt, or other data warehouse tooling\n* Exposure to ABM platforms like 6sense or intent data concepts\n* Python skills for scripting, API integrations, or ML experimentation\n* Prior work in a RevOps, sales ops, or marketing ops context\n\n  \n\n\n**Benefits:**\n\n\n\nWe offer a competitive benefits program including:\n\n\n* Medical, dental, vision, life \\& disability insurance\n* 401(k) plan with company match\n* Flexible Time Off (FTO), wellbeing days, paid holidays, and summer Fridays\n* Mental health resources\n* Paid parental leave \\& Backup Care\n* Tuition reimbursement\n* Employee Resource Groups (ERGs)\n  \n\nBase salary is one component of total compensation. Employees may also be eligible for an annual bonus or commission. Some roles may also be eligible for overtime pay. The above represents the expected base compensation range for this job requisition. Ultimately, in determining your pay, we’ll consider many factors including, but not limited to, skills, experience, qualifications, geographic location, and other job\\-related factors.\n\n\nBase Compensation Range\n\n\n$110,000 \\- $130,000 USD\n\n\n\nInvoiceCloud is committed to providing equal employment opportunities to all employees and applicants. We do not tolerate discrimination or harassment of any kind based on race, color, religion, age, sex, nationality, disability, genetic information, veteran or military status, sexual orientation, gender identity or expression, or any other characteristic protected under applicable laws.\n\n\n\nThis commitment applies to all aspects of employment, including recruitment, hiring, placement, promotion, termination, layoff, recall, transfer, leave, compensation, and training.\n\n\n\nIf you require a disability\\-related or religious accommodation during the application or recruitment process, and wish to discuss possible adjustments, please contact jobs@invoicecloud.com.\n\n\n\nClick **here** to review InvoiceCloud’s Job Applicant Privacy Policy.\n\n\n**For recruitment agencies:** InvoiceCloud does not accept unsolicited resumes from agencies. Please do not forward resumes to our job aliases, employees, or any other company location. InvoiceCloud is not responsible for any fees associated with unsolicited submissions.",
-      "description_snippet": "**About InvoiceCloud**:\n\n\n\nInvoiceCloud is a fast\\-growing fintech leader recognized with 20 major awards in 2025, including USA TODAY and Boston Globe Top Workplaces, multiple SaaS Awards wins for Best Solution for Finance and FinTech, and national customer service honors from Stevie and the Business Intelligence Group. Judges also highlighted our mission to reduce digital exclusion and restore simplicity and dignity to how people pay for essential services, as well as our leadership in AI matu",
-      "tools": [
-        {
-          "tool_name": "Openai",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "openai"
-        },
-        {
-          "tool_name": "Claude",
-          "tool_category": "AI_llm_providers",
-          "tool_id": "claude"
-        },
-        {
-          "tool_name": "Prompt Engineering",
-          "tool_category": "AI_techniques",
-          "tool_id": "prompt_engineering"
-        },
-        {
-          "tool_name": "Python",
-          "tool_category": "AI_languages",
-          "tool_id": "python"
-        },
-        {
-          "tool_name": "Salesforce",
-          "tool_category": "CRM_Enterprise",
-          "tool_id": "salesforce"
-        },
-        {
-          "tool_name": "Clay",
-          "tool_category": "Data_Enrichment",
-          "tool_id": "clay"
-        },
-        {
-          "tool_name": "6Sense",
-          "tool_category": "ABM_Platforms",
-          "tool_id": "6sense"
-        },
-        {
-          "tool_name": "Marketo",
-          "tool_category": "Marketing_Automation_Enterprise",
-          "tool_id": "marketo"
-        },
-        {
-          "tool_name": "Tableau",
-          "tool_category": "BI_Analytics",
-          "tool_id": "tableau"
-        },
-        {
-          "tool_name": "Zapier",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "zapier"
-        },
-        {
-          "tool_name": "N8N",
-          "tool_category": "Integration_iPaaS",
-          "tool_id": "n8n"
-        }
-      ],
-      "signals": [
-        {
-          "signal_type": "motion",
-          "signal_id": "abm",
-          "signal_value": "Abm"
-        },
-        {
-          "signal_type": "geo_focus",
-          "signal_id": "north_america",
-          "signal_value": "North America"
-        },
-        {
-          "signal_type": "hiring_signals",
-          "signal_id": "turnaround",
-          "signal_value": "Turnaround"
-        },
-        {
-          "signal_type": "comp_signals",
-          "signal_id": "equity",
-          "signal_value": "Equity"
-        }
-      ],
-      "data_quality_score": 100,
-      "has_salary": true,
       "has_description": true
     },
     {

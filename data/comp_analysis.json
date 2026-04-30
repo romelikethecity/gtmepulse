@@ -1,85 +1,67 @@
 {
-  "generated_at": "2026-04-30T00:39:36.837992",
-  "total_records": 99,
-  "records_with_salary": 53,
-  "disclosure_rate": 53.5,
+  "generated_at": "2026-04-30T03:13:50.885967",
+  "total_records": 58,
+  "records_with_salary": 32,
+  "disclosure_rate": 55.2,
   "salary_stats": {
     "min": 48,
     "max": 330000,
-    "median": 125000,
-    "avg": 132503,
-    "count_with_salary": 53
+    "median": 130000,
+    "avg": 139546,
+    "count_with_salary": 32
   },
   "by_seniority": {
     "Unknown": {
-      "count": 44,
-      "min_base_avg": 121424,
-      "max_base_avg": 159845,
-      "median": 120000
+      "count": 26,
+      "min_base_avg": 124633,
+      "max_base_avg": 161214,
+      "median": 130000
     },
     "Director": {
-      "count": 4,
-      "min_base_avg": 243500,
-      "max_base_avg": 295000,
-      "median": 250000
-    },
-    "Senior": {
       "count": 3,
-      "min_base_avg": 151666,
-      "max_base_avg": 198333,
-      "median": 165000
+      "min_base_avg": 266666,
+      "max_base_avg": 310000,
+      "median": 250000
     }
   },
   "by_metro": {
     "Unknown": {
-      "count": 16,
-      "min_base_avg": 116070,
-      "max_base_avg": 151985,
+      "count": 11,
+      "min_base_avg": 124357,
+      "max_base_avg": 160015,
       "median": 120000
     },
     "New York": {
-      "count": 13,
-      "min_base_avg": 134846,
-      "max_base_avg": 174230,
-      "median": 135000
+      "count": 3,
+      "min_base_avg": 136666,
+      "max_base_avg": 186666,
+      "median": 150000
     },
     "San Francisco": {
-      "count": 14,
-      "min_base_avg": 165892,
-      "max_base_avg": 221167,
-      "median": 157500
-    },
-    "Los Angeles": {
-      "count": 3,
-      "min_base_avg": 113666,
-      "max_base_avg": 145666,
-      "median": 120000
+      "count": 11,
+      "min_base_avg": 178409,
+      "max_base_avg": 228759,
+      "median": 160000
     },
     "Boston": {
       "count": 3,
       "min_base_avg": 118333,
       "max_base_avg": 141666,
       "median": 110000
-    },
-    "Austin": {
-      "count": 3,
-      "min_base_avg": 98016,
-      "max_base_avg": 130020,
-      "median": 120000
     }
   },
   "by_remote": {
     "remote": {
-      "count": 6,
-      "min_base_avg": 102722,
-      "max_base_avg": 147328,
-      "median": 115000
+      "count": 5,
+      "min_base_avg": 99266,
+      "max_base_avg": 150793,
+      "median": 86332
     },
     "onsite": {
-      "count": 46,
-      "min_base_avg": 133842,
-      "max_base_avg": 173913,
-      "median": 130000
+      "count": 26,
+      "min_base_avg": 143059,
+      "max_base_avg": 179092,
+      "median": 132000
     }
   },
   "top_paying_roles": [
@@ -119,20 +101,6 @@
       "seniority": ""
     },
     {
-      "title": "Director, GTM Automations & Data",
-      "company": "Gong",
-      "salary_min": 174000.0,
-      "salary_max": 250000.0,
-      "seniority": "Director"
-    },
-    {
-      "title": "Senior Manager, Go-To-Market Engineering",
-      "company": "Aircall",
-      "salary_min": 190000.0,
-      "salary_max": 245000.0,
-      "seniority": "Senior"
-    },
-    {
       "title": "GTM Engineering and Systems Manager",
       "company": "ASHBY",
       "salary_min": 160000.0,
@@ -151,6 +119,20 @@
       "company": "GAMMA",
       "salary_min": 170000.0,
       "salary_max": 215000.0,
+      "seniority": ""
+    },
+    {
+      "title": "GTM Engineer",
+      "company": "MUTINY",
+      "salary_min": 150000.0,
+      "salary_max": 200000.0,
+      "seniority": ""
+    },
+    {
+      "title": "GTM Engineer (NYC)",
+      "company": "Revin",
+      "salary_min": 160000.0,
+      "salary_max": 190000.0,
       "seniority": ""
     }
   ]

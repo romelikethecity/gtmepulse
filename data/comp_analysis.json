@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-04-30T05:54:01.054724",
-  "total_records": 56,
-  "records_with_salary": 31,
-  "disclosure_rate": 55.4,
+  "generated_at": "2026-05-04T12:17:22.966119",
+  "total_records": 68,
+  "records_with_salary": 37,
+  "disclosure_rate": 54.4,
   "salary_stats": {
-    "min": 48,
+    "min": 50000,
     "max": 330000,
     "median": 130000,
-    "avg": 140499,
-    "count_with_salary": 31
+    "avg": 138930,
+    "count_with_salary": 37
   },
   "by_seniority": {
-    "Unknown": {
-      "count": 25,
-      "min_base_avg": 125219,
-      "max_base_avg": 162463,
-      "median": 130000
+    "Mid": {
+      "count": 31,
+      "min_base_avg": 125175,
+      "max_base_avg": 165049,
+      "median": 125000
     },
     "Director": {
       "count": 3,
@@ -25,37 +25,37 @@
     }
   },
   "by_metro": {
-    "Unknown": {
-      "count": 11,
-      "min_base_avg": 124357,
-      "max_base_avg": 160015,
-      "median": 120000
-    },
     "New York": {
-      "count": 3,
-      "min_base_avg": 136666,
-      "max_base_avg": 186666,
+      "count": 7,
+      "min_base_avg": 142142,
+      "max_base_avg": 195000,
       "median": 150000
+    },
+    "Unknown": {
+      "count": 14,
+      "min_base_avg": 116280,
+      "max_base_avg": 151083,
+      "median": 120000
     },
     "San Francisco": {
       "count": 11,
-      "min_base_avg": 178409,
-      "max_base_avg": 228759,
-      "median": 160000
+      "min_base_avg": 172954,
+      "max_base_avg": 218759,
+      "median": 157500
     }
   },
   "by_remote": {
+    "onsite": {
+      "count": 31,
+      "min_base_avg": 141758,
+      "max_base_avg": 179882,
+      "median": 130000
+    },
     "remote": {
       "count": 5,
       "min_base_avg": 99266,
       "max_base_avg": 150793,
       "median": 86332
-    },
-    "onsite": {
-      "count": 25,
-      "min_base_avg": 144381,
-      "max_base_avg": 181056,
-      "median": 132000
     }
   },
   "top_paying_roles": [
@@ -85,49 +85,49 @@
       "company": "Teal Health",
       "salary_min": 249600.0,
       "salary_max": 291200.0,
-      "seniority": ""
+      "seniority": "Mid"
     },
     {
       "title": "AI GTM Engineer",
       "company": "DocuSign",
       "salary_min": 157500.0,
       "salary_max": 254350.0,
-      "seniority": ""
-    },
-    {
-      "title": "GTM Engineering and Systems Manager",
-      "company": "ASHBY",
-      "salary_min": 160000.0,
-      "salary_max": 230000.0,
       "seniority": "Mid"
     },
     {
-      "title": "GTM Engineer",
-      "company": "",
-      "salary_min": 140000.0,
-      "salary_max": 220000.0,
-      "seniority": ""
+      "title": "Growth Engineer",
+      "company": "Rabbit Funding",
+      "salary_min": 110000.0,
+      "salary_max": 250000.0,
+      "seniority": "Mid"
+    },
+    {
+      "title": "Head of Growth Engineering",
+      "company": "Socure",
+      "salary_min": 195000.0,
+      "salary_max": 225000.0,
+      "seniority": "Head of"
     },
     {
       "title": "GTM Engineer",
       "company": "GAMMA",
       "salary_min": 170000.0,
       "salary_max": 215000.0,
-      "seniority": ""
+      "seniority": "Mid"
     },
     {
       "title": "GTM Engineer",
       "company": "MUTINY",
       "salary_min": 150000.0,
       "salary_max": 200000.0,
-      "seniority": ""
+      "seniority": "Mid"
     },
     {
       "title": "GTM Engineer (NYC)",
       "company": "Revin",
       "salary_min": 160000.0,
       "salary_max": 190000.0,
-      "seniority": ""
+      "seniority": "Mid"
     }
   ]
 }

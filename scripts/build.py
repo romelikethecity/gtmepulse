@@ -6318,6 +6318,16 @@ TOOL_REVIEWS = [
      "title": "Common Room Review 2026: Community Signals",
      "meta_desc": "Common Room review for GTM Engineers. GitHub, Discord, Slack signal capture, identity resolution, and when community intelligence drives pipeline.",
      "content_module": "tools_intent", "content_key": "common-room"},
+    {"slug": "pocus-review", "name": "Pocus", "category": "Intent Data",
+     "url": "https://pocus.com", "price_range": "Custom ($25K-$60K+/yr)",
+     "title": "Pocus Review 2026: Product-Led Sales Platform",
+     "meta_desc": "Pocus review for GTM Engineers. PQL scoring, product usage signals, playbook automation, and how it compares to Common Room and Default.",
+     "content_module": "tools_intent", "content_key": "pocus"},
+    {"slug": "default-review", "name": "Default", "category": "Intent Data",
+     "url": "https://default.com", "price_range": "$500-$8,000+/mo",
+     "title": "Default Review 2026: Inbound Conversion Platform",
+     "meta_desc": "Default review for GTM Engineers. Forms, routing, scheduling, signal-based outbound in one platform. Replaces Calendly + Chili Piper + Clearbit stacks.",
+     "content_module": "tools_intent", "content_key": "default"},
 
     # Analytics (2)
     {"slug": "segment-review", "name": "Segment", "category": "Analytics",
@@ -6648,6 +6658,11 @@ TOOL_COMPARISONS = [
      "meta_desc": "Common Room vs Pocus for GTM Engineers. Community signals vs product usage scoring, pricing reality, and which signal platform drives more pipeline.",
      "content_module": "comparisons_intent", "content_key": "common-room-vs-pocus",
      "category": "Intent Data"},
+    {"slug": "default-vs-clay", "tool_a": "Default", "tool_b": "Clay",
+     "title": "Default vs Clay 2026: Inbound vs Outbound Stack",
+     "meta_desc": "Default vs Clay for GTM Engineers. Inbound conversion vs outbound prospecting, pricing, AI personalization depth, and when to use both together.",
+     "content_module": "comparisons_intent", "content_key": "default-vs-clay",
+     "category": "Intent Data"},
 ]
 
 BUILT_COMPARISON_SLUGS = {c["slug"] for c in TOOL_COMPARISONS}
@@ -6849,6 +6864,16 @@ TOOL_ALTERNATIVES = [
      "meta_desc": "Top LinkedIn Sales Navigator alternatives compared. Get prospecting data, contact capture, and outreach without the $100+/month per-seat fee.",
      "content_module": "alternatives_linkedin", "content_key": "linkedin-sales-navigator",
      "category": "LinkedIn & Social"},
+    {"slug": "salesloft-alternatives", "tool_name": "Salesloft",
+     "title": "Best Salesloft Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Salesloft alternatives compared. Enterprise sales engagement, cold email at a fraction of the cost, and tools that match the use case without the price.",
+     "content_module": "alternatives_outbound", "content_key": "salesloft",
+     "category": "Outbound Sequencing"},
+    {"slug": "make-alternatives", "tool_name": "Make",
+     "title": "Best Make Alternatives 2026 for GTM Engineers",
+     "meta_desc": "Top Make (Integromat) alternatives for workflow automation. Self-hosted n8n, Zapier simplicity, enterprise iPaaS, and AI-native workflow platforms compared.",
+     "content_module": "alternatives_automation", "content_key": "make",
+     "category": "Workflow Automation"},
 ]
 
 BUILT_ALTERNATIVE_SLUGS = {a["slug"] for a in TOOL_ALTERNATIVES}
@@ -18366,6 +18391,115 @@ def build_insight_gtm_engineer_vs_revops():
     print(f"  Built: insights/gtm-engineer-vs-revops/index.html")
 
 
+def build_insight_2026_gtme_stack():
+    """The 2026 GTME Stack: What 228 Practitioners Use."""
+    title = "The 2026 GTME Stack: What 228 Practitioners Use"
+    description = (
+        "228 GTM Engineer survey + 3,000+ job postings reveal the real 2026 stack."
+        " Tool adoption rates, stack composition by company stage, and what's changing."
+    )
+    description = pad_description(description)
+
+    crumbs = [("Home", "/"), ("Insights", "/insights/"), ("2026 GTME Stack", None)]
+    bc_html = breadcrumb_html(crumbs)
+    article_schema = get_article_schema(title=title, description=description, slug="2026-gtme-stack", date_published="2026-05-15", word_count=2600)
+
+    body = f'''{bc_html}
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Stack Analysis</div>
+        <h1>The 2026 GTME Stack: What 228 Practitioners Use</h1>
+        <p>Three years into the role, the GTM Engineer stack has consolidated around a clear pattern. Here's what 228 practitioners run today, what's growing, and what's getting replaced.</p>
+    </div>
+</section>
+
+<div class="salary-stats">
+    <div class="salary-stat-card">
+        <span class="stat-value">69%</span>
+        <span class="stat-label">Use Clay</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">54%</span>
+        <span class="stat-label">Adopted n8n</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">$2,400</span>
+        <span class="stat-label">Median Stack Spend/mo</span>
+    </div>
+    <div class="salary-stat-card">
+        <span class="stat-value">7</span>
+        <span class="stat-label">Tools per Stack</span>
+    </div>
+</div>
+
+<div class="salary-content">
+    <p class="byline"><strong>By Rome Thorndike</strong> | May 2026</p>
+
+    <h2>The Pattern That Emerged</h2>
+    <p>The 2026 GTM Engineer stack has converged. Three years ago, every practitioner ran a slightly different combination of tools depending on which agency or company taught them the role. Today the stack has a recognizable shape: Clay at the center, an outbound sequencer alongside it, automation infrastructure underneath, a CRM as system of record, and a signal layer feeding the whole thing. The 228 GTM Engineers we surveyed converged on the same six categories with different tool choices inside each.</p>
+    <p>The consolidation matters because it changes the hiring conversation. Five years ago, "GTM stack experience" was an ambiguous resume line. Today, "Clay + Smartlead/Instantly + n8n + HubSpot/Salesforce + an enrichment waterfall + an intent source" is a parseable answer to "what did you run?" The job postings reflect the same pattern. 69% of GTM Engineer postings name Clay specifically. Outbound sequencer mentions appear in 45%. Workflow automation tools (Make, n8n, Zapier) appear in 40%.</p>
+    <p>What follows is the breakdown by category, with adoption rates from our 228-practitioner survey, the dominant tool choices, and what's changing fastest as the role matures into 2026 and 2027.</p>
+
+    <h2>Category 1: Data Enrichment Orchestration</h2>
+    <p>This is the layer that takes a list of companies or contacts and turns it into qualified, enriched, scored outbound-ready data. Clay sits in 69% of stacks here. The remaining 31% are mostly Apollo's enrichment features used as a Clay substitute, with a small minority running custom Python pipelines that call enrichment APIs directly.</p>
+    <p>The interesting movement in 2026 is at the bottom of the funnel: enrichment as a service. Companies like Verum are selling enriched lists with provenance and methodology guarantees rather than raw API access. GTM Engineers at smaller companies (under 15 employees) increasingly outsource enrichment entirely rather than build Clay infrastructure. The trade-off is flexibility versus speed-to-market. Outsourced enrichment delivers cleaner data faster; in-house Clay infrastructure delivers more workflow flexibility.</p>
+    <p>The waterfall pattern dominates inside Clay-using teams. The typical 2026 waterfall runs Apollo first (free credits), then Clearbit or its HubSpot replacement, then FullEnrich for the hardest contacts, with email verification through ZeroBounce or similar at the end. The waterfall is the practical answer to no single data provider having full coverage, and Clay's visual builder makes the pattern accessible without engineering.</p>
+
+    <h2>Category 2: Outbound Sequencing</h2>
+    <p>The outbound sequencer category has bifurcated. High-volume cold email programs run Smartlead or Instantly, with 38% combined adoption in our survey. Enterprise sales engagement runs Outreach or Salesloft, with 30% combined adoption. The middle ground (Lemlist, Apollo's built-in sequencing) covers the remaining 25%, with the last 7% running smaller or custom tools.</p>
+    <p>The trend that's accelerating: domain diversification and inbox rotation. Modern outbound programs run 5-10 sending domains rotated systematically to limit reputation blast radius. Smartlead's unlimited mailbox rotation and Instantly's mailbox rotation are why these two tools have grown faster than Outreach in the GTM Engineer community. The enterprise tools still dominate at scale (50+ rep teams), but the high-volume cold email category has moved decisively to the disruptors.</p>
+    <p>The other shift is multichannel. Pure cold email reply rates have declined every year since 2022. The teams seeing the strongest reply rates run sequences that combine email, LinkedIn touches (via HeyReach or Lemlist), and selective calling (via Aircall or Orum). Multichannel sequencing requires either a tool that supports all three or careful orchestration across separate tools. Most GTM Engineers in our survey still run the orchestration manually rather than relying on a single multichannel platform.</p>
+
+    <h2>Category 3: Workflow Automation</h2>
+    <p>The workflow automation layer is where 2026 changed the most. n8n adoption jumped from under 30% in 2024 to 54% in our 2026 survey. Make holds steady at 35%. Zapier has fallen to about 25% among technical GTM Engineers, though it still dominates non-technical teams. The n8n surge reflects a structural reality: GTM Engineers running high-volume workflows discover that per-execution pricing breaks the cost model fast, and n8n's self-hosted free tier solves the problem.</p>
+    <p>The self-hosting question remains the bottleneck. n8n requires comfort with Docker, basic Linux server administration, and ongoing maintenance for the self-hosted deployment. Teams without that comfort either run n8n Cloud (which removes the cost advantage) or stay on Make. The split tracks engineering depth more than company size; some 5-person teams self-host n8n cleanly while some 100-person teams stay on Make because nobody owns the infrastructure responsibility.</p>
+    <p>The emerging pattern: hybrid stacks running Make and n8n for different jobs. Make handles the simpler workflows where visual building speed matters. n8n handles the high-volume or code-heavy workflows where execution cost matters. About 20% of GTM Engineers in our survey reported running both tools deliberately rather than picking one.</p>
+
+    <h2>Category 4: CRM</h2>
+    <p>The CRM split is the most predictable in the stack. HubSpot dominates GTM Engineering teams at 47% of our survey. Salesforce sits at 32%. Attio (the modern API-first CRM) has grown to 8%, up from under 2% in 2024. Pipedrive, Close, and other tools split the remaining 13%.</p>
+    <p>The HubSpot advantage for GTM Engineers is integration breadth and self-service operation. A GTM Engineer can build complex HubSpot workflows without needing a dedicated admin. Salesforce, by contrast, almost always requires a Salesforce admin alongside the GTM Engineer because the configuration surface is broader and the cost of misconfiguration is higher. The HubSpot-first stack is faster to operate but caps out at certain levels of enterprise sales complexity that Salesforce handles better.</p>
+    <p>Attio's growth reflects a generational shift in CRM expectations. Teams adopting Attio are typically post-2023 startups whose founders dislike Salesforce's complexity and HubSpot's marketing-orientation. Attio's API-first design appeals to GTM Engineers building automation against the CRM as a data platform rather than a UI for reps. The trajectory suggests Attio will reach 15-20% adoption by 2027 if the current growth holds.</p>
+
+    <h2>Category 5: Signal and Intent Data</h2>
+    <p>The signal layer has the most categorical confusion. Our 2026 survey shows 45% of GTM Engineers run some form of intent or signal data, but the specific tools split widely: 18% on 6sense or Bombora (traditional intent), 12% on Common Room or Pocus (community/product signals), 10% on RB2B or Warmly (website de-anonymization), 8% on UserGems (job changes), and a long tail of other signal sources.</p>
+    <p>What's growing fastest is the website de-anonymization category. RB2B and Warmly went from under 5% adoption in 2024 to 10% in 2026 in our survey. The economics are compelling: $200-$1,000/month captures a meaningful percentage of previously-anonymous pricing page traffic and pushes named visitors to Slack with full LinkedIn context. For mid-market B2B SaaS, this signal source has higher ROI per dollar than traditional intent data.</p>
+    <p>The signal stacking trend is the more interesting pattern. Teams running 3+ signal sources see meaningfully better pipeline outcomes than teams running 1-2 sources. The infrastructure work to consolidate signals into a unified rep queue (rather than 5 separate alert channels) is what separates the teams getting ROI from the teams generating signal noise.</p>
+
+    <h2>Category 6: Analytics and Product Signals</h2>
+    <p>The analytics layer covers product event capture and analysis. Segment leads at 28% adoption among teams with meaningful product analytics needs. Mixpanel and Amplitude each sit around 15%. PostHog has grown to 12%, reflecting the open-source momentum among technical teams. The remaining 30% of GTM Engineers report having no formal product analytics, which usually correlates with sales-led motions where product usage isn't the buying signal.</p>
+    <p>The warehouse-plus-reverse-ETL pattern is replacing some of the traditional analytics tool spend. Teams with a warehouse and dbt models increasingly run analytics workflows directly against the warehouse and push activated data to operational tools through Hightouch or Census. This composable analytics stack has reached around 20% adoption among the more data-mature GTM Engineering teams in our survey.</p>
+    <p>The bottleneck remains event quality. Teams with rich, consistent product event tracking get meaningful value from this layer. Teams with sparse or inconsistent events spend most of their analytics investment on cleanup rather than insight. The lesson many GTM Engineers learn the expensive way: invest in event tracking discipline before investing in fancy analytics tooling.</p>
+
+    <h2>Stack Composition by Company Stage</h2>
+    <p>Early-stage (seed to Series A): typical stack costs $1,200-$2,400/month. Clay + Smartlead or Instantly + Make or n8n + HubSpot + one signal source. Most early-stage stacks skip the analytics layer entirely until product traction justifies it.</p>
+    <p>Mid-market (Series B to Series C): typical stack costs $2,500-$5,000/month. Clay + Outreach or Salesloft + n8n + HubSpot or Salesforce + 2-3 signal sources + Segment or Mixpanel + reverse ETL (Hightouch or Census). The mid-market stack is where complexity peaks because the team has budget for more tools but hasn't yet rationalized which ones drive pipeline.</p>
+    <p>Growth-stage and enterprise (Series C+): typical stack costs $5,000-$15,000/month. The same categories as mid-market but with enterprise tooling in each (Salesforce instead of HubSpot, 6sense instead of cheaper intent tools, Workato or Tray for automation governance). Growth-stage stacks rationalize toward consolidation; many companies remove tools at this stage that they added at mid-market when they realize the operational overhead exceeds the value.</p>
+
+    <h2>What's Getting Replaced in 2026</h2>
+    <p>Three categories are seeing meaningful replacement activity. First, standalone enrichment subscriptions are losing share to Clay's waterfall pattern. ZoomInfo and Cognism are still bought, but increasingly as one input to a Clay waterfall rather than as the primary enrichment source. Second, Zapier is losing share to Make and n8n among technical teams; the trajectory suggests Zapier will hold its non-technical user base but lose more of the GTM Engineer category over the next 24 months. Third, traditional sales engagement platforms (Outreach, Salesloft) are losing share at the SMB and lower-mid-market end to volume cold email tools (Smartlead, Instantly), though they remain dominant at enterprise scale.</p>
+    <p>The category that's expanding fastest: signal-based selling platforms. Common Room, Pocus, Default, and adjacent tools are reaching teams that previously had no signal layer at all rather than displacing other signal tools. The total addressable market for signal-based selling is still expanding, which is why multiple players in the space are growing simultaneously.</p>
+
+    <h2>What This Means for GTM Engineers</h2>
+    <p>The hiring conversation in 2026 expects fluency in the dominant stack: Clay, an outbound sequencer, an automation platform, a CRM, and at least one signal source. Engineers who can articulate specific waterfall designs, sequencing strategies, automation cost models, and signal-to-pipeline conversion patterns are in demand. Engineers who name tools without specific operational depth get fewer offers and at lower compensation.</p>
+    <p>The pattern that pays best in interviews: come prepared with specific stack stories. "I ran a Clay waterfall that processed 3,000 accounts per week with $0.08 per enriched contact" beats "I have Clay experience." "I migrated our outbound from Zapier to n8n and reduced execution costs from $400 to $30 per month" beats "I know automation tools." The specificity is the differentiator in a market where stack literacy is broadly distributed.</p>
+    <p>For engineers considering the role transition, the dominant stack tells you what to learn. Build a sample Clay workflow with a 3-provider waterfall and personalized opening lines. Build an n8n self-hosted instance and run a meaningful workflow on it. Run a small Smartlead campaign with proper warmup discipline. These three projects, documented on GitHub or a personal site, beat any course or certification for hiring conversations in 2026.</p>
+
+{insight_related_links("2026-gtme-stack")}
+</div>
+'''
+    body += source_citation_html()
+    body += newsletter_cta_html("Weekly GTM Engineer market data, tool adoption shifts, and stack analysis.")
+    extra_head = get_breadcrumb_schema(crumbs) + article_schema
+
+    page = get_page_wrapper(
+        title=title, description=description, canonical_path="/insights/2026-gtme-stack/",
+        body_content=body, active_path="/insights/",
+        extra_head=extra_head, body_class="page-inner",
+    )
+    write_page("insights/2026-gtme-stack/index.html", page)
+    print(f"  Built: insights/2026-gtme-stack/index.html")
+
+
 # ---------------------------------------------------------------------------
 # Content standards validator
 # ---------------------------------------------------------------------------
@@ -18737,6 +18871,13 @@ GLOSSARY_TERMS = [
     {"slug": "account-based-marketing", "term": "Account-Based Marketing", "category": "Career & Industry"},
     {"slug": "sales-cycle-compression", "term": "Sales Cycle Compression", "category": "CRM & Pipeline"},
     {"slug": "signal-stack", "term": "Signal Stack", "category": "Analytics & Signals"},
+
+    # Batch 4 — Adjacent GTM Categories
+    {"slug": "conversation-intelligence", "term": "Conversation Intelligence", "category": "Analytics & Signals"},
+    {"slug": "revenue-intelligence", "term": "Revenue Intelligence", "category": "Analytics & Signals"},
+    {"slug": "buyer-enablement", "term": "Buyer Enablement", "category": "Career & Industry"},
+    {"slug": "gtm-motion", "term": "GTM Motion", "category": "Career & Industry"},
+    {"slug": "sender-reputation", "term": "Sender Reputation", "category": "Outbound & Sequencing"},
 ]
 
 
@@ -19609,6 +19750,8 @@ def main():
     build_insight_gtm_engineer_freelance_proposal_template()
     build_insight_clay_vs_manual_prospecting_roi()
     build_insight_gtm_engineer_vs_revops()
+    # Batch 7 — Stack analysis
+    build_insight_2026_gtme_stack()
 
     # Register all pages for OG image generation
     print("\n  Registering OG pages...")

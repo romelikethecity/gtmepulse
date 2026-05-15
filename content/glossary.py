@@ -1208,4 +1208,93 @@ GLOSSARY_TERMS = {
         ],
     },
 
+    # =========================================================================
+    # Batch 4 — Adjacent GTM Categories (5 terms)
+    # =========================================================================
+
+    "conversation-intelligence": {
+        "term": "Conversation Intelligence",
+        "category": "Analytics & Signals",
+        "definition": "Software that records, transcribes, and analyzes sales conversations (calls, meetings, demos) to extract coaching feedback, deal risk signals, and aggregate insight about customer concerns and competitive mentions.",
+        "body": """<p>Conversation intelligence platforms turn sales calls into structured data. Every meeting gets recorded, transcribed, broken into topics, and tagged with sentiment, talk-time ratios, and keyword mentions. Sales managers use the output for coaching individual reps. Revenue leaders use the aggregate data for forecasting accuracy and competitive intelligence. GTM Engineers use it as a signal source feeding scoring models and outbound personalization.</p>
+<p>The category has three dominant players in 2026: Gong (the market leader, enterprise-focused), Chorus (acquired by ZoomInfo, mid-market), and Avoma (the price-disruptor, popular with startups). Salesloft includes built-in conversation intelligence as part of its sales engagement platform. Some PLG companies use Granola or Fireflies for lightweight versions without the full CI feature set.</p>
+<p>The killer use case for GTM Engineers is feeding conversation data into downstream automation. A Gong API call returns the topics discussed in a recent demo. A Clay table pulls those topics, joins them with the account record, and triggers a personalized follow-up email referencing the specific concerns raised on the call. This pattern turns conversation data from a manager-coaching tool into a revenue-acceleration tool.</p>
+<p>Pricing reflects the category's value perception. Gong's enterprise pricing typically lands $1,200-$2,000/user/year. Avoma starts around $19/user/month for the base tier. The gap reflects feature depth (Gong's AI scorecards, deal-risk models, and integrations are more mature) and prestige in enterprise procurement. For most GTM Engineering teams under 50 reps, Avoma or Chorus delivers most of the value at 20-40% of the cost.</p>
+<p>The privacy and compliance overhead is real. Recording sales calls requires consent in most jurisdictions and data handling that complies with GDPR, state privacy laws, and industry-specific regulations like HIPAA when healthcare prospects are involved. Implementing conversation intelligence correctly means working with legal and IT teams to set retention policies, consent flows, and access controls before the first call is recorded. Teams that skip this work and get caught later face escalations far larger than the platform license cost.</p>""",
+        "related_links": [
+            ("/glossary/revenue-intelligence/", "Revenue Intelligence"),
+            ("/glossary/sales-engagement-platform/", "Sales Engagement Platform"),
+            ("/glossary/buyer-signal/", "Buyer Signal"),
+            ("/glossary/signal-stack/", "Signal Stack"),
+        ],
+    },
+
+    "revenue-intelligence": {
+        "term": "Revenue Intelligence",
+        "category": "Analytics & Signals",
+        "definition": "A software category that aggregates data from CRM, email, calendar, conversation intelligence, and product usage to produce forecasting, deal scoring, account health, and pipeline analytics that revenue leaders act on.",
+        "body": """<p>Revenue intelligence platforms answer one question for CROs and revenue leaders: what's actually going to close this quarter and what's at risk? The category sits one layer above CRM, pulling data from many sources and producing the dashboards that drive forecast calls, pipeline reviews, and deal coaching sessions. Clari is the dominant platform, with Gong, Salesloft, and Outreach all expanding their products to compete for the same buyer.</p>
+<p>The functional surface area covers four jobs. Forecasting: predict the quarter's bookings with confidence intervals based on deal data and historical conversion patterns. Pipeline inspection: surface deals at risk of slipping, stalled deals that need intervention, and deals progressing faster than typical. Account health: aggregate signals across CRM activity, product usage, and conversation data to flag at-risk customers. Coaching analytics: identify which deal patterns correlate with wins versus losses and translate that into rep-level guidance.</p>
+<p>For GTM Engineers, revenue intelligence platforms are both a data source and a data destination. They consume CRM data, conversation intelligence data, and product analytics, so GTM Engineers spend implementation time wiring these sources together correctly. They also produce signals (deal risk scores, forecasted close dates, account health) that GTM Engineers route into other operational tools through reverse ETL or direct integrations.</p>
+<p>Pricing is enterprise-tier. Clari deals typically run $50K-$200K/year depending on user count and feature scope. Gong's revenue intelligence expansion (Reveal) adds 20-40% to existing Gong contracts. Outreach and Salesloft bundle revenue intelligence into their sales engagement contracts at the higher tiers. The bundled approach often produces lower total cost than buying separate Clari plus Gong contracts, but at the cost of less specialized capability in each function.</p>
+<p>The biggest implementation failure mode is treating revenue intelligence as a forecast-replacement tool rather than a forecast-improvement tool. Companies that buy Clari expecting the algorithm to forecast accurately while ignoring sales manager judgment usually see worse results than the prior manual forecast. Companies that use Clari to surface evidence sales managers then weigh against their qualitative read see meaningful forecast accuracy improvements. The technology augments judgment; it doesn't replace it.</p>""",
+        "related_links": [
+            ("/glossary/conversation-intelligence/", "Conversation Intelligence"),
+            ("/glossary/pipeline-velocity/", "Pipeline Velocity"),
+            ("/glossary/meddpicc/", "MEDDPICC"),
+            ("/glossary/sales-cycle-compression/", "Sales Cycle Compression"),
+        ],
+    },
+
+    "buyer-enablement": {
+        "term": "Buyer Enablement",
+        "category": "Career & Industry",
+        "definition": "The discipline of giving buyers (not sellers) the information, tools, and content they need to make a B2B purchase decision, particularly at companies where buying committees prefer self-service research over traditional sales-led discovery.",
+        "body": """<p>Buyer enablement flips the traditional sales enablement model. Sales enablement gives sellers what they need to sell. Buyer enablement gives buyers what they need to buy. The shift reflects a structural change in B2B purchasing: Gartner research has shown that buyers spend less than 20% of their consideration cycle in active conversations with sellers, with the rest spent on independent research, peer conversations, and internal stakeholder alignment.</p>
+<p>For GTM Engineers, buyer enablement shows up as content infrastructure and self-service workflows. Interactive ROI calculators that buyers run themselves. Implementation timeline estimators based on company size. Security and compliance documentation accessible without a sales gate. Reference customer libraries searchable by industry and use case. Each of these reduces the friction buyers experience and gives them artifacts to bring back to their buying committee.</p>
+<p>The tooling category around buyer enablement has grown. Tools like Mutual Action Plans (in Outreach, Salesloft, and Clari), buyer-side document collaboration (Trumpet, Dock), and digital sales rooms (Highspot, Showpad, plus newer entrants like Recapped and GTM Buddy) all serve the buyer-enablement use case. The common thread: shared workspaces where seller and buyer collaborate on the deal artifacts together, rather than the seller emailing PDFs that get forwarded into the buyer's email chaos.</p>
+<p>The skeptical version is worth considering. Buyer enablement done badly produces self-service content that's so polished it feels like marketing rather than honest information, undermining trust. Done well, it gives buyers the ammunition they need to convince their own committee, with the seller available for the conversations where human judgment adds value. The line between buyer enablement and "content marketing rebranded" is in the execution detail.</p>
+<p>The metrics that measure buyer enablement effectiveness are different from traditional sales metrics. Mutual Action Plan completion rates. Average time from MAP creation to closed-won. Reduction in time-to-decision for deals using digital sales rooms versus those that don't. Improvement in win rate for accounts where multiple buyers engaged with self-service content versus accounts with single-stakeholder engagement. Sales leaders comfortable with these new metrics tend to invest more confidently in buyer enablement tooling.</p>""",
+        "related_links": [
+            ("/glossary/buying-committee/", "Buying Committee"),
+            ("/glossary/account-based-marketing/", "Account-Based Marketing"),
+            ("/glossary/sales-engagement-platform/", "Sales Engagement Platform"),
+            ("/glossary/meddpicc/", "MEDDPICC"),
+        ],
+    },
+
+    "gtm-motion": {
+        "term": "GTM Motion",
+        "category": "Career & Industry",
+        "definition": "A repeatable, structured approach a company uses to acquire, expand, and retain customers, characterized by the mix of channels (sales-led, product-led, partner-led, community-led) and the customer segment it targets.",
+        "body": """<p>GTM motion is the operating model behind how a company reaches its market. The term covers the mix of acquisition channels, the customer profile targeted, the pricing approach, and the sales process that turns interest into revenue. Companies typically run one dominant motion plus 1-2 supporting motions, with the dominant motion shaping how the entire revenue org is structured.</p>
+<p>The five primary GTM motions in 2026 B2B SaaS are: sales-led (traditional outbound and inbound funneling into AEs), product-led (free-tier or trial conversion driving most pipeline), community-led (developer community or content audience driving pipeline), partner-led (channel partners or marketplaces driving pipeline), and enterprise-led (named-account strategy with field sales and customized motions per account). Most successful companies blend at least two of these motions deliberately.</p>
+<p>For GTM Engineers, the motion determines almost every operational decision. A product-led motion requires deep product analytics, event-based scoring, and PQL routing automation. A sales-led motion requires CRM hygiene, outbound infrastructure, and lead-routing systems. An enterprise-led motion requires account-based intelligence, deep firmographic enrichment, and orchestrated multi-touch outreach. Building infrastructure for the wrong motion produces wasted work and frustrated revenue teams.</p>
+<p>Motion changes are hard. A company that built a sales-led motion and tries to add product-led typically struggles for 12-18 months. The product needs to become activation-friendly. The CRM needs new data models. The compensation structures need to change. Sales teams resist because product-led conversions cannibalize what they would have sold. Most attempted motion changes fail, which is why analysts can identify successful motion pivots by name (Atlassian to enterprise, Slack from PLG to enterprise, Notion from PLG to mixed).</p>
+<p>The motion conversation became more interesting in 2025-2026 as AI-native companies developed new motion patterns. AI products often have hybrid motions where free-tier consumer adoption drives enterprise inquiries, where API usage drives platform conversations, where developer community engagement precedes commercial discussion. These hybrid motions don't fit cleanly into the five-motion taxonomy. Companies running them well are inventing new GTM operating models in real time, and the playbooks are still being written.</p>""",
+        "related_links": [
+            ("/glossary/gtm-engineer/", "GTM Engineer"),
+            ("/glossary/gtm-stack/", "GTM Stack"),
+            ("/glossary/product-qualified-lead/", "Product-Qualified Lead"),
+            ("/glossary/allbound/", "Allbound"),
+        ],
+    },
+
+    "sender-reputation": {
+        "term": "Sender Reputation",
+        "category": "Outbound & Sequencing",
+        "definition": "A score assigned by email service providers (Gmail, Microsoft, Yahoo) to a sending domain or IP address based on engagement, complaint rates, bounce rates, and authentication, determining whether outbound email reaches inboxes or spam folders.",
+        "body": """<p>Sender reputation is the single biggest determinant of whether your cold outbound email reaches the inbox or never gets seen. Email service providers assign reputation scores to every sending domain and IP. High reputation domains land in primary inbox tabs. Low reputation domains hit spam folders or get blocked entirely. The score is calculated continuously based on dozens of signals, with the most important being recipient engagement (opens, replies, forwards) and complaint signals (spam reports, bounce rates above 2-5%, low engagement on bulk sends).</p>
+<p>The reputation system creates an asymmetric problem for outbound teams. Building reputation takes weeks of careful warming, sending engaging mail to permission-based lists. Destroying reputation takes one bad campaign blasted to a poorly-targeted list. The asymmetry is why deliverability-conscious outbound teams treat sender reputation as a long-term asset to protect rather than a one-time setup task.</p>
+<p>For GTM Engineers, sender reputation work breaks into three phases. Initial domain setup requires SPF, DKIM, and DMARC authentication configured correctly, plus the sending domain being separate from the primary corporate domain to insulate against reputation damage. Warming phase requires 4-8 weeks of gradually increased sending volume on the new domain, with high engagement (replies, opens) on every batch. Production phase requires ongoing monitoring of bounce rates, spam complaints, engagement metrics, and active responses to reputation degradation signals.</p>
+<p>Tools in the space approach the problem from two angles. Warming tools like Mailwarm and Lemwarm send simulated engagement traffic to new domains during the warming phase. Monitoring tools like Glock Apps and MXToolbox check sender reputation across major ISPs and identify reputation issues before they cripple campaigns. Outbound platforms like Instantly and Smartlead include built-in warming and basic monitoring as part of their core feature set, which is part of why purpose-built outbound tools outperform generic email tools for cold sequencing.</p>
+<p>The strategic implication for outbound programs: domain diversification. Sending all cold outbound from a single domain concentrates reputation risk. One bad campaign damages everything sent from that domain. Modern outbound programs typically run 3-10 separate sending domains, each with its own warming history and reputation, and rotate sends across them to limit blast-radius exposure. The infrastructure cost is small ($10-$30/year per domain plus DNS configuration) and the upside is real: if one domain's reputation tanks, the others keep sending.</p>""",
+        "related_links": [
+            ("/glossary/deliverability/", "Deliverability"),
+            ("/glossary/sending-domain/", "Sending Domain"),
+            ("/glossary/email-warm-up/", "Email Warm-Up"),
+            ("/glossary/bounce-rate/", "Bounce Rate"),
+        ],
+    },
+
 }

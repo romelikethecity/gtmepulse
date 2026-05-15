@@ -241,4 +241,135 @@ ALTERNATIVES = {
             ("Why are enterprise sales teams leaving Outreach?", "Budget pressure is the primary driver. When headcount gets cut, per-seat software is the first line item scrutinized. Teams realize they're paying $1,800/year per rep for features most reps don't use. The migration to Instantly or Apollo lets them reinvest the savings."),
         ],
     },
+
+    "salesloft": {
+        "intro": """<p>Salesloft is the enterprise sales engagement platform that competes directly with Outreach for the same buyer. At $75-$125 per seat per month (custom pricing, sales-led conversation), it's built for mid-market and enterprise sales teams running 10+ rep operations with dedicated sales ops support. The product is solid, but the price tag and learning curve push many teams to look at alternatives.</p>
+<p>Teams explore Salesloft alternatives for the same reasons they explore Outreach alternatives: the cost is hard to justify for small teams, the feature set is overkill for teams running simple cold email programs, the implementation timeline (3-6 weeks for production deployment) delays time-to-value, and the Salesforce dependency creates friction for HubSpot-first shops. Some teams also find Salesloft's Rhythm AI compelling on paper but inconsistent in production.</p>
+<p>The alternatives below cover three tiers: enterprise platforms that compete directly with Salesloft on features, mid-market tools that handle 80% of the use case at half the cost, and lightweight tools that handle cold email well at a fraction of the price. Most Salesloft alternatives sacrifice enterprise reporting and conversation intelligence for faster setup and lower cost.</p>""",
+
+        "alternatives": [
+            {
+                "name": "Outreach",
+                "slug": "outreach-review",
+                "tagline": "The closest enterprise competitor",
+                "best_for": "Enterprise teams evaluating Salesloft who want the most feature-rich comparable platform",
+                "pros": [
+                    "Most-mature sales engagement product on the market",
+                    "Deep Salesforce and HubSpot integrations with stronger SFDC depth",
+                    "Kaia conversation intelligence and Commit forecasting bundled",
+                    "Strongest analytics and manager-level reporting in the category",
+                ],
+                "cons": [
+                    "Slightly more expensive than Salesloft per seat",
+                    "Implementation timeline is longer (4-8 weeks for production)",
+                    "Feature breadth means teams use 30-40% of the platform",
+                ],
+                "pricing": "Custom, typically $100-$150/seat/mo",
+                "verdict": "Outreach is the head-to-head competitor. Teams comparing Salesloft typically end up comparing Outreach too. The feature sets are 80% overlapping. Outreach wins on Salesforce depth and analytics; Salesloft wins on UX clarity and Rhythm AI. Switching between the two delivers marginal value, so pick whichever your team prefers in evaluation and stick with it.",
+            },
+            {
+                "name": "Apollo.io",
+                "slug": "apollo-review",
+                "tagline": "Sequencing + 275M contact database in one platform",
+                "best_for": "Mid-market teams that want sequencing plus a built-in lead database without separate enrichment costs",
+                "pros": [
+                    "Built-in 275M contact database eliminates separate enrichment subscription",
+                    "Sequencing capabilities cover 80% of Salesloft's use cases",
+                    "Free tier available with basic sequencing",
+                    "Per-seat pricing 50-70% lower than Salesloft",
+                ],
+                "cons": [
+                    "Lacks conversation intelligence and call coaching features",
+                    "Reporting and manager analytics are weaker than Salesloft",
+                    "Deliverability features less aggressive than purpose-built tools",
+                ],
+                "pricing": "Free tier. Paid $49-$149/mo per user",
+                "verdict": "Apollo replaces Salesloft when budget pressure is real and the missing features (conversation intelligence, deep coaching analytics) aren't required. For mid-market teams with 5-25 reps doing primarily cold outbound, Apollo delivers most of what Salesloft does at a quarter of the cost. The trade-off is shallower coaching and reporting, which matters more at 50+ rep scale than at 10-15 rep scale.",
+            },
+            {
+                "name": "Smartlead",
+                "slug": "smartlead-review",
+                "tagline": "High-volume cold email with unlimited mailbox rotation",
+                "best_for": "Teams running high-volume cold email programs where Salesloft's overhead isn't worth the cost",
+                "pros": [
+                    "Unlimited mailbox connections on every plan",
+                    "Strong deliverability and warmup engine",
+                    "Pricing 90% lower than Salesloft at $39-$94/mo",
+                    "Agency-friendly with white-label dashboards",
+                ],
+                "cons": [
+                    "Email-only, no LinkedIn or call sequences",
+                    "No CRM-native call recording or conversation intelligence",
+                    "Manager-level analytics are basic compared to enterprise platforms",
+                ],
+                "pricing": "$39-$94/mo",
+                "verdict": "Smartlead is for teams that bought Salesloft for sequencing but only use the sequencing feature. If your reps don't make outbound calls, don't run multichannel sequences, and don't need executive-grade coaching analytics, Smartlead delivers the actual outbound capability at a fraction of the cost. The savings can fund additional reps or other GTM tooling.",
+            },
+            {
+                "name": "Instantly",
+                "slug": "instantly-review",
+                "tagline": "Volume cold email at startup pricing",
+                "best_for": "Startup and SMB outbound teams whose volume requires Salesloft-tier capacity but whose budget doesn't",
+                "pros": [
+                    "Volume sending at startup pricing ($30-$77/mo)",
+                    "Strong warmup and deliverability engine",
+                    "B2B lead database add-on for cold prospect lists",
+                    "Simple UI with fast time-to-first-campaign",
+                ],
+                "cons": [
+                    "No multichannel (email only)",
+                    "Reporting is consumer-grade compared to Salesloft",
+                    "No CRM-native conversation intelligence",
+                ],
+                "pricing": "$30-$77/mo",
+                "verdict": "Instantly is the right Salesloft alternative for early-stage SaaS companies running cold outbound at meaningful volume but without the budget for enterprise tooling. The pricing economics work even when you scale to 10K+ emails per day. The trade-off is sacrificing the enterprise reporting and coaching layers that justify Salesloft's price tag for larger teams.",
+            },
+            {
+                "name": "HubSpot Sales Hub Enterprise",
+                "slug": None,
+                "tagline": "Salesloft-equivalent capabilities inside HubSpot",
+                "best_for": "HubSpot-first companies that want to consolidate tooling and avoid another vendor relationship",
+                "pros": [
+                    "Native to HubSpot, no external sync friction",
+                    "Sequences, call recording, and pipeline management in one platform",
+                    "Bundled licensing with existing HubSpot contract",
+                    "Strong reporting alongside marketing data",
+                ],
+                "cons": [
+                    "Sequencing features less mature than dedicated platforms",
+                    "Sales Hub Enterprise pricing ($1,200/mo entry) plus per-seat adds up",
+                    "Only useful if HubSpot is already the CRM of record",
+                ],
+                "pricing": "$1,200+/mo + $90/seat (Enterprise tier)",
+                "verdict": "For HubSpot-first companies, Sales Hub Enterprise eliminates the integration overhead of running Salesloft alongside HubSpot. The sequencing depth is good enough for most mid-market motions, and the unified reporting across marketing and sales delivers real operational value. For Salesforce-first companies, this comparison doesn't apply.",
+            },
+            {
+                "name": "Mixmax",
+                "slug": None,
+                "tagline": "Gmail-native sequencing for individual reps",
+                "best_for": "Individual reps and small teams running sequencing from Gmail without enterprise infrastructure",
+                "pros": [
+                    "Native Gmail integration with no separate sending domain required",
+                    "Simple sequence builder accessible to non-technical users",
+                    "Calendar booking and tracking features built-in",
+                    "Per-user pricing scales from $34/user",
+                ],
+                "cons": [
+                    "Volume limits reflect Gmail's sending capacity",
+                    "No multi-mailbox rotation for high-volume programs",
+                    "Limited reporting and team management features",
+                ],
+                "pricing": "$34-$69/user/mo",
+                "verdict": "Mixmax is the right Salesloft alternative for very small teams (under 10 reps) running modest-volume outbound from Gmail accounts. The simplicity is the feature; setup takes hours instead of weeks. The volume ceiling makes this approach unworkable above modest scale, but for the right team size it's a clean fit.",
+            },
+        ],
+
+        "faq": [
+            ("Salesloft vs Outreach: which one wins in 2026?", "The products are close enough that the answer depends on existing CRM and team preferences. Outreach has slightly deeper Salesforce integration and stronger analytics. Salesloft has slightly cleaner UX and the Rhythm AI feature for daily rep prioritization. For pure feature-set comparison, Outreach wins on breadth and Salesloft wins on operating clarity. Most teams that evaluate both find the choice is a coin flip and the migration cost from one to the other isn't worth the marginal benefit."),
+            ("Can I run Salesloft and Apollo together?", "Some teams do. The pattern: Apollo for the lead database and prospecting layer, Salesloft for the sequencing and rep workflow layer. This works if budget allows but creates duplicated functionality and integration overhead. Most teams pick one platform or the other rather than running both. The deciding question is whether you value Salesloft's coaching and analytics enough to justify the cost on top of Apollo's broader feature scope."),
+            ("Is Salesloft worth it for a team under 10 reps?", "Usually not. Salesloft's enterprise features (manager analytics, coaching, reporting depth) generate value at 25+ rep scale. For sub-10-rep teams, the per-seat cost is hard to justify versus Apollo, Instantly, or Smartlead. The break-even point typically lands around 15-20 reps depending on motion complexity. Below that, the lower-cost alternatives deliver the actual sequencing capability without the management overhead."),
+            ("Does Salesloft work for HubSpot-first companies?", "Yes, with caveats. The HubSpot integration is functional but less deep than the Salesforce one. Some HubSpot-native workflows require workarounds. HubSpot Sales Hub Enterprise often delivers a better outcome for HubSpot-first companies because the integration overhead disappears. The deciding question is whether Salesloft's specific features (Rhythm AI, conversation intelligence depth) outweigh the HubSpot consolidation benefit."),
+            ("How long does Salesloft migration take?", "First production sequence: 2-3 weeks. Full migration from a previous tool: 4-8 weeks. Mature deployment with custom analytics and coaching workflows: 12-16 weeks. The implementation timeline scales with CRM data cleanliness and the complexity of existing sales workflows. Companies that pre-clean their CRM before Salesloft deployment ramp faster than companies trying to fix CRM hygiene mid-implementation."),
+        ],
+    },
 }

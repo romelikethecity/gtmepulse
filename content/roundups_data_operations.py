@@ -228,4 +228,90 @@ ROUNDUPS = {
              "Three scenarios make outsourcing the right call. First, you need a large batch enriched once, not an ongoing daily pipeline. Building a Clay workflow for a one-time 10K-record project is over-engineering. Second, your data needs human judgment (dedup across three CRMs, ambiguous title mapping, company name normalization). Third, you don't have a GTM engineer on staff yet and need clean data while you hire."),
         ],
     },
+
+    "best-reverse-etl-tools-2026": {
+        "intro": """<p>Reverse ETL has gone from niche data engineering category to standard GTM Engineering infrastructure in three years. The job is simple to describe: take modeled data out of your warehouse and push it into the operational tools where sales and marketing teams work. In 2026, that workflow drives lead scoring, audience segmentation, customer health monitoring, and signal-based outbound for thousands of B2B SaaS companies.</p>
+<p>We ranked six reverse ETL options on four criteria: destination breadth (how many operational tools does it connect to?), warehouse coverage (which warehouses does it support as sources?), audience and identity capabilities (does it do more than basic data movement?), and pricing transparency. The category has consolidated into two clear leaders with several niche alternatives that win in specific contexts.</p>""",
+
+        "tools": [
+            {
+                "rank": 1,
+                "name": "Hightouch",
+                "slug": "hightouch-review",
+                "category_tag": "Reverse ETL Leader",
+                "best_for": "GTM Engineering teams that want the full activation stack with audience tools, identity resolution, and AI Decisioning",
+                "why_picked": "Hightouch is the most-adopted reverse ETL platform among GTM Engineering teams in 2026. The product has expanded beyond raw data movement into adjacent categories: Customer Studio for business-user audience creation, Hightouch Match for identity resolution, AI Decisioning for personalization, and event streaming features. The breadth means there's more to learn but also more value extracted from a single vendor relationship. The Pro tier starting at $800/month delivers real ROI within a quarter for teams replacing 5+ custom integrations.",
+                "pricing": "$0-$800+/mo",
+                "link_to_review": True,
+            },
+            {
+                "rank": 2,
+                "name": "Census",
+                "slug": "census-review",
+                "category_tag": "Reverse ETL Focused",
+                "best_for": "Teams that prefer transparent pricing, deep dbt integration, and focused reverse ETL without the operational CDP expansion",
+                "why_picked": "Census is the GTM Engineer's choice when pricing transparency and product focus matter more than breadth. The Platform plan publishes pricing at $800/month with clear destination counts, which avoids the procurement friction that Hightouch's sales-led pricing creates. The dbt-native integration makes Census the natural choice for teams already organizing their warehouse around dbt models. Sync performance for high-frequency Live Syncs is slightly better than Hightouch's CDC features in real-world testing.",
+                "pricing": "$0-$800+/mo",
+                "link_to_review": True,
+            },
+            {
+                "rank": 3,
+                "name": "Polytomic",
+                "slug": None,
+                "category_tag": "Mid-Market Focused",
+                "best_for": "Mid-market companies that want simpler reverse ETL without the operational CDP overhead",
+                "why_picked": "Polytomic sits in the middle of the market with a focused product that does reverse ETL plus some lightweight audience tools. The pricing model fits mid-market budgets ($200-$800/month) better than the enterprise-tier pricing of Hightouch and Census. The destination library is smaller (around 100 destinations versus 200+ for the leaders), but it covers the major operational tools (Salesforce, HubSpot, Outreach, LinkedIn Ads) that most GTM teams need. For mid-market companies where Hightouch and Census feel over-spec'd, Polytomic is the right-sized choice.",
+                "pricing": "$200-$800/mo",
+                "link_to_review": False,
+            },
+            {
+                "rank": 4,
+                "name": "Rudderstack",
+                "slug": None,
+                "category_tag": "Open-Source Option",
+                "best_for": "Teams that want open-source control with the option to self-host or use the managed cloud",
+                "why_picked": "Rudderstack started as an open-source Segment alternative and has expanded into reverse ETL with a credible product. The architecture supports both event streaming and reverse ETL in one platform, which appeals to teams consolidating CDP and reverse ETL tooling. Self-hosting eliminates per-row pricing for teams comfortable with infrastructure. The managed cloud offering is competitively priced versus Hightouch and Census. The reverse ETL features are less mature than the leaders, but the trajectory is good and the open-source escape hatch matters to engineering-first teams.",
+                "pricing": "Free (self-hosted) or $250+/mo",
+                "link_to_review": False,
+            },
+            {
+                "rank": 5,
+                "name": "HubSpot Operations Hub",
+                "slug": None,
+                "category_tag": "HubSpot-Native",
+                "best_for": "Teams already deep in HubSpot who want reverse ETL inside their existing CRM stack",
+                "why_picked": "HubSpot acquired Clearbit and built Operations Hub as the native data activation layer inside HubSpot. For teams whose primary operational tool is HubSpot, the integration is tighter than any external reverse ETL platform can match. Data flows from your warehouse into HubSpot custom properties, custom objects, and workflows with HubSpot-native field mapping. The trade-off: it only activates data inside HubSpot. If you need to sync to Salesforce, Marketo, or LinkedIn Ads, you'll still need a real reverse ETL platform alongside Operations Hub.",
+                "pricing": "$45-$2,000+/mo (Ops Hub tier)",
+                "link_to_review": False,
+            },
+            {
+                "rank": 6,
+                "name": "dbt + Custom Code",
+                "slug": None,
+                "category_tag": "Build-It-Yourself",
+                "best_for": "Teams with strong data engineering and 1-2 destinations who would rather build than buy",
+                "why_picked": "The most common alternative to commercial reverse ETL is custom Python scripts run on a schedule, calling destination APIs directly. For teams with 1-2 destinations and a competent data engineer, this approach can work. The cost is engineering time, ongoing maintenance burden, and the operational risk of integrations breaking silently. The break-even point versus buying a commercial product hits around 3 destinations or 2 hours of weekly maintenance, whichever comes first. Most teams underestimate the maintenance cost and end up buying a commercial tool 18 months in.",
+                "pricing": "Engineering time only",
+                "link_to_review": False,
+            },
+        ],
+
+        "verdict": """<h2>The Verdict</h2>
+<p>Hightouch and Census are the two correct answers for most GTM Engineering teams in 2026. The functional gap between them is small. Pick Hightouch if you want broader operational CDP capabilities and accept the pricing opacity. Pick Census if you want pricing transparency, deep dbt integration, and a focused product. Both will save more engineering time than they cost within the first quarter.</p>
+<p>Polytomic is the right choice for mid-market companies where Hightouch and Census feel over-engineered. Rudderstack is the right choice for teams that want open-source control. HubSpot Operations Hub is the right choice when HubSpot is your only operational destination. Building it yourself is rarely the right choice unless you have very simple needs and very strong engineering capacity.</p>
+<p>The category will keep consolidating. The warehouse-native CDP architecture has won, and reverse ETL is its activation layer. Expect Hightouch and Census to keep expanding into adjacent categories (audiences, identity, AI). Expect the smaller players to either find clear niches or get acquired. Pick the tool that fits your needs today and avoid 3-year contracts that lock you into a vendor whose direction may diverge from yours.</p>""",
+
+        "faq": [
+            ("Do I need reverse ETL if I already have Segment?",
+             "Possibly. Segment captures and routes events from your applications to destination tools. Reverse ETL pulls modeled data out of your warehouse and pushes it to destinations. The two tools solve different problems and most data-mature companies run both. Segment handles event collection at the source. Reverse ETL handles data activation from the warehouse. If you're starting from scratch and have to pick one, reverse ETL covers more GTM use cases for most teams."),
+            ("How much warehouse compute does reverse ETL consume?",
+             "Variable, depends on query complexity and sync frequency. A typical sync setup might consume 5-15% of total warehouse compute. Heavy use cases with hourly syncs against complex models can hit 25%+ of warehouse spend. Monitor Snowflake credits or BigQuery costs alongside reverse ETL platform costs to get the true total cost picture. Pre-aggregating data in dbt models before exposing them as sync sources is the most effective optimization."),
+            ("Can reverse ETL replace my data integration platform (Fivetran, Stitch)?",
+             "No. Fivetran and Stitch are forward ETL: they pull data from operational tools into the warehouse. Reverse ETL pushes data from the warehouse back to operational tools. The two categories are complementary, not competitive. A typical data stack runs Fivetran (or equivalent) for ingestion, dbt for transformation, and Hightouch or Census for activation."),
+            ("What's the minimum data maturity needed to justify reverse ETL?",
+             "You need a warehouse with at least basic dbt models or equivalent transformation logic. Without modeled data, reverse ETL just moves raw operational data between systems, which is something the source-to-destination integrations on each tool already do. The value of reverse ETL comes from activating warehouse-computed metrics (lead scores, account health, segments) that don't exist as fields in your source operational tools. If your data team is still building the warehouse, fix that foundation first and revisit reverse ETL in 3-6 months."),
+            ("How do I evaluate reverse ETL platforms with a free trial?",
+             "Pick one real production use case (sync warehouse-computed lead scores to HubSpot, sync customer health scores to Salesforce, sync product-qualified leads to Outreach). Build that use case end-to-end on each platform you're evaluating. Measure: time to first successful sync, time to production-quality sync with monitoring, ongoing maintenance overhead, and total cost (platform + warehouse compute). The right platform for your team is the one that completed the real use case fastest with the lowest total cost."),
+        ],
+    },
 }

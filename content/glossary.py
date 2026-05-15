@@ -1023,4 +1023,189 @@ GLOSSARY_TERMS = {
             ("/glossary/ai-personalization/", "AI Personalization"),
         ],
     },
+
+    # =========================================================================
+    # Batch 3 — Modern GTM Terminology (10 terms)
+    # =========================================================================
+
+    "identity-resolution": {
+        "term": "Identity Resolution",
+        "category": "Data & Enrichment",
+        "definition": "The process of stitching together fragmented identifiers (cookies, IP addresses, email hashes, device IDs, CRM records) into a single coherent profile for a person or account so downstream GTM systems can act on one source of truth.",
+        "body": """<p>Identity resolution is the plumbing problem behind every signal-based selling strategy. A prospect visits your pricing page anonymously on their laptop. Three days later they download a whitepaper using a personal email. A week after that, a verified business email from the same person ends up in your CRM via SDR research. Identity resolution is the work of recognizing that all three events belong to the same human, and that human works at a company already on your target account list.</p>
+<p>For GTM Engineers, identity resolution shows up in three layers. The first layer is website de-anonymization (RB2B, Warmly, Koala) that maps website visitor IPs and cookies to company records and sometimes individual contacts. The second layer is form-fill enrichment, where a partial form submission gets matched against your contact database to figure out who that person works for. The third layer is cross-channel stitching, where product usage in a tool like Mixpanel gets joined with CRM identity in HubSpot via a warehouse-side identity model.</p>
+<p>RB2B popularized the simplest form of identity resolution for B2B GTM teams. Drop a script on your site, get a Slack notification with the name, title, and LinkedIn URL of every US-based business visitor on your pricing page. The match rate hovers around 15-25% for typical B2B sites, which is good enough to turn previously invisible traffic into a pipeline source.</p>
+<p>The hard version of identity resolution lives in the data warehouse. Build a dbt model that joins Segment events, Stripe billing data, HubSpot contacts, and Marketo activity on a normalized email field, with fallback joins on cookie ID, IP plus user-agent, and company domain. Push the resolved identity back to operational tools through reverse ETL. This setup costs months of data engineering work and pays off when your product usage data needs to inform sales outreach with zero lag.</p>
+<p>Quality varies dramatically by provider and method. Website de-anonymization tools that claim 50%+ match rates usually count company-level matches (we identified the company) as resolved identities. Person-level resolution, where you know the individual visitor by name, runs 10-20% even with good tools. Setting expectations correctly with sales leadership prevents the inevitable disappointment when "200 identified visitors" turns out to be "200 known companies with 30 named individuals."</p>
+<p>Privacy regulation shapes identity resolution more than any other GTM data practice. GDPR in Europe and state-level laws like CCPA in the US restrict how much identifying data you can collect and process without consent. EU-only or EU-inclusive GTM motions should assume that cookie-based identity resolution carries legal risk unless you have explicit consent flows. US-only B2B operations have more latitude but should still document your data sources and retention policies before sales leadership starts pitching the practice externally.</p>""",
+        "related_links": [
+            ("/glossary/reverse-etl/", "Reverse ETL"),
+            ("/glossary/customer-data-platform/", "Customer Data Platform"),
+            ("/glossary/signal-stack/", "Signal Stack"),
+            ("/tools/category/intent-data/", "Intent & Signal Tools"),
+        ],
+    },
+
+    "technographic-data": {
+        "term": "Technographic Data",
+        "category": "Data & Enrichment",
+        "definition": "Data about the software, hardware, and infrastructure a company uses, including specific vendors, product categories, deployment scale, and frequently the dates they adopted or churned from each tool.",
+        "body": """<p>Technographic data answers the question: what's in their stack? You feed in a company domain and get back signals like "uses Salesforce, HubSpot Marketing Hub, Segment, AWS, and recently churned from Pendo." For GTM Engineers selling SaaS products, technographic data is the difference between a generic outbound campaign and a targeted one that references the prospect's actual tech reality.</p>
+<p>The category has three main collection methods. Web crawling pulls visible technology fingerprints from a company's public site: analytics scripts, marketing automation tags, customer support widgets, and embedded chat tools. Job posting analysis (BuiltWith, HG Insights, TheirStack) infers technology adoption from skills listed in job descriptions. Bidstream and ad-tech data sources catch companies as they appear in programmatic ad exchanges with specific technographic signatures. Each method has different coverage and freshness profiles.</p>
+<p>BuiltWith is the longest-running technographic provider with the broadest coverage. Clearbit's now part of HubSpot, and its technographic dataset still flows through HubSpot Operations Hub. HG Insights focuses on enterprise tech with depth on Oracle, SAP, ServiceNow, and Workday installations. Sumble and TheirStack do job-posting-derived technographics with better coverage of recent hires and emerging tools.</p>
+<p>The killer use case for GTM Engineers is competitor displacement campaigns. You query technographic data for "companies using [competitor's product] with employee count 200-2,000 and tech stack matching our ICP." You enrich the resulting account list with contact data, then run a targeted sequence with messaging that names the competitor explicitly. Reply rates on technographic-targeted outbound regularly hit 8-12% compared to 1-2% for generic ICP outbound.</p>
+<p>Data freshness is the weakness most teams underestimate. A company might churn from Salesforce in January, but your technographic provider's last scan was in November. You send outreach assuming they're a Salesforce shop. They tell your AE "we moved to HubSpot last quarter, you didn't do your homework." Cross-reference technographic data with job postings (which update weekly) and LinkedIn employee changes when stakes are high.</p>
+<p>Pricing varies from $500/month entry-level access (Wappalyzer, BuiltWith Pro) to $50K+/year enterprise contracts (HG Insights, Sumble enterprise). The mid-market choice for most GTM Engineering teams is the BuiltWith API at around $4K/year, integrated into Clay tables via custom HTTP modules. That setup gets you technographic signals on tens of thousands of companies per year at predictable cost, with the flexibility to wire it into any enrichment pipeline.</p>""",
+        "related_links": [
+            ("/glossary/firmographic-data/", "Firmographic Data"),
+            ("/glossary/signal-based-selling/", "Signal-Based Selling"),
+            ("/tools/clay-review/", "Clay Review"),
+            ("/tools/category/intent-data/", "Intent & Signal Tools"),
+        ],
+    },
+
+    "meddpicc": {
+        "term": "MEDDPICC",
+        "category": "CRM & Pipeline",
+        "definition": "A sales qualification framework with eight criteria (Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Identify Pain, Champion, Competition) used to assess deal quality and forecast accuracy in B2B sales.",
+        "body": """<p>MEDDPICC is the qualification framework most enterprise sales teams have adopted as their forecast scoring layer. It expands the older MEDDIC framework with two additions: Paper Process (the legal and procurement workflow needed to close) and Competition (who else the buyer is evaluating). Each letter represents a question your AE should be able to answer before a deal is called committed pipeline.</p>
+<p>For GTM Engineers, MEDDPICC turns from sales jargon into a data model. Every CRM should track MEDDPICC fields per opportunity. A deal where the AE has filled in Metrics ("save $200K/yr on data ops"), identified the Economic Buyer (named the VP), documented the Decision Process (steering committee meets every two weeks), and named the Champion (Director of Data) is materially more credible than a deal with 80% of those fields blank. Building forecast accuracy reports that segment deals by MEDDPICC field completeness reveals exactly where coaching matters.</p>
+<p>The framework expands as follows. Metrics quantify the business outcome the buyer expects, in their own units. Economic Buyer names the single person who can release the budget. Decision Criteria captures what the buyer will compare you against (features, SLAs, integrations, references). Decision Process maps the steps from interest to signed contract, including who has to approve at each stage. Paper Process tracks legal, security, procurement, and finance reviews. Identify Pain documents the cost of the status quo in concrete terms. Champion is a contact inside the account who advocates for you when you're not in the room. Competition lists who you're up against, including the do-nothing alternative.</p>
+<p>MEDDPICC discipline pays off in three places. First, forecast accuracy. Companies that enforce MEDDPICC field completion on committed deals see forecast variance drop from 30%+ to under 15% within two quarters. Second, deal coaching. A weekly pipeline review built around MEDDPICC gaps surfaces the missing information that kills deals. Third, win/loss analysis. Closed-lost deals tagged with Competition data reveal which competitors are winning at your expense and what messaging is bleeding pipeline.</p>
+<p>GTM Engineers can automate MEDDPICC scoring. Build a Clay workflow or HubSpot calculation property that scores each deal on MEDDPICC field completeness and weights fields by importance (Economic Buyer matters more than Decision Criteria for early-stage deals). Push the score into the CRM and use it as a gating criterion for forecast categories. A deal can't move to "Commit" unless its MEDDPICC score crosses a threshold.</p>
+<p>The framework has limits. MEDDPICC was built for enterprise sales with deal sizes above $50K and sales cycles longer than 60 days. For PLG motions where deals close in two weeks with a self-service signup, applying MEDDPICC creates more overhead than value. Use it where the qualification work changes the outcome, which is the upper half of B2B SaaS sales motions.</p>""",
+        "related_links": [
+            ("/glossary/deal-stage/", "Deal Stage"),
+            ("/glossary/pipeline-velocity/", "Pipeline Velocity"),
+            ("/glossary/buying-committee/", "Buying Committee"),
+            ("/glossary/lead-scoring/", "Lead Scoring"),
+        ],
+    },
+
+    "allbound": {
+        "term": "Allbound",
+        "category": "Career & Industry",
+        "definition": "A GTM motion that blends inbound, outbound, partner, community, and product-led channels into one orchestrated revenue system, with a unified data layer scoring and routing prospects regardless of the channel that surfaced them.",
+        "body": """<p>Allbound describes how mature B2B SaaS companies have stopped treating inbound and outbound as separate motions with separate teams and separate metrics. A prospect who downloads a guide (inbound), gets enriched and routed to outbound (sales-led), engages with a free tier (product-led), and gets referred by a partner (partner-led) is the same person. Allbound is the operating model that treats them as one.</p>
+<p>The term emerged from Sangram Vajre and the ABM community around 2018 but became operationally meaningful for GTM Engineers around 2024, when the tooling caught up. Allbound only works when you have one source of truth for account and contact data, scoring that incorporates signals from all channels, and routing logic that doesn't double-touch a prospect from three different teams.</p>
+<p>For GTM Engineers, allbound is mostly a data and orchestration problem. The account record in your CRM has to absorb signals from product analytics (Mixpanel, Amplitude), intent data (6sense, Bombora), community engagement (Common Room, Discord webhooks), partner referrals, inbound forms, outbound activity, and content engagement. Building the data joins that produce one allbound account score is the work. The scoring model itself is the simple part once the data flows correctly.</p>
+<p>The practical shape of allbound at most companies looks like this. Marketing runs paid and content programs that capture form-fills and produce intent signals. Sales runs outbound that targets the same accounts marketing is warming. Product analytics measures usage patterns from anyone who touches the free tier or trial. A central scoring layer (sometimes called a revenue orchestration platform) ingests all of this and routes prospects to the right next action: nurture, BDR follow-up, AE outreach, or product-led activation email.</p>
+<p>The biggest implementation mistake is launching allbound before you have the data plumbing to support it. Teams hear about allbound, pick a buzzword-compliant vendor, and discover six months later that the CRM is a mess of duplicate contacts, intent signals don't route anywhere in practice, and the BDRs are still working an outbound list disconnected from inbound activity. Build the data layer first. Buy or skip the orchestration platform second.</p>
+<p>Allbound is not the same as account-based marketing, although ABM is one input to an allbound motion. ABM targets specific accounts. Allbound coordinates all channels against the entire ICP, including accounts that surface themselves through inbound. The distinction matters because allbound implies a wider top of funnel than ABM's tightly curated account list, and it requires routing logic that can handle unexpected accounts arriving from any channel.</p>""",
+        "related_links": [
+            ("/glossary/signal-based-selling/", "Signal-Based Selling"),
+            ("/glossary/account-based-marketing/", "Account-Based Marketing"),
+            ("/glossary/revenue-orchestration/", "Revenue Orchestration"),
+            ("/glossary/lead-routing/", "Lead Routing"),
+        ],
+    },
+
+    "lead-to-account-matching": {
+        "term": "Lead-to-Account Matching",
+        "category": "CRM & Pipeline",
+        "definition": "The CRM process of associating a new inbound lead with an existing account record based on email domain, company name, or enrichment data, so leads from target accounts route correctly to the assigned AE rather than landing as standalone records.",
+        "body": """<p>Lead-to-account matching is the boring, foundational CRM hygiene work that most teams ignore until it costs them deals. A prospect from a target account fills out a demo form using their personal Gmail. Without lead-to-account matching, that lead becomes a standalone record assigned via round-robin to a random SDR. With matching, it gets recognized as belonging to a named account, routed to the assigned AE, and added to the existing buying committee context.</p>
+<p>The matching logic runs in three tiers. Tier one matches on email domain when the prospect uses a corporate address. Easy case, high accuracy. Tier two matches on enriched company data when the email is personal but the form captures company name or LinkedIn URL. Medium difficulty, medium accuracy. Tier three uses fuzzy matching plus LLM judgment to resolve cases where the company name is misspelled, abbreviated, or written in a non-standard format. Hard case, requires monitoring.</p>
+<p>Salesforce's LeanData and HubSpot's native matching are the two dominant tools. LeanData is the enterprise standard with sophisticated routing and matching rules, priced around $30/user/month with implementation costs. HubSpot's matching is included in Sales Hub Professional and works well for mid-market. RingLead and Demandbase also offer matching, usually bundled with broader RevOps platforms.</p>
+<p>GTM Engineers building matching from scratch in Clay or n8n start with an enrichment step that converts the email or company name into a normalized company record (domain, legal name, common aliases). Then a lookup query against the existing account database checks for matches on domain or normalized name. Matches above a confidence threshold get auto-associated. Matches below threshold get flagged for human review. Unmatched leads become new account candidates, with a separate dedup workflow checking for existing duplicate accounts.</p>
+<p>The deal-level impact of bad matching shows up in two places. First, target accounts where multiple stakeholders fill out forms across months end up as five disconnected leads instead of one engaged buying committee. The AE doesn't see the pattern and dismisses each lead as low-intent. Second, accounts where the AE is actively working a deal get new inbound leads routed to BDRs who duplicate outreach to contacts the AE is already engaging. Both failures kill conversion.</p>
+<p>Field-level matching configuration is the operational lever most teams under-invest in. Decide which fields are required for a match (just domain? domain plus company name?). Configure confidence thresholds (auto-match above 90%, queue for review between 70-90%, treat as new below 70%). Audit match accuracy quarterly by sampling 100 matched leads and verifying the association was correct. Without auditing, match quality degrades silently as your data sources change and your account database grows.</p>""",
+        "related_links": [
+            ("/glossary/lead-routing/", "Lead Routing"),
+            ("/glossary/lead-scoring/", "Lead Scoring"),
+            ("/glossary/identity-resolution/", "Identity Resolution"),
+            ("/glossary/crm/", "CRM"),
+        ],
+    },
+
+    "propensity-model": {
+        "term": "Propensity Model",
+        "category": "Analytics & Signals",
+        "definition": "A statistical or machine learning model that predicts the probability a lead, account, or customer will take a specific action (convert, churn, expand, respond) within a given time window, based on historical patterns and current signals.",
+        "body": """<p>Propensity models are the upgrade path from rule-based lead scoring. A rule-based score says "VP title plus 100-500 employees equals 80 points." A propensity model says "based on 12 months of historical conversion data, prospects with this signal combination convert at 14% within 90 days." The model uses what predicted outcomes in the past instead of a sales leader's guess about what should matter.</p>
+<p>For GTM Engineers, propensity models show up in three contexts. The most common is conversion propensity for inbound leads, where the model scores form-fill leads on likelihood to convert to opportunity. The second is churn propensity for customer accounts, scoring usage and engagement signals to flag at-risk renewals 60-90 days before the renewal date. The third is expansion propensity, predicting which existing accounts are likely to upsell or cross-sell within a quarter.</p>
+<p>Building a propensity model from scratch requires three ingredients. You need historical outcome data with at least 500-1,000 examples of the event you're trying to predict (closed-won deals, churns, expansions). You need feature data about each example at the time of decision, not after the fact. And you need a modeling tool, which can be as simple as a logistic regression in Python or as sophisticated as a gradient-boosted tree in scikit-learn or XGBoost.</p>
+<p>The cheap version uses a CDP or RevOps platform with built-in propensity features. MadKudu, 6sense, and HubSpot's predictive lead scoring all offer pre-built propensity models that train on your CRM data. Setup is days, not weeks. Accuracy is usually 60-70% as good as a custom model, which is fine for most use cases. Custom models matter when your deal economics justify the engineering investment, typically deals above $25K ACV with sales cycles long enough for misallocated SDR effort to be expensive.</p>
+<p>The trap with propensity models is treating them as truth instead of guidance. A 14% predicted conversion rate means the prospect is more likely than baseline to convert. It does not mean the prospect will convert. Sales teams that get propensity scores wrong assume high-score leads close themselves and low-score leads should be ignored. Both behaviors damage pipeline. The right operational model uses propensity to prioritize effort, not to substitute for it.</p>
+<p>Model maintenance is the part most teams skip. A propensity model trained on 2024 data starts losing accuracy in 2026 as your ICP shifts, your product changes, and market conditions evolve. Retrain quarterly with the most recent 12 months of outcomes. Monitor predicted-versus-actual conversion rates monthly. If the gap exceeds 20%, your model has drifted and needs retraining or feature updates. A propensity model nobody monitors is a propensity model nobody should be using.</p>""",
+        "related_links": [
+            ("/glossary/lead-scoring/", "Lead Scoring"),
+            ("/glossary/attribution-model/", "Attribution Model"),
+            ("/glossary/intent-data/", "Intent Data"),
+            ("/glossary/product-qualified-lead/", "Product-Qualified Lead"),
+        ],
+    },
+
+    "customer-data-platform": {
+        "term": "Customer Data Platform",
+        "category": "Data & Enrichment",
+        "definition": "A software category that ingests customer data from multiple sources, builds unified profiles, and pushes those profiles into marketing, sales, and analytics tools, sitting between your data sources and your activation tools.",
+        "body": """<p>A customer data platform (CDP) solves one problem: your customer data lives in 20 places and you need it in one place so you can act on it. The CDP ingests data from product analytics, CRM, billing, support, marketing automation, and email tools. It resolves identities across those sources into unified profiles. Then it pushes those profiles out to wherever you need them: ad platforms, email tools, sales tools, dashboards.</p>
+<p>The category has three sub-types worth knowing. Segment (now Twilio Segment) is the original event-based CDP that pipes user behavior events to downstream tools via SDKs and APIs. Rudderstack is the open-source alternative with similar architecture. The second sub-type is composable CDP, a label for using your data warehouse (Snowflake, BigQuery) as the storage layer with reverse ETL tools (Hightouch, Census) handling the activation. The third sub-type is operational CDPs like ActionIQ, Lytics, and Tealium, which package storage and activation together for enterprise marketing teams.</p>
+<p>For GTM Engineers, the composable CDP pattern has become the default architecture in 2025-2026. You already have a warehouse for analytics. Adding a reverse ETL tool on top gives you 80% of a traditional CDP at 20% of the cost, with full SQL flexibility and no vendor lock-in. The catch: you need a competent data team to maintain the warehouse and the dbt models that build customer profiles. If your data is messy, a composable CDP makes the mess available faster, not cleaner.</p>
+<p>Where Segment still wins is event collection at scale. Segment's tracking libraries handle hundreds of millions of events per day with reliability that a self-rolled solution rarely matches. For PLG companies whose growth model depends on capturing every product event, paying $10K-$50K/year for Segment to handle event collection is usually cheaper than building it in-house.</p>
+<p>The biggest CDP mistake is buying one before you know what you'd do with unified customer data. A CDP is a delivery mechanism. If your marketing team doesn't have specific use cases (route product-qualified leads to sales within an hour, suppress retargeting ads for customers who already churned, score accounts for expansion likelihood), the CDP becomes another expensive system that ingests data and produces dashboards nobody acts on.</p>
+<p>GTM Engineers should evaluate CDPs against three criteria. First, does it solve a use case your business will act on within 90 days of deployment? Second, does it integrate cleanly with both your data sources (CRM, analytics, billing) and your activation tools (ad platforms, sales tools, email)? Third, does the pricing model scale with the value you'll extract, or does it inflate as your event volume grows? Vendors that price on profiles or destinations tend to be more predictable than vendors that price on events or rows of data.</p>""",
+        "related_links": [
+            ("/glossary/reverse-etl/", "Reverse ETL"),
+            ("/glossary/identity-resolution/", "Identity Resolution"),
+            ("/glossary/data-orchestration/", "Data Orchestration"),
+            ("/tools/segment-review/", "Segment Review"),
+        ],
+    },
+
+    "account-based-marketing": {
+        "term": "Account-Based Marketing (ABM)",
+        "category": "Career & Industry",
+        "definition": "A B2B GTM strategy that targets a curated list of high-fit accounts with coordinated marketing and sales motions, treating each account as a market of one rather than running broad demand-generation campaigns.",
+        "body": """<p>Account-based marketing flips the traditional demand-gen funnel. Instead of casting a wide net and qualifying who comes through, you start with a list of named accounts you want to win and run coordinated marketing and sales programs aimed at those specific companies. The math is different. ABM accepts a smaller top of funnel in exchange for dramatically higher conversion on the accounts that matter.</p>
+<p>ABM works at three tiers of intensity. One-to-one ABM targets a handful of strategic accounts (5-25) with custom-built content, dedicated outbound, executive sponsorship, and personalized digital experiences. One-to-few ABM groups 25-100 accounts by industry or use case and runs near-personalized campaigns at the cluster level. One-to-many ABM, sometimes called programmatic ABM, runs targeted display ads and content syndication against 500-5,000 accounts using intent data and firmographic filters.</p>
+<p>For GTM Engineers, ABM shows up as plumbing for sales and marketing alignment. The target account list lives in the CRM as a tagged segment. Marketing automation routes content based on account membership. Outbound sequences trigger based on intent signals from those accounts. Sales activity is concentrated on the same list. Building the data joins that keep target account context flowing across all channels is the engineering work.</p>
+<p>The category exploded between 2018 and 2022 with platforms like Demandbase, 6sense, RollWorks, and Terminus. By 2026, the platform-driven ABM motion has matured into something more pragmatic. The expensive enterprise ABM platforms still drive value at the high end, but most mid-market teams now stitch together their own ABM stack: a target account list in HubSpot or Salesforce, intent data from one source, targeted ads from LinkedIn, outbound from Outreach or Salesloft, and dashboards in their own BI tool. Cheaper to operate, more flexible, and arguably more effective for sub-enterprise companies.</p>
+<p>The single best predictor of ABM success is the quality of the target account list. A list of 500 accounts where 70% are real fit accounts produces good outcomes. A list of 500 accounts where 30% are real fit accounts produces wasted spend regardless of which platform you use. GTM Engineers can build better target account lists by scoring the full TAM against firmographic and technographic criteria, then ranking the top accounts by predicted fit. This produces a defendable list that sales leadership can buy into rather than the marketing team's wish list.</p>
+<p>ABM metrics need to be account-level, not lead-level. Track engagement (which accounts have a stakeholder doing anything?), penetration (how many contacts per account have you reached?), and pipeline coverage (what dollar value of pipeline exists in target accounts versus non-target accounts?). Lead-volume metrics like MQL count actively mislead ABM teams. An MQL from a non-target account is worth less than an unattributed touch on a target account. Build dashboards that reflect that reality, or sales leadership will drift back to lead-volume reporting and the ABM investment will lose its perceived value.</p>""",
+        "related_links": [
+            ("/glossary/allbound/", "Allbound"),
+            ("/glossary/buying-committee/", "Buying Committee"),
+            ("/glossary/intent-data/", "Intent Data"),
+            ("/glossary/total-addressable-market/", "Total Addressable Market"),
+        ],
+    },
+
+    "sales-cycle-compression": {
+        "term": "Sales Cycle Compression",
+        "category": "CRM & Pipeline",
+        "definition": "Deliberate reduction of the time between first contact and closed-won, achieved through better qualification, faster proof-of-value cycles, removed friction in the buying process, and signal-driven prioritization that focuses effort on accounts ready to buy.",
+        "body": """<p>Sales cycle compression is the lever most operators reach for when pipeline coverage looks fine but bookings are missing the quarter. Same number of opportunities, fewer of them closing in time. The fix is not more pipeline. The fix is faster pipeline, which means deals moving through stages quicker without sacrificing win rates.</p>
+<p>The biggest gains come from three structural changes. First, qualification discipline that removes deals destined to slip before they consume AE capacity. Second, accelerated proof-of-value through pre-built demos, shared evaluation criteria, and standardized pilot programs. Third, friction removal in the contracting and onboarding handoff, where deals that should close in two weeks often sit for six in legal and procurement review.</p>
+<p>For GTM Engineers, cycle compression turns into a measurement and automation problem. Build a stage-velocity report that shows median days-in-stage by deal segment. Identify the stages where deals stall longest. Investigate why. Sometimes the answer is product gaps (long POCs because the product needs custom configuration). Sometimes it's process gaps (legal review takes six weeks because nobody owns the queue). Sometimes it's qualification failure (deals stall in late stages because they were never properly qualified at early stages).</p>
+<p>Signal-driven prioritization is where modern cycle compression gets interesting. Instead of working the full pipeline evenly, AEs concentrate effort on accounts showing buying signals: pricing page visits, multiple stakeholders engaging, intent data spikes, or new champion activity. Deals with multiple recent signals close in half the time of deals without them. Routing AE attention to signal-active deals while letting cold deals sit produces faster cycles and higher win rates.</p>
+<p>The tactical playbook for cycle compression looks like this. Audit the last 50 closed-won deals. Calculate days from first meeting to close, broken down by stage. Identify the two stages that consume the most time. Build a hypothesis about why. Test interventions: a standardized POC checklist, a pre-built security questionnaire, automated legal-review routing, executive escalation paths for deals stuck above a threshold. Measure the impact on cycle time over 90 days. Roll out what works.</p>
+<p>Cycle compression has a ceiling for any given deal size. Enterprise deals will not compress to PLG timescales. The right benchmark is your own historical cycle by segment, not someone else's published numbers. A team that takes its mid-market cycle from 78 days to 52 days has compressed cycles. A team comparing itself to a PLG company that closes in 14 days and feeling bad has the wrong reference point. Compress what you can compress. Recognize the structural limits of what you can't.</p>""",
+        "related_links": [
+            ("/glossary/pipeline-velocity/", "Pipeline Velocity"),
+            ("/glossary/meddpicc/", "MEDDPICC"),
+            ("/glossary/signal-based-selling/", "Signal-Based Selling"),
+            ("/glossary/deal-stage/", "Deal Stage"),
+        ],
+    },
+
+    "signal-stack": {
+        "term": "Signal Stack",
+        "category": "Analytics & Signals",
+        "definition": "The combined set of signal sources a GTM team uses to identify timely buying opportunities, typically including intent data, website visitor identification, job-change tracking, technographic shifts, funding events, and product usage data.",
+        "body": """<p>A signal stack is what you build when you decide that watching for the right moment matters more than working a static target list. Most B2B teams in 2026 run between three and seven signal sources, with the better-resourced teams running ten or more. Each source catches a different kind of buying moment, and stacking them increases your odds of finding any given account at the right time.</p>
+<p>The seven signal categories most GTM teams should know are: intent topics (6sense, Bombora, G2), website visitor identification (RB2B, Warmly, Koala), job changes (UserGems, ClayPath), technographic shifts (HG Insights, BuiltWith, Sumble), funding and news events (Crunchbase, NewsAPI, custom scrapers), community engagement (Common Room, Discord webhooks, GitHub data), and product usage signals (Mixpanel, Amplitude, Segment events). A modern signal stack typically pulls from at least four of these categories.</p>
+<p>The hard part is not buying the tools. The hard part is consolidating signals into a single ranked queue for sales action. Every signal source has its own scoring, its own categorization, its own integration pattern, and its own definition of urgency. Without consolidation, sales reps get five different alerts about the same account and ignore all of them. With consolidation, they get one prioritized list each morning with the top accounts to work and the reason each one ranks where it does.</p>
+<p>For GTM Engineers, the consolidation work happens in three places. Layer one normalizes signals into a common schema: account, signal type, timestamp, strength, source. Layer two scores each signal contribution toward an overall account heat score, with decay (signals get less weight as they age) and stacking (multiple signals on the same account compound). Layer three routes the top accounts to the right rep with context: which signals fired, what the recommended outreach hook is, and what other recent activity exists on the account.</p>
+<p>Cost varies wildly across signal types. Intent topics from enterprise providers run $30K-$80K/year. Website visitor ID tools start at $200/month and scale to $2K-$5K/month for mid-market. Job-change tracking is $15K-$30K/year. Technographics depends on coverage depth. The cheap signal stack ($500-$1,500/month total) covers website visits, job changes via LinkedIn Sales Navigator alerts, and simple technographics. The premium stack ($10K-$20K/month) adds full intent topics, multiple identity-resolution sources, and product usage analysis at scale.</p>
+<p>The single biggest determinant of signal stack ROI is whether your sales team acts on signals within 48 hours. Signals decay fast. A pricing-page visit is a strong buying signal on day one and a weak one by day five. Building the alerting and queue infrastructure to surface signals fast is wasted effort if reps wait a week to follow up. Measure signal-to-touch latency by rep, by signal type. Below 24 hours is excellent. 24-72 hours is acceptable. Above 72 hours means your investment in signal tooling is not converting into pipeline.</p>""",
+        "related_links": [
+            ("/glossary/signal-based-selling/", "Signal-Based Selling"),
+            ("/glossary/intent-data/", "Intent Data"),
+            ("/glossary/identity-resolution/", "Identity Resolution"),
+            ("/glossary/technographic-data/", "Technographic Data"),
+        ],
+    },
+
 }

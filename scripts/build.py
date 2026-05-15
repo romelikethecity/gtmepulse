@@ -6292,7 +6292,7 @@ TOOL_REVIEWS = [
      "meta_desc": "Zapier review for GTM Engineers. Massive integration library, per-task pricing limits, AI features assessment, and when to switch to n8n or Make.",
      "content_module": "tools_automation", "content_key": "zapier"},
 
-    # Intent Data (2)
+    # Intent Data (5)
     {"slug": "6sense-review", "name": "6sense", "category": "Intent Data",
      "url": "https://6sense.com", "price_range": "Custom ($25K-$100K+/yr)",
      "title": "6sense Review 2026: Enterprise Intent Data",
@@ -6303,6 +6303,21 @@ TOOL_REVIEWS = [
      "title": "Bombora Review 2026: Publisher Intent Data",
      "meta_desc": "Bombora review for GTM Engineers. Company Surge signals, topic taxonomy, integration options, signal noise, and how it compares to 6sense.",
      "content_module": "tools_intent", "content_key": "bombora"},
+    {"slug": "hightouch-review", "name": "Hightouch", "category": "Intent Data",
+     "url": "https://hightouch.com", "price_range": "$0-$800+/mo",
+     "title": "Hightouch Review 2026: Reverse ETL for GTM",
+     "meta_desc": "Hightouch review for GTM Engineers. SQL-first reverse ETL, 200+ destinations, Audience Studio, real-time CDC, and how it compares to Census.",
+     "content_module": "tools_intent", "content_key": "hightouch"},
+    {"slug": "census-review", "name": "Census", "category": "Intent Data",
+     "url": "https://getcensus.com", "price_range": "$0-$800+/mo",
+     "title": "Census Review 2026: Reverse ETL Done Right",
+     "meta_desc": "Census review for GTM Engineers. dbt-native reverse ETL, transparent pricing, 200+ destinations, Live Syncs, and when to pick it over Hightouch.",
+     "content_module": "tools_intent", "content_key": "census"},
+    {"slug": "common-room-review", "name": "Common Room", "category": "Intent Data",
+     "url": "https://commonroom.io", "price_range": "$0-$625+/mo",
+     "title": "Common Room Review 2026: Community Signals",
+     "meta_desc": "Common Room review for GTM Engineers. GitHub, Discord, Slack signal capture, identity resolution, and when community intelligence drives pipeline.",
+     "content_module": "tools_intent", "content_key": "common-room"},
 
     # Analytics (2)
     {"slug": "segment-review", "name": "Segment", "category": "Analytics",
@@ -6623,6 +6638,16 @@ TOOL_COMPARISONS = [
      "meta_desc": "Smartlead vs Lemlist comparison for GTM Engineers. Email-only vs multichannel, agency features vs personalization, and which outbound tool wins.",
      "content_module": "comparisons_outbound", "content_key": "smartlead-vs-lemlist",
      "category": "Outbound Sequencing"},
+    {"slug": "hightouch-vs-census", "tool_a": "Hightouch", "tool_b": "Census",
+     "title": "Hightouch vs Census 2026: Reverse ETL Compared",
+     "meta_desc": "Hightouch vs Census comparison for GTM Engineers. Pricing, dbt support, audience tools, identity resolution, and which reverse ETL platform fits.",
+     "content_module": "comparisons_intent", "content_key": "hightouch-vs-census",
+     "category": "Intent Data"},
+    {"slug": "common-room-vs-pocus", "tool_a": "Common Room", "tool_b": "Pocus",
+     "title": "Common Room vs Pocus 2026: Signal Tools Compared",
+     "meta_desc": "Common Room vs Pocus for GTM Engineers. Community signals vs product usage scoring, pricing reality, and which signal platform drives more pipeline.",
+     "content_module": "comparisons_intent", "content_key": "common-room-vs-pocus",
+     "category": "Intent Data"},
 ]
 
 BUILT_COMPARISON_SLUGS = {c["slug"] for c in TOOL_COMPARISONS}
@@ -7077,6 +7102,11 @@ TOOL_ROUNDUPS = [
      "title": "Best B2B Data Waterfall Tools in 2026",
      "meta_desc": "7 B2B data waterfall tools ranked. Clay, Verum, Apollo, and more compared on coverage, setup complexity, and total cost. Build or outsource your waterfall.",
      "content_module": "roundups_data_operations", "content_key": "best-b2b-data-waterfall-tools",
+     "category_tag": "Data Operations"},
+    {"slug": "best-reverse-etl-tools-2026",
+     "title": "Best Reverse ETL Tools for GTM Teams in 2026",
+     "meta_desc": "6 reverse ETL platforms ranked for GTM Engineers. Hightouch, Census, Polytomic, Rudderstack, HubSpot Ops Hub compared on price, destinations, dbt support.",
+     "content_module": "roundups_data_operations", "content_key": "best-reverse-etl-tools-2026",
      "category_tag": "Data Operations"},
     {"slug": "best-data-enrichment-tools-for-gtm-engineers-2024",
      "title": "Best Data Enrichment Tools for GTM Engineers 2024",
@@ -18695,6 +18725,18 @@ GLOSSARY_TERMS = [
     {"slug": "webhook-automation", "term": "Webhook Automation", "category": "Automation & Workflows"},
     {"slug": "lead-routing", "term": "Lead Routing", "category": "CRM & Pipeline"},
     {"slug": "buying-committee", "term": "Buying Committee", "category": "Career & Industry"},
+
+    # Batch 3 — Modern GTM Terminology
+    {"slug": "identity-resolution", "term": "Identity Resolution", "category": "Data & Enrichment"},
+    {"slug": "technographic-data", "term": "Technographic Data", "category": "Data & Enrichment"},
+    {"slug": "meddpicc", "term": "MEDDPICC", "category": "CRM & Pipeline"},
+    {"slug": "allbound", "term": "Allbound", "category": "Career & Industry"},
+    {"slug": "lead-to-account-matching", "term": "Lead-to-Account Matching", "category": "CRM & Pipeline"},
+    {"slug": "propensity-model", "term": "Propensity Model", "category": "Analytics & Signals"},
+    {"slug": "customer-data-platform", "term": "Customer Data Platform", "category": "Data & Enrichment"},
+    {"slug": "account-based-marketing", "term": "Account-Based Marketing", "category": "Career & Industry"},
+    {"slug": "sales-cycle-compression", "term": "Sales Cycle Compression", "category": "CRM & Pipeline"},
+    {"slug": "signal-stack", "term": "Signal Stack", "category": "Analytics & Signals"},
 ]
 
 

@@ -7,7 +7,7 @@
 <text x="60" y="118" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Data</text>
 <rect x="60" y="164" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
 <rect x="60.0" y="190" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
-<text x="189.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">94</text>
+<text x="189.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">68</text>
 <text x="189.0" y="252" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#6B6B6B">Tracked Roles</text>
 <rect x="334.0" y="190" width="258.0" height="90" rx="10" fill="white" stroke="#E5E5E5" stroke-width="1"/>
 <text x="463.0" y="228" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="700" fill="#FF4F1F">0%</text>

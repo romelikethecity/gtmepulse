@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Hightouch Review 2026: Reverse ETL for GTM - GTME Pulse</title>
+    <meta name="description" content="Hightouch review for GTM Engineers. SQL-first reverse ETL, 200+ destinations, Audience Studio, real-time CDC, and how it compares to Census. Updated weekly.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/hightouch-review/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/hightouch-review/">
+    <meta property="og:title" content="Hightouch Review 2026: Reverse ETL for GTM - GTME Pulse">
+    <meta property="og:description" content="Hightouch review for GTM Engineers. SQL-first reverse ETL, 200+ destinations, Audience Studio, real-time CDC, and how it compares to Census. Updated weekly.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hightouch Review 2026: Reverse ETL for GTM - GTME Pulse">
+    <meta name="twitter:description" content="Hightouch review for GTM Engineers. SQL-first reverse ETL, 200+ destinations, Audience Studio, real-time CDC, and how it compares to Census. Updated weekly.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Hightouch Review"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Hightouch", "description": "Hightouch review for GTM Engineers. SQL-first reverse ETL, 200+ destinations, Audience Studio, real-time CDC, and how it compares to Census. Updated weekly.", "applicationCategory": "Intent Data", "operatingSystem": "Web", "url": "https://hightouch.com", "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "$0-$800+/mo", "description": "$0-$800+/mo"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is Hightouch different from Segment or a CDP?", "acceptedAnswer": {"@type": "Answer", "text": "Segment captures user events and pipes them to destination tools. Hightouch pulls modeled data out of your warehouse and pushes it to destinations. The two tools complement each other rather than competing directly. A common stack uses Segment for event capture, the warehouse for modeling, and Hightouch for activating the modeled data. Hightouch has added event-stream features that overlap with Segment, but most teams still use both."}}, {"@type": "Question", "name": "Is Hightouch overkill for a 10-person startup?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes. The free tier supports small use cases, but the value of Hightouch comes from having 5+ destination tools that need synchronized data. Startups with HubSpot as their primary operational tool can often get by with HubSpot's native warehouse sync or a simpler reverse ETL tool. Reach for Hightouch when you have a real warehouse, multiple operational tools, and a GTM Engineer with the time to build sync infrastructure."}}, {"@type": "Question", "name": "How long does Hightouch implementation take?", "acceptedAnswer": {"@type": "Answer", "text": "First sync: 1-3 days. First production-grade sync with proper monitoring, error handling, and field mapping: 1-2 weeks. Full integration across 5+ destinations with the audience features in active use: 6-12 weeks. The implementation timeline scales with the number of destinations and the complexity of your warehouse models, not with vendor onboarding speed."}}, {"@type": "Question", "name": "Hightouch vs Census, which one wins for GTM Engineers?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on what you optimize for. Hightouch wins on UI polish, audience features, and breadth of operational CDP capabilities. Census wins on pricing transparency, a more focused product, and slightly faster sync execution for high-frequency use cases. For most GTM Engineers the practical difference is minor. Evaluate both with your actual data, your actual destinations, and a real production use case before committing to a multi-year contract."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Company Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/about/">About</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Hightouch Review</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Intent Data</div>
+        <h1>Hightouch Review</h1>
+        <p>$0-$800+/mo</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    
+<figure class="content-figure content-figure--unique">
+    <img src="/assets/images/content/gtm-tool-review-tools-hightouch-review.svg" alt="Hightouch Review" width="1200" height="630" loading="lazy">
+    <figcaption>Hightouch Review</figcaption>
+</figure>
+<h2>Overview</h2>
+    
+<p>Hightouch is the reverse ETL platform that won GTM Engineer mindshare in 2024-2025. The product takes data from your warehouse (Snowflake, BigQuery, Redshift, Databricks) and syncs it to operational tools where sales and marketing teams work: HubSpot, Salesforce, Outreach, LinkedIn Ads, Segment, Iterable, and 180+ other destinations. The pitch lands cleanly with technical GTM teams who already have a warehouse and want to activate that data without writing brittle API integrations from scratch.</p>
+<p>The platform's defining feature is the SQL-first model. You write a SELECT query against your warehouse. Hightouch maps the result columns to fields in your destination tool. You configure the sync frequency (real-time CDC, hourly, daily). Hightouch handles the rest: API authentication, batching, upsert logic, error handling, retry queues, and audit logs. For GTM Engineers who can write SQL but don't want to maintain custom API code, this changes the economics of activating warehouse data.</p>
+<p>Hightouch has expanded beyond reverse ETL into adjacent categories: audience segmentation with Customer Studio, AI-powered personalization, identity resolution, and event-stream forwarding. The strategic pitch is that Hightouch becomes the activation layer on top of your warehouse, replacing the operational CDP entirely. For GTM Engineers, this means more product surface area to learn but also fewer disconnected tools to stitch together.</p>
+
+
+    <h2>GTM Engineer Use Cases</h2>
+    
+<ul>
+    <li><strong>Sync warehouse lead scores into CRM and outbound tools.</strong> Your data team builds a scoring model in dbt that combines product usage, firmographics, and intent data. Hightouch syncs the score to HubSpot or Salesforce hourly. The score becomes a routing input, a sequence-enrollment trigger, and a sales prioritization signal without any custom integration code.</li>
+    <li><strong>Activate product-qualified leads in seconds, not days.</strong> A free user crosses a usage threshold in your product. The event lands in the warehouse via Segment. A Hightouch model running every five minutes detects the new PQL and pushes it to Outreach as a sequence enrollment. End-to-end latency drops from "next morning batch" to under 10 minutes.</li>
+    <li><strong>Build audiences in SQL and push to ad platforms.</strong> Marketing wants to retarget customers who churned in the last 90 days but excluded enterprise accounts in active renewal cycles. Write the SQL, sync to LinkedIn Ads and Google Ads as a Custom Audience. The audience refreshes daily as the underlying data changes.</li>
+    <li><strong>Reverse the flow for revenue ops dashboards.</strong> Pull computed metrics (account health scores, ICP grades, deal velocity by segment) out of the warehouse and into Salesforce or Attio as custom fields. Sales reps see one number on the account record that summarizes 40+ underlying signals.</li>
+    <li><strong>Replace half-built API integrations.</strong> Most GTM Engineering stacks have 3-8 internal Python scripts pushing data between systems. Each script has its own auth handling, error logging, and maintenance debt. Hightouch consolidates these into a single platform with one auth flow, one observability stack, and one place to debug failed syncs.</li>
+    <li><strong>Coordinate identity across tools.</strong> Use Hightouch Match to build identity graphs in your warehouse, then sync resolved profiles to every destination tool so you stop seeing the same person as five different leads in five different systems.</li>
+</ul>
+
+
+    <h2>Pricing Breakdown</h2>
+    
+<table class="data-table">
+    <thead><tr><th>Plan</th><th>Price</th><th>Models/Syncs</th><th>Key Features</th></tr></thead>
+    <tbody>
+        <tr><td>Developer (Free)</td><td>$0</td><td>3 syncs, 1 source</td><td>200+ destinations, basic monitoring</td></tr>
+        <tr><td>Starter</td><td>$450/mo</td><td>10 syncs, 2 sources</td><td>Reverse ETL, CDC, audience features</td></tr>
+        <tr><td>Pro</td><td>$800/mo+</td><td>Unlimited models</td><td>Audience Studio, AI Decisioning, Match</td></tr>
+        <tr><td>Business</td><td>Custom</td><td>Custom</td><td>SSO, audit logs, enterprise support</td></tr>
+    </tbody>
+</table>
+<p>Hightouch pricing is volume-based with a destination count component. The free tier covers small GTM teams testing the product or running one or two syncs. The paid tiers add destinations, scheduled syncs, real-time CDC, and the audience features. Most GTM Engineering teams in mid-market companies end up on Pro or custom Business pricing in the $1K-$5K/month range depending on data volume and destination count.</p>
+<p>The hidden cost most teams underestimate is warehouse compute. Hightouch runs queries against your warehouse on every sync. A model that runs every five minutes against a Snowflake source can rack up real compute spend if the underlying query is expensive. Monitor warehouse credits alongside Hightouch costs. Optimize expensive models with materialized views or pre-aggregated tables before scaling sync frequency.</p>
+
+    
+
+    <h2>Honest Criticism</h2>
+    
+<p>Pricing transparency stops at the Starter tier. Once you need Pro features (Audience Studio, AI Decisioning, Match), pricing moves to "talk to sales" territory. The list price you see on the website rarely reflects what mid-market customers pay in practice, and the discount math during procurement adds friction to evaluation. Census handles pricing more openly.</p>
+<p>The sync configuration UI can hide complexity that bites later. Setting up a sync looks simple: pick a source, write SQL, map columns, choose a destination, hit save. Edge cases (custom field mapping in HubSpot, association rules in Salesforce, audience matching in LinkedIn Ads) require digging into destination-specific documentation that varies in quality. Plan for 2-3 days of fiddling on each new destination type before the sync is production-ready.</p>
+<p>Real-time CDC has limits worth understanding. Hightouch supports change data capture for Snowflake and Postgres sources, which sounds like "instant updates." In practice, "real-time" lands closer to 30 seconds to 5 minutes of latency depending on warehouse and destination. For most GTM use cases this is fine. For workflows where 30-second latency hurts (live ad bidding, real-time fraud detection), Hightouch is not the right tool.</p>
+<p>Audience Studio is useful but it's a second product to learn. Marketing teams using it well treat it as a self-service segmentation tool. Teams using it badly treat it as a CRM segmentation feature and get frustrated when business users can't write the SQL underneath. Without clear ownership between the data team and marketing, Audience Studio becomes a place where audiences proliferate, conflict, and stop being trustworthy.</p>
+
+
+    <h2>Verdict</h2>
+    
+<p>Hightouch is the right reverse ETL choice for GTM Engineers at companies with a working data warehouse and 5+ destination tools to integrate. The product saves enough engineering time on API integration work that the Pro plan typically pays for itself within the first quarter through replaced custom integrations and faster activation of warehouse-derived signals.</p>
+<p>Choose Hightouch over Census if you value a slightly more polished UI, the additional Audience Studio and AI Decisioning features, and a roadmap that's pushing into operational CDP territory. Choose Census if pricing transparency and a more focused reverse ETL feature set matter more to your team. Most GTM Engineering teams could be successful on either; the gap is narrower than vendor marketing suggests.</p>
+<p>Skip both if you don't have a warehouse yet. Reverse ETL needs something to reverse out of. Companies running their analytics in spreadsheets or directly against operational databases should fix the warehouse foundation first, then evaluate Hightouch a quarter later. Buying Hightouch without a warehouse produces a system that ingests data faster than your team can clean it.</p>
+
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">How is Hightouch different from Segment or a CDP?</h3>
+    <p class="faq-answer">Segment captures user events and pipes them to destination tools. Hightouch pulls modeled data out of your warehouse and pushes it to destinations. The two tools complement each other rather than competing directly. A common stack uses Segment for event capture, the warehouse for modeling, and Hightouch for activating the modeled data. Hightouch has added event-stream features that overlap with Segment, but most teams still use both.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is Hightouch overkill for a 10-person startup?</h3>
+    <p class="faq-answer">Usually yes. The free tier supports small use cases, but the value of Hightouch comes from having 5+ destination tools that need synchronized data. Startups with HubSpot as their primary operational tool can often get by with HubSpot's native warehouse sync or a simpler reverse ETL tool. Reach for Hightouch when you have a real warehouse, multiple operational tools, and a GTM Engineer with the time to build sync infrastructure.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How long does Hightouch implementation take?</h3>
+    <p class="faq-answer">First sync: 1-3 days. First production-grade sync with proper monitoring, error handling, and field mapping: 1-2 weeks. Full integration across 5+ destinations with the audience features in active use: 6-12 weeks. The implementation timeline scales with the number of destinations and the complexity of your warehouse models, not with vendor onboarding speed.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Hightouch vs Census, which one wins for GTM Engineers?</h3>
+    <p class="faq-answer">It depends on what you optimize for. Hightouch wins on UI polish, audience features, and breadth of operational CDP capabilities. Census wins on pricing transparency, a more focused product, and slightly faster sync execution for high-frequency use cases. For most GTM Engineers the practical difference is minor. Evaluate both with your actual data, your actual destinations, and a real production use case before committing to a multi-year contract.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>More Tool Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/apollo-review/" class="related-link-card">Apollo.io Review</a>
+<a href="/tools/zoominfo-review/" class="related-link-card">ZoomInfo Review</a>
+<a href="/tools/clearbit-review/" class="related-link-card">Clearbit Review</a>
+<a href="/tools/fullenrich-review/" class="related-link-card">FullEnrich Review</a>
+<a href="/tools/lusha-review/" class="related-link-card">Lusha Review</a>
+<a href="/tools/cognism-review/" class="related-link-card">Cognism Review</a>
+<a href="/tools/leadiq-review/" class="related-link-card">LeadIQ Review</a>
+<a href="/tools/persana-review/" class="related-link-card">Persana AI Review</a>
+<a href="/tools/instantly-review/" class="related-link-card">Instantly Review</a>
+<a href="/tools/smartlead-review/" class="related-link-card">Smartlead Review</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Intent Data tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h3>Salary Data</h3>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Resources</h3>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Site</h3>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>GTM Tools & Resources</h3>
+    <ul>
+        <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
+<li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+<li><a href="https://fdepulse.com" target="_blank" rel="noopener">FDE Pulse</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h3>Stay in the loop</h3>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

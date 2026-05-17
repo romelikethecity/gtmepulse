@@ -16,7 +16,7 @@
     <meta property="og:title" content="What is Webhook Automation? GTM Glossary Term - GTME Pulse">
     <meta property="og:description" content="What is Webhook Automation? Clear definition with real examples and use cases for GTM Engineers. Part of the GTME Pulse glossary. Updated weekly. Independent.">
     <meta property="og:site_name" content="GTME Pulse">
-    <meta property="og:image" content="https://gtmepulse.com/assets/og/glossary-webhook-automation.png">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="What is Webhook Automation? GTM Glossary Term - GTME Pulse">
     <meta name="twitter:description" content="What is Webhook Automation? Clear definition with real examples and use cases for GTM Engineers. Part of the GTME Pulse glossary. Updated weekly. Independent.">
-    <meta name="twitter:image" content="https://gtmepulse.com/assets/og/glossary-webhook-automation.png">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -139,6 +139,10 @@
 
 <div class="salary-content">
     
+<figure class="content-figure content-figure--unique">
+    <img src="/assets/images/content/gtm-engineering-glossary-glossary-webhook-automation.svg" alt="What is Webhook Automation?" width="1200" height="630" loading="lazy">
+    <figcaption>What is Webhook Automation?</figcaption>
+</figure>
 <div style="background: var(--gtme-bg-tinted); border-left: 4px solid var(--gtme-accent); padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem;">
         <p style="font-size: 1.1rem; line-height: 1.65; margin: 0; color: var(--gtme-text-primary);"><strong>Definition:</strong> An event-driven integration pattern where one system sends an HTTP POST request to another system's URL whenever a specified event occurs, enabling real-time data transfer and workflow triggers without polling.</p>
     </div>
@@ -147,7 +151,7 @@
 <p>The basic mechanics: System A registers a URL (the webhook endpoint) with System B. When an event happens in System B, it sends a JSON payload to that URL. System A processes the payload and takes action. No polling, no scheduled batch jobs, no manual data transfers. Events flow in real time.</p>
 <p>GTM Engineers use webhooks constantly. Clay accepts incoming webhooks to trigger table runs. n8n and Make use webhook nodes as workflow triggers. HubSpot and Salesforce fire webhooks on record changes. Instantly sends webhooks on email opens, replies, and bounces. Connecting these systems via webhooks creates an event-driven architecture where actions cascade automatically.</p>
 <p>Common pitfalls: webhook endpoints go down and events are lost (use a queue like Hookdeck or n8n's built-in retry logic). Payload formats change without notice (validate incoming data before processing). Rate limits cause backlogs during high-volume campaigns (implement exponential backoff). Building reliable webhook automation requires handling these failure modes, not just the happy path.</p>
-<p>Testing webhook automations before production deployment requires simulating events without triggering real downstream actions. Tools like Webhook.site and RequestBin let you inspect webhook payloads without processing them. n8n's test execution mode runs a workflow with sample data without firing real API calls to your CRM or sequencing tools. Build your webhook automation in test mode first, verify the data transformations are correct, then switch to production mode. Skipping this step risks sending malformed data to your CRM or triggering outbound sequences to test contacts who aren't actually prospects.</p>
+<p>Testing webhook automations before production deployment requires simulating events without triggering real downstream actions. Tools like Webhook.site and RequestBin let you inspect webhook payloads without processing them. n8n's test execution mode runs a workflow with sample data without firing real API calls to your CRM or sequencing tools. Build your webhook automation in test mode first, verify the data transformations are correct, then switch to production mode. Skipping this step risks sending malformed data to your CRM or triggering outbound sequences to test contacts who aren't real prospects.</p>
 <p>Webhook automation at scale requires idempotency: the ability to process the same event twice without creating duplicate records or triggering duplicate actions. Network hiccups cause webhooks to fire twice. Retry logic deliberately re-sends events after failures. Your receiving workflow needs to check whether it has already processed a given event (using a unique event ID) before taking action. Without idempotency, a single webhook retry can create duplicate CRM contacts, send duplicate emails, or generate duplicate Slack alerts. Add deduplication logic at the webhook receiver level, not downstream, to catch duplicates before they propagate through your entire pipeline.</p>
 
     <section class="related-links" style="margin-top: 2rem;">

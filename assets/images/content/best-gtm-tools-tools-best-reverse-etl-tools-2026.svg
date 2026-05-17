@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<rect width="1200" height="630" fill="#FAFAFA"/>
+<rect x="0" y="0" width="1200" height="5" fill="#FF4F1F"/>
+<rect x="1069" y="24" width="91" height="30" rx="15" fill="#FF4F1F" opacity="0.1"/>
+<text x="1114.5" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FF4F1F" letter-spacing="0.5">ROUNDUP</text>
+<text x="60" y="100" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">Best Reverse ETL Tools for GTM Teams in</text>
+<text x="60" y="138" font-family="Sora, sans-serif" font-size="30" font-weight="700" fill="#111111">2026</text>
+<rect x="60" y="184" width="80" height="4" rx="2" fill="#FF4F1F" opacity="0.6"/>
+<rect x="60" y="210" width="230.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="175.25" y="231" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">#1: Hightouch [Full Review]</text>
+<rect x="302.5" y="210" width="208.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="406.5" y="231" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">#2: Census [Full Review]</text>
+<rect x="522.5" y="210" width="125.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="585.25" y="231" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">#3: Polytomic</text>
+<rect x="660.0" y="210" width="140.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="730.25" y="231" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">#4: Rudderstack</text>
+<rect x="812.5" y="210" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="924.0" y="231" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">#5: HubSpot Operations Hub</text>
+<rect x="60" y="252" width="185.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="152.75" y="273" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">#6: dbt + Custom Code</text>
+<rect x="257.5" y="252" width="110.5" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="312.75" y="273" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">The Verdict</text>
+<rect x="380.0" y="252" width="223.0" height="32" rx="16" fill="#fff0ed" stroke="#FF4F1F" stroke-width="0.5" opacity="0.7"/>
+<text x="491.5" y="273" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="500" fill="#FF4F1F">Frequently Asked Questions</text>
+<text x="1150" y="612" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#6B6B6B" opacity="0.35">GTME Pulse</text>
+</svg>

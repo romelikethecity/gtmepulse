@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Common Room vs Pocus 2026: Signal Tools Compared - GTME Pulse</title>
+    <meta name="description" content="Common Room vs Pocus for GTM Engineers. Community signals vs product usage scoring, pricing reality, and which signal platform drives more pipeline. Free.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/common-room-vs-pocus/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/common-room-vs-pocus/">
+    <meta property="og:title" content="Common Room vs Pocus 2026: Signal Tools Compared - GTME Pulse">
+    <meta property="og:description" content="Common Room vs Pocus for GTM Engineers. Community signals vs product usage scoring, pricing reality, and which signal platform drives more pipeline. Free.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Common Room vs Pocus 2026: Signal Tools Compared - GTME Pulse">
+    <meta name="twitter:description" content="Common Room vs Pocus for GTM Engineers. Community signals vs product usage scoring, pricing reality, and which signal platform drives more pipeline. Free.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Common Room vs Pocus"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Pocus and Common Room together?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but it requires deliberate workflow design. Both tools push signals into the CRM, and without coordination you'll have overlapping alerts and duplicated outreach. The pattern that works: route community signals from Common Room into your CRM with a 'community engagement' tag, route product signals from Pocus with a 'product usage' tag, then build CRM views and routing logic that combine both signal types into a single prioritized rep queue."}}, {"@type": "Question", "name": "Does Common Room replace traditional intent data tools like Bombora?", "acceptedAnswer": {"@type": "Answer", "text": "No. Common Room captures different signals (community engagement) than Bombora (topic-level intent based on publisher network consumption). For full signal coverage, most companies that buy Common Room also maintain either Bombora or 6sense for intent data. The cost stack adds up, which is why some teams choose to focus on one signal source rather than running broad signal coverage."}}, {"@type": "Question", "name": "Is Pocus better than building product usage scoring in dbt + Hightouch?", "acceptedAnswer": {"@type": "Answer", "text": "Depends on your team's data engineering capacity. The dbt + reverse ETL approach gives you full control over scoring logic and uses tools you may already own. Pocus gives you faster time-to-value with pre-built scoring frameworks and playbook templates. Teams with strong data engineering usually prefer the build approach. Teams that want to ship signal-driven outbound this quarter usually prefer Pocus."}}, {"@type": "Question", "name": "How do these tools compare to UserGems for job change signals?", "acceptedAnswer": {"@type": "Answer", "text": "UserGems is the strongest dedicated tool for job change tracking from your existing customer base. Both Common Room and Pocus offer job change signals as part of broader platforms, but neither is as deep on this specific signal as UserGems. Teams that derive significant pipeline from former-customer-now-at-new-account signals should run UserGems alongside either Common Room or Pocus, not as a replacement."}}, {"@type": "Question", "name": "What's the implementation timeline for either platform?", "acceptedAnswer": {"@type": "Answer", "text": "Common Room: 2-4 weeks to first signal flow into CRM, 6-12 weeks to full workflow integration with sales playbooks. Pocus: 3-6 weeks to first PQL scoring live, 8-16 weeks to full automated playbook coverage. Both timelines stretch based on warehouse and CRM data quality. Teams with clean data ramp faster. Teams with messy data spend most of the implementation timeline cleaning up before scoring works correctly."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Company Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/about/">About</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Common Room vs Pocus</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Intent Data</div>
+        <h1>Common Room vs Pocus</h1>
+        <p>Head-to-head comparison with feature tables, pricing, and a clear recommendation.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    
+<figure class="content-figure content-figure--unique">
+    <img src="/assets/images/content/gtm-tool-comparison-tools-common-room-vs-pocus.svg" alt="Common Room vs Pocus" width="1200" height="630" loading="lazy">
+    <figcaption>Common Room vs Pocus</figcaption>
+</figure>
+<p>Common Room and Pocus are the two leading signal-based selling platforms for product-led B2B companies. The two products overlap enough that GTM Engineers regularly debate which to buy. The honest answer: they solve adjacent problems and the right pick depends on whether your strongest signals come from community engagement or product usage.</p>
+<p>Common Room aggregates community signals (GitHub, Discord, Slack, Reddit) along with broader signal sources. Pocus aggregates product usage signals (free-tier activity, feature adoption, account expansion patterns) along with CRM and intent data. Both products surface accounts ready for sales conversation. Both push those accounts into operational tools. The difference is what kind of "ready" they detect best.</p>
+<p>This comparison breaks down the architecture, pricing, real-world workflows, and decision factors for GTM Engineers evaluating both platforms. The takeaway up front: most teams should buy one, not both, and the choice depends on which signal source produces more of your current pipeline.</p>
+
+    <h2>Feature Comparison</h2>
+    <div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>Common Room</th><th>Pocus</th></tr>
+</thead>
+<tbody>
+<tr><td>Primary Signal Source</td><td>Community + identity resolution</td><td>Product usage + CRM</td></tr>
+<tr><td>Community Integrations</td><td>GitHub, Discord, Slack, Reddit, HN</td><td>None native (via warehouse)</td></tr>
+<tr><td>Product Usage Capture</td><td>Limited (via warehouse)</td><td>Native (Segment, Mixpanel, warehouse)</td></tr>
+<tr><td>Website De-anonymization</td><td>Yes (added 2024)</td><td>Limited</td></tr>
+<tr><td>Job Change Signals</td><td>Yes</td><td>Yes (less depth)</td></tr>
+<tr><td>Account Scoring</td><td>Composite signal scoring</td><td>PQL/PQA scoring engine</td></tr>
+<tr><td>CRM Integrations</td><td>HubSpot, Salesforce, Outreach</td><td>HubSpot, Salesforce, Outreach, Salesloft</td></tr>
+<tr><td>Pricing Model</td><td>Custom / sales-led (~$625+/mo)</td><td>Custom / sales-led</td></tr>
+<tr><td>Free Tier</td><td>Yes (2 sources, 1 user)</td><td>No native free tier</td></tr>
+<tr><td>Best For</td><td>Developer-tool companies with active communities</td><td>PLG SaaS with strong product usage signals</td></tr>
+</tbody>
+</table></div>
+
+    <h2>Where Common Room Wins</h2>
+<p>Community signal capture has no real competition. Common Room is the only mature product that pulls signal data from Discord, Slack workspaces, GitHub interactions, Reddit threads, and Hacker News mentions, then maps those signals to companies and individuals. For developer-tool companies, open-source projects, and SaaS products with active communities, the signal volume Common Room captures simply isn't visible to any other tool category.</p>
+<p>Identity resolution across community sources is the second decisive capability. A developer's GitHub username, Discord handle, and corporate email are usually different strings. Common Room stitches these together with reasonable accuracy, which lets a community member's engagement history follow them from anonymous Discord activity through commercial conversation. This identity work is hard to replicate manually and would take months of engineering time to build in-house.</p>
+<p>The platform handles unstructured signals well. Many GTM signals don't fit into rows and columns: a thoughtful Reddit comment, a detailed GitHub issue, a community Slack thread debating a feature. Common Room surfaces these signals with enough context that sales reps can use them as conversation starters or context for outreach. Other tools that focus on structured event data miss this category entirely.</p>
+<p>For companies whose buyer journey starts in community channels months before any commercial signal, Common Room captures the early-funnel context that drives later-funnel conversion. The data is harder to attribute cleanly but operators who run Common Room well report meaningful lift in pipeline visibility and sales rep ramp.</p>
+
+    <h2>Where Pocus Wins</h2>
+<p>Product usage signal capture is Pocus's core competency. The product ingests events from Segment, Mixpanel, Amplitude, and the data warehouse, then builds scoring models for product-qualified leads, product-qualified accounts, and expansion opportunities. For PLG companies where free-tier usage patterns precede paid conversion, Pocus surfaces the signals that predict revenue.</p>
+<p>The PQL/PQA scoring engine is more mature than Common Room's equivalent capabilities. Pocus has invested years in the modeling work that turns raw usage events into actionable scores. The configuration UI lets GTM Engineers build sophisticated multi-criteria scoring (usage frequency, feature breadth, team expansion, billing events) without writing custom ML code. Common Room's composite scoring is fine for community signals but less developed for product usage scoring.</p>
+<p>Pocus's playbook builder turns signals into automated outbound triggers more directly. A scored PQL doesn't sit on a dashboard waiting for someone to notice. The playbook routes the lead to the right rep with context, suggests the right sequence, and logs activity in the CRM. Common Room's activation features lag here, requiring more manual workflow design to turn signals into outbound motion.</p>
+<p>For SaaS companies whose primary growth motion is "free user converts to paid customer" or "small customer expands to large customer," Pocus's product-signal focus matches the buyer journey better than Common Room's community-signal focus. The right tool depends on which signal source is producing more of your pipeline, and for most PLG SaaS, the answer is product usage data.</p>
+
+    <h2>Pricing Breakdown</h2>
+<p>Common Room pricing is sales-led and varies widely. The free tier supports 2 sources and 1 user, which works for trial evaluation but rarely production use. Team tier starts around $625/month and scales with member count and integration depth. Enterprise deals for developer-tool companies with large communities run $30K-$80K/year. The pricing model rewards customers with focused use cases and penalizes broad rollouts where the value-per-dollar math gets harder.</p>
+<p>Pocus pricing is also sales-led with no published rates. Real-world contracts for mid-market PLG companies run $25K-$60K/year for standard packages, with enterprise deals scaling higher based on event volume and seat count. There's no free tier, which makes Pocus harder to evaluate without commitment but reflects the high-touch sales motion the company runs.</p>
+<p>Both products extract premium prices relative to underlying value when the signal source isn't aligned with your buyer journey. A developer-tool company paying $50K/year for Pocus when their pipeline mostly comes from community engagement gets less ROI than paying $30K/year for Common Room. The same calculation runs in reverse for a PLG SaaS with weak community but strong product signals. Pick the tool whose primary signal source matches the source of your existing pipeline, and the pricing math works.</p>
+<p>The hidden cost of either product is the GTM Engineering time required to make signals actionable. Buying the tool and dropping it into the CRM doesn't produce pipeline. Configuring the right scoring, building the right routing, designing the right outbound responses, and measuring the outcome takes 4-8 weeks of dedicated effort. Budget that time before signing the contract or expect a quarter of "we bought the thing but the signals don't drive any pipeline yet."</p>
+    
+
+    <h2>The Verdict</h2>
+<p>Pick Common Room if your buyer journey starts in developer or community channels: open-source projects, Discord servers, technical Slack communities, or GitHub-driven adoption. The signal sources Common Room captures uniquely justify its price tag for developer-tool companies.</p>
+<p>Pick Pocus if your buyer journey runs through product usage: free-tier conversion, feature-driven expansion, or usage-based pricing tiers. The PQL/PQA scoring engine matches the PLG motion more cleanly than Common Room's community-first architecture.</p>
+<p>Pick neither if your buyers don't engage publicly in either community channels or product usage at scale. Traditional intent data (Bombora, 6sense), website visitor identification (RB2B, Warmly), and job-change tracking (UserGems) cover most B2B signal needs at lower cost. The signal-based selling category is wider than just Common Room and Pocus, and the cheapest right answer is sometimes the right answer.</p>
+<p>For the few companies running both: this is a real pattern, but it requires GTM Engineering investment to coordinate signal flows so reps aren't drowning in alerts from two systems. Consolidate scoring downstream (in your CRM or data warehouse) so the rep-facing experience is one ranked queue, not two competing dashboards.</p>
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Can I use Pocus and Common Room together?</h3>
+    <p class="faq-answer">Yes, but it requires deliberate workflow design. Both tools push signals into the CRM, and without coordination you'll have overlapping alerts and duplicated outreach. The pattern that works: route community signals from Common Room into your CRM with a 'community engagement' tag, route product signals from Pocus with a 'product usage' tag, then build CRM views and routing logic that combine both signal types into a single prioritized rep queue.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Does Common Room replace traditional intent data tools like Bombora?</h3>
+    <p class="faq-answer">No. Common Room captures different signals (community engagement) than Bombora (topic-level intent based on publisher network consumption). For full signal coverage, most companies that buy Common Room also maintain either Bombora or 6sense for intent data. The cost stack adds up, which is why some teams choose to focus on one signal source rather than running broad signal coverage.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is Pocus better than building product usage scoring in dbt + Hightouch?</h3>
+    <p class="faq-answer">Depends on your team's data engineering capacity. The dbt + reverse ETL approach gives you full control over scoring logic and uses tools you may already own. Pocus gives you faster time-to-value with pre-built scoring frameworks and playbook templates. Teams with strong data engineering usually prefer the build approach. Teams that want to ship signal-driven outbound this quarter usually prefer Pocus.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How do these tools compare to UserGems for job change signals?</h3>
+    <p class="faq-answer">UserGems is the strongest dedicated tool for job change tracking from your existing customer base. Both Common Room and Pocus offer job change signals as part of broader platforms, but neither is as deep on this specific signal as UserGems. Teams that derive significant pipeline from former-customer-now-at-new-account signals should run UserGems alongside either Common Room or Pocus, not as a replacement.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What's the implementation timeline for either platform?</h3>
+    <p class="faq-answer">Common Room: 2-4 weeks to first signal flow into CRM, 6-12 weeks to full workflow integration with sales playbooks. Pocus: 3-6 weeks to first PQL scoring live, 8-16 weeks to full automated playbook coverage. Both timelines stretch based on warehouse and CRM data quality. Teams with clean data ramp faster. Teams with messy data spend most of the implementation timeline cleaning up before scoring works correctly.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>Related Comparisons & Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/common-room-review/" class="related-link-card">Common Room Review</a>
+<a href="/tools/pocus-review/" class="related-link-card">Pocus Review</a>
+<a href="/tools/6sense-vs-bombora/" class="related-link-card">6sense vs Bombora</a>
+<a href="/tools/hightouch-vs-census/" class="related-link-card">Hightouch vs Census</a>
+<a href="/tools/default-vs-clay/" class="related-link-card">Default vs Clay</a>
+<a href="/tools/category/intent-data/" class="related-link-card">Intent & Signal Data</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Common Room vs Pocus updates and GTM tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h3>Salary Data</h3>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Resources</h3>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Site</h3>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>GTM Tools & Resources</h3>
+    <ul>
+        <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
+<li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+<li><a href="https://fdepulse.com" target="_blank" rel="noopener">FDE Pulse</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h3>Stay in the loop</h3>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

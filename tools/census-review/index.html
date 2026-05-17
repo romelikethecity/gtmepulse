@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Census Review 2026: Reverse ETL Done Right - GTME Pulse</title>
+    <meta name="description" content="Census review for GTM Engineers. dbt-native reverse ETL, transparent pricing, 200+ destinations, Live Syncs, and when to pick it over Hightouch. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/census-review/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/census-review/">
+    <meta property="og:title" content="Census Review 2026: Reverse ETL Done Right - GTME Pulse">
+    <meta property="og:description" content="Census review for GTM Engineers. dbt-native reverse ETL, transparent pricing, 200+ destinations, Live Syncs, and when to pick it over Hightouch. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Census Review 2026: Reverse ETL Done Right - GTME Pulse">
+    <meta name="twitter:description" content="Census review for GTM Engineers. dbt-native reverse ETL, transparent pricing, 200+ destinations, Live Syncs, and when to pick it over Hightouch. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Census Review"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Census", "description": "Census review for GTM Engineers. dbt-native reverse ETL, transparent pricing, 200+ destinations, Live Syncs, and when to pick it over Hightouch. Independent.", "applicationCategory": "Intent Data", "operatingSystem": "Web", "url": "https://getcensus.com", "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "$0-$800+/mo", "description": "$0-$800+/mo"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Census require dbt?", "acceptedAnswer": {"@type": "Answer", "text": "No, but it works best with dbt. Census can pull from any SQL source: raw warehouse tables, views, materialized views, or dbt models. Teams that use dbt get a tighter integration with model documentation, lineage, and test results showing in the Census UI. Teams that don't use dbt still get full Census functionality, just with less context about source data quality."}}, {"@type": "Question", "name": "How does Census handle schema changes?", "acceptedAnswer": {"@type": "Answer", "text": "Census detects schema changes in source queries and surfaces them in the sync configuration. Adding a column to a source model adds it as an available field to map. Removing a column breaks the sync until you remove the mapping. Renaming a column requires updating the mapping manually. The behavior is predictable but not automatic, which is the right trade-off for production syncs where silent column changes could push wrong data downstream."}}, {"@type": "Question", "name": "Is Census faster than Hightouch for high-frequency syncs?", "acceptedAnswer": {"@type": "Answer", "text": "For most use cases, the two tools have similar sync performance. Census has historically had a slight edge on the lowest-latency syncs because the architecture is more focused. Hightouch has closed the gap with their CDC features. For sub-minute sync requirements, both products work but neither matches the latency of a custom event-streaming pipeline built on Kafka or similar."}}, {"@type": "Question", "name": "Can Census handle SOC 2 and enterprise security needs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Census has SOC 2 Type II, HIPAA-eligible deployments on Enterprise tier, and supports SSO, RBAC, and customer-managed encryption keys. For regulated industries (healthcare, financial services), the Enterprise plan includes the controls most procurement teams require. Implementation timelines for regulated deployments are longer because of the additional security review, typically 6-10 weeks from contract to first production sync."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Company Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/about/">About</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Census Review</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Intent Data</div>
+        <h1>Census Review</h1>
+        <p>$0-$800+/mo</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    
+<figure class="content-figure content-figure--unique">
+    <img src="/assets/images/content/gtm-tool-review-tools-census-review.svg" alt="Census Review" width="1200" height="630" loading="lazy">
+    <figcaption>Census Review</figcaption>
+</figure>
+<h2>Overview</h2>
+    
+<p>Census is the reverse ETL platform that GTM Engineers reach for when they want a focused product with transparent pricing and clean integration patterns. The architecture mirrors Hightouch: warehouse as source, operational tools as destinations, SQL or dbt models defining what data moves where. Where Hightouch has expanded into operational CDP territory, Census has stayed closer to the core reverse ETL mission, which some technical teams prefer.</p>
+<p>The product launched in 2018 and grew through the dbt community. Many of Census's early customers were data teams using dbt heavily for transformation work, and the dbt-native integration patterns remain a strong point. If your warehouse is already organized around dbt models with clear documentation, exposing those models to Census takes minutes. The mental model maps directly: a dbt model becomes a Census source, and you sync it to wherever it needs to go.</p>
+<p>Census supports 200+ destinations including all the GTM-relevant tools: Salesforce, HubSpot, Marketo, Outreach, Salesloft, LinkedIn Ads, Google Ads, Iterable, Customer.io, Intercom, Zendesk, and Slack. The destination quality stays consistently high, with deep field mapping support and careful upsert behavior. Census has invested heavily in destination connector reliability, which shows up in lower sync error rates than competitor benchmarks suggest.</p>
+
+
+    <h2>GTM Engineer Use Cases</h2>
+    
+<ul>
+    <li><strong>Sync dbt-modeled lead scores into Salesforce or HubSpot.</strong> Your dbt models compute lead scores by combining product usage, firmographics, and engagement signals. Census wraps the dbt model as a source, syncs the result to your CRM, and the score becomes available as a sales workflow input within minutes of model refresh.</li>
+    <li><strong>Activate customer health scores in operational tools.</strong> Build a health score in the warehouse from product usage, support ticket volume, NPS responses, and billing data. Sync to Salesforce as a custom field and to Slack as alerting for accounts trending toward churn. Customer success teams act on the same data engineering builds.</li>
+    <li><strong>Build audiences for ad platforms with SQL precision.</strong> Marketing wants to suppress retargeting ads for customers who already converted but include trial users who churned in the last 30 days and matched ICP. The SQL takes 10 lines. Census syncs the audience to LinkedIn Ads and Google Ads. The audience refreshes daily.</li>
+    <li><strong>Replace ad-hoc Python scripts with auditable syncs.</strong> Every GTM team has Python scripts pushing data between tools that someone wrote three years ago and nobody fully understands. Census replaces these with versioned, monitored syncs that the team can debug from a single dashboard.</li>
+    <li><strong>Coordinate identity stitching across destinations.</strong> Use Census Match (the equivalent to Hightouch Match) to build identity graphs in the warehouse, then push resolved identities to every destination so contact records stay consistent across HubSpot, Salesforce, and the marketing automation platform.</li>
+    <li><strong>Trigger workflows based on warehouse events.</strong> Census Live Syncs can fire syncs when warehouse data changes, enabling sub-minute activation of high-value signals like a target account hitting a specific usage threshold or a contract renewal moving into the danger zone.</li>
+</ul>
+
+
+    <h2>Pricing Breakdown</h2>
+    
+<table class="data-table">
+    <thead><tr><th>Plan</th><th>Price</th><th>Destinations</th><th>Key Features</th></tr></thead>
+    <tbody>
+        <tr><td>Free</td><td>$0</td><td>10 destinations</td><td>100 rows/sync, limited sync frequency</td></tr>
+        <tr><td>Starter</td><td>$300/mo</td><td>3 destinations</td><td>Unlimited rows, daily sync minimum</td></tr>
+        <tr><td>Platform</td><td>$800/mo</td><td>10 destinations</td><td>Hourly syncs, audience hub, RBAC</td></tr>
+        <tr><td>Enterprise</td><td>Custom</td><td>Custom</td><td>SSO, advanced security, dedicated support</td></tr>
+    </tbody>
+</table>
+<p>Census pricing is more transparent than Hightouch's, with clear destination counts and sync frequency tiers published on the pricing page. Most mid-market GTM Engineering teams land on the Platform plan around $800-$2,000/month depending on destination count and data volume. The pricing model favors teams that need many destinations over teams running heavy volume to a few destinations, which fits the typical GTM use case well.</p>
+<p>Warehouse compute is again the hidden cost. Census runs SQL queries against your source on every sync. A model that runs hourly against Snowflake can produce real compute bills if the query is poorly optimized. Monitor warehouse spend alongside Census costs. Cache expensive aggregations in dbt models before exposing them as Census sources.</p>
+
+    
+
+    <h2>Honest Criticism</h2>
+    
+<p>The UI feels less polished than Hightouch's. Census prioritizes function over form, which technical operators appreciate and business users find harder to use. If your audience for the product is data engineers and GTM Engineers, this is fine. If you expect marketing managers to self-serve audience creation, you'll get more friction from Census than from Hightouch's audience tools.</p>
+<p>Documentation depth varies by destination. The popular destinations (Salesforce, HubSpot, Outreach) have extensive docs with field mapping examples and gotcha lists. Less popular destinations (some marketing automation tools, niche ad platforms) have thinner documentation that requires reading the destination's own API docs alongside Census's. Plan for extra ramp time on uncommon destinations.</p>
+<p>The audience features lag Hightouch's Audience Studio in maturity. Census has audience capabilities and they work for SQL-fluent users, but the business-user-friendly audience builder is less developed than Hightouch's. Teams that need marketing self-service on audience creation will be happier on Hightouch. Teams where audience creation is a data engineering or GTM Engineering task are fine on either.</p>
+<p>Real-time sync is supported but premium-tier. The most responsive sync patterns require the Platform or Enterprise plans. Free and Starter users get daily syncs at most, which limits the use cases for low-budget testing. Hightouch's free tier offers slightly faster sync frequencies, which can affect early evaluation.</p>
+
+
+    <h2>Verdict</h2>
+    
+<p>Census is the right reverse ETL choice for GTM Engineers at companies where data engineering and GTM Engineering work closely together, where dbt is already the transformation layer, and where pricing transparency matters. The product is excellent at the core reverse ETL job and slightly less ambitious about expanding into operational CDP territory than Hightouch.</p>
+<p>Choose Census if your warehouse runs on dbt and your team values focused tooling. Choose Hightouch if you want broader operational CDP capabilities, more polished business-user features, and you accept the pricing opacity. The functional gap between the two products is narrow enough that team preferences and existing relationships often determine the choice as much as feature differences.</p>
+<p>Both products are correct answers for "we have a warehouse and need to activate it." The wrong answer is buying neither and continuing to maintain custom Python scripts for every integration. The cost-benefit math on reverse ETL platforms hits a clear win once you have 3+ destinations and any meaningful warehouse model complexity.</p>
+
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Does Census require dbt?</h3>
+    <p class="faq-answer">No, but it works best with dbt. Census can pull from any SQL source: raw warehouse tables, views, materialized views, or dbt models. Teams that use dbt get a tighter integration with model documentation, lineage, and test results showing in the Census UI. Teams that don't use dbt still get full Census functionality, just with less context about source data quality.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How does Census handle schema changes?</h3>
+    <p class="faq-answer">Census detects schema changes in source queries and surfaces them in the sync configuration. Adding a column to a source model adds it as an available field to map. Removing a column breaks the sync until you remove the mapping. Renaming a column requires updating the mapping manually. The behavior is predictable but not automatic, which is the right trade-off for production syncs where silent column changes could push wrong data downstream.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is Census faster than Hightouch for high-frequency syncs?</h3>
+    <p class="faq-answer">For most use cases, the two tools have similar sync performance. Census has historically had a slight edge on the lowest-latency syncs because the architecture is more focused. Hightouch has closed the gap with their CDC features. For sub-minute sync requirements, both products work but neither matches the latency of a custom event-streaming pipeline built on Kafka or similar.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Can Census handle SOC 2 and enterprise security needs?</h3>
+    <p class="faq-answer">Yes. Census has SOC 2 Type II, HIPAA-eligible deployments on Enterprise tier, and supports SSO, RBAC, and customer-managed encryption keys. For regulated industries (healthcare, financial services), the Enterprise plan includes the controls most procurement teams require. Implementation timelines for regulated deployments are longer because of the additional security review, typically 6-10 weeks from contract to first production sync.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>More Tool Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/apollo-review/" class="related-link-card">Apollo.io Review</a>
+<a href="/tools/zoominfo-review/" class="related-link-card">ZoomInfo Review</a>
+<a href="/tools/clearbit-review/" class="related-link-card">Clearbit Review</a>
+<a href="/tools/fullenrich-review/" class="related-link-card">FullEnrich Review</a>
+<a href="/tools/lusha-review/" class="related-link-card">Lusha Review</a>
+<a href="/tools/cognism-review/" class="related-link-card">Cognism Review</a>
+<a href="/tools/leadiq-review/" class="related-link-card">LeadIQ Review</a>
+<a href="/tools/persana-review/" class="related-link-card">Persana AI Review</a>
+<a href="/tools/instantly-review/" class="related-link-card">Instantly Review</a>
+<a href="/tools/smartlead-review/" class="related-link-card">Smartlead Review</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Intent Data tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h3>Salary Data</h3>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Resources</h3>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Site</h3>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>GTM Tools & Resources</h3>
+    <ul>
+        <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
+<li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+<li><a href="https://fdepulse.com" target="_blank" rel="noopener">FDE Pulse</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h3>Stay in the loop</h3>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

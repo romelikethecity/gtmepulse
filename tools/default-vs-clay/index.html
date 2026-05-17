@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Default vs Clay 2026: Inbound vs Outbound Stack - GTME Pulse</title>
+    <meta name="description" content="Default vs Clay for GTM Engineers. Inbound conversion vs outbound prospecting, pricing, AI personalization depth, and when to use both together. Independent.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/default-vs-clay/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/default-vs-clay/">
+    <meta property="og:title" content="Default vs Clay 2026: Inbound vs Outbound Stack - GTME Pulse">
+    <meta property="og:description" content="Default vs Clay for GTM Engineers. Inbound conversion vs outbound prospecting, pricing, AI personalization depth, and when to use both together. Independent.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Default vs Clay 2026: Inbound vs Outbound Stack - GTME Pulse">
+    <meta name="twitter:description" content="Default vs Clay for GTM Engineers. Inbound conversion vs outbound prospecting, pricing, AI personalization depth, and when to use both together. Independent.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Default vs Clay"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Default's signal-based outbound replace Clay for outbound prospecting?", "acceptedAnswer": {"@type": "Answer", "text": "No. Default's outbound features work for the inbound-adjacent signals (a logged-in prospect visits pricing, a free-tier user hits a usage limit, an existing customer's stakeholder visits the documentation). Clay handles cold outbound prospecting where you start with a target list and need to find, enrich, qualify, and personalize from scratch. The two address different stages of the pipeline and don't substitute for each other."}}, {"@type": "Question", "name": "Does Clay have any inbound conversion features?", "acceptedAnswer": {"@type": "Answer", "text": "Limited. Clay can be triggered by webhooks from form fills and can enrich and route inbound leads, but it doesn't provide form orchestration, meeting booking, or the visual routing engine that Default does. Teams that try to build full inbound flows in Clay typically end up frustrated by the gaps and end up adding Calendly/Chili Piper anyway. Default solves a problem Clay deliberately stays out of."}}, {"@type": "Question", "name": "Can I migrate from Calendly + Chili Piper + Clearbit to Default?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The migration takes 4-8 weeks for most mid-market teams. The work involves rebuilding form orchestration, recreating routing rules, configuring scheduling experience, and migrating data sources. Default's onboarding team typically guides the migration. The disruption is real during the transition. The post-migration state is meaningfully simpler than the previous stitched-together stack."}}, {"@type": "Question", "name": "How do Default and Clay integrate with each other?", "acceptedAnswer": {"@type": "Answer", "text": "Default can call Clay via webhook to enrich inbound leads against Clay's data orchestration logic, then receive the enriched response back for routing. Clay can call Default's API to push outbound-qualified prospects into Default for follow-up sequencing or meeting booking. The integration is functional but not deeply native; both products are independently best-of-breed rather than designed as complementary platforms."}}, {"@type": "Question", "name": "What's the equivalent of Clay for inbound contexts?", "acceptedAnswer": {"@type": "Answer", "text": "There isn't one direct equivalent, which is part of why Default exists. The closest comparison is HubSpot's inbound suite (forms + workflows + chatbots + Marketing Hub) which handles inbound orchestration inside HubSpot but lacks the routing and scheduling depth of Default. For inbound-heavy companies that don't run HubSpot, Default fills a real gap that other tools haven't matched."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Company Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/about/">About</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Default vs Clay</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Intent Data</div>
+        <h1>Default vs Clay</h1>
+        <p>Head-to-head comparison with feature tables, pricing, and a clear recommendation.</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    
+<figure class="content-figure content-figure--unique">
+    <img src="/assets/images/content/gtm-tool-comparison-tools-default-vs-clay.svg" alt="Default vs Clay" width="1200" height="630" loading="lazy">
+    <figcaption>Default vs Clay</figcaption>
+</figure>
+<p>Default and Clay both sit in the GTM Engineering stack but solve different problems. Clay is a data enrichment orchestration tool used to find, enrich, and qualify outbound prospect lists. Default is an inbound conversion platform that handles forms, routing, scheduling, and signal-based outbound from inbound traffic. The two often get compared by buyers because they're both modern, technical, and pitched to similar audiences, but the real question isn't which one wins. The real question is what each one does and when you need both.</p>
+<p>This comparison breaks down the actual scope of each platform, the workflows they solve, the pricing tradeoffs, and the decision framework for choosing one, the other, or both. The TL;DR up front: Clay drives outbound pipeline, Default converts inbound demand, and growth-stage SaaS companies running both inbound and outbound motions often end up with both tools doing different jobs in the same stack.</p>
+
+    <h2>Feature Comparison</h2>
+    <div class="table-responsive"><table class="data-table">
+<thead>
+<tr><th>Feature</th><th>Default</th><th>Clay</th></tr>
+</thead>
+<tbody>
+<tr><td>Primary Use Case</td><td>Inbound conversion (forms, routing, booking, signal-based outbound)</td><td>Outbound prospecting (find, enrich, qualify, sequence)</td></tr>
+<tr><td>Data Source</td><td>Inbound form fills + intent signals from your site</td><td>External data sources (75+ providers) + lists you import</td></tr>
+<tr><td>Enrichment Depth</td><td>Built-in firmographic + ICP scoring</td><td>Waterfall across 75+ data providers</td></tr>
+<tr><td>Meeting Booking</td><td>Native (replaces Calendly + Chili Piper)</td><td>None (integrates with calendar tools)</td></tr>
+<tr><td>Lead Routing</td><td>Native (visual routing engine)</td><td>None (integrates with downstream tools)</td></tr>
+<tr><td>Outbound Sequencing</td><td>Built-in basic sequences + integrates with Outreach</td><td>None (integrates with Instantly, Smartlead, Outreach)</td></tr>
+<tr><td>AI Personalization</td><td>Basic (templated)</td><td>Deep (AI columns with LLM API access)</td></tr>
+<tr><td>Pricing Model</td><td>$500-$8,000/mo (platform + seats)</td><td>$149-$1,400/mo (workspace tiers) + credits</td></tr>
+<tr><td>Learning Curve</td><td>2-3 days to first production workflow</td><td>2-3 weeks to advanced workflows</td></tr>
+<tr><td>GTM Engineer Adoption</td><td>Growing fast in inbound-driven SaaS</td><td>69% of GTM Engineer postings mention Clay</td></tr>
+<tr><td>Best For</td><td>Inbound-driven B2B SaaS converting demand</td><td>Outbound-driven motion building qualified pipeline</td></tr>
+</tbody>
+</table></div>
+
+    <h2>Where Default Wins</h2>
+<p>Default eats the inbound conversion stack. Form fills route to the right rep with full firmographic context, the prospect books a meeting on the rep's calendar without leaving the page, and the rep gets a fully enriched lead record before the meeting starts. The end-to-end flow takes 30-60 seconds versus the multi-tool stitching that traditional inbound stacks require, where Calendly handles booking, Chili Piper handles routing, Clearbit handles enrichment, and HubSpot orchestrates forms.</p>
+<p>The integration coherence saves real engineering time. A mid-market SaaS company building this flow from point tools typically spends 30-60 engineering hours stitching together Calendly + Chili Piper + Clearbit + HubSpot form orchestration plus the routing logic in Salesforce flows. Default delivers the same flow out of the box, with a single configuration surface and one data model rather than four. The engineering time savings often justify the platform cost within the first quarter.</p>
+<p>For inbound-driven motions, the buyer experience is meaningfully better. Prospects who fill out a demo form get an immediate calendar booking option with the right rep, not a "thanks, we'll be in touch" auto-responder followed by a 24-48 hour delay before the rep emails back to schedule. The conversion lift from same-day meeting booking versus delayed booking shows up in real numbers at companies that measure it carefully.</p>
+<p>Default's signal capture extends beyond forms. Logged-in pricing page visits, repeated documentation page activity, and intent signals from your own product trigger workflows that Clay can't replicate. Default's data source is your own site and product. Clay's data source is external enrichment providers. The two operate on fundamentally different inputs.</p>
+
+    <h2>Where Clay Wins</h2>
+<p>Clay dominates outbound pipeline construction. You start with nothing (or a thin list of company names) and Clay builds a fully qualified outbound list with enriched contact data, scored against ICP fit, and personalized for each prospect. The waterfall enrichment across 75+ data providers consistently outperforms any single data source on coverage and accuracy. For teams whose pipeline comes from cold outbound, Clay is the operational core that Default doesn't try to replace.</p>
+<p>The AI personalization depth is meaningfully different. Clay's AI columns let you write LLM prompts that operate on each row, generating personalized opening lines, custom value propositions, or contextual research summaries for thousands of prospects in parallel. Default's personalization is template-based and works fine for inbound contexts where you already have rich context. Clay's personalization scales to outbound contexts where you need to manufacture relevance from scratch.</p>
+<p>For GTM Engineers building custom workflows, Clay's flexibility is unmatched. Custom HTTP modules call any API. Formula columns transform data with Python-like expressions. Conditional logic branches workflows based on enriched data. The full toolkit makes Clay a programming environment for outbound that no other tool, including Default, attempts to be. The flexibility is why 69% of GTM Engineer job postings list Clay as a required skill.</p>
+<p>Cost economics favor Clay for outbound use cases. A Clay workspace at $149-$349/month covers most mid-market outbound motions, with credit costs scaling with usage rather than seat count. Default's pricing model assumes meaningful inbound volume to justify the platform cost. For teams whose primary motion is outbound with modest inbound volume, Clay plus a basic Calendly/Outreach stack costs much less than Default with the same outcomes.</p>
+
+    <h2>Pricing Breakdown</h2>
+<p>Default pricing: Starter ~$500/month for 5 seats with core forms, routing, and scheduling. Growth ~$1,500/month for 15 seats with full platform and signal data. Scale custom at $3K-$8K/month for enterprise integrations and SSO. Enterprise custom for dedicated CSM and SLAs. The pricing bundles multiple categories (booking, routing, enrichment, form orchestration), which makes per-function cost comparison harder than evaluating point tools. The right comparison is against the total cost of the inbound stack Default replaces.</p>
+<p>Clay pricing: Workspace tiers from $149/month (Starter) to $349/month (Pro) to $1,400/month (Enterprise). Credits scale separately with enrichment volume, typically $0.05-$0.20 per enriched record depending on data source mix. A typical mid-market outbound program runs $300-$800/month on workspace tier plus $1,000-$3,000/month in credits, totaling $1,300-$3,800/month. The credit-based model rewards careful enrichment design and punishes wasteful queries.</p>
+<p>The two products solve different cost problems. Default replaces a stack of Chili Piper + Calendly + Clearbit + form-orchestration tools that would otherwise cost $1,500-$3,000/month for a 15-user team. Clay replaces (or augments) the enrichment subscription stack that would otherwise cost $30K-$80K/year on ZoomInfo plus point-tool subscriptions. The cost case for each is against different baselines, which is why simple side-by-side pricing comparison doesn't tell the real story.</p>
+<p>Growth-stage SaaS running both inbound and outbound motions often end up with both tools in the stack. Clay handles the outbound pipeline construction at $1,500-$3,000/month. Default handles the inbound conversion at $1,500-$3,000/month. Combined cost runs $3K-$6K/month, which is typically below the cost of building the same capabilities from a stack of single-purpose tools and far below the engineering time cost of maintaining the stitched-together alternative.</p>
+    <p class="affiliate-disclosure" style="font-size: 0.85rem; color: var(--gtme-text-tertiary); margin-top: 0.5rem;"><em>This comparison contains affiliate links. We may earn a commission if you sign up through our links. This does not affect our editorial independence or recommendations.</em></p>
+
+    <h2>The Verdict</h2>
+<p>This is a category comparison, not a head-to-head. The two products solve different problems for different motion types. The right pick depends on which motion drives your pipeline today and which motion you're investing in for the next year.</p>
+<p>Pick Default if your pipeline is mostly inbound demand: paid search, content marketing, organic search, referrals, and content downloads. The platform pays for itself in engineering time savings and conversion lift if you have meaningful inbound volume (50+ demo requests per month for the math to work clearly at mid-market scale).</p>
+<p>Pick Clay if your pipeline is mostly outbound: cold sequences, account-based prospecting, vertical-specific lists. Clay is the operational core of modern outbound and the platform that 69% of GTM Engineer job postings expect candidates to know. The flexibility, AI personalization, and data orchestration capabilities are unmatched in the outbound category.</p>
+<p>Pick both if your pipeline is split between meaningful inbound volume and meaningful outbound effort. Most growth-stage B2B SaaS in 2026 falls into this category. The two products coexist cleanly in the stack with Clay handling outbound pipeline construction and Default handling inbound demand conversion. The combined cost is justified by the operational coherence each delivers in its respective motion.</p>
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Can Default's signal-based outbound replace Clay for outbound prospecting?</h3>
+    <p class="faq-answer">No. Default's outbound features work for the inbound-adjacent signals (a logged-in prospect visits pricing, a free-tier user hits a usage limit, an existing customer's stakeholder visits the documentation). Clay handles cold outbound prospecting where you start with a target list and need to find, enrich, qualify, and personalize from scratch. The two address different stages of the pipeline and don't substitute for each other.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Does Clay have any inbound conversion features?</h3>
+    <p class="faq-answer">Limited. Clay can be triggered by webhooks from form fills and can enrich and route inbound leads, but it doesn't provide form orchestration, meeting booking, or the visual routing engine that Default does. Teams that try to build full inbound flows in Clay typically end up frustrated by the gaps and end up adding Calendly/Chili Piper anyway. Default solves a problem Clay deliberately stays out of.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Can I migrate from Calendly + Chili Piper + Clearbit to Default?</h3>
+    <p class="faq-answer">Yes. The migration takes 4-8 weeks for most mid-market teams. The work involves rebuilding form orchestration, recreating routing rules, configuring scheduling experience, and migrating data sources. Default's onboarding team typically guides the migration. The disruption is real during the transition. The post-migration state is meaningfully simpler than the previous stitched-together stack.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How do Default and Clay integrate with each other?</h3>
+    <p class="faq-answer">Default can call Clay via webhook to enrich inbound leads against Clay's data orchestration logic, then receive the enriched response back for routing. Clay can call Default's API to push outbound-qualified prospects into Default for follow-up sequencing or meeting booking. The integration is functional but not deeply native; both products are independently best-of-breed rather than designed as complementary platforms.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">What's the equivalent of Clay for inbound contexts?</h3>
+    <p class="faq-answer">There isn't one direct equivalent, which is part of why Default exists. The closest comparison is HubSpot's inbound suite (forms + workflows + chatbots + Marketing Hub) which handles inbound orchestration inside HubSpot but lacks the routing and scheduling depth of Default. For inbound-heavy companies that don't run HubSpot, Default fills a real gap that other tools haven't matched.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>Related Comparisons & Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/default-review/" class="related-link-card">Default Review</a>
+<a href="/tools/6sense-vs-bombora/" class="related-link-card">6sense vs Bombora</a>
+<a href="/tools/hightouch-vs-census/" class="related-link-card">Hightouch vs Census</a>
+<a href="/tools/common-room-vs-pocus/" class="related-link-card">Common Room vs Pocus</a>
+<a href="/tools/category/intent-data/" class="related-link-card">Intent & Signal Data</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Default vs Clay updates and GTM tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h3>Salary Data</h3>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Resources</h3>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Site</h3>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>GTM Tools & Resources</h3>
+    <ul>
+        <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
+<li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+<li><a href="https://fdepulse.com" target="_blank" rel="noopener">FDE Pulse</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h3>Stay in the loop</h3>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

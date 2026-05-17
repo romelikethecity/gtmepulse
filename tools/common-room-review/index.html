@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4F1F">
+    <title>Common Room Review 2026: Community Signals - GTME Pulse</title>
+    <meta name="description" content="Common Room review for GTM Engineers. GitHub, Discord, Slack signal capture, identity resolution, and when community intelligence drives pipeline. Free.">
+    <link rel="canonical" href="https://gtmepulse.com/tools/common-room-review/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtmepulse.com/tools/common-room-review/">
+    <meta property="og:title" content="Common Room Review 2026: Community Signals - GTME Pulse">
+    <meta property="og:description" content="Common Room review for GTM Engineers. GitHub, Discord, Slack signal capture, identity resolution, and when community intelligence drives pipeline. Free.">
+    <meta property="og:site_name" content="GTME Pulse">
+    <meta property="og:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Common Room Review 2026: Community Signals - GTME Pulse">
+    <meta name="twitter:description" content="Common Room review for GTM Engineers. GitHub, Discord, Slack signal capture, identity resolution, and when community intelligence drives pipeline. Free.">
+    <meta name="twitter:image" content="https://gtmepulse.com/assets/favicons/og-icon-256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFWVZ2V6YL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFWVZ2V6YL');
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gtmepulse.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gtmepulse.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Common Room Review"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Common Room", "description": "Common Room review for GTM Engineers. GitHub, Discord, Slack signal capture, identity resolution, and when community intelligence drives pipeline. Free.", "applicationCategory": "Intent Data", "operatingSystem": "Web", "url": "https://commonroom.io", "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "$0-$625+/mo", "description": "$0-$625+/mo"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Common Room vs Pocus: which one for PLG companies?", "acceptedAnswer": {"@type": "Answer", "text": "Pocus skews toward product usage signals and PQL identification. Common Room skews toward community engagement signals and broader signal aggregation. PLG companies with strong community motions often run both, with Pocus driving the product-qualified-lead funnel and Common Room driving community-qualified-lead context. Companies with strong product signals but weak communities should start with Pocus. Companies with strong communities but limited product telemetry should start with Common Room."}}, {"@type": "Question", "name": "Does Common Room track private Slack and Discord communities?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with proper authentication and admin permissions in your community workspaces. Common Room is deployed inside your Slack or Discord with admin-level access, which lets it read messages, identify members, and track engagement metrics. The integration respects member privacy in ways that vary by platform; for example, direct messages are typically not tracked. Configure carefully and communicate clearly with your community about what's being tracked."}}, {"@type": "Question", "name": "How does Common Room compare to BuiltWith for technographic data?", "acceptedAnswer": {"@type": "Answer", "text": "Different categories. BuiltWith specializes in technographic data sourced from website crawling. Common Room focuses on community and engagement signals plus some adjacent technographic features. Most GTM teams that need real technographic depth pair BuiltWith or Sumble with Common Room rather than using either as a substitute for the other."}}, {"@type": "Question", "name": "Is Common Room overkill if we have a small community under 1,000 members?", "acceptedAnswer": {"@type": "Answer", "text": "Probably yes at full Team-tier pricing. Small communities don't generate enough signal volume to justify the spend. Track manually with spreadsheets and lightweight tools until your community grows to 3,000-5,000 members. At that scale, the manual approach breaks down and a platform like Common Room produces enough new signal value to justify the cost. Below that size, the investment usually doesn't pay back."}}]}</script>
+
+</head>
+<body class="page-inner">
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="/" class="nav-brand">
+            <svg class="nav-icon" width="28" height="28" viewBox="0 0 36 36"><rect width="36" height="36" rx="8" fill="#FF4F1F"/><polyline points="7,18 10,18 13,11 16,25 19,13 22,21 25,18 29,18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="nav-wordmark"><span class="nav-wordmark-gtme">GTME</span><span class="nav-wordmark-pulse">Pulse</span></span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item nav-item--dropdown">
+    <a href="/salary/">Salary Data</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Salary Data submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Company Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/calculator/">Salary Calculator</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/tools/" class="active">Tools</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Tools submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/tools/" class="active">Tools Index</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/tools/clay-review/">Tool Reviews</a></li>
+
+    </ul>
+</li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/careers/">Careers</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Careers submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+
+    </ul>
+</li>
+<li class="nav-item"><a href="/glossary/">Glossary</a></li>
+<li class="nav-item"><a href="/about/">About</a></li>
+<li class="nav-item nav-item--dropdown">
+    <a href="/benchmarks/">Resources</a>
+    <button class="nav-dropdown-toggle" aria-label="Toggle Resources submenu" aria-expanded="false">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-dropdown">
+        <li><a href="/top-voices/">Top 25 Voices</a></li>
+<li><a href="/benchmarks/">Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+
+    </ul>
+</li>
+
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav-cta">Get the Weekly Pulse</a>
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" class="breadcrumb-link">Home</a><span class="breadcrumb-sep">/</span><a href="/tools/" class="breadcrumb-link">Tools</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Common Room Review</span></nav>
+<section class="salary-header">
+    <div class="salary-header-inner">
+        <div class="salary-eyebrow">Intent Data</div>
+        <h1>Common Room Review</h1>
+        <p>$0-$625+/mo</p>
+    </div>
+</section>
+
+<div class="salary-content">
+    
+<figure class="content-figure content-figure--unique">
+    <img src="/assets/images/content/gtm-tool-review-tools-common-room-review.svg" alt="Common Room Review" width="1200" height="630" loading="lazy">
+    <figcaption>Common Room Review</figcaption>
+</figure>
+<h2>Overview</h2>
+    
+<p>Common Room is the community-intelligence and signal platform that GTM Engineers reach for when their product has a developer audience, an open-source component, or significant community-driven adoption. The product captures signals from places traditional sales tools don't look: GitHub stars and contributions, Discord and Slack community activity, Reddit and Hacker News mentions, Stack Overflow questions, and Twitter conversations. It maps those signals to companies and contacts so the people engaging with your product publicly become identifiable revenue opportunities.</p>
+<p>The product won early traction with developer-tool companies (PostHog, Grafana, Hex, Cal.com) where community engagement reliably precedes commercial adoption. A developer who stars your GitHub repo, joins your Discord, and asks questions in your community Slack is showing buying intent in a form that LinkedIn Sales Navigator and 6sense don't capture. Common Room makes that engagement legible to your GTM team.</p>
+<p>Beyond the community angle, Common Room has expanded into broader signal aggregation: website visitor identification (similar to RB2B), job change tracking, technographic shifts, and CRM activity. The platform sits as a signal layer that pushes context into existing operational tools (CRM, outbound sequencer, Slack) rather than trying to replace them. For GTM Engineers, it's the place where community signals become actionable revenue signals.</p>
+
+
+    <h2>GTM Engineer Use Cases</h2>
+    
+<ul>
+    <li><strong>Identify when developers at target accounts engage publicly with your product.</strong> A developer at a Fortune 500 company stars your GitHub repo, asks a question in your Discord, and contributes a small PR. Common Room maps that activity to the company, identifies the developer's role, and surfaces a sales-relevant signal that wouldn't appear in any other tool.</li>
+    <li><strong>Trigger sales outreach on community-engagement thresholds.</strong> A target account has 5+ employees active in your Discord, 3 GitHub repository interactions, and 2 documentation page visits in the last 30 days. Push that account to your sales engagement tool with the engagement context attached. Outreach starts informed instead of cold.</li>
+    <li><strong>Track competitive context in the wild.</strong> A developer in your community mentions evaluating a competitor in a public Reddit thread. Common Room flags the conversation and the company involved. Your team responds with positioning context before the comparison decision is made.</li>
+    <li><strong>Identify product-qualified accounts from open-source usage.</strong> Open-source telemetry data combined with public GitHub activity reveals which companies are running your project in production at scale. Common Room maps this to account records so sales can prioritize companies showing real production adoption.</li>
+    <li><strong>Coordinate community engagement with sales outreach.</strong> Developer Relations engages a community member in Discord while sales runs a contract evaluation with the same company. Common Room shows both teams the full context so DevRel doesn't accidentally undercut sales messaging and sales doesn't ignore DevRel relationships during contract negotiations.</li>
+    <li><strong>Score accounts on community + traditional signals combined.</strong> Build composite scoring that weighs Discord engagement alongside CRM activity, intent data, and website visits. The composite score routes attention to accounts where the buying signals are converging across multiple channels.</li>
+</ul>
+
+
+    <h2>Pricing Breakdown</h2>
+    
+<table class="data-table">
+    <thead><tr><th>Plan</th><th>Price</th><th>Members/Sources</th><th>Key Features</th></tr></thead>
+    <tbody>
+        <tr><td>Free</td><td>$0</td><td>2 sources, 1 user</td><td>Basic community tracking, manual exports</td></tr>
+        <tr><td>Team</td><td>$625/mo+</td><td>Custom</td><td>Up to 25K members, integrations, segmentation</td></tr>
+        <tr><td>Enterprise</td><td>Custom</td><td>Custom</td><td>SSO, dedicated CSM, custom integrations</td></tr>
+    </tbody>
+</table>
+<p>Common Room pricing has been notoriously opaque, with Team-tier pricing typically landing $600-$2,500/month depending on member count and integrations. Enterprise deals for product-led companies with large communities run $30K-$80K/year. The free tier exists but is limited enough that real evaluation requires a sales conversation. This pricing model fits the high-touch enterprise sales motion but creates evaluation friction for GTM Engineers used to self-service pricing on tools like Koala or RB2B.</p>
+<p>Value calculation should center on signal-to-pipeline conversion. If 10% of community-engaged accounts you previously couldn't see become sales opportunities, the platform pays for itself at modest deal sizes. If your community is small or your buyers aren't developers, the math gets worse and a cheaper signal stack covers the actionable surface area.</p>
+
+    
+
+    <h2>Honest Criticism</h2>
+    
+<p>The product works best for developer audiences. If your buyers are non-technical (marketing teams, finance leaders, operations managers) and your community engagement happens on platforms Common Room doesn't track deeply, you'll see less differentiated value than the marketing suggests. Evaluate with your actual community channels before committing.</p>
+<p>Pricing opacity slows evaluation. Getting a real number requires a sales conversation, a discovery call, and frequently a custom quote. For solo GTM Engineers or startup teams accustomed to swiping a card and starting, this friction can push evaluation onto cheaper signal tools first. Common Room would convert more technical buyers earlier with self-service pricing tiers.</p>
+<p>Member identification quality varies by source. GitHub identification is excellent because GitHub usernames and email addresses often link to real identity. Discord identification is harder because Discord users hide behind pseudonyms. Slack varies by community. Reddit is mostly anonymous. The mapped-to-company rates Common Room shows are accurate at the source level but worth understanding by channel before building activation workflows on top of them.</p>
+<p>The activation features lag the data collection features. Common Room is excellent at capturing and organizing community signals. Pushing those signals into sales workflows happens through integrations that vary in depth. For most teams, the practical pattern is exporting signals into a CRM or outbound tool and running activation there, which works but creates friction compared to Common Room providing native activation throughout.</p>
+
+
+    <h2>Verdict</h2>
+    
+<p>Common Room is the right signal platform for GTM teams at developer-tool companies, open-source businesses, and PLG SaaS products with active communities. The product captures buying signals that traditional intent and CRM tools miss, and for the right audience the lift in pipeline visibility justifies the price.</p>
+<p>For non-developer audiences or small communities, Common Room is over-engineered. A simpler signal stack (RB2B for website visitors, UserGems for job changes, intent data from G2 or 6sense) covers more of the actionable signal surface at lower cost. Buy Common Room when community engagement is structurally part of your buyer's journey, not because community feels like it should matter.</p>
+<p>The category is converging. Common Room competes with broader signal platforms like Pocus (heavier on product-qualified leads), Default (heavier on outbound activation), and emerging players blending community plus product signals. Evaluate Common Room against the specific signal sources that matter for your buyer's journey rather than category labels. The right signal stack is whatever surfaces the buying moments your team can act on within 48 hours.</p>
+
+
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+    <h3 class="faq-question">Common Room vs Pocus: which one for PLG companies?</h3>
+    <p class="faq-answer">Pocus skews toward product usage signals and PQL identification. Common Room skews toward community engagement signals and broader signal aggregation. PLG companies with strong community motions often run both, with Pocus driving the product-qualified-lead funnel and Common Room driving community-qualified-lead context. Companies with strong product signals but weak communities should start with Pocus. Companies with strong communities but limited product telemetry should start with Common Room.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Does Common Room track private Slack and Discord communities?</h3>
+    <p class="faq-answer">Yes, with proper authentication and admin permissions in your community workspaces. Common Room is deployed inside your Slack or Discord with admin-level access, which lets it read messages, identify members, and track engagement metrics. The integration respects member privacy in ways that vary by platform; for example, direct messages are typically not tracked. Configure carefully and communicate clearly with your community about what's being tracked.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">How does Common Room compare to BuiltWith for technographic data?</h3>
+    <p class="faq-answer">Different categories. BuiltWith specializes in technographic data sourced from website crawling. Common Room focuses on community and engagement signals plus some adjacent technographic features. Most GTM teams that need real technographic depth pair BuiltWith or Sumble with Common Room rather than using either as a substitute for the other.</p>
+</div>
+<div class="faq-item">
+    <h3 class="faq-question">Is Common Room overkill if we have a small community under 1,000 members?</h3>
+    <p class="faq-answer">Probably yes at full Team-tier pricing. Small communities don't generate enough signal volume to justify the spend. Track manually with spreadsheets and lightweight tools until your community grows to 3,000-5,000 members. At that scale, the manual approach breaks down and a platform like Common Room produces enough new signal value to justify the cost. Below that size, the investment usually doesn't pay back.</p>
+</div>
+
+</section>
+</div>
+
+<section class="related-links">
+    <h2>More Tool Reviews</h2>
+    <div class="related-links-grid">
+        <a href="/tools/" class="related-link-card">Tools Index</a>
+<a href="/tools/clay-review/" class="related-link-card">Clay Review</a>
+<a href="/tools/apollo-review/" class="related-link-card">Apollo.io Review</a>
+<a href="/tools/zoominfo-review/" class="related-link-card">ZoomInfo Review</a>
+<a href="/tools/clearbit-review/" class="related-link-card">Clearbit Review</a>
+<a href="/tools/fullenrich-review/" class="related-link-card">FullEnrich Review</a>
+<a href="/tools/lusha-review/" class="related-link-card">Lusha Review</a>
+<a href="/tools/cognism-review/" class="related-link-card">Cognism Review</a>
+<a href="/tools/leadiq-review/" class="related-link-card">LeadIQ Review</a>
+<a href="/tools/persana-review/" class="related-link-card">Persana AI Review</a>
+<a href="/tools/instantly-review/" class="related-link-card">Instantly Review</a>
+<a href="/tools/smartlead-review/" class="related-link-card">Smartlead Review</a>
+
+    </div>
+</section>
+<div class="source-citation">
+    <p><strong>Source:</strong> State of GTM Engineering Report 2026 (n=228). Salary data combines survey responses from 228 GTM Engineers across 32 countries with analysis of 3,342 job postings.</p>
+</div><section class="newsletter-cta">
+    <h2>Get the Weekly Pulse</h2>
+    <p>Salary shifts, tool intel, and job market data for GTM Engineers. Get weekly Intent Data tool intel.</p>
+    <form class="newsletter-cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-column">
+    <h3>Salary Data</h3>
+    <ul>
+        <li><a href="/salary/">Salary Index</a></li>
+<li><a href="/salary/by-experience/">By Seniority</a></li>
+<li><a href="/salary/">By Location</a></li>
+<li><a href="/salary/funding-stage/">By Stage</a></li>
+<li><a href="/salary/vs-sdr/">Comparisons</a></li>
+<li><a href="/salary/coding-premium/">Coding Premium</a></li>
+<li><a href="/salary/equity/">Equity Data</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Resources</h3>
+    <ul>
+        <li><a href="/tools/">GTM Tools</a></li>
+<li><a href="/tools/tech-stack-benchmark/">Tech Stack Benchmark</a></li>
+<li><a href="/tools/frustrations/">Tool Frustrations</a></li>
+<li><a href="/tools/category/data-enrichment/">Tool Categories</a></li>
+<li><a href="/benchmarks/">Industry Benchmarks</a></li>
+<li><a href="/comparisons/">Comparisons</a></li>
+<li><a href="/benchmarks/50-stats/">50 Key Statistics</a></li>
+<li><a href="/careers/">Career Guides</a></li>
+<li><a href="/careers/how-to-become-gtm-engineer/">How to Become a GTME</a></li>
+<li><a href="/careers/job-growth/">Job Market Growth</a></li>
+<li><a href="/careers/agency-pricing/">Agency Pricing</a></li>
+<li><a href="/glossary/">Glossary</a></li>
+<li><a href="/jobs/">Job Board</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/insights/">Insights</a></li>
+<li><a href="/newsletter/">Newsletter</a></li>
+<li><a href="/top-voices/">Top Voices</a></li>
+<li><a href="/about/">About</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>Site</h3>
+    <ul>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/terms/">Terms of Service</a></li>
+<li><a href="/salary/methodology/">Methodology</a></li>
+
+    </ul>
+</div>
+<div class="footer-column">
+    <h3>GTM Tools & Resources</h3>
+    <ul>
+        <li><a href="https://thegtmindex.com" target="_blank" rel="noopener">The GTM Index</a></li>
+<li><a href="https://therevopsreport.com" target="_blank" rel="noopener">RevOps Report</a></li>
+<li><a href="https://b2bsalestools.com" target="_blank" rel="noopener">B2B Sales Tools</a></li>
+<li><a href="https://datastackguide.com" target="_blank" rel="noopener">DataStack Guide</a></li>
+<li><a href="https://sultanofsaas.com" target="_blank" rel="noopener">SultanOfSaaS</a></li>
+<li><a href="https://fdepulse.com" target="_blank" rel="noopener">FDE Pulse</a></li>
+
+    </ul>
+</div>
+
+            <div class="footer-column footer-newsletter">
+                <h3>Stay in the loop</h3>
+                <p>Weekly GTM Engineer salary shifts, tool intel, and job market data.</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 GTME Pulse. All rights reserved.</span>
+            <span>Career intelligence for GTM Engineers</span>
+        </div>
+    </div>
+</footer>
+<script>
+(function(){
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+    }
+    // Dropdown toggles
+    var dropdowns = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdowns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = btn.closest('.nav-item--dropdown');
+            if (parent) {
+                parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded',
+                    parent.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
+    // Newsletter signup
+    var SIGNUP_URL = 'https://newsletter-subscribe.rome-workers.workers.dev/subscribe';
+    document.querySelectorAll('.hero-signup, .footer-newsletter-form, .newsletter-cta-form').forEach(function(form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var emailInput = form.querySelector('input[type="email"]');
+            var btn = form.querySelector('button');
+            var email = emailInput ? emailInput.value.trim() : '';
+            if (!email) return;
+            var origText = btn.textContent;
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            fetch(SIGNUP_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, list: 'gtme-pulse'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success || data.ok) {
+                    if (typeof gtag === 'function') { gtag('event', 'newsletter_signup', {'event_category': 'engagement', 'event_label': email}); }
+                    form.innerHTML = '<p style="color: var(--gtme-accent); font-weight: 600;">You\'re in! Check your inbox.</p>';
+                } else {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    var err = document.createElement('p');
+                    err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                    err.textContent = data.error || 'Something went wrong. Try again.';
+                    var existing = form.querySelector('.signup-error');
+                    if (existing) existing.remove();
+                    err.className = 'signup-error';
+                    form.appendChild(err);
+                }
+            })
+            .catch(function() {
+                btn.textContent = origText;
+                btn.disabled = false;
+                var err = document.createElement('p');
+                err.style.cssText = 'color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem;';
+                err.textContent = 'Connection error. Please try again.';
+                var existing = form.querySelector('.signup-error');
+                if (existing) existing.remove();
+                err.className = 'signup-error';
+                form.appendChild(err);
+            });
+        };
+    });
+})();
+</script>
+</body>
+</html>

@@ -59,7 +59,7 @@ templates.SKIP_OG = SKIP_OG
 BANNED_WORDS = [
     "robust", "leverage", "synergy", "holistic", "advanced", "smooth",
     "game-changer", "paradigm shift", "revolutionary",
-    "", "", "really", "actually", "quite", "extremely",
+    "really", "actually", "quite", "extremely",
     "unlock", "unleash", "enhance", "exceed", "empower", "supercharge",
     "harness", "spearhead", "delve",
     "landscape", "tapestry", "frontier", "resonates", "positioning",

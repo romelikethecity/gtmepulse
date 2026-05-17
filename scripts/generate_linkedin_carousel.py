@@ -779,7 +779,7 @@ def generate_post_text(mi, ca, jobs, prev, date_str):
     tools_line = ", ".join(top_tools) if top_tools else "N/A"
     post = f"""{hook}
 
-This week's GTME Pulse ({total_jobs:,} roles):
+I pulled {total_jobs:,} GTM Engineer postings this week:
 
 \u2192 Median salary: ${median_k}K
 \u2192 Top tools: {tools_line}

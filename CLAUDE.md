@@ -6,9 +6,10 @@
 **What:** Independent resource hub for GTM Engineers — salary data, tool reviews, job market analysis, career guides, weekly insights
 **Model:** therevopsreport.com pattern. Vendor-neutral (not affiliated with Clay, Apollo, or any tool vendor)
 **Audience:** Technical B2B SaaS professionals, $130K–$250K salary range. Builders, not managers. They value speed, automation, data, cutting through noise.
-**Hosting:** GitHub Pages + Cloudflare DNS
-**Build:** `python3 scripts/build.py` → all pages to `output/`
+**Hosting:** GitHub Pages (served from `gh-pages` branch) + Cloudflare DNS
+**Build:** `python3 scripts/build.py` → all pages to `output/` (gitignored)
 **Preview:** `cd output && python3 -m http.server 8090` → http://localhost:8090/
+**Deploy:** Build → sync `output/` to `gh-pages` branch via git worktree → push (see "Canonical Domain & Deployment" below). Push to `main` does NOT publish. `output/` is gitignored, so `main` only stores source.
 
 ---
 
@@ -468,9 +469,32 @@ Build system skeleton, then salary pages as the first content vertical.
 ## Canonical Domain & Deployment
 
 - **Always:** `https://gtmepulse.com` (no www)
-- **CNAME:** `gtmepulse.com`
+- **CNAME:** `gtmepulse.com` (auto-generated into `output/` by build, also lives at root of `gh-pages`)
 - **Repo:** `romelikethecity/gtmepulse` (private)
-- **Deploy:** Push to main → GitHub Pages serves `output/`
+- **GH Pages source:** `gh-pages` branch root (NOT `main`). `main` stores source; built site lives only on `gh-pages`.
+
+### Deploy workflow (manual, after every content change)
+
+```bash
+# 1. Build into output/ (gitignored)
+python3 scripts/build.py --skip-og
+
+# 2. Sync output/ onto the gh-pages branch via worktree
+git worktree add /tmp/gtmepulse-ghpages gh-pages
+rsync -av --delete --exclude='.git' output/ /tmp/gtmepulse-ghpages/
+cd /tmp/gtmepulse-ghpages
+git add -A && git commit -m "Deploy: <summary>" && git push origin gh-pages
+cd -
+git worktree remove /tmp/gtmepulse-ghpages
+
+# 3. Verify (GH Pages typically publishes within 30-60s)
+curl -s -o /dev/null -w "%{http_code}\n" -L https://gtmepulse.com/
+```
+
+**Important:** Pushing source changes to `main` does NOT publish anything. If you forget step 2, the site stays stale even though git history looks current. Always confirm with a `curl` after pushing `gh-pages`.
+
+### Why this pattern
+`output/` is gitignored on `main` so source commits stay small and don't churn on every build. `gh-pages` carries only the rendered HTML (~700+ files for this site). The worktree approach lets one local clone manage both branches without checkout dance.
 
 ---
 
